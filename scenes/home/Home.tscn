@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bwmtys3in11ad"]
+
+[ext_resource type="Script" uid="uid://bo6a0hefewe4j" path="res://scenes/home/Home.gd" id="1_home"]
+[ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
+
+[node name="Home" type="Control" unique_id=1445520380]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_home")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1351395416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.043, 0.059, 0.09, 1)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1061908717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 56
+theme_override_constants/margin_bottom = 64
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=1370439217]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Margin/VBox" unique_id=944211436]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Logo" type="Label" parent="Margin/VBox/Header" unique_id=1622684251]
+layout_mode = 2
+theme_type_variation = &"LogoLabel"
+text = "Shellbit"
+
+[node name="Spacer" type="Control" parent="Margin/VBox/Header" unique_id=1928221517]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="AddFolderButton" type="Button" parent="Margin/VBox/Header" unique_id=1627578730]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+ Папка с играми"
+
+[node name="Clock" type="Label" parent="Margin/VBox/Header" unique_id=933415547]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 20
+text = "00:00"
+
+[node name="EmptyState" type="Label" parent="Margin/VBox" unique_id=334147665]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 22
+text = "Пока здесь пусто.
+Нажмите «+ Папка с играми» и выберите папку, где лежат ваши ROM-файлы."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RecentTitle" type="Label" parent="Margin/VBox" unique_id=1633219961]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "Продолжить играть"
+
+[node name="RecentScroll" type="ScrollContainer" parent="Margin/VBox" unique_id=2091020606]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 270)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="Pad" type="MarginContainer" parent="Margin/VBox/RecentScroll" unique_id=1743073873]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RecentRow" type="HBoxContainer" parent="Margin/VBox/RecentScroll/Pad" unique_id=1239908245]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SystemsTitle" type="Label" parent="Margin/VBox" unique_id=1729167725]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "Приставки"
+
+[node name="SystemsScroll" type="ScrollContainer" parent="Margin/VBox" unique_id=882666214]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 156)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="Pad" type="MarginContainer" parent="Margin/VBox/SystemsScroll" unique_id=2050923902]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="SystemsRow" type="HBoxContainer" parent="Margin/VBox/SystemsScroll/Pad" unique_id=2077703171]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Hints" parent="." unique_id=1527576617 instance=ExtResource("2_hints")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="FolderDialog" type="FileDialog" parent="." unique_id=276874205]
+unique_name_in_owner = true
+title = "Open a Directory"
+file_mode = 2
+access = 2
+use_native_dialog = true

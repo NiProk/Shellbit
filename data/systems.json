@@ -1,0 +1,13 @@
+[
+  {"id": "nes",  "short": "NES",  "name": "Nintendo Entertainment System", "extensions": ["nes"],               "default_core": "fceumm_libretro.dll",           "bios": [],                                   "color": "#E05252", "aspect": 1.333},
+  {"id": "snes", "short": "SNES", "name": "Super Nintendo",                "extensions": ["sfc", "smc"],        "default_core": "snes9x_libretro.dll",           "bios": [],                                   "color": "#8B6CF0", "aspect": 1.333},
+  {"id": "n64",  "short": "N64",  "name": "Nintendo 64",                   "extensions": ["n64", "z64", "v64"], "default_core": "mupen64plus_next_libretro.dll", "bios": [],                                   "color": "#3FA34D", "aspect": 1.333},
+  {"id": "gb",   "short": "GB",   "name": "Game Boy",                      "extensions": ["gb"],                "default_core": "gambatte_libretro.dll",         "bios": [],                                   "color": "#7FBF5A", "aspect": 1.111},
+  {"id": "gbc",  "short": "GBC",  "name": "Game Boy Color",                "extensions": ["gbc"],               "default_core": "gambatte_libretro.dll",         "bios": [],                                   "color": "#C9A227", "aspect": 1.111},
+  {"id": "gba",  "short": "GBA",  "name": "Game Boy Advance",              "extensions": ["gba"],               "default_core": "mgba_libretro.dll",             "bios": [],                                   "color": "#F0A04C", "aspect": 1.5},
+  {"id": "sms",  "short": "SMS",  "name": "Sega Master System",            "extensions": ["sms"],               "default_core": "genesis_plus_gx_libretro.dll",  "bios": [],                                   "color": "#4CC3F0", "aspect": 1.333},
+  {"id": "md",   "short": "MD",   "name": "Sega Mega Drive",               "extensions": ["md", "gen", "smd"],  "default_core": "genesis_plus_gx_libretro.dll",  "bios": [],                                   "color": "#4C8DF0", "aspect": 1.333},
+  {"id": "gg",   "short": "GG",   "name": "Sega Game Gear",                "extensions": ["gg"],                "default_core": "genesis_plus_gx_libretro.dll",  "bios": [],                                   "color": "#2BB5A0", "aspect": 1.2},
+  {"id": "pce",  "short": "PCE",  "name": "PC Engine",                     "extensions": ["pce"],               "default_core": "mednafen_pce_fast_libretro.dll","bios": [],                                   "color": "#F06A8B", "aspect": 1.333},
+  {"id": "psx",  "short": "PS1",  "name": "PlayStation",                   "extensions": ["cue", "chd", "pbp"], "default_core": "mednafen_psx_hw_libretro.dll",  "bios": ["scph5500.bin", "scph5501.bin", "scph5502.bin"], "color": "#B8C0D0", "aspect": 1.333}
+]

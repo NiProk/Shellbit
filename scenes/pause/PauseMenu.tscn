@@ -1,0 +1,102 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/pause/PauseMenu.gd" id="1_pause"]
+[ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 36.0
+content_margin_top = 32.0
+content_margin_right = 36.0
+content_margin_bottom = 24.0
+bg_color = Color(0.055, 0.075, 0.11, 0.96)
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pause")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.024, 0.035, 0.055, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 440.0
+offset_bottom = -56.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PauseLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "Пауза"
+
+[node name="GameTitle" type="Label" parent="Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(368, 0)
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "Название игры"
+autowrap_mode = 3
+max_lines_visible = 2
+
+[node name="Gap1" type="Control" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "Продолжить"
+alignment = 0
+
+[node name="RestartButton" type="Button" parent="Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "Начать заново"
+alignment = 0
+
+[node name="SlotsTitle" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_type_variation = &"CardTitleLabel"
+text = "Сохранения"
+
+[node name="Slots" type="VBoxContainer" parent="Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Spacer" type="Control" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitButton" type="Button" parent="Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.941, 0.541, 0.502, 1)
+theme_override_colors/font_hover_color = Color(0.941, 0.541, 0.502, 1)
+theme_override_colors/font_focus_color = Color(0.941, 0.541, 0.502, 1)
+text = "Выйти в библиотеку"
+alignment = 0
+
+[node name="Hints" parent="." instance=ExtResource("2_hints")]
+unique_name_in_owner = true
+layout_mode = 1

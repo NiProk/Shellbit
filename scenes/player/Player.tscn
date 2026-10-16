@@ -1,0 +1,96 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
+[ext_resource type="PackedScene" path="res://scenes/pause/PauseMenu.tscn" id="3_pause"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_1"]
+buffer_length = 0.1
+
+[node name="Player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_player")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AspectBox" type="AspectRatioContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 1.333
+
+[node name="Screen" type="TextureRect" parent="AspectBox"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Error" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -120.0
+offset_right = 400.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="ErrorTitle" type="Label" parent="Error"]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "Не удалось запустить игру"
+horizontal_alignment = 1
+
+[node name="ErrorText" type="Label" parent="Error"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "Причина"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="OpenCoresButton" type="Button" parent="Error"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Открыть папку ядер"
+
+[node name="Hints" parent="." instance=ExtResource("2_hints")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamGenerator_1")
