@@ -16,16 +16,26 @@ const TEXT := Color("e6eaf2")        # основной текст
 const TEXT_DIM := Color("9aa4b8")    # второстепенный текст
 const ACCENT := Color("5eead4")      # бирюзовый акцент — только для фокуса
 
+## Шрифты для каждого языка. Берётся первый, который есть на компьютере.
+## Для китайского и японского нужны свои шрифты: иероглифы в них
+## нарисованы по-разному, даже если код символа одинаковый.
+const FONTS := {
+	"default": ["Segoe UI", "Noto Sans", "DejaVu Sans", "sans-serif"],
+	"zh": ["Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "sans-serif"],
+	"ja": ["Yu Gothic UI", "Meiryo UI", "Meiryo", "Noto Sans CJK JP", "Noto Sans JP", "sans-serif"],
+}
+
 var theme := Theme.new()
+var font := SystemFont.new()
+var bold := SystemFont.new()
 
 
 func _ready() -> void:
-	# Шрифт берём системный: Segoe UI есть в любой Windows.
-	var font := SystemFont.new()
-	font.font_names = PackedStringArray(["Segoe UI", "Noto Sans", "DejaVu Sans", "sans-serif"])
-	var bold := SystemFont.new()
-	bold.font_names = font.font_names
+	# Шрифт берём системный: Segoe UI есть в любой Windows,
+	# а для китайского и японского — шрифты, которые тоже идут с Windows.
 	bold.font_weight = 700
+	apply_fonts()
+	Lang.language_changed.connect(apply_fonts)
 
 	theme.default_font = font
 	theme.default_font_size = 20
@@ -59,11 +69,19 @@ func _ready() -> void:
 	get_tree().root.theme = theme
 
 
+## Подобрать шрифт под текущий язык. Тема ссылается на эти же объекты
+## font и bold, поэтому все надписи обновятся сами.
+func apply_fonts() -> void:
+	var names: Array = FONTS.get(Lang.language, FONTS["default"])
+	font.font_names = PackedStringArray(names)
+	bold.font_names = PackedStringArray(names)
+
+
 # Вариация — это «подвид» Label со своим шрифтом и размером.
 # В сцене у надписи указывается theme_type_variation = "HeaderLabel".
-func _label_variation(type_name: StringName, font: Font, size: int, color: Color) -> void:
+func _label_variation(type_name: StringName, label_font: Font, size: int, color: Color) -> void:
 	theme.set_type_variation(type_name, "Label")
-	theme.set_font("font", type_name, font)
+	theme.set_font("font", type_name, label_font)
 	theme.set_font_size("font_size", type_name, size)
 	theme.set_color("font_color", type_name, color)
 

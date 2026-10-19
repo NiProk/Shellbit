@@ -1,0 +1,434 @@
+5inonefunpak	1994	Board	2	Beam Software	Interplay
+aaharimanada	1993	Sports	1	SEGA	SEGA
+addamsfamily	1993	Platform	1	Arc Developments	Flying Edge
+adventuresofbatmanrobin	1995	Beat'em Up	1	Novotrade	SEGA
+aerialassault	1992	Shoot'em Up	2	Sanritsu Denki	SEGA
+aladdin	1994	Platform	1	Sims	SEGA
+alien3	1992	Platform	1	Probe Software	Arena Entertainment
+aliensyndrome	1992	Shooter	1	Sims	SEGA
+andreagassitennis	1993	Sports	1	Epyx	Tecmagik
+arcadeclassics	1996	Compilation	2	Al Baker & Associates	SEGA
+archermacleansdropzone	1994	Shoot'em Up	2	The Big Red Software Company	Codemasters
+archrivalsthearcadegame	1992	Sports	2	Arc Developments	Flying Edge
+arena	1995	Shooter	1	Eden Entertainment Software	SEGA
+arielthelittlemermaid	1992	Platform	1	BlueSky Software	SEGA
+arlielcrystaldensetsu	1991	Strategy	1	SEGA	SEGA
+asterixandthegreatrescue	1994	Platform	1	Core Design	SEGA
+asterixandthesecretmission	1994	Platform	1	SEGA	SEGA
+axbattleralegendofgoldenaxe	1992	Role-playing (RPG)	1	Aspect	SEGA
+axbattleralegendofgoldenaxev24	1992				
+axbattlergoldenaxedensetsu	1991	Role-playing (RPG)	1	Aspect	SEGA
+ayrtonsennassupermonacogpii	1992	Racing	2	SEGA	SEGA
+bakubaku	1996	Puzzle	2	Minato Giken	SEGA
+bakubakuanimalsekaishiikugakarisenshuken	1996	Puzzle	2	Minato Giken	SEGA
+barbiesupermodel	1994	Adventure	1	Bonsai Entertainment	Hi Tech Expressions
+batmanforever	1995	Beat'em Up	1	Probe Entertainment	Acclaim
+batmanreturns	1992	Beat'em Up	1	Aspect	SEGA
+batterup	1991	Sports	2	Namco	Namco
+battleshiptheclassicnavalcombatgame	1993	Board	1	NGM Productions	Mindscape
+battletoads	1993	Beat'em Up	1	Arc System Works	SEGA
+beavisandbutthead	1994	Platform	1	NuFX	Viacom New Media
+berenstainbearscampingadventure	1994	Platform	1	Realtime Associates	SEGA
+berlinnokabe	1991	Platform	2	Inter State	Kaneko
+bishoujosenshisailormoons	1995	Platform	1	Shimada Kikaku	Bandai
+bonkerswaxup	1994	Platform	1	Al Baker & Associates	SEGA
+bramstokersdracula	1993	Platform	1	Probe Software	Sony Imagesoft
+breakthru	1994	Puzzle		Realtime Associates	Spectrum Holobyte
+bubblebobble	1994	Platform	1	Open Corp	Taito
+bugsbunnyindoubletrouble	1996	Platform	1	Probe Entertainment	SEGA
+bustamove	1996	Puzzle	2	Santos	SEGA
+busterball	1992	Sports	2	Riverhillsoft	Riverhillsoft
+busterfight	1994	Fighting	2	Sims	SEGA
+caesarspalace	1994	Gambling	1	Teeny Weeny Games	Virgin
+captainamericaandtheavengers	1992	Beat'em Up	1	Realtime Associates	Mindscape
+carlicence	1995	Educational	1	System Vision	Nayuta
+casinofunpak	1994	Gambling	1	Beam Software	Interplay
+castleofillusionstarringmickeymouse	1991	Platform	1	SEGA	SEGA
+cavedude	1993	Platform	1	Open Corp.	Innovation
+chakan	1992	Platform	1	Paul Hutchinson	SEGA
+championshiphockey	1995	Sports	1	Imagitec Design	U.S. Gold
+chasehq	1992	Racing	1	Taito	Taito
+cheesecatastrophestarringspeedygonzales	1995	Platform	1	Cryo Interactive	SEGA
+chessmaster	1991	Board	2	Novalogic	SEGA
+chicagosyndicate	1995	Beat'em Up	1	SEGA	SEGA
+choplifteriii	1994	Shooter	2	Beam Software	Extreme Entertainment
+chuckrock	1992	Platform	1	Core Design	SEGA
+chuckrockiisonofchuck	1993	Platform	1	Core Design	Core Design
+cjelephantfugitive	1994	Platform	1	The Big Red Software Company	Codemasters
+cliffhanger	1993	Platform	2	Spidersoft Limited	Sony Imagesoft
+clutchhitter	1991	Sports	2	SEGA	SEGA
+columns	1991	Puzzle	2	SEGA	SEGA
+coolspot	1993	Platform	1	Virgin Interactive	Virgin Interactive
+cosmicspacehead	1993	Platform	1	Supersonic Software	Codemasters
+crayonshinchantaiketsukantampanic	1995	Compilation	2	Minato Giken	Bandai
+crazyfaces	1993	Puzzle	1	The Kremlin	Domark
+crystalwarriors	1992	Strategy	1	SEGA	SEGA
+cutthroatisland	1995	Beat'em Up	1	Software Creations	Acclaim
+daffyduckinhollywood	1994	Platform	1	Psionic Systems	SEGA
+davidrobinsonssupremecourt	1991	Sports	2	ACME Interactive, Inc.	SEGA
+deepducktroublestarringdonaldduck	1993	Platform	1	Aspect	SEGA
+defendersofoasis	2013	Role-playing (RPG)	1	SEGA	SEGA
+desertspeedtrapstarringroadrunnerandwileecoyote	1993	Platform	1	Probe Software	SEGA
+desertstrike	1992	Shooter	1	Tiertex	Domark
+desertstrikereturntothegulf	1992	Shooter	1	Tiertex	Domark
+devilish	1991	Puzzle	1	Genki	SEGA
+dinobasherstarringbignosethecaveman	1993	Platform	2	Optimus Software	Codemasters
+donaldduckno4tsunohihou	1993	Platform	1	Aspect	SEGA
+donaldducknoluckydime	1991	Platform	1	SEGA	SEGA
+donaldducknoyottsunohihou	1993				
+donaldnomagicalworld	1994	Platform	1	Treasure	SEGA
+doraemonnoranosukenoyabou	1993	Platform	1	SEGA	SEGA
+doraemonwakuwakupocketparadise	1996	Platform	2	SEGA	SEGA
+doubledragon	1993	Beat'em Up	1	Virgin	Virgin
+dragoncrystal	2012	Role-playing (RPG)	1	SEGA	SEGA
+dragoncrystaltsuraninomeikyuu	2012	Role-playing (RPG)	1	SEGA	SEGA
+dragonthebruceleestory	1995	Platform	1	Acclaim	Virgin Interactive
+drrobotniksmeanbeanmachine	1993	Puzzle	2	Compile	SEGA
+dunkkids	1994	Sports	2	SEGA	SEGA
+dynamiteheaddy	1994	Platform	1	Minato Giken	SEGA
+earthwormjim	1995	Platform	1	Shiny Entertainment	Virgin Interactive
+eccothedolphin	1994	Adventure	1	Novotrade	SEGA
+eccothedolphinii	1994	Adventure	1	Novotrade	SEGA
+eccothetidesoftime	1994	Adventure	1	Novotrade	SEGA
+empiresyndicate	1995				
+ernieelsgolf	1994	Sports	4	Codemasters	Codemasters
+eternallegend	1991	Role-playing (RPG)	1	JVM	SEGA
+evanderholyfieldsrealdealboxing	1992	Sports	2	Novotrade	SEGA
+excellentdizzycollection	1994	Adventure	2	Interactive Studios Ltd.	Codemasters
+f1	1993	Racing	2	Teque	Domark
+f15strikeeagle	1993	Simulation	1	NMS Software	MicroProse
+f1worldchampionshipedition	1995	Racing	1	Peakstar Software	Domark
+faceball2000	1993	Shooter	2	Xanth Software	Riverhillsoft
+factorypanic	1991	Strategy	1	Japan System House	SEGA
+fantasticdizzy	1993	Platform	1	Chameleon	Codemasters
+fantasyzone	1991	Shoot'em Up	1	Sanritsu Denki	SEGA
+fatalfuryspecial	1994	Fighting	2	Aspect	Takara
+fifainternationalsoccer	1994	Sports	2	Tiertex	Electronic Arts
+fifasoccer96	1995	Sports	1	Extended Play Productions	Black Pearl Software
+firetrack	2008				
+foremanforreal	1995	Sports	1	Software Creations	Acclaim
+frankthomasbighurtbaseball	1995	Sports	1	Realtime Associates	Acclaim
+frayshugyouhen	1991	Shoot'em Up	1	Falcon	Microcabin
+fredcouplesgolf	1994	Sports	4	Sims	SEGA
+frogger	1991	Platform	1	S-Plan	SEGA
+fromtvanimationslamdunkshourienostarting5	1994	Sports	2	Sims	Bandai
+galaga2	1992	Shoot'em Up	1	Namco	Namco
+galaga91	1991	Shoot'em Up	1	Namco	Namco
+gamblepanic	1995	Gambling	1	SEGA	SEGA
+gamblerjikochuushinha	1992	Board	2	SEGA	SEGA
+ganbaregorby	1991	Strategy	1	Japan System House	SEGA
+garfieldcaughtintheact	1995	Platform	1	Novotrade	SEGA
+garoudensetsuspecial	1994	Fighting	2	Aspect	Takara
+gearstadium	1991	Sports	2	Namco	Namco
+gearstadiumheiseiban	1995	Sports	2	Namco	Namco
+gearworks	1993	Puzzle	1	Teque	Sony Electronic Publishing
+georgeforemanskoboxing	1992	Sports	1	Sims	Flying Edge
+ggaleste	1991	Shoot'em Up	1	Compile	Compile
+ggaleste3	2020	Shooter	1	M2	M2
+ggalesteii		Shoot'em Up	1	Compile	SEGA
+ggportraitpaichan	1996	Various	1	SEGA	SEGA
+ggportraityuukiakira	1996	Various	1	SEGA	SEGA
+ggshinobi	1991	Platform	1	SEGA	SEGA
+ggshinobipartiithethesilentfury	1992				
+globalgladiators	1992	Platform	1	Krisalis Software	Virgin
+globalgolf	1994				
+glocairbattle	1991	Shoot'em Up	2	SEGA	SEGA
+gojirakaijuudaishingeki	1995	Strategy	1	Sims	SEGA
+gprider	1994	Racing	2	SEGA	SEGA
+greendog	1993				
+greendogthebeachedsurferdude	1993	Platform	1	Interactive Designs	SEGA
+griffin	1991	Shoot'em Up	1	Telenet Japan	Renovation Game
+gunstarheroes	1995	Shooter	1	M2 Co., Ltd.	SEGA
+halleywars	1991	Shoot'em Up	1	ITL	SEGA
+headbuster	1991	Action	2	NCS Corporation	Masaya Games
+heavyweightchamp	1992	Sports	1	Sims	Flying Edge
+homealone	1992	Platform	1	Brian A. Rice, Inc.	SEGA
+honoonotoukyuujidodgedanpei	1992	Sports	1	Sims	SEGA
+hook	1992	Platform	1	Spidersoft Limited	Sony Electronic Publishing
+hurricanes	1994	Platform	1		U.S. Gold
+hyokkorihyoutanjimahyoutanjimanodaikoukai	1992	Board	1	SEGA	SEGA
+hyperproyakyuu92	1992	Sports	2	SEGA	SEGA
+incrediblecrashdummies	1993	Platform	1	Teeny Weeny Games	Flying Edge
+incrediblehulk	1994	Platform	1	Probe Software	U.S. Gold
+indianajonesandthelastcrusade	1991	Platform	1	Tiertex	U.S. Gold
+inthewakeofvampire	2012	Platform	1	Sims	SEGA
+ironmanxomanowarinheavymetal	1996	Beat'em Up	1	Realtime Associates	Acclaim
+itchyscratchygame	1994	Platform	1	Bit Corp.	Acclaim
+jamesbond007theduel	1993		1	The Kremlin	Domark
+jamespond3operationstarfi5h	1994	Platform	1	Teque	U.S. Gold
+jamespondiicodenamerobocod	1991	Platform	1	Millenium Interactive	U.S. Gold
+jangpungii	1993	Fighting	2	Sieco	Innovation
+jeopardy	1993	Quiz	2	GameTek	GameTek
+jeopardysportsedition	1994	Quiz	2	GameTek	GameTek
+jleagueggprostriker94	1994	Sports	2	Sims	SEGA
+jleaguesoccerdreameleven	1995	Sports	2	Sims	SEGA
+joemontanafootball	1991	Sports	2	BlueSky Software	SEGA
+journeyfromdarknessstriderreturns	1992	Platform	1	Tiertex	U.S. Gold
+judgedredd	1995	Platform	1	Probe Software	Acclaim
+junction	1991	Strategy	1	Micronet	Micronet
+junglebook	1994	Platform	1	Syrox Developments, Ltd.	Virgin
+junglestrike	1995	Shooter	1	Unexpected Development	Black Pearl Software
+jurassicpark	1993	Adventure	1	SEGA	SEGA
+kaitousainttail	1996	Action	2	Minato Giken	SEGA
+kawasakisuperbikechallenge	1995	Sports	1	Teque	Domark
+kenyuudensetsuyaiba	1994	Platform	1	SEGA	SEGA
+kickrush	1993	Sports	4	Sims	Tengen
+kineticconnection	1991	Puzzle	1	Sadato Taneda	SEGA
+kishindoujizenki	1995	Platform	1	SEGA	SEGA
+klax	1991	Puzzle	1	Tengen	Tengen
+krustysfunhouse	1993	Platform	1	Audiogenic Software	Flying Edge
+kunichannogametengoku	1991	Compilation	2	SEGA	SEGA
+kunichannogametengokupart2	1992	Compilation	2	SEGA	SEGA
+landofillusionstarringmickeymouse	1993	Platform	1	SEGA	SEGA
+lastactionhero	1993	Platform	1	Bits Studios	Sony Electronic Publishing
+legendofillusionstarringmickeymouse	1994	Platform	1	Aspect	SEGA
+lemmings	1992	Strategy	2	Probe Software	SEGA
+lemmings2thetribes	1994	Strategy	1	Spidersoft Limited	Psygnosis
+lionking	1994	Platform	1	Syrox Developments, Ltd.	Virgin
+lostworldthejurassicpark	1997	Platform	1	Aspect	SEGA
+luckydimecaperstarringdonaldduck	1991	Platform	1	SEGA	SEGA
+lunarsanposurugakuen	1995	Role-playing (RPG)	1	Game Arts	Game Arts
+madden96	1995	Sports	1	Tiertex	Black Pearl Software
+maddennfl95	1994	Sports	1	Tiertex	Electronic Arts
+madoumonogatariadokidokivacation	1995	Role-playing (RPG)	1	Compile	Compile
+madoumonogatarii3tsunomadoukyuu	1993	Role-playing (RPG)	1	Compile	SEGA
+madoumonogatariiiarle16sai	1994	Role-playing (RPG)	1	Compile	SEGA
+madoumonogatariiiikyuukyokujoousama	1994	Role-playing (RPG)	1	Compile	SEGA
+magicalpuzzlepopils	1991	Puzzle	4	Tengen	Tengen
+magicaltaruruutokun	1991	Shoot'em Up	1	Tsukuda Original	Tsukuda Original
+magicknightrayearth	1994	Adventure	1	SEGA	SEGA
+magicknightrayearth2makingofmagicknight	1995	Role-playing (RPG)	1	SEGA	SEGA
+majorstheprobaseball	1992	Sports	2	SEGA	SEGA
+manoverboard	1994	Strategy	1	The Big Red Software Company	Codemasters
+mappy	1991	Platform	2	Namco	Namco
+marblemadness	1992	Action	1	Tengen	Tengen
+markosmagicfootball	1994	Platform	1	Domark	Domark
+masterofdarkness	1993	Platform	1	Sims	SEGA
+megaman	1994	Platform	1	Freestyle	U.S. Gold
+megamitenseigaidenlastbible	1994	Role-playing (RPG)	1	Sims	SEGA
+megamitenseigaidenlastbiblespecial	1995	Role-playing (RPG)	1	Sims	SEGA
+mickeymousedensetsunooukokulegendofillusion	1994	Platform	1	Aspect	SEGA
+mickeymousenocastleillusion	1991	Platform	1	SEGA	SEGA
+mickeymousenomahounocrystal	1993	Platform	1	SEGA	SEGA
+mickeysultimatechallenge	1994	Strategy	1	Designer Software	Hi Tech Expressions
+micromachines	1993	Racing	2	Codemasters	Codemasters
+micromachines2turbotournament	1995	Racing	2	Supersonic Software	Codemasters
+mightymorphinpowerrangers	1994	Beat'em Up	2	Sims	SEGA
+mightymorphinpowerrangersthemovie	1995	Beat'em Up	2	Sims	SEGA
+mlbpabaseball	1995	Sports	4	Beam Software	EA Sports
+moldorianhikaritoyaminosister	1994	Role-playing (RPG)	1	Rit's	SEGA
+monstertruckwars	1994	Racing	1	Gremlin Graphics Software	Acclaim
+monsterworldiidragonnowana	1992	Platform	1	Westone	SEGA
+mortalkombat	1993	Fighting	2	Probe Software	Arena Entertainment
+mortalkombat3	1995	Fighting	2	Software Creations	Acclaim
+mortalkombatii	1994	Fighting	2	Probe Software	Acclaim
+mortalkombatshinkenkourindensetsu	1993	Fighting	2	Probe Software	Arena Entertainment
+mspacman	1993	Action	2	Namco	Namco
+nazopuyo	1993	Puzzle	1	Compile	SEGA
+nazopuyo2	1993	Puzzle	1	Compile	SEGA
+nazopuyoarlenoroux	1994	Role-playing (RPG)	1	Compile	SEGA
+nbaactionstarringdavidrobinson	1994	Sports	2	SEGA	SEGA
+nbajam	1993	Sports	1	Iguana Entertainment	Arena Entertainment
+nbajamtournamentedition	1994	Sports	4	Iguana Entertainment	Acclaim
+nekodaisuki	1996	Simulation	2	SEGA	SEGA
+nfl95	1994	Sports	2	Double Diamond Sports	SEGA
+nflquarterbackclub	1994	Sports	1	Condor Software	Acclaim
+nflquarterbackclub96	1995	Sports	1	Condor Software	Acclaim
+nhlallstarhockey	1995	Sports	1	Gray Matter	SEGA
+nhlhockey	1995	Sports	1	Realtime Associates	EA Sports
+ninjagaiden	1991	Beat'em Up	1	Japan System House	SEGA
+ninku	1995	Fighting	1	SEGA	SEGA
+ninku2tenkuuryuuenomichi	1995	Platform	1	SEGA	SEGA
+ninkugaidenhiroyukidaikatsugeki	1995	Puzzle	1	SEGA	SEGA
+nomohideonoworldseriesbaseball	1995	Sports	4	SEGA	SEGA
+offthewall		Puzzle		Atari	Tengen
+olympicgold	1992	Sports	4	Tiertex	U.S. Gold
+ottifants	1993	Platform	1	Graftgold	SEGA
+outrun	1991	Racing	2	SEGA	SEGA
+outruneuropa	1991	Racing	1	Probe Software	U.S. Gold
+pacattack	1994	Puzzle	2	Namco	Namco
+pacintime	1994	Platform	1	Kalisto	Namco
+pacman	1991	Action	2	Namco	Namco
+panzerdragoonmini	1996	Action	1	SEGA	SEGA
+paperboy	1992	Sports	1	Tiertex	Tengen
+paperboy2	1992	Sports	1	Tengen	Tengen
+paperboyii		Sports	1	Tengen	Tengen
+pengo	1990	Puzzle	1	SEGA	SEGA
+petclubinudaisuki	1996	Simulation	2	SEGA	SEGA
+petesamprastennis	1994	Sports	4	The Big Red Software Company	Codemasters
+pgatour96	1995	Sports	4	Ceris Software	Black Pearl Software
+pgatourgolf	1993	Sports	4	Polygames	Tengen
+pgatourgolfii	1993	Sports	4	Polygames	Time Warner Interactive
+phantasystaradventure	1992	Role-playing (RPG)	4	SEGA	SEGA
+phantasystargaiden	1992	Role-playing (RPG)	4	Japan System Supply	SEGA
+phantom2040	1995	Platform	1	Unexpected Development	Viacom New Media
+pinballdreams	1993	Pinball	4	Spidersoft Limited	GameTek
+pocketjansou	1992	Board	2	Namco	Namco
+pokerfacepaulsblackjack	1993	Gambling	2	Spidersoft Limited	Adrenalin
+pokerfacepaulscribbage	1994				
+pokerfacepaulsgin	1994	Gambling	2	Spidersoft Limited	Adrenalin
+pokerfacepaulspoker	1993	Gambling	2	Spidersoft Limited	Adrenalin
+pokerfacepaulssolitaire	1994	Gambling	2	Spidersoft Limited	Adrenalin
+popbreaker	1990	Puzzle	2	Microcabin	Microcabin
+popeyenobeachvolleyball	1994	Sports	2	Technos Japan Corp.	Technos Japan Corp.
+powerdrive	1994	Racing	4	Rage Software	U.S. Gold
+powerstrikeii	1993	Shoot'em Up	1	Compile	SEGA
+predator2	1992	Shooter	1	Teeny Weeny Games	Arena Entertainment
+primalrage	1995	Fighting	2	Probe Entertainment	Time Warner Interactive
+princeofpersia	1992	Platform	1	Domark	Domark
+proyakyuu91	1991	Sports	2	SEGA	SEGA
+proyakyuuggleague	1993	Sports	2	SEGA	SEGA
+proyakyuuggleague94	1994	Sports	2	SEGA	SEGA
+psychicworld	1991	Platform	1	Sanritsu Denki	SEGA
+puttputter	1991	Sports	2	Sims	SEGA
+puyopuyo	1993	Strategy	2	Compile	SEGA
+puyopuyotsuu	2013	Puzzle	2	Compile	Compile
+puzzleactionichidantor	1994	Puzzle	2	CRI Middleware Co., Ltd.	SEGA
+puzzleactiontantor	1994	Puzzle	2	CRI Middleware Co., Ltd.	SEGA
+puzzlebobble	1996	Puzzle	2	Santos	SEGA
+questfortheshavenyakstarringrenhoekstimpy	1993	Platform	1	Realtime Associates	SEGA
+quizgearfight	1995	Quiz	2	Minato Giken	SEGA
+rastansaga	1991	Platform	1	Taito	Taito
+rbibaseball94	1994	Sports	1	Al Baker & Associates	Time Warner Interactive
+rcgrandprix	1992	Racing	4	Absolute Entertainment	Absolute Entertainment
+revengeofdrancon	1991	Platform	1	Escape	SEGA
+riddickboweboxing	1993	Sports	2	Micronet	Extreme Entertainment
+riseoftherobots	1994	Fighting	2	Data Design	Time Warner Interactive
+ristar	1995	Platform	1	SEGA	SEGA
+roadrash	1993	Racing	2	Probe Software	U.S. Gold
+robocop3	1993	Platform	1	Eden Entertainment Software	Flying Edge
+robocopversustheterminator	1993	Platform	1	NMS Software	Virgin
+royalstonehirakareshitokinotobira	1995	Strategy	1	SEGA	SEGA
+ryuukyuu	1991	Gambling	2	FACE	SEGA
+samuraishodown	1994	Fighting	1	Takara	Takara
+samuraispirits	1994	Fighting	1	Takara	Takara
+sassoushouneneiyuudencocacolakid	1994	Platform	1	Aspect	SEGA
+schtroumpfsautourdumondeles	1995	Platform	1	Infogrames	Infogrames
+scratchgolf	1994	Sports	2	Eleca	Vic Tokai
+sdgundamwinnershistory	1995	Strategy	1	Bandai	Bandai
+segagamepack4in1	1992	Sports	1	SEGA	SEGA
+sensiblesoccereuropeanchampions	1993	Sports	1	Eurocom	Sony Imagesoft
+shadamcrusaderharukanaruoukoku	1992	Role-playing (RPG)	1	SEGA	SEGA
+shanghaiii	1990	Board	2	Sun Electronics	Sunsoft
+shaqfu	1995	Fighting	1	Tiertex	Electronic Arts
+shikinjou	1991	Board	1	Sunsoft	Sunsoft
+shiningforcegaidenenseijashinnokunie	1992	Role-playing (RPG)	1	Sonic! Software Planning	SEGA
+shiningforcegaidenfinalconflict	1995	Strategy	1	Sonic! Software Planning	SEGA
+shiningforcegaideniijashinnokakusei	1993	Strategy	1	Sonic! Software Planning	SEGA
+shiningforcetheswordofhajya	2013	Strategy	1	Sonic! Software Planning	SEGA
+shinobi	2012	Platform	1	SEGA	SEGA
+shinobiiithesilentfury	1992	Platform	1	SEGA	SEGA
+sidepocket	1994	Sports	2	Opera House	Data East
+simpsonsthebartmanmeetsradioactiveman	1994	Platform	1	Teeny Weeny Games	Flying Edge
+simpsonsthebartvsthespacemutants	1992	Platform	1	Santos	Flying Edge
+simpsonsthebartvstheworld	1993	Platform	1	Santos	Flying Edge
+skweek	1991	Puzzle	1	Victor Entertainment	SEGA
+slider	1991	Puzzle	1	Victor Entertainment	SEGA
+smurfs	1994	Platform	1	Bit Managers	Infogrames
+solitairefunpak	1994	Gambling	1	Beam Software	Interplay
+solitairepoker	1991	Gambling	2	FACE	SEGA
+sonicblast	1996	Platform	1	Aspect	SEGA
+sonicchaos	1993	Platform	2	Aspect	SEGA
+sonicdrift	1994	Action	2	SEGA	SEGA
+sonicdrift2	1995	Racing	2	SEGA	SEGA
+soniclabyrinth	2012	Action	1	Minato Giken	SEGA
+sonicspinball	1994	Pinball	1	SEGA	SEGA
+sonictails	1993	Platform	2	Aspect	SEGA
+sonictails2	1994	Platform	1	Aspect	SEGA
+sonicthehedgehog	2013	Platform	1	Ancient	SEGA
+sonicthehedgehog2	2013	Platform	1	Aspect	SEGA
+sonicthehedgehogtripletrouble	1994	Platform	1	Aspect	SEGA
+soukoban	1990	Puzzle	1	Thinking Rabbit	Riverhillsoft
+spaceharrier	1991	Shooter	1	SEGA	SEGA
+spiderman	1992	Platform	1	B.I.T.S.	Flying Edge
+spidermanreturnofthesinistersix	1992	Platform	1	B.I.T.S.	Flying Edge
+spidermanxmenarcadesrevenge	1994	Beat'em Up	1	Software Creations	Flying Edge
+spirou	1996	Platform	1	Bit Managers	Infogrames
+sportsillustratedchampionshipfootballbaseball	1995	Sports	1	Unexpected Development	Black Pearl Software
+sportstrivia	1995	Quiz	2	Adrenalin	SEGA
+sportstriviachampionshipedition	1995	Quiz	2	Adrenalin	SEGA
+stargate	1994	Puzzle	2	Probe Software	Acclaim
+startrekgenerationsbeyondthenexus	1994	Shooter	1	Absolute Entertainment	Absolute Entertainment
+startrekthenextgenerationtheadvancedholodecktutorial	1994	Simulation	1	Imagineer	Absolute Entertainment
+starwars	1993	Platform	1	Tiertex	U.S. Gold
+streetbattle	1993	Fighting	2	Sieco	Innovation
+streethero	1993	Beat'em Up	1	Daou Infosys	Innovation
+streetsofrage	1992	Beat'em Up	2	Ancient	SEGA
+streetsofrage2	1993	Beat'em Up	2	Japan System House	SEGA
+streetsofrageii	1993	Beat'em Up	2	Japan System House	SEGA
+striker	1995	Sports	2	Rage Software	SEGA
+superbattletank	1994	Simulation	1	Absolute Entertainment	Majesco
+supercolumns	1995	Puzzle	1	SEGA	SEGA
+supergolf	1991	Sports	4	Sigma Enterprises	Sage's Creation
+superkickoff	1991	Sports	1	Tiertex	U.S. Gold
+supermanthemanofsteel	1992	Adventure	1	Graftgold	Virgin
+supermomotaroudentetsuiii	1995	Board	2	Hudson	Hudson
+supermonacogp	1991	Racing	2	SEGA	SEGA
+superoffroad	1993	Racing	2	Graftgold	Virgin
+superoffroadrev1	1993				
+supersmashtv	1992	Shoot'em Up	1	Probe Software	Flying Edge
+superspaceinvaders	1991	Shooter	2	The Kremlin	Domark
+superstarwarsreturnofthejedi	1995	Platform	1	Realtime Associates	Black Pearl Software
+surfninjas	1993	Platform	1	NuFX	SEGA
+sylvantale	1995	Role-playing (RPG)	1	SEGA	SEGA
+t2thearcadegame	1993	Shooter	1	Probe Software	Arena Entertainment
+tailsadventure	2013	Role-playing (RPG)	1	Aspect	SEGA
+tailsadventuretailsadventures	1995				
+tailsskypatrol	1995	Shoot'em Up	1	Japan System House	SEGA
+taisengatadaisenryakug	1991	Strategy	2	Systemsoft	Systemsoft
+taisenmahjonghaopai	1990	Board	2	SEGA	SEGA
+taisenmahjonghaopai2	1993	Board	2	Arc System Works	SEGA
+taitochasehq	1991	Racing	1	Taito	Taito
+talespin	1993	Platform	1	SEGA	SEGA
+tamafriends3choumekouentamalympic	1995	Casual Game	1	Aspect	SEGA
+tarotnoyakata	1991	Puzzle	1	Japan System Supply	SEGA
+tarzanlordofthejungle	1994	Platform	1	Eurocom	GameTek
+tatakaeproyakyuutwinleague	1995	Sports	2	ITL Co., Ltd.	SEGA
+tazinescapefrommars	1994	Platform	1	Al Baker & Associates	SEGA
+tazmania	1992	Platform	1	NuFX	SEGA
+tempojr	1995	Platform	1	Sims	SEGA
+tengenworldcupsoccer	1993	Sports	4	Sims	Tengen
+terminator	1992	Platform	1	Probe Software	Virgin
+terminator2judgmentday	1993	Beat'em Up	1	Arc Developments	Flying Edge
+tesserae	1993	Puzzle	1	Eurocom	GameTek
+tesseraerev1	1993				
+tintinintibet	1995	Platform	1	Bit Managers	Infogrames
+tomandjerrythemovie	1993	Platform	1	Sims	SEGA
+toraretetamaruka	1994	Action	1	SEGA	SEGA
+truelies	1995	Shooter	1	Beam Software	Acclaim
+ultimatesoccer	1993	Sports	2	Rage Software	SEGA
+urbanstrike	1995	Shoot'em Up	1	Foley Hi-Tech	Black Pearl Software
+vampiremasterofdarkness	2013	Platform	1	Sims	SEGA
+virtuafighteranimation	1996	Fighting	2	Aspect	SEGA
+virtuafightermini	1996	Fighting	2	Aspect	SEGA
+vrtroopers	1995	Fighting	1	Syrox Developments, Ltd.	SEGA
+wagyanland	1991	Platform	1	Now Production	Namco
+wakiyarando	1991				
+wheeloffortune	1993	Quiz	2	Imagitec Design	GameTek
+wildsnake	1994	Puzzle	1	Leadfilm	Spectrum Holobyte
+wimbledon	1992	Sports	2	Sims	SEGA
+winterolympics	1993	Sports	2	Tiertex	U.S. Gold
+wizardpinball	1992	Pinball	2	Teque	Domark
+wolfchild	1993	Platform	2	Core Design	Virgin
+wonderboy	1991	Platform	1	Escape	SEGA
+wonderboythedragonstrap	1992	Platform	1	Westone	SEGA
+woodypop	1991	Action	1	SEGA	SEGA
+worldclassleaderboard	1991	Sports	4	Tiertex	U.S. Gold
+worldcupusa94	1994	Sports	4	Tiertex	U.S. Gold
+worldderby	1994	Sports with Animals	4	CSK Research Institute Corp.	CSK Research Institute Corp.
+worldseriesbaseball	1993	Sports	1	SEGA	SEGA
+worldseriesbaseball95	1994	Sports	4	SEGA	SEGA
+wwfraw	1994	Sports	4	Realtime Associates	Acclaim
+wwfwrestlemaniasteelcagechallenge	1993	Sports	1	Teeny Weeny Games	Flying Edge
+xmen	1993	Platform	4	SEGA	SEGA
+xmengamemasterslegacy	1994	Platform	1	SEGA	SEGA
+xmenmojoworld	1996	Platform	1	SEGA	SEGA
+yogibearinyogibearsgoldrush	1994	Platform	1	Twilight	GameTek
+yuuyuuhakushoii	1994				
+yuyuhakushohorobishimononogyakushuu	1994	Beat'em Up	1	Minato Giken	SEGA
+yuyuhakushoiigekitounanakyounotatakai	1994	Fighting	2	Minato Giken	SEGA
+zangear	1990	Strategy	2	Wolf Team	Wolf Team
+zool	1993				
+zoolninjaofthenthdimension	1993	Platform	1	Gremlin Graphics Software	Gremlin Graphics Software
+zoolnoyumebouken	1993	Platform	1	Gremlin Graphics Software	Gremlin Graphics Software
+zoop	1995	Puzzle	1	Hookstone	Viacom New Media

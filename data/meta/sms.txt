@@ -1,0 +1,477 @@
+11hapgamboy	1991				
+20em1	1995	Action	1	Tec Toy	Tec Toy
+3dgunner	1986	Lightgun Shooter	1	SEGA	SEGA
+3in1thebestgamecollection	1990				
+4pakallaction	1985	Compilation	2	Open Corp	Home Entertainment Suppliers
+8in1thebestgamecollection	1990				
+94nensuperbasketball		Sports	2	SEGA	SEGA
+94superworldcupsoccer	1994	Sports	2	Open Corp	Daou Infosys
+aceofaces	1991	Simulation	1	Artech Studios	SEGA
+actionboy		Action	2	SEGA	SEGA
+actionfighter	1986	Racing	2	SEGA	SEGA
+addamsfamily	1993	Action	1		Flying Edge
+aerialassault	1990	Action	1	Sanritsu Denki	SEGA
+afterburner	1987	Shooter	1	SEGA	SEGA
+agigongnyongdooly	1991	Shoot'em Up	1	Daou Infosys	Innovation
+airrescue	1992	Action	1	Sims	SEGA
+aladdin	1994	Platform	1	Nexa	SEGA
+aleste	1988	Action	1	SEGA	SEGA
+alexkidd3curseinmiracleworld		Platform	1	Yeti	Yeti
+alexkiddhightechworld	1989	Platform	1	SEGA	SEGA
+alexkiddinmiracleworld	1986	Action	1	SEGA	SEGA
+alexkiddinmiracleworld2	2017	Platform	1	Ian Wall	Ian Wall
+alexkiddinmiracleworldrev1	1986				
+alexkiddinshinobiworld	1990	Action	1	SEGA	SEGA
+alexkiddnomiracleworld	1986	Action	1	SEGA	SEGA
+alexkiddtheloststars	1988	Platform	1	SEGA	SEGA
+alexkido		Action	1	SEGA	SEGA
+alf	1989	Adventure	1	SEGA	SEGA
+alfrev1	1989				
+alibabaand40thieves	1989	Action	1	HiCom	HiCom
+alien3	1992	Platform	2	Probe Software	Arena Entertainment
+alienstorm	1991	Action	1	SEGA	SEGA
+aliensyndrome	1987	Shooter	2	SEGA	SEGA
+alteredbeast	1988	Beat'em Up	1	SEGA	SEGA
+americanbaseball	1989	Sports	2	SEGA	SEGA
+americanprofootball	1989	Sports	2	SEGA	SEGA
+andreagassitennis	1993	Sports	2	Epyx	Tecmagik
+anmitsuhime	1987	Platform	1	SEGA	SEGA
+arcadesmashhits	1992	Compilation	2	Images Software	Atari
+argosnojuujiken	1988	Action	2	Tecmo	Salio
+arielthelittlemermaid	1993	Platform	1	BlueSky Software	Tec Toy
+ashura	1986	Shooter	2	SEGA	SEGA
+assaultcity	1990	Action	1	Sanritsu Denki	SEGA
+asterix	1991	Platform	2	SEGA	SEGA
+asterixandthegreatrescue	1994	Platform	1	Core Design	SEGA
+asterixandthesecretmission	1993	Platform	2	SEGA	SEGA
+astroadventure		Action	1	SEGA	SEGA
+astroflash	1985	Action	2	SEGA	SEGA
+astrowarrior	1986	Action	2	SEGA	SEGA
+astrowarriorpitpot	1986	Compilation	2	SEGA	SEGA
+ateammusic	1992				
+aventurasdatvcolossoas	1996	Action	2	SEGA	Tec Toy
+ayrtonsennassupermonacogpii	1992	Racing	1	SEGA	SEGA
+aztecadventure	1987	Action	1	SEGA	SEGA
+backtothefuturepartii	1990	Adventure	1	Images Software	Image Works
+backtothefuturepartiii	1991	Adventure	1	Probe Software	Image Works
+bakubaku	1998	Puzzle	1	SEGA	Tec Toy
+bankpanic	1987	Action	1	Sanritsu Denki	SEGA
+basketballnightmare	1989	Sports	2	SEGA	SEGA
+batmanreturns	1992	Platform	1	Aspect	SEGA
+battlemaniacs	1994	Beat'em Up	2	Rareware	Tec Toy
+battleoutrun	1989	Racing	1	SEGA	SEGA
+battlewings	1988	Action	1	Sanritsu	SEGA
+blackbelt	1996	Action	2	SEGA	SEGA
+bladeeagle	1988				
+bladeeagle3d	1988	Action	1	SEGA	SEGA
+bmxtrialalexkidd	1987	Racing	1	SEGA	SEGA
+bobblebobble	1990	Action	1	Clover	Clover
+bomberraid	1988	Action	1	Sanritsu	SEGA
+bonanzabros	1991	Action	1	SEGA	SEGA
+bonkerswaxup	1996	Platform	1	Al Baker & Associates	Tectoy
+bramstokersdracula	1992	Action	1	Probe Software	Sony Imagesoft
+bubblebobble	1991	Action	2	Taito	SEGA
+buggyrun	1993	Racing	2	Sims	SEGA
+californiagames	1989	Sports	8	Epyx	SEGA
+californiagamesii	1993	Sports	8	Probe Software	SEGA
+captainsilver	1989	Action	1	SEGA	SEGA
+casinogames	1989	Gambling	1	Compile	SEGA
+casteloratimbum	1997	Adventure	1	Tec Toy	Tec Toy
+castleofillusionstarringmickeymouse	1990	Action	1	SEGA	SEGA
+castleofillusionstarringmickeymouserev1	1990				
+championshiphockey	1992	Sports	1	Electronic Arts	U.S. Gold
+championsofeurope	1992	Sports	1	Tecmagik	Tecmagik
+chapolimxdraculaumdueloassustador	1993	Action	2	SEGA	Tec Toy
+chasehq	1990	Racing	1	Taito	Taito
+cheesecatastrophestarringspeedygonzales	1995	Action	1	Cryo Interactive	SEGA
+choplifter	1985	Shoot'em Up	2	SEGA	SEGA
+chouonsenshiborgman	1988	Action	1	SEGA	SEGA
+chuckrock	1992	Action	1	Core Design	Virgin Games
+chuckrockiisonofchuck	1993	Platform	1	Core Design	SEGA
+circuit	1986	Simulation	1	SEGA	SEGA
+cloudmaster	1989	Action	2	Opera House	SEGA
+columns	1990	Puzzle	2	SEGA	SEGA
+comicalmachinegunjoe	1986	Shooter	1	SEGA	SEGA
+coolspot	1993	Platform	1	Virgin	Virgin
+cosmicspacehead	1993	Adventure	2	Supersonic Software	Codemasters
+cso		Action		Compile	SEGA
+cybershinobi	1990	Platform	1	SEGA	SEGA
+cybershinobitheshinobipart2	1990				
+cyborghunter	1988	Action	1	SEGA	SEGA
+cyborgz	1991	Shoot'em Up		Zemina	Zemina
+daffyduckinhollywood	1994	Platform	1	Psionic Systems	SEGA
+dallyeorapiguwang	1995	Sports	2	Open Corp	Gameline
+dananthejunglefighter	1990	Action	1	SEGA	SEGA
+deadangle	1989	Shooter	1	SEGA	SEGA
+deepducktroublestarringdonaldduck	1993	Platform	1	SEGA	SEGA
+desertspeedtrapstarringroadrunnerandwileecoyote	1993	Action	1	Probe Software	SEGA
+desertstrike	1992	Shooter	1	The Kremlin	Domark
+dicktracy	1990	Action	1	SEGA	SEGA
+dinobasherstarringbignosethecaveman	1993	Platform		Optimus Software	Codemasters
+dinosaurdooley	1993	Shoot'em Up	1	Daou Infosys	Innovation
+dokidokipenguinlanduchuudaibouken	1987	Action	1	SEGA	SEGA
+doubledragon	1988	Action	2	Arc System Works	SEGA
+doublehawk	1990	Shooter	2	Opera House	SEGA
+doubletargetcynthianonemuri	1987	Action	2	SEGA	SEGA
+dracula	1992				
+dragon	1993				
+dragoncrystal	1991	Role-playing (RPG)	1	SEGA	SEGA
+dragonthebruceleestory	1993	Platform	2	Acclaim	Acclaim
+drhello	1991	Puzzle	2	Sis Co	Sis Co
+drrobotniksmeanbeanmachine	1993	Puzzle	2	Compile	SEGA
+dynamiteduke	1991	Action	1	SEGA	SEGA
+dynamitedux	1989	Beat'em Up	1	AM2	SEGA
+dynamiteheaddy	1995	Action	1	Minato Giken	SEGA
+eagles5	1990	Shoot'em Up		Zemina	Zemina
+earthwormjim	1996	Action	1	Tec Toy	Shiny Entertainment
+eccothedolphin	1993	Action	1	Novotrade	SEGA
+eccothetidesoftime	1996	Adventure	1	Novotrade	Tectoy
+eiexainnova		Shoot'em Up		Compile	HiCom
+enduroracer	1987	Racing	1	SEGA	SEGA
+eswat	1990	Platform	2	Sanritsu	SEGA
+excellentdizzycollection		Compilation		Codemasters	Codemasters
+f1	1993	Sports	2	Lankhor	Domark
+f16fighter	1985	Simulation	1	Nexa Corporation	SEGA
+f16fightingfalcon	1985	Simulation	1	Nexa Corporation	SEGA
+f1spiritthewaytoformula1	1987	Racing		Zemina	Zemina
+familygames	1987	Sports	4	Compile	SEGA
+fantasticdizzy	1993	Platform	1	Chameleon	Codemasters
+fantasyzone	1986	Action	2	SEGA	SEGA
+fantasyzoneii	1987	Action	1	SEGA	SEGA
+fantasyzoneiiopaopanonamida	1987	Action	1	SEGA	SEGA
+fantasyzonerev2	1986				
+fantasyzonethemaze	1987	Action	2	SEGA	SEGA
+fatetris	1990	Puzzle		Fresh Fishes	FA Soft
+feriasfrustradasdopicapau	1996	Action	1	Tec Toy	Tec Toy
+fifainternationalsoccer	1994	Sports	1	Tec Toy	EA Sports
+finalbubblebobble	1988	Action	2	Taito	SEGA
+fireforgetii	1990	Racing	1	Titus	SEGA
+fireice	1993	Platform	2	Graftgold	Tec Toy
+flash	1993	Platform	1	Probe Software	SEGA
+flashpoint	1990	Puzzle		Zemina	Zemina
+flintstones	1990	Action	1	Tiertex	Grandslam Entertainment
+forgottenworlds	1991	Shoot'em Up	1	SEGA	SEGA
+fushiginooshiropitpot	1985	Action	1	SEGA	SEGA
+gaegujangikkachi	1993	Platform		HiCom	HiCom
+gainground	1990	Strategy	2	SEGA	SEGA
+galacticprotector	1988	Action	2	SEGA	SEGA
+galaxian		Shoot'em Up	1	Namco	HiCom
+galaxyforce	1989	Shooter	1	AM R&D Dept. #2	SEGA
+gameboxserieesportesradicais	1989	Sports	8	Epyx	Tec Toy
+gamedecheckkoutsuuanzen	1987				
+gangcheolrobocop	1992	Action	1	Sieco	Sieco
+gangstertown	1987	Action	2	SEGA	SEGA
+gauntlet	1990	Action	2	Tiertex	U.S. Gold
+georgeforemanskoboxing	1992	Sports	2	Sims	Flying Edge
+geraldinho	1994	Platform	2	SEGA	Tec Toy
+ghostbusters	1986	Action	1	Compile	SEGA
+ghosthouse	1986	Action	2	SEGA	SEGA
+ghosthouserev1	1986				
+ghoulsnghosts	1990	Platform	1	SEGA	SEGA
+globaldefense	1987	Action	1	SEGA	SEGA
+globalgladiators	1992	Action	1	Krisalis Software	Virgin
+glocairbattle	1991	Simulation	1	SEGA	SEGA
+gokuakudoumeidumpmatsumoto	1986	Sports	2	SEGA	SEGA
+goldenaxe	1989	Beat'em Up	1	SEGA	SEGA
+goldenaxewarrior	1991	Role-playing (RPG)	1	SEGA	SEGA
+golfamania	1990	Sports	4	Sanritsu	SEGA
+golvellius	1988				
+golvelliusvalleyofdoom	1988	Adventure	1	Compile	SEGA
+gprider	1993	Racing	2	SEGA	SEGA
+greatbaseball	1987	Sports	2	SEGA	SEGA
+greatbasketball	1987	Sports	2	SEGA	SEGA
+greatfootball	1987	Sports	2	SEGA	SEGA
+greatgolf	1987	Sports	4	SEGA	SEGA
+greatgolfrev0	1987				
+greatgolfrev1	1987				
+greaticehockey	1986	Sports	2	SEGA	SEGA
+greatsoccer	1985	Sports	2	SEGA	SEGA
+greattennis	1986	Sports	2	SEGA	SEGA
+greatvolleyball	1987	Sports	2	SEGA	SEGA
+gunsmoke	1990	Shoot'em Up	1	Capcom	Prosoft
+hajanofuuin	1987	Role-playing (RPG)	1	Kogado	SEGA
+hangon	1985	Racing	1	SEGA	SEGA
+hangonastrowarrior	1986	Racing	2	SEGA	SEGA
+hangonsafarihunt	1986	Racing	1	SEGA	SEGA
+heavyweightchamp	1991	Sports	2	Sims	SEGA
+heroesofthelance	1991	Role-playing (RPG)	1	Tiertex	U.S. Gold
+highschoolkimengumi	1986	Adventure	1	SEGA	SEGA
+hokutonoken	1986	Action	2	SEGA	SEGA
+homealone	1993	Platform	1	Probe Entertainment	SEGA
+hongkildong	1991	Shoot'em Up	1	Clover	Clover
+hook	1992	Platform	1	Sony	Core Design
+hoshiwosagashite	1988	Adventure	1	SEGA	SEGA
+hwaranguigeom		Platform	1	SEGA	SEGA
+impossiblemission	1986	Action	1	Epyx	U.S. Gold
+incrediblecrashdummies	1993	Action	2	Teeny Weeny Games	Flying Edge
+incrediblehulk	1994	Platform	1	Probe Software	U.S. Gold
+indianajonesandthelastcrusade	1990	Platform	1	Tiertex	U.S. Gold
+jamesbond007theduel	1993	Platform	1	The Kremlin	Domark
+jamesbusterdouglasknockoutboxing	1990	Sports	2	Sims	SEGA
+jamespond2codenamerobocod	1991	Platform	1	Millenium Interactive	U.S. Gold
+janggunuiadeul	1992	Action		Daou Infosys	Daou Infosys
+jangpung3	1994	Fighting	2	Open Corp.	Sieco
+jangpungii	1993			Open Corp.	Sieco
+joemontanafootball	1990	Sports	2	SEGA	SEGA
+jogosdeveraoii	1993	Sports	8	Probe Software	SEGA
+junglebook	1993	Platform	1	Syrox Developments	Virgin Interactive Entertainment
+jurassicpark	1993	Platform	1	SEGA	SEGA
+kenseiden	1988	Platform	1	SEGA	SEGA
+kenseidenrev1	1988				
+kingballoon		Shoot'em Up		Namco	Namco
+kingsquest	1989	Adventure	1	Sierra	Parker Brothers
+kingsquestquestforthecrown	1989	Adventure	1	Sierra	Parker Brothers
+klax	1991	Strategy	1	Tengen	Tengen
+knightmareii		Action	1	Konami	
+krustysfunhouse	1993	Puzzle	1	The Black Team	Flying Edge
+kujakuou	1988	Adventure	1	SEGA	SEGA
+kungfukid	1987	Action	2	SEGA	SEGA
+landofillusionstarringmickeymouse	1992	Platform	1	SEGA	SEGA
+laserghost	1991	Action	1	SEGA	SEGA
+legendofillusionstarringmickeymouse	1994	Action	1	Aspect	Tectoy
+lemmings	1992	Strategy	1	Probe Software	SEGA
+lemmings2thetribes	1994	Puzzle	1	Digital Developments	Psygnosis
+lethalweapon3	1992				
+lethalweapon3music	1992				
+lineoffire	1991	Shoot'em Up	1	Sanritsu Denki	SEGA
+lionking	1994	Platform	1	Syrox Developments	Virgin
+lordofsword	1988	Action	1	SEGA	SEGA
+lordofthesword	1988	Action	1	SEGA	SEGA
+lorettanoshouzousherlockholmes	1987	Adventure	1	Saga	SEGA
+luckydimecaperstarringdonaldduck	1991	Platform	1	SEGA	SEGA
+mahjongsengokujidai	1987	Board	1	Sanritsu Denki	SEGA
+mahjongsengokujidairev1	1987				
+makairetsuden	1987	Action	2	SEGA	SEGA
+maougolvellius	1988	Adventure	1	Compile	SEGA
+marblemadness	1992	Action	1	Tengen	Virgin
+marksmanshootingtrapshooting	1986	Compilation	2	SEGA	SEGA
+marksmanshootingtrapshootingsafarihunt	1986	Lightgun Shooter	2	SEGA	SEGA
+masterofdarkness	1992	Platform	1	Sims	SEGA
+mastersgolf	1987	Sports	4	SEGA	SEGA
+mastersofcombat	1993	Fighting	2	Sims	SEGA
+mazehunter3d	1987	Action	1	SEGA	SEGA
+mazewalker	1987	Action	1	SEGA	SEGA
+megumirescue	1988	Action	1	SEGA	SEGA
+mercs	1991	Shooter	1	Tiertex	SEGA
+michaeljacksonsmoonwalker	1990	Action	1	ARC	SEGA
+mickeysultimatechallenge	1994	Strategy	1	Master Designer Software	Tectoy
+mickmackastheglobalgladiatorsrev1	1992				
+micromachines	1993	Racing	2	Codemasters	Codemasters
+microxevious	1990	Action	1	Zemina	Namco
+miraclewarriorssealofthedarklord	1988	Role-playing (RPG)	1	Kogado	SEGA
+missiledefense3d	1987	Lightgun Shooter	1	SEGA	SEGA
+monicanocastelododragao	1991	Action	1	Westone	Tec Toy
+monopoly	1987	Board	10	Nexa	SEGA
+montezumasrevengefeaturingpanamajoe	1989	Action	1	Parker Brothers	Parker Brothers
+mopiranger		Action	1	Konami	Konami
+mortalkombat	1993	Action	2	Probe Software	Arena Entertainment
+mortalkombat3	1995	Fighting	2	Software Creations	Tec Toy
+mortalkombatii	1994	Action	2	Probe Software	Acclaim
+mspacman	1991	Action	2	Tengen	Tengen
+myhero	1986	Action	2	SEGA	SEGA
+nbajam	1994	Sports	2	Iguana Entertainment	
+nekkyuukoushien	1988	Sports	2	SEGA	SEGA
+nemesis	1987	Shoot'em Up		Konami	Zemina
+nemesis2	1987	Shoot'em Up		Konami	Zemina
+newboggleboggle2	1989	Action		MBitM	Zemina
+newzealandstory	1992	Action	1	Taito	Tecmagik
+ninja	1986	Shooter	2	SEGA	SEGA
+ninjagaiden	1992	Platform	1	Sims	SEGA
+olympicgold	1992	Sports	4	U.S. Gold	U.S. Gold
+opaopa	1987	Action	2	SEGA	SEGA
+operationwolf	1990	Action	1	Taito	SEGA
+ottifants	1993	Platform	1	Graftgold	SEGA
+outrun	1987	Racing	1	AM R&D Dept. #2	SEGA
+outrun3d	1989	Racing	1	SEGA	SEGA
+outruneuropa	1991	Racing	1	Probe Software	U.S. Gold
+pacmania	1991	Action	1	Tecmagik	Tecmagik
+paperboy	1990	Sports	1	Tiertex	U.S. Gold
+parlourgames	1987	Sports	4	Compile	SEGA
+patrileybasketball	1989	Sports	2	SEGA	SEGA
+penguinadventure		Action	1	Konami	Zemina
+penguinland	1987	Action	1	SEGA	SEGA
+pgatourgolf	1993	Sports	4	Polygames	Tengen
+phantasystar	1988	Action	1	SEGA	SEGA
+phantasystarrev3	1988				
+piguwang7hapjaemiissneungamemoeumjip	1995				
+pitfighter	1990	Fighting	2	The Kremlin	Domark
+pitpotastrowarriorrev1	1986				
+pooyan		Shooter		Konami	HiCom
+populous	1991	Strategy	1	Bullfrog	Tecmagik
+poseidonwars3d	1988	Simulation	1	SEGA	SEGA
+powerboggleboggle	1990	Action	1	Screen Software	YM Soft
+powerstrike	1988	Action	1	SEGA	SEGA
+powerstrikeii	1993	Shoot'em Up	1	Compile	SEGA
+ppanggongjang		Action		Konami	Konami
+predator2	1992	Shooter	1	Teeny Weeny Games	Arena Entertainment
+princeofpersia	1992	Action	1	Domark	Domark
+prowrestling	1986	Sports	2	SEGA	SEGA
+proyakyuuthepennantrace	1987	Sports		SEGA	SEGA
+psychicworld	1991	Action	1	SEGA	SEGA
+psychofox	1989	Platform	1	Tokai Engineering	SEGA
+puttputter	1992	Sports	2	Sims	SEGA
+puzzlegame	1990	Puzzle	1	Taito	Zemina
+quartet	1987	Action	2	SEGA	SEGA
+questfortheshavenyakstarringrenhoekstimpy	1993	Platform	1	Realtime Associates	Tectoy
+rainbowislands	1993	Action	1	Taito	SEGA
+rambofirstbloodpartii	1986	Shooter	2	SEGA	SEGA
+ramboiii	1988	Action	1	SEGA	SEGA
+rampage	1988	Action	2	SEGA	SEGA
+rampart	1991	Strategy	2	Punk Development	Tengen
+rastan	1988	Action	1	Taito	Taito
+rcgrandprix	1989	Racing	4	Absolute Entertainment	SEGA
+reggiejacksonbaseball	1988	Sports	2	SEGA	SEGA
+renegade	1993	Beat'em Up	2	Natsume	SEGA
+rescuemission	1987	Action	1	SEGA	SEGA
+roadfighter		Racing		Konami	Samsung
+roadrash	1993	Racing	2	Probe Software	U.S. Gold
+robocop3	1993	Platform	1	Eden Entertainment Software	Flying Edge
+robocopversustheterminator	1993	Platform	1	NMS Software	Virgin
+rocky	1987	Sports	2	SEGA	SEGA
+rtype	1988	Action	1	Compile	SEGA
+runningbattle	1991	Beat'em Up	1	Opera House	SEGA
+sagaia	1992	Shoot'em Up	1	Natsume	Taito
+sagakuibimil	1990	Shoot'em Up	2	Konami	Zemina
+samgukjiiiicheonhajaengpae	1994	Fighting	2	Open Corp.	Panda Software
+sapoxuleomestredokungfu	1995	Action	2	SEGA	Tec Toy
+sapoxulesoslagoapoluida	1995	Action	2	SEGA	Tec Toy
+sapoxulevsosinvasoresdobrejo	1995	Platform	1	Tokai Engineering	Tec Toy
+satellite7	1985	Shoot'em Up	2	SEGA	SEGA
+schtroumpfsautourdumondeles	1995	Platform	1	Virtual Studio	Infogrames
+scramblespirits	1988	Shoot'em Up	2	SEGA	SEGA
+sdi	1987	Action	1	SEGA	SEGA
+secretcommand	1986	Shooter	2	SEGA	SEGA
+segachess	1991	Board	2	Probe Software	SEGA
+segaworldtournamentgolf	1993	Sports	4	SEGA	SEGA
+seishunscandal	1986	Action	2	SEGA	SEGA
+seishyunscandal	1986				
+sensiblesoccer	1993	Sports	2	Eurocom	Sony Imagesoft
+shadowdancer		Action	1	SEGA	SEGA
+shadowdancerthesecretofshinobi	1991	Action	1	SEGA	SEGA
+shadowofthebeast	1991	Action	1	Tecmagik	Tecmagik
+shanghai	1988	Board	2	SEGA	SEGA
+shinobi	1987	Action	1	SEGA	SEGA
+shinobirev1	1987				
+shootinggallery	1987	Lightgun Shooter	1	SEGA	SEGA
+simpsonsthebartvsthespacemutants	1992	Platform	1	Arc Developments	Flying Edge
+simpsonsthebartvstheworld	1993	Platform	1	Arc Developments	Flying Edge
+sitiodopicapauamarelo	1997	Action	2	Tec Toy	Tec Toy
+skyfighter	1990	Shoot'em Up		Clover Soft	Clover Soft
+skyjaguar	1984	Shoot'em Up		Konami	Clover
+slapshot	1990	Sports	2	Sims	SEGA
+slapshotrev1	1990				
+smurfs	1994	Platform	1	Bit Managers	Infogrames
+solomonnokagioujorihitanonamida	1988	Strategy	1	Salio	Salio
+sonicblast	1997	Action	1	Aspect	Tectoy
+sonicchaos	1993	Platform	1	Aspect	SEGA
+sonicsedusoft		Educational	2	Tiertex	U.S. Gold
+sonicspinball	1994	Pinball	1	SEGA	SEGA
+sonicthehedgehog	1991	Action	1	Ancient	SEGA
+sonicthehedgehog2	1992	Action	1	Aspect	SEGA
+sonicthehedgehog2rev0	1992				
+spacegun	1992	Action	1	Cream	Taito
+spaceharrier	1986	Shooter	1	SEGA	SEGA
+spaceharrier3d	1988	Shooter	1	SEGA	SEGA
+specialcriminalinvestigation	1992	Racing	1	Taito	Taito
+speedball	1992	Sports	2	The Bitmap Brothers	Virgin
+speedball2	1992	Sports	2	The Bitmap Brothers	Virgin Games
+spellcaster	1989	Adventure	1	SEGA	SEGA
+spiderman	1990	Action	1	Technopop	SEGA
+spidermanreturnofthesinistersix	1992	Action	1	B.I.T.S.	Flying Edge
+sportspadfootball	1987	Sports	2	SEGA	SEGA
+sportspadsoccer	1987	Sports	2	SEGA	SEGA
+spyvsspy	1986	Strategy	2	SEGA	SEGA
+starwars	1993	Platform	1	Tiertex	U.S. Gold
+streetfighterii	1997	Fighting	2	Tec Toy	Tectoy
+streetmaster	1992	Fighting	2	Zemina	Zemina
+streetsofrage	1993	Beat'em Up	1	Ancient	SEGA
+streetsofrageii	1993	Action	1	Japan System House	SEGA
+strider	1991	Action	1	Tiertex	SEGA
+striderii	1992	Platform	1	Tiertex	U.S. Gold
+submarineattack	1990	Action	1	SEGA	SEGA
+suhojeonsa	1994				Open Corp
+sukebandekaiishoujotekkamendensetsu	1987	Action	1	SEGA	SEGA
+summergames	1988	Sports	4	ZAP	SEGA
+superarkanoid	1990	Puzzle	1	SEGA	SEGA
+superbasketball		Sports		SEGA	SEGA
+superbiomani	1992			Hello Soft	HiCom
+superboy4	1992	Action		Zemina	Zemina
+superboyi	1989			Zemina	Zemina
+superboyii	1989	Action		Zemina	Zemina
+superboyiii	1991	Action		Zemina	Zemina
+superbubblebobble	1989	Action	2	Zemina	Zemina
+supercolumnstetris	1990				
+superfutebolii	1996	Sports	2	SEGA	SEGA
+superkickoff	1991	Sports	2	Tiertex	U.S. Gold
+superman	1992				
+supermanthemanofsteel	1992	Platform	1	Graftgold	Virgin
+supermonacogp	1990	Racing	2	SEGA	SEGA
+superoffroad	1993	Racing	2	Graftgold	Virgin
+superracing	1988	Racing	1	SEGA	SEGA
+supersmashtv	1992	Shoot'em Up	2	Probe Software	Flying Edge
+superspaceinvaders	1991	Shooter	2	The Kremlin	Domark
+supertennis	1986	Sports	2	SEGA	SEGA
+supertetris		Puzzle	1		
+superwonderboymonsterworld	1988	Adventure	1	Shimada Kikaku	SEGA
+t2thearcadegame	1993	Lightgun Shooter	1	Probe Software	Arena Entertainment
+taitochasehq	1990	Racing	1	Taito	Taito
+tazinescapefrommars	1996	Action	1	Tectoy	Tec Toy
+tazmania	1992	Action	1	SEGA	SEGA
+tecmoworldcup93	1993	Sports	2	Sims	SEGA
+teddyboy	1985	Platform	2	SEGA	SEGA
+teddyboyblues	1985	Platform	2	SEGA	SEGA
+tennisace	1989	Sports	2	Sims	SEGA
+tensaibakabon	1988	Action	1	SEGA	SEGA
+terminator	1992	Platform	1	Probe Software	Virgin
+terminator2judgmentday	1993	Platform	1	Arc Developments	Flying Edge
+threedragonstory	1989	Action	1	Zemina	Zemina
+thunderblade	1988	Shoot'em Up	1	SEGA	SEGA
+timesoldiers	1989	Action	2	ADK	SEGA
+tomandjerrythemovie	1992	Platform	1	Sims	SEGA
+totoworld3	1993	Platform	1	Open Corp.	Daou Infosys
+transbot	1986	Action	2	SEGA	SEGA
+trivialpursuitgenusedition	1992	Strategy	4	Teque	Domark
+ttoriuimoheom	1986	Action	2	SEGA	SEGA
+turmadamonicaemoresgate	1993	Role-playing (RPG)	1	SEGA	Tec Toy
+ultimaiiirev20060513	2006				
+ultimaiv	1990				
+ultimaivquestoftheavatar	1990	Role-playing (RPG)	1	SEGA	SEGA
+ultimatesoccer	1993	Sports	2	Rage Software	SEGA
+vampire	1992	Platform	1	Sims	SEGA
+vigilante	1988	Action	1	SEGA	SEGA
+virtuafighteranimation	1996	Fighting	2	Aspect	Tec Toy
+walterpaytonfootball	1989	Sports	2	SEGA	SEGA
+wanted	1989	Action	1	Sanritsu Denki	SEGA
+whereintheworldiscarmensandiego	1989	Adventure	1	Venture Technologies	Parker Brothers
+wimbledon	1992	Sports	2	Sims	SEGA
+wimbledonii	1993	Sports	2	Sims	SEGA
+winterolympics	1993	Sports	4	Tiertex	U.S. Gold
+wolfchild	1993	Action	1	Core Design	Virgin
+wonderboy	1987	Platform	2	SEGA	SEGA
+wonderboyiii	1989				
+wonderboyiiithedragonstrap	1989	Platform	1	Westone	SEGA
+wonderboyinmonsterland	1988	Platform	1	SEGA	SEGA
+wonderboyinmonsterlandrev1	1988				
+wonderboyinmonsterworld	1993	Adventure	1	Shimada Kikaku	SEGA
+wonderboyrev1	1986				
+wonsiin	1991			Zemina	Zemina
+woodypopshinjinruinoblockkuzushi	1987	Puzzle	1	SEGA	SEGA
+worldclassleaderboard	1991	Sports	4	Tiertex	U.S. Gold
+worldcupitalia90	1990	Sports	2	SEGA	SEGA
+worldcupusa94	1994	Sports	2	Tiertex	U.S. Gold
+worldgames	1989	Sports	4	SEGA	SEGA
+worldgrandprix	1986	Simulation	1	SEGA	SEGA
+worldsoccer	1987	Sports	2	SEGA	SEGA
+wwfwrestlemaniasteelcagechallenge	1993	Sports	2	Teeny Weeny Games	Flying Edge
+xenon2megablast	1992	Shoot'em Up	1	Data Design	Image Works
+xmenmojoworld	1996	Platform	1	SEGA	Tec Toy
+xyzolog				Compile	
+ys	1988	Role-playing (RPG)	1	SEGA	SEGA
+ysancientysvanishedomenrev1	1988				
+ysthevanishedomens	1988	Role-playing (RPG)	1	SEGA	SEGA
+yuyryeonguijip		Action	2	SEGA	SEGA
+zaxxon3d	1987	Shoot'em Up	1	SEGA	SEGA
+zillion	1987	Action	1	SEGA	SEGA
+zillioniithetriformation	1987	Platform	1	SEGA	SEGA
+zillionrev1	1987				
+zoolninjaofthenthdimension	1993	Platform	1	Gremlin Interactive	Gremlin Interactive

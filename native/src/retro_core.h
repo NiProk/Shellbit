@@ -16,6 +16,7 @@
 #include <godot_cpp/variant/packed_vector2_array.hpp>
 
 #include <cstdint>
+#include <map>
 #include <string>
 #include <vector>
 
@@ -73,6 +74,16 @@ public:
 	PackedByteArray save_state();
 	bool load_state(const PackedByteArray &data);
 
+	// Внутриигровые сохранения (батарейка картриджа, карта памяти PS1).
+	// Загружаются сами в load_game(), записываются сами в unload().
+	// save_sram() можно вызвать и вручную — «на всякий случай».
+	bool save_sram();
+
+	// Настройки ядра (core options). Ядро объявляет их и значения по умолчанию,
+	// а фронтенд может поменять: set_option("pcsx_rearmed_memcard2", "enabled").
+	void set_option(const String &key, const String &value);
+	Dictionary get_options() const;
+
 protected:
 	static void _bind_methods();
 
@@ -96,6 +107,8 @@ private:
 		size_t (*serialize_size)();
 		bool (*serialize)(void *, size_t);
 		bool (*unserialize)(const void *, size_t);
+		void *(*get_memory_data)(unsigned);
+		size_t (*get_memory_size)(unsigned);
 	};
 
 	// libretro вызывает НАШИ функции (колбэки), когда ему что-то нужно:
@@ -114,6 +127,8 @@ private:
 	bool on_environment(unsigned cmd, void *data);
 	void on_video(const void *data, unsigned width, unsigned height, size_t pitch);
 	void push_audio(const int16_t *data, size_t frames);
+	void remember_default(const char *key, const char *value);
+	void load_sram();
 
 	DynamicLibrary library;
 	Api api = {};
@@ -123,6 +138,11 @@ private:
 	std::string system_dir;
 	std::string save_dir;
 	std::string game_path;
+	String sram_path; // <папка сохранений>/<имя игры>.srm
+	// Настройки ядра: ключ → значение. std::map не перемещает строки
+	// при добавлении новых, поэтому указатель value.c_str(), отданный ядру,
+	// остаётся рабочим.
+	std::map<std::string, std::string> options;
 	std::vector<uint8_t> game_data; // ядру нужен файл игры в памяти, пока игра идёт
 
 	retro_pixel_format pixel_format = RETRO_PIXEL_FORMAT_0RGB1555;

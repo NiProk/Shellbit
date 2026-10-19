@@ -11,7 +11,9 @@ extends Node
 const SCENES := {
 	"home": "res://scenes/home/Home.tscn",
 	"library": "res://scenes/library/Library.tscn",
+	"details": "res://scenes/details/GameDetails.tscn",
 	"player": "res://scenes/player/Player.tscn",
+	"settings": "res://scenes/settings/SettingsScreen.tscn",
 }
 
 ## Параметры текущего экрана. Экран читает их в своём _ready():

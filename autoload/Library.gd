@@ -41,6 +41,9 @@ var groups: Array[Dictionary] = []  # все игры (группы файлов
 func _ready() -> void:
 	_load()
 	_rebuild_groups()
+	# Описания версий («США · проверенная») зависят от языка —
+	# при смене языка собираем группы заново.
+	Lang.language_changed.connect(_rebuild_groups)
 	# Если папки уже выбраны — проверяем, не появились ли новые игры.
 	if not Settings.get_rom_folders().is_empty():
 		scan()
@@ -140,6 +143,14 @@ func groups_for_system(system_id: String) -> Array:
 	return result
 
 
+## Найти игру (группу) по ключу, например "nes_battletoads". {} — если нет.
+func find_group(key: String) -> Dictionary:
+	for group in groups:
+		if group["key"] == key:
+			return group
+	return {}
+
+
 ## Игры, в которые играли, — самые свежие первыми.
 func get_recent(limit: int) -> Array:
 	var result := groups.filter(func(g: Dictionary) -> bool: return g["last_played"] > 0)
@@ -200,39 +211,30 @@ func toggle_favorite(group: Dictionary) -> void:
 
 # --- Тексты для интерфейса -------------------------------------------------
 
-## 1 игра, 2 игры, 5 игр — русские окончания.
+## «1 игра, 2 игры, 5 игр» — с правильным окончанием на любом языке.
 func count_text(n: int) -> String:
-	return "%d %s" % [n, plural(n, "игра", "игры", "игр")]
-
-
-## Выбрать форму слова для числа: plural(3, "версия", "версии", "версий").
-func plural(n: int, one: String, few: String, many: String) -> String:
-	if n % 10 == 1 and n % 100 != 11:
-		return one
-	if n % 10 in [2, 3, 4] and not (n % 100 in [12, 13, 14]):
-		return few
-	return many
+	return Lang.n("%d игра|%d игры|%d игр", n)
 
 
 func playtime_text(seconds: int) -> String:
 	if seconds < 60:
-		return "меньше минуты"
+		return tr("меньше минуты")
 	var hours := seconds / 3600
 	var minutes := (seconds % 3600) / 60
 	if hours == 0:
-		return "%d мин" % minutes
-	return "%d ч %d мин" % [hours, minutes]
+		return tr("%d мин") % minutes
+	return tr("%d ч %d мин") % [hours, minutes]
 
 
 func last_played_text(unix_time: int) -> String:
 	if unix_time <= 0:
-		return "ещё не запускалась"
+		return tr("ещё не запускалась")
 	var days := int(Time.get_unix_time_from_system() - unix_time) / 86400
 	if days == 0:
-		return "сегодня"
+		return tr("сегодня")
 	if days == 1:
-		return "вчера"
-	return "%d дн. назад" % days
+		return tr("вчера")
+	return tr("%d дн. назад") % days
 
 
 # --- Сохранение на диск ----------------------------------------------------

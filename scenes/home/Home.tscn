@@ -93,10 +93,10 @@ vertical_scroll_mode = 0
 [node name="Pad" type="MarginContainer" parent="Margin/VBox/RecentScroll" unique_id=1743073873]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 26
 
 [node name="RecentRow" type="HBoxContainer" parent="Margin/VBox/RecentScroll/Pad" unique_id=1239908245]
 unique_name_in_owner = true
@@ -120,10 +120,10 @@ vertical_scroll_mode = 0
 [node name="Pad" type="MarginContainer" parent="Margin/VBox/SystemsScroll" unique_id=2050923902]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 26
 
 [node name="SystemsRow" type="HBoxContainer" parent="Margin/VBox/SystemsScroll/Pad" unique_id=2077703171]
 unique_name_in_owner = true

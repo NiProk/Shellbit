@@ -34,6 +34,11 @@ func _ready() -> void:
 	# а через XInput вообще не передаёт программам — на неё надежды нет.)
 	_add_action(&"game_menu", JOY_BUTTON_RIGHT_STICK, KEY_ESCAPE)
 	_add_joy_button(&"game_menu", JOY_BUTTON_GUIDE)
+	# Скриншот: F12 или кнопка Share («Поделиться»). В Godot она называется
+	# JOY_BUTTON_MISC1: это Share на Xbox Series, Create на DualSense (PS5),
+	# Capture на Switch Pro. У старых геймпадов её нет — для них есть пункт
+	# «Скриншот» в меню паузы.
+	_add_action(&"screenshot", JOY_BUTTON_MISC1, KEY_F12)
 
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	if not Input.get_connected_joypads().is_empty():

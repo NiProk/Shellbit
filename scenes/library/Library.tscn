@@ -76,10 +76,10 @@ vertical_scroll_mode = 3
 [node name="Pad" type="MarginContainer" parent="Margin/VBox/Body/Scroll"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 14
-theme_override_constants/margin_top = 14
-theme_override_constants/margin_right = 14
-theme_override_constants/margin_bottom = 14
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 26
 
 [node name="Grid" type="GridContainer" parent="Margin/VBox/Body/Scroll/Pad"]
 unique_name_in_owner = true

@@ -1,0 +1,278 @@
+ru	en	zh	ja
+# Таблица переводов Shellbit. Первый столбец — русский текст (ключ), остальные — переводы.
+# \n — перенос строки. Знак | разделяет формы слова для чисел: «%d игра|%d игры|%d игр».
+# Пустая клетка — перевода нет (покажется английский текст). Строки с # — комментарии.
+Как в системе	System default	跟随系统	システムに合わせる
+%d игра|%d игры|%d игр	%d game|%d games	%d 款游戏	ゲーム %d 本
+меньше минуты	less than a minute	不到 1 分钟	1分未満
+%d мин	%d min	%d 分钟	%d分
+%d ч %d мин	%d h %d min	%d 小时 %d 分钟	%d時間%d分
+ещё не запускалась	never played	尚未游玩	未プレイ
+сегодня	today	今天	今日
+вчера	yesterday	昨天	昨日
+%d дн. назад	%d days ago	%d 天前	%d日前
+Игрок %d	Player %d	玩家 %d	プレイヤー %d
+Геймпад подключён	Controller connected	手柄已连接	コントローラーが接続されました
+Геймпад	Controller	手柄	コントローラー
+Геймпад отключён	Controller disconnected	手柄已断开	コントローラーが切断されました
+Выбрать свою обложку…	Choose your own cover…	选择自定义封面…	自分のカバーを選ぶ…
+Убрать свою обложку	Remove custom cover	移除自定义封面	自分のカバーを外す
+Отмена	Cancel	取消	キャンセル
+Картинка для обложки	Cover image	封面图片	カバー画像
+Картинки	Images	图片	画像
+Своя обложка убрана	Custom cover removed	已移除自定义封面	自分のカバーを外しました
+Обложка обновлена	Cover updated	封面已更新	カバーを更新しました
+Не получилось открыть картинку	Couldn't open the image	无法打开图片	画像を開けませんでした
+Запуск: %s · %s	Played: %s · %s	上次游玩：%s · %s	最終プレイ: %s · %s
+Место выхода	Where you left off	上次退出处	中断した場所
+Слот %s	Slot %s	存档位 %s	スロット %s
+пусто	empty	空	空き
+сегодня, %s	today, %s	今天 %s	今日 %s
+вчера, %s	yesterday, %s	昨天 %s	昨日 %s
+Выбрать	Select	选择	決定
+Избранное	Favorite	收藏	お気に入り
+Версия	Version	版本	バージョン
+Обложка	Cover	封面	カバー
+Назад	Back	返回	戻る
+Открыть	Open	打开	開く
+Обновить список	Refresh list	刷新列表	リストを更新
+Настройки	Settings	设置	設定
+Другая приставка	Other console	切换主机	他の機種
+Загрузить	Load	读取	ロード
+Сохранить сюда	Save here	存到这里	ここにセーブ
+В игру	Back to game	返回游戏	ゲームに戻る
+Изменить	Change	更改	変更
+%s в игре	%s played	已游玩 %s	プレイ時間 %s
+Версия: %s	Version: %s	版本：%s	バージョン: %s
+(всего %d)	(%d total)	（共 %d 个）	（全 %d 種）
+★ В избранном	★ Favorited	★ 已收藏	★ お気に入り済み
+В избранное	Add to favorites	加入收藏	お気に入りに追加
+Продолжить	Continue	继续	続ける
+Играть	Play	开始游戏	プレイ
+Слот %s пуст — сохраниться можно в меню паузы	Slot %s is empty — you can save from the pause menu	存档位 %s 为空——可在暂停菜单中存档	スロット %s は空です — セーブはポーズメニューからできます
+Список игр обновлён: %s	Game list updated: %s	游戏列表已刷新：%s	ゲームリストを更新しました: %s
+Найдено: %s	Found: %s	已找到：%s	見つかりました: %s
+Неизвестная приставка	Unknown console	未知主机	不明な機種
+Время в игре: %s	Play time: %s	游戏时长：%s	プレイ時間: %s
+Последний запуск: %s	Last played: %s	上次游玩：%s	最終プレイ: %s
+%d версия|%d версии|%d версий	%d version|%d versions	%d 个版本	バージョン %d 種
+…и ещё %d	…and %d more	……还有 %d 个	…ほか %d 件
+У этой игры только одна версия	This game has only one version	此游戏只有一个版本	このゲームのバージョンは1つだけです
+Не передана игра.	No game was passed.	未指定游戏。	ゲームが指定されていません。
+C++-модуль shellbit_core не собран. Запустите native/build.bat и перезапустите Godot.	The C++ module shellbit_core is not built. Run native/build.bat and restart Godot.	C++ 模块 shellbit_core 尚未编译。请运行 native/build.bat 并重启 Godot。	C++ モジュール shellbit_core がビルドされていません。native/build.bat を実行して Godot を再起動してください。
+Нет ядра %s.\nСкачайте его и положите в папку ядер:\n%s	Core %s is missing.\nDownload it and put it in the cores folder:\n%s	缺少核心 %s。\n请下载并放入核心文件夹：\n%s	コア %s がありません。\nダウンロードしてコアフォルダに入れてください:\n%s
+Ядро %s не загрузилось (подробности — во вкладке Output).	Core %s failed to load (see the Output tab for details).	核心 %s 加载失败（详情见 Output 选项卡）。	コア %s を読み込めませんでした（詳細は Output タブ）。
+Ядро не смогло открыть файл игры:\n%s	The core couldn't open the game file:\n%s	核心无法打开游戏文件：\n%s	コアがゲームファイルを開けませんでした:\n%s
+Esc — меню	Esc — menu	Esc — 菜单	Esc — メニュー
+Правый стик — меню	Right stick — menu	按下右摇杆 — 菜单	右スティック押し込み — メニュー
+Продолжаем с места выхода	Resuming where you left off	从上次退出处继续	中断した場所から再開
+Загружен слот %s	Loaded slot %s	已读取存档位 %s	スロット %s をロードしました
+Сохранено в слот %s	Saved to slot %s	已存到存档位 %s	スロット %s にセーブしました
+Это ядро не умеет сохранять состояние	This core can't save states	此核心不支持即时存档	このコアはステートセーブに対応していません
+Не удалось загрузить слот %s	Couldn't load slot %s	无法读取存档位 %s	スロット %s をロードできませんでした
+Папки с играми	Game folders	游戏文件夹	ゲームフォルダ
+Где Shellbit ищет игры. Файлы на диске он не меняет.	Where Shellbit looks for games. It never changes files on disk.	Shellbit 在这些文件夹中查找游戏，不会修改磁盘上的文件。	Shellbit がゲームを探す場所です。ディスク上のファイルは変更しません。
+Управление	Controls	操作	操作
+Геймпады, клавиатура и кнопки меню.	Controllers, keyboard and menu buttons.	手柄、键盘和菜单按键。	コントローラー、キーボード、メニューボタン。
+Видео	Video	视频	映像
+Как выглядит картинка во время игры.	How the picture looks while playing.	游戏时的画面效果。	プレイ中の画面の見え方。
+Звук	Sound	声音	サウンド
+Громкость приложения и игр.	Volume of the app and games.	应用和游戏的音量。	アプリとゲームの音量。
+Язык	Language	语言 / Language	言語 / Language
+Язык интерфейса Shellbit.	Shellbit's interface language.	Shellbit 的界面语言。	Shellbit の表示言語。
+Ядра и BIOS	Cores & BIOS	核心与 BIOS	コアと BIOS
+Ядро — это эмулятор одной приставки. Здесь видно, каких ядер не хватает.	A core is an emulator for one console. Here you can see which cores are missing.	核心就是某一台主机的模拟器。这里可以看到缺少哪些核心。	コアは1機種分のエミュレーターです。足りないコアがここで分かります。
+О программе	About	关于	このアプリについて
+Версия и полезные папки.	Version and useful folders.	版本和常用文件夹。	バージョンと便利なフォルダ。
++ Добавить папку…	+ Add folder…	+ 添加文件夹…	+ フォルダを追加…
+Выберите папку с играми. Shellbit найдёт игры и во вложенных папках.	Pick a folder with games. Shellbit will also find games in its subfolders.	选择存放游戏的文件夹。Shellbit 也会在子文件夹中查找游戏。	ゲームが入ったフォルダを選んでください。サブフォルダ内のゲームも見つけます。
+Обновить список игр	Refresh game list	刷新游戏列表	ゲームリストを更新
+Заново просмотреть все папки — если вы добавили или удалили игры.	Scan all folders again — if you added or removed games.	重新扫描所有文件夹——在添加或删除游戏后使用。	すべてのフォルダを再スキャンします（ゲームを追加・削除したとき）。
+Папок пока нет	No folders yet	暂无文件夹	フォルダはまだありません
+Добавьте папку, в которой лежат ваши игры.	Add a folder where your games are.	请添加存放游戏的文件夹。	ゲームが入っているフォルダを追加してください。
+Убрать	Remove	移除	外す
+A — убрать папку из списка. Сами игры на диске останутся.	A — remove the folder from the list. The games stay on disk.	A — 从列表中移除文件夹。游戏文件仍保留在磁盘上。	A — リストからフォルダを外します。ゲーム自体はディスクに残ります。
+Нажмите ещё раз	Press again	再按一次	もう一度押す
+Папка убрана · %s	Folder removed · %s	已移除文件夹 · %s	フォルダを外しました · %s
+Геймпад Xbox	Xbox controller	Xbox 手柄	Xbox コントローラー
+Геймпад PlayStation	PlayStation controller	PlayStation 手柄	PlayStation コントローラー
+Клавиатура	Keyboard	键盘	キーボード
+Сейчас управление	Current input	当前输入方式	現在の入力
+Shellbit сам замечает, чем вы пользуетесь, и меняет значки в подсказках внизу.	Shellbit notices what you're using and switches the button icons in the hints below.	Shellbit 会自动识别你在使用什么，并切换下方提示中的按键图标。	Shellbit は使っている入力機器を自動で判別し、下のヒントのボタン表示を切り替えます。
+Игрок %d: %s	Player %d: %s	玩家 %d：%s	プレイヤー %d: %s
+Подключённые геймпады	Connected controllers	已连接的手柄	接続中のコントローラー
+нет	none	无	なし
+Подключите геймпад — он появится здесь.	Connect a controller — it will show up here.	连接手柄后会显示在这里。	コントローラーを接続するとここに表示されます。
+Меню паузы в игре	In-game pause menu	游戏内暂停菜单	ゲーム中のポーズメニュー
+Нажмите правый стик, Select и Start вместе или Esc на клавиатуре.	Press the right stick, Select + Start together, or Esc on the keyboard.	按下右摇杆、同时按 Select 和 Start，或按键盘上的 Esc。	右スティック押し込み、Select と Start の同時押し、またはキーボードの Esc。
+Кнопки в игре	In-game buttons	游戏内按键	ゲーム内のボタン
+По положению	By position	按位置	位置で対応
+Нижняя кнопка геймпада (A на Xbox) — это нижняя кнопка приставки (B на SNES). Полная таблица — в README.	The bottom face button (A on Xbox) is the console's bottom button (B on SNES). The full table is in the README.	手柄下方的按键（Xbox 的 A）对应主机下方的按键（SNES 的 B）。完整对照表见 README。	下のボタン（Xbox の A）は本体の下のボタン（SNES の B）に対応します。一覧は README にあります。
+Переназначение кнопок	Button remapping	按键重新映射	ボタン割り当て
+Скоро	Coming soon	即将推出	近日対応
+Свою раскладку кнопок можно будет задать в следующих версиях.	Custom button layouts will come in a future version.	自定义按键布局将在后续版本中提供。	ボタン配置の変更は今後のバージョンで対応予定です。
+Фильтр изображения	Image filter	画面滤镜	画面フィルター
+Чёткие пиксели	Sharp pixels	清晰像素	くっきりピクセル
+Каждый пиксель приставки — ровный квадрат. Так игры выглядят на современных экранах.	Every console pixel is a crisp square. This is how games look on modern screens.	每个像素都是清晰的方块，这就是游戏在现代屏幕上的样子。	1ピクセルがくっきりした正方形になります。現代の画面での見た目です。
+Сглаживание	Smooth	平滑	なめらか
+Сглаживает края пикселей. Картинка мягче, но немного размыта.	Smooths pixel edges. A softer picture, but a little blurry.	平滑像素边缘。画面更柔和，但略显模糊。	ピクセルの輪郭をなめらかにします。柔らかくなる反面、少しぼやけます。
+ЭЛТ-телевизор	CRT TV	CRT 电视	ブラウン管テレビ
+Добавляет полосы развёртки и лёгкое скругление, как на старом телевизоре. Шейдер crt.gdshader.	Adds scanlines and a slight curve, like an old TV. Shader crt.gdshader.	添加扫描线和轻微弧度，像老式电视一样。着色器 crt.gdshader。	走査線とわずかな丸みを加え、昔のテレビのようにします。シェーダー crt.gdshader。
+Сетка LCD	LCD grid	LCD 网格	液晶グリッド
+Тонкая сетка между пикселями, как на экране Game Boy. Хорошо подходит портативным приставкам. Шейдер lcd.gdshader.	A thin grid between pixels, like a Game Boy screen. Great for handhelds. Shader lcd.gdshader.	像 Game Boy 屏幕那样在像素之间加上细网格，很适合掌机。着色器 lcd.gdshader。	ゲームボーイの画面のように、ピクセルの間に細い格子を入れます。携帯機に最適です。シェーダー lcd.gdshader。
+Масштаб	Scale	缩放	拡大方法
+Во весь экран	Fill screen	填满屏幕	画面いっぱい
+Картинка занимает всю высоту экрана. Пиксели могут получиться чуть разного размера.	The picture fills the screen height. Pixels may end up slightly different sizes.	画面占满屏幕高度，像素大小可能略有不同。	画面の高さいっぱいに表示します。ピクセルの大きさが少し不揃いになることがあります。
+Целые пиксели	Integer scaling	整数倍缩放	整数倍
+Каждый пиксель увеличен ровно в 2, 3, 4… раза — все одинаковые и ровные. Картинка может быть чуть меньше экрана.	Each pixel is scaled exactly 2×, 3×, 4×… — all the same size. The picture may be a little smaller than the screen.	每个像素都按整数倍（2、3、4……）放大，大小完全一致。画面可能比屏幕略小。	各ピクセルをちょうど2倍、3倍、4倍…に拡大し、すべて同じ大きさになります。画面より少し小さくなることがあります。
+Пропорции	Aspect ratio	画面比例	縦横比
+Как у приставки	Console's own	与主机一致	本体どおり
+Пропорции, которые сообщает эмулятор, — как картинка выглядела на телевизоре (обычно 4:3).	The ratio the emulator reports — how the picture looked on a TV (usually 4:3).	模拟器报告的比例，即画面在电视上的样子（通常为 4:3）。	エミュレーターが報告する比率で、テレビでの見た目と同じです（通常 4:3）。
+Квадратные пиксели	Square pixels	方形像素	正方形ピクセル
+Каждый пиксель квадратный. Картинка может стать чуть уже или шире, чем на телевизоре.	Every pixel is square. The picture may be slightly narrower or wider than on a TV.	每个像素都是正方形。画面可能比电视上略窄或略宽。	すべてのピクセルが正方形になります。テレビより少し細く、または広くなることがあります。
+Растянуть на экран	Stretch to screen	拉伸至全屏	画面に引き伸ばす
+Картинка растягивается на весь экран. Без полей, но фигуры становятся шире.	The picture is stretched across the whole screen. No borders, but shapes get wider.	画面拉伸铺满整个屏幕。没有黑边，但图形会变宽。	画面全体に引き伸ばします。余白はなくなりますが、形が横に広がります。
+Поля по бокам	Side borders	两侧边框	左右の余白
+Чёрные	Black	黑色	黒
+Пустое место по бокам от картинки — чёрное.	The empty space beside the picture is black.	画面两侧的空白为黑色。	画面の左右の空きは黒になります。
+Размытый кадр	Blurred frame	模糊画面	ぼかした画面
+По бокам — та же игра, но сильно размытая и затемнённая. Шейдер blur.gdshader.	The sides show the same game, heavily blurred and darkened. Shader blur.gdshader.	两侧显示同一游戏画面，经过强烈模糊和压暗。着色器 blur.gdshader。	左右に同じゲーム画面を、強くぼかして暗くして表示します。シェーダー blur.gdshader。
+Вертикальная синхронизация	V-Sync	垂直同步	垂直同期
+Кадры выводятся в такт монитору — картинка не «рвётся» при движении. Выключайте, только если игра идёт рывками.	Frames are shown in step with the monitor, so the picture doesn't tear in motion. Turn it off only if the game stutters.	让画面与显示器同步刷新，运动时不会撕裂。只有在游戏卡顿时才关闭。	モニターに合わせてフレームを表示し、動く場面で画面が裂けないようにします。ゲームがカクつくときだけオフにしてください。
+Без звука	Muted	静音	ミュート
+Громкость	Volume	音量	音量
+Общая громкость Shellbit и игр. ◀ ▶ — тише или громче.	Overall volume of Shellbit and games. ◀ ▶ — quieter or louder.	Shellbit 和游戏的总音量。◀ ▶ 调小或调大。	Shellbit とゲーム全体の音量です。◀ ▶ で小さく・大きく。
+Язык интерфейса	Interface language	界面语言	表示言語
+Описания игр берутся из файлов рядом с играми — в них можно написать текст на каждом языке (см. README). «Как в системе» — язык Windows.	Game descriptions come from files next to the games — you can write text for each language there (see the README). “System default” uses the Windows language.	游戏简介来自游戏旁边的文件，可以在其中为每种语言分别撰写（见 README）。“跟随系统”即使用 Windows 的语言。	ゲームの説明はゲームの隣にあるファイルから読み込まれ、言語ごとに書けます（README を参照）。「システムに合わせる」は Windows の言語を使います。
+Открыть папку ядер	Open cores folder	打开核心文件夹	コアフォルダを開く
+Сюда кладут файлы ядер (.dll):\n	Put core files (.dll) here:\n	核心文件（.dll）放在这里：\n	コアファイル（.dll）はここに置きます:\n
+Открыть папку BIOS	Open BIOS folder	打开 BIOS 文件夹	BIOS フォルダを開く
+Сюда кладут файлы BIOS:\n	Put BIOS files here:\n	BIOS 文件放在这里：\n	BIOS ファイルはここに置きます:\n
+Ядро %s — %s.	Core %s — %s.	核心 %s：%s。	コア %s — %s。
+найдено	found	已找到	あり
+не найдено	not found	未找到	なし
+найден	found	已找到	あり
+не найден	not found	未找到	なし
+Готово	Ready	就绪	準備完了
+Нет ядра	No core	缺少核心	コアなし
+Без BIOS	No BIOS	无 BIOS	BIOS なし
+этап 1	stage 1	第 1 阶段	ステージ 1
+Фронтенд для ретро-эмуляторов на Godot. Маскот — рак-отшельник Пип.	A retro emulator frontend made with Godot. Mascot: Pip the hermit crab.	基于 Godot 的复古模拟器前端。吉祥物是寄居蟹皮普。	Godot で作ったレトロエミュレーターのフロントエンド。マスコットはヤドカリのピップ。
+Движок	Engine	引擎	エンジン
+Сделано на Godot Engine.	Made with Godot Engine.	使用 Godot Engine 制作。	Godot Engine で作られています。
+Игр в библиотеке	Games in library	游戏库中的游戏	ライブラリのゲーム数
+Приставок с играми: %d.	Consoles with games: %d.	有游戏的主机：%d 台。	ゲームのある機種: %d。
+Папка с данными	Data folder	数据文件夹	データフォルダ
+Настройки, сохранения, обложки и ядра:\n	Settings, saves, covers and cores:\n	设置、存档、封面和核心：\n	設定・セーブ・カバー・コア:\n
+Экшен	Action	动作	アクション
+Спорт	Sports	体育	スポーツ
+Платформер	Platformer	平台跳跃	プラットフォーマー
+Ролевая игра	Role-playing	角色扮演	RPG
+Приключения	Adventure	冒险	アドベンチャー
+Гонки	Racing	竞速	レース
+Стратегия	Strategy	策略	ストラテジー
+Головоломка	Puzzle	益智	パズル
+Симулятор	Simulation	模拟	シミュレーション
+Файтинг	Fighting	格斗	格闘
+Шутер	Shooter	射击	シューティング
+Настольная игра	Board game	桌游	ボードゲーム
+Азартная игра	Gambling	博彩	ギャンブル
+Скролл-шутер	Shoot 'em up	清版射击	シューティング（STG）
+Beat 'em up	Beat 'em up	清版动作	ベルトスクロールアクション
+Сборник	Compilation	合集	オムニバス
+Охота и рыбалка	Hunting & fishing	狩猎与钓鱼	狩猟・釣り
+Викторина	Quiz	问答	クイズ
+Карточная игра	Card game	卡牌	カードゲーム
+Обучающая	Educational	教育	学習
+Маджонг	Mahjong	麻将	麻雀
+Пинбол	Pinball	弹珠台	ピンボール
+Музыкальная	Music	音乐	音楽
+Баскетбол	Basketball	篮球	バスケットボール
+Танцевальная	Dance	舞蹈	ダンス
+Футбол	Football	足球	サッカー
+Рестлинг	Wrestling	摔角	プロレス
+Тир	Light gun	光枪射击	ガンシューティング
+Бокс	Boxing	拳击	ボクシング
+Теннис	Tennis	网球	テニス
+Мини-игры	Mini-games	小游戏	ミニゲーム
+Разное	Misc	其他	その他
+Музыка и танцы	Music & dance	音乐与舞蹈	音楽・ダンス
+Спорт с животными	Animal sports	动物运动	動物スポーツ
+Казуальная	Casual	休闲	カジュアル
+1 игрок	1 player	1 名玩家	1人
+1–%d игрок|1–%d игрока|1–%d игроков	1–%d players|1–%d players	1–%d 名玩家	1～%d人
+США	USA	美国	アメリカ
+Европа	Europe	欧洲	ヨーロッパ
+Япония	Japan	日本	日本
+Весь мир	World	全球	全世界
+США и Европа	USA & Europe	美国和欧洲	アメリカ・ヨーロッパ
+США и Япония	USA & Japan	美国和日本	アメリカ・日本
+Россия	Russia	俄罗斯	ロシア
+Корея	Korea	韩国	韓国
+Франция	France	法国	フランス
+Германия	Germany	德国	ドイツ
+Испания	Spain	西班牙	スペイン
+Италия	Italy	意大利	イタリア
+Австралия	Australia	澳大利亚	オーストラリア
+Бразилия	Brazil	巴西	ブラジル
+Китай	China	中国	中国
+%s и %s	%s & %s	%s和%s	%s・%s
+все диски	all discs	全部光盘	全ディスク
+без пометок	no tags	无标记	タグなし
+проверенная	verified	已验证	検証済み
+перевод %s	%s translation	%s 翻译	%s 翻訳
+повреждённая	bad dump	损坏	破損
+с лишними данными	overdump	含多余数据	余分なデータあり
+альтернативная	alternate	替代版	別バージョン
+хак	hack	修改版	改造版
+с трейнером	with trainer	带修改器	トレーナー付き
+пиратская	pirate	盗版	海賊版
+исправленная	fixed	修正版	修正版
+копия файла	file copy	文件副本	ファイルのコピー
+диск %s	disc %s	光盘 %s	ディスク %s
+русский перевод	Russian translation	俄语翻译	ロシア語翻訳
+прототип	prototype	原型	プロトタイプ
+бета/демо	beta/demo	测试版/体验版	ベータ／体験版
+ревизия %s	revision %s	修订 %s	リビジョン %s
+0 игр	0 games	0 款游戏	ゲーム 0 本
+Название игры	Game title	游戏名称	ゲーム名
+Запуск: вчера	Played: yesterday	上次游玩：昨天	最終プレイ: 昨日
+Слот 1	Slot 1	存档位 1	スロット 1
+Название	Title	名称	タイトル
+Приставка	Console	主机	機種
+Год · Жанр · Игроки	Year · Genre · Players	年份 · 类型 · 玩家	年 · ジャンル · 人数
+Описание	Description	简介	説明
+▶  Играть	▶  Play	▶  开始游戏	▶  プレイ
+Другая версия	Other version	其他版本	別バージョン
+Обложка…	Cover…	封面…	カバー…
+Сохранения	Saves	存档	セーブ
++ Папка с играми	+ Game folder	+ 游戏文件夹	+ ゲームフォルダ
+Продолжить играть	Continue playing	继续游戏	続きから遊ぶ
+Приставки	Consoles	主机	機種
+Время в игре: —	Play time: —	游戏时长：—	プレイ時間: —
+Версии	Versions	版本	バージョン
+Пауза	Paused	暂停	ポーズ
+Начать заново	Restart	重新开始	最初から
+Выйти в библиотеку	Exit to library	返回游戏库	ライブラリに戻る
+Не удалось запустить игру	Couldn't start the game	无法启动游戏	ゲームを起動できませんでした
+Причина	Reason	原因	原因
+Nintendo Entertainment System	Nintendo Entertainment System	任天堂红白机（NES）	ファミリーコンピュータ（NES）
+Super Nintendo	Super Nintendo	超级任天堂	スーパーファミコン
+Nintendo 64	Nintendo 64	任天堂 64	NINTENDO64
+Game Boy	Game Boy	Game Boy	ゲームボーイ
+Game Boy Color	Game Boy Color	Game Boy Color	ゲームボーイカラー
+Game Boy Advance	Game Boy Advance	Game Boy Advance	ゲームボーイアドバンス
+Sega Master System	Sega Master System	世嘉 Master System	セガ・マスターシステム
+Sega Mega Drive	Sega Mega Drive	世嘉 Mega Drive	メガドライブ
+Sega Game Gear	Sega Game Gear	世嘉 Game Gear	ゲームギア
+PC Engine	PC Engine	PC Engine	PCエンジン
+PlayStation	PlayStation	PlayStation	プレイステーション
+Atari 2600	Atari 2600	雅达利 2600	Atari 2600
+Аркадные автоматы	Arcade	街机	アーケード
+Пока здесь пусто.\nНажмите «+ Папка с играми» и выберите папку, где лежат ваши ROM-файлы.	Nothing here yet.\nPress “+ Game folder” and pick the folder with your ROM files.	这里还什么都没有。\n点击“+ 游戏文件夹”，选择存放 ROM 文件的文件夹。	まだ何もありません。\n「+ ゲームフォルダ」を押して、ROM ファイルのあるフォルダを選んでください。
+Скриншот	Screenshot	截图	スクリーンショット
+Скриншот сохранён: %s	Screenshot saved: %s	截图已保存：%s	スクリーンショットを保存しました: %s
+Не удалось сохранить скриншот	Couldn't save the screenshot	无法保存截图	スクリーンショットを保存できませんでした
+Папка скриншотов	Screenshots folder	截图文件夹	スクリーンショットフォルダ
+Скриншоты игр (F12 или Share на геймпаде):\n	Game screenshots (F12 or Share on the controller):\n	游戏截图（F12 或手柄上的 Share 键）：\n	ゲームのスクリーンショット（F12 またはコントローラーの Share）:\n
+Кнопка Share («Поделиться») есть на геймпадах Xbox Series и PlayStation 5. На других геймпадах — пункт «Скриншот» в меню паузы.	The Share button is on Xbox Series and PlayStation 5 controllers. On other controllers, use “Screenshot” in the pause menu.	Xbox Series 和 PlayStation 5 手柄上有 Share（分享）键。其他手柄请使用暂停菜单中的“截图”。	Share ボタンは Xbox Series と PlayStation 5 のコントローラーにあります。他のコントローラーではポーズメニューの「スクリーンショット」を使ってください。

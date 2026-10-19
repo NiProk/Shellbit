@@ -1,0 +1,356 @@
+1943kai	1991	Action	2	Capcom	Naxat Soft
+21emonmezasehotelou	1994	Board	4	NEC	NEC
+adventureisland	1991	Platform	2	Westone	NEC
+aeroblasters	1990	Action	2	Hudson	Hudson
+afterburnerii	1990	Shooter	1	SEGA	NEC
+airzonk	1992	Shoot'em Up	1	Hudson	Hudson
+aliencrush	1989	Pinball	1	Compile	NEC
+allstarpowerleague	1988	Sports	2	Hudson	NEC
+andrepanzakickboxing	1991	Sports	2	Futura	NEC
+ankokudensetsu	1990	Action	1	Atlus	NEC
+aoiblink	1990	Platform	2	West One	Hudson
+apparegateball	1988	Sports	2	West One	Hudson
+armedf	1990	Shoot'em Up	2	Manjyudo	Pack In Video
+artisttool	1989	N/A	1	Hudson	NEC
+atomicrobokidspecial	1990	Shooter	2	UPL	UPL
+avpokerworldgambler	1992	Gambling	4	Hacker International	Games Express
+ballistix	1992	Sports	2	Reflections Interactive	NEC
+baribaridensetsu	1989	Racing	2	Taito	Taito
+barunba	1990	Action	1	ZAP	Namco
+batman	1990	Action	1	Sunsoft	Sunsoft
+battleloderunner	1993	Puzzle	1	Brøderbund Software	Brøderbund Software
+battleroyale	1990	Sports	4	Enerdyne Technologies	NEC
+beball		Puzzle	2	Now Production	NEC
+benkeigaiden	1989	Role-playing (RPG)	1	Sunsoft	Sunsoft
+bikkurimanworld	1987	Action	1	Westone	Hudson
+blazinglazers	1989	Shoot'em Up	1	Compile	NEC
+blodia	1990	Puzzle	2	Hudson	NEC
+bloodywolf	1990	Shooter	1	Data East	Data East
+bodyconquestiikyuseishu	1993	Role-playing (RPG)	1	Hacker International	Games Express
+bomberman	1990	Action	5	Hudson	Turbo Technologies, Inc.
+bomberman93	1993	Action	5	NEC	Hudson
+bomberman93specialversion	1993	Puzzle		Hudson	Hudson
+bomberman94	1993	Action	5	Hudson	Hudson
+bombermanusersbattle	1990	Action	5	Hudson	Hudson
+bonk3bonksbigadventure	1993	Platform	5	Hudson	Turbo Technologies, Inc.
+bonksadventure	1990	Platform	1	Atlus	Hudson
+bonksrevenge	1991	Platform	1	Red Company	NEC
+boukendanshakudonthelostsunheart	1992	Shoot'em Up	2	Manjyudo	I'Max
+boxyboy	1990	Puzzle	2	NEC	Media Rings
+bravoman	1990	Action	1	Now Production	NEC
+breakin	1989	Sports	1	Naxat Soft	Naxat Soft
+bubblegumcrash	1991	Adventure	1	Spiel	Naxat Soft
+bullfightringnohasha	1989	Action	8	Cream	Cream
+burningangels	1990	Shoot'em Up	2	ZAP	Naxat Soft
+cadash	1991	Role-playing (RPG)	2	Taito	Working Designs
+championsforeverboxing	1991	Sports	2	Distinctive Software, Inc	NEC
+championwrestler	1990	Fighting	4	Taito	Taito
+chasehq	1992	Racing	1	Taito	Taito
+chewmanfu	1990	Puzzle	2	Now Production	NEC
+chibimarukochanquizdepiihyara	1992	Quiz	2	Namco	Namco
+chikudenyatoubeikubikiriyakatayori	1990	Adventure	1	Naxat Soft	Naxat Soft
+chinawarrior	1989	Action	2	Hudson	NEC
+chouzetsurinjinbravoman	1990	Action	1	Now Production	NEC
+circuslido	1991	Puzzle	1	Uni Post Company	Uni Post Company
+cityhunter	1990	Action	2	Sunsoft	Sunsoft
+columns	1991	Action	2	Laser Soft	Telenet
+coryoon	1991	Shoot'em Up	1	Naxat Soft	Naxat Soft
+cratermaze	1990	Strategy	1	Hudson	NEC
+crosswibercybercombatpolice	1990	Platform	1	Sankindo	FACE
+cybercore	1990	Shoot'em Up	1	Alfa System	NEC
+cybercross	1989	Platform	1	FACE	FACE
+cyberdodge	1992	Sports	2	Tonkin House	Tonkin House
+cyberknight	1990	Role-playing (RPG)	1	Compile	Tonkin House
+daichikuncrisisdonatural	1989	Strategy	1	Salio	Salio
+daisenpuu	1990	Shoot'em Up	2	Toaplan	NEC
+dariusalpha	1990	Action	1	Bits Laboratory	NEC
+dariusplus	1990	Shoot'em Up	1	Bits Laboratory	NEC
+darkwingduck	1992	Platform	1	Turbo Technologies, Inc.	Radiance Software
+daviscuptennis	1991	Sports	4	Loriciels	NEC
+deadmoon	1992	Action	1	Studio Ducks	Natsume
+deadmoongetsusekainoakumu	1991	Action	1	Studio Ducks	Natsume
+deepblue	1990	Shoot'em Up	1	Pack In Video	NEC
+deepbluekaiteishinwa	1989	Shoot'em Up	1	Pack In Video	NEC
+detanatwinbee	1992	Action	1	Konami	Konami
+devilcrashnaxatpinball	1990	Pinball	2	Compile	NEC
+devilscrush	1990	Pinball	2	Compile	NEC
+diehard	1990	Shooter	1	Pack In Video	NEC
+digitalchampbattleboxing	1989	Sports		Naxat Soft	Naxat Soft
+dondokodon	1990	Action	2	Taito	Taito
+doraemonmeikyuudaisakusen	1989	Action	1	Nichibutsu	NEC
+doraemonnobitanodorabiannight	1991	Platform	1	Now Production	Hudson
+doubledungeons	1990	Role-playing (RPG)	1	NCS Corporation	Masaya Games
+download	1990	Shoot'em Up	1	Alfa System	NEC
+dragonegg	1991	Platform	1	Masaya Games	NCS Corporation
+dragonsaber	1991	Shoot'em Up	2	Namco	Namco
+dragonscurse	1990	Platform	2	Westone	NEC
+dragonspirit	1989	Shoot'em Up	1	Namco	NEC
+dropoff	1990	Action	2	Data East	NEC
+droprockhorahora	1990	Action	2	Data East	NEC
+dungeonexplorer	1989	Role-playing (RPG)	5	Atlus	NEC
+dungeonsdragonsorderofthegriffon	1992	Role-playing (RPG)	1	Westwood Associates	Turbo Technologies, Inc.
+energy	1989	Action	5	Quasar Soft	NCS Corporation
+eternalcitytoshitensoukeikaku	1991	Platform	1	Naxat Soft	Naxat Soft
+f1circus	1990	Racing	5	Nichibutsu	Nichibutsu
+f1circus91	1991	Racing	1	Nichibutsu	Nichibutsu
+f1circus92	1992	Racing	1	Nichibutsu	Nichibutsu
+f1dream	1989	Racing		NEC	NEC
+f1pilotyourekingofkings	1989	Racing		Pack In Video	Pack In Video
+f1triplebattle	1989	Racing	3	Human	Human
+falcon	1992	Simulation	2	Spectrum Holobyte	Spectrum Holobyte
+fantasyzone	1989	Shoot'em Up	2	Bits Laboratory	NEC
+fightingrun	1991	Action	2	Nichibutsu	Nichibutsu
+finalblaster	1990	Shoot'em Up	1	Aisystem Tokyo	Namco
+finallaptwin	1989	Role-playing (RPG)	2	NEC	Namco
+finalmatchtennis	1991	Sports	2	Human	Human
+finalsoldier	1991	Action	1	Hudson	Hudson
+finalsoldierspecialversion	1991	Action	1	Hudson	Hudson
+fireprowrestling2ndbout	1991	Sports	4		Human
+fireprowrestling3legendbout	1992	Sports	4		Human
+fireprowrestlingcombinationtag	1989	Fighting	4	Human	Human
+formationsoccerhumancup90	1990	Sports	2	Human	Human
+formationsocceronjleague	1994	Sports	2	Human	Human
+fushiginoyumenoalice	1990	Action	1	FACE	FACE
+gaianomonshou	1988	Strategy	2	NCS Corporation	NCS Corporation
+gaiflame	1990	Strategy	1	Masaya Games	NCS Corporation
+galaga88	1988	Shoot'em Up	1	Namco	NEC
+galaga90	1989	Shoot'em Up	1	Namco	NEC
+ganbaregolfboys	1989	Sports	4	NCS Corporation	NCS Corporation
+gekishaboy	1992	Action	1	Tomcat System	Irem
+genjitsuushinagedama	1991	Action	1	NEC	NEC
+genpeitoumaden		Action		Namco	Namco
+genpeitoumadenkannoni	1992	Platform	1	Namco	Namco
+ghostmanor	1992	Platform	1	ICOM Simulations	Turbo Technologies, Inc.
+gokurakuchuukataisen	1992	Shoot'em Up	1	Daiei Seisakusho	Taito
+gomolaspeed		Action	1	UPL	UPL
+gradius	1991	Action	2	Konami	Konami
+gunboat	1992	Simulation	1	Accolade	Accolade
+gunhed	1989	Shoot'em Up	1	Compile	NEC
+gunhedspecialversion	1989	Shoot'em Up	1	Hudson	Hudson
+hanataakadaka	1991	Shoot'em Up	1	Taito	Taito
+haniiinthesky	1989	Action	1	FACE	FACE
+haniiontheroad	1990	Platform	2	FACE	FACE
+hatris	1991	Puzzle	1	Micro Cabin	Micro Cabin
+heavyunit	1989	Action	1	Inter State	Taito
+hisoukiheixserd	1990	Strategy	1	NCS Corporation	NCS Corporation
+hittheicevhltheofficialvideohockeyleague	1992	Action	2	Taito	Taito
+hittheicevhlthevideohockeyleague	1991	Action	2	Taito	Taito
+honoonotoukyuujidodgedanpei	1992	Sports		Aim Software	Hudson
+hyperdynesidearms	1989	Action	1	Capcom	Radiance Software
+idolhanafudafanclub	1991	Board	1	Games Express	Hacker International
+imagefight	1990	Action	1	Irem	Irem
+impossamole	1991	Platform	1	NEC	Core Design
+jackiechan	1991	Platform	1	Hudson	Hudson
+jackiechansactionkungfu	1992	Platform	1	Hudson	Hudson
+jacknicklausgreatest18holesofmajorchampionshipgolf	1989	Sports	4	Sculptured Software	Accolade
+jacknicklausturbogolf	1990	Sports	4	Sculptured Software	Accolade
+jaseikennecromancer	1988	Role-playing (RPG)	1	Hudson	Hudson
+jigokumeguri	1990	Platform	1	Taito	Taito
+jinmudenshou	1989	Shoot'em Up	1	Big Club	Wolf Team
+jjjeff	1990	Action	1	Hudson	NEC
+jleaguegreatesteleven	1993	Sports	4	Cream	Nichibutsu
+juuouki	1989	Action	1	SEGA	NEC
+kaizouchoujinshubibinman	1989	Platform	2	NCS Corporation	Masaya Games
+kaizouchoujinshubibinman2aratanaruteki	1991	Platform	2	Winds Co., Ltd.	NCS Corporation
+katochankenchan	1987	Action	1	Hudson	NEC
+kattobitakuhaikun	1990	Action	1	Advance Communication Company	Tonkin House
+keithcourageinalphazones	1989	Platform	1	Hudson	NEC
+kickball	1990	Sports	2	Dual	NCS Corporation
+kikikaikai	1990	Shoot'em Up	1	Taito	Taito
+kingofcasino	1990	Gambling	5	NEC	NEC
+klax	1990	Strategy	1	Tengen	Tengen
+knightriderspecial	1989	Racing	1	Pack In Video	Pack In Video
+koregaproyakyuu89	1989	Sports	2	TOSE	Intec Inc.
+koregaproyakyuu90	1990	Sports	2	TOSE	Intec Inc.
+kungfu	1987	Action	2	Hudson	NEC
+kyuukyokumahjongidolgraphic	1992	Board	1	Games Express	Hacker International
+kyuukyokumahjongiisuperidolgraphic	1993	Board	1	Games Express	Hacker International
+kyuukyokutiger	1989	Shoot'em Up	1	Toaplan	Taito
+ladyswordryakudatsusareta10ninnootome	1992	Role-playing (RPG)	1	Hacker International	Games Express
+legendaryaxe	1989	Platform	1	Marvelous Interactive	NEC
+legendaryaxeii	1990	Action	1	Atlus	NEC
+legendofherotonma	1993	Platform	2	Irem	Irem
+loderunnerlostlabyrinth	1990	Platform	1	Brøderbund Software	Pack In Video
+maerchenmaze	1990	Shooter	1	Namco	Namco
+magicalchase	1993	Shoot'em Up	1	Quest	NEC
+mahjonggakuenmildtoumasoushiroutoujou	1990	Board	1	Sankindo	FACE
+mahjonggakuentoumasoushiroutoujou	1989	Board	1	Sankindo	FACE
+mahjonggokuuspecial	1990	Board	1	Sunsoft	Sunsoft
+mahjonghaoudenkaisersquest	1992	Board	1	UPL	UPL
+mahjongshikakuretsudenmahjongwars	1990	Board	1	Nichibutsu	Nichibutsu
+maisonikkoku	1989	Adventure	1	Micro Cabin	Micro Cabin
+makaihakkendenshada	1989	Role-playing (RPG)	1	Data East	Data East
+makaiprincedorabocchan	1990	Platform	1	Red Company	Naxat Soft
+makyoudensetsu	1988	Platform	1	Marvelous Interactive	NEC
+maniacprowresasuenotatakai	1990	Fighting	2	Hudson	Hudson
+mashineiyuudenwataru	1988	Platform	1	Hudson	NEC
+mesopotamia	1991	Shooter	1	Atlus	Atlus
+metalstoker	1991	Shoot'em Up	1	Sankindo	FACE
+militarymadness	1989	Strategy	2	Hudson	NEC
+mizubakudaibouken	1992	Platform	1	Taito	Taito
+momotaroudensetsugaidendai1shuu	1992	Role-playing (RPG)	1	Hudson	Hudson
+momotaroudensetsuii	1990	Role-playing (RPG)	1	Hudson	Hudson
+momotaroudensetsuturbo	1990	Role-playing (RPG)	1	Hudson	Hudson
+momotaroukatsugeki	1990	Platform	1	Hudson	Hudson
+monsterprowres	1991	Fighting	1	Lenar	ASK Kodansha
+moritashougipc	1991	Board		Random House	NEC
+motoroader	1989	Action	5	NCS Corporation	NEC
+motoroaderii	1991	Racing	5	NCS Corporation	NCS Corporation
+mrhelinodaibouken	1989	Shoot'em Up	1	Irem	Irem
+narazumonosentoubutaibloodywolf	1989	Shooter	1	Data East	Data East
+naxatopen	1989	Sports	1	Naxat Soft	Naxat Soft
+naxatstadium	1990	Sports	2	Sting Entertainment	Naxat Soft
+nazonomascarade	1990	Adventure	1	Riverhillsoft	NCS Corporation
+necrosnoyousai	1990	Role-playing (RPG)	1	Adventure Planning Service	ASK Kodansha
+nectaris	1989	Strategy	2	Hudson	NEC
+nekketsukoukoudodgeballbupcbangaihen	1990	Sports	2	Kindle Imagine Develop	Naxat Soft
+nekketsukoukoudodgeballbupcsoccerhen	1992	Sports	2	Kindle Imagine Develop	Naxat Soft
+neutopia	1990	Adventure	1	Hudson	NEC
+neutopiafreynoshou	1989	Adventure	1	Hudson	NEC
+neutopiaii	1992	Adventure	1	Hudson	Hudson
+newadventureisland	1992	Platform	1	Hudson	Hudson
+newzealandstory	1990	Platform	1	Taito	Taito
+nhktaigadramataiheiki	1992	Strategy	1	NHK	NHK
+nightcreatures	1991	Adventure	1	Manley and Associates Inc.	NEC
+ninjaryuukenden	1992	Platform	1	Tecmo	Hudson
+ninjaspirit	1990	Platform	2	Irem	Irem
+ninjawarriors	1989	Beat'em Up	1	Taito	Taito
+obocchamakun	1991	Platform	1	Pack In Video	Namco
+offthewall		Action		Tengen	Tengen
+okaasantoisshonikonikopun	1991	Platform	1	ISCO	NHK
+operationwolf	1990	Lightgun Shooter	1	Taito	NEC
+ordyne	1990	Action	2	Namco	NEC
+outlive	1989	Role-playing (RPG)	2	Sunsoft	Sunsoft
+outrun	1990	Racing	1	NEC	SEGA
+override	1991	Shoot'em Up	1	Sting Entertainment	Data East
+p47thefreedomfighter	1989	Shoot'em Up	1	NMK	Aicom
+pachiokunjuubanshoubu	1992	Gambling	1	Coconuts Japan	Coconuts Japan
+pacland	1990	Platform	2	Namco	NEC
+paranoia	1990	Shoot'em Up	1	Naxat Soft	NEC
+parasolstarsthestoryofbubblebobbleiii	1991	Action	2	Taito	Working Designs
+parodiusdashinwakaraowaraie	1992	Shoot'em Up	2	Konami	Konami
+pcdenjinpunkiccyborgs	1992	Shoot'em Up	1	Hudson	Hudson
+pcgenjin2pithecanthropuscomputerurus	1991	Platform	1	Red Company	NEC
+pcgenjin3pithecanthropuscomputerurus	1993	Platform	5	Hudson	Turbo Technologies, Inc.
+pcgenjinpithecanthropuscomputerurus	1989	Platform	1	Atlus	Hudson
+pcpachislotidolgambler	1992	Gambling	1	Games Express	Games Express
+populous	1991	Strategy	1	Bullfrog	Hudson
+powerdrift	1990	Racing	1	Asmik	SEGA
+powereleven	1991	Sports	2	West One	Hudson
+powergate	1991	Shoot'em Up	1	Make	Pack In Video
+powergolf	1989	Sports	3	Hudson	Hudson
+powerleague	1988	Sports	2	Hudson	NEC
+powerleague4	1991	Sports	2	Hudson	Hudson
+powerleague5	1992	Sports	4	Hudson	Hudson
+powerleague93	1993	Sports	2	Hudson	Hudson
+powerleagueii	1989	Sports	2	Hudson	Hudson
+powerleagueiii	1990	Sports	4	Hudson	Hudson
+powersports	1992	Sports	5	Hudson	Hudson
+powertennis	1993	Sports	4	Now Production	Hudson
+protennisworldcourt	1988	Sports	4	Namco	NEC
+proyakyuuworldstadium	1988	Sports	2	Namco	Namco
+proyakyuuworldstadium91	1991	Sports	4	Namco	Namco
+psychochaser	1990	Action	1	Sting Entertainment	Naxat Soft
+psychosis	1990	Shoot'em Up	1	Naxat Soft	NEC
+puzzleboy	1991	Puzzle	2	Atlus	Telenet
+puzznic	1990	Strategy	1	Taito	Taito
+quiztoukoushashin	1994	Quiz	1	Games Express	Games Express
+rabiolepusspecial	1990	Shoot'em Up	1	Video System	Video System
+racingdamashii	1991	Racing	2	Irem	Irem
+raiden	1991	Action	1	Seibu Kaihatsu	NEC
+rastansagaii	1990	Platform	1	Taito	Taito
+rockon	1989	Shoot'em Up	1	Manjyudo	Big Club
+rtype	1989	Shoot'em Up	1	Irem	NEC
+rtypei	1988	Shoot'em Up	1	Irem	NEC
+rtypeii	1988	Shoot'em Up	1	Hudson	Hudson
+ryuukyuu	1990	Gambling	1	FACE	ASCII
+sadakichisevenhideyoshinoougon	1988	Adventure	1	Hudson	Hudson
+saigononindouninjaspirit	1990	Platform	2	Irem	Irem
+salamander	1991	Shoot'em Up	2	Konami	Konami
+samuraighost	1992	Platform	1	Namco	Namco
+scispecialcriminalinvestigation	1991	Action	1	Taito	Taito
+sekigahara	1990	Strategy	1	Tonkin House	Tonkin House
+sengokumahjong	1988	Board	1	Hudson	Hudson
+shanghai	1987	Puzzle	1	Hudson	Hudson
+shinobi	1989	Platform	1	Asmik	SEGA
+shiryousensenwarofthedead	1989	Role-playing (RPG)	1	Fun Project	Victor Entertainment
+shockman	1992	Platform	2	Winds Co., Ltd.	NCS Corporation
+shougishodanicchokusen	1990	Board	2	Home Data	Home Data
+shougishoshinshamuyou	1991	Board	2	Home Data	Home Data
+sidearms	1989	Action	1	Capcom	Radiance Software
+silentdebuggers	1991	Shooter	1	Data East	NEC
+sindibadchiteinodaimakyuu	1990	Role-playing (RPG)	1	Game Princess	IGS
+sinistron	1991	Shoot'em Up	1	IGS	NEC
+skweek	1991	Action	1	Loriciel	Victor Entertainment
+soldierblade	1992	Shoot'em Up	1	Hudson	Hudson
+soldierbladespecialversion	1992	Shoot'em Up	1	Hudson	Hudson
+somerassault	1992	Shooter	1	Atlus	Atlus
+sonicspikeworldchampionshipbeachvolleyball	1990	Sports	2	IGS	IGS
+sonsonii	1989	Adventure	1	NEC	Capcom
+soukobanworld	1990	Puzzle	2	NEC	Media Rings
+spaceharrier	1990	Shooter	1	AM R&D Dept. #2	NEC
+spaceinvadersfukkatsunohi	1990	Shooter	1	Taito	Taito
+spinpair	1990	Puzzle	2	Media Rings	Media Rings
+spiralwave	1991	Shooter	1	Media Rings	Media Rings
+splatterhouse	1990	Action	1	Namco	NEC
+stratego	1992	Board	1	Accolade	Victor Interactive
+streetfighteriichampionedition	1993	Fighting	2	Capcom	NEC
+stripfighterii	1994	Action	2	Games Express	Games Express
+supermetalcrusher	1991	Strategy	2	Make	Pack In Video
+supermomotaroudentetsu	1989	Board	4	Hudson	Hudson
+supermomotaroudentetsuii	1991	Board	5	Hudson	Hudson
+superstarsoldier	1991	Action	1	Inter State	Hudson
+supervolleyball	1990	Sports	2	Video System	NEC
+susanooudensetsu	1989	Role-playing (RPG)	2	Alfa System	Hudson
+taitochasehq	1990	Racing	1	Taito	Taito
+takahashimeijinnoshinboukenjima	1992	Platform	1	Hudson	Hudson
+takedashingen	1989	Action	1	Aicom	Aicom
+takinittothehoop	1990	Sports	2	Aicom	NEC
+talespin	1991	Platform	1	Interactive Designs	NEC
+tatsujin	1992	Shoot'em Up	1	Sting Entertainment	Taito
+tatsunokofighter	1989	Platform	1	Advance Communication Company	Tonkin House
+tenseiryuusaintdragon	1990	Shoot'em Up	1		Aicom
+terracrestaiimandolernogyakushuu	1992	Shoot'em Up	1	Nichibutsu	Nichibutsu
+thunderblade	1990	Shoot'em Up	1	NEC	SEGA
+tigerroad	1990	Platform	1	Go!	Capcom
+timeball	1990	Puzzle	2	Hudson	NEC
+timecruise	1992	Pinball	1	FACE	NEC
+timecruiseii	1991	Pinball	1	FACE	NEC
+titan	1991	Strategy	1	Naxat Soft	Titus
+toiletkids	1992	Action	2	Bits Laboratory	Media Rings
+toraenomichi	1990	Platform	1	Go!	Capcom
+towerofdruaga	1992	Role-playing (RPG)	1	Namco	Namco
+toyshopboys	1990	Shoot'em Up	2	Victor Entertainment	Victor Entertainment
+tricky	1991	Strategy	1	IGS	IGS
+trickykick	1990	Strategy	1	IGS	IGS
+tsupparioozumouheiseiban	1993	Sports	2	Naxat Soft	Naxat Soft
+tsuruteruhitonojissenkabushikibaibaigame	1989	Simulation	1	TOSE	Intec Inc.
+turrican	1991	Action	1	Rainbow Arts	Accolade
+tvsportsbasketball	1991	Sports	5	Cinemaware	NEC
+tvsportsfootball	1990	Sports	5	Cinemaware	NEC
+tvsportshockey	1991	Sports	5	Cinemaware	NEC
+usaprobasketball	1989	Sports	2	Aicom	NEC
+valkyrienodensetsu	1990	Adventure	1	Namco	Namco
+veiguestacticalgladiator	1990	Shoot'em Up	1	Game Arts	NEC
+victoryrun	1989	Racing	1	Hudson	Hudson
+victoryruneikouno13000km	1987	Racing	1	Hudson	Hudson
+vigilante	1989	Action	1	NEC	Irem
+violentsoldier	1990	Shoot'em Up	1	IGS	NEC
+volfied	1989	Puzzle	1	Taito	Empire Interactive
+waiwaimahjongyukainajanyuutachi	1989	Board	1	Video System	Video System
+wallaby	1990	Sports with Animals	1	Tenky	NCS Corporation
+winningshot	1989	Sports	4	Data East	Data East
+wondermomo	1989	Beat'em Up	1	Namco	Namco
+worldbeachvolley	1990	Sports	2	IGS	IGS
+worldcircuit	1991	Racing	2	GAME STUDIO Inc.	Namco
+worldclassbaseball	1989	Sports	2	Hudson	NEC
+worldcourttennis	1989	Sports	4	Namco	NEC
+worldjockey	1991	Sports with Animals	4	Namco	Namco
+worldsportscompetition	1993	Sports	5	Hudson	Hudson
+wringthedoublerings	1990	Shoot'em Up	1	Naxat Soft	Naxat Soft
+xeviousfardrautdensetsu	1990	Shoot'em Up	1	Compile	Namco
+yobro	1991	Shooter	2	ICOM Simulations	NEC
+youkaidouchuuki		Platform	1	Namco	Namco
+youyoujinsei	1988	Board	5	Hudson	Hudson
+zero4champ	1991	Racing	1	Media Rings	Media Rings
+zipang	1990	Puzzle	1	Arc System Works	Pack In Video

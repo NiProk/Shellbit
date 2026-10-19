@@ -9,6 +9,7 @@ const ConsoleTileScene := preload("res://scenes/components/ConsoleTile.tscn")
 
 func _ready() -> void:
 	%AddFolderButton.pressed.connect(_on_add_folder_pressed)
+	_add_settings_button()
 	%FolderDialog.dir_selected.connect(_on_folder_selected)
 	Library.scan_finished.connect(_refresh)
 
@@ -20,7 +21,7 @@ func _ready() -> void:
 	timer.start()
 	_update_clock()
 
-	%Hints.set_hints([["accept", "Открыть"], ["details", "Обновить список"]])
+	%Hints.set_hints([["accept", "Открыть"], ["details", "Обновить список"], ["menu", "Настройки"]])
 	_refresh()
 
 
@@ -77,9 +78,12 @@ func _update_clock() -> void:
 
 # _unhandled_input получает нажатия, которые не забрали кнопки.
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("details"):
+	if event.is_action_pressed("menu"):
+		SceneRouter.go_to("settings")
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("details"):
 		Library.scan()
-		SceneRouter.toast("Список игр обновлён: " + Library.count_text(Library.groups.size()))
+		SceneRouter.toast(tr("Список игр обновлён: %s") % Library.count_text(Library.groups.size()))
 		get_viewport().set_input_as_handled()
 	# Если фокус потерялся (например, кликнули мышью в пустоту),
 	# любое нажатие стрелки возвращает его на первый элемент.
@@ -95,6 +99,18 @@ func _is_direction(event: InputEvent) -> bool:
 	return false
 
 
+# Кнопка «Настройки» в шапке, рядом с «+ Папка с играми».
+# Создаём её из кода: так не нужно менять сцену Home.tscn.
+func _add_settings_button() -> void:
+	var button := Button.new()
+	button.text = tr("Настройки")
+	# add_sibling — поставить новую кнопку сразу после «+ Папка с играми»,
+	# в тот же ряд. Внешний вид она возьмёт из общей темы UiTheme.
+	%AddFolderButton.add_sibling(button)
+	button.pressed.connect(SceneRouter.go_to.bind("settings"))
+	button.mouse_entered.connect(button.grab_focus)
+
+
 # --- Обработчики нажатий -------------------------------------------------
 
 func _on_add_folder_pressed() -> void:
@@ -104,7 +120,7 @@ func _on_add_folder_pressed() -> void:
 func _on_folder_selected(path: String) -> void:
 	Settings.add_rom_folder(path)
 	Library.scan()  # после поиска сработает сигнал scan_finished → _refresh()
-	SceneRouter.toast("Найдено: " + Library.count_text(Library.groups.size()))
+	SceneRouter.toast(tr("Найдено: %s") % Library.count_text(Library.groups.size()))
 
 
 func _on_system_pressed(system_id: String) -> void:

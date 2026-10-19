@@ -12,7 +12,6 @@ fill_to = Vector2(0, 1)
 [node name="GameCard" type="Button"]
 custom_minimum_size = Vector2(300, 190)
 size_flags_vertical = 8
-clip_contents = true
 script = ExtResource("1_card")
 
 [node name="Shot" type="TextureRect" parent="."]

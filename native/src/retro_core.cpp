@@ -4,7 +4,9 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
 
+#include <algorithm>
 #include <cstdarg>
+#include <cstring>
 #include <cstdio>
 
 using namespace godot;
@@ -39,6 +41,9 @@ void RetroCore::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_system_info"), &RetroCore::get_system_info);
 	ClassDB::bind_method(D_METHOD("save_state"), &RetroCore::save_state);
 	ClassDB::bind_method(D_METHOD("load_state", "data"), &RetroCore::load_state);
+	ClassDB::bind_method(D_METHOD("save_sram"), &RetroCore::save_sram);
+	ClassDB::bind_method(D_METHOD("set_option", "key", "value"), &RetroCore::set_option);
+	ClassDB::bind_method(D_METHOD("get_options"), &RetroCore::get_options);
 
 	BIND_CONSTANT(BUTTON_B);
 	BIND_CONSTANT(BUTTON_Y);
@@ -77,12 +82,12 @@ bool RetroCore::load_core(const String &path) {
 
 	// libretro устроен так, что одновременно может работать только одно ядро.
 	if (current != nullptr && current != this) {
-		UtilityFunctions::push_error("RetroCore: другое ядро уже запущено");
+		UtilityFunctions::push_error(String::utf8("RetroCore: другое ядро уже запущено"));
 		return false;
 	}
 
 	if (!library.open(path.utf8().get_data())) {
-		UtilityFunctions::push_error("RetroCore: не удалось открыть ядро ", path, " (", String(library.last_error().c_str()), ")");
+		UtilityFunctions::push_error(String::utf8("RetroCore: не удалось открыть ядро "), path, " (", String(library.last_error().c_str()), ")");
 		return false;
 	}
 
@@ -91,7 +96,7 @@ bool RetroCore::load_core(const String &path) {
 #define LOAD_SYMBOL(field, name)                                                     \
 	api.field = reinterpret_cast<decltype(api.field)>(library.symbol(name));          \
 	if (!api.field) {                                                                \
-		UtilityFunctions::push_error("RetroCore: в ядре нет функции ", String(name)); \
+		UtilityFunctions::push_error(String::utf8("RetroCore: в ядре нет функции "), String(name)); \
 		ok = false;                                                                  \
 	}
 
@@ -112,6 +117,8 @@ bool RetroCore::load_core(const String &path) {
 	LOAD_SYMBOL(serialize_size, "retro_serialize_size");
 	LOAD_SYMBOL(serialize, "retro_serialize");
 	LOAD_SYMBOL(unserialize, "retro_unserialize");
+	LOAD_SYMBOL(get_memory_data, "retro_get_memory_data");
+	LOAD_SYMBOL(get_memory_size, "retro_get_memory_size");
 #undef LOAD_SYMBOL
 
 	if (!ok) {
@@ -139,7 +146,7 @@ bool RetroCore::load_core(const String &path) {
 // =====================================================================
 bool RetroCore::load_game(const String &path) {
 	if (!core_loaded) {
-		UtilityFunctions::push_error("RetroCore: сначала вызовите load_core()");
+		UtilityFunctions::push_error(String::utf8("RetroCore: сначала вызовите load_core()"));
 		return false;
 	}
 
@@ -155,7 +162,7 @@ bool RetroCore::load_game(const String &path) {
 	if (!info.need_fullpath) {
 		PackedByteArray bytes = FileAccess::get_file_as_bytes(path);
 		if (bytes.is_empty()) {
-			UtilityFunctions::push_error("RetroCore: не удалось прочитать файл игры ", path);
+			UtilityFunctions::push_error(String::utf8("RetroCore: не удалось прочитать файл игры "), path);
 			return false;
 		}
 		game_data.assign(bytes.ptr(), bytes.ptr() + bytes.size());
@@ -164,13 +171,14 @@ bool RetroCore::load_game(const String &path) {
 	}
 
 	if (!api.load_game(&game)) {
-		UtilityFunctions::push_error("RetroCore: ядро не смогло загрузить игру ", path);
+		UtilityFunctions::push_error(String::utf8("RetroCore: ядро не смогло загрузить игру "), path);
 		game_data.clear();
 		return false;
 	}
 
 	api.get_system_av_info(&av_info);
 	game_loaded = true;
+	load_sram();
 	new_frame = false;
 	audio.clear();
 	return true;
@@ -178,6 +186,7 @@ bool RetroCore::load_game(const String &path) {
 
 void RetroCore::unload() {
 	if (game_loaded) {
+		save_sram(); // пока игра ещё в памяти — записываем её сохранения
 		api.unload_game();
 		game_loaded = false;
 	}
@@ -276,6 +285,78 @@ bool RetroCore::load_state(const PackedByteArray &data) {
 		return false;
 	}
 	return api.unserialize(data.ptr(), (size_t)data.size());
+}
+
+// =====================================================================
+// Внутриигровые сохранения (SRAM).
+// Ядро держит их у себя в памяти (retro_get_memory_data), а записать
+// на диск должен фронтенд. Файл: <папка сохранений>/<имя игры>.srm
+// Для файлов используем FileAccess из Godot: он понимает русские буквы
+// в путях Windows, а обычный fopen — нет.
+// =====================================================================
+void RetroCore::load_sram() {
+	sram_path = "";
+	if (save_dir.empty()) {
+		return;
+	}
+	String base = String::utf8(game_path.c_str()).get_file().get_basename();
+	sram_path = String::utf8(save_dir.c_str()).path_join(base + ".srm");
+
+	uint8_t *memory = (uint8_t *)api.get_memory_data(RETRO_MEMORY_SAVE_RAM);
+	size_t size = api.get_memory_size(RETRO_MEMORY_SAVE_RAM);
+	if (memory == nullptr || size == 0 || !FileAccess::file_exists(sram_path)) {
+		return; // у игры нет сохранений или файла ещё нет
+	}
+	PackedByteArray data = FileAccess::get_file_as_bytes(sram_path);
+	size_t count = std::min(size, (size_t)data.size());
+	memcpy(memory, data.ptr(), count);
+	UtilityFunctions::print(String::utf8("Загружено сохранение игры: "), sram_path);
+}
+
+bool RetroCore::save_sram() {
+	if (!game_loaded || sram_path.is_empty()) {
+		return false;
+	}
+	const uint8_t *memory = (const uint8_t *)api.get_memory_data(RETRO_MEMORY_SAVE_RAM);
+	size_t size = api.get_memory_size(RETRO_MEMORY_SAVE_RAM);
+	if (memory == nullptr || size == 0) {
+		return false;
+	}
+	PackedByteArray data;
+	data.resize((int64_t)size);
+	memcpy(data.ptrw(), memory, size);
+	Ref<FileAccess> file = FileAccess::open(sram_path, FileAccess::WRITE);
+	if (file.is_null()) {
+		UtilityFunctions::push_error(String::utf8("RetroCore: не удалось записать "), sram_path);
+		return false;
+	}
+	file->store_buffer(data);
+	return true;
+}
+
+// =====================================================================
+// Настройки ядра (core options).
+// Ядро при запуске сообщает список своих настроек и значения по
+// умолчанию, а потом спрашивает «какое сейчас значение у X?».
+// Если не ответить, ядро может отключить нужное — например, PCSX ReARMed
+// без ответа отключает карты памяти.
+// =====================================================================
+void RetroCore::remember_default(const char *key, const char *value) {
+	if (key && value) {
+		options.emplace(key, value); // emplace НЕ перезаписывает то, что задал пользователь
+	}
+}
+
+void RetroCore::set_option(const String &key, const String &value) {
+	options[key.utf8().get_data()] = value.utf8().get_data();
+}
+
+Dictionary RetroCore::get_options() const {
+	Dictionary result;
+	for (const auto &pair : options) {
+		result[String::utf8(pair.first.c_str())] = String::utf8(pair.second.c_str());
+	}
+	return result;
 }
 
 // =====================================================================
@@ -378,6 +459,55 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 			return true;
 		}
 		case RETRO_ENVIRONMENT_SHUTDOWN:
+			return true;
+
+		// --- Настройки ядра ---
+		case RETRO_ENVIRONMENT_GET_CORE_OPTIONS_VERSION:
+			*(unsigned *)data = 2; // понимаем самый новый формат
+			return true;
+		case RETRO_ENVIRONMENT_SET_VARIABLES: {
+			// Старый формат: value = "Описание; по_умолчанию|вариант2|вариант3"
+			for (const retro_variable *v = (const retro_variable *)data; v && v->key; v++) {
+				std::string text = v->value ? v->value : "";
+				size_t start = text.find("; ");
+				std::string values = (start == std::string::npos) ? text : text.substr(start + 2);
+				remember_default(v->key, values.substr(0, values.find('|')).c_str());
+			}
+			return true;
+		}
+		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS:
+		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_INTL: {
+			const retro_core_option_definition *defs = (cmd == RETRO_ENVIRONMENT_SET_CORE_OPTIONS)
+					? (const retro_core_option_definition *)data
+					: ((const retro_core_options_intl *)data)->us;
+			for (; defs && defs->key; defs++) {
+				remember_default(defs->key, defs->default_value ? defs->default_value : defs->values[0].value);
+			}
+			return true;
+		}
+		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_V2:
+		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_V2_INTL: {
+			const retro_core_options_v2 *opts = (cmd == RETRO_ENVIRONMENT_SET_CORE_OPTIONS_V2)
+					? (const retro_core_options_v2 *)data
+					: ((const retro_core_options_v2_intl *)data)->us;
+			if (opts == nullptr) {
+				return false;
+			}
+			for (const retro_core_option_v2_definition *d = opts->definitions; d && d->key; d++) {
+				remember_default(d->key, d->default_value ? d->default_value : d->values[0].value);
+			}
+			return true;
+		}
+		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_DISPLAY:
+			return true; // «показать/скрыть настройку в меню» — меню настроек пока нет
+		case RETRO_ENVIRONMENT_GET_VARIABLE: {
+			retro_variable *v = (retro_variable *)data;
+			auto it = v->key ? options.find(v->key) : options.end();
+			v->value = (it != options.end()) ? it->second.c_str() : nullptr;
+			return v->value != nullptr;
+		}
+		case RETRO_ENVIRONMENT_GET_VARIABLE_UPDATE:
+			*(bool *)data = false; // настройки во время игры пока не меняются
 			return true;
 		default:
 			return false;

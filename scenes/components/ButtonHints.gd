@@ -6,9 +6,9 @@ extends PanelContainer
 ## Значки сами меняются под Xbox, PlayStation или клавиатуру.
 
 const LABELS := {
-	"xbox": {"accept": "A", "cancel": "B", "details": "X", "favorite": "Y", "page": "LB RB", "menu": "Start"},
-	"playstation": {"accept": "✕", "cancel": "○", "details": "□", "favorite": "△", "page": "L1 R1", "menu": "Options"},
-	"keyboard": {"accept": "Enter", "cancel": "Esc", "details": "Tab", "favorite": "F", "page": "Q E", "menu": "F1"},
+	"xbox": {"accept": "A", "cancel": "B", "details": "X", "favorite": "Y", "page": "LB RB", "menu": "Start", "change": "←→"},
+	"playstation": {"accept": "✕", "cancel": "○", "details": "□", "favorite": "△", "page": "L1 R1", "menu": "Options", "change": "←→"},
+	"keyboard": {"accept": "Enter", "cancel": "Esc", "details": "Tab", "favorite": "F", "page": "Q E", "menu": "F1", "change": "←→"},
 }
 
 # Цвета кнопок как на геймпаде Xbox. Для остальных — серый значок.
@@ -55,7 +55,7 @@ func _rebuild() -> void:
 		badge.add_theme_stylebox_override("normal", UiTheme.badge_box(color))
 
 		var text := Label.new()
-		text.text = hint[1]
+		text.text = tr(hint[1])  # подписи переводим здесь — для всех экранов сразу
 		text.add_theme_font_size_override("font_size", 17)
 		text.add_theme_color_override("font_color", Color("b8c0d0"))
 

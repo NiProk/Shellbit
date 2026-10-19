@@ -90,7 +90,7 @@ static func thumbnail(game: Dictionary, slot: String) -> Texture2D:
 ## Когда сделано сохранение: "сегодня, 22:14", "вчера, 19:40", "12.10, 08:05".
 static func time_text(game: Dictionary, slot: String) -> String:
 	if not exists(game, slot):
-		return "пусто"
+		return Lang.t("пусто")
 	var unix := FileAccess.get_modified_time(_state_path(game, slot))
 	# Время файла — в UTC. Добавляем смещение часового пояса компьютера.
 	var bias_minutes: int = Time.get_time_zone_from_system()["bias"]
@@ -100,9 +100,9 @@ static func time_text(game: Dictionary, slot: String) -> String:
 
 	var days_ago := (_day_number(today) - _day_number(local))
 	if days_ago == 0:
-		return "сегодня, " + clock
+		return Lang.t("сегодня, %s") % clock
 	if days_ago == 1:
-		return "вчера, " + clock
+		return Lang.t("вчера, %s") % clock
 	return "%02d.%02d, %s" % [local["day"], local["month"], clock]
 
 

@@ -16,7 +16,7 @@ func _ready() -> void:
 ## Показать данные слота. Вызывается при открытии меню и после сохранения.
 func setup(game: Dictionary, new_slot: String) -> void:
 	slot = new_slot
-	_name.text = "Слот " + slot
+	_name.text = tr("Место выхода") if slot == SaveStates.AUTO else tr("Слот %s") % slot
 	_time.text = SaveStates.time_text(game, slot)
 	_thumb.texture = SaveStates.thumbnail(game, slot)
 	# Пустой слот — полупрозрачный, чтобы сразу было видно, где пусто.

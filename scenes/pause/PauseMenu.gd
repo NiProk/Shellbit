@@ -14,6 +14,7 @@ signal restart_requested                ## «Начать заново»
 signal exit_requested                   ## «Выйти в библиотеку»
 signal save_requested(slot: String)     ## X на слоте (или A на пустом)
 signal load_requested(slot: String)     ## A на заполненном слоте
+signal screenshot_requested             ## «Скриншот»
 
 const SaveSlotScene := preload("res://scenes/components/SaveSlot.tscn")
 
@@ -27,6 +28,7 @@ func _ready() -> void:
 	%ContinueButton.pressed.connect(resume_requested.emit)
 	%RestartButton.pressed.connect(restart_requested.emit)
 	%ExitButton.pressed.connect(exit_requested.emit)
+	%ScreenshotButton.pressed.connect(screenshot_requested.emit)
 
 	# Слоты создаём один раз. При обновлении меняем только надписи —
 	# иначе кнопка в фокусе исчезла бы, и фокус «потерялся».
@@ -37,7 +39,7 @@ func _ready() -> void:
 		button.pressed.connect(_on_slot_pressed.bind(slot))
 		button.focus_entered.connect(_update_hints)
 
-	for button: Button in [%ContinueButton, %RestartButton, %ExitButton]:
+	for button: Button in [%ContinueButton, %RestartButton, %ScreenshotButton, %ExitButton]:
 		button.focus_entered.connect(_update_hints)
 		button.mouse_entered.connect(button.grab_focus)
 

@@ -1,0 +1,2042 @@
+007everythingornothing	2003	Shooter	2	Griptonite Games	EA Games
+007nightfire		Shooter	2	JV Games	EA Games
+2006fifaworldcupgermany2006		Sports	2	Exient Entertainment	EA Sports
+2disneygamesdisneysportsfootballdisneysportsskateboarding	2002	Sports	2		Buena Vista Games
+2disneygameslilostitch2peterpanreturntoneverland	2005	Compilation	2	Climax Group	Buena Vista Games
+2gamepackhotwheelsstunttrackchallengehotwheelsworldrace		Racing	4	Razorback Developments	Zoo Digital Publishing
+2gamepackmatchboxmissionsemergencyresponseairlandandsearescue	2006	Compilation	1	Gravity-i	DSI Games
+2gamepackunoskipbo	2006	Compilation	4	Black Lantern Studios	DSI Games
+2gamesin1allaricercadinemogliincredibiliunanormalefamigliadisupereroi		Compilation	1	Vicarious Visions	THQ
+2gamesin1bionicleknightskingdom		Compilation			THQ
+2gamesin1brotherbearthelionking		Compilation	1	Vicarious Visions	THQ
+2gamesin1buscandoanemolosincreibles		Compilation	1	Vicarious Visions	THQ
+2gamesin1cartoonnetworkblockpartycartoonnetworkspeedway	2005	Compilation	2	Monkeystone Games	Majesco
+2gamesin1columnscrownchuchurocket		Compilation	2	Wow Entertainment	THQ
+2gamesin1diemonsteragfindetnemo		Compilation		Natsume	THQ
+2gamesin1disneyprincesaselreyleon		Compilation	1	Art	THQ
+2gamesin1disneyprincesashermanooso		Compilation	1		THQ
+2gamesin1disneyprincesaslizziemcguire		Compilation	1		THQ
+2gamesin1disneyprincessbrotherbear	2005	Compilation	1		THQ
+2gamesin1disneyprincessefreredesours		Compilation	1		THQ
+2gamesin1disneyprincesseleroilion		Compilation	1	Art	THQ
+2gamesin1disneyprincesslizziemcguire		Compilation	1		THQ
+2gamesin1disneyprincipesseilreleone		Compilation	1	Art	THQ
+2gamesin1disneyprincipessekodafratelloorso		Compilation	1		THQ
+2gamesin1disneysprinzessinnenbaerenbrueder		Compilation	1		THQ
+2gamesin1disneysprinzessinnenderkoenigderloewen		Compilation	1	Art	THQ
+2gamesin1dragonballzbuusfurydragonballgttransformation	2006	Compilation	2	Webfoot Technologies	Atari
+2gamesin1dragonballzthelegacyofgokuiii	2005	Compilation	1	Webfoot Technologies	Atari
+2gamesin1drmariopuzzleleague	2005	Compilation	2	Tose	Nintendo
+2gamesin1findetnemodieunglaublichen		Compilation	1	Vicarious Visions	THQ
+2gamesin1findetnemofindetnemodasabenteuergehtweiter		Compilation	1	Vicarious Visions	THQ
+2gamesin1findingnemofindingnemothecontinuingadventures	2005	Compilation	1	Vicarious Visions	THQ
+2gamesin1findingnemothecontinuingadventurestheincredibles	2007	Compilation	2		THQ
+2gamesin1findingnemotheincredibles		Compilation	1	Vicarious Visions	THQ
+2gamesin1goldennuggetcasinotexasholdempoker		Compilation	1	Pipe Dream Interactive	Majesco
+2gamesin1hotwheelsvelocityxhotwheelsworldrace	2005	Racing	2		THQ
+2gamesin1lesrazmoketrencontrentlesdelajunglespongebobsquarepantssupersponge		Compilation	1	Magellan Interactive	THQ
+2gamesin1monsterscoallaricercadinemo		Compilation		Natsume	THQ
+2gamesin1monstersencofindingnemo		Compilation		Natsume	THQ
+2gamesin1monstersincfindingnemo	2005	Compilation		Natsume	THQ
+2gamesin1monstrescielemondedenemo		Compilation		Natsume	THQ
+2gamesin1monstruossabuscandoanemo		Compilation			THQ
+2gamesin1motogpgtadvance3proconceptracing		Racing	2		THQ
+2gamesin1powerrangersninjastormpowerrangerslaforcedutemps		Compilation	1	Natsume	THQ
+2gamesin1powerrangersninjastormpowerrangerstimeforce		Compilation	1	Natsume	THQ
+2gamesin1quaddesertfurymonstertrucks	2005	Compilation	1		Majesco
+2gamesin1rugratsgowildspongebobsquarepantssupersponge		Compilation	1	Magellan Interactive	THQ
+2gamesin1scoobydoomysterymayhemscoobydooandthecyberchase	2005	Compilation	1	Artificial Mind & Movement	THQ
+2gamesin1scoobydooscoobydoo2desatado		Compilation	1	Helixe	THQ
+2gamesin1scoobydooscoobydoo2lesmonstressedechainent		Compilation	1	Helixe	THQ
+2gamesin1scoobydooscoobydoo2monstersunleashed	2006	Compilation	1	Helixe	THQ
+2gamesin1sonicadvancechuchurocket		Compilation	2	Dimps	THQ
+2gamesin1sonicadvancesonicbattle	2005	Compilation	2	Dimps	SEGA
+2gamesin1sonicadvancesonicpinballparty		Compilation	2	Dimps	THQ
+2gamesin1sonicbattlechuchurocket		Compilation	2	Sonic Team	THQ
+2gamesin1sonicbattlesonicpinballparty	2005	Compilation	2	Sonic Team	THQ
+2gamesin1sonicpinballpartycolumnscrown		Compilation	2	Sonic Team	THQ
+2gamesin1spongebobsquarepantsbattleforbikinibottomjimmyneutronboygenius		Compilation	1		THQ
+2gamesin1spongebobsquarepantsbattleforbikinibottomnicktoonsfreezeframefrenzy		Compilation		Vicarious Visions	THQ
+2gamesin1spongebobsquarepantsbattleforbikinibottomthefairlyoddparentsbreakindarules	2005	Compilation	1	Vicarious Visions	THQ
+2gamesin1spongebobsquarepantsrevengeoftheflyingdutchmanspongebobsquarepantssupersponge	2005	Compilation	1	Vicarious Visions	THQ
+2gamesin1spongebobsquarepantssuperspongespongebobsquarepantsbattleforbikinibottom	2005	Compilation	1	Vicarious Visions	THQ
+2gamesin1thelionkingdisneyprincess	2004	Compilation	1	Art	THQ
+2gamesin1thespongebobsquarepantsmoviespongebobsquarepantsandfriendsinfreezeframefrenzy	2005	Compilation	1	WayForward Technologies	THQ
+2gamesinonedrmariopuzzleleague		Compilation	2	Tose	Nintendo
+2gamesinonegauntletrampart	2005	Compilation	1	EC Interactive Games	DSI Games
+2gamesinonemarblemadnessklax	2005	Compilation	1	Frame Studios Interactive	Zoo Digital Publishing
+2gamesinonepaperboyrampage	2005	Compilation	1	7th Sense	DSI Games
+2gamesinonespyhuntersupersprint	2005	Compilation	1	Black Lantern Studios	DSI Games
+2greatgamespacmanworldmspacmanmazemadness		Compilation	2	Full Fat	Namco
+2in1asterixobelixbashthemallasterixobelixxxl	2005	Compilation		Velez & Dubail	Atari
+2in1funpackshrek2madagascar	2006				Activision
+2in1funpackshrek2madagascaroperationpenguin	2006		1	Vicarious Visions	Activision
+2in1gamepackshrek2sharktale	2005	Compilation	1	Vicarious Visions	Activision
+2in1gamepackspidermanmysteriosmenacex2wolverinesrevenge		Action	1	Vicarious Visions	Activision
+2in1gamepacktonyhawksundergroundkellyslatersprosurfer		Compilation	2	Vicarious Visions	Activision
+2in1vrally3stuntman	2005	Compilation	2	Velez & Dubail	Atari
+2jeuxen1titeufzegagmachinetiteufmegacompet		Compilation	1	3D Lights	Atari
+2ksportsmajorleaguebaseball2k7	2007	Sports	1	Skyworks Technologies	2K Games
+3gamepackcandylandchutesandladdersoriginalmemorygame	2005	Compilation	4	Black Lantern Studios	DSI Games
+3gamepackkerplunktossacrosstipit	2007	Compilation	4	Gravity-i	DSI Games
+3gamepackmousetrapsimonoperation	2005	Compilation	4	Gravity-i	DSI Games
+3gamepackthegameoflifepaydayyahtzee	2005	Compilation	4	Black Lantern Studios	DSI Games
+3gamesin1rugratsigottagopartyspongebobsquarepantssuperspongetakandthepowerofjuju	2005	Compilation		Helixe	THQ
+3gamesinonebreakoutcentipedewarlords	2005	Various	4	Epicenter Interactive	DSI Games
+3gamesinonedartsrollaballshufflebowl	2005	Compilation	2	Skyworks Technologies	Majesco
+3gamesinonesuperbreakoutmillipedelunarlander	2005	Compilation	1	Gravity-i	DSI Games
+3gamesinoneyarsrevengeasteroidspong	2005	Compilation	2	EC-Interactive	DSI Games
+4gamesononegamepak	2007	Racing	2	Helixe	THQ
+4x4offroaders	2001				
+abdurchdiehecke		Adventure	1	Vicarious Visions	Activision
+acecombatadvance	2005	Action	1	Human Soft	Atari SA
+acelightning	2002	Platform	1	Tiertex Design Studios	BBC Multimedia
+acrobatkid	2002	Platform	1	Atomic Planet Entertainment	Metro3D
+actionmanrobotatak	2004	Platform	1	Magic Pockets	Atari SA
+activisionanthology	2003	Compilation	2	Aspyr	Aspyr
+advancegt2	2002	Racing	1	MTO	THQ
+advancegta	2001	Racing	2	MTO	THQ
+advanceguardianheroes	2004	Beat'em Up	4	Treasure	Ubisoft
+advancerally	2001	Racing	2	MTO	THQ
+advancewars	2001	Strategy	4	Intelligent Systems	Nintendo
+advancewars2blackholerising	2003	Strategy	4	Intelligent Systems	Nintendo
+adventureoftokyodisneysea	2001	Action	1	Tose	Konami
+adventuresofjimmyneutronboygeniustheattackofthetwonkies		Platform	1	Tantalus Media	THQ
+adventuresofjimmyneutronboygeniusthejetfusion		Platform	1	Helixe	THQ
+adventuresofjimmyneutronboygeniusvsjimmynegatron		Adventure	1	Human Soft	THQ
+aerotheacrobat	2002	Platform	1	Atomic Planet Entertainment	Metro3D
+agassitennisgeneration	2003	Sports	4	Aqua Pacific	Dreamcatcher
+agenthugoroborumble		Platform	1	Program-Ace	ITE Media
+aggressiveinline	2002	Sports	2	Full Fat	Acclaim
+aigledeguerrel	2002	Strategy	2	Genki	Nintendo
+airforcedeltaii	2002	Fighting	1	Mobile 21	Konami
+airforcedeltastorm	2002	Fighting	1	Mobile 21	Konami
+akachandoubutsuen	2004	Simulation	1		TDK
+akumajoudraculacircleofthemoon	2001	Action	1	Konami Computer Entertainment Kobe	Konami
+aladdin	2004	Platform	1	Capcom	Capcom
+aleckbordonadventuretowershaftadvance	2004	Platform	1	Altron	Aruze Corp
+alexriderstormbreaker	2006	Action	1	Razorback Developments	THQ
+alienatorsevolutioncontinues		Platform	1	Digital Eclipse	Activision
+alienhominid	2006	Action	1	Tuna Technologies	Zoo Digital Publishing
+allgrownupexpressyourself		Adventure	2	Altron	THQ
+allstarbaseball2003	2002	Sports	1	Software Creations	Acclaim
+allstarbaseball2004featuringderekjeter	2003	Sports	4	Acclaim Studios Manchester	Acclaim
+alteredbeastguardianoftherealms	2002	Beat'em Up	2	3d6 Games	SEGA
+amazingvirtualseamonkeys	2002	Simulation	1	Elo Interactive	Conspiracy Entertainment
+americanbasschallenge	2001	Hunting and Fishing	4	Starfish	Ubisoft
+americandragonjakelongriseofthehuntsclan		Platform	1	WayForward Technologies	Buena Vista Games
+americanidol	2003	Music / Dancing	1	Hothouse Creations	Codemasters
+americantailanfievelsgoldrush	2003	Platform	1	Hokus Pokus	Swing! Entertainment
+angelcollection2pichimoninarou	2004	Strategy	1	Gakken	MTO Co
+angelcollectionmezasegakuennofashionleader	2003	Simulation	1	MTO	Gakken
+angelique	2002	Simulation	1	Ruby Party	Koei
+angunawarriorsofvirtue		Adventure	1	Nathan Tolbert and Chris Hildenbrand	Nathan Tolbert
+animalmaniadokidokiaishoucheck	2002	Simulation	1	Jupiter	Konami
+animalsnaprescuethem2by2	2003	Board	1	Awesome Developments	Ignition Entertainment
+animalyokochoudokidokikyuushutsudaisakusennomaki	2005	Platform	1	Konami Computer Entertainment ???	Konami
+animalyokochoudokidokishinkyuushikennomaki	2006	Puzzle	2	Konami Computer Entertainment ???	Konami
+animaniacslightscameraaction	2005	Platform	2	Warthog Games	Ignition Entertainment
+anotherworld		Action	1	Magic Productions	Foxysofts
+antbully	2006	Adventure	1	Artificial Mind & Movement	Midway
+antzextremeracing	2002	Racing	2	Magic Pockets	Light & Shadow Productions (LSP)
+aozoratonakamatachiyumenobouken	2002	Platform	1	MTO	MTO Co
+apotris	2022	Puzzle		akouzoukos	
+archermacleans3dpool	2004	Sports	8	Awesome Productions	Crave Entertainment
+arctictale	2007	Adventure	2	Atomic Planet Entertainment	DSI Games
+armymenadvance		Shoot'em Up	1	Panasonic	DC Studios
+armymenoperationgreen		Shooter	1	Pocket Studios	The 3DO Company
+armymenturfwars	2002	Shooter	4	Mobius Entertainment	The 3DO Company
+aroundtheworldin80days	2004	Action	1	Saffire	Hip Games
+arthurandtheinvisibles	2007	Adventure	1	Mistic Software	Atari SA
+arthurandtheminimoys	2007	Adventure	1	Mistic Software	Atari SA
+ashitanojoemakkanimoeagare	2003	Sports	2	Konami	Konami
+asoundofthunder	2005	Action	1	Mobius Entertainment	Bam Entertainment
+asterixobelixbashthemall	2002	Platform	2	Bit Managers	Atari SA
+asterixobelixxxl	2004	Beat'em Up	2	Velez & Dubail	Atari SA
+astroboyomegafactor	2004	Platform	1	Treasure	THQ
+astroboytetsuwanatomatomheartnohimitsu	2003	Platform	1	Treasure	THQ
+atarianniversaryadvance	2002	Compilation	2	Digital Eclipse	Infogrames
+atlantisthelostempire		Platform	1	3d6 Games	THQ
+atomicbetty		Platform	1	Big Blue Bubble	Atari SA
+atvquadpowerracing		Racing	2	Tantalus Interactive	Liquid Games
+atvthunderridgeriders	2006	Racing	1	SkyRiver Studios	Zoo Digital Publishing
+avatarthelastairbender	2006	Adventure	1	Halfbrick Studios	THQ
+avatarthelastairbendertheburningearth	2007	Action	1	Halfbrick Studios	THQ
+avatarthelegendofaang		Adventure	1	Halfbrick Studios	THQ
+avatarthelegendofaangtheburningearth		Action	1	Halfbrick Studios	THQ
+aventuresdejackiechanleslalegendedelamainnoire	2001	Beat'em Up	1	Torus Games	Activision
+azumangadaiouadvance	2003	Board	1	King Records	King Records
+babartotherescue	2006	Platform	1	Sirius	The Game Factory
+backtostone	2006	Role-playing (RPG)	1	Hidden Floor	Neko Entertainment
+backtrack		Shooter	4	JV Games	Telegames
+backyardbaseball	2002	Sports	2	Game Brains	Infogrames
+backyardbaseball2006	2005	Sports	2	Humongous Entertainment	Atari
+backyardbasketball	2004	Sports	2	Humongous Entertainment	Atari SA
+backyardfootball	2002	Sports	2	Torus Games	Infogrames
+backyardfootball2006	2005	Sports	2	Humongous Entertainment	Atari SA
+backyardhockey	2003	Sports	2	Mistic Software	Atari SA
+backyardskateboarding	2004	Sports	2	Full Fat	Atari SA
+backyardsportsbaseball2007	2006	Sports	2	Humongous Entertainment	Atari SA
+backyardsportsbasketball2007	2006	Sports	2	Humongous Entertainment	Atari SA
+backyardsportsfootball2007	2006	Sports	2	Humongous Entertainment	Atari SA
+bakunetsudodgeballfighters	2001	Sports	2	Million	Ubisoft
+bakutenshootbeyblade2002gekisenteambattlekouryuunoshoudaichihen	2002	Action	4	AI	Broccoli
+bakutenshootbeyblade2002gekisenteambattleseiryuunoshoutakaohen	2002	Adventure	4	AI	Broccoli
+bakutenshootbeyblade2002ikuzebakutouchoujiryokubattle	2002	Role-playing (RPG)	2	AI	Broccoli
+baldursgatedarkalliance	2003	Role-playing (RPG)	1	Magic Pockets	Ubisoft
+ballisticecksvssever	2002	Shooter	2	Crawfish Interactive	Bam Entertainment
+banjokazooiegruntysrevenge	2003	Platform	1	Rare	THQ
+banjokazooielavendettadigrunty		Platform	1	Rare	THQ
+banjokazooielavenganzadegrunty		Platform	1	Rare	THQ
+banjopilot	2005	Racing	4	Rare	THQ
+barbieandthemagicofpegasus	2005	Platform	1	WayForward Technologies	Vivendi Universal Games
+barbieastheislandprincess	2007	Casual Game	2	Human Soft	Activision
+barbiediariesthehighschoolmystery	2006	Adventure	1	Gorilla Systems	Activision
+barbiehorseadventures		Racing	2	Mobius Entertainment	Vivendi Universal Games
+barbiehorseadventuresblueribbonrace	2003	Racing	2	Mobius Entertainment	Vivendi Universal Games
+barbieinthe12dancingprincesses	2006	Platform	1	WayForward Technologies	Activision
+barbiesoftwaregroovygames	2002	Sports	2	Dice	Vivendi Universal Games
+barbiesuperpacksecretagentgroovygames	2005	Compilation	1	Digital Illusions	Vivendi Universal Games
+barbietheprincessandthepauper	2004	Platform	1	WayForward Technologies	Vivendi Universal Games
+barnyard	2006	Casual Game	1	Halfbrick	THQ
+baseballadvance	2002	Sports	1	Smilebit	SEGA
+basstsurishiyouzetournamentwasenryakuda	2002	Hunting and Fishing	1		Konami
+batmanbegins		Platform	1	Vicarious Visions	EA Games
+batmanriseofsintzu	2003	Platform	1	Ubi Soft Montreal	Ubisoft
+batmanvengeance	2001	Platform	1	Ubi Soft Montreal	Ubisoft
+battlebdaman	2006	Shooter	2	Atlus	Atlus
+battlebdamanfirespirits	2006	Shooter	1	Atlus	Atlus
+battlebotsbeyondthebattlebox	2002	Fighting	2	Cave Barn Studios	Vivendi Universal Games
+battlebotsdesigndestroy	2003	Fighting	2	Cave Barn Studios	Majesco
+battlenetworkrockmanexe	2001	Action	1	Capcom Production Studio 2	Ubisoft
+battlenetworkrockmanexe2	2001	Role-playing (RPG)	1	Capcom Production Studio 2	Ubisoft
+battlenetworkrockmanexe3	2002	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+battlenetworkrockmanexe3black	2003	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+battletoads		Beat'em Up	1	Rare	Rareware
+battlexbattlekyodaigyodensetsu	2003	Hunting and Fishing	1	Starfish	Starfish
+bbball	2004	Sports	2	Micott & Basara	Micott & Basara
+bdensetsubattlebdamanfirespirits	2005	Shooter	1	Atlus	Atlus
+bdensetsubattlebdamanmoerobdamashii	2004	Shooter	2	Atlus	Atlus
+beastshootermezasebeastking	2002	Sports	2	Hudson Soft	Konami
+beegame	2007	Platform	1	Midway	Midway
+berenstainbearsandthespookyoldtree	2005	Platform	1	Program-Ace	Namco
+bestfriendshundekatzen		Simulation	1	Sproing	THQ
+bestplayproyakyuu	2002	Sports	2	Parity Bit	Enterbrain
+beybladegrevolution	2004	Role-playing (RPG)	1	Full Fat	Atari SA
+beybladevforceultimatebladerjam	2003	Fighting	2	Full Fat	Atari SA
+biblegame	2005	Adventure	4	Alpine Studios	Crave Entertainment
+bienemajadieklatschmohnwieseingefahr		Platform	1	Midway	Midway
+bigmuthatruckers	2005	Racing	1	Raylight Studios	Zoo Digital Publishing
+bionicle	2003	Adventure	1	Mobius Entertainment	THQ
+bionicleheroes	2006	Shooter	1	Amaze Entertainment	Eidos Interactive
+bioniclematoranadventures		Action	1	Argonaut Games	Lego Interactive
+bioniclemazeofshadows	2005	Role-playing (RPG)	1	Razorback Developments	THQ
+bitgenerationscoloris	2006	Puzzle	1	Skip	Nintendo
+bitgenerationsdialhex	2006	Puzzle	1	Skip	Nintendo
+bitgenerationsdigidrive	2006		2	Q-Games	Nintendo
+bitgenerationsdotstream	2006			Skip	Nintendo
+bitgenerationsorbital	2006			Skip	Nintendo
+bitgenerationssoundvoyager	2006			Skip	Nintendo
+blackbeltchallenge		Fighting	2	Lost Boys Games	Xicat Interactive
+blackblackburabura	2002	Role-playing (RPG)	1	Capcom	Capcom
+blackmatrixzero	2002	Role-playing (RPG)	1	Flight Plan	Interchannel
+blacksigilbladeoftheexiled	2007				
+blackthorne	2003	Platform	1	Mass Media	Blizzard Classic Arcade
+bladesofthunder	2005	Shooter	1	Interactive Vision	Summitsoft Entertainment
+bleachadvancekurenainisomarusoulsociety	2005	Various	2	Alpha Unit	SEGA
+blenderbros	2002	Platform	4	Hudson Soft	Infogrames
+blueangeloangelsfromtheshrine		Role-playing (RPG)	1	Virtual Spaghetti	Shibuya Interactive
+bmxtrickracer	2003	Racing	4	Hypnotix	Simon & Schuster Interactive
+boardgameclassics	2005	Board	2	Black Lantern Studios	Zoo Digital Publishing
+boardgameclassicsbackgammonchessdraughts		Board	2	Black Lantern Studios	Zoo Digital Publishing
+bobobouboboubobo9kyokusenshigagyuugou	2004	Role-playing (RPG)	2		Hudson
+bobobouboboubobobakutouhajiketaisen	2004	Adventure	2		Hudson
+bobobouboboubobomajideshinkenbattle	2003	Role-playing (RPG)	2	Rokumendo	Hudson
+boboboubobouboboougi875bakuretsuhanageshinken	2002	Role-playing (RPG)	2		Hudson
+boktai2solarboydjango	2004	Platform	4	Konami Computer Entertainment Japan	Konami
+boktaithesunisinyourhand	2003	Platform	4	Konami Computer Entertainment Japan	Konami
+bokujoumonogatarimineraltownnonakamatachi	2003	Strategy	1	Tose	Natsume
+bokujoumonogatarimineraltownnonakamatachiforgirl	2003	Strategy	1	Tose	Natsume
+bokuranotaiyoutaiyouactionrpg	2003	Platform	4	Konami Computer Entertainment Japan	Konami
+bokuwakoukuukanseikan	2001	Strategy	1	Graphic Research	Tam
+bombermanjettersdensetsunobomberman	2002	Role-playing (RPG)	4	AI	Hudson
+bombermanjettersgamecollection	2003	Compilation	4	Hudson Soft	Hudson
+bombermanmax2blueadvance	2002	Action	4	Hudson Soft	Vivendi Universal Games
+bombermanmax2bombermanversion	2002	Action	4	Hudson Soft	Vivendi Universal Games
+bombermanmax2maxversion	2002	Action	4	Hudson Soft	Vivendi Universal Games
+bombermanmax2redadvance	2002	Action	4	Hudson Soft	Vivendi Universal Games
+bombermanstory	2001	Puzzle	4	Hudson Soft	Activision
+bombermantournament	2001	Puzzle	4	Hudson Soft	Activision
+bookworm	2003	Puzzle	1	PopCap Games	Majesco
+boukenoubeetbustersroad	2005	Role-playing (RPG)	1	Bandai	Bandai
+boukenyuukiplusterworlddensetsunoplustgate	2003	Role-playing (RPG)	1	Will	Takara
+boukenyuukiplusterworlddensetsunoplustgateex	2003	Role-playing (RPG)	4	Will	Takara
+boukenyuukiplusterworldplustongp	2003	Racing	4	Will	Takara
+boukyakunosenritsu	2004	Adventure	1	Alpha Unit	Bandai
+boulderdashex	2003	Puzzle	4	Nobilis	Kemco
+boxingfever		Sports	2	Digital Fiction	THQ
+bratz	2003	Action		DC Studios	Ubisoft
+bratzbabyz	2006	Casual Game	1	Barking Lizard Technologies	THQ
+bratzforeverdiamondz	2006	Adventure	1	Barking Lizard Technologies	Barking Lizards
+bratzrockangelz	2005	Action	1	Altron	THQ
+bratzthemovie	2007	Simulation	1	Barking Lizard Technologies	THQ
+breathoffire	2001	Role-playing (RPG)	2	Capcom	Capcom
+breathoffireii	2002	Role-playing (RPG)	2	Capcom	Capcom
+breathoffireiishimeinoko	2001	Role-playing (RPG)	2	Capcom	Capcom
+breathoffireryuunosenshi	2001	Role-playing (RPG)	2	Capcom	Capcom
+britneysdancebeat	2002	Music / Dancing	2	Unknown	THQ
+brokencircle		Adventure	1	7Raven Studios	Piko Interactive
+brokenswordtheshadowofthetemplars	2002	Adventure	1	Revolution Software	Bam Entertainment
+brotherbear	2003	Platform	1	Vicarious Visions	Disney Interactive
+bruceleereturnofthelegend	2003	Platform	1	Vicarious Visions	Universal Interactive
+bubblebobbleoldnew	2004	Platform	2	Taito	Empire Interactive
+buffycontrelesvampireslacolerededarkhul		Platform	1	Natsume	THQ
+buffyimbannderdaemonenkoenigdarkhulszorn		Platform	1	Natsume	THQ
+buffythevampireslayerwrathofthedarkhulking		Platform	1	Natsume	THQ
+buraburadonkey	2005	Platform	4	Paon	Nintendo
+buttuglymartiansbkmbattles	2002	Shooter		Runecraft	Vivendi Universal Games
+cabbagepatchkidsthepatchpuppyrescue	2006	Platform	1	1st Playable Productions	D3 Publisher
+cabelasbiggamehunter	2002	Hunting and Fishing	1	ImageBuilder	Activision
+cabelasbiggamehunter2005adventures		Hunting and Fishing	1	Torus Games	Activision
+caesarspalaceadvancemillenniumgoldedition	2001	Gambling	1	Pipe Dream Interactive	THQ
+calciobit	2006	Sports	2	Parity Bit	Nintendo
+camplazloleakylakegames	2006	Adventure	1	Unknown	Crave Entertainment
+capcomclassicsminimix	2006	Compilation	1	Sensory Sweep Studios	Capcom
+captaintsubasaeikounokiseki	2002	Sports	1	Konami Computer Entertainment ???	Konami
+carbattlerjoe	2002	Racing	4	Ancient	Natsume
+cardcaptorsakurasakuracarddeminigame	2003	Various	1	Affect	TDK Core
+cardcaptorsakurasakuracardhensakuratocardtootomodachi	2004	Card	1	MTO	MTO Co
+cardparty	2002	Card	4	NDcube	Media Kite
+carebearsthecarequest	2005	Platform	1	SG Diffusion	The Game Factory
+carrerapowerslide	2003	Racing	2	Tiertex Design Studios	Stadlbauer
+cars	2006	Racing	1	Helixe	THQ
+carsmaternationalchampionship	2007	Racing	1	Tantalus Interactive	THQ
+carsmotoriruggenti		Racing	1	Helixe	THQ
+cartoonnetworkblockparty	2004	Board	4	Monkeystone	Majesco
+cartoonnetworkspeedway	2003	Racing	2	DC Studios	Majesco
+casper	2002	Platform	1	Planet Interactive	Microïds
+castlevania		Action	1	Konami Computer Entertainment Kobe	Konami
+castlevaniaakatsukinominuet	2003	Platform	1	Konami Computer Entertainment Tokyo	Konami
+castlevaniaariaofsorrow	2003	Platform	1	Konami Computer Entertainment Tokyo	Konami
+castlevaniabyakuyanoconcerto	2002	Action	1	Konami Computer Entertainment Tokyo	Konami
+castlevaniacircleofthemoon	2001	Action	1	Konami Computer Entertainment Kobe	Konami
+castlevaniadoublepack	2006	Compilation	1	Konami Computer Entertainment Tokyo	Konami
+castlevaniaharmonyofdissonance	2002	Action	1	Konami Computer Entertainment Tokyo	Konami
+castleween		Platform	1	Magic Pockets	Wanadoo Edition
+catinthehat	2005	Platform	1	Game Titan	NewKidCo
+catwoman		Platform	1	Magic Pockets	Electronic Arts
+catz		Puzzle	2	MTO	Ubisoft
+celesteclassic	2020	Platformer	1	Matt Makes Games	Matt Makes Games
+celesteclassic2	2025	Platformer		Maddy Makes Games	
+chaojimaliou2		Platform	4	Nintendo R&D2	Nintendo
+chaojimalioushijie	2006	Platform	2	Nintendo R&D2	Nintendo
+charlieandthechocolatefactory	2005	Platform	1	Digital Eclipse	Global Star Software
+charlottesweb	2006	Platform	1	Backbone Entertainment	SEGA
+cheetahgirls	2006	Music / Dancing	1	Gorilla Systems	Buena Vista Games
+chessmaster	2002	Board	2	Ubisoft ???	Ubisoft
+chickenlittle	2005	Platform	2	Avalanche Software	Buena Vista Games
+chickenshoot	2005	Action	2	FrontLine Studios	Zoo Digital Publishing
+chickenshoot2	2005	Action	2	FrontLine Studios	Zoo Digital Publishing
+chinmokunoisekiestpolisgaiden	2002	Role-playing (RPG)	4	Atelier Double	Atlus
+chivuolesseremilionario		Quiz	1	Hothouse Creations	Zoo Digital Publishing
+chobitsforgameboyadvanceatashidakenohito	2002	Adventure	1	Marvelous	Marvelous
+chocobolandagameofdice	2002	Board	4	Square	Squaresoft
+choroqadvance	2002	Strategy	2	Access	Takara
+choroqadvance2	2002	Racing	4	Electronics Application	Zoo Digital Publishing
+choumakaimurar	2002	Platform	1	Capcom	Capcom
+chroniclesofnarniathethelionthewitchandthewardrobe		Action	2	Amaze Entertainment	Buena Vista Games
+chuchurocket	2001	Strategy	4	Sonic Team	SEGA
+cimatheenemy	2003	Role-playing (RPG)	1	Natsume	Natsume
+cinderellamagicaldreams	2005	Platform	1	DC Studios	THQ
+cinnamonfuwafuwadaisakusen	2005		1	Rocket Company	Rocket Company
+cinnamonyumenodaibouken	2004		1		Imagineer
+cinnamorollkokoniiruyo	2003	Puzzle	1	AI	Imagineer
+classicnesseriesbomberman	2004	Action	1	Hudson Soft	Nintendo
+classicnesseriescastlevania	2004	Action	1	Konami Computer Entertainment ???	Nintendo
+classicnesseriesdonkeykong	2004	Platform	2	Nintendo R&D2	Nintendo
+classicnesseriesdrmario	2004	Puzzle	2	Nintendo R&D1	Nintendo
+classicnesseriesexcitebike	2004	Racing	1	Nintendo R&D4	Nintendo
+classicnesseriesiceclimber	2004	Platform	2	Nintendo R&D1	Nintendo
+classicnesseriesmetroid	2005	Action	1	Nintendo R&D1	Nintendo
+classicnesseriespacman	2007	Action	2	Namco	Nintendo
+classicnesseriessupermariobros		Action	2	Nintendo R&D4	Nintendo
+classicnesseriesthelegendofzelda	2004	Role-playing (RPG)	1	Nintendo R&D4	Nintendo
+classicnesseriesxevious	2004	Shoot'em Up	2	Namco	Nintendo
+classicnesserieszeldaiitheadventureoflink	2004	Role-playing (RPG)	1	Nintendo R&D4	Nintendo
+cocotokartracer	2005	Racing	1	Neko Entertainment	Bigben Interactive
+cocotoplatformjumper	2007	Platform	1	Neko Entertainment	Bigben Interactive
+codenamekidsnextdooroperationsoda	2004	Platform	1	Vicarious Visions	Global Star Software
+colinmcraerally20	2002	Sports	2	Ubisoft ???	Ubisoft
+columnscrown	2001	Puzzle	2	Unknown	Infogrames
+combatchoroqadvancedaisakusen	2002	Strategy	2	Access	Takara
+combopacksonicadvancesonicpinballparty	2005	Compilation	2	Dimps	THQ
+comixzone	2002	Beat'em Up	1	Virtucraft	SEGA
+contraadvancethealienwarsex	2002	Shooter	2	Konami Computer Entertainment ???	Konami
+contrahardspirits	2002	Shooter	2	Konami Computer Entertainment ???	Konami
+corvette	2003	Racing	1	Visual Impact	TDK
+cosmowandawennelfenhelfendasschattenduell		Action	1	Helixe	THQ
+crashbandicoot2ntranced	2003	Platform	2	Vicarious Visions	Universal Interactive
+crashbandicootadvance	2002	Platform	1	Vicarious Visions	Universal Interactive
+crashbandicootadvance2gurugurusaimindaipanic	2003	Platform	2	Vicarious Visions	Universal Interactive
+crashbandicootadvancewakuwakutomodachidaisakusen	2004	Platform	4	Vicarious Visions	Vivendi Universal Games
+crashbandicootbakusounitrocart	2004	Racing	4	Vicarious Visions	Universal Interactive
+crashbandicootfusion		Platform	4	Vicarious Visions	Vivendi Universal Games
+crashbandicootpurpleriptosrampage	2004	Platform	4	Vicarious Visions	Vivendi Universal Games
+crashbandicootthehugeadventure	2002	Platform	1	Vicarious Visions	Universal Interactive
+crashbandicootxs	2002	Platform	1	Vicarious Visions	Universal Interactive
+crashnitrokart	2003	Racing	4	Vicarious Visions	Universal Interactive
+crashofthetitans	2007	Platform	4	Amaze Entertainment	Sierra
+crashspyrosuperpackspyroseasonoficecrashbandicootthehugeadventure	2008	Compilation			
+crashspyrosuperpackvolume1	2005	Compilation			
+crashspyrosuperpackvolume2	2005	Compilation			Sierra
+crashsuperpackcrashbandicoot2ntrancedcrashnitrokart	2005	Compilation	4	Vicarious Visions	Sierra
+crayonshinchanarashioyobucinemalandnodaibouken	2004		1	Inti Creates	Atari SA
+crazychase	2002	Platform	1	Nobilis	Kemco
+crazyfrogracer	2005	Racing	1	Denaris Entertainment Software	DTP Entertainment
+crazytaxicatcharide	2003	Racing	1	Graphic State Games	SEGA
+creatures	2002	Simulation	1	Elo Interactive	Swing! Entertainment
+croket2yaminobanktobanqueen	2003		2		Konami
+croket3granuoukokunonazo	2003	Action	4		Konami
+croket4banknomorinomamorigami	2004	Action	4		Konami
+croketgreattokinoboukensha	2004	Strategy	4	Jupiter	Konami
+croketyumenobankersurvival	2002	Adventure	1	Konami Computer Entertainment ???	Konami
+crosstownheroes	2002	Action	1	ImaginEngine	THQ
+crouchingtigerhiddendragon	2003	Beat'em Up	1	Ubi Soft Shanghai	Ubisoft
+cruisnvelocity		Racing	4	Graphic State	Midway
+crushedbaseball	2004	Sports	2	Griptonite Games	Summitsoft Entertainment
+ctspecialforces	2004	Action	2	Light & Shadow Production	Light & Shadow Productions (LSP)
+ctspecialforces2backinthetrenches		Shooter	2	Light & Shadow Production	Light & Shadow Productions (LSP)
+ctspecialforces3bioterror	2004	Shooter	2	Light & Shadow Production	Light & Shadow Productions (LSP)
+ctspecialforcesbacktohell	2003	Shooter	2	Light & Shadow Production	Light & Shadow Productions (LSP)
+cubixrobotsforeveryoneclashnbash	2002	Beat'em Up	4	Human Soft	The 3DO Company
+curiousgeorge	2006	Platform	1	Torus Games	Namco
+customrobogx	2002	Fighting	1	Noise	Nintendo
+cyberdrivezoidskijuunosenshihyuu	2003	Role-playing (RPG)	2	Amedio	Tomy
+daimahjong	2001	Board	4	Success	Hori
+daisenryakuforgameboyadvance	2001	Strategy	2		Media Kite
+daisukiteddy	2002	Role-playing (RPG)	1		MTO Co
+dancingswordsenkou	2003	Beat'em Up	1	MTO	MTO Co
+dandohtobaseshourinosmileshot	2004	Sports		Takara	Takara
+dandohxi	2002	Sports		GameVilliage	GameVilliage
+dannyphantomdschungelstadt		Shoot'em Up	1	Altron	THQ
+dannyphantomtheultimateenemy	2005	Platform	1	Altron	THQ
+dannyphantomurbanjungle	2006	Shoot'em Up	1	Altron	THQ
+daredevil		Beat'em Up	1	Griptonite Games	THQ
+dariusr	2002	Shoot'em Up	1	Rideon Incorporated	PCCW
+darkarena		Action	4	Graphic State Games	THQ
+darkempire		Role-playing (RPG)		Marvelous Entertainment	
+davemirrafreestylebmx2	2001	Sports	4	Full Fat	Acclaim
+davemirrafreestylebmx3		Sports	2	Full Fat	Acclaim
+davidbeckhamsoccer	2002	Sports	1	Yoko Entertainment	Rage Software
+daviscup	2002	Sports	2	Hokus Pokus	Ubisoft
+deadlyskies	2002	Fighting	1	Mobile 21	Konami
+deadtorights	2004	Shooter	1	Torus Games	Zoo Digital Publishing
+dealornodeal	2006	Strategy	2	Gravity-i	DSI Games
+defender	2002	Racing	2	OutLook Entertainment	Midway
+defenderforallmankind	2002	Racing	2	OutLook Entertainment	Midway
+defenderofthecrown	2002	Strategy	1	Crawfish Interactive	Zoo Digital Publishing
+demikidsdarkversion	2003	Role-playing (RPG)	2	Multimedia Intelligence Transfer	Atlus
+demikidslightversion	2003	Role-playing (RPG)	2	Multimedia Intelligence Transfer	Atlus
+demondrivertimetoburnrubber	2004	Racing	4	AIA	Ignition Entertainment
+denkiblocks	2002	Strategy	4	Doki Denki Studios	Rage Software
+densetsunostafy	2002	Platform	1	Tose	Nintendo
+densetsunostafy2	2003	Platform	1	Tose	Nintendo
+densetsunostafy3	2004	Platform	1	Tose	Nintendo
+derbystallionadvance	2002	Sports with Animals	1	ParityBit	Enterbrain
+desertstrikeadvance	2002	Shooter	1	EA ???	Electronic Arts
+deutschlandsuchtdensuperstar		Music / Dancing	1	Hothouse Creations	Codemasters
+dexterslaboratorychesschallenge	2002	Puzzle	2	Virtucraft	Bam Entertainment
+dexterslaboratorydeesasterstrikes	2001	Platform	1	Virtucraft	Bam Entertainment
+diadroidsworldevilteikokunoyabou	2001	Adventure	1	Epoch	Epoch
+digicharatdigicommunication	2002	Simulation	1	M2	Broccoli
+digicommunicationnyodatoublackgemagemadan	2004	Simulation	2	M2	Broccoli
+digimonbattlespirit	2003	Platform	2	Dimps	Bandai
+digimonbattlespirit2	2003	Platform	2	Dimps	Bandai
+digimonracing	2004	Racing	4	Griptonite Games	Bandai
+dinotopiathetimestonepirates		Platform	1	RFX Interactive	TDK
+disneyprincesas		Platform	1	Art	THQ
+disneyprincess		Platform	1	Art	THQ
+disneyprincesse	2003	Platform	1	Art	THQ
+disneyprincessroyaladventure	2006	Adventure	1	Human Soft	Buena Vista Interactive
+disneyprincipesse		Platform	1	Art	THQ
+disneysgametvepisodelizziemcguire2lizziediaries	2005				
+disneysparty		Board	4	EA ???	Disney Interactive
+disneysportsamericanfootball	2002	Sports	1	Konami Computer Entertainment Osaka	Konami
+disneysportsbasketball	2002	Sports	4	Konami Computer Entertainment Osaka	Konami
+disneysportsfootball	2003	Sports	1	Konami Computer Entertainment Osaka	Konami
+disneysportsmotocross	2003	Racing	1	Konami Computer Entertainment ???	Konami
+disneysportsskateboarding	2002	Sports	2	Konami Computer Entertainment ???	Konami
+disneysportssnowboarding	2003	Sports	2	Konami Computer Entertainment Osaka	Konami
+disneysportssoccer	2002	Sports	4	Konami Computer Entertainment Osaka	Konami
+disneysprinzessinnen		Platform	1	Art	THQ
+dkkingofswing		Platform	4	Paon	Nintendo
+dogz	2005	Simulation	2	Backbone Entertainment	Ubisoft
+dogz2	2007	Action	2	M2TO	Ubisoft
+dogzfashion	2006	Simulation	1	Ubisoft ???	Ubisoft
+dokaponmonsterhunter		Role-playing (RPG)	2	Asmik	AIA
+dokaponqmonsterhunter	2001	Role-playing (RPG)	2	Asmik	AIA
+dokidokicookingseries1komugichannohappycake	2002	Strategy	1		MTO Co
+dokidokicookingseries2gourmetkitchensutekinaobentou	2003	Strategy	1		MTO Co
+dokodemotaikyokuyakumanadvance	2001	Board	2	NDcube	Nintendo
+domokunnofushigitelevision	2002	Role-playing (RPG)	1	Suzak	Nintendo
+donaldduckadvance	2001	Platform	1	Ubisoft ???	Ubisoft
+donchanpuzzlehanabidedoonadvance	2004	Puzzle	1		Aruze Corp.
+donkeykongcountry	2003	Platform	2	Rare	Nintendo
+donkeykongcountry2		Platform	4	Rare	Nintendo
+donkeykongcountry3		Platform	2	Rare	Nintendo
+doom	2001	Action	4	Unknown	id Software
+doomii	2002	Action	4	Torus Games	Activision
+doraemondokodemowalker	2002	Board	4		Epoch
+doraemonmidorinowakuseidokidokidaikyuushutsu	2001	Action	4	Mobile 21	Epoch
+doratheexplorerdorasworldadventure	2006	Adventure	1	Black Lantern Studios	Global Star Software
+doratheexplorerdoublepack	2007			Cinegroupe	Gotham Games
+doratheexplorersuperspies	2004	Action	1	Cinegroupe	Gotham Games
+doratheexplorersuperstaradventures	2004	Adventure	1	Backbone Entertainment	The Game Factory
+doratheexplorerthesearchforthepiratepigstreasure	2002		1	Handheld Games	NewKidCo
+doubledragonadvance	2003	Beat'em Up	2	Tecmo	Atlus
+doublegamecartoonnetworkblockpartycartoonnetworkspeedway		Compilation	2	Monkeystone Games	Majesco
+doublegamegoldennuggetcasinotexasholdempoker		Compilation	1	Unknown	Majesco
+doublegamequaddesertfurymonstertrucks	2006	Compilation	1		Majesco
+doublepacksonicadvancechuchurocket		Compilation	2	Sonic Team	THQ
+doublepacksonicbattlesonicadvance	2006	Compilation	2	Sonic Team	SEGA
+doublepacksonicpinballpartysonicbattle	2006	Compilation	2	Sonic Team	THQ
+doubutsujimanochobigurumi	2003	Adventure	2	AI	Rocket Company
+doubutsujimanochobigurumi2tamachanmonogatari	2004	Action	1	AI	Rocket Company
+downforce		Racing	1	Smartdog	Titus
+downtownnekketsumonogatariex	2004	Beat'em Up	1	Million	Atlus
+dragonballadvanceadventure	2004	Platform	2	Dimps	Bandai
+dragonballadvancedadventure		Platform	2	Dimps	Bandai
+dragonballgttransformation	2005	Beat'em Up	2	Webfoot Technologies	Atari SA
+dragonballzbukuutougeki	2004	Fighting	2	Cavia	Bandai
+dragonballzbuusfury	2004	Role-playing (RPG)	2	Webfoot Technologies	Atari SA
+dragonballzcollectiblecardgame	2002	Card	2	ImaginEngine	Infogrames
+dragonballzmoogongtoogeuk		Fighting	2	Cavia	Bandai
+dragonballzsupersonicwarriors	2004	Fighting	2	Cavia	Bandai
+dragonballztaiketsu	2003	Fighting	2	Webfoot Technologies	Bandai
+dragonballzthelegacyofgoku	2002	Role-playing (RPG)	1	Webfoot Technologies	Infogrames
+dragonballzthelegacyofgokuii	2003	Role-playing (RPG)	1	Webfoot Technologies	Infogrames
+dragonballzthelegacyofgokuiiinternational	2004	Role-playing (RPG)	1	Webfoot Technologies	Infogrames
+dragondriveworlddbreak	2003	Role-playing (RPG)	1	Zero One	Banpresto
+dragonquestcharacterstornekonodaibouken2advancefushiginodungeon	2001	Role-playing (RPG)	1	Chunsoft	Enix
+dragonquestcharacterstornekonodaibouken3advancefushiginodungeon	2004	Role-playing (RPG)	1	Chunsoft	Square Enix
+dragonquestmonsterscaravanheart	2003	Role-playing (RPG)	1	Tose	Enix
+dragonsrock	2006	Platform	1	Independent Arts	East Entertainment Media
+dragontalesdragonadventures	2004	Platform	1	Handheld Games	Global Star Software
+drakejosh	2007	Action	1	Artificial Mind & Movement	THQ
+drilldozer	2006	Platform	1	Game Freak	Nintendo
+driv3r	2005	Racing	1	Velez & Dubail	Atari SA
+driven	2001	Racing	4	Crawfish Interactive	Bam Entertainment
+driver2advance	2002	Racing	1	Sennari Interactive	Atari SA
+drmariopaneldepon	2005	Compilation	2	Intelligent Systems	Nintendo
+drmuto	2003	Platform	2	Digital Eclipse	Midway
+dromeracers	2003	Racing	1	Mobius Entertainment	THQ
+droopystennisopen	2002	Sports	4	Bit Managers	Light & Shadow Productions (LSP)
+drseussthecatinthehat	2003	Platform	1	Digital Eclipse	Coktel Vision
+drsudoku	2006	Puzzle	1	Success	505 Games
+dualblades	2002	Fighting	2	Vivid Image	Metro3D
+duelmasters2invincibleadvance	2004	Strategy	2	Amble	Atlus
+duelmasters2kirifudashoubuver	2004	Adventure	2	Amble	Atlus
+duelmasters3	2004	Strategy	2	Amble	Atlus
+duelmasterskaijudoshowdown	2004	Card	2	Mistic Software	Atari SA
+duelmasterssempailegends	2004	Card	2	Mistic Software	Atari SA
+duelmastersshadowofthecode	2005	Card	2	Mistic Software	Atari SA
+dukenukemadvance	2002	Shooter	4	Torus Games	Take 2 Interactive
+dungeonsdragonseyeofthebeholder	2002	Role-playing (RPG)	1	Pronto Games	Infogrames
+dynastywarriorsadvance	2005	Beat'em Up	1	Koei	Nintendo
+earthwormjim		Platform	1	Shiny Entertainment	THQ
+earthwormjim2	2002	Platform	1	Super Empire	Majesco
+ecksvsever		Shooter	4	369 Interactive	Bam Entertainment
+ecksvssever	2001	Shooter	4	369 Interactive	Bam Entertainment
+ecksvsseveriiballistic		Shooter	2	Crawfish Interactive	Bam Entertainment
+ededdneddyjawbreakers	2002	Platform	1	Climax Group	Bam Entertainment
+ededdneddythemisedventures	2005	Platform	1	Artificial Mind & Movement	Midway
+eggmania	2002	Puzzle	2	HotGen	Kemco
+eggmaniatsukandemawashitedossunpuzzle	2002	Puzzle	2	HotGen	Kemco
+eggomania		Puzzle	2	HotGen	Kemco
+elemix	2003	Adventure	1	Sims	Sims
+elevatoractionoldnew	2002	Platform	2	Taito	MediaKite
+elfbowling12	2005	Sports	2	Black Lantern Studios	Ignition Entertainment
+elfthemovie	2004	Platform	1	Human Soft	Play It!
+enchantedonceuponandalasia	2007	Platform	2	Artificial Mind & Movement	Disney Interactive
+eragon	2006	Role-playing (RPG)	1	Amaze Entertainment	Sierra
+erementargeradtozasareshiuta	2005	Role-playing (RPG)	1	Jupiter	Tomy
+espnfinalroundgolf		Sports	2	Konami Computer Entertainment ???	Konami
+espnfinalroundgolf2002	2001	Sports	2	Konami Computer Entertainment ???	Konami
+espngreatoutdoorgamesbass2002	2001	Hunting and Fishing	2	Konami Computer Entertainment Osaka	Konami
+espngreatoutdoorgamesbasstournament	2002	Hunting and Fishing	2	Konami Computer Entertainment Osaka	Konami
+espninternationalwintersports		Sports	1	Konami Computer Entertainment Osaka	Konami
+espninternationalwintersports2002	2002	Sports	1	Konami Computer Entertainment Osaka	Konami
+espnwinterxgamessnowboarding2	2002	Sports	1	Konami Computer Entertainment Osaka	Konami
+espnwinterxgamessnowboarding2002	2001	Sports	1	Konami Computer Entertainment Osaka	Konami
+espnxgamesskateboarding	2001	Sports	1	Konami Computer Entertainment ???	Konami
+essenceofwartheglorydays		Shooter	1	Neko Entertainment	SG Diffusion
+ettheextraterrestrial	2001	Adventure	1	Fluid Studios	NewKidCo
+europeansuperleague	2001	Sports	1	Aqua Pacific	Virgin Interactive
+evergirl	2005	Adventure	1	Artificial Mind & Movement	THQ
+excitingbass	2001	Hunting and Fishing	2	Konami Computer Entertainment Osaka	Konami
+exmonopoly	2001	Board	5	Mobile 21	Takara
+expeditionderstachelbeerenzoffimzoo		Platform	1	Helixe	THQ
+extremeghostbusterscodeecto1	2002	Platform	1	Magic Pockets	Light & Shadow Productions (LSP)
+extremeskateadventure	2003	Sports	2	Vicarious Visions	Activision
+eyeshield21devilbatsdevildays	2006	Adventure	1	Eighting	Nintendo
+eztalkshokyuuhen1	2001			NDcube	Keynet
+eztalkshokyuuhen2	2001			NDcube	Keynet
+eztalkshokyuuhen3	2001			NDcube	Keynet
+eztalkshokyuuhen4	2001			NDcube	Keynet
+eztalkshokyuuhen5	2001			NDcube	Keynet
+eztalkshokyuuhen6	2001			NDcube	Keynet
+f12002		Racing	2	Magic Pockets	EA Sports
+f14tomcat		Simulation	4	Virtucraft	THQ
+f24stealthfighter	2007	Simulation	1	Skyworks Technologies	Majesco
+fairlyoddparentsthebreakindarules	2003	Platform	1	Helixe	THQ
+fairlyoddparentstheclashwiththeantiworld	2005	Platform	1	Razorback Developments	THQ
+fairlyoddparentstheenterthecleft	2002	Platform	1	Altron	THQ
+fairlyoddparentstheshadowshowdown	2004	Action	1	Helixe	THQ
+famicommini01supermariobros		Action	2	Nintendo R&D4	Nintendo
+famicommini02donkeykong		Platform	2	Nintendo R&D2	Nintendo
+famicommini03iceclimber		Platform	2	Nintendo R&D1	Nintendo
+famicommini04excitebike		Racing	1	Nintendo R&D4	Nintendo
+famicommini05zeldanodensetsu1thehyrulefantasy	2004	Role-playing (RPG)	1	Nintendo R&D4	Nintendo
+famicommini06pacman	2004	Action	2	Namco	Nintendo
+famicommini07xevious		Shoot'em Up	2	Namco	Nintendo
+famicommini08mappy		Platform	1	Namco	Nintendo
+famicommini09bomberman	2004	Action	1	Hudson Soft	Nintendo
+famicommini10starsoldier		Shoot'em Up	1	Hudson Soft	Nintendo
+famicommini11mariobros		Platform	2	Nintendo R&D1	Nintendo
+famicommini12clucluland	2004	Action	2	Nintendo R&D1	Nintendo
+famicommini13balloonfight	2004	Action	2	Nintendo R&D1	Nintendo
+famicommini14wreckingcrew		Platform	1	Nintendo R&D1	Nintendo
+famicommini15drmario	2004	Puzzle	2	Nintendo R&D1	Nintendo
+famicommini16digdug		Action	2	Namco	Nintendo
+famicommini17takahashimeijinnoboukenjima	2004		1	Hudson Soft	Nintendo
+famicommini18makaimura	2004	Action	2	Micronics	Nintendo
+famicommini19twinbee		Shoot'em Up	1	Konami	Nintendo
+famicommini20ganbaregoemonkarakuridouchuu	2004	Action	1	Konami	Nintendo
+famicommini21supermariobros2	2004	Platform	4	Nintendo R&D4	Nintendo
+famicommini22nazonomurasamejou	2004	Action	1	Nintendo R&D4	Nintendo
+famicommini23metroid	2004	Action	1	Nintendo R&D1	Nintendo
+famicommini24hikarishinwapalthenanokagami	2004	Action	1	Nintendo R&D1	Nintendo
+famicommini25thelegendofzelda2linknobouken		Role-playing (RPG)	1	Nintendo R&D4	Nintendo
+famicommini26famicommukashibanashishinonigashimazenkouhen	2004	Role-playing (RPG)	1	Nintendo R&D4	Nintendo
+famicommini27famicomtanteiclubkietakoukeishazenkouhen	2004	Adventure	1	Nintendo R&D1	Nintendo
+famicommini28famicomtanteiclubpartiiushironitatsushoujozenkouhen	2004	Adventure	1	Nintendo R&D1	Nintendo
+famicommini29akumajoudracula	2004	Action	1	Konami	Nintendo
+famicommini30sdgundamworldgachaponsenshiscramblewars	2004	Strategy	2	Human Entertainment	Nintendo
+famicomminidai2jisuperrobottaisen	2004	Strategy		WinkySoft	Nintendo
+famicomminikidousenshizgundamhotscramble	2004	Action		Game Studio	Nintendo
+familledelajunglelaalapoursuitededarwin		Platform	1	Helixe	THQ
+familledelajunglelalefilm	2004	Adventure	4	Human Soft	THQ
+familyfeud	2006	Casual Game	2	Atomic Planet Entertainment	Global Star Software
+familytennisadvance	2002	Sports	4	Natsume	Namco
+famistaadvance	2002	Sports	2	Namco	Namco
+fancypocket	2002	Strategy	1	Jorudan	Jorudan
+fanqiejiangwangguodamaoxian		Role-playing (RPG)	1	AlphaDream	Nintendo
+fantastic4	2005	Beat'em Up	1	Torus Games	Activision
+fantastic4flameon	2005	Platform	1	Unknown	Activision
+fantasticchildren	2005	Action	1	Inti Creates	Bandai
+fantastici4i		Beat'em Up	1	Torus Games	Activision
+fantasticmaerchencakeyasanmonogataridoubutsucharanaviuranaikoseishinrigaku	2002	Compilation	1	Culture Brain	Culture Brain
+fieldofninedigitaledition2001	2001	Sports	2		Konami
+fifasoccer06		Sports	2	EA ???	EA Sports
+fifasoccer07	2006	Sports	2	EA ???	EA Sports
+fifasoccer2003		Sports	2	EA ???	EA Sports
+fifasoccer2004		Sports	2	EA ???	EA Sports
+fifasoccer2005		Sports	2	EA ???	EA Sports
+fightbox	2004	Fighting	1	Gamezlab	BBC Multimedia
+filadecathlon	2002	Sports	4	Athletic Design	THQ
+finalfantasyiiiadvance	2004	Role-playing (RPG)	1	Tose	Nintendo
+finalfantasyiiidawnofsouls	2004	Role-playing (RPG)	1	Tose	Nintendo
+finalfantasyivadvance	2005	Role-playing (RPG)	1	Tose	Nintendo
+finalfantasytacticsadvance	2003	Role-playing (RPG)	2	Square Enix	Square Enix
+finalfantasyvadvance	2006	Role-playing (RPG)	1	Square Enix	Nintendo
+finalfantasyviadvance	2007	Role-playing (RPG)	1	Tose	Nintendo
+finalfightone	2001	Fighting	2	Suntek	Ubisoft
+finalfireprowrestlingyumenodantaiunei	2002	Sports	2	Spike	Bam Entertainment
+findetnemo	2003	Adventure	1	Vicarious Visions	THQ
+findingnemo		Adventure	1	Vicarious Visions	THQ
+findingnemoaratanarubouken		Casual Game	2	Altron	THQ
+findingnemothecontinuingadventures		Casual Game	2	Altron	THQ
+fireemblem	2003	Strategy	4	Intelligent Systems	Nintendo
+fireemblemfuuinnotsurugi	2002	Strategy	1	Intelligent Systems	Nintendo
+fireemblemrekkanoken	2003	Strategy	4	Intelligent Systems	Nintendo
+fireemblemseimanokouseki	2004	Role-playing (RPG)	4	Intelligent Systems	Nintendo
+fireemblemthesacredstones	2005	Role-playing (RPG)	4	Intelligent Systems	Nintendo
+fireprowrestling		Various	4	Vaill	Bam Entertainment
+fireprowrestling2	2002	Sports	2	Spike	Bam Entertainment
+fireprowrestlinga	2001	Various	4	Vaill	Bam Entertainment
+flashbacklegends		Adventure	1	Delphine Software International	Delphine Software International
+flintstonesthebigtroubleinbedrock	2001	Platform	1	H2O Interactive	Swing! Entertainment
+flushedaway	2006	Platform	1	Altron	D3 Publisher
+fordracing3	2005	Racing	1	Visual Impact	Zoo Digital Publishing
+formationsoccer2002	2002	Sports	4	Garden	Spike Co
+fortress		Strategy	2	Pipe Dream Interactive	Majesco
+fostershomeforimaginaryfriends	2006	Adventure	2	Collision Studios	505 Games
+frankherbertsduneornithopterassault		Shooter		Soft Brigade	Cryo Interactive
+franklinsgreatadventures	2006	Platform	1	Neko Entertainment	The Game Factory
+franklintheturtle	2005	Educational	1	InterActive Vision Games	The Game Factory
+freekstyle	2003	Racing	1	Full Fat	Zoo Digital Publishing
+freestylescooter	2001	Sports	2	Crawfish Interactive	Crave Entertainment
+froggeradvancethegreatquest	2002	Puzzle	1	Konami Computer Entertainment ???	Konami
+froggerkodaibunmeinonazo	2005	Platform	1	Konami Computer Entertainment ???	Konami
+froggermahounokuninodaibouken	2003	Platform	4	Konami Computer Entertainment ???	Konami
+froggersadventures2thelostwand	2002	Platform	4	Konami Computer Entertainment ???	Konami
+froggersadventurestempleofthefrog	2001	Racing	1	Konami Computer Entertainment ???	Konami
+froggersjourneytheforgottenrelic	2003	Platform	1	Konami Computer Entertainment ???	Konami
+fromtvanimationonepiecemezasekingofberry	2003		4		Banpresto
+fromtvanimationonepiecenanatsujimanodaihihou	2002	Role-playing (RPG)	1		Banpresto
+frontierstories	2005	Role-playing (RPG)	1	Natsume	Natsume
+fruitsmuranodoubutsutachi	2004	Casual Game	1	TDK Core	TDK Core
+fushiginokuninoalice	2003	Board	4	Global A	Global A
+fushiginokuninoangelique	2002	Board	2	Ruby Party	Koei
+futariwaprettycurearienaaiyumenosonowadaimeikyuu	2004	Adventure	1	Open Sesame	Bandai
+futariwaprettycuremaxheartmajimajifightdeinjanai	2005	Fighting	2	Open Sesame	Bandai
+fuzzrocket	2005				
+fzeroclimax	2004	Racing	4	Suzak	Nintendo
+fzerofalcondensetsu	2003	Racing	4	Suzak	Nintendo
+fzeroforgameboyadvance	2001	Racing	4	NDcube	Nintendo
+fzerogplegend	2004	Racing	4	Suzak	Nintendo
+fzeromaximumvelocity	2001	Racing	4	NDcube	Nintendo
+gachasutedinodevice2dragon	2003	Role-playing (RPG)	1	AI	Rocket Company
+gachasutedinodevice2phoenix	2003	Role-playing (RPG)	1	AI	Rocket Company
+gachasutedinodeviceblue	2002	Role-playing (RPG)	1	AI	Smilesoft
+gachasutedinodevicered	2002	Role-playing (RPG)	1	AI	Smilesoft
+gachinkoproyakyuu	2002	Sports	2	Now Production	Now Production
+gadgetracers	2004	Racing	4	Electronics Application	Zoo Digital Publishing
+gakkounokaidanhyakuyoubakonofuuin	2004	Adventure	1	TDK	TDK
+gakkouotsukurouadvance	2001	Strategy	2	Groove Box	Victor Interactive
+gakuenalicedokidokifushigitaiken	2004	Adventure	1	Rokumendo	Kids Station
+gakuensenkimuryou	2003	Strategy	1	MTO	MTO Co
+galaxyangelgameboyadvancemoridakusantenshinofullcourseokawarijiyuu	2002	Strategy	1	Marvelous Entertainment	Marvelous Entertainment
+galidordefendersoftheouterdimension	2002	Platform	1	Tiertex Design Studios	Electronic Arts
+gamblerdensetsutetsuyayomigaerudensetsu	2002	Board	1		Athena
+gameboygallery4		Compilation	2	Tose	Nintendo
+gameboywarsadvance12	2004	Strategy	4	Intelligent Systems	Nintendo
+gamesexplosion	2006	Compilation	4	FrontLine Studios	THQ
+gamewatchgallery4	2002	Compilation	2	Tose	Nintendo
+gamewatchgalleryadvance		Compilation	2	Tose	Nintendo
+ganbaredodgefighters	2005	Sports	4	Kamui	Bandai
+gangdelboscola		Adventure	1	Vicarious Visions	Activision
+garfieldandhisninelives	2006	Platform	1	Lucky Jump	The Game Factory
+garfieldthesearchforpooky	2005	Platform	1	InterActive Vision Games	The Game Factory
+gauntletdarklegacy	2002		4	Pocket Studios	Midway
+gegegenokitaroukikiippatsuyoukairettou	2003	Role-playing (RPG)	1	Konami Computer Entertainment ???	Konami
+gekidoadvancekintarosrevenge	2003	Beat'em Up	1	NAPS Team	Zoo Digital Publishing
+gekitoucarbattlergo	2001	Racing	4	Ancient	Natsume
+gekitoudensetsunoahdreammanagement	2003	Sports	2		Game Village
+gemsmashers	2003	Puzzle	2	Frame Studios	Metro3D
+genseishinjustiriserssouchakuhoshinosenshitachi	2004		1	WinkySoft	Konami
+gensoumadensaiyuukihangyakunotoushintaishi	2003	Adventure	1	Digital Kids	Digital Kids
+gensousuikodencardstories	2001	Strategy		Will	Konami
+getbackersdakkanyajaganfuuin	2003	Role-playing (RPG)			Konami
+getbackersdakkanyajigokunoscaramouche	2001				Konami
+getbackersdakkanyametropolisdakkansakusen	2003	Role-playing (RPG)			Konami
+getbokunomushitsukamaete	2004	Simulation	1	Wizard	Kemco
+getrideamdriversenkounoherotanjou	2004			WinkySoft	Konami
+getrideamdrivershutsugekibattleparty	2004			Konami Computer Entertainment Japan	Konami
+ghostrider		Platform	1	Magic Pockets	2K Games
+ghosttrap	2002	Action	1	Artoon	Eidos Interactive
+globalstarsudokufever	2006	Puzzle	1	Global Star Software	Take 2 Interactive
+godzilladomination	2002	Fighting	1	WayForward Technologies	Atari SA
+goemonnewageshutsudou	2002		1	Konami Computer Entertainment ???	Konami
+gogobeckhamadventureonsoccerisland	2002	Platform	1	Denki	Rage Software
+gojirakaijuudairantouadvance	2003	Fighting	1	WayForward Technologies	Atari SA
+goldennuggetcasino		Shooter	1	Pipe Dream Interactive	Majesco
+goldensun	2001	Role-playing (RPG)	2	Camelot Software Planning	Nintendo
+goldensundievergesseneepoche		Role-playing (RPG)	2	Camelot Software Planning	Nintendo
+goldensunlaedadperdida		Role-playing (RPG)	2	Camelot Software Planning	Nintendo
+goldensunlageperdu	2003	Role-playing (RPG)	2	Camelot Software Planning	Nintendo
+goldensunleraperduta		Role-playing (RPG)	2	Camelot Software Planning	Nintendo
+goldensunthelostage	2003	Role-playing (RPG)	2	Camelot Software Planning	Nintendo
+gp1racing		Simulation	1		Edge Interact
+gradiusadvance		Shoot'em Up	1	Mobile 21	Konami
+gradiusgalaxies	2001	Shoot'em Up	1	Mobile 21	Konami
+gradiusgeneration	2002	Shoot'em Up	1	Mobile 21	Konami
+grandtheftauto	2004	Racing	1	Digital Eclipse	Rockstar Games
+greatestnine	2002	Sports	1	Smilebit	SEGA
+greeneggsandhambydrseuss	2003	Board	1	Handheld Games	NewKidCo
+greghastingstournamentpaintballmaxd	2006	Shooter		WXP	Activision
+gremlinsstripevsgizmo	2002	Platform	2	Magic Pockets	Wanadoo Edition
+grimadventuresofbillymandy	2006	Beat'em Up	1	Full Fat	Midway
+grooveadventureravehikaritoyaminodaikessen	2002				Konami
+grooveadventureravehikaritoyaminodaikessen2	2002	Fighting	4	Konami Computer Entertainment ???	Konami
+gtadvance2rallyracing	2001	Racing	2	MTO	THQ
+gtadvance3proconceptracing	2003	Racing	1	MTO	THQ
+gtadvancechampionshipracing		Racing	2	MTO	THQ
+gtchampionship		Racing	2	Vision Works	Kemco
+guiltygearxadvanceedition	2002	Fighting	2	Arc System Works	Sammy Studios
+gumbyvstheastrobots	2005	Platform	1	Torus Games	Namco
+gunstarfutureheroes	2005	Shooter	1	Treasure	SEGA
+gunstarsuperheroes	2005	Shooter	1	Treasure	SEGA
+guranbo	2001	Role-playing (RPG)	2	Capcom	Capcom
+gurulogichamp	2001	Puzzle	1	Compile	Compile
+gyakutensaiban	2001	Adventure	4	Capcom Production Studio 4	Capcom
+gyakutensaiban2	2002	Adventure	4	Capcom Production Studio 4	Capcom
+gyakutensaiban3	2004	Adventure	4	Capcom Production Studio 4	Capcom
+hachiemon	2003		1	Natsume	Namco
+haganenorenkinjutsushimeisounorondo	2004	Role-playing (RPG)	1	Tom Create	Bandai
+haganenorenkinjutsushiomoidenosonata	2004	Role-playing (RPG)	1	Tom Create	Bandai
+hajimenoippothefighting	2002	Fighting	2	Treasure	ESP Software
+hamepanetokyomewmew	2002	Puzzle	1	WinkySoft	Takara
+hamsterclub3	2002	Strategy	1	Nekogumi	Jorudan
+hamsterclub4shigetchidaidassou	2003	Adventure	1	Nekogumi	Jorudan
+hamstermonogatari2gba	2001	Strategy	2	Culture Brain	Culture Brain
+hamstermonogatari3ex4special	2003	Strategy	1	Culture Brain	Culture Brain
+hamstermonogatari3gba	2002	Strategy	1	Culture Brain	Culture Brain
+hamstermonogataricollection	2003	Compilation	1	Culture Brain	Culture Brain
+hamsterparadiseadvanchu	2002	Simulation		Digital Kids	Atlus
+hamsterparadisepureheart	2003	Simulation		Digital Kids	Atlus
+hamtarohamhamgames		Sports	1	AlphaDream	Nintendo
+hamtarohamhamheartbreak	2003	Adventure	2	Pax Softonica	Nintendo
+hamtarorainbowrescue	2003	Adventure	2	Graphic Research	Nintendo
+hanabihyakkeiadvance	2004	Strategy	1		Aruze Corp.
+hanafudatrumpmahjongdepachikawayouchuu	2002	Board	1	Global A	Global A
+hardcorepinball		Pinball	1	Paragon 5	Telegames
+hardcorepool	2003	Sports	1	Frontline Studios	Neko Entertainment
+harlemglobetrottersworldtour	2006	Sports	1	Unknown	Zoo Digital Publishing
+harobotsroboherobattling	2002	Action	1	Sunrise Interactive	Sunrise Software
+harrypotterandthechamberofsecrets	2002	Platform	1	Unknown	EA Games
+harrypotterandthegobletoffire	2005	Adventure	2	Magic Pockets	EA Games
+harrypotterandtheorderofthephoenix	2007	Adventure	1	EA ???	EA Games
+harrypotterandtheprisonerofazkaban	2004	Adventure	1	Griptonite Games	EA Games
+harrypotterandthesorcerersstone	2001	Adventure	1	Griptonite Games	EA Games
+harrypotterquidditchworldcup	2003	Sports	2	Magic Pockets	EA Games
+harrypottertoazkabannoshuujin	2004	Adventure	1	Griptonite Games	EA Games
+harrypottertohimitsunoheya	2002	Platform	1	Unknown	EA Games
+harrypottertokenjanoishi	2002	Adventure	1	Griptonite Games	EA Games
+harvestmoonfriendsofmineraltown	2003	Strategy	1	Tose	Natsume
+harvestmoonmorefriendsofmineraltown	2005	Strategy	1	Tose	Natsume
+hatenasatena	2001	Puzzle	1	Hudson Soft	Hudson
+hauntedmansion			1	Pocket Studios	TDK
+heidithegame	2005	Platform	1	Independent Arts	East Entertainment Media
+helloidoldebutkidsidolikuseigame	2004	Strategy	1		TDK Core
+hellokittycollectionmiraclefashionmaker	2001	Adventure	1	Access	Imagineer
+hellokittyhappypartypals	2005	Various	1	Webfoot Technologies	THQ
+herbiefullyloaded	2005	Racing	1	Climax Group	Disney Interactive
+heyarnoldthemovie	2002	Platform	1	Altron	THQ
+higanbana	2002	Adventure	1	Tose	Athena
+highheatmajorleaguebaseball2002		Sports	1	Mobius Entertainment	The 3DO Company
+highheatmajorleaguebaseball2003	2002	Sports	2	Mobius Entertainment	The 3DO Company
+highschoolmusicallivinthedream	2007	Platform	1	Artificial Mind & Movement	Disney Interactive
+hihipuffyamiyumi	2005	Platform	1	Altron	D3 Publisher
+hihipuffyamiyumikaznapped	2005	Platform	1	Altron	D3 Publisher
+hikarunogo	2001	Board	1	Konami Computer Entertainment Japan	Konami
+hikarunogo2	2002	Action	1	Konami Computer Entertainment Japan	Konami
+himawaridoubutsubyouinpetnooishasanikuseigame	2004	Simulation	1	Sensory Sweep	Ubisoft
+himekishimonogatariprincessblue	2002	Adventure	1	Tonkin House	Tonkin House
+hitsujinokimochi	2002	Puzzle	4	Capcom	Empire Interactive
+hobbitnoboukenlordoftheringshajimarinomonogatari		Adventure	1	Saffire	Sierra
+hobbitthethepreludetothelordoftherings	2002	Adventure	1	Saffire	Sierra
+homeontherange	2004	Platform	1	Artificial Mind & Movement	Disney Interactive
+horsez	2007	Simulation	1	Independent Arts	Ubisoft
+hoshinokirbykagaminodaimeikyuu	2004	Platform	4	Flagship	Nintendo
+hoshinokirbyyumenoizumideluxe	2002	Platform	4	HAL Laboratory	Nintendo
+hotpotato	2001	Puzzle	1	Pukka Games	Bam Entertainment
+hotwheelsadvance	2002	Racing	2	Altron	THQ
+hotwheelsallout	2006	Racing	1	TwoFiveSix	Zoo Digital Publishing
+hotwheelsburninrubber	2001	Racing	2	Altron	THQ
+hotwheelsstunttrackchallenge		Racing	2	Razorback Developments	THQ
+hotwheelsvelocityx	2002	Racing	1	Saffire	THQ
+hotwheelsworldrace	2003	Racing	4	Climax Group	THQ
+hudsonbestcollectionvol1bombermancollection	2005	Compilation	1	Hudson Soft	Hudson
+hudsonbestcollectionvol2loderunnercollection	2005	Shooter	1	Hudson Soft	Hudson
+hudsonbestcollectionvol3actioncollection	2005	Compilation	1	Hudson Soft	Hudson
+hudsonbestcollectionvol4nazotokicollection	2005	Compilation	1	Hudson Soft	Hudson
+hudsonbestcollectionvol5shootingcollection	2006	Compilation	1	Hudson Soft	Hudson
+hudsonbestcollectionvol6boukenjimacollection	2006	Compilation	1	Hudson Soft	Hudson
+hugo2in1	2005			ITE Media	ITE Media
+hugobukkazoom	2003	Racing	2	ITE Media	ITE Media
+hugotheevilmirror	2005	Platform	1	ITE Media	ITE Media
+hunterxhunterminnatomodachidaisakusen	2003	Role-playing (RPG)	1	Konami Computer Entertainment ???	Konami
+huowenzhanjifengyinzhijian		Strategy	1	Intelligent Systems	Nintendo
+hypersports2002winter	2002	Sports	1	Konami Computer Entertainment Osaka	Konami
+iceage	2002	Platform	1	Artificial Mind & Movement	Ubisoft
+iceage2themeltdown	2006	Adventure	1	Amaze Entertainment	Sierra
+icenine		Shooter	4	Torus Games	Bam Entertainment
+ignitioncollectionvolume1	2006	Compilation		Awesome Developments	Ignition Entertainment
+ik	2003	Fighting	2	Ignition Entertainment	Ignition Entertainment
+incredibiligliunanormalefamigliadisupereroi		Beat'em Up	1	Helixe	THQ
+incrediblehulk	2003	Adventure	1	Pocket Studios	Universal Interactive
+incredibles		Beat'em Up	1	Helixe	THQ
+incrediblestheriseoftheunderminer		Platform	1	Helixe	THQ
+increibleslos	2005	Beat'em Up	1	Helixe	THQ
+initialdanotherstage	2002	Racing	2	Sammy Studios	Sammy Studios
+inspectorgadgetadvancemission	2001	Platform	3	Magic Pockets	Light & Shadow Productions (LSP)
+inspectorgadgetracing		Racing	4	Bit Managers	Light & Shadow Productions (LSP)
+internationalkarateadvanced	2002	Action	2	Studio 3	Studio 3
+internationalsuperstarsoccer	2001	Sports	2	Konami Computer Entertainment ???	Konami
+internationalsuperstarsocceradvance	2001	Sports	2	Konami Computer Entertainment ???	Konami
+inukkoclub	2002	Adventure	1	Jorudan	Jorudan
+inuyashanarakunowanamayoinomorinoshoutaijou	2003	Board	1	WinkySoft	Takara
+invader	2002	Shoot'em Up	2	Lost Boys Games	Xicat Interactive
+invincibleironman		Platform	1	Torus Games	Activision
+iridion3d		Shooter	1	Shin'en Multimedia	THQ
+iridionii	2003	Shooter	1	Shin'en Multimedia	Vivendi Universal Games
+ironkid	2007	Platform		Daiwon C&A	Daiwon C&A
+islandxtremestunts		Action	2	Silicon Dreams Studio	Electronic Arts
+ispychallenger	2002	Puzzle	1	Black Hammer Game	Scholastic
+issekihatchoukore1pponde8shurui	2002	Board	4	Konami Computer Entertainment ???	Konami
+itsmrpants		Puzzle	1	Rare	THQ
+jackiechanadventureslegendofthedarkhand		Beat'em Up	1	Torus Games	Activision
+jajamarujrdenshoukijalecollemoarisourou	2004	Compilation	1		Jaleco
+jamespondcodenamerobocod	2005	Platform	1	Creature Labs	Play It!
+jazzjackrabbit		Platform	4	Game Titan	Jaleco
+jetgrindradio	2003	Sports	4	Vicarious Visions	SEGA
+jetsetradio		Sports	4	Vicarious Visions	SEGA
+jgtokouningolfmasterjapangolftourgame	2001	Sports	2	Konami Computer Entertainment Nagoya	Konami
+jgtokouningolfmastermobilejapangolftourgame	2001	Sports	2	Konami Computer Entertainment Nagoya	Konami
+jikkyouworldsoccerpocket	2001	Sports	2	Konami Computer Entertainment ???	Konami
+jikkyouworldsoccerpocket2	2002	Sports	2	Konami Computer Entertainment ???	Konami
+jimmyneutronboygenius	2001	Platform	4	Human Soft	THQ
+jimmyneutronungarcongeniallattaquedestwonkies	2005	Platform	1	Tantalus Media	THQ
+jinseigameadvance	2002	Board	4	Electronics Application	Takara
+jissenpachislothisshouhoujuuouadvance	2002	Gambling	1	Sammy Studios	Sammy Studios
+jisufzeroweilaisaiche		Racing	4	NDcube	Nintendo
+jleaguepocket	2001	Sports	2	Konami Computer Entertainment Osaka	Konami
+jleaguepocket2	2002	Sports	1	Konami Computer Entertainment Osaka	Konami
+jleagueprosoccerclubotsukurouadvance	2002	Sports	2	Smilebit	SEGA
+jleaguewinningelevenadvance2002	2002	Sports	2	Konami Computer Entertainment Tokyo	Konami
+jonnymoseleymadtrix		Sports	1	GFX Construction	The 3DO Company
+jukaandthemonophonicmenace	2006	Role-playing (RPG)	1	Orbital Media	Zoo Digital Publishing
+junglebook	2003	Puzzle	1	Visual Impact	Ubisoft
+junglebook2		Puzzle	1	Visual Impact	Ubisoft
+jurassicparkiiiadvancedaction	2001	Action	1	Konami Computer Entertainment ???	Konami
+jurassicparkiiidinoattack		Action	1	Konami Computer Entertainment ???	Konami
+jurassicparkiiiislandattack	2001	Action	1	Konami Computer Entertainment ???	Konami
+jurassicparkiiikyouryuuniainiikou	2001	Simulation	2	Konami Computer Entertainment ???	Konami
+jurassicparkiiiparkbuilder	2001	Simulation	2	Konami Computer Entertainment ???	Konami
+jurassicparkiiithednafactor	2001	Platform	1	Konami Computer Entertainment ???	Konami
+jurassicparkiiiushinawaretaidenshi	2001	Platform	1	Konami Computer Entertainment ???	Konami
+jurassicparkinstitutetourdinosaurrescue	2003	Action	1	KAZe	Rocket Company
+justiceleaguechronicles	2003	Beat'em Up	2	Full Fat	Midway
+justiceleagueheroestheflash	2006	Beat'em Up	1	WayForward Technologies	Warner Bros. Interactive
+justiceleagueinjusticeforall	2001	Platform	1	Saffire	Midway
+k1pocketgrandprix	2002	Fighting	2	Daft	Konami
+k1pocketgrandprix2	2002	Fighting	2	Daft	Konami
+kaerubback	2002	Role-playing (RPG)	1	Kadokawa Games	Kadokawa
+kaiketsuzororitomahounoyuuenchiohimesamaosukue	2004	Action	1	Suzak	Bandai
+kamaitachinoyoruadvance	2002	Adventure	1	Chunsoft	Chunsoft
+kaminokijutsuillusionoftheevileyes	2002	Board	2	Konami Computer Entertainment Japan	Konami
+kaothekangaroo	2001	Action	1	Titus Interactive Studio	Titus
+kappanokaikatakaatandaibouken	2005	Platform	1	Konami Computer Entertainment Japan	Konami
+karnaajrally		Racing	4	Paragon 5	Jaleco
+kawaiikoinuwonderful	2004	Simulation	2	Backbone Entertainment	Ubisoft
+kawaiipetgamegallery	2003	Simulation	1	Culture Brain	Culture Brain
+kawaiipetgamegallery2	2004	Compilation	1	Culture Brain	Culture Brain
+kawaiipetshopmonogatari3	2002	Strategy	1	Pacific Century Cyber Works	Pacific Century Cyber Works
+kawanonushitsuri34	2006	Compilation	1	Marvelous Entertainment	Marvelous Entertainment
+kawanonushitsuri5fushiginomorikara	2002	Hunting and Fishing	1	Tose	Victor Interactive
+kazenoklonoag2dreamchamptournament	2002	Platform	1	Now Production	Namco
+kazenoklonoayumemiruteikoku		Platform	1	Now Production	Infogrames
+keitaidenjuutelefang2power	2002	Role-playing (RPG)	1	Natsume	Smilesoft
+keitaidenjuutelefang2speed	2002	Role-playing (RPG)	1	Natsume	Smilesoft
+kellyslatersprosurfer		Sports	2	HotGen	Activision
+kerorogunsoutaiketsugekisoukeronprixdaisakusendearimasu	2004	Racing		Sunrise Interactive	Sunrise Interactive
+kessakusenganbaregoemon12yukihimetomagginesu	2005	Compilation	1	Konami	Konami
+kidougekidanharoichizaharonopuyopuyo	2005	Puzzle	1	Arowana	Bandai
+kidousenshigundamseeddestiny	2004	Fighting	2	Natsume	Bandai
+kidousenshigundamseedtomotokimitokokode	2004	Strategy	1	Dimps	Bandai
+kidoutenshiangeliclayermisakitoyumenotenshitachi	2001	Beat'em Up	1	Epoch	Epoch
+kidpaddle	2005	Platform	1	Mistic Software	Atari SA
+kidscards	2006	Card	1	Skyworks Interactive	Majesco
+kien	2004	Role-playing (RPG)	1	PM Studios	DSI Games
+kikaikaguntaimechplatoon	2001	Strategy	2	Kemco	Kemco
+kikikaikaiadvance		Action	1	Altron	Natsume
+killer3dpool	2005	Sports	2	Gravity-i	Zoo Digital Publishing
+killswitch	2004	Shooter	1	Visual Impact	Zoo Digital Publishing
+kimpossible	2003	Platform	1	Digital Eclipse	THQ
+kimpossible2drakkensdemise	2004	Platform	1	Artificial Mind & Movement	Buena Vista Games
+kimpossible3teampossible	2005	Platform	2	Artificial Mind & Movement	Disney Interactive
+kimpossiblerevengeofmonkeyfist	2002	Platform	1	Digital Eclipse	THQ
+kingdomheartschainofmemories	2004	Role-playing (RPG)	2	Jupiter	Square Enix
+kingkongtheofficialgameofthemovie	2005	Action	1	Ubisoft ???	Ubisoft
+kingoffightersex2thehowlingblood	2003	Fighting	2	Marvelous Entertainment	Acclaim
+kingoffightersextheneoblood	2002	Fighting	2	Artoon	Sammy Studios
+kinnikubanzukekimerokisekinokanzenseiha	2001	Sports	1	Jupiter	Konami
+kinnikubanzukekongoukunnodaibouken	2001	Sports	1	Jupiter	Konami
+kinnikumaniiseiseigichoujinenomichi	2002	Sports	2	ShunDa	Bandai
+kirbynightmareindreamland	2002	Platform	4	HAL Laboratory	Nintendo
+kirbytheamazingmirror	2004	Platform	4	Flagship	Nintendo
+kisekkogurumiichestytonuigurumitachinomahounobouken	2003	Adventure	2	MTO	MTO Co
+kissxkissseireigakuen	2004	Strategy	1	Kamui	Bandai
+kiwamemahjongdeluxemiraisenshi21	2001	Board	4	Athena	Athena
+klonoa2dreamchamptournament	2005	Platform	1	Now Production	Namco
+klonoaempireofdreams	2001	Platform	1	Now Production	Infogrames
+klonoaheroesdensetsunostarmedal	2002	Role-playing (RPG)	1	Namco	Namco
+knightskingdom	2004	Role-playing (RPG)	2	Razorback Developments	THQ
+koalabrothersoutbackadventures	2006	Adventure	1	Sirius Games	The Game Factory
+koinuchannohajimetenoosanpokoinunokokoroikuseigame	2003	Simulation	1	Unknown	TDK Mediactive
+koinutoissho2	2004	Strategy	1		Culture Brain
+koinutoisshoaijoumonogatari	2003	Adventure	1	Culture Brain	Culture Brain
+konamiarcadegamecollection	2002	Compilation	2	Konami Computer Entertainment ???	Konami
+konamicollectorsseriesarcadeadvanced	2002	Compilation	2	Konami Computer Entertainment ???	Konami
+konamicollectorsseriesarcadeclassics	2002	Compilation	2	Konami Computer Entertainment ???	Konami
+konamikrazyracers	2001	Racing	2	Konami Computer Entertainment ???	Konami
+konamiwaiwairacingadvance	2001	Racing	2	Konami Computer Entertainment ???	Konami
+konchuumonsterbattlemaster	2005		1	Culture Brain	Culture Brain
+konchuumonsterbattlestadium	2005		1	Culture Brain	Culture Brain
+konchuunomorinodaiboukenfushiginasekainojuunintachi	2005		1	Culture Brain	Culture Brain
+kongkingofatlantis	2005	Platform	1	Skyworks Technologies	Majesco
+kongthe8thwonderoftheworld	2005	Action	1	Ubisoft ???	Ubisoft
+kongtheanimatedseries	2002	Platform	1	Planet Interactive	Bam Entertainment
+konjikinogashbellmakainobookmark	2004	Role-playing (RPG)	2	Banpresto	Banpresto
+konjikinogashbellthecardbattleforgba	2005	Strategy	1	Banpresto	Banpresto
+konjikinogashbellunareyuujounozakeru	2003	Fighting	1		Bandai
+konjikinogashbellunareyuujounozakeru2	2004	Fighting	2		
+konjikinogashbellyuujounozakerudreamtagtournament	2005	Fighting	2	Banpresto	
+korokoropuzzlehappypanecchu	2002	Puzzle	2	Nintendo SPD	Nintendo
+kotobanopuzzlemojipittanadvance	2003	Puzzle	1	Namco	Namco
+kouchuuoujamushikinggreatestchampionenomichi	2005				
+koukoujukenadvanceserieseigokoubunhen26unitsshuuroku	2001		1		Keynet
+koukoujukenadvanceserieseijukugohen650phrasesshuuroku	2001		1		Keynet
+koukoujukenadvanceserieseitangohen2000wordsshuuroku	2001				Keynet
+koutetsuteikoku	2004	Shoot'em Up	1	Starfish	Zoo Digital Publishing
+kuniokunnekketsucollection1	2005	Compilation	1	Million	Atlus
+kuniokunnekketsucollection2	2005	Compilation	2	Million	Atlus
+kuniokunnekketsucollection3	2006	Compilation	2	Million	Atlus
+kurohigenogolfshiyouyo	2002	Sports	2	Inti Creates	Tomy
+kurohigenokuruttojintori	2002		4	Happy-Smile	Tomy
+kurukurukururin	2001	Thinking	4	Eighting	Nintendo
+kururinparadise	2002	Action	4	Eighting	Nintendo
+ladysia	2001	Platform	1	RFX Interactive	TDK
+landbeforetime	2002	Platform	1	Full Fat	Swing! Entertainment
+landbeforetimetheintothemysteriousbeyond	2006	Platform	1	Sirius Games	The Game Factory
+laracrofttombraiderlegend	2006	Action	1	Human Soft	Eidos Interactive
+laracrofttombraidertheprophecy	2002	Action	1	Ubisoft ???	Ubisoft
+leapassionveterinaire	2006	Various	1	Independent Arts	Ubisoft
+legendofdynamicgoushoudenhoukainorondo	2003	Role-playing (RPG)	1	Will	Banpresto
+legendofspyrotheanewbeginning	2006	Platform	1	Krome Studios	Sierra
+legendofzeldathealinktothepastfourswords	2002	Role-playing (RPG)	4	Nintendo R&D2	Nintendo
+legendofzeldathefushiginoboushi	2004				
+legendofzeldathetheminishcap	2005	Role-playing (RPG)	1	Flagship	Nintendo
+legendsofwrestlingii		Sports	1	Powerhead Games	Acclaim
+legendzbuhwarhaneunsiryeonyiseom		Role-playing (RPG)	1	BEC	Bandai
+legendzsignofnekuromu	2005	Role-playing (RPG)	1	BEC	Bandai
+legendzyomigaerushirennoshima	2004	Role-playing (RPG)	1	BEC	Bandai
+legobionicle	2001	Action	1	Saffire	Lego Media
+legoisland2thebrickstersrevenge	2001	Casual Game	2	Silicon Dreams Studio	Lego Media
+legoracers2	2001	Racing	4	Pocket Studios	Lego Media
+legostarwarsiitheoriginaltrilogy	2006	Action	2	Amaze Entertainment	LucasArts
+legostarwarsthevideogame	2005	Action	1	Griptonite Games	Eidos Interactive
+lemonysnicketraetselhafteereignisse		Platform	1	Griptonite Games	Activision
+lemonysnicketsaseriesofunfortunateevents		Platform	1	Griptonite Games	Activision
+lemonysnicketunaseriedisfortunatieventi		Platform	1	Griptonite Games	Activision
+letsridedreamer	2006	Simulation	1	Kritzelkratz	THQ
+letsridefriendsforever	2007	Simulation		DTP Young Entertainment	DTP Entertainment
+letsridesunshinestables	2005	Simulation	1	Independent Arts	Ubisoft
+liccachannoosharenikki	2004	Adventure	1		Marvelous Entertainment
+lilliputoukokulillimonitoisshopuni	2004		1	Alpha Unit	SEGA
+lilostitch	2002	Platform	1	Digital Eclipse	Ubisoft
+lilostitch2		Platform	1	Climax Group	Disney Interactive
+lilostitch2haemstervielhavoc		Platform	1	Climax Group	Disney Interactive
+lionking	2003	Platform	1	Vicarious Visions	THQ
+lionking112	2003	Platform	1	Vicarious Visions	THQ
+littlebusterq	2002	Role-playing (RPG)	2	Amedio	Tomy
+littleeinsteins	2006	Educational		Inlight Entertainment	Buena Vista Games
+littleleaguebaseball2002	2002	Sports	1	Handheld Games	NewKidCo
+littlemermaidthemagicintwokingdoms		Action	1	Gorilla Systems	Buena Vista Games
+littlepatissiercakenooshiro	2004		1	MTO	MTO Co
+lizziemcguire		Platform	1	Digital Eclipse	THQ
+lizziemcguire2lizziediaries	2004	Platform	1	Artificial Mind & Movement	Disney Interactive
+lizziemcguire3homecominghavoc	2005	Music / Dancing	1	Climax Group	Disney Interactive
+lizziemcguireonthego	2003	Platform	1	Digital Eclipse	THQ
+loderunner	2003		1	Success	Success
+looneytunesbackinaction		Platform	1	Warthog Games	Electronic Arts
+looneytunesdoublepack	2005	Compilation	1	Unknown	Majesco
+lordoftheringsthefutatsunotou		Role-playing (RPG)	2	Griptonite Games	EA Games
+lordoftheringsthenakatsukunidaisanki		Role-playing (RPG)	2	Griptonite Games	EA Games
+lordoftheringstheounokikan		Role-playing (RPG)	2	Griptonite Games	EA Games
+lordoftheringsthethefellowshipofthering	2002	Role-playing (RPG)	1	Pocket Studios	Black Label Games
+lordoftheringsthethereturnoftheking		Role-playing (RPG)	2	Griptonite Games	EA Games
+lordoftheringsthethethirdage		Role-playing (RPG)	2	Griptonite Games	EA Games
+lordoftheringsthethetwotowers		Role-playing (RPG)	2	Griptonite Games	EA Games
+lostvikings	2003	Platform	1	Blizzard Classic Arcade	Blizzard Classic Arcade
+lovehinaadvanceshukufukunokanewanarukana	2001	Adventure	1	Marvelous Entertainment	Marvelous Entertainment
+luckylukewanted	2001	Platform	2	Wizard Software	Atari SA
+lufiatheruinsoflore	2003	Role-playing (RPG)	4	Atelier Double	Atlus
+luhaikongdazhan		Strategy	4	Intelligent Systems	Nintendo
+lunarlegend	2002	Role-playing (RPG)	2	Game Arts	Ubisoft
+madagascar	2005	Platform	1	Vicarious Visions	Activision
+madagascaroperacionpinguino		Platform	1	Vicarious Visions	Activision
+madagascaroperationpenguin	2005	Platform	1	Vicarious Visions	Activision
+maddennfl06	2005	Sports	2	Exient Entertainment	EA Sports
+maddennfl07	2006	Sports	2	Exient Entertainment	EA Sports
+maddennfl2002	2001	Sports	1	Budcat	EA Sports
+maddennfl2003	2002	Sports	4	Budcat	EA Sports
+maddennfl2004	2003	Sports	4	Budcat	EA Sports
+maddennfl2005	2004	Sports	4	Exient	EA Sports
+madeinwario		Casual Game	1	Nintendo R&D1	Nintendo
+maerheavenknockinonheavensdoor	2005		1	Alpha Unit	Konami
+magicalhoushin	2002				
+magicalquest2starringmickeyminnie	2003	Platform	2	Klein Computer Entertainment	Capcom
+magicalquest3starringmickeydonald	2005	Platform	2	Klein Computer Entertainment	Capcom
+magicalqueststarringmickeyminnie	2002	Platform	2	Capcom	Nintendo
+magicalvacation	2001	Role-playing (RPG)	2	Brownie Brown	Nintendo
+magination	2002		1	Interactive Imagination	Epoch
+mahjongkeiji	2001	Board	1		Hudson
+mahounopumpkinanntogregnodaibouken		Platform	1	Magic Pockets	Wanadoo Edition
+mahousenseinegimaprivatelesson2ojamashimasuuparasitedechuu	2006	Role-playing (RPG)		Natsume	Marvelous Entertainment
+mahousenseinegimaprivatelessondamedesuutoshokanjima	2005	Role-playing (RPG)	1	Marvelous Entertainment	Marvelous Entertainment
+maildecute	2002				Konami
+majescossportspack	2005	Compilation	4	Skyworks Technologies	Majesco
+majokkocreamchannogokkoseries1wannyanidolgakuen	2003	Strategy	1		Culture Brain
+majokkocreamchannogokkoseries2kisekaeangel	2004	Strategy	1		Culture Brain
+malioukadingchechaojisaidao		Racing	4	Intelligent Systems	Nintendo
+maliouyuluyijirpg		Role-playing (RPG)	4	AlphaDream	Nintendo
+mangakadebutmonogatariakogaremangakaikuseigame	2002	Strategy	1		TDK Core
+maniacracersadvance		Racing	4	Konami Computer Entertainment ???	Konami
+manicminer	2002	Action	1	Jester Interactive	Jester Interactive
+marchofthepenguins	2006	Puzzle	1	Skyworks Technologies	Zoo Digital Publishing
+marieelieanisnoateliersoyokazekaranodengon	2003				
+mariogolfadvancetour	2004	Sports	4	Camelot Software Planning	Nintendo
+mariogolfgbatour	2004	Sports	4	Camelot Software Planning	Nintendo
+mariokartadvance	2001	Racing	4	Intelligent Systems	Nintendo
+mariokartsupercircuit	2001	Racing	4	Intelligent Systems	Nintendo
+marioluigirpg	2003	Role-playing (RPG)	4	AlphaDream	Nintendo
+marioluigisuperstarsaga	2003	Role-playing (RPG)	4	AlphaDream	Nintendo
+mariopartyadvance	2005	Board	2	A.I	Nintendo
+mariopinballland	2004	Pinball	1	Fuse Games	Nintendo
+mariopowertennis	2005	Sports	4	Camelot Software Planning	Nintendo
+mariotennisadvance	2005	Sports	4	Camelot Software Planning	Nintendo
+mariotennispowertour	2005	Sports	4	Camelot Software Planning	Nintendo
+mariovsdonkeykong	2004	Puzzle	1	Nintendo Software Technology	Nintendo
+marvelultimatealliance	2006	Beat'em Up	1	Barking Lizards Technologies	Activision
+marykateandashleygirlsnightout		Music / Dancing	1	Powerhead Games	Acclaim
+marykateandashleysweet16licensedtodrive		Racing	2	Powerhead Games	Acclaim
+mastersoftheuniversehemanpowerofgrayskull	2002	Action	1	Taniko	TDK
+matanteilokiragnarokgensounolabyrinth	2003				
+mathoffmansprobmx		Sports	2	HotGen	Activision
+mathoffmansprobmx2		Sports	2	HotGen	Activision
+mathpatrolthekleptoidthreat	2007	Shoot'em Up	1	GXB Interactive	Tomy Corporation
+mawarumadeinwario		Casual Game	1	Nintendo SPD1	Nintendo
+maxpayne	2003	Shooter	1	Mobius Entertainment	Rockstar Games
+maxpayneadvance		Shooter	1	Mobius Entertainment	Rockstar Games
+mayathebeesweetgold	2005	Platform	1	Shin'en Multimedia	Midway
+mayathebeethegreatadventure	2002	Platform	1	Shin'en Multimedia	Acclaim
+mazesoffate	2006	Role-playing (RPG)	1	Sabarasa Entertainment	O3 Entertainment
+mechplatoon	2002	Strategy	2	Kemco	Kemco
+medabotsaxmetabeever	2002	Platform	1	Natsume	Natsume
+medabotsaxrokushover	2002	Platform	2	Natsume	Natsume
+medabotsmetabee	2003	Role-playing (RPG)	1	Natsume	Natsume
+medabotsrokusho	2003	Role-playing (RPG)	1	Natsume	Natsume
+medalofhonoradvance	2003	Shooter	2	Netherock	EA Games
+medalofhonorinfiltrator	2003	Shooter	2	Netherock	EA Games
+medalofhonorunderground	2002	Shooter	4	Rebellion	Ubisoft
+medarotgkabuto	2002	Platform	1	Natsume	Natsume
+medarotgkuwagata		Platform	2	Natsume	Natsume
+medarotnavikabuto	2001	Role-playing (RPG)		Natsume	
+medarotnavikuwagata	2001	Role-playing (RPG)	1	Natsume	Imagineer
+medarotnicorekabuto	2002	Role-playing (RPG)	1	Natsume	Natsume
+medarotnicorekuwagata		Role-playing (RPG)	1	Natsume	Natsume
+meettherobinsons	2007	Platform	1	Climax Group	Buena Vista Games
+megamanbass	2003	Platform	1	Capcom	Capcom
+megamanbattlechipchallenge	2004	Card	2	Inti Creates	Capcom
+megamanbattlenetwork	2001	Action	1	Capcom Production Studio 2	Ubisoft
+megamanbattlenetwork2	2002	Role-playing (RPG)	1	Capcom Production Studio 2	Ubisoft
+megamanbattlenetwork3blueversion	2003	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+megamanbattlenetwork3whiteversion	2003	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+megamanbattlenetwork4bluemoon	2004	Strategy	2	Capcom Production Studio 2	Capcom
+megamanbattlenetwork4redsun	2004	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+megamanbattlenetwork5teamcolonel	2005	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+megamanbattlenetwork5teamprotoman	2005	Strategy	2	Capcom Production Studio 2	Capcom
+megamanbattlenetwork6cybeastfalzar	2006	Role-playing (RPG)	1	Capcom Production Studio 2	Capcom
+megamanbattlenetwork6cybeastgregar	2006	Strategy	2	Capcom Production Studio 2	Capcom
+megamanzero	2002	Platform	1	Inti Creates	Capcom
+megamanzero2	2003	Platform	2	Inti Creates	Capcom
+megamanzero3	2004	Platform	1	Inti Creates	Capcom
+megamanzero4	2005	Platform	1	Inti Creates	Capcom
+meinetierarztpraxis		Simulation	1	Independent Arts	DTP Young Entertainment
+meinetierpension		Simulation	1	Independent Arts	DTP Entertainment
+meitanteiconanakatsukinomonument	2005	Adventure	1	BEC	Banpresto
+meitanteiconannerawaretatantei	2003		1	FortyFive	Banpresto
+meninblacktheseries	2002	Platform	1	David A. Palmer Productions	Crave Entertainment
+mermaidmelodypichipichipitch	2003	Board	3		Konami
+mermaidmelodypichipichipitchpichipichiparty	2003	Music / Dancing	1	Konami	Konami
+mermaidmelodypichipichipitchpichipichittolivestart	2004	Music / Dancing	4		Konami
+metalgunslinger	2002	Platform		Open Sesame	Atmark
+metalmax2kai	2003	Role-playing (RPG)	1	Now Production	Now Production
+metalslugadvance	2004	Shooter	1	Noise Factory	Ignition Entertainment
+metroidfusion	2002	Platform	1	Nintendo R&D?	Nintendo
+metroidzeromission	2004	Action	1	Nintendo R&D?	Nintendo
+mezasekoushien	2005	Sports	2	Tasuke	Tasuke
+mickeynopocketresort	2004	Board	4	Jupiter	Disney Interactive
+mickeytodonaldnomagicalquest3	2003	Platform	2	Klein Computer Entertainment	Capcom
+mickeytominnienomagicalquest	2002	Platform	2	Capcom	Nintendo
+mickeytominnienomagicalquest2	2003	Platform	2	Klein Computer Entertainment	Capcom
+micromachines	2003	Racing	4	Infinite Dreams	Atari SA
+midnightclubstreetracing	2001	Racing	1	Angel	DSI Games
+midwaysgreatestarcadehits		Action	1	Pocket Studios	Midway
+mightybeanzpocketpuzzles	2004	Puzzle	2	Radius9	Majesco
+mijndierenpension		Simulation	1	Independent Arts	DTP Entertainment
+mijndierenpraktijk		Simulation	1	Independent Arts	DTP Young Entertainment
+miketysonboxing	2002	Sports	2	Virtucraft	Ubisoft
+minaminouminoodyssey	2002	Adventure	1		Global A
+minimonimikanohappymorningchatty	2002	Adventure	1		Shogakukan
+minimonionegaiohoshisama	2002	Strategy	2		Konami
+minnadepuyopuyo	2001	Puzzle	4	Sonic Team	SEGA
+minnanooujisama	2003	Board	1	Konami Computer Entertainment ???	Konami
+minnanoshiikuseries1bokunokabutomushi	2001	Adventure	1		MTO
+minnanoshiikuseries2bokunokuwagata	2001	Adventure	1		MTO
+minnanoshiikuseriesbokunokabutokuwagata	2003	Adventure	1		MTO
+minnanosoftserieshappytrump20	2005	Board	4	Kouyousha	Success
+minnanosoftserieshyokkorihyoutanjimadongabachodaikatsuyakunomaki	2003		1		MTO Co
+minnanosoftseriesminnanomahjong	2003	Board	1	MTO	MTO
+minnanosoftseriesminnanoshougi	2004	Board	4	Arioka	Success
+minnanosoftseriesnumplaadvance	2006	Puzzle	1	Success	505 Games
+minnanosoftseriesshanghai	2003	Puzzle	1		Success
+minnanosoftseriestetrisadvance	2003	Puzzle	4		Success
+minnanosoftserieszooo	2003	Puzzle	1	Buddiez	Ignition Entertainment
+minorityreporteverybodyruns		Beat'em Up	1	Torus Games	Activision
+mirakurupanzou7tsunohoshinouchuukaizoku	2005		1	Atlus	Atlus
+missionimpossibleoperationsurma	2003	Action	1	M4	Atari SA
+miteluodelingdianrenwu		Action	1	Nintendo R&D?	Nintendo
+miteluoderonghe		Platform	1	Nintendo R&D?	Nintendo
+mlbslugfest2004	2003	Sports	1	Handheld Games	Midway
+mmsblast	2001	Board	1	Pipe Dream Interactive	Majesco
+mmsbreakem	2007	Puzzle	2	Frame Studios Interactive	DSI Games
+mobileproyakyuukantokunosaihai	2001	Simulation	1	Mobile 21	Konami
+mobilesuitgundamseedbattleassault	2004	Fighting	2	Natsume	Bandai
+moerojalecocollection	2004	Compilation	1	Jaleco	Jaleco
+momotaroudentetsuggolddeckotsukure	2005	Board	1	Hudson Soft	Hudson
+momotaroumatsuri	2001	Role-playing (RPG)	1	Hudson Soft	Hudson
+monopoly	2004	Board	1	Unknown	Zoo Digital Publishing
+monsteragdie		Platform	1	Natsume	THQ
+monsterbassfishing	2004	Hunting and Fishing	1	Ignition Entertainment	CokeM Interactive
+monsterfarmadvance	2002	Simulation	4	Tecmo	Tecmo
+monsterfarmadvance2	2002	Simulation	4	Tecmo	Tecmo
+monsterforce	2002	Shooter	2	Digital Eclipse	Universal Interactive
+monstergate	2002	Role-playing (RPG)		Konami Computer Entertainment ???	Konami
+monstergateooinarudungeonfuuinnoorb	2003	Role-playing (RPG)	1	KCE Studios	Konami
+monsterguardians	2001	Role-playing (RPG)	1	Mobile21	Konami
+monsterhouse	2006	Shooter	1	Artificial Mind & Movement	THQ
+monsterjammaximumdestruction	2002	Racing	1	Unique Development Studios	Ubisoft
+monstermaker4flashcard	2002	Role-playing (RPG)	1	Success	Success
+monstermaker4killerdice	2002	Role-playing (RPG)	1	Success	Success
+monsterrancheradvance	2001	Simulation	4	Tecmo	Tecmo
+monsterrancheradvance2	2002	Simulation	4	Tecmo	Tecmo
+monstersinc	2002	Platform	1	Natsume	THQ
+monstersummoner	2004	Strategy	1		Ertain
+monstertruckmadness		Racing	4	Tantalus Interactive	THQ
+monstertrucks		Racing	1	Skyworks Technologies	Majesco
+monstertrucksmayhem	2006	Racing	1	Apex Designs	Zoo Digital Publishing
+moorhen3thechickenchase	2002	Shooter	1	Phenomedia AG	Ubisoft
+moritashougiadvance	2001	Board	2		Hudson
+morningadventure			1	Bit Managers	Virtual Toys
+mortalkombatadvance	2001	Fighting	2	Virtucraft	Midway
+mortalkombatdeadlyalliance	2002	Fighting	2	Criterion Games	Midway
+mortalkombattournamentedition	2003	Fighting	4	Criterion Games	Midway
+mother12	2003	Role-playing (RPG)	4	HAL Laboratory	Nintendo
+mother3	2006	Role-playing (RPG)	4	Brownie Brown	Nintendo
+motocrosschallenge		Racing	1	DHG games	DHG games
+motocrossmaniacsadvance	2002	Racing	4	Konami Computer Entertainment ???	Konami
+motogp	2002	Sports	4	Visual Impact	THQ
+motogpultimateracingtechnology	2002	Sports	4	Visual Impact	THQ
+motoraceradvance	2002	Racing	4	Adeline Software	Ubisoft
+mrdriller2	2005	Strategy	2	Namco	Infogrames
+mrdrillerafushiginapacteria	2002		4	Namco	Namco
+mrincredible	2004	Beat'em Up	1	Helixe	THQ
+mrincrediblekyoutekiunderminertoujou		Platform	1	Helixe	THQ
+mrnutz		Platform	2	Dreamon	Infogrames
+mspacmanmazemadness	2004	Action	4	Full Fat	Zoo Digital Publishing
+muchaluchamascaritasofthelostcode	2003	Beat'em Up	1	Digital Eclipse	Ubisoft
+mugenborg	2003		2	Konami Computer Entertainment Tokyo	Konami
+mummy	2002	Action	1	Ubisoft ???	Ubisoft
+muppetpinballmayhem	2002	Pinball	1	Digital Eclipse	Ubisoft
+muppetstheonwiththeshow		Casual Game	1	Vicarious Visions	TDK
+mutsuwaterloopermutsu	2001	Simulation	2	Alpha Unit	Tomy
+mx2002featuringrickycarmichael		Racing	1	Tiertex Design Studios	THQ
+mylittleponycrystalprincesstherunawayrainbow	2006	Adventure	1	Webfoot Technologies	THQ
+nakayoshimahjongkabureach	2001	Board	4	Konami Computer Entertainment Tokyo	Konami
+nakayoshipetadvanceseries1kawaiihamster	2001	Strategy	2	MTO	MTO
+nakayoshipetadvanceseries2kawaiikoinu	2002	Strategy	1		MTO
+nakayoshipetadvanceseries3kawaiikoneko	2002	Strategy	2		Sammy Studios
+nakayoshipetadvanceseries4kawaiikoinuminiwankotoasoboukogataken	2003	Simulation	1		MTO
+nakayoshiyouchiensukoyakaenjiikuseigame	2002	Strategy	1		TDK Core
+namcomuseum	2001	Compilation	1	Mass Media	Infogrames
+namcomuseum50thanniversary	2005	Racing	2	Digital Eclipse	Namco
+nancydrewmessageinahauntedmansion	2001	Adventure	1	Handheld Games	Dreamcatcher
+napoleon	2001	Strategy	2	Nintendo R&D?	Nintendo
+narikirijockeygameyuushunrhapsody	2001				Capcom
+narutokonohasenki	2003	Strategy	2	Tomy	Tomy
+narutoninjacouncil	2006	Fighting	1	Aspect	D3 Publisher
+narutoninjacouncil2	2006	Fighting	1	Tomy	Tomy
+narutoninjutsuzenkaisaikyouninjadaikesshuu	2003	Fighting	1	Aspect	D3 Publisher
+narutorpguketsugareshihinoishi	2004	Role-playing (RPG)	1	Tose	Tomy
+narutosaikyouninjadaikesshuu2	2004	Fighting	1	Tomy	Tomy
+nascarheat2002	2002	Racing	1	Crawfish Interactive	Infogrames
+natural2duo	2002	Adventure	1		Omega Micott
+nbajam2002		Sports	1	Digital Creations	Acclaim
+needforspeedcarbonownthecity		Racing	1	EA Canada	EA Games
+needforspeedmostwanted	2005	Racing	1	EA ???	EA Games
+needforspeedporscheunleashed	2004	Racing	2	Pocketeers	Ubisoft
+needforspeedunderground		Racing	4	Pocketeers	EA Games
+needforspeedunderground2		Racing	2	Pocketeers	EA Games
+neoromancegameharukanarutokinonakade	2002	Adventure	1	Koei	Koei
+nesclassicscastlevania	2005	Action	1	Konami Computer Entertainment ???	Nintendo
+nesclassicsdonkeykong	2004				
+nextgenerationtennis	2002	Sports	2	Wanadoo Edition	Wanadoo Edition
+nflblitz2002	2001	Sports	1	OutLook Entertainment	Midway
+nflblitz2003	2002	Sports	1	OutLook Entertainment	Midway
+nhl2002	2002	Sports	2	Budcat	EA Sports
+nhlhitz2003	2002	Sports	4	Exient	Midway
+nicktoonsattackofthetoybots	2007	Platform	1	Firemint Pty	THQ
+nicktoonsbattleforvolcanoisland	2006	Platform	1	Halfbrick Studios	THQ
+nicktoonsfreezeframefrenzy	2004	Action	1	Altron	THQ
+nicktoonsracing	2002	Racing	4	Crawfish Interactive	Infogrames
+nicktoonsunite	2005	Platform	1	Climax Group	THQ
+nihonpromahjongrenmeikounintetsumanadvancemenkyokaidenseries	2002	Board	4	Kaga Tech	Kaga Tech
+ninjacop		Platform	1	Hudson Soft	Konami
+ninjafiveo	2003	Platform	1	Hudson Soft	Konami
+nobunagaibun	2002	Strategy	1		Global A
+nobunaganoyabou	2001	Strategy	1	iNiS	Koei
+noddyadayintoyland	2006	Platform	1	Lucky Jump	The Game Factory
+nononopuzzlechailien	2005	Puzzle	2	Creatures	Nintendo
+norulesgetphat		Platform	1	Flying Tiger Development	TDK
+nosvoisinsleshommes	2006	Adventure	1	Vicarious Visions	Activision
+nyannyannyankononyancollection	2005		2	MTO	MTO
+ochakenkururinhonwakapuzzledehottoshiyo	2004	Simulation	1	MTO	MTO
+ochakennoboukenjimahonwakayumenoisland	2005			MTO	MTO
+ochakennoheya	2003	Simulation	4	MTO	MTO
+ochakennoyumebouken	2005	Platform	1	MTO	MTO
+oddworldmunchsoddysee		Adventure	1	Art Co.	THQ
+ohanayasanmonogatarigbaiyashikeiohanayasanikuseigame	2002	Simulation	1		TDK Core
+ojarumarugekkouchousanpodeojaru	2003		1	MTO	MTO
+okumanchoujagamenottoridaisakusen	2001	Board	4	Mobile 21	Takara
+onepiece	2005	Platform		Unknown	Bandai
+onepiecedragondream	2005	Role-playing (RPG)	1	M2	Bandai
+onepiecegoingbaseballhaejeokyaku		Sports	1	Bandai Namco	Bandai Namco
+onepiecegoingbaseballkaizokuyakyuu	2004	Sports	1	Bandai Namco	Bandai Namco
+onepieceilgopseomuidebomool		Role-playing (RPG)	1		Banpresto
+onepiecemezasekingofberry	2003		4		Banpresto
+onimushatactics	2003	Strategy	1	Capcom Production Studio ?	Capcom
+onmyoutaisenkizeroshiki	2004	Role-playing (RPG)	1	Kamui	Bandai
+openseason	2006	Platform	1	Ubisoft ???	Ubisoft
+operationarmoredliberty	2003	Simulation	1	Unknown	Majesco
+orientalblueaonotengai	2003	Role-playing (RPG)	1	Bandai Namco	Hudson
+oshaberiinkoclub	2002	Strategy	3		Alpha Unit
+oshareprincess	2002	Action	1		Culture Brain
+oshareprincess2doubutsukyaranabiuranai	2002	Compilation	4		Culture Brain
+oshareprincess3	2003	Adventure	4		Culture Brain
+oshareprincess5	2005	Adventure	2	Culture Brain	Culture Brain
+osharewanko		Simulation	1	Ubisoft ???	Ubisoft
+ottifantenpinball		Pinball			
+ougonnotaiyouhirakareshifuuin	2001	Role-playing (RPG)	2	Camelot Software Planning	Nintendo
+ougonnotaiyouushinawareshitoki	2002	Role-playing (RPG)	2	Camelot Software Planning	Nintendo
+overstorm		Platform	1	Quantized Bit	Quantized Bit
+overthehedge	2006	Adventure	1	Vicarious Visions	Activision
+overthehedgebeestenbijdeburen		Adventure	1	Vicarious Visions	Activision
+overthehedgehammygoesnuts	2006	Sports	4	Vicarious Visions	Activision
+ozzydrix	2003	Platform	1	Raylight Studios	Midway
+paardponymijnmanege		Simulation	1	Independent Arts	Ubisoft
+paardponypaardingalop		Simulation	1	Kritzelkratz	THQ
+pacmancollection	2001	Action	1	Mass Media	Infogrames
+pacmanpinballadvance	2005	Pinball	1	Human Soft	Zoo Digital Publishing
+pacmanworld	2004	Platform	1	Full Fat	Zoo Digital Publishing
+pacmanworld2	2005	Platform	1	Full Fat	Zoo Digital Publishing
+pacmanworldmspacmanmazemadness		Compilation	2	Full Fat	Namco
+pawsclawsbestfriendsdogscats	2007	Simulation	1	Sproing	THQ
+pawsclawspetresort	2006	Simulation	1	Independent Arts	DTP Entertainment
+pawsclawspetvet	2007	Simulation	1	Independent Arts	DTP Young Entertainment
+payback		Racing	4	Apex Designs	Zoo Digital Publishing
+pazuninnumininnnopuzzledenimu	2003	Puzzle	2	Frame Studios	Metro3D
+pennyracers		Racing		Electronics Application	Xicat Interactive
+peterpanreturntoneverland	2002	Action	2	Crawfish Interactive	Ubisoft
+peterpanthemotionpictureevent	2003	Simulation	1	Saffire	Atari SA
+petzhamsterzlife2	2007	Simulation		Jorudan	Ubisoft
+petzvet	2007	Simulation	1	Sensory Sweep	Ubisoft
+pferdponybestfriendsmeinpferd		Simulation		DTP Young Entertainment	DTP Entertainment
+pferdponylassunsreiten2		Simulation	1	Kritzelkratz	THQ
+pferdponymeingestuet		Simulation	1	Independent Arts	Ubisoft
+pferdponymeinpferdehof	2004	Simulation	1	Independent Arts	Ubisoft
+phalanx	2001	Shoot'em Up	1	Kemco	Kemco
+phantasystarcollection	2002	Compilation	1	Digital Eclipse	SEGA
+philofthefuture	2006	Adventure	1	Handheld Games	Buena Vista Interactive
+piacarroteyoukoso33	2004	Adventure	1	F&C	NEC Interchannel
+pigletsbiggame	2003	Adventure	1	Doki Denki	THQ
+pikapikanursemonogatarinurseikuseigame	2003	Strategy	1		TDK Core
+pinballadvance	2002	Pinball	1	Rebellion	Digital Illusions
+pinballchallengedeluxe	2002	Pinball	1	Binary9 Studios	Ubisoft
+pinballofthedead	2002	Pinball	4	Unknown	SEGA
+pinballtycoon	2003	Pinball	4	Ignition Entertainment	Ignition Entertainment
+pinkpantherpinkadelicpursuit	2002	Platform	1	SuperEmpire Interactive	Wanadoo Edition
+pinkyandthebrainthemasterplan	2002	Platform	4	Warthog Games	Swing! Entertainment
+pinkymonkeytown	2001	Thinking	1		Starfish
+pinobeenodaibouken	2001	Platform	2	Artoon	Activision
+pinobeephoebee	2002		1	Artoon	Hudson
+pinobeewingsofadventure		Platform	2	Artoon	Activision
+pippafunnell2	2005	Simulation	1	Kritzelkratz	THQ
+pippafunnellstableadventure	2005	Simulation	1	Independent Arts	Ubisoft
+piratesofthecaribbeandeadmanschest		Adventure	1	Amaze Entertainment	Buena Vista Interactive
+piratesofthecaribbeanthecurseoftheblackpearl	2003	Adventure	1	Pocket Studios	TDK
+pitfalllexpeditionperdue	2004	Platform	1	Torus Games	Activision
+pitfallthelostexpedition	2004	Platform	1	Torus Games	Activision
+pitfallthemayanadventure		Platform	1	Pipe Dream Interactive	THQ
+pixelineipixieland		Adventure		Krea Medie	Krea Medie
+planetmonsters	2001	Action		Planet Interactive	Titus
+planetoftheapes	2001	Adventure	1	Torus Games	Ubisoft
+playnovelsilenthill	2001	Thinking	1	KCE Tokyo	Konami
+pocketdogs	2005	Simulation	1	O3 Entertainment	O3 Entertainment
+pocketmonstersemerald	2004	Role-playing (RPG)	5	Game Freak	Nintendo
+pocketmonstersfirered	2004	Role-playing (RPG)	5	Game Freak	Nintendo
+pocketmonstersleafgreen	2004	Role-playing (RPG)	5	Game Freak	The Pokémon Company
+pocketmonstersruby		Role-playing (RPG)	4	Game Freak	Nintendo
+pocketmonsterssapphire		Role-playing (RPG)	4	Game Freak	Nintendo
+pocketmusic		Music / Dancing	1	Jester Interactive	Rage Software
+pocketprofessorkwiknotesvolumeone	2006	Educational		Pocket Direct	Pocket Direct
+pockyrockywithbecky	2002	Action	1	Altron	Natsume
+pokeinu	2004	Simulation	1	O3 Entertainment	O3 Entertainment
+pokemonauramewdistribution	2007				
+pokemonblattgrueneedition		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonedicionesmeralda		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonedicionrojofuego		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonedicionrubi		Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonedicionverdehoja		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonedicionzafiro		Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonemeraldversion	2005	Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonfeuerroteedition		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonfireredversion	2004	Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonfushiginodungeonakanokyuujotai	2005	Role-playing (RPG)	1	Chunsoft	Nintendo
+pokemonleafgreenversion	2004	Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonmysterydungeonredrescueteam	2006	Role-playing (RPG)	1	Chunsoft	Nintendo
+pokemonpinballrubysapphire	2003	Pinball	2	Jupiter	Nintendo
+pokemonrubinedition		Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonrubyversion	2003	Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonsaphiredition		Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonsapphireversion	2003	Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonsmaragdedition		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonversionemeraude		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonversionerossofuoco		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonversionerubino		Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonversionesmeraldo		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonversioneverdefoglia		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonversionezaffiro		Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonversionrougefeu		Role-playing (RPG)	5	Game Freak	Nintendo
+pokemonversionrubis	2003	Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonversionsaphir	2003	Role-playing (RPG)	4	Game Freak	Nintendo
+pokemonversionvertfeuille	2004	Role-playing (RPG)	5	Game Freak	Nintendo
+polarexpress		Adventure	1	Tantalus Interactive	THQ
+polariumadvance	2006	Strategy	1	Mitchell	Nintendo
+pollypocketsupersplashisland	2003	Casual Game	2	Dice	Vivendi Universal Games
+popeyerushforspinach		Platform	4	Magic Pockets	Atari SA
+popidol		Music / Dancing	1	Hothouse Creations	Codemasters
+postmanpatandthegreendalerocket	2007	Action	2	Neko Entertainment	The Game Factory
+powerpokedash	2006	Sports	2	Konami Computer Entertainment ???	Konami
+powerprokunpocket12	2004	Sports	2	Diamond Head	Konami
+powerprokunpocket3	2001	Sports	2	Diamond Head	Konami
+powerprokunpocket4	2002	Sports	1	Diamond Head	Konami
+powerprokunpocket5	2003	Sports	2	Diamond Head	Konami
+powerprokunpocket6	2003	Sports	2	Diamond Head	Konami
+powerprokunpocket7	2004	Sports	2		Konami
+powerpuffgirlsthehimandseek	2002	Adventure	1	Vicarious Visions	Bam Entertainment
+powerpuffgirlsthemojojojoagogo	2001	Shoot'em Up	3	Sennari Interactive	Bam Entertainment
+powerrangersdinothunder	2004	Adventure	1	Natsume	THQ
+powerrangerslaforcedutemps	2001	Platform	1	Vicarious Visions	THQ
+powerrangersninjastorm	2003	Adventure	1	Natsume	THQ
+powerrangersspd		Beat'em Up	1	Natsume	THQ
+powerrangerstimeforce		Platform	1	Vicarious Visions	THQ
+powerrangerswildforce		Beat'em Up	1	Natsume	THQ
+prehistorikman		Platform	1	Titus Interactive Studio	Titus
+premieractionsoccer	2006	Sports	1	Independent Arts	East Entertainment Media
+premiermanager200304	2003	Sports	1	Tuna Technologies	Zoo Digital Publishing
+premiermanager20042005	2004	Sports	1	Unknown	Zoo Digital Publishing
+premiermanager20052006	2005	Action	1	Tuna Technologies	Zoo Digital Publishing
+princeofpersiathesandsoftime	2003	Platform	1	Ubisoft ???	Ubisoft
+princessnatashastudentsecretagentprincess	2006	Action	1	Frame Studios Interactive	Zoo Digital Publishing
+probeachsoccer		Sports	2	Magic Pockets	Wanadoo Edition
+promahjongtsuwamonogba	2005	Board	4	Culture Brain	Culture Brain
+protenniswtatour		Action	4	Now Production	Konami
+proudfamily	2005	Adventure	1	Gorilla Systems	Buena Vista Games
+proyakyuuteamotsukurouadvance	2002	Sports	1	Smilebit	SEGA
+pukupukutennenkairanban	2002	Adventure	2		Victor Interactive
+pukupukutennenkairanbankoinocupiddaisakusen	2004	Adventure	2		Marvelous Entertainment
+pukupukutennenkairanbanyoukosoillusionlandhe	2004	Adventure	4	Marvelous Entertainment	Marvelous Entertainment
+punchkingarcadeboxing	2002	Sports	1	Full Fat	Acclaim
+puppyluvspaandresort	2007	Simulation		Humagade	Activision
+puyopop	2002	Puzzle	4	Sonic Team	SEGA
+puyopopfever		Puzzle	1	Sonic Team	SEGA
+puyopuyofever		Puzzle	1	Sonic Team	SEGA
+puzzletanteicollection	2003	Compilation	2		Culture Brain
+pyuutofukujaguarbyootoderumeganekun	2004		1	Konami Computer Entertainment ???	Konami
+quaddesertfury		Racing	1	Skyworks Technologies	Majesco
+quake	2003				
+quieresermillonario		Quiz	1	Hothouse Creations	Zoo Digital Publishing
+quiveutgagnerdesmillions	2002	Quiz	1	Hothouse Creations	Zoo Digital Publishing
+qwak	2006	Action	1	Jamie Woodhouse	Jamie Woodhouse
+racingfever	2005	Racing	1	NAPS Team	Neko Entertainment
+racinggearsadvance	2005	Racing	4	Orbital Media	Zoo Digital Publishing
+rampagepuzzleattack		Puzzle	2	Ninai Games	Midway
+rapalaprofishing		Hunting and Fishing	1	Torus Games	Zoo Digital Publishing
+ratatouille	2007	Platform	1	Helixe	THQ
+ravemasterspecialattackforce	2005	Fighting	4	Konami Computer Entertainment ???	Konami
+rayman10thanniversary	2006	Compilation	1	Ubisoft ???	Ubisoft
+rayman3	2003	Platform	4	Ubisoft ???	Ubisoft
+raymanadvance	2001	Platform	1	Digital Eclipse	Ubisoft
+raymanhoodlumsrevenge	2003	Platform	2	Ubisoft ???	Ubisoft
+raymanravingrabbids	2006	Platform	1	Visual Impact	Ubisoft
+razbitumerestezbranches		Adventure	2	Altron	THQ
+razmoketlesamoilafiesta	2002	Platform	2	Unknown	THQ
+razmoketlesvolernestpasjouer	2001	Platform	1	Software Creations	THQ
+razmoketrencontrentlesdelajungleles	2003	Platform	1	Magellan Interactive	THQ
+razorfreestylescooter	2001	Sports	2	Crawfish Interactive	Crave Entertainment
+ready2rumbleboxinground2	2001	Sports	1	Crawfish Interactive	Midway
+rebelstartacticalcommand	2005	Strategy	2	Codo Games	Atari SA
+reccanohonoothegame	2001		2	Konami Computer Entertainment ???	Konami
+reignoffire	2002	Adventure	1	Crawfish Interactive	Bam Entertainment
+relaxumanamainichi	2005		1	Imagineer	Imagineer
+rescueheroesbillyblazes	2003	Platform	1	WayForward Technologies	Vivendi Universal Games
+residentevil2		Adventure	1	Raylight Studios	Capcom
+revengeofshinobi	2002	Platform	1	3d6 Games	SEGA
+revengeofthesmurfs	2002	Platform	2	Bit Managers	Infogrames
+rhythmtengoku	2006		1	J.P. Room	Nintendo
+rippingfriendsthetheworldsmostmanlymen		Beat'em Up	2	Software Creations	THQ
+rivercityransomex	2004	Beat'em Up	1	Million	Atlus
+rivierathepromisedland	2005	Role-playing (RPG)	1	Sting Entertainment	Atlus
+rivierayakusokunochiriviera	2004	Role-playing (RPG)	1	Sting Entertainment	Atlus
+roadrashjailbreak	2003	Racing	1	Magic Pockets	Electronic Arts
+robocop	2002				
+robopon2crossversion	2002	Role-playing (RPG)	4	Red Entertainment	Atlus
+robopon2ringversion	2002	Role-playing (RPG)	4	Red 5 Software	Atlus
+robotechthemacrosssaga		Shoot'em Up	4	Lucky Chicken	TDK
+robotponcots2crossversion	2001	Role-playing (RPG)	4	Red Entertainment	Atlus
+robotponcots2ringversion	2001	Role-playing (RPG)	4	Red 5 Software	Atlus
+robots	2005	Adventure	1	Amaze Entertainment	Sierra
+robotwarsadvanceddestruction	2002	Fighting	4	Crawfish Interactive	BBC Multimedia
+robotwarsextremedestruction	2002	Fighting		Warthog Games	BBC Multimedia
+rockemsockemrobots	2005	Fighting	1	Full Fat	Zoo Digital Publishing
+rocketpowerbeachbandits		Platform	1	Helixe	THQ
+rocketpowerdreamscheme		Platform	1	Helixe	THQ
+rocketpowerlecauchemardotto	2001	Platform	1	Helixe	THQ
+rocketpowerzerogravityzone	2003	Sports	2	Altron	THQ
+rockmanexe45realoperation	2004	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+rockmanexe4tournamentbluemoon	2004	Strategy	2	Capcom Production Studio 2	Capcom
+rockmanexe4tournamentredsun	2004	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+rockmanexe5teamofblues	2004	Strategy	2	Capcom Production Studio 2	Capcom
+rockmanexe5teamofcolonel	2005	Role-playing (RPG)	2	Capcom Production Studio 2	Capcom
+rockmanexe6dennoujuufalzar	2005	Role-playing (RPG)	1	Capcom Production Studio 2	Capcom
+rockmanexe6dennoujuugregar	2005	Strategy	2	Capcom Production Studio 2	Capcom
+rockmanexebattlechipgp		Card	2	Inti Creates	Capcom
+rockmanforte		Platform	1	Capcom	Capcom
+rockmanzero	2002	Platform	1	Inti Creates	Capcom
+rockmanzero2	2003	Platform	2	Inti Creates	Capcom
+rockmanzero3	2004	Platform	1	Inti Creates	Capcom
+rockmanzero4	2005	Platform	1	Inti Creates	Capcom
+rocknrollracing	2003	Racing		Mass Media	Blizzard Classic Arcade
+rocky	2002	Sports	2	Virtucraft	Rage Software
+rpgtsukuruadvance	2003	Role-playing (RPG)	1		Enterbrain
+rtypeiiithethirdlightning	2003	Shoot'em Up	1	Raylight Studios	Zoo Digital Publishing
+rugratscastlecapers		Platform	1	Software Creations	THQ
+rugratsgowild		Platform	1	Magellan Interactive	THQ
+rugratsigottagoparty		Platform	2	Unknown	THQ
+rugratstravesurasenelcastillo		Platform	1	Software Creations	THQ
+sabrewulf	2004	Platform	1	Rare	THQ
+sabrinatheteenagewitchpotioncommotion	2002	Platform	1	Ubisoft ???	Ubisoft
+saibarariekonodendoumahjong	2001	Board	4	Warashi	Media Rings
+sakuramomokonoukiukicarnival	2002		1	Indieszero	Nintendo
+saltlake2002	2002	Sports	4	DC Studios	Ubisoft
+samsaranaga1x2	2001		1	Groove Box Japan	Victor Interactive
+samuraideeperkyo	2008	Beat'em Up	1	Natsume	Bold Games
+samuraievolutionoukokugeist	2002				
+samuraijacktheamuletoftime		Platform	1	Virtucraft	Zoo Digital Publishing
+sangokushi	2001	Strategy	1	Koei	Koei
+sangokushieiketsuden	2005	Strategy	1	Koei	Koei
+sangokushikoumeiden	2005	Strategy	1	Koei	Koei
+sanriopurolandallcharacters	2003	Board	4	Tomy	Tomy
+santaclause3thetheescapeclause	2006	Platform	1	1st Playable Productions	Buena Vista Games
+santaclausjradvance	2002	Platform	1	NEON Software	JoWood Produtions
+santaclaussavestheearth	2002	Platform	1	Ivolgamus	Telegames
+scanhuntersennenkaigyoooe	2002	Hunting and Fishing	1	DA1	Pacific Century Cyber Works
+scoobydoo	2001	Adventure	1	Helixe	THQ
+scoobydoo2monstersunleashed		Platform	1	Altron	THQ
+scoobydooandthecyberchase	2001	Adventure	1	Software Creations	THQ
+scoobydoomysterymayhem	2003	Adventure	1	Artificial Mind & Movement	THQ
+scoobydoounmasked	2005	Platform	1	Artificial Mind & Movement	THQ
+scorpionkingtheswordofosiris	2002	Platform	1	WayForward Technologies	Universal
+scrabble		Board	4	Runecraft	Ubisoft
+scrabbleblast	2005	Strategy	2	Visual Impact	Zoo Digital Publishing
+scrabblescramble	2005	Strategy	2	Visual Impact	Zoo Digital Publishing
+screwbreakergoushindorirurero	2005	Platform	1	Game Freak	Nintendo
+scurgehive	2006	Role-playing (RPG)	1	Orbital Studios	Southpeak Interactive
+sdgundamforce	2004	Beat'em Up	1	Tom Create	Bandai
+sdgundamggenerationadvance	2003	Strategy	1	Unknown	Bandai
+seatraderriseoftaipan	2003	Simulation	1	Jaleco	Jaleco
+secretagentbarbieroyaljewelsmission	2002	Platform	1	Digital Illusions	Vivendi Universal Games
+segaarcadegallery	2003	Compilation	1	Bits Studios	SEGA
+segarallychampionship	2003	Racing	4	Dice	SEGA
+segasmashpack	2002	Compilation	2	Codefire	SEGA
+sengokukakumeigaiden	2003	Role-playing (RPG)	1	KCE Studios	Konami
+sennenkazoku	2005	Simulation	1	Indieszero	Nintendo
+sentouinyamadahajime	2004		1		Kids Station
+serioussamadvance	2004	Shooter	2	Climax Group	Global Star Software
+shamankingcardgamechousenjiryakketsu2	2002		2	Studio Saizensen	
+shamankingcardgamechousenjiryakketsu3	2002			Studio Saizensen	King Records
+shamankinglegacyofthespiritssoaringhawk	2005	Role-playing (RPG)	2	Konami Computer Entertainment Japan	Konami
+shamankinglegacyofthespiritssprintingwolf	2005	Role-playing (RPG)	2	Konami Computer Entertainment Japan	Konami
+shamankingmasterofspirits	2004	Role-playing (RPG)	1	Konami Computer Entertainment Japan	Konami
+shamankingmasterofspirits2	2005	Platform	1	Konami Computer Entertainment Japan	Konami
+shanghaiadvance	2001	Board			
+sharktale	2005	Platform	4	Vicarious Visions	Activision
+shaunpalmersprosnowboarder		Sports	1	Natsume	Activision
+sheep		Puzzle	4	Capcom	Empire Interactive
+shiftinggearsroadtrip	2004	Racing	4	Electronics Application	Zoo Digital Publishing
+shikakuiatamaomarukusuruadvancekanjikeisan	2004				
+shikakuiatamaomarukusuruadvancekokugosansuushakairika	2004				
+shimurakennobakatonosamabakushoutenkatouitsugame	2002	Board	4	Kamui	TDK Core
+shinbokuranotaiyougyakushuunosabata	2005	Role-playing (RPG)	2	Kojima Productions	Konami
+shinchanaventurasencineland			1	Inti Creates	Atari SA
+shinchancontralosmunecosdeshockgahn	2006	Action	1	Inti Creates	Atari SA
+shingatamedarotkabutoversion	2004	Role-playing (RPG)	1	Imagineer	Imagineer
+shingatamedarotkuwagataversion	2004	Role-playing (RPG)	1	Imagineer	Rocket Company
+shiningforcekurokiryuunofukkatsu	2004	Role-playing (RPG)	1	Amusement Vision	THQ
+shiningforceresurrectionofthedarkdragon	2004	Role-playing (RPG)	1	Amusement Vision	THQ
+shiningsoul	2003	Role-playing (RPG)	4	Nex Entertainment	SEGA
+shiningsoulii	2004	Role-playing (RPG)	4	Nex Entertainment	THQ
+shinkisekaemonogatari	2003	Adventure	1	Marvelous Entertainment	Marvelous Entertainment
+shinmegamitensei	2003	Role-playing (RPG)	1	Atlus	Atlus
+shinmegamitenseidevilchildrenhikarinosho	2002	Role-playing (RPG)	2	Multimedia Intelligence Transfer	Atlus
+shinmegamitenseidevilchildrenhonoonosho	2003	Role-playing (RPG)	1	Multimedia Intelligence Transfer	Atlus
+shinmegamitenseidevilchildrenkoorinosho	2003	Role-playing (RPG)	1	Multimedia Intelligence Transfer	Atlus
+shinmegamitenseidevilchildrenmessiahriser	2004	Strategy	1	Will	Rocket Company
+shinmegamitenseidevilchildrenpuzzledecall	2003	Puzzle			Atlus
+shinmegamitenseidevilchildrenyaminosho	2002	Role-playing (RPG)	2	Multimedia Intelligence Transfer	Atlus
+shinmegamitenseiii	2003	Role-playing (RPG)	1	Atlus	Atlus
+shinnihonprowrestlingtoukonretsudenadvance	2002	Fighting	2	Tomy	Nintendo
+shinsangokumusouadvance	2005	Beat'em Up	1	Koei	Nintendo
+shinyakuseikendensetsu	2003	Role-playing (RPG)	2	Brownie Brown	Nintendo
+shirenmonstersnetsal	2004	Simulation	4	Chunsoft	Chunsoft
+shrek2		Adventure	1	Vicarious Visions	Activision
+shrek2begformercy	2004	Platform	1	Vicarious Visions	Activision
+shrekhassleatthecastle	2002	Platform	4	Tose	TDK
+shrekreekinhavoc	2003	Beat'em Up	1	Tose	TDK
+shreksmashncrashracing	2006	Racing	1	Torus Games	Activision
+shreksuperslam	2005	Fighting	4	Amaze Entertainment	Activision
+shrekswampkartspeedway	2002	Racing	4	Prolific	TDK
+shrekthethird	2007	Platform	4	Vicarious Visions	Activision
+sigmastarsaga		Role-playing (RPG)	1	WayForward Technologies	Atari SA
+silentscope	2002	Action	4	Now Production	Konami
+silktocotton	2002	Adventure	1	KiKi	KiKi
+simcity2000	2003	Strategy	1	Full Fat	Zoo Digital Publishing
+simple2960tomodachiseriesvol1thetablegamecollectionmahjongshougihanafudareversi	2003	Board	4	Access	D3 Publisher
+simple2960tomodachiseriesvol2theblockkuzushi	2003				
+simple2960tomodachiseriesvol3theitsudemopuzzlemassugusoroetestraws	2003	Board	4	Access	D3 Publisher
+simple2960tomodachiseriesvol4thetrumpminnadeasoberu12shuruinotrumpgame	2003				
+simpsonstheroadrage		Racing	2	Altron	THQ
+sims		Simulation	1	Griptonite Games	EA Games
+sims2		Simulation	1	Amaze Entertainment	Electronic Arts
+sims2thepets		Simulation	1	Artificial Mind & Movement	EA Games
+simsthebustinout	2003	Simulation	1	Griptonite Games	EA Games
+sisterprincessrepure	2003				
+sitafeidechuanshuo		Platform	1	Tose	Nintendo
+sitafeidechuanshuo2		Platform	1	Tose	Nintendo
+sittingducks	2004	Action	1	Light & Shadow Production	Light & Shadow Productions (LSP)
+sk8tonyhawksproskater2		Sports	2	Vicarious Visions	Activision
+skydancerstheymagicallyfly	2005	Platform	2	David A. Palmer Productions	Crave Entertainment
+slimemorimoridragonquestshougekinoshippodan	2003		4		Square Enix
+slotpro2advancegogojugglernewtairyou	2002				
+slotproadvancetakarabuneooedosakurafubuki2	2001				
+smashingdrive	2004	Racing	2	Raylight Studios	Zoo Digital Publishing
+smugglersrun	2002	Racing	1	Unknown	Zoo Digital Publishing
+snapkids	2002	Role-playing (RPG)	2	GameKids	Enix
+snood	2001	Puzzle	2	Rebellion	DSI Games
+snood2onvacation	2005	Puzzle	1	Rebellion	Zoo Digital Publishing
+soccerkid		Platform	1	Telegames	Telegames
+soccermania		Sports	2	Tiertex Design Studios	Electronic Arts
+sonicadvance	2002	Platform	4	Dimps	SEGA
+sonicadvance2	2003	Platform	4	Dimps	SEGA
+sonicadvance3	2004	Platform	4	Sonic Team	THQ
+sonicbattle	2004	Action	4	Sonic Team	THQ
+sonicpinballparty	2003	Pinball	4	Sonic Team	SEGA
+sonicthehedgehoggenesis	2006	Platform	1	Sonic Team	SEGA
+spacechannel5ulalascosmicattack	2003	Music / Dancing	1	Art	SEGA
+spacehexcitemaetellegendex	2001	Puzzle	2		Jorudan
+spaceinvaders		Shoot'em Up	2	Torus Games	Activision
+spaceinvadersex	2002	Shoot'em Up	2	Torus Games	Activision
+speedball2		Sports	2	Crawfish Interactive	Wanadoo Edition
+spiderman	2002	Platform	1	Digital Eclipse	Activision
+spiderman2		Platform	1	Digital Eclipse	Activision
+spiderman3	2007	Platform	1	Vicarious Visions	Activision
+spidermanbattlefornewyork	2006	Platform	1	Torus Games	Activision
+spidermanmysterionokyoui	2002	Platform	1	Vicarious Visions	Activision
+spidermanmysteriosmenace	2001	Platform	1	Vicarious Visions	Activision
+spiritderwildemustangaufdersuchenachhomeland		Action	1	Hyperspace Cowgirls	THQ
+spiritletalondesplainesalarecherchedelaterrenatale	2002	Action	1	Hyperspace Cowgirls	THQ
+spiritsspells	2003	Platform	1	Magic Pockets	Wanadoo Edition
+spiritstallionofthecimarronsearchforhomeland	2002	Action	1	Hyperspace Cowgirls	THQ
+spongebobandfriendsattackofthetoybots		Platform	1	Firemint Pty	THQ
+spongebobsatlantissquarepantis	2007	Platform		Altron	THQ
+spongebobsquarepantsandfriendsbattleforvolcanoisland		Platform	1	Halfbrick Studios	THQ
+spongebobsquarepantsandfriendsinfreezeframefrenzy	2004	Action	1	Altron	THQ
+spongebobsquarepantsandfriendsunite		Platform	1	Climax Group	THQ
+spongebobsquarepantsbattleforbikinibottom	2003	Platform	1	Vicarious Visions	THQ
+spongebobsquarepantscreaturefromthekrustykrab	2006	Platform	1	WayForward Technologies	THQ
+spongebobsquarepantslightscamerapants	2005	Platform	1	WayForward Technologies	THQ
+spongebobsquarepantsmovie	2004	Platform	1	WayForward Technologies	THQ
+spongebobsquarepantsrevengeoftheflyingdutchman		Platform	1	Vicarious Visions	THQ
+spongebobsquarepantssupersponge		Platform	1	Climax Group	THQ
+sportsillustratedforkidsbaseball	2001	Sports	2	Sennari Interactive	Bam Entertainment
+sportsillustratedforkidsfootball	2003	Sports	2	Sennari Interactive	Bam Entertainment
+sportsmanspack2in1cabelasbiggamehunterrapalaprofishing		Compilation			Activision
+spyhunter	2002	Racing	2	Midway	Midway
+spykids3dgameover	2003	Platform	1	Digital Anvil	THQ
+spykidschallenger	2002	Platform	1	Game Titan	Disney Interactive
+spymuppetslicensetocroak	2003	Casual Game	1	Vicarious Visions	TDK
+spyro2seasonofflame	2002	Platform	1	Digital Eclipse	Universal Interactive
+spyroadvance		Platform	1	Digital Eclipse	Universal Interactive
+spyroadvancewakuwakutomodachidaisakusen	2004	Platform	1	Vicarious Visions	Coktel Vision
+spyroadventure		Platform	2	Digital Eclipse	Universal Interactive
+spyroattackoftherhynocs	2003	Platform	2	Digital Eclipse	Universal Interactive
+spyrofusion		Platform	1	Vicarious Visions	Coktel Vision
+spyroorangethecortexconspiracy	2004	Platform	1	Vicarious Visions	Coktel Vision
+spyroseasonofice	2001	Platform	1	Digital Eclipse	Universal Interactive
+spyrosuperpackspyroseasonoficespyro2seasonofflame		Compilation			Vivendi
+ssx3		Sports	2	Visual Impact	EA Sports BIG
+ssxtricky		Sports	1	Visual Impact	EA Sports BIG
+stadiumgames	2004	Sports	2	Ignition Entertainment	Crave Entertainment
+starskyhutch	2003	Racing	1	Spellbound	Empire Interactive
+starwarsepisodeiiattackoftheclones	2002	Platform	1	David A. Palmer Productions	THQ
+starwarsepisodeiiirevengeofthesith	2005	Beat'em Up	2	Ubisoft ???	Ubisoft
+starwarsflightofthefalcon	2003	Shooter	1	Pocket Studios	THQ
+starwarsjedipowerbattles	2001	Adventure	1	HotGen	THQ
+starwarsthenewdroidarmy	2002	Adventure	1	Helixe	THQ
+starwarstrilogyapprenticeoftheforce	2004	Platform	2	Ubisoft ???	Ubisoft
+starx	2002	Shooter	4	Graphic State Games	Bam Entertainment
+steelempire	2005	Shoot'em Up	1	Starfish	Zoo Digital Publishing
+strawberryshortcakeicecreamislandridingcamp	2006	Adventure	2	Gorilla Systems	The Game Factory
+strawberryshortcakesummertimeadventure	2004	Adventure		Gorilla Systems	Majesco
+strawberryshortcakesummertimeadventurespecialedition		Adventure		Gorilla Systems	Majesco
+strawberryshortcakesweetdreams	2006	Adventure		Gorilla Systems	Majesco
+streetfighteralpha3	2002	Fighting	2	Crawfish Interactive	Capcom
+streetfighterzero3upper		Fighting	2	Crawfish Interactive	Capcom
+streetjambasketball		Sports	2	Prograph	Zoo Digital Publishing
+streetracingsyndicate	2005	Racing	1	Raylight Studios	Zoo Digital Publishing
+strikeforcehydra	2003	Shoot'em Up	1	Awesome	Ignition Entertainment
+stuartlittle2	2002	Platform	2	Software Creations	Activision
+stuntman	2003	Racing	2	Velez & Dubail	Atari SA
+sugarsugarruneheartgaippaimoegigakuen	2005				
+suitelifeofzackcodythetiptoncaper	2006	Adventure	1	Artificial Mind & Movement	Buena Vista Games
+summonnightcraftswordmonogatari	2003	Role-playing (RPG)	2	Flight Plan	Atlus
+summonnightcraftswordmonogatari2	2004	Role-playing (RPG)	1	Flight Plan	Atlus
+summonnightcraftswordmonogatarihajimarinoishi	2003	Role-playing (RPG)	2	Flight Plan	Atlus
+summonnightswordcraftstory	2006	Role-playing (RPG)	2	Flight Plan	Atlus
+summonnightswordcraftstory2	2006	Role-playing (RPG)	1	Flight Plan	Atlus
+sumofallfears	2002	Shooter	4	Red Storm Entertainment	Ubisoft
+superarmywar	2005	Shooter	1	Neko Entertainment	SG Diffusion
+superblackbassadvance	2001	Hunting and Fishing	4	Starfish	Ubisoft
+superbubblepop	2003	Puzzle	1	Runecraft	Jaleco
+superbustamove	2001	Puzzle	2	Taito	Ubisoft
+superchinese12advance	2004				
+supercollapseii	2004	Puzzle	2	GameHouse	Majesco
+superdodgeballadvance	2001	Sports	2	Million	Ubisoft
+superdonkeykong	2003	Platform	2	Rare	Nintendo
+superdonkeykong2	2004	Platform	4	Rare	Nintendo
+superdonkeykong3	2005	Platform	2	Rare	Nintendo
+superdropzoneintergalacticrescuemission	2004	Shoot'em Up	1	Pocket Studios	Ignition Entertainment
+superdupersumos	2003	Beat'em Up	2	Handheld Games	Midway
+superghoulsnghosts	2002	Platform	1	Capcom Production Studio ?	Capcom
+superhornetfa18f		Simulation	1	UK Magic	Majesco
+supermancountdowntoapokolips	2003	Fighting	1	Mistic Software	Atari SA
+supermanreturnsfortressofsolitude		Puzzle	1	EA ???	EA Games
+supermarioadvance	2001	Platform	4	Nintendo R&D?	Nintendo
+supermarioadvance2supermarioworld	2002	Platform	2	Nintendo R&D2	Nintendo
+supermarioadvance2supermarioworldmariobrothers	2001	Platform	2	Nintendo R&D2	Nintendo
+supermarioadvance3yoshisisland	2002	Platform	1	Nintendo R&D2	Nintendo
+supermarioadvance3yoshisislandmariobrothers	2002	Platform	1	Nintendo R&D2	Nintendo
+supermarioadvance4supermario3mariobrothers	2003	Platform	4	Nintendo R&D2	Nintendo
+supermarioadvance4supermariobros3	2003	Platform	4	Nintendo R&D2	Nintendo
+supermarioadvancesupermariousamariobrothers	2001	Platform	4	Nintendo R&D?	Nintendo
+supermarioball	2004	Pinball	1	Fuse Games	Nintendo
+supermariobros		Action	2	Nintendo R&D?	Nintendo
+supermonkeyballjr	2002	Action	4	Realism	SEGA
+superpuzzlebobbleadvance	2001	Puzzle	2	Taito	Ubisoft
+superpuzzlefighterii	2003	Puzzle	2	Atomic Planet Entertainment	Capcom
+superrealmahjongdousoukai	2004	Board	1	AI	Rocket Company
+superrobottaisena	2001	Role-playing (RPG)	1	Banpresto	Banpresto
+superrobottaisend	2003				
+superrobottaisenj	2005	Strategy		AI	Banpresto
+superrobottaisenoriginalgeneration	2006	Role-playing (RPG)	1	Banpresto	505 Games
+superrobottaisenoriginalgeneration2	2006	Role-playing (RPG)	1	Banpresto	Atlus
+superrobottaisenr	2002	Role-playing (RPG)	1	Banpresoft	Banpresto
+superstreetfighteriiturborevival	2001	Fighting	2	Capcom Production Studio ?	Capcom
+superstreetfighteriixrevival		Fighting	2	Capcom Production Studio ?	Capcom
+surfsup	2007	Sports	2	Ubisoft ???	Ubisoft
+sutakomistarcommunicator	2001		1		Konami
+sweetcookiepie	2001	Action		Culture Brain	Culture Brain
+swordofmana		Role-playing (RPG)	2	Brownie Brown	Nintendo
+sylvanianfamilies4megurukisetsunotapestry	2002				
+sylvanianfamiliesfashiondesignerninaritaikurumirisunoonnanoko	2004				
+sylvanianfamiliesyouseinosticktofushiginokimarroninunoonnanoko	2003				
+tacticsogregaidentheknightoflodis	2001	Role-playing (RPG)	1	Quest	Atlus
+tacticsogretheknightoflodis	2002	Role-playing (RPG)	1	Quest	Atlus
+taiketsuultrahero	2004	Fighting	2	Jorudan	Jorudan
+tak2thestaffofdreams	2004	Platform	1	Helixe	THQ
+takandthepowerofjuju	2003	Platform	1	Helixe	THQ
+takthegreatjujuchallenge		Platform	1	WayForward Technologies	THQ
+talesofphantasia	2003	Role-playing (RPG)	1	Namco	Nintendo
+talesoftheworldnarikiridungeon2	2002	Role-playing (RPG)		Alfa System	Namco
+talesoftheworldnarikiridungeon3	2005	Role-playing (RPG)	1	Alfa System	Namco
+talesoftheworldsummonerslineage	2003	Strategy	1	Kaga Tech	Namco
+tanbimusoumeineliebe	2001	Adventure	2	Mobile 21	Konami
+tangtang	2001	Puzzle	1	GameVision	Take 2 Interactive
+tanteigakuenqkyuukyokutrickniidome	2004	Adventure	1		Konami
+tanteigakuenqmeitanteiwakimida	2003	Adventure	1		Konami
+tanteijinguujisaburoushiroikagenoshoujo	2005	Adventure	1	Workjam	Marvelous Entertainment
+tarzanlappeldelajungle	2002	Platform	1	Digital Eclipse	Activision
+tarzanreturntothejungle		Platform	1	Digital Eclipse	Activision
+tarzanrueckkehrindendschungel		Platform	1	Digital Eclipse	Activision
+taxi3	2003	Racing	1	Visual Impact	Ubisoft
+teenagemutantninjaturtles	2003	Beat'em Up	1	Konami Computer Entertainment ???	Konami
+teenagemutantninjaturtles2battlenexus	2004	Beat'em Up	4	Konami Computer Entertainment ???	Konami
+teenagemutantninjaturtlesdoublepack		Beat'em Up	4	Konami Computer Entertainment ???	Konami
+teentitans	2005	Platform	1	Unknown	Majesco
+teentitans2	2006	Action	1	Artificial Mind & Movement	Majesco
+tekkenadvance	2002	Fighting	2	Eighting	Infogrames
+tennismastersseries2003	2002	Sports	4	Kaolink	Microïds
+tennisnooujisama2003coolblue	2003	Sports	4		Konami
+tennisnooujisama2003passionred	2003	Sports	4		Konami
+tennisnooujisama2004gloriousgold	2004	Sports	4		Konami
+tennisnooujisama2004stylishsilver	2004	Sports	4		Konami
+tennisnooujisamaaimatthevictory	2002	Sports	2	Konami Computer Entertainment Japan	Konami
+tennisnooujisamageniusboysacademy	2002	Sports	4	Konami Computer Entertainment Japan	Konami
+tenpinalley2	2004	Sports	4	Pronto Games	XS Games
+terminator3riseofthemachines	2003	Shooter	12	Taniko	Atari SA
+tetrisworlds	2001	Puzzle	2	3d6 Games	THQ
+texasholdempoker	2005	Gambling	1	Skyworks Technologies	Majesco
+tgrally		Racing	2	Tantalus	Kemco
+thatssoraven	2004	Platform	1	Vicarious Visions	Disney Interactive
+thatssoraven2supernaturalstyle	2005	Platform	1	Artificial Mind & Movement	Disney Interactive
+threeinonepackconnectfourperfectiontrouble	2005	Board	4		
+threeinonepackriskbattleshipclue	2005	Board	6	Gravity-i	DSI Games
+threeinonepacksorryaggravationscrabblejunior	2005	Board	6		
+threestooges	2002	Platform	1	Cinemaware	Metro 3D
+thunderalley	2004	Racing	1	Pronto Games	XS Games
+thunderbirds		Adventure	1	Saffire Corporation	Vivendi Universal Games
+thunderbirdsinternationalrescue		Shoot'em Up	1	Pukka Games	SCi Games
+tigerwoodspgatour2004		Sports	4	Backbone Emeryville	EA Sports
+tigerwoodspgatourgolf		Sports	4	Rebellion	Ubisoft
+timburtonsthenightmarebeforechristmasthepumpkinking		Platform	2	Tose	Buena Vista Interactive
+tinytoonadventuresbustersbaddream	2002	Fighting	1	Treasure	Swing! Entertainment
+tinytoonadventuresscarydreams		Fighting	1	Treasure	Swing! Entertainment
+tinytoonadventureswackystackers	2001	Puzzle	2	Warthog Games	Swing! Entertainment
+tiretbuteditionchampionsdumonde	2002	Quiz		Titus Interactive Studio	Titus
+titeufmegacompet	2004	Casual Game	2	Dream On Studio	Atari SA
+titeufzegagmachine	2002	Platform	1	3D Light Team	Infogrames
+titietlesbijouxmagiques			4	Kemco	Kemco
+tmnt	2007	Beat'em Up	1	Ubisoft ???	Ubisoft
+tmntteenagemutantninjaturtles		Beat'em Up	1	Ubisoft ???	Ubisoft
+tocaworldtouringcars	2003	Racing	2	Codemasters	Ubisoft
+tokimekiyumeseries1ohanayasanninarou	2002	Strategy	2		MTO
+tokyomajingakuenfujuhouroku	2004	Strategy	1	Marvelous Entertainment	Marvelous Entertainment
+tokyoxtremeraceradvance	2005	Racing	1	David A. Palmer Productions	Liquid Games
+tomandjerryininfurnalescape	2003	Platform	1	Cinegroupe	Ubisoft
+tomandjerrytales	2006	Platform	1	Sensory Sweep	Eidos Interactive
+tomandjerrythemagicring	2002	Beat'em Up	1	Cave Barn Studios	Ubisoft
+tomatoadventure	2002	Role-playing (RPG)	1	AlphaDream	Nintendo
+tomclancysrainbowsixroguespear	2002	Shooter	4	Ubisoft ???	Ubisoft
+tomclancyssplintercell	2003	Action	1	Ubisoft ???	Ubisoft
+tomclancyssplintercellpandoratomorrow	2004	Adventure	1	Ubisoft ???	Ubisoft
+tongqinyibi		Strategy	1	Mitchell	Nintendo
+tonkaonthejob	2006	Simulation		Webfoot Technologies	THQ
+tonyhawksamericansk8land	2005	Sports	2	Vicarious Visions	Activision
+tonyhawksdownhilljam	2006	Sports		Unknown	Activision
+tonyhawksproskater2	2001	Sports	2	Vicarious Visions	Activision
+tonyhawksproskater3	2002	Sports	4	Vicarious Visions	Activision
+tonyhawksproskater4	2002	Sports	4	Vicarious Visions	Activision
+tonyhawksunderground		Sports		Vicarious Visions	Activision
+tonyhawksunderground2	2004	Sports	2	Vicarious Visions	Activision
+tootuffthegagmachine		Platform	1	3D Light Team	Infogrames
+topgeargtchampionship	2001	Racing	2	Vision Works	Kemco
+topgearrally	2003	Racing	2	Tantalus	Kemco
+topguncombatzones	2004	Shooter	1	Titus Interactive Studio	Mastiff
+topgunfirestormadvance		Shooter	2	Fluid Studios	Titus
+topspin2	2006	Sports	2	Magic Pockets	2K Games
+totallyspies	2005	Platform	1	Mistic Software	Atari SA
+totallyspies2undercover	2006	Casual Game	1	Mistic Software	Atari SA
+totalsoccer2002	2001	Sports		Exient Entertainment	Ubisoft
+totalsocceradvance		Sports		Exient Entertainment	Ubisoft
+totalsoccermanager	2001	Sports	2	Anco	Ubisoft
+tottokohamutarou3lovelovedaiboukendechu	2002	Adventure	2	Pax Softonica	Nintendo
+tottokohamutarou4nijiirodaikoushindechu	2003	Adventure	2	Graphic Research	Nintendo
+touhaidensetsuakagiyaminimaioritatensai	2006	Board	1	Culture Brain	Culture Brain
+toukonheat	2002	Sports	1		Pacific Century Cyber Works
+towersp	2006	Simulation	1	Vivarium	SEGA
+toyroboforce	2001	Shooter	2	Global A	Global A
+travispastranaspromotox	2002				
+treasureplanet	2002	Platform	1	Bizarre Creations	Ubisoft
+trickstar	2006	Racing	4	Tantalus Media	Liquid Games
+tringo	2006	Puzzle	2	Unknown	Liquid Games
+trollzhairaffair	2005	Casual Game	1	Powerhead Games	Ubisoft
+tron20killerapp	2004	Adventure	4	Digital Eclipse	Buena Vista Interactive
+tsuukinhitofude	2005	Strategy	1	Mitchell	Nintendo
+turboturtleadventure	2002	Puzzle	1	Iridon Interactive AB	Majesco
+turokevolution	2002	Shooter	2	RFX Interactive	Acclaim
+tweetyandthemagicgems	2001		4	Kemco	Kemco
+tweetynoheartyparty	2001		4	Kemco	Kemco
+twinseries1mezasedebutfashiondesignermonogatarikawaiipetgamegallery2	2004	Compilation	1	Culture Brain	Culture Brain
+twinseries2oshareprincess4renaiuranaidaisakusenrenaipartygamesweetheart	2004	Compilation	1		Culture Brain
+twinseries3konchuumonsteroujaketteisensuperchineselabyrinth	2004	Compilation	1	Culture Brain	Culture Brain
+twinseries4hamuhamumonsterexhamstermonogatarirpgfantasypuzzlehamstermonogatarimahounomeikyuu123	2004	Compilation	1	Culture Brain	Culture Brain
+twinseries5mahounokuninocakeyasanmonogatariwanwanmeitanteiex	2004	Compilation	1	Culture Brain	Culture Brain
+twinseries6wannyanidolgakuenkoinutoisshospecial	2004	Compilation	1	Culture Brain	Culture Brain
+twinseries7twinpuzzlekisekaewankoexnyaatochuunorainbowmagic2	2004	Compilation	1	Culture Brain	Culture Brain
+tyrian2000	2007	Shoot'em Up		World Tree Games Productions	Symmetry Entertainment
+tythetasmaniantiger2bushrescue		Platform	1	Krome Studios	EA Games
+tythetasmaniantiger3nightofthequinkan	2005	Platform	1	Krome Studios	Activision
+uchuudaisakusenchocovaderuchuukaranoshinryakusha	2002	Role-playing (RPG)	2		Namco
+uchuunostellvia	2006		1		
+uekinohousokujingisakuretsunouryokushabattle	2006				
+uiireworldsoccerwinningeleven	2002	Sports	2	Konami Computer Entertainment Tokyo	Konami
+ultimatearcadegames	2005	Action	1	Telegames	Telegames
+ultimatebeachsoccer	2003	Sports	2	Magic Pockets	Wanadoo Edition
+ultimatebraingames		Board	2	Cosmigo	Telegames
+ultimatecardgames	2004	Card	2	Cosmigo	Telegames
+ultimatemusclethekinnikumanlegacythepathofthesuperhero	2003	Sports	2	ShunDa	Bandai
+ultimatepuzzlegames	2005	Puzzle	2	Telegames	Telegames
+ultimatespiderman	2005	Platform	1	Unknown	Activision
+ultimatewintergames	2004	Sports	2	Sproing	Telegames
+ultrakeibitaimonsterattack	2004	Simulation	1	Rocket Company	Rocket Company
+unfabulous	2006	Adventure	1	WayForward Technologies	THQ
+unglaublichendie		Beat'em Up	1	Helixe	THQ
+uno52	2006	Card	1	Black Lantern Studios	Zoo Digital Publishing
+unofreefall	2007	Puzzle	1	Black Lantern Studios	Zoo Digital Publishing
+urbanyeti		Adventure	1	Cave Barn Studios	Telegames
+urbzthesimsinthecity	2004	Simulation	4	Griptonite Games	EA Games
+vanhelsing	2004	Adventure	1	Saffire	Sierra
+vattrollerx	2004	Role-playing (RPG)	1	Ganbarion	Bandai Namco
+vecinosinvasores		Adventure	1	Vicarious Visions	Activision
+veggietaleslarryboyandthebadapple	2006	Adventure	1	DC Studios	Crave Entertainment
+vip	2002	Platform	1	Planet Interactive	Ubisoft
+virtualkasparov	2002	Board	2	Titus Interactive Studio	Titus
+virtuatennis	2002	Sports	4	Altron	SEGA
+vmastercross	2002	Role-playing (RPG)		Birthday	Success
+vrally3	2002	Racing	2	Velez & Dubail	Atari
+wadehixtonscounterpunch		Sports	1	Inferno-games	Zoo Digital Publishing
+wagamamafairymirumodepon8ninnotokinoyousei	2003	Adventure	1	Jupiter	Konami
+wagamamafairymirumodepondokidokimemorialpanic	2005	Adventure	1	Jupiter / Future Creates	Konami
+wagamamafairymirumodeponnazonokagitoshinjitsunotobira	2004	Action	1	Jupiter / Future Creates	Konami
+wagamamafairymirumodeponougonmaracasnodensetsu	2002	Adventure	1	Jupiter	Konami
+wagamamafairymirumodepontaisenmahoudama	2003	Puzzle	1		Konami
+wagamamafairymirumodeponyumenokakera	2004	Adventure	1		Konami
+wakeboardingunleashedfeaturingshaunmurray	2003	Sports	1	Small Rockets	Activision
+waliouxunbaoji		Platform	1	Nintendo R&D?	Nintendo
+waliouzhizao		Casual Game	1	Nintendo R&D?	Nintendo
+wankodekururinwancle	2004	Puzzle	2		MTO Co
+wankomixchiwankoworld	2004	Adventure	1	TDK	TDK
+wannyandoubutsubyouindoubutsunooishasanikuseigame	2003	Simulation	1	TDK	TDK
+wanwanmeitantei	2003	Adventure	1	Culture Brain	Culture Brain
+warioland4	2001	Platform	1	Nintendo R&D?	Nintendo
+wariolandadvanceyoukinootakara	2001	Platform	1	Nintendo R&D?	Nintendo
+wariowareincmegamicrogame	2003	Casual Game	4	Nintendo R&D?	Nintendo
+wariowareincminigamemania	2003	Casual Game	4	Nintendo R&D?	Nintendo
+wariowaretwisted	2005	Casual Game	1	Nintendo R&D?	Nintendo
+weekendmiljonairs		Quiz	1	Hothouse Creations	Zoo Digital Publishing
+werwirdmillionaer	2002	Quiz	1	Hothouse Creations	Zoo Digital Publishing
+whacamole	2005	Shooter	1	DC Studios	Activision
+whistledai37kaitokyotochuugakkousougoutaiikusoccertaikai	2003	Sports	1	INTENSE	Konami
+whowantstobeamillionaire	2002	Quiz	1	Hothouse Creations	Zoo Digital Publishing
+whowantstobeamillionaire2ndedition	2004	Quiz	1	Hothouse Creations	Zoo Digital Publishing
+whowantstobeamillionairejunior	2005	Quiz	1	Hothouse Creations	Zoo Digital Publishing
+wild		Adventure	1	Climax Group	Buena Vista Interactive
+wildenfussballkerledieentscheidungimteufelstopf				Kiddinx	Kiddinx
+wildenfussballkerlediegefahrimwildekerleland	2007			Kiddinx	Kiddinx
+wildthornberrysmovie		Adventure	4	Human Soft	THQ
+wildthornberrysthechimpchase		Platform	1	Helixe	THQ
+wingcommanderprophecy	2003	Simulation	2	Raylight Studios	DSI Games
+wings	2003	Shooter	4	Crawfish Interactive	Zoo Digital Publishing
+winniethepoohsrumblytumblyadventure	2005	Adventure	1	Phoenix Studio	Ubisoft
+winningpostforgameboyadvance	2001	Sports with Animals	1	Koei	Koei
+wintersports		Sports	1	Independent Arts	East Entertainment Media
+winxclub	2005	Adventure	4	Rainbow S.p.A.	Konami
+winxclubquestforthecodex	2006	Adventure	1	Powerhead Games	Konami
+witch	2005	Platform	1	Climax Group	Disney Interactive
+wizardrysummoner	2001	Role-playing (RPG)	1	Fupac	Media Rings
+wolfenstein3d	2002	Shooter	1	Stalker Entertainment	Bam Entertainment
+woodywoodpeckercrazycastle5	2002	Platform	4	Kemco	Kemco
+woodywoodpeckerincrazycastle5	2003	Platform	4	Kemco	Kemco
+wordsafarithefriendshiptotems	2007	Educational		GXB Interactive	Tomy Corporation
+worldadvancesoccershourienomichi	2001	Sports	1		Hands-On Entertainment
+worldchampionshippoker	2004	Gambling	2	Sensory Sweep	Play It!
+worldpokertour	2005	Gambling		Backbone Emeryville	2K Games
+worldreborn		Shoot'em Up	1	NeoPong Software	Piko Interactive
+worldtennisstars	2004	Sports	2	Awesome	Ignition Entertainment
+wormsblast	2002	Puzzle	2	Fluid Studios	Ubisoft
+wormsworldparty	2002	Strategy	1	Fluid Studios	Ubisoft
+wtatourtennis	2002	Action	4	Now Production	Konami
+wtatourtennispocket	2002	Action	4	Now Production	Konami
+wweroadtowrestlemaniax8		Sports		Natsume	THQ
+wwesurvivorseries		Sports	4	Natsume	THQ
+wwfroadtowrestlemania	2001	Sports	4	Natsume	THQ
+x2wolverinesrevenge		Platform	1	Vicarious Visions	Activision
+xbladezinlineskater	2002	Racing	1	The Code Monkeys	Crave Entertainment
+xmen2lavengeancedewolverine	2003	Platform	1	Vicarious Visions	Activision
+xmenreignofapocalypse		Beat'em Up	2	Digital Eclipse	Activision
+xmentheofficialgame	2006	Platform	1	WayForward Technologies	Activision
+xsmoto	2004	Racing	1	DC Studios	XS Games
+xxx	2002	Platform	1	Digital Eclipse	Activision
+yaobaisenxigang		Platform	4	Nintendo R&D?	Nintendo
+yaoxidao		Platform	1	Nintendo R&D2	Nintendo
+yoshinobanyuuinryoku		Platform	1	Artoon	Nintendo
+yoshisuniversalgravitation	2005	Platform	1	Artoon	Nintendo
+yoshitopsyturvy	2005	Platform	1	Artoon	Nintendo
+youkaidou	2002	Puzzle	1	Fuuki	Fuuki
+yugioh7trialstogloryworldchampionshiptournament2005	2005	Card	2	Konami Computer Entertainment ???	Konami
+yugiohdayoftheduelistworldchampionshiptournament2005	2005	Card	2	Konami Computer Entertainment ???	Konami
+yugiohdestinyboardtraveler	2004	Board	4	Konami Computer Entertainment ???	Konami
+yugiohdestinyboardtraveleryugiohdungeondicemonsters	2006				
+yugiohdoublepack	2006				Konami
+yugiohduelmonsters5expert1	2001	Card	2	Konami Computer Entertainment Japan	Konami
+yugiohduelmonsters6expert2	2001	Strategy	2	Konami Computer Entertainment Japan	Konami
+yugiohduelmonsters7kettoutoshidensetsu	2002	Card	1	Konami Computer Entertainment ???	Konami
+yugiohduelmonsters8hametsunodaijashin	2003	Card	2	Konami Computer Entertainment ???	Konami
+yugiohduelmonstersexpert2006		Card	2	Konami Computer Entertainment ???	Konami
+yugiohduelmonstersexpert3		Card	2	Konami Computer Entertainment Japan	Konami
+yugiohduelmonstersgxmezaseduelking		Card	1	Konami Computer Entertainment ???	Konami
+yugiohduelmonstersinternational2		Card	2	Konami Computer Entertainment ???	Konami
+yugiohduelmonstersinternationalworldwideedition	2003	Card	2	Konami Computer Entertainment ???	Konami
+yugiohduelmonstersinternationalworldwideeditionrev0	2003				
+yugiohdungeondicemonsters	2003	Strategy	2	Konami Computer Entertainment ???	Konami
+yugiohgxduelacademy	2006	Card	1	Konami Computer Entertainment ???	Konami
+yugiohreshefofdestruction	2004	Card	2	Konami Computer Entertainment ???	Konami
+yugiohsugorokunosugoroku	2004	Board	4	Konami Computer Entertainment ???	Konami
+yugiohtheeternalduelistsoul	2002	Card	2	Konami Computer Entertainment Japan	Konami
+yugiohthesacredcards	2003	Card	1	Konami Computer Entertainment ???	Konami
+yugiohultimatemasterseditionworldchampionshiptournament2006	2006	Card	2	Konami Computer Entertainment ???	Konami
+yugiohultimatemastersworldchampionshiptournament2006	2006	Card	2	Konami Computer Entertainment ???	Konami
+yugiohworldchampionshiptournament2004	2004	Card	2	Konami Computer Entertainment Japan	Konami
+yugiohworldwideeditionstairwaytothedestinedduel	2003	Card	2	Konami Computer Entertainment ???	Konami
+yumemichannonaritaiseries3watashinomakesalon	2002	Strategy	1		Ludic Studios
+yushunrhapsody	2001				
+yuujounovictorygoal4v4arashigetthegoal	2001	Sports		KCE Studios	Konami
+yuureiyashikinonijuuyojikan	2002		4		Global A
+yuyuhakushoghostfilesspiritdetective	2003	Role-playing (RPG)	1	Sensory Sweep	Atari SA
+yuyuhakushoghostfilestournamenttactics	2004	Role-playing (RPG)	1	Sensory Sweep	Atari SA
+yuyuhakushospiritdetective	2003				
+yuyuhakushotournamenttactics	2004				
+zapper	2002	Platform	2	Blitz Games	Infogrames
+zapperonewickedcricket	2002	Platform	2	Blitz Games	Infogrames
+zatchbellelectricarena	2005	Fighting	2	Eighting	Bandai
+zeldanodensetsufushiginoboushi	2004	Role-playing (RPG)	1	Flagship	Nintendo
+zeldanodensetsukamigaminotriforce4tsunotsurugi	2003	Role-playing (RPG)	4	Nintendo R&D2	Nintendo
+zennihongtsenshuken	2001	Racing	2	Vision Works	Kemco
+zennihonshounensoccertaikai2mezasenihonichi	2002	Sports	1	Boom	Success
+zeroone	2003	Adventure	1	Fuuki	Fuuki
+zeroonesp	2004	Adventure	1	Fuuki	Fuuki
+zerotours	2001	Role-playing (RPG)	2	Amedio	Media Rings
+zettaizetsumeidangerousjiisan3hateshinakimamonogatari	2004	Adventure	1	Rokumendo	Kids Station
+zettaizetsumeidangerousjiisannakino1kaizettaifukujuuviolencekouchouwagahaiga1banerainjai	2004	Adventure	1	Rokumendo	Kids Station
+zettaizetsumeidangerousjiisanshijousaikyounodogeza	2003	Adventure	1	Rokumendo	Kids Station
+zettaizetsumeidangerousjiisantsuuikarinooshiokiblues	2004	Adventure	1	Rokumendo	Kids Station
+zettaizetsumeidenjarasujiisanshijousaikyounodogeza	2003				
+zhuanzhuanbang		Thinking	4	Eighting	Nintendo
+zhuanzhuanbangtiantang		Action	4	Eighting	Nintendo
+zidanefootballgeneration2002	2002	Sports	1	Aqua Pacific	Cryo Interactive
+zoe2173testament	2001	Strategy	1	WinkySoft	Konami
+zoey101	2007	Adventure	1	Barking Lizards Technologies	THQ
+zoidslegacy	2004	Role-playing (RPG)	2	Amedio	Atari SA
+zoidssaga	2001	Role-playing (RPG)	1	Amedio	Tomy
+zoidssagafuzors	2004	Role-playing (RPG)	2	Amedio	Tomy
+zoidssagaii	2003	Role-playing (RPG)	2	Amedio	Atari SA
+zokubokuranotaiyoutaiyoushounendjango	2004	Platform	4	Konami Computer Entertainment Japan	Konami
+zokubokuranotaiyoutaiyoushounendjangorev0	2004				
+zokubokuranotaiyoutaiyoushounendjangorev1	2004				
+zoneoftheendersthefistofmars	2002	Strategy	1	WinkySoft	Konami
+zoocube	2002	Strategy	2	PuzzleKings	Acclaim
+zooo	2005				
+zoooactionpuzzlegame	2005	Puzzle	1	Buddiez	Ignition Entertainment

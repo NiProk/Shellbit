@@ -1,10 +1,32 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://scenes/components/ConsoleTile.gd" id="1_tile"]
+[ext_resource type="Shader" path="res://scenes/components/RoundedCorners.gdshader" id="2_round"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_round"]
+resource_local_to_scene = true
+shader = ExtResource("2_round")
+shader_parameter/size = Vector2(168, 120)
+shader_parameter/radius = 14.0
 
 [node name="ConsoleTile" type="Button"]
 custom_minimum_size = Vector2(168, 120)
 script = ExtResource("1_tile")
+
+[node name="Art" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.8, 0.8, 0.8, 1)
+material = SubResource("ShaderMaterial_round")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Strip" type="ColorRect" parent="."]
 unique_name_in_owner = true

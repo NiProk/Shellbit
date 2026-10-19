@@ -16,6 +16,7 @@ extends RefCounted
 ## поэтому его не нужно добавлять в Autoload.
 
 # Регионы: метка в скобках → название по-русски.
+# Русское название — это и ключ для перевода: на экран оно идёт через Lang.t().
 const REGIONS := {
 	"U": "США", "USA": "США",
 	"E": "Европа", "EUROPE": "Европа",
@@ -54,7 +55,7 @@ static var _not_letters_regex := RegEx.create_from_string("[^\\p{L}\\p{N}]+")
 ## Разобрать имя файла. Возвращает словарь:
 ##   title   — красивое название ("The Bugs Bunny Crazy Castle")
 ##   group   — ключ для объединения версий ("bugsbunnycrazycastle")
-##   label   — описание версии по-русски ("США · проверенная")
+##   label   — описание версии на языке интерфейса ("США · проверенная")
 ##   score   — оценка: чем больше, тем лучше версия
 static func parse(file_name: String) -> Dictionary:
 	var base := file_name.get_basename().replace("_", " ")
@@ -70,8 +71,21 @@ static func parse(file_name: String) -> Dictionary:
 		else:
 			score += _read_round_tag(round_tag, parts)
 
+	# Текст ПОСЛЕ последней скобки — обычно авторы перевода или озвучки:
+	# "Silent Hill (FullRus), Metallist озвучка Team Raccoon".
+	# В название он не идёт, но показываем его в описании версии.
+	var tail := _tail_after_tags(base)
+	if tail != "":
+		parts.append(tail)
+
+	# .m3u — список всех дисков многодисковой игры (PS1). Его и запускаем:
+	# ядро само сменит диск, когда игра попросит.
+	if file_name.get_extension().to_lower() == "m3u":
+		parts.append(Lang.t("все диски"))
+		score += 15
+
 	if parts.is_empty():
-		parts.append("без пометок")
+		parts.append(Lang.t("без пометок"))
 
 	return {
 		"title": title,
@@ -84,12 +98,12 @@ static func parse(file_name: String) -> Dictionary:
 # Метки GoodTools в квадратных скобках.
 static func _read_square_tag(tag: String, parts: Array[String]) -> int:
 	if tag == "!":
-		parts.append("проверенная")
+		parts.append(Lang.t("проверенная"))
 		return 100
 	if tag.begins_with("T+") or tag.begins_with("T-"):
 		# [T+Rus] — перевод. Язык — буквы после + или -, до версии перевода.
 		var lang := tag.substr(2).rstrip("0123456789._ ")
-		parts.append("перевод " + lang)
+		parts.append(Lang.t("перевод %s") % lang)
 		return -20
 	if tag.is_empty():
 		return 0
@@ -97,25 +111,25 @@ static func _read_square_tag(tag: String, parts: Array[String]) -> int:
 	# Остальные метки — буква и номер: b1, o2, h1C, a1...
 	match tag[0]:
 		"b":
-			parts.append("повреждённая")
+			parts.append(Lang.t("повреждённая"))
 			return -300
 		"o":
-			parts.append("с лишними данными")
+			parts.append(Lang.t("с лишними данными"))
 			return -40
 		"a":
-			parts.append("альтернативная")
+			parts.append(Lang.t("альтернативная"))
 			return -10
 		"h":
-			parts.append("хак")
+			parts.append(Lang.t("хак"))
 			return -80
 		"t":
-			parts.append("с трейнером")
+			parts.append(Lang.t("с трейнером"))
 			return -60
 		"p":
-			parts.append("пиратская")
+			parts.append(Lang.t("пиратская"))
 			return -70
 		"f":
-			parts.append("исправленная")
+			parts.append(Lang.t("исправленная"))
 			return -5
 	return 0
 
@@ -126,15 +140,26 @@ static func _read_round_tag(tag: String, parts: Array[String]) -> int:
 
 	# "(1)", "(2)" — Windows дописывает такое к копиям файла.
 	if upper.is_valid_int():
-		parts.append("копия файла")
+		parts.append(Lang.t("копия файла"))
 		return -5
 
+	# "(Disc 2)", "(Disc 2 of 3)" — один из дисков многодисковой игры.
+	if upper.begins_with("DISC "):
+		var number := upper.get_slice(" ", 1)
+		parts.append(Lang.t("диск %s") % number)
+		return -number.to_int()  # первый диск — выше остальных
+
+	# Русские переводы: (Rus), (RUS), (FullRus), (Rus by Shedevr)...
+	if (upper.begins_with("RUS") and upper != "RUSSIA") or upper.begins_with("FULLRUS") or upper.contains(" RUS"):
+		parts.append(Lang.t("русский перевод"))
+		return 0
+
 	if upper in UNFINISHED:
-		parts.append("прототип" if upper.begins_with("PROTO") else "бета/демо")
+		parts.append(Lang.t("прототип") if upper.begins_with("PROTO") else Lang.t("бета/демо"))
 		return -50
 
 	if _revision_regex.search(upper):
-		parts.append("ревизия " + tag.strip_edges().trim_prefix("Rev ").trim_prefix("rev "))
+		parts.append(Lang.t("ревизия %s") % tag.strip_edges().trim_prefix("Rev ").trim_prefix("rev "))
 		return 2  # поздние ревизии обычно с исправлениями
 
 	# "(USA, Europe)" — бывает несколько регионов через запятую.
@@ -147,13 +172,30 @@ static func _read_round_tag(tag: String, parts: Array[String]) -> int:
 			best = maxi(best, REGION_SCORE.get(region, 5))
 	if names.is_empty():
 		return 0  # незнакомая метка — просто пропускаем
-	parts.append(" и ".join(names) if names.size() <= 2 else "Весь мир")
+	# Названия регионов переводим только сейчас, при выводе:
+	# очки (REGION_SCORE) выше считались по русским названиям.
+	if names.size() == 1:
+		parts.append(Lang.t(names[0]))
+	elif names.size() == 2:
+		parts.append(Lang.t("%s и %s") % [Lang.t(names[0]), Lang.t(names[1])])
+	else:
+		parts.append(Lang.t("Весь мир"))
 	return best
 
 
 # "Bugs_Bunny_Crazy_Castle, The (U) [b1]" → "The Bugs Bunny Crazy Castle"
 static func _clean_title(base: String) -> String:
-	var title := _tags_regex.sub(base, "", true).strip_edges()
+	# Название — всё, что ДО первой скобки. После скобок идёт служебное:
+	# регион, метки, имена переводчиков.
+	var cut := base.length()
+	for bracket in ["(", "["]:
+		var at := base.find(bracket)
+		if at > 0:
+			cut = mini(cut, at)
+	var title := base.substr(0, cut).strip_edges().trim_suffix(",").strip_edges()
+	if title.is_empty():
+		# Имя начинается со скобки, например "[BIOS] ..." — просто убираем метки.
+		title = _tags_regex.sub(base, "", true).strip_edges()
 	# В архивах артикль часто переносят в конец для сортировки: "Castle, The".
 	for article in ["The", "A", "An"]:
 		var suffix: String = ", " + article
@@ -163,6 +205,14 @@ static func _clean_title(base: String) -> String:
 	while title.contains("  "):
 		title = title.replace("  ", " ")
 	return title
+
+
+# Текст после последней закрывающей скобки: "...(FullRus)Лисы" → "Лисы".
+static func _tail_after_tags(base: String) -> String:
+	var last := maxi(base.rfind(")"), base.rfind("]"))
+	if last < 0:
+		return ""
+	return base.substr(last + 1).strip_edges().trim_prefix(",").strip_edges()
 
 
 # Ключ группы: только буквы и цифры в нижнем регистре.

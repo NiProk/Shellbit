@@ -3,6 +3,10 @@
 [ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
 [ext_resource type="PackedScene" path="res://scenes/pause/PauseMenu.tscn" id="3_pause"]
+[ext_resource type="Shader" path="res://scenes/player/blur.gdshader" id="4_blur"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blur"]
+shader = ExtResource("4_blur")
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_1"]
 buffer_length = 0.1
@@ -25,6 +29,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Backdrop" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+texture_filter = 2
+material = SubResource("ShaderMaterial_blur")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
 
 [node name="AspectBox" type="AspectRatioContainer" parent="."]
 unique_name_in_owner = true

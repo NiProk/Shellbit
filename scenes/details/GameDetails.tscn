@@ -1,0 +1,190 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/details/GameDetails.gd" id="1_details"]
+[ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cover"]
+bg_color = Color(0.106, 0.153, 0.251, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="GameDetails" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_details")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.043, 0.059, 0.09, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 56
+theme_override_constants/margin_bottom = 72
+
+[node name="HBox" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 44
+
+[node name="CoverColumn" type="VBoxContainer" parent="Margin/HBox"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 14
+
+[node name="CoverBox" type="PanelContainer" parent="Margin/HBox/CoverColumn"]
+clip_contents = true
+custom_minimum_size = Vector2(330, 440)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cover")
+
+[node name="CoverPlaceholder" type="Label" parent="Margin/HBox/CoverColumn/CoverBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(290, 0)
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+theme_override_colors/font_color = Color(0.604, 0.643, 0.722, 1)
+text = "Название"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Cover" type="TextureRect" parent="Margin/HBox/CoverColumn/CoverBox"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="PlayTime" type="Label" parent="Margin/HBox/CoverColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "Время в игре: —"
+autowrap_mode = 3
+
+[node name="LastPlayed" type="Label" parent="Margin/HBox/CoverColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "Последний запуск: —"
+autowrap_mode = 3
+
+[node name="Info" type="VBoxContainer" parent="Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="SystemTag" type="Label" parent="Margin/HBox/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 17
+text = "Приставка"
+
+[node name="Title" type="Label" parent="Margin/HBox/Info"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 40
+text = "Название игры"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+
+[node name="Meta" type="HFlowContainer" parent="Margin/HBox/Info"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 0
+
+[node name="Description" type="Label" parent="Margin/HBox/Info"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.784, 0.812, 0.863, 1)
+theme_override_font_sizes/font_size = 18
+text = "Описание"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+
+[node name="Version" type="Label" parent="Margin/HBox/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 16
+text = "Версия"
+
+[node name="Gap" type="Control" parent="Margin/HBox/Info"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Margin/HBox/Info"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "▶  Играть"
+
+[node name="FavButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "В избранное"
+
+[node name="VersionButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "Другая версия"
+
+[node name="CoverButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "Обложка…"
+
+[node name="Gap2" type="Control" parent="Margin/HBox/Info"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="SavesTitle" type="Label" parent="Margin/HBox/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CardTitleLabel"
+text = "Сохранения"
+
+[node name="Saves" type="HBoxContainer" parent="Margin/HBox/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Hints" parent="." instance=ExtResource("2_hints")]
+unique_name_in_owner = true
+layout_mode = 1
