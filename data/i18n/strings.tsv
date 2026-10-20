@@ -316,3 +316,28 @@ Atari 2600	Atari 2600	雅达利 2600	Atari 2600
 меню	menu	菜单	メニュー
 C-кнопки у ядра Nintendo 64 — на правом стике. Стики Shellbit в игру пока не передаёт, поэтому C-кнопки не работают.	The Nintendo 64 core puts the C buttons on the right stick. Shellbit doesn't pass sticks to games yet, so the C buttons don't work.	Nintendo 64 核心把 C 键放在右摇杆上。Shellbit 目前还不会把摇杆传给游戏，所以 C 键无法使用。	Nintendo 64 のコアでは C ボタンは右スティックです。Shellbit はまだスティックをゲームに渡さないため、C ボタンは使えません。
 В аркадных автоматах кнопки у каждой игры свои: где-то нужна одна, где-то шесть.	In arcade games, every game uses its own buttons: some need one, some need six.	街机游戏的按键因游戏而异：有的只用一个，有的要用六个。	アーケードではゲームごとにボタンが違います。1つだけのものも、6つ使うものもあります。
+%s: кнопка %s на геймпаде, %s на клавиатуре.	%s: %s on the controller, %s on the keyboard.	%s：手柄上的 %s，键盘上的 %s。	%s：コントローラーの %s、キーボードの %s。
+1 минута	1 minute	1 分钟	1分
+10 секунд	10 seconds	10 秒	10秒
+20 секунд	20 seconds	20 秒	20秒
+30 секунд	30 seconds	30 秒	30秒
+Shellbit запоминает последние секунды игры. Пока держите кнопку перемотки, игра идёт назад — можно исправить ошибку. Чем длиннее запись, тем больше памяти она занимает (не больше %d МБ).	Shellbit remembers the last few seconds of play. While you hold the rewind button, the game runs backwards, so you can undo a mistake. A longer recording uses more memory (no more than %d MB).	Shellbit 会记住最近几秒的游戏过程。按住倒带键时游戏会倒退，可以挽回失误。记录越长，占用内存越多（最多 %d MB）。	Shellbit は直前の数秒間のプレイを記録します。巻き戻しボタンを押している間はゲームが逆再生され、ミスをやり直せます。記録が長いほどメモリを使います（最大 %d MB）。
+Во сколько раз быстрее идёт игра, пока включено ускорение. Удобно, чтобы проскочить долгие диалоги и прогулки. Звук при этом прерывистый.	How many times faster the game runs while fast-forward is on. Handy for skipping long dialogue and walking. The sound gets choppy.	快进时游戏加速的倍数。适合跳过冗长的对话和跑路。此时声音会断断续续。	早送り中にゲームが何倍速になるか。長い会話や移動を飛ばすのに便利です。音は途切れ途切れになります。
+Выключена	Off	关闭	オフ
+Держать	Hold	按住	押し続ける
+Игра	Gameplay	游戏	ゲームプレイ
+Игра ускоряется, пока кнопка зажата.	The game speeds up while the button is held.	按住按键时游戏加速。	ボタンを押している間だけ速くなります。
+Кнопка ускорения	Fast-forward button	快进键	早送りボタン
+Кнопки перемотки и ускорения	Rewind and fast-forward buttons	倒带和快进按键	巻き戻し・早送りボタン
+На геймпаде — LT (перемотка) и RT (ускорение), если приставке курки не нужны. На клавиатуре — Backspace и пробел. Поменять можно в «Кнопках приставок» для каждой приставки.	On the controller: LT (rewind) and RT (fast-forward), if the console doesn't need the triggers. On the keyboard: Backspace and Space. You can change them for each console in “Console buttons”.	手柄上：LT（倒带）和 RT（快进），前提是该主机不需要扳机键。键盘上：Backspace 和空格。可以在“主机按键”中为每台主机单独更改。	コントローラーでは LT（巻き戻し）と RT（早送り）。ただしゲーム機がトリガーを使わない場合です。キーボードでは Backspace とスペース。「ゲーム機のボタン」でゲーム機ごとに変更できます。
+Нажали — ускорение включилось, нажали ещё раз — выключилось.	Press once to turn fast-forward on, press again to turn it off.	按一次开启快进，再按一次关闭。	1回押すと早送りがオンに、もう一度押すとオフになります。
+Нажать один раз	Press once	按一次	1回押す
+Перемотка выключена — игра не тратит на неё память.	Rewind is off, so it uses no memory.	倒带已关闭，不占用内存。	巻き戻しはオフです。メモリを使いません。
+Перемотка назад	Rewind	倒带	巻き戻し
+Сейчас перемотка выключена.	Rewind is currently off.	倒带目前已关闭。	現在、巻き戻しはオフです。
+Скорость ускорения и длина перемотки — в Настройках, раздел «Игра».	Fast-forward speed and rewind length are in Settings → Gameplay.	快进速度和倒带时长在“设置 → 游戏”中。	早送りの速さと巻き戻しの長さは「設定 → ゲームプレイ」で変更できます。
+Ускорение	Fast-forward	快进	早送り
+Ускорение и перемотка назад во время игры.	Fast-forward and rewind during play.	游戏中的快进和倒带。	プレイ中の早送りと巻き戻し。
+не назначена	not assigned	未设置	未割り当て
+Игра начнётся с самого начала. Место выхода заменится новым, ручные слоты останутся.	The game will start from the very beginning. “Where you left off” will be replaced; manual slots stay.	游戏将从头开始。“上次退出处”会被替换，手动存档位保留。	ゲームを最初から始めます。「中断した場所」は上書きされますが、手動スロットは残ります。
+Новая игра	New game	新游戏	ニューゲーム

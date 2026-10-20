@@ -7,6 +7,9 @@ extends Control
 ## Меню паузы: правый стик (R3), Select + Start или Esc.
 ## При выходе игра сохраняется сама, а при следующем запуске
 ## продолжается с того же места.
+##
+## Ускорение (RT / пробел) и перемотка назад (LT / Backspace) —
+## см. раздел «Ускорение и перемотка» внизу.
 
 const CRT_SHADER := preload("res://scenes/player/crt.gdshader")
 const LCD_SHADER := preload("res://scenes/player/lcd.gdshader")
@@ -28,6 +31,17 @@ var _paused := false
 # а Esc, которым закрыли меню, тут же открыл бы его снова.
 var _wait_release := false
 
+# --- Ускорение и перемотка ---
+var _ff_on := false          # ускорение включено (в режиме «нажать один раз»)
+var _ff_was_down := false    # кнопка ускорения была зажата в прошлом кадре
+# «Лента» перемотки: снимки состояния приставки, от старых к новым.
+var _tape: Array[PackedByteArray] = []
+var _tape_max := 0           # сколько снимков помещается (0 — перемотка выключена)
+var _snap_every := 2         # делать снимок раз в столько кадров приставки
+var _snap_count := 0         # кадров с прошлого снимка
+var _rewind_wait := 0        # при перемотке: сколько кадров ждать до следующего шага назад
+var _speed_label: Label      # значок «▶▶ ×3» / «◀◀» в углу экрана
+
 
 func _ready() -> void:
 	game = SceneRouter.params.get("game", {})
@@ -43,6 +57,7 @@ func _ready() -> void:
 
 	# Окно поменяло размер — пересчитать, где и какого размера картинка.
 	resized.connect(_apply_layout)
+	_create_speed_label()
 
 	# С какого сохранения начать: "auto" — с места выхода (по умолчанию),
 	# "1".."3" — с ручного слота (их выбирают на странице игры).
@@ -53,6 +68,7 @@ func _ready() -> void:
 
 	Library.mark_played(game)
 	_start_msec = Time.get_ticks_msec()
+	_setup_rewind()
 
 
 ## Запустить игру и загрузить сохранение из слота start_slot ("" — с самого начала).
@@ -102,6 +118,8 @@ func _start_game(start_slot: String) -> String:
 			SceneRouter.toast(tr("Продолжаем с места выхода") + " · " + hint)
 		else:
 			SceneRouter.toast(tr("Загружен слот %s") % start_slot + " · " + hint)
+	elif start_slot == "":
+		SceneRouter.toast(tr("Новая игра") + " · " + hint)  # «Начать заново»
 	else:
 		SceneRouter.toast(hint)
 	return ""
@@ -136,23 +154,35 @@ func _process(delta: float) -> void:
 		_open_menu()
 		return
 
-	core.set_input(0, mask0)
-	core.set_input(1, mask1)
+	# Перемотка и ускорение. Пока ждём отпускания кнопок после меню — ни то ни другое.
+	var system_id: String = game["system"]
+	var rewinding := _tape_max > 0 and not _wait_release \
+			and InputMapper.is_hotkey_pressed(system_id, "rewind")
+	var speed := 1 if rewinding or _wait_release else _fast_forward_speed(system_id)
+
+	core.set_input(0, 0 if rewinding else mask0)
+	core.set_input(1, 0 if rewinding else mask1)
 
 	# Монитор может обновляться 60, 75 или 144 раза в секунду, а NES
 	# всегда работает на ~60 кадрах. Поэтому копим прошедшее время и
 	# просчитываем столько кадров приставки, сколько «положено».
+	# При ускорении ×3 за каждый «положенный» кадр просчитываем три.
 	_time_bank += delta
-	var frames := 0
-	while _time_bank >= _frame_time and frames < 3:
-		core.run_frame()
+	var slots := 0
+	while _time_bank >= _frame_time and slots < 3:
+		if rewinding:
+			_rewind_step()
+		else:
+			for i in speed:
+				_run_frame()
 		_time_bank -= _frame_time
-		frames += 1
-	if frames == 3:
+		slots += 1
+	if slots == 3:
 		_time_bank = 0.0  # компьютер не успевает — не пытаемся догнать
 
+	_update_speed_label(rewinding, speed)
 	_show_frame()
-	_push_audio()
+	_push_audio(speed, rewinding)
 
 
 func _show_frame() -> void:
@@ -284,10 +314,14 @@ func _apply_layout() -> void:
 	%AspectBox.size = box.round()
 
 
-func _push_audio() -> void:
+func _push_audio(speed := 1, rewinding := false) -> void:
 	var frames: PackedVector2Array = core.take_audio()
-	if frames.is_empty() or _playback == null:
-		return
+	if frames.is_empty() or _playback == null or rewinding:
+		return  # при перемотке звук не играем — назад он звучит странно
+	if speed > 1:
+		# Звука в speed раз больше, чем успеют проиграть динамики.
+		# Оставляем только последний кусочек — звук прерывистый, но слышен.
+		frames = frames.slice(frames.size() - frames.size() / speed)
 	var room := _playback.get_frames_available()
 	if frames.size() > room:
 		frames = frames.slice(0, room)  # буфер полон — лишнее выбрасываем
@@ -306,6 +340,7 @@ func _wants_menu(mask: int) -> bool:
 
 func _open_menu() -> void:
 	_paused = true
+	_speed_label.visible = false
 	# Записываем внутриигровые сохранения на диск (на случай, если
 	# программу потом закроют неаккуратно).
 	core.save_sram()
@@ -331,6 +366,7 @@ func _on_save_requested(slot: String) -> void:
 
 func _on_load_requested(slot: String) -> void:
 	if SaveStates.load_slot(core, game, slot):
+		_setup_rewind()  # старая «лента» — от другого места игры
 		_resume()
 		_show_frame()
 		SceneRouter.toast(tr("Загружен слот %s") % slot)
@@ -350,6 +386,7 @@ func _restart() -> void:
 		%PauseMenu.close()
 		_show_error(error)
 		return
+	_setup_rewind()
 	_resume()
 
 
@@ -389,3 +426,113 @@ func _exit_tree() -> void:
 	if core != null:
 		SaveStates.save_slot(core, game, SaveStates.AUTO)
 		core.unload()
+
+
+# =====================================================================
+# Ускорение и перемотка
+# =====================================================================
+#
+# УСКОРЕНИЕ: за один кадр экрана просчитываем не один кадр приставки,
+# а несколько (×2, ×3…). Показываем только последний.
+#
+# ПЕРЕМОТКА: «играть назад» компьютер не умеет. Поэтому каждые несколько
+# кадров мы делаем быстрое сохранение (снимок всей памяти приставки)
+# и складываем снимки на «ленту». Пока зажата кнопка перемотки, берём
+# снимки с конца ленты и загружаем их по одному — игра идёт назад.
+# Лента ограничена: самые старые снимки выбрасываются.
+
+
+## Подготовить пустую ленту перемотки под текущую игру.
+func _setup_rewind() -> void:
+	_tape.clear()
+	_snap_count = 0
+	_tape_max = 0
+	var seconds := int(Settings.get_value("play", "rewind_seconds"))
+	if seconds <= 0 or core == null:
+		return
+	# Пробный снимок — узнать, сколько весит один.
+	var size: int = core.save_state().size()
+	if size == 0:
+		return  # ядро не умеет сохранять состояние — перемотки не будет
+	var frames_total := seconds / _frame_time            # кадров приставки за seconds
+	var budget := Settings.REWIND_BUDGET_MB * 1024 * 1024
+	var fit := maxi(1, budget / size)                    # сколько снимков влезет в память
+	# Снимок не чаще, чем раз в 2 кадра, и не реже, чем нужно, чтобы влезть.
+	_snap_every = maxi(2, ceili(frames_total / fit))
+	_tape_max = ceili(frames_total / _snap_every)
+	print("Перемотка: снимок %d КБ, раз в %d кадров, до %d снимков (%d МБ)" % [
+		size / 1024, _snap_every, _tape_max, _tape_max * size / 1024 / 1024])
+
+
+## Просчитать один кадр приставки и, если пора, положить снимок на ленту.
+func _run_frame() -> void:
+	core.run_frame()
+	if _tape_max == 0:
+		return
+	_snap_count += 1
+	if _snap_count >= _snap_every:
+		_snap_count = 0
+		_tape.append(core.save_state())
+		if _tape.size() > _tape_max:
+			_tape.pop_front()  # лента полна — самый старый снимок выбрасываем
+
+
+## Один шаг назад по ленте.
+func _rewind_step() -> void:
+	_rewind_wait -= 1
+	if _rewind_wait > 0:
+		return
+	# Идём назад примерно вдвое быстрее, чем шла игра.
+	_rewind_wait = maxi(1, _snap_every / 2)
+	if _tape.is_empty():
+		return
+	# Последний (самый старый) снимок не выбрасываем — на нём и «стоим».
+	var state: PackedByteArray = _tape.back() if _tape.size() == 1 else _tape.pop_back()
+	core.load_state(state)
+	core.run_frame()  # чтобы появилась картинка этого момента
+	_snap_count = 0
+
+
+## Во сколько раз ускорить игру сейчас (1 — обычная скорость).
+func _fast_forward_speed(system_id: String) -> int:
+	var down := InputMapper.is_hotkey_pressed(system_id, "fast_forward")
+	var on := down
+	if Settings.get_value("play", "ff_mode") == "toggle":
+		if down and not _ff_was_down:  # кнопку только что нажали
+			_ff_on = not _ff_on
+		on = _ff_on
+	_ff_was_down = down
+	return int(Settings.get_value("play", "ff_speed")) if on else 1
+
+
+func _create_speed_label() -> void:
+	_speed_label = Label.new()
+	_speed_label.visible = false
+	_speed_label.add_theme_font_size_override("font_size", 22)
+	_speed_label.add_theme_color_override("font_color", UiTheme.BG)
+	var box := UiTheme.badge_box(UiTheme.ACCENT)
+	box.set_corner_radius_all(18)
+	box.content_margin_left = 16
+	box.content_margin_right = 16
+	box.content_margin_top = 4
+	box.content_margin_bottom = 4
+	_speed_label.add_theme_stylebox_override("normal", box)
+	add_child(_speed_label)
+	# Значок — в правом верхнем углу. grow влево и вниз: при любой длине
+	# текста правый край остаётся на месте.
+	_speed_label.set_anchors_preset(Control.PRESET_TOP_RIGHT)
+	_speed_label.offset_left = -24
+	_speed_label.offset_right = -24
+	_speed_label.offset_top = 24
+	_speed_label.offset_bottom = 24
+	_speed_label.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+	# Меню паузы должно быть поверх значка — ставим значок перед ним.
+	move_child(_speed_label, %PauseMenu.get_index())
+
+
+func _update_speed_label(rewinding: bool, speed: int) -> void:
+	if rewinding:
+		_speed_label.text = "◀◀"
+	elif speed > 1:
+		_speed_label.text = "▶▶ ×%d" % speed
+	_speed_label.visible = rewinding or speed > 1

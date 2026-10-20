@@ -20,6 +20,8 @@ const PAGES := [
 		"about": "Где Shellbit ищет игры. Файлы на диске он не меняет."},
 	{"id": "controls", "title": "Управление",
 		"about": "Геймпады, клавиатура и кнопки меню."},
+	{"id": "play", "title": "Игра",
+		"about": "Ускорение и перемотка назад во время игры."},
 	{"id": "video", "title": "Видео",
 		"about": "Как выглядит картинка во время игры."},
 	{"id": "audio", "title": "Звук",
@@ -150,6 +152,7 @@ func _show_page(id: String) -> void:
 	match id:
 		"folders": _build_folders()
 		"controls": _build_controls()
+		"play": _build_play()
 		"video": _build_video()
 		"audio": _build_audio()
 		"language": _build_language()
@@ -344,10 +347,33 @@ func _build_controls() -> void:
 # Открыть экран «Кнопки приставок». Запоминаем в параметрах этого экрана
 # раздел и строку — по «Назад» настройки откроются ровно на ней.
 func _open_pad_map(row: SettingRow) -> void:
-	SceneRouter.params["page"] = "controls"
+	SceneRouter.params["page"] = _page
 	SceneRouter.params["rows"] = true
 	SceneRouter.params["row"] = row.get_index()
 	SceneRouter.go_to("pad_map")
+
+
+func _build_play() -> void:
+	_choice("Ускорение", "play", "ff_speed", [
+		[2, "×2"], [3, "×3"], [4, "×4"], [8, "×8"],
+	], tr("Во сколько раз быстрее идёт игра, пока включено ускорение. Удобно, чтобы проскочить долгие диалоги и прогулки. Звук при этом прерывистый."), false)
+	_choice("Кнопка ускорения", "play", "ff_mode", [
+		["hold", tr("Держать"), tr("Игра ускоряется, пока кнопка зажата.")],
+		["toggle", tr("Нажать один раз"),
+			tr("Нажали — ускорение включилось, нажали ещё раз — выключилось.")],
+	])
+	var rewind_description := tr("Shellbit запоминает последние секунды игры. Пока держите кнопку перемотки, игра идёт назад — можно исправить ошибку. Чем длиннее запись, тем больше памяти она занимает (не больше %d МБ).") % Settings.REWIND_BUDGET_MB
+	_choice("Перемотка назад", "play", "rewind_seconds", [
+		[0, tr("Выключена"), tr("Перемотка выключена — игра не тратит на неё память.")],
+		[10, tr("10 секунд"), rewind_description],
+		[20, tr("20 секунд"), rewind_description],
+		[30, tr("30 секунд"), rewind_description],
+		[60, tr("1 минута"), rewind_description],
+	], "", false)
+	var pad_row := _action("Кнопки перемотки и ускорения", "",
+			tr("На геймпаде — LT (перемотка) и RT (ускорение), если приставке курки не нужны. На клавиатуре — Backspace и пробел. Поменять можно в «Кнопках приставок» для каждой приставки."),
+			Callable())
+	pad_row.pressed.connect(_open_pad_map.bind(pad_row))
 
 
 func _on_joy_connection_changed(_device: int, _connected: bool) -> void:

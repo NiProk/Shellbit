@@ -14,6 +14,10 @@ signal changed(section: String, key: String)
 
 const PATH := "user://settings.cfg"
 
+## Сколько памяти (в мегабайтах) можно отдать под «ленту» перемотки.
+## Если игра тяжёлая (PlayStation), снимки делаются реже, чтобы уложиться.
+const REWIND_BUDGET_MB := 256
+
 ## Значения по умолчанию — пока человек ничего не менял.
 ## get_value() берёт их отсюда, если в файле настройки ещё нет.
 const DEFAULTS := {
@@ -26,6 +30,11 @@ const DEFAULTS := {
 		"aspect": "core",   # core (как у приставки) / square / stretch
 		"sides": "black",   # black (чёрные поля) / blur (размытый кадр)
 		"vsync": true,
+	},
+	"play": {
+		"ff_speed": 3,          # ускорение: во сколько раз быстрее (2, 3, 4, 8)
+		"ff_mode": "hold",      # hold — пока держишь кнопку, toggle — нажал и отпустил
+		"rewind_seconds": 20,   # длина «ленты» перемотки, 0 — перемотка выключена
 	},
 	"audio": {
 		"volume": 100,      # громкость в процентах: 0..100

@@ -154,9 +154,10 @@ text = "Читать полностью ▸"
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
-[node name="Buttons" type="HBoxContainer" parent="Margin/HBox/Info"]
+[node name="Buttons" type="HFlowContainer" parent="Margin/HBox/Info"]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
 
 [node name="PlayButton" type="Button" parent="Margin/HBox/Info/Buttons"]
 unique_name_in_owner = true
@@ -164,6 +165,13 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 theme_override_font_sizes/font_size = 21
 text = "▶  Играть"
+
+[node name="RestartButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "↺  Начать заново"
 
 [node name="FavButton" type="Button" parent="Margin/HBox/Info/Buttons"]
 unique_name_in_owner = true

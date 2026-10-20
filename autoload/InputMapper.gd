@@ -269,10 +269,21 @@ const GLYPH_COLORS := {
 	"playstation": {"a": Color("7aa7ff"), "b": Color("ff6b6b"), "x": Color("f78fd0"), "y": Color("5ed39a")},
 }
 
+## Кнопки самого Shellbit, которые тоже назначаются для каждой приставки:
+## перемотка назад и ускорение. Их нет в pads.json — они общие для всех.
+## В раскладке они хранятся рядом с кнопками приставки ("rewind": "lt").
+const HOTKEYS := [
+	{"id": "rewind", "label": "◀◀", "name": "Перемотка назад", "color": "#1f7f75"},
+	{"id": "fast_forward", "label": "▶▶", "name": "Ускорение", "color": "#1f7f75"},
+]
+## На клавиатуре — как в RetroArch: Backspace и пробел.
+const HOTKEY_KEYS := {"rewind": KEY_BACKSPACE, "fast_forward": KEY_SPACE}
+
 ## Описания геймпадов приставок из pads.json: {"snes": {...}, ...}
 var pads: Dictionary = {}
 
 # Готовые таблицы для get_retropad_mask(): {"snes": [["a", 0], ["b", 8], ...]}
+# и кнопки перемотки/ускорения: {"snes:rewind": "lt"}.
 # Собирать их из словарей 60 раз в секунду незачем — храним готовые.
 var _tables: Dictionary = {}
 
@@ -297,6 +308,21 @@ func glyph(physical: String) -> String:
 func glyph_color(physical: String) -> Color:
 	var table: Dictionary = GLYPH_COLORS.get(style, GLYPH_COLORS["xbox"])
 	return table.get(physical, UiTheme.TEXT)
+
+
+## Зажата ли кнопка Shellbit ("rewind" или "fast_forward") в игре system_id:
+## на клавиатуре или на первом геймпаде.
+func is_hotkey_pressed(system_id: String, hotkey: String) -> bool:
+	if Input.is_physical_key_pressed(HOTKEY_KEYS[hotkey]):
+		return true
+	var pads_list := Input.get_connected_joypads()
+	if pads_list.is_empty() or not pads.has(system_id):
+		return false
+	# Кнопку запоминаем в _tables, чтобы не собирать раскладку каждый кадр.
+	var key := system_id + ":" + hotkey
+	if not _tables.has(key):
+		_tables[key] = get_mapping(system_id).get(hotkey, "")
+	return is_physical_pressed(pads_list[0], _tables[key])
 
 
 ## Нажата ли кнопка геймпада ("a", "lt"...) на устройстве device.
@@ -333,6 +359,12 @@ func preset_mapping(system_id: String, preset := "default") -> Dictionary:
 	var mapping := {}
 	for button: Dictionary in pads.get(system_id, {}).get("buttons", []):
 		mapping[button["id"]] = button.get(preset, button["default"])
+	# Перемотка и ускорение — на курках LT и RT, если они свободны.
+	# У PlayStation и Nintendo 64 курки заняты (L2/R2, Z) — там по умолчанию
+	# только клавиатура, а кнопку геймпада человек выберет сам.
+	var used := mapping.values()
+	mapping["rewind"] = "lt" if not used.has("lt") else ""
+	mapping["fast_forward"] = "rt" if not used.has("rt") else ""
 	return mapping
 
 

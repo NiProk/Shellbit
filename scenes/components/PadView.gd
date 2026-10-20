@@ -6,7 +6,8 @@ extends Control
 ##   • геймпад приставки (modern = false) — по описанию из data/pads.json;
 ##   • ваш геймпад Xbox или PlayStation (modern = true). На его кнопках
 ##     написано, какая кнопка приставки на них стоит, — так видно,
-##     где «B от SNES» на вашем геймпаде.
+##     где «B от SNES» на вашем геймпаде. Там же видны кнопки
+##     перемотки ◀◀ и ускорения ▶▶.
 ##
 ## Использование:
 ##   pad_view.show_pad("snes", InputMapper.get_mapping("snes"), "b")
@@ -225,8 +226,9 @@ func _draw_modern(info: Dictionary) -> void:
 	var layout: Dictionary = PS_LAYOUT if InputMapper.style == "playstation" else XBOX_LAYOUT
 
 	# Обратный словарь: кнопка геймпада → описание кнопки приставки.
+	# Кнопки перемотки и ускорения (◀◀ ▶▶) тоже показываем на вашем геймпаде.
 	var on_physical := {}
-	for button: Dictionary in info["buttons"]:
+	for button: Dictionary in info["buttons"] + InputMapper.HOTKEYS:
 		var physical: String = _mapping.get(button["id"], "")
 		if physical != "":
 			on_physical[physical] = button

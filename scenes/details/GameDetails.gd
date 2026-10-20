@@ -23,6 +23,9 @@ func _ready() -> void:
 	_style_buttons()
 
 	%PlayButton.pressed.connect(_play.bind(SaveStates.AUTO))
+	%RestartButton.pressed.connect(_on_restart_pressed)
+	# Ушли с кнопки, не нажав второй раз, — отменяем «Нажмите ещё раз».
+	%RestartButton.focus_exited.connect(_disarm_restart)
 	%FavButton.pressed.connect(_toggle_favorite)
 	%VersionButton.pressed.connect(_next_version)
 	%CoverButton.pressed.connect(func() -> void: _picker.open(group, %CoverButton))
@@ -87,6 +90,10 @@ func _refresh() -> void:
 	# Сохранения относятся к конкретному файлу, поэтому берём выбранную версию.
 	var has_auto := SaveStates.exists(variant, SaveStates.AUTO)
 	%PlayButton.text = "▶  " + (tr("Продолжить") if has_auto else tr("Играть"))
+	# «Начать заново» нужна, только если есть место выхода, — иначе
+	# «Играть» и так запускает игру с самого начала.
+	%RestartButton.visible = has_auto
+	_disarm_restart()
 	for card: SaveSlot in %Saves.get_children():
 		card.setup(variant, card.slot)
 		# «Место выхода» показываем, только если оно есть.
@@ -160,12 +167,31 @@ func _on_cover_ready(key: String, texture: Texture2D) -> void:
 
 ## Запустить игру. slot = AUTO — с места выхода (или с начала, если его нет),
 ## "1".."3" — с ручного сохранения.
+## "" — с самого начала, без сохранений.
 func _play(slot: String) -> void:
 	var variant := Library.chosen_variant(group)
-	if slot != SaveStates.AUTO and not SaveStates.exists(variant, slot):
+	if slot != SaveStates.AUTO and slot != "" and not SaveStates.exists(variant, slot):
 		SceneRouter.toast(tr("Слот %s пуст — сохраниться можно в меню паузы") % slot)
 		return
 	SceneRouter.go_to("player", {"game": variant, "slot": slot})
+
+
+## «Начать заново» — в два нажатия. При выходе из игры место выхода
+## перезапишется, и прошлый прогресс (если он не сохранён в слот) пропадёт.
+## Поэтому первое нажатие только предупреждает.
+func _on_restart_pressed() -> void:
+	if not %RestartButton.get_meta("armed", false):
+		%RestartButton.set_meta("armed", true)  # meta — своя пометка на узле
+		%RestartButton.text = "↺  " + tr("Нажмите ещё раз")
+		SceneRouter.toast(tr("Игра начнётся с самого начала. Место выхода заменится новым, ручные слоты останутся."))
+		return
+	_disarm_restart()
+	_play("")  # "" — без загрузки сохранения
+
+
+func _disarm_restart() -> void:
+	%RestartButton.set_meta("armed", false)
+	%RestartButton.text = "↺  " + tr("Начать заново")
 
 
 func _toggle_favorite() -> void:
@@ -203,7 +229,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _style_buttons() -> void:
 	_pill(%PlayButton, UiTheme.ACCENT, UiTheme.ACCENT.lightened(0.15), UiTheme.BG)
-	for button: Button in [%FavButton, %VersionButton, %CoverButton]:
+	for button: Button in [%RestartButton, %FavButton, %VersionButton, %CoverButton]:
 		_pill(button, UiTheme.CARD, UiTheme.CARD_HOVER, UiTheme.TEXT)
 	_pill(%MoreButton, UiTheme.CARD, UiTheme.CARD_HOVER, UiTheme.ACCENT)
 

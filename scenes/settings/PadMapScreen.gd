@@ -107,6 +107,14 @@ func _build_rows() -> void:
 		row.pressed.connect(_start_listening.bind(button["id"]))
 		_rows.append(row)
 
+	# Кнопки самого Shellbit: перемотка назад и ускорение.
+	for hotkey: Dictionary in InputMapper.HOTKEYS:
+		var row := _new_row()
+		row.set_meta("button", hotkey)
+		row.set_meta("hotkey", true)
+		row.pressed.connect(_start_listening.bind(hotkey["id"]))
+		_rows.append(row)
+
 	# Готовые раскладки — только если у приставки есть кнопки с надписями,
 	# как у Xbox (A, B, X, Y). У Mega Drive или PlayStation такого нет.
 	if InputMapper.has_label_preset(_system_id):
@@ -203,7 +211,9 @@ func _refresh() -> void:
 			chip.text = button["label"]
 			chip.add_theme_color_override("font_color", Color(button.get("text_color", "#ffffff")))
 			chip.add_theme_stylebox_override("normal", UiTheme.badge_box(Color(button["color"])))
-			title.text = ""
+			# У кнопок приставки название не нужно — хватает значка («B»).
+			# У перемотки и ускорения значок ◀◀ ▶▶ поясняем словами.
+			title.text = tr(button.get("name", ""))
 			if _listening == button["id"]:
 				value.text = tr("Нажмите кнопку…")
 				value.add_theme_color_override("font_color", UiTheme.ACCENT)
@@ -248,6 +258,16 @@ func _on_row_focused(row: Button) -> void:
 # Подсказка под рисунками.
 func _note_for(row: Button) -> String:
 	var lines := PackedStringArray()
+	if row.has_meta("hotkey"):
+		var hotkey: Dictionary = row.get_meta("button")
+		var physical: String = InputMapper.get_mapping(_system_id)[hotkey["id"]]
+		var key := OS.get_keycode_string(InputMapper.HOTKEY_KEYS[hotkey["id"]])
+		var pad := InputMapper.glyph(physical) if physical != "" else tr("не назначена")
+		lines.append(tr("%s: кнопка %s на геймпаде, %s на клавиатуре.") % [tr(hotkey["name"]), pad, key])
+		lines.append(tr("Скорость ускорения и длина перемотки — в Настройках, раздел «Игра»."))
+		if hotkey["id"] == "rewind" and int(Settings.get_value("play", "rewind_seconds")) == 0:
+			lines.append(tr("Сейчас перемотка выключена."))
+		return "\n".join(lines)
 	if row.has_meta("button"):
 		var button: Dictionary = row.get_meta("button")
 		var physical: String = InputMapper.get_mapping(_system_id)[button["id"]]
@@ -325,9 +345,9 @@ func _start_listening(button_id: String) -> void:
 
 # Надпись кнопки приставки по её id: "b" → "B", "cross" → "✕".
 func _label_of(button_id: String) -> String:
-	for button: Dictionary in InputMapper.pads[_system_id]["buttons"]:
+	for button: Dictionary in InputMapper.pads[_system_id]["buttons"] + InputMapper.HOTKEYS:
 		if button["id"] == button_id:
-			return button["label"]
+			return tr(button.get("name", button["label"]))
 	return button_id
 
 
