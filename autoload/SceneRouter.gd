@@ -67,6 +67,8 @@ func back() -> void:
 
 func _open(screen: String, new_params: Dictionary) -> void:
 	_busy = true
+	if screen == "player":
+		UiSounds.play_launch()  # «бульк» — игра запускается
 	_current = screen
 	params = new_params
 

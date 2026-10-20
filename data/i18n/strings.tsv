@@ -293,3 +293,5 @@ Atari 2600	Atari 2600	雅达利 2600	Atari 2600
 Пробел	Space	空格	スペース
 Раскладка	Layout	键盘布局	配列
 Найти	Find	查找	検索
+Звуки интерфейса	Interface sounds	界面音效	インターフェース音
+Тихий щелчок при переходе между играми и «бульк» при запуске игры. Свои звуки можно положить в папку data/sounds (click.wav и launch.wav).	A soft click when moving between games and a “bloop” when a game starts. You can put your own sounds in data/sounds (click.wav and launch.wav).	在游戏之间移动时发出轻微的咔嗒声，启动游戏时发出“啵”的一声。可以把自己的音效放到 data/sounds 文件夹（click.wav 和 launch.wav）。	ゲーム間を移動するときの小さなクリック音と、ゲーム起動時の「ポコッ」という音。自分の音を data/sounds（click.wav と launch.wav）に置くこともできます。

@@ -388,6 +388,12 @@ func _build_audio() -> void:
 	var volume := _choice("Громкость", "audio", "volume", levels,
 			tr("Общая громкость Shellbit и игр. ◀ ▶ — тише или громче."), false)
 	volume.value_changed.connect(func(_value: Variant) -> void: Settings.apply_volume())
+	var ui_sounds := _toggle("Звуки интерфейса", "audio", "ui_sounds",
+			tr("Тихий щелчок при переходе между играми и «бульк» при запуске игры. Свои звуки можно положить в папку data/sounds (click.wav и launch.wav)."))
+	# Включили — сразу даём послушать «бульк».
+	ui_sounds.value_changed.connect(func(value: Variant) -> void:
+		if value:
+			UiSounds.play_launch())
 
 
 func _build_language() -> void:
