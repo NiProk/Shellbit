@@ -1,0 +1,172 @@
+{
+  "_help": [
+    "Геймпады приставок: какие на них кнопки и как они нарисованы.",
+    "id      — имя кнопки для настроек (латиницей, без пробелов).",
+    "label   — надпись, как на настоящем геймпаде.",
+    "pad     — кнопка RetroPad, которую эта кнопка означает для ядра (b, a, y, x, l, r, l2, r2, l3, r3, select, start).",
+    "default — кнопка вашего геймпада по умолчанию (a, b, x, y, lb, rb, lt, rt, back, start, l3 или пусто).",
+    "by_label — та же кнопка в раскладке «По надписям» (если есть).",
+    "shape   — round (круглая), pill (Select/Start), shoulder (верхняя), stick (нажатие стика).",
+    "pos     — где кнопка на рисунке. Рисунок размером 600 × 260."
+  ],
+  "nes": {
+    "body": "rect", "body_color": "#c9c9cf", "face_color": "#1f1f22",
+    "dpad": [130, 150],
+    "buttons": [
+      {"id": "b", "label": "B", "pad": "b", "default": "a", "by_label": "b", "color": "#c8202a", "shape": "round", "pos": [435, 160]},
+      {"id": "a", "label": "A", "pad": "a", "default": "b", "by_label": "a", "color": "#c8202a", "shape": "round", "pos": [510, 160]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#8a8a92", "shape": "pill", "pos": [262, 170]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#8a8a92", "shape": "pill", "pos": [338, 170]}
+    ]
+  },
+  "snes": {
+    "body": "dogbone", "body_color": "#c7c7d1",
+    "dpad": [140, 140],
+    "buttons": [
+      {"id": "b", "label": "B", "pad": "b", "default": "a", "by_label": "b", "color": "#e3b51c", "shape": "round", "pos": [460, 188]},
+      {"id": "a", "label": "A", "pad": "a", "default": "b", "by_label": "a", "color": "#d6303a", "shape": "round", "pos": [510, 140]},
+      {"id": "y", "label": "Y", "pad": "y", "default": "x", "by_label": "y", "color": "#2e9a46", "shape": "round", "pos": [410, 140]},
+      {"id": "x", "label": "X", "pad": "x", "default": "y", "by_label": "x", "color": "#2f53c9", "shape": "round", "pos": [460, 92]},
+      {"id": "l", "label": "L", "pad": "l", "default": "lb", "color": "#9a9aa6", "shape": "shoulder", "pos": [150, 44]},
+      {"id": "r", "label": "R", "pad": "r", "default": "rb", "color": "#9a9aa6", "shape": "shoulder", "pos": [450, 44]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#5a5a66", "shape": "pill", "pos": [265, 155]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#5a5a66", "shape": "pill", "pos": [335, 155]}
+    ]
+  },
+  "n64": {
+    "body": "trident", "body_color": "#9da0a8",
+    "dpad": [125, 110],
+    "decor": [
+      {"label": "", "kind": "stick", "pos": [300, 140]},
+      {"label": "C", "kind": "small", "color": "#e3b51c", "pos": [505, 62]},
+      {"label": "C", "kind": "small", "color": "#e3b51c", "pos": [505, 118]},
+      {"label": "C", "kind": "small", "color": "#e3b51c", "pos": [477, 90]},
+      {"label": "C", "kind": "small", "color": "#e3b51c", "pos": [533, 90]}
+    ],
+    "note": "C-кнопки у ядра Nintendo 64 — на правом стике. Стики Shellbit в игру пока не передаёт, поэтому C-кнопки не работают.",
+    "buttons": [
+      {"id": "a", "label": "A", "pad": "b", "default": "a", "color": "#2f53c9", "shape": "round", "pos": [440, 135]},
+      {"id": "b", "label": "B", "pad": "y", "default": "x", "color": "#2e9a46", "shape": "round", "pos": [400, 95]},
+      {"id": "z", "label": "Z", "pad": "l2", "default": "lt", "color": "#6d7078", "shape": "shoulder", "pos": [300, 226]},
+      {"id": "l", "label": "L", "pad": "l", "default": "lb", "color": "#6d7078", "shape": "shoulder", "pos": [125, 30]},
+      {"id": "r", "label": "R", "pad": "r", "default": "rb", "color": "#6d7078", "shape": "shoulder", "pos": [475, 30]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#c8202a", "shape": "round", "pos": [300, 75]}
+    ]
+  },
+  "gb": {
+    "body": "handheld_v", "body_color": "#c4c4bc", "screen_color": "#8a9a3c", "screen": [222, 22, 156, 104],
+    "dpad": [250, 178],
+    "buttons": [
+      {"id": "b", "label": "B", "pad": "b", "default": "a", "by_label": "b", "color": "#9a2257", "shape": "round", "pos": [330, 192]},
+      {"id": "a", "label": "A", "pad": "a", "default": "b", "by_label": "a", "color": "#9a2257", "shape": "round", "pos": [372, 168]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#77777f", "shape": "pill", "pos": [276, 232]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#77777f", "shape": "pill", "pos": [328, 232]}
+    ]
+  },
+  "gbc": {
+    "body": "handheld_v", "body_color": "#6d4bb3", "screen": [222, 22, 156, 104],
+    "dpad": [250, 178],
+    "buttons": [
+      {"id": "b", "label": "B", "pad": "b", "default": "a", "by_label": "b", "color": "#2c2c33", "shape": "round", "pos": [330, 192]},
+      {"id": "a", "label": "A", "pad": "a", "default": "b", "by_label": "a", "color": "#2c2c33", "shape": "round", "pos": [372, 168]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#3d2b6b", "shape": "pill", "pos": [276, 232]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#3d2b6b", "shape": "pill", "pos": [328, 232]}
+    ]
+  },
+  "gba": {
+    "body": "handheld_h", "body_color": "#5b4bb7", "screen": [212, 78, 176, 118],
+    "dpad": [122, 132],
+    "buttons": [
+      {"id": "b", "label": "B", "pad": "b", "default": "a", "by_label": "b", "color": "#d0d0d8", "text_color": "#2c2c33", "shape": "round", "pos": [448, 158]},
+      {"id": "a", "label": "A", "pad": "a", "default": "b", "by_label": "a", "color": "#d0d0d8", "text_color": "#2c2c33", "shape": "round", "pos": [496, 126]},
+      {"id": "l", "label": "L", "pad": "l", "default": "lb", "color": "#9a92d6", "shape": "shoulder", "pos": [125, 46]},
+      {"id": "r", "label": "R", "pad": "r", "default": "rb", "color": "#9a92d6", "shape": "shoulder", "pos": [475, 46]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#3d2f80", "shape": "pill", "pos": [100, 205]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#3d2f80", "shape": "pill", "pos": [148, 205]}
+    ]
+  },
+  "sms": {
+    "body": "rect", "body_color": "#1c1c1f",
+    "dpad": [150, 145],
+    "buttons": [
+      {"id": "1", "label": "1", "pad": "b", "default": "a", "color": "#55555e", "shape": "round", "pos": [425, 150]},
+      {"id": "2", "label": "2", "pad": "a", "default": "b", "color": "#55555e", "shape": "round", "pos": [500, 150]},
+      {"id": "pause", "label": "Pause", "pad": "start", "default": "start", "color": "#c8202a", "shape": "pill", "pos": [300, 200]}
+    ]
+  },
+  "md": {
+    "body": "crescent", "body_color": "#202024",
+    "dpad": [150, 145],
+    "buttons": [
+      {"id": "a", "label": "A", "pad": "y", "default": "x", "color": "#3a3a40", "shape": "round", "pos": [400, 182]},
+      {"id": "b", "label": "B", "pad": "b", "default": "a", "color": "#3a3a40", "shape": "round", "pos": [458, 166]},
+      {"id": "c", "label": "C", "pad": "a", "default": "b", "color": "#3a3a40", "shape": "round", "pos": [516, 150]},
+      {"id": "x", "label": "X", "pad": "l", "default": "lb", "color": "#4a4a52", "shape": "round", "pos": [392, 118]},
+      {"id": "y", "label": "Y", "pad": "x", "default": "y", "color": "#4a4a52", "shape": "round", "pos": [446, 102]},
+      {"id": "z", "label": "Z", "pad": "r", "default": "rb", "color": "#4a4a52", "shape": "round", "pos": [500, 86]},
+      {"id": "mode", "label": "Mode", "pad": "select", "default": "back", "color": "#4a4a52", "shape": "shoulder", "pos": [470, 34]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#5a5a62", "shape": "pill", "pos": [295, 110]}
+    ]
+  },
+  "gg": {
+    "body": "handheld_h", "body_color": "#202024", "screen": [212, 70, 176, 126],
+    "dpad": [115, 140],
+    "buttons": [
+      {"id": "1", "label": "1", "pad": "b", "default": "a", "color": "#4a4a52", "shape": "round", "pos": [448, 160]},
+      {"id": "2", "label": "2", "pad": "a", "default": "b", "color": "#4a4a52", "shape": "round", "pos": [504, 140]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#2f6fd6", "shape": "round", "pos": [480, 82]}
+    ]
+  },
+  "pce": {
+    "body": "rect", "body_color": "#d9d9de", "face_color": "#2a2a2e",
+    "dpad": [140, 150],
+    "buttons": [
+      {"id": "2", "label": "II", "pad": "b", "default": "a", "color": "#2a2a2e", "shape": "round", "pos": [435, 160]},
+      {"id": "1", "label": "I", "pad": "a", "default": "b", "color": "#2a2a2e", "shape": "round", "pos": [510, 160]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#8a8a92", "shape": "pill", "pos": [262, 175]},
+      {"id": "run", "label": "Run", "pad": "start", "default": "start", "color": "#8a8a92", "shape": "pill", "pos": [338, 175]}
+    ]
+  },
+  "psx": {
+    "body": "grips", "body_color": "#c4c6cc",
+    "dpad": [150, 120],
+    "buttons": [
+      {"id": "cross", "label": "✕", "pad": "b", "default": "a", "color": "#2a2a2e", "text_color": "#7aa7ff", "shape": "round", "pos": [450, 166]},
+      {"id": "circle", "label": "○", "pad": "a", "default": "b", "color": "#2a2a2e", "text_color": "#ff6b6b", "shape": "round", "pos": [498, 120]},
+      {"id": "square", "label": "□", "pad": "y", "default": "x", "color": "#2a2a2e", "text_color": "#f78fd0", "shape": "round", "pos": [402, 120]},
+      {"id": "triangle", "label": "△", "pad": "x", "default": "y", "color": "#2a2a2e", "text_color": "#5ed39a", "shape": "round", "pos": [450, 74]},
+      {"id": "l1", "label": "L1", "pad": "l", "default": "lb", "color": "#9a9ca6", "shape": "shoulder", "pos": [150, 44]},
+      {"id": "r1", "label": "R1", "pad": "r", "default": "rb", "color": "#9a9ca6", "shape": "shoulder", "pos": [450, 44]},
+      {"id": "l2", "label": "L2", "pad": "l2", "default": "lt", "color": "#8a8c96", "shape": "trigger", "pos": [150, 16]},
+      {"id": "r2", "label": "R2", "pad": "r2", "default": "rt", "color": "#8a8c96", "shape": "trigger", "pos": [450, 16]},
+      {"id": "l3", "label": "L3", "pad": "l3", "default": "l3", "color": "#2a2a2e", "shape": "stick", "pos": [240, 190]},
+      {"id": "r3", "label": "R3", "pad": "r3", "default": "", "color": "#2a2a2e", "shape": "stick", "pos": [360, 190]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#55555e", "shape": "pill", "pos": [262, 122]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#55555e", "shape": "pill", "pos": [338, 122]}
+    ]
+  },
+  "atari2600": {
+    "body": "joystick", "body_color": "#1c1c1f",
+    "stick": [300, 150],
+    "buttons": [
+      {"id": "fire", "label": "Fire", "pad": "b", "default": "a", "color": "#c8202a", "shape": "round", "pos": [225, 88]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#8a6a3a", "shape": "pill", "pos": [495, 120]},
+      {"id": "reset", "label": "Reset", "pad": "start", "default": "start", "color": "#8a6a3a", "shape": "pill", "pos": [495, 170]}
+    ]
+  },
+  "arcade": {
+    "body": "panel", "body_color": "#2a1f3d",
+    "stick": [135, 150],
+    "note": "В аркадных автоматах кнопки у каждой игры свои: где-то нужна одна, где-то шесть.",
+    "buttons": [
+      {"id": "1", "label": "1", "pad": "b", "default": "a", "color": "#d6303a", "shape": "round", "pos": [310, 180]},
+      {"id": "2", "label": "2", "pad": "a", "default": "b", "color": "#e3b51c", "shape": "round", "pos": [380, 168]},
+      {"id": "3", "label": "3", "pad": "y", "default": "x", "color": "#2f53c9", "shape": "round", "pos": [310, 112]},
+      {"id": "4", "label": "4", "pad": "x", "default": "y", "color": "#2e9a46", "shape": "round", "pos": [380, 100]},
+      {"id": "5", "label": "5", "pad": "l", "default": "lb", "color": "#e6e6ea", "text_color": "#2c2c33", "shape": "round", "pos": [450, 168]},
+      {"id": "6", "label": "6", "pad": "r", "default": "rb", "color": "#8b4fd6", "shape": "round", "pos": [450, 100]},
+      {"id": "coin", "label": "Coin", "pad": "select", "default": "back", "color": "#55555e", "shape": "pill", "pos": [520, 72]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#55555e", "shape": "pill", "pos": [520, 130]}
+    ]
+  }
+}

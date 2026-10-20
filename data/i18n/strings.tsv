@@ -295,3 +295,24 @@ Atari 2600	Atari 2600	雅达利 2600	Atari 2600
 Найти	Find	查找	検索
 Звуки интерфейса	Interface sounds	界面音效	インターフェース音
 Тихий щелчок при переходе между играми и «бульк» при запуске игры. Свои звуки можно положить в папку data/sounds (click.wav и launch.wav).	A soft click when moving between games and a “bloop” when a game starts. You can put your own sounds in data/sounds (click.wav and launch.wav).	在游戏之间移动时发出轻微的咔嗒声，启动游戏时发出“啵”的一声。可以把自己的音效放到 data/sounds 文件夹（click.wav 和 launch.wav）。	ゲーム間を移動するときの小さなクリック音と、ゲーム起動時の「ポコッ」という音。自分の音を data/sounds（click.wav と launch.wav）に置くこともできます。
+Кнопки приставок	Console buttons	主机按键	ゲーム機のボタン
+Своя раскладка для каждой приставки: какая кнопка вашего геймпада — это A, B или Start приставки. С рисунками геймпадов.	A separate button layout for each console: which button on your controller acts as the console's A, B or Start. With pictures of both controllers.	为每台主机单独设置按键：手柄上的哪个键对应主机的 A、B 或 Start。附有手柄示意图。	ゲーム機ごとのボタン配置：コントローラーのどのボタンがゲーム機の A・B・Start になるかを設定します。コントローラーの図付き。
+Геймпад %s	%s controller	%s 手柄	%s のコントローラー
+Ваш геймпад (%s)	Your controller (%s)	你的手柄（%s）	あなたのコントローラー（%s）
+Нажмите кнопку…	Press a button…	请按下按键…	ボタンを押してください…
+Раскладка кнопок	Button layout	按键布局	ボタン配置
+По надписям	By label	按标记	刻印どおり
+Своя	Custom	自定义	カスタム
+Вернуть обычную раскладку	Restore the standard layout	恢复默认布局	標準の配置に戻す
+Назначить	Assign	设置	割り当て
+Кнопка «%s» не назначена.	The “%s” button isn't assigned.	“%s”键未设置。	「%s」ボタンは割り当てられていません。
+Кнопка «%s» — это %s на вашем геймпаде.	The “%s” button is %s on your controller.	“%s”键对应你手柄上的 %s。	「%s」ボタンは、あなたのコントローラーの %s です。
+«Назначить» — и нажмите нужную кнопку на геймпаде. ◀ ▶ — выбрать из списка. Если кнопка уже занята, они поменяются местами.	“Assign”, then press the button you want on your controller. ◀ ▶ picks from a list. If that button is already taken, the two swap places.	选择“设置”，然后按下手柄上想用的按键。◀ ▶ 可从列表中选择。如果该键已被占用，两个键会互换。	「割り当て」を選んで、コントローラーの使いたいボタンを押します。◀ ▶ で一覧から選ぶこともできます。そのボタンが使用中なら、2つのボタンが入れ替わります。
+По положению — кнопки стоят там же, где на геймпаде приставки. По надписям — A на A, B на B.	By position: buttons sit where they are on the console's controller. By label: A on A, B on B.	按位置：按键与主机手柄上的位置相同。按标记：A 对 A，B 对 B。	位置どおり：ゲーム機のコントローラーと同じ位置。刻印どおり：A は A、B は B。
+Раскладка по положению кнопок — как была с самого начала.	The by-position layout, as it was from the start.	按位置的布局，即最初的设置。	最初からの「位置どおり」の配置です。
+Клавиатура: стрелки, Z X A S Q W, Enter — Start, Shift — Select.	Keyboard: arrows, Z X A S Q W, Enter is Start, Shift is Select.	键盘：方向键、Z X A S Q W，Enter 为 Start，Shift 为 Select。	キーボード：矢印キー、Z X A S Q W、Enter が Start、Shift が Select。
+Обычная раскладка для %s	Standard layout for %s	%s 已恢复默认布局	%s を標準の配置にしました
+Нажмите на геймпаде кнопку для «%s». Через 5 секунд или по Esc — отмена.	Press the controller button for “%s”. Cancels after 5 seconds or with Esc.	请按下用作“%s”的手柄按键。5 秒后或按 Esc 取消。	「%s」にするボタンをコントローラーで押してください。5秒たつか Esc でキャンセルします。
+меню	menu	菜单	メニュー
+C-кнопки у ядра Nintendo 64 — на правом стике. Стики Shellbit в игру пока не передаёт, поэтому C-кнопки не работают.	The Nintendo 64 core puts the C buttons on the right stick. Shellbit doesn't pass sticks to games yet, so the C buttons don't work.	Nintendo 64 核心把 C 键放在右摇杆上。Shellbit 目前还不会把摇杆传给游戏，所以 C 键无法使用。	Nintendo 64 のコアでは C ボタンは右スティックです。Shellbit はまだスティックをゲームに渡さないため、C ボタンは使えません。
+В аркадных автоматах кнопки у каждой игры свои: где-то нужна одна, где-то шесть.	In arcade games, every game uses its own buttons: some need one, some need six.	街机游戏的按键因游戏而异：有的只用一个，有的要用六个。	アーケードではゲームごとにボタンが違います。1つだけのものも、6つ使うものもあります。

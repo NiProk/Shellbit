@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bo6a0hefewe4j" path="res://scenes/home/Home.gd" id="1_home"]
 [ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
+[ext_resource type="Texture2D" path="res://data/ui/pip_front.png" id="3_pip"]
+[ext_resource type="Texture2D" path="res://data/ui/pip_add.png" id="4_pip_add"]
 
 [node name="Home" type="Control" unique_id=1445520380]
 layout_mode = 3
@@ -42,6 +44,14 @@ theme_override_constants/separation = 12
 layout_mode = 2
 theme_override_constants/separation = 16
 
+[node name="Pip" type="TextureRect" parent="Margin/VBox/Header" unique_id=508117431]
+custom_minimum_size = Vector2(54, 44)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_pip")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Logo" type="Label" parent="Margin/VBox/Header" unique_id=1622684251]
 layout_mode = 2
 theme_type_variation = &"LogoLabel"
@@ -64,10 +74,23 @@ theme_type_variation = &"DimLabel"
 theme_override_font_sizes/font_size = 20
 text = "00:00"
 
-[node name="EmptyState" type="Label" parent="Margin/VBox" unique_id=334147665]
+[node name="EmptyState" type="VBoxContainer" parent="Margin/VBox" unique_id=334147665]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="PipAdd" type="TextureRect" parent="Margin/VBox/EmptyState" unique_id=1874402291]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_pip_add")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EmptyText" type="Label" parent="Margin/VBox/EmptyState" unique_id=902731558]
 layout_mode = 2
 theme_type_variation = &"DimLabel"
 theme_override_font_sizes/font_size = 22

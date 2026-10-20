@@ -14,6 +14,7 @@ const SCENES := {
 	"details": "res://scenes/details/GameDetails.tscn",
 	"player": "res://scenes/player/Player.tscn",
 	"settings": "res://scenes/settings/SettingsScreen.tscn",
+	"pad_map": "res://scenes/settings/PadMapScreen.tscn",
 }
 
 ## Параметры текущего экрана. Экран читает их в своём _ready():

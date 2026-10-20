@@ -50,7 +50,7 @@ func _ready() -> void:
 	_category_button(start).grab_focus.call_deferred()
 	# После смены языка экран открывается заново — сразу на строке языка.
 	if SceneRouter.params.get("rows", false):
-		_enter_rows.call_deferred()
+		_enter_rows.call_deferred(SceneRouter.params.get("row", 0))
 
 
 # =====================================================================
@@ -159,6 +159,8 @@ func _show_page(id: String) -> void:
 	_link_rows()
 	# Предпросмотр нужен только в разделе «Видео».
 	%PreviewBox.visible = id == "video"
+	# В «О программе» вместо предпросмотра — радостный Пип.
+	%AboutPip.visible = id == "about"
 	_update_preview()
 
 
@@ -172,10 +174,10 @@ func _rebuild_page() -> void:
 		_enter_rows.call_deferred()
 
 
-## Перейти из разделов к строкам.
-func _enter_rows() -> void:
+## Перейти из разделов к строкам (index — на какую строку встать).
+func _enter_rows(index := 0) -> void:
 	if %Rows.get_child_count() > 0:
-		%Rows.get_child(0).grab_focus()
+		%Rows.get_child(mini(index, %Rows.get_child_count() - 1)).grab_focus()
 
 
 # Соседи по фокусу для строк: вверх/вниз — по строкам, влево — к разделу.
@@ -333,10 +335,19 @@ func _build_controls() -> void:
 			tr("Нажмите правый стик, Select и Start вместе или Esc на клавиатуре."))
 	_info("Скриншот", "F12 · Share",
 			tr("Кнопка Share («Поделиться») есть на геймпадах Xbox Series и PlayStation 5. На других геймпадах — пункт «Скриншот» в меню паузы."))
-	_info("Кнопки в игре", tr("По положению"),
-			tr("Нижняя кнопка геймпада (A на Xbox) — это нижняя кнопка приставки (B на SNES). Полная таблица — в README."))
-	_info("Переназначение кнопок", tr("Скоро"),
-			tr("Свою раскладку кнопок можно будет задать в следующих версиях."))
+	var pad_row := _action("Кнопки приставок", "",
+			tr("Своя раскладка для каждой приставки: какая кнопка вашего геймпада — это A, B или Start приставки. С рисунками геймпадов."),
+			Callable())
+	pad_row.pressed.connect(_open_pad_map.bind(pad_row))
+
+
+# Открыть экран «Кнопки приставок». Запоминаем в параметрах этого экрана
+# раздел и строку — по «Назад» настройки откроются ровно на ней.
+func _open_pad_map(row: SettingRow) -> void:
+	SceneRouter.params["page"] = "controls"
+	SceneRouter.params["rows"] = true
+	SceneRouter.params["row"] = row.get_index()
+	SceneRouter.go_to("pad_map")
 
 
 func _on_joy_connection_changed(_device: int, _connected: bool) -> void:

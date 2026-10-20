@@ -13,7 +13,11 @@ config_version=5
 config/name="Shellbit"
 run/main_scene="res://scenes/home/Home.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.043, 0.059, 0.09, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="res://icon.png"
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 

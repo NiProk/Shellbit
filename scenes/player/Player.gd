@@ -116,8 +116,9 @@ func _process(delta: float) -> void:
 	if core == null or not core.is_running() or _paused:
 		return
 
-	var mask0: int = InputMapper.get_retropad_mask(0)
-	var mask1: int = InputMapper.get_retropad_mask(1)
+	# Раскладка кнопок — своя для каждой приставки (Настройки → Управление).
+	var mask0: int = InputMapper.get_retropad_mask(0, game["system"])
+	var mask1: int = InputMapper.get_retropad_mask(1, game["system"])
 	var raw0 := mask0  # нажатия как есть — для проверки комбинации
 
 	# Select работает как «модификатор»: пока он зажат, Start не уходит

@@ -7,6 +7,8 @@ extends Node
 ## 2. Следит, чем человек сейчас управляет: Xbox, PlayStation или клавиатура,
 ##    чтобы подсказки внизу экрана показывали правильные значки.
 ## 3. Переводит кнопки геймпада и клавиатуры в RetroPad для эмулятора.
+## 4. Помнит раскладку кнопок для каждой приставки (data/pads.json
+##    и настройки человека) — см. раздел «Раскладка по приставкам».
 
 ## Сигнал: сменился тип управления ("xbox", "playstation", "keyboard").
 signal style_changed(style: String)
@@ -39,6 +41,13 @@ func _ready() -> void:
 	# Capture на Switch Pro. У старых геймпадов её нет — для них есть пункт
 	# «Скриншот» в меню паузы.
 	_add_action(&"screenshot", JOY_BUTTON_MISC1, KEY_F12)
+
+	_load_pads()
+	# Поменяли раскладку в настройках — забываем готовые таблицы,
+	# get_retropad_mask() соберёт их заново.
+	Settings.changed.connect(func(section: String, _key: String) -> void:
+		if section == "pads":
+			_tables.clear())
 
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	if not Input.get_connected_joypads().is_empty():
@@ -123,7 +132,9 @@ const PAD_R2 := 13
 const PAD_L3 := 14
 const PAD_R3 := 15
 
-# Кнопка реального геймпада → кнопка RetroPad.
+# Кнопка реального геймпада → кнопка RetroPad. Общая раскладка для
+# приставок, которых нет в data/pads.json. Крестовину и стик
+# get_retropad_mask() проверяет отдельно.
 # Раскладка «по положению»: нижняя кнопка Xbox (A) = нижняя кнопка SNES (B).
 const JOY_TO_PAD := {
 	JOY_BUTTON_A: PAD_B,
@@ -132,15 +143,10 @@ const JOY_TO_PAD := {
 	JOY_BUTTON_Y: PAD_X,
 	JOY_BUTTON_BACK: PAD_SELECT,
 	JOY_BUTTON_START: PAD_START,
-	JOY_BUTTON_DPAD_UP: PAD_UP,
-	JOY_BUTTON_DPAD_DOWN: PAD_DOWN,
-	JOY_BUTTON_DPAD_LEFT: PAD_LEFT,
-	JOY_BUTTON_DPAD_RIGHT: PAD_RIGHT,
 	JOY_BUTTON_LEFT_SHOULDER: PAD_L,
 	JOY_BUTTON_RIGHT_SHOULDER: PAD_R,
 	JOY_BUTTON_LEFT_STICK: PAD_L3,
 	# Правый стик (R3) не передаём в игру: это кнопка меню паузы.
-	# Когда дойдём до PlayStation (там R3 нужен), сделаем это настройкой.
 }
 
 # Клавиатура (только для игрока 1).
@@ -163,7 +169,10 @@ const STICK_DEADZONE := 0.5
 
 
 ## Маска нажатых кнопок для игрока port (0 = первый игрок).
-func get_retropad_mask(port: int) -> int:
+## system_id — приставка, чтобы взять её раскладку кнопок геймпада.
+## Без него (или для приставки без описания в pads.json) действует
+## общая раскладка «по положению» — таблица JOY_TO_PAD.
+func get_retropad_mask(port: int, system_id := "") -> int:
 	var mask := 0
 
 	if port == 0:
@@ -171,12 +180,27 @@ func get_retropad_mask(port: int) -> int:
 			if Input.is_physical_key_pressed(key):
 				mask |= 1 << KEY_TO_PAD[key]
 
-	var pads := Input.get_connected_joypads()
-	if port < pads.size():
-		var device: int = pads[port]
-		for button: JoyButton in JOY_TO_PAD:
-			if Input.is_joy_button_pressed(device, button):
-				mask |= 1 << JOY_TO_PAD[button]
+	var pads_list := Input.get_connected_joypads()
+	if port < pads_list.size():
+		var device: int = pads_list[port]
+		if pads.has(system_id):
+			# Таблица этой приставки: пары [кнопка геймпада, бит RetroPad].
+			for pair: Array in _table(system_id):
+				if is_physical_pressed(device, pair[0]):
+					mask |= 1 << pair[1]
+		else:
+			for button: JoyButton in JOY_TO_PAD:
+				if Input.is_joy_button_pressed(device, button):
+					mask |= 1 << JOY_TO_PAD[button]
+			# Курки — это оси (от 0 до 1), а не кнопки.
+			if Input.get_joy_axis(device, JOY_AXIS_TRIGGER_LEFT) > STICK_DEADZONE: mask |= 1 << PAD_L2
+			if Input.get_joy_axis(device, JOY_AXIS_TRIGGER_RIGHT) > STICK_DEADZONE: mask |= 1 << PAD_R2
+
+		# Крестовина — всегда крестовина (её не переназначаем).
+		if Input.is_joy_button_pressed(device, JOY_BUTTON_DPAD_UP): mask |= 1 << PAD_UP
+		if Input.is_joy_button_pressed(device, JOY_BUTTON_DPAD_DOWN): mask |= 1 << PAD_DOWN
+		if Input.is_joy_button_pressed(device, JOY_BUTTON_DPAD_LEFT): mask |= 1 << PAD_LEFT
+		if Input.is_joy_button_pressed(device, JOY_BUTTON_DPAD_RIGHT): mask |= 1 << PAD_RIGHT
 
 		# Левый стик работает как крестовина.
 		var x := Input.get_joy_axis(device, JOY_AXIS_LEFT_X)
@@ -186,8 +210,190 @@ func get_retropad_mask(port: int) -> int:
 		if y < -STICK_DEADZONE: mask |= 1 << PAD_UP
 		if y > STICK_DEADZONE: mask |= 1 << PAD_DOWN
 
-		# Курки — это оси (от 0 до 1), а не кнопки.
-		if Input.get_joy_axis(device, JOY_AXIS_TRIGGER_LEFT) > STICK_DEADZONE: mask |= 1 << PAD_L2
-		if Input.get_joy_axis(device, JOY_AXIS_TRIGGER_RIGHT) > STICK_DEADZONE: mask |= 1 << PAD_R2
-
 	return mask
+
+
+# =====================================================================
+# Раскладка по приставкам
+# =====================================================================
+#
+# У каждой приставки свои кнопки: у NES — B и A, у Mega Drive — A, B, C,
+# у PlayStation — ✕ ○ □ △. Какие они и какой кнопке RetroPad каждая
+# соответствует, записано в data/pads.json.
+#
+# Раскладка — это словарь «кнопка приставки → кнопка вашего геймпада»:
+#   {"b": "a", "a": "b", "select": "back", "start": "start"}
+# читается так: «B приставки — это A на геймпаде Xbox» и т.д.
+#
+# В настройках (раздел [pads]) хранится только то, что человек поменял.
+# Если раскладка совпадает с обычной — запись удаляется.
+
+const PADS_PATH := "res://data/pads.json"
+
+## Кнопки вашего геймпада, которые можно назначать. Порядок — как
+## они перебираются стрелками ◀ ▶. "" — «не назначена».
+## Правый стик (R3) не назначается: это кнопка меню паузы.
+const PHYSICAL := ["a", "b", "x", "y", "lb", "rb", "lt", "rt", "back", "start", "l3", ""]
+
+## Кнопка геймпада → кнопка Godot. Курков (lt, rt) здесь нет: это оси.
+const PHYSICAL_JOY := {
+	"a": JOY_BUTTON_A,
+	"b": JOY_BUTTON_B,
+	"x": JOY_BUTTON_X,
+	"y": JOY_BUTTON_Y,
+	"lb": JOY_BUTTON_LEFT_SHOULDER,
+	"rb": JOY_BUTTON_RIGHT_SHOULDER,
+	"back": JOY_BUTTON_BACK,
+	"start": JOY_BUTTON_START,
+	"l3": JOY_BUTTON_LEFT_STICK,
+}
+
+## Имя кнопки RetroPad (как в pads.json) → её номер.
+const PAD_BY_NAME := {
+	"b": PAD_B, "y": PAD_Y, "select": PAD_SELECT, "start": PAD_START,
+	"a": PAD_A, "x": PAD_X, "l": PAD_L, "r": PAD_R,
+	"l2": PAD_L2, "r2": PAD_R2, "l3": PAD_L3, "r3": PAD_R3,
+}
+
+## Как подписаны кнопки на геймпадах Xbox и PlayStation.
+const GLYPHS := {
+	"xbox": {"a": "A", "b": "B", "x": "X", "y": "Y", "lb": "LB", "rb": "RB",
+		"lt": "LT", "rt": "RT", "back": "Back", "start": "Start", "l3": "LS", "": "—"},
+	"playstation": {"a": "✕", "b": "○", "x": "□", "y": "△", "lb": "L1", "rb": "R1",
+		"lt": "L2", "rt": "R2", "back": "Share", "start": "Options", "l3": "L3", "": "—"},
+}
+
+## Цвета подписей: у Xbox цветные буквы, у PlayStation — значки.
+const GLYPH_COLORS := {
+	"xbox": {"a": Color("3fa34d"), "b": Color("d6453d"), "x": Color("2f6fd6"), "y": Color("d4a52a")},
+	"playstation": {"a": Color("7aa7ff"), "b": Color("ff6b6b"), "x": Color("f78fd0"), "y": Color("5ed39a")},
+}
+
+## Описания геймпадов приставок из pads.json: {"snes": {...}, ...}
+var pads: Dictionary = {}
+
+# Готовые таблицы для get_retropad_mask(): {"snes": [["a", 0], ["b", 8], ...]}
+# Собирать их из словарей 60 раз в секунду незачем — храним готовые.
+var _tables: Dictionary = {}
+
+
+func _load_pads() -> void:
+	var text := FileAccess.get_file_as_string(PADS_PATH)
+	var data: Variant = JSON.parse_string(text)
+	if data is Dictionary:
+		pads = data
+		pads.erase("_help")  # это подсказка для человека, а не приставка
+	else:
+		push_error("Не удалось прочитать " + PADS_PATH)
+
+
+## Подпись кнопки геймпада: "a" → "A" (Xbox) или "✕" (PlayStation).
+## На клавиатуре показываем подписи Xbox.
+func glyph(physical: String) -> String:
+	var table: Dictionary = GLYPHS.get(style, GLYPHS["xbox"])
+	return table.get(physical, "?")
+
+
+func glyph_color(physical: String) -> Color:
+	var table: Dictionary = GLYPH_COLORS.get(style, GLYPH_COLORS["xbox"])
+	return table.get(physical, UiTheme.TEXT)
+
+
+## Нажата ли кнопка геймпада ("a", "lt"...) на устройстве device.
+func is_physical_pressed(device: int, physical: String) -> bool:
+	match physical:
+		"":
+			return false
+		"lt":
+			return Input.get_joy_axis(device, JOY_AXIS_TRIGGER_LEFT) > STICK_DEADZONE
+		"rt":
+			return Input.get_joy_axis(device, JOY_AXIS_TRIGGER_RIGHT) > STICK_DEADZONE
+		_:
+			return Input.is_joy_button_pressed(device, PHYSICAL_JOY[physical])
+
+
+## Какая кнопка геймпада нажата в этом событии ("a", "lt"...).
+## Пустая строка — событие не про назначаемую кнопку.
+func physical_from_event(event: InputEvent) -> String:
+	if event is InputEventJoypadButton and event.pressed:
+		for physical: String in PHYSICAL_JOY:
+			if PHYSICAL_JOY[physical] == event.button_index:
+				return physical
+	elif event is InputEventJoypadMotion and event.axis_value > 0.6:
+		if event.axis == JOY_AXIS_TRIGGER_LEFT:
+			return "lt"
+		if event.axis == JOY_AXIS_TRIGGER_RIGHT:
+			return "rt"
+	return ""
+
+
+## Готовая раскладка: preset "default" — по положению кнопок,
+## "by_label" — по надписям (A на A, B на B), где это возможно.
+func preset_mapping(system_id: String, preset := "default") -> Dictionary:
+	var mapping := {}
+	for button: Dictionary in pads.get(system_id, {}).get("buttons", []):
+		mapping[button["id"]] = button.get(preset, button["default"])
+	return mapping
+
+
+## Есть ли у приставки раскладка «по надписям».
+func has_label_preset(system_id: String) -> bool:
+	for button: Dictionary in pads.get(system_id, {}).get("buttons", []):
+		if button.has("by_label"):
+			return true
+	return false
+
+
+## Текущая раскладка приставки: обычная + то, что человек поменял.
+func get_mapping(system_id: String) -> Dictionary:
+	var mapping := preset_mapping(system_id)
+	var saved: Dictionary = Settings.get_value("pads", system_id, {})
+	for button_id in saved:
+		if mapping.has(button_id):  # кнопки, которой больше нет в pads.json, пропускаем
+			mapping[button_id] = saved[button_id]
+	return mapping
+
+
+## Сохранить раскладку. Обычную раскладку не храним — удаляем запись.
+func set_mapping(system_id: String, mapping: Dictionary) -> void:
+	if mapping == preset_mapping(system_id):
+		Settings.set_value("pads", system_id, null)  # null удаляет ключ из файла
+	else:
+		Settings.set_value("pads", system_id, mapping)
+
+
+## Назначить кнопке приставки button_id кнопку геймпада physical.
+## Если эта кнопка геймпада уже занята другой кнопкой приставки,
+## они меняются местами — так две кнопки никогда не «слипнутся».
+func assign(system_id: String, button_id: String, physical: String) -> void:
+	var mapping := get_mapping(system_id)
+	var old_physical: String = mapping[button_id]
+	if physical != "":
+		for other_id in mapping:
+			if other_id != button_id and mapping[other_id] == physical:
+				mapping[other_id] = old_physical
+	mapping[button_id] = physical
+	set_mapping(system_id, mapping)
+
+
+## Какая раскладка сейчас: "default", "by_label" или "custom" (своя).
+func current_preset(system_id: String) -> String:
+	var mapping := get_mapping(system_id)
+	if mapping == preset_mapping(system_id):
+		return "default"
+	if has_label_preset(system_id) and mapping == preset_mapping(system_id, "by_label"):
+		return "by_label"
+	return "custom"
+
+
+# Таблица [кнопка геймпада, бит RetroPad] для одной приставки.
+func _table(system_id: String) -> Array:
+	if not _tables.has(system_id):
+		var mapping := get_mapping(system_id)
+		var table := []
+		for button: Dictionary in pads[system_id]["buttons"]:
+			var physical: String = mapping[button["id"]]
+			if physical != "":
+				table.append([physical, PAD_BY_NAME[button["pad"]]])
+		_tables[system_id] = table
+	return _tables[system_id]
