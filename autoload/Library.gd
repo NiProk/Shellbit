@@ -32,6 +32,12 @@ extends Node
 signal scan_finished
 
 const SAVE_PATH := "user://library.json"
+
+## «Приставка» для экрана избранного. Это не настоящая приставка,
+## а подборка избранных игр со всех приставок. Экран библиотеки
+## открывается с ней так же, как с обычной: {"system": Library.FAVORITES}.
+const FAVORITES := "favorites"
+const FAVORITES_COLOR := "#f5c542"  # золотой — цвет звезды
 const MAX_DEPTH := 6  # насколько глубоко заходить во вложенные папки
 
 var games: Array[Dictionary] = []   # все файлы
@@ -141,6 +147,24 @@ func groups_for_system(system_id: String) -> Array:
 	result.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
 		return a["title"].naturalnocasecmp_to(b["title"]) < 0)
 	return result
+
+
+## Избранные игры со всех приставок, по алфавиту.
+func favorite_groups() -> Array:
+	var result := groups.filter(func(g: Dictionary) -> bool: return g["favorite"])
+	result.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
+		return a["title"].naturalnocasecmp_to(b["title"]) < 0)
+	return result
+
+
+## Что листать кнопками LB/RB в библиотеке: сначала избранное
+## (если в нём что-то есть), потом приставки, у которых есть игры.
+func browse_ids() -> Array[String]:
+	var ids: Array[String] = []
+	if not favorite_groups().is_empty():
+		ids.append(FAVORITES)
+	ids.append_array(systems_with_games())
+	return ids
 
 
 ## Найти игру (группу) по ключу, например "nes_battletoads". {} — если нет.

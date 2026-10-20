@@ -40,6 +40,20 @@ func _refresh() -> void:
 	%RecentTitle.visible = not recent.is_empty()
 	%RecentScroll.visible = not recent.is_empty()
 
+	# --- Плитка «★ Избранное» — первой в ряду приставок ---
+	var favorites := Library.favorite_groups()
+	if not favorites.is_empty():
+		var fav_tile: ConsoleTile = ConsoleTileScene.instantiate()
+		%SystemsRow.add_child(fav_tile)
+		# Плитка ждёт описание приставки — даём ей «приставку-подборку».
+		fav_tile.setup({
+			"id": Library.FAVORITES,
+			"short": "★ " + tr("Избранное"),
+			"name": "Избранное",
+			"color": Library.FAVORITES_COLOR,
+		}, favorites.size())
+		fav_tile.pressed.connect(_on_system_pressed.bind(Library.FAVORITES))
+
 	# --- Приставки, у которых есть игры ---
 	var system_ids := Library.systems_with_games()
 	for system_id in system_ids:
