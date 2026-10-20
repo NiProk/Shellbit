@@ -6,9 +6,9 @@ extends PanelContainer
 ## Значки сами меняются под Xbox, PlayStation или клавиатуру.
 
 const LABELS := {
-	"xbox": {"accept": "A", "cancel": "B", "details": "X", "favorite": "Y", "page": "LB RB", "menu": "Start", "change": "←→"},
-	"playstation": {"accept": "✕", "cancel": "○", "details": "□", "favorite": "△", "page": "L1 R1", "menu": "Options", "change": "←→"},
-	"keyboard": {"accept": "Enter", "cancel": "Esc", "details": "Tab", "favorite": "F", "page": "Q E", "menu": "F1", "change": "←→"},
+	"xbox": {"accept": "A", "cancel": "B", "details": "X", "favorite": "Y", "page": "LB RB", "menu": "Start", "change": "←→", "scroll": "↑↓"},
+	"playstation": {"accept": "✕", "cancel": "○", "details": "□", "favorite": "△", "page": "L1 R1", "menu": "Options", "change": "←→", "scroll": "↑↓"},
+	"keyboard": {"accept": "Enter", "cancel": "Esc", "details": "Tab", "favorite": "F", "page": "Q E", "menu": "F1", "change": "←→", "scroll": "↑↓"},
 }
 
 # Цвета кнопок как на геймпаде Xbox. Для остальных — серый значок.

@@ -8,6 +8,7 @@ extends Control
 const SaveCardScene := preload("res://scenes/components/SaveCard.tscn")
 
 var group: Dictionary = {}
+var _viewer := TextViewer.new()  # окно с полным описанием
 var _picker := CoverPicker.new()
 
 
@@ -18,12 +19,16 @@ func _ready() -> void:
 		return
 
 	add_child(_picker)
+	add_child(_viewer)
 	_style_buttons()
 
 	%PlayButton.pressed.connect(_play.bind(SaveStates.AUTO))
 	%FavButton.pressed.connect(_toggle_favorite)
 	%VersionButton.pressed.connect(_next_version)
 	%CoverButton.pressed.connect(func() -> void: _picker.open(group, %CoverButton))
+	%MoreButton.pressed.connect(func() -> void: _viewer.open(%Title.text, %Description.text))
+	# Окно закрыли — фокус обратно на кнопку, которая его открыла.
+	_viewer.closed.connect(%MoreButton.grab_focus)
 	Covers.cover_ready.connect(_on_cover_ready)
 
 	# Карточки сохранений: «место выхода» и три ручных слота.
@@ -69,6 +74,7 @@ func _refresh() -> void:
 
 	%Description.text = info["description"]
 	%Description.visible = info["description"] != ""
+	_update_more_button()
 
 	var count: int = group["variants"].size()
 	%Version.text = tr("Версия: %s") % variant["version"]
@@ -126,6 +132,18 @@ func _meta_label(text: String, color: Color) -> Label:
 	# Не переводить автоматически: название студии или жанр уже готовы.
 	label.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	return label
+
+
+## Показать «Читать полностью», если описание не влезло в 3 строки.
+## Сколько строк получится, станет известно только после того, как Godot
+## расставит элементы по местам — поэтому сначала ждём один кадр.
+func _update_more_button() -> void:
+	%MoreButton.visible = false
+	await get_tree().process_frame
+	# get_line_count() — сколько строк занимает ВЕСЬ текст,
+	# max_lines_visible — сколько из них мы показываем (3).
+	%MoreButton.visible = %Description.visible \
+			and %Description.get_line_count() > %Description.max_lines_visible
 
 
 func _show_cover(texture: Texture2D) -> void:
@@ -187,6 +205,7 @@ func _style_buttons() -> void:
 	_pill(%PlayButton, UiTheme.ACCENT, UiTheme.ACCENT.lightened(0.15), UiTheme.BG)
 	for button: Button in [%FavButton, %VersionButton, %CoverButton]:
 		_pill(button, UiTheme.CARD, UiTheme.CARD_HOVER, UiTheme.TEXT)
+	_pill(%MoreButton, UiTheme.CARD, UiTheme.CARD_HOVER, UiTheme.ACCENT)
 
 
 func _pill(button: Button, color: Color, hover: Color, text: Color) -> void:
