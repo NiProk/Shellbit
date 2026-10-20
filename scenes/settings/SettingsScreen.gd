@@ -35,6 +35,7 @@ const PAGES := [
 ]
 
 var _page := ""  # id открытого раздела
+var _dropdown: DropdownList  # выпадающий список языков (создаётся при первом открытии)
 
 
 func _ready() -> void:
@@ -433,10 +434,48 @@ func _build_audio() -> void:
 			UiSounds.play_launch())
 
 
+# Язык выбирают из выпадающего списка: языков девять, листать их
+# стрелками ◀ ▶ по одному долго, а в списке все видны сразу.
 func _build_language() -> void:
-	var row := _choice("Язык интерфейса", "general", "language", Lang.CHOICES,
-			tr("Описания игр берутся из файлов рядом с играми — в них можно написать текст на каждом языке (см. README). «Как в системе» — язык Windows."))
-	row.value_changed.connect(_on_language_changed)
+	var current: String = Settings.get_value("general", "language")
+	var row := _action("Язык интерфейса", _language_name(current) + "  ▾",
+			tr("Описания игр берутся из файлов рядом с играми — в них можно написать текст на каждом языке (см. README). «Как в системе» — язык Windows."),
+			Callable())
+	row.pressed.connect(_open_language_list.bind(row))
+
+
+## Название языка для строки: "de" → "Deutsch", "auto" → «Как в системе».
+func _language_name(code: String) -> String:
+	for choice: Array in Lang.CHOICES:
+		if choice[0] == code:
+			return tr(choice[1])
+	return code
+
+
+func _open_language_list(row: SettingRow) -> void:
+	# Выпадающий список создаём один раз и потом только открываем.
+	if _dropdown == null:
+		_dropdown = DropdownList.new()
+		add_child(_dropdown)
+		_dropdown.chosen.connect(_on_language_chosen)
+	# Закрыли список — вернуть фокус на строку языка. Подключаем заново
+	# каждый раз: строка пересоздаётся, когда раздел открывают снова.
+	for connection in _dropdown.closed.get_connections():
+		_dropdown.closed.disconnect(connection["callable"])
+	_dropdown.closed.connect(row.grab_focus)
+
+	var items := []
+	for choice: Array in Lang.CHOICES:
+		# «Как в системе» переводим, остальные названия — на своих языках.
+		items.append([choice[0], tr(choice[1]) if choice[0] == "auto" else choice[1]])
+	_dropdown.open(items, Settings.get_value("general", "language"), row)
+
+
+func _on_language_chosen(value: Variant) -> void:
+	if value == Settings.get_value("general", "language"):
+		return  # выбрали тот же язык
+	Settings.set_value("general", "language", value)
+	_on_language_changed(value)
 
 
 func _on_language_changed(value: Variant) -> void:

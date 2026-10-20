@@ -1,343 +1,343 @@
-ru	en	zh	ja
+ru	en	zh	ja	de	fr	es	pt	ko
 # Таблица переводов Shellbit. Первый столбец — русский текст (ключ), остальные — переводы.
 # \n — перенос строки. Знак | разделяет формы слова для чисел: «%d игра|%d игры|%d игр».
 # Пустая клетка — перевода нет (покажется английский текст). Строки с # — комментарии.
-Как в системе	System default	跟随系统	システムに合わせる
-%d игра|%d игры|%d игр	%d game|%d games	%d 款游戏	ゲーム %d 本
-меньше минуты	less than a minute	不到 1 分钟	1分未満
-%d мин	%d min	%d 分钟	%d分
-%d ч %d мин	%d h %d min	%d 小时 %d 分钟	%d時間%d分
-ещё не запускалась	never played	尚未游玩	未プレイ
-сегодня	today	今天	今日
-вчера	yesterday	昨天	昨日
-%d дн. назад	%d days ago	%d 天前	%d日前
-Игрок %d	Player %d	玩家 %d	プレイヤー %d
-Геймпад подключён	Controller connected	手柄已连接	コントローラーが接続されました
-Геймпад	Controller	手柄	コントローラー
-Геймпад отключён	Controller disconnected	手柄已断开	コントローラーが切断されました
-Выбрать свою обложку…	Choose your own cover…	选择自定义封面…	自分のカバーを選ぶ…
-Убрать свою обложку	Remove custom cover	移除自定义封面	自分のカバーを外す
-Отмена	Cancel	取消	キャンセル
-Картинка для обложки	Cover image	封面图片	カバー画像
-Картинки	Images	图片	画像
-Своя обложка убрана	Custom cover removed	已移除自定义封面	自分のカバーを外しました
-Обложка обновлена	Cover updated	封面已更新	カバーを更新しました
-Не получилось открыть картинку	Couldn't open the image	无法打开图片	画像を開けませんでした
-Запуск: %s · %s	Played: %s · %s	上次游玩：%s · %s	最終プレイ: %s · %s
-Место выхода	Where you left off	上次退出处	中断した場所
-Слот %s	Slot %s	存档位 %s	スロット %s
-пусто	empty	空	空き
-сегодня, %s	today, %s	今天 %s	今日 %s
-вчера, %s	yesterday, %s	昨天 %s	昨日 %s
-Выбрать	Select	选择	決定
-Избранное	Favorite	收藏	お気に入り
-Версия	Version	版本	バージョン
-Обложка	Cover	封面	カバー
-Назад	Back	返回	戻る
-Открыть	Open	打开	開く
-Обновить список	Refresh list	刷新列表	リストを更新
-Настройки	Settings	设置	設定
-Другая приставка	Other console	切换主机	他の機種
-Загрузить	Load	读取	ロード
-Сохранить сюда	Save here	存到这里	ここにセーブ
-В игру	Back to game	返回游戏	ゲームに戻る
-Изменить	Change	更改	変更
-%s в игре	%s played	已游玩 %s	プレイ時間 %s
-Версия: %s	Version: %s	版本：%s	バージョン: %s
-(всего %d)	(%d total)	（共 %d 个）	（全 %d 種）
-★ В избранном	★ Favorited	★ 已收藏	★ お気に入り済み
-В избранное	Add to favorites	加入收藏	お気に入りに追加
-Продолжить	Continue	继续	続ける
-Играть	Play	开始游戏	プレイ
-Слот %s пуст — сохраниться можно в меню паузы	Slot %s is empty — you can save from the pause menu	存档位 %s 为空——可在暂停菜单中存档	スロット %s は空です — セーブはポーズメニューからできます
-Список игр обновлён: %s	Game list updated: %s	游戏列表已刷新：%s	ゲームリストを更新しました: %s
-Найдено: %s	Found: %s	已找到：%s	見つかりました: %s
-Неизвестная приставка	Unknown console	未知主机	不明な機種
-Время в игре: %s	Play time: %s	游戏时长：%s	プレイ時間: %s
-Последний запуск: %s	Last played: %s	上次游玩：%s	最終プレイ: %s
-%d версия|%d версии|%d версий	%d version|%d versions	%d 个版本	バージョン %d 種
-…и ещё %d	…and %d more	……还有 %d 个	…ほか %d 件
-У этой игры только одна версия	This game has only one version	此游戏只有一个版本	このゲームのバージョンは1つだけです
-Не передана игра.	No game was passed.	未指定游戏。	ゲームが指定されていません。
-C++-модуль shellbit_core не собран. Запустите native/build.bat и перезапустите Godot.	The C++ module shellbit_core is not built. Run native/build.bat and restart Godot.	C++ 模块 shellbit_core 尚未编译。请运行 native/build.bat 并重启 Godot。	C++ モジュール shellbit_core がビルドされていません。native/build.bat を実行して Godot を再起動してください。
-Нет ядра %s.\nСкачайте его и положите в папку ядер:\n%s	Core %s is missing.\nDownload it and put it in the cores folder:\n%s	缺少核心 %s。\n请下载并放入核心文件夹：\n%s	コア %s がありません。\nダウンロードしてコアフォルダに入れてください:\n%s
-Ядро %s не загрузилось (подробности — во вкладке Output).	Core %s failed to load (see the Output tab for details).	核心 %s 加载失败（详情见 Output 选项卡）。	コア %s を読み込めませんでした（詳細は Output タブ）。
-Ядро не смогло открыть файл игры:\n%s	The core couldn't open the game file:\n%s	核心无法打开游戏文件：\n%s	コアがゲームファイルを開けませんでした:\n%s
-Esc — меню	Esc — menu	Esc — 菜单	Esc — メニュー
-Правый стик — меню	Right stick — menu	按下右摇杆 — 菜单	右スティック押し込み — メニュー
-Продолжаем с места выхода	Resuming where you left off	从上次退出处继续	中断した場所から再開
-Загружен слот %s	Loaded slot %s	已读取存档位 %s	スロット %s をロードしました
-Сохранено в слот %s	Saved to slot %s	已存到存档位 %s	スロット %s にセーブしました
-Это ядро не умеет сохранять состояние	This core can't save states	此核心不支持即时存档	このコアはステートセーブに対応していません
-Не удалось загрузить слот %s	Couldn't load slot %s	无法读取存档位 %s	スロット %s をロードできませんでした
-Папки с играми	Game folders	游戏文件夹	ゲームフォルダ
-Где Shellbit ищет игры. Файлы на диске он не меняет.	Where Shellbit looks for games. It never changes files on disk.	Shellbit 在这些文件夹中查找游戏，不会修改磁盘上的文件。	Shellbit がゲームを探す場所です。ディスク上のファイルは変更しません。
-Управление	Controls	操作	操作
-Геймпады, клавиатура и кнопки меню.	Controllers, keyboard and menu buttons.	手柄、键盘和菜单按键。	コントローラー、キーボード、メニューボタン。
-Видео	Video	视频	映像
-Как выглядит картинка во время игры.	How the picture looks while playing.	游戏时的画面效果。	プレイ中の画面の見え方。
-Звук	Sound	声音	サウンド
-Громкость приложения и игр.	Volume of the app and games.	应用和游戏的音量。	アプリとゲームの音量。
-Язык	Language	语言 / Language	言語 / Language
-Язык интерфейса Shellbit.	Shellbit's interface language.	Shellbit 的界面语言。	Shellbit の表示言語。
-Ядра и BIOS	Cores & BIOS	核心与 BIOS	コアと BIOS
-Ядро — это эмулятор одной приставки. Здесь видно, каких ядер не хватает.	A core is an emulator for one console. Here you can see which cores are missing.	核心就是某一台主机的模拟器。这里可以看到缺少哪些核心。	コアは1機種分のエミュレーターです。足りないコアがここで分かります。
-О программе	About	关于	このアプリについて
-Версия и полезные папки.	Version and useful folders.	版本和常用文件夹。	バージョンと便利なフォルダ。
-+ Добавить папку…	+ Add folder…	+ 添加文件夹…	+ フォルダを追加…
-Выберите папку с играми. Shellbit найдёт игры и во вложенных папках.	Pick a folder with games. Shellbit will also find games in its subfolders.	选择存放游戏的文件夹。Shellbit 也会在子文件夹中查找游戏。	ゲームが入ったフォルダを選んでください。サブフォルダ内のゲームも見つけます。
-Обновить список игр	Refresh game list	刷新游戏列表	ゲームリストを更新
-Заново просмотреть все папки — если вы добавили или удалили игры.	Scan all folders again — if you added or removed games.	重新扫描所有文件夹——在添加或删除游戏后使用。	すべてのフォルダを再スキャンします（ゲームを追加・削除したとき）。
-Папок пока нет	No folders yet	暂无文件夹	フォルダはまだありません
-Добавьте папку, в которой лежат ваши игры.	Add a folder where your games are.	请添加存放游戏的文件夹。	ゲームが入っているフォルダを追加してください。
-Убрать	Remove	移除	外す
-A — убрать папку из списка. Сами игры на диске останутся.	A — remove the folder from the list. The games stay on disk.	A — 从列表中移除文件夹。游戏文件仍保留在磁盘上。	A — リストからフォルダを外します。ゲーム自体はディスクに残ります。
-Нажмите ещё раз	Press again	再按一次	もう一度押す
-Папка убрана · %s	Folder removed · %s	已移除文件夹 · %s	フォルダを外しました · %s
-Геймпад Xbox	Xbox controller	Xbox 手柄	Xbox コントローラー
-Геймпад PlayStation	PlayStation controller	PlayStation 手柄	PlayStation コントローラー
-Клавиатура	Keyboard	键盘	キーボード
-Сейчас управление	Current input	当前输入方式	現在の入力
-Shellbit сам замечает, чем вы пользуетесь, и меняет значки в подсказках внизу.	Shellbit notices what you're using and switches the button icons in the hints below.	Shellbit 会自动识别你在使用什么，并切换下方提示中的按键图标。	Shellbit は使っている入力機器を自動で判別し、下のヒントのボタン表示を切り替えます。
-Игрок %d: %s	Player %d: %s	玩家 %d：%s	プレイヤー %d: %s
-Подключённые геймпады	Connected controllers	已连接的手柄	接続中のコントローラー
-нет	none	无	なし
-Подключите геймпад — он появится здесь.	Connect a controller — it will show up here.	连接手柄后会显示在这里。	コントローラーを接続するとここに表示されます。
-Меню паузы в игре	In-game pause menu	游戏内暂停菜单	ゲーム中のポーズメニュー
-Нажмите правый стик, Select и Start вместе или Esc на клавиатуре.	Press the right stick, Select + Start together, or Esc on the keyboard.	按下右摇杆、同时按 Select 和 Start，或按键盘上的 Esc。	右スティック押し込み、Select と Start の同時押し、またはキーボードの Esc。
-Кнопки в игре	In-game buttons	游戏内按键	ゲーム内のボタン
-По положению	By position	按位置	位置で対応
-Нижняя кнопка геймпада (A на Xbox) — это нижняя кнопка приставки (B на SNES). Полная таблица — в README.	The bottom face button (A on Xbox) is the console's bottom button (B on SNES). The full table is in the README.	手柄下方的按键（Xbox 的 A）对应主机下方的按键（SNES 的 B）。完整对照表见 README。	下のボタン（Xbox の A）は本体の下のボタン（SNES の B）に対応します。一覧は README にあります。
-Переназначение кнопок	Button remapping	按键重新映射	ボタン割り当て
-Скоро	Coming soon	即将推出	近日対応
-Свою раскладку кнопок можно будет задать в следующих версиях.	Custom button layouts will come in a future version.	自定义按键布局将在后续版本中提供。	ボタン配置の変更は今後のバージョンで対応予定です。
-Фильтр изображения	Image filter	画面滤镜	画面フィルター
-Чёткие пиксели	Sharp pixels	清晰像素	くっきりピクセル
-Каждый пиксель приставки — ровный квадрат. Так игры выглядят на современных экранах.	Every console pixel is a crisp square. This is how games look on modern screens.	每个像素都是清晰的方块，这就是游戏在现代屏幕上的样子。	1ピクセルがくっきりした正方形になります。現代の画面での見た目です。
-Сглаживание	Smooth	平滑	なめらか
-Сглаживает края пикселей. Картинка мягче, но немного размыта.	Smooths pixel edges. A softer picture, but a little blurry.	平滑像素边缘。画面更柔和，但略显模糊。	ピクセルの輪郭をなめらかにします。柔らかくなる反面、少しぼやけます。
-ЭЛТ-телевизор	CRT TV	CRT 电视	ブラウン管テレビ
-Добавляет полосы развёртки и лёгкое скругление, как на старом телевизоре. Шейдер crt.gdshader.	Adds scanlines and a slight curve, like an old TV. Shader crt.gdshader.	添加扫描线和轻微弧度，像老式电视一样。着色器 crt.gdshader。	走査線とわずかな丸みを加え、昔のテレビのようにします。シェーダー crt.gdshader。
-Сетка LCD	LCD grid	LCD 网格	液晶グリッド
-Тонкая сетка между пикселями, как на экране Game Boy. Хорошо подходит портативным приставкам. Шейдер lcd.gdshader.	A thin grid between pixels, like a Game Boy screen. Great for handhelds. Shader lcd.gdshader.	像 Game Boy 屏幕那样在像素之间加上细网格，很适合掌机。着色器 lcd.gdshader。	ゲームボーイの画面のように、ピクセルの間に細い格子を入れます。携帯機に最適です。シェーダー lcd.gdshader。
-Масштаб	Scale	缩放	拡大方法
-Во весь экран	Fill screen	填满屏幕	画面いっぱい
-Картинка занимает всю высоту экрана. Пиксели могут получиться чуть разного размера.	The picture fills the screen height. Pixels may end up slightly different sizes.	画面占满屏幕高度，像素大小可能略有不同。	画面の高さいっぱいに表示します。ピクセルの大きさが少し不揃いになることがあります。
-Целые пиксели	Integer scaling	整数倍缩放	整数倍
-Каждый пиксель увеличен ровно в 2, 3, 4… раза — все одинаковые и ровные. Картинка может быть чуть меньше экрана.	Each pixel is scaled exactly 2×, 3×, 4×… — all the same size. The picture may be a little smaller than the screen.	每个像素都按整数倍（2、3、4……）放大，大小完全一致。画面可能比屏幕略小。	各ピクセルをちょうど2倍、3倍、4倍…に拡大し、すべて同じ大きさになります。画面より少し小さくなることがあります。
-Пропорции	Aspect ratio	画面比例	縦横比
-Как у приставки	Console's own	与主机一致	本体どおり
-Пропорции, которые сообщает эмулятор, — как картинка выглядела на телевизоре (обычно 4:3).	The ratio the emulator reports — how the picture looked on a TV (usually 4:3).	模拟器报告的比例，即画面在电视上的样子（通常为 4:3）。	エミュレーターが報告する比率で、テレビでの見た目と同じです（通常 4:3）。
-Квадратные пиксели	Square pixels	方形像素	正方形ピクセル
-Каждый пиксель квадратный. Картинка может стать чуть уже или шире, чем на телевизоре.	Every pixel is square. The picture may be slightly narrower or wider than on a TV.	每个像素都是正方形。画面可能比电视上略窄或略宽。	すべてのピクセルが正方形になります。テレビより少し細く、または広くなることがあります。
-Растянуть на экран	Stretch to screen	拉伸至全屏	画面に引き伸ばす
-Картинка растягивается на весь экран. Без полей, но фигуры становятся шире.	The picture is stretched across the whole screen. No borders, but shapes get wider.	画面拉伸铺满整个屏幕。没有黑边，但图形会变宽。	画面全体に引き伸ばします。余白はなくなりますが、形が横に広がります。
-Поля по бокам	Side borders	两侧边框	左右の余白
-Чёрные	Black	黑色	黒
-Пустое место по бокам от картинки — чёрное.	The empty space beside the picture is black.	画面两侧的空白为黑色。	画面の左右の空きは黒になります。
-Размытый кадр	Blurred frame	模糊画面	ぼかした画面
-По бокам — та же игра, но сильно размытая и затемнённая. Шейдер blur.gdshader.	The sides show the same game, heavily blurred and darkened. Shader blur.gdshader.	两侧显示同一游戏画面，经过强烈模糊和压暗。着色器 blur.gdshader。	左右に同じゲーム画面を、強くぼかして暗くして表示します。シェーダー blur.gdshader。
-Вертикальная синхронизация	V-Sync	垂直同步	垂直同期
-Кадры выводятся в такт монитору — картинка не «рвётся» при движении. Выключайте, только если игра идёт рывками.	Frames are shown in step with the monitor, so the picture doesn't tear in motion. Turn it off only if the game stutters.	让画面与显示器同步刷新，运动时不会撕裂。只有在游戏卡顿时才关闭。	モニターに合わせてフレームを表示し、動く場面で画面が裂けないようにします。ゲームがカクつくときだけオフにしてください。
-Без звука	Muted	静音	ミュート
-Громкость	Volume	音量	音量
-Общая громкость Shellbit и игр. ◀ ▶ — тише или громче.	Overall volume of Shellbit and games. ◀ ▶ — quieter or louder.	Shellbit 和游戏的总音量。◀ ▶ 调小或调大。	Shellbit とゲーム全体の音量です。◀ ▶ で小さく・大きく。
-Язык интерфейса	Interface language	界面语言	表示言語
-Описания игр берутся из файлов рядом с играми — в них можно написать текст на каждом языке (см. README). «Как в системе» — язык Windows.	Game descriptions come from files next to the games — you can write text for each language there (see the README). “System default” uses the Windows language.	游戏简介来自游戏旁边的文件，可以在其中为每种语言分别撰写（见 README）。“跟随系统”即使用 Windows 的语言。	ゲームの説明はゲームの隣にあるファイルから読み込まれ、言語ごとに書けます（README を参照）。「システムに合わせる」は Windows の言語を使います。
-Открыть папку ядер	Open cores folder	打开核心文件夹	コアフォルダを開く
-Сюда кладут файлы ядер (.dll):\n	Put core files (.dll) here:\n	核心文件（.dll）放在这里：\n	コアファイル（.dll）はここに置きます:\n
-Открыть папку BIOS	Open BIOS folder	打开 BIOS 文件夹	BIOS フォルダを開く
-Сюда кладут файлы BIOS:\n	Put BIOS files here:\n	BIOS 文件放在这里：\n	BIOS ファイルはここに置きます:\n
-Ядро %s — %s.	Core %s — %s.	核心 %s：%s。	コア %s — %s。
-найдено	found	已找到	あり
-не найдено	not found	未找到	なし
-найден	found	已找到	あり
-не найден	not found	未找到	なし
-Готово	Ready	就绪	準備完了
-Нет ядра	No core	缺少核心	コアなし
-Без BIOS	No BIOS	无 BIOS	BIOS なし
-этап 1	stage 1	第 1 阶段	ステージ 1
-Фронтенд для ретро-эмуляторов на Godot. Маскот — рак-отшельник Пип.	A retro emulator frontend made with Godot. Mascot: Pip the hermit crab.	基于 Godot 的复古模拟器前端。吉祥物是寄居蟹皮普。	Godot で作ったレトロエミュレーターのフロントエンド。マスコットはヤドカリのピップ。
-Движок	Engine	引擎	エンジン
-Сделано на Godot Engine.	Made with Godot Engine.	使用 Godot Engine 制作。	Godot Engine で作られています。
-Игр в библиотеке	Games in library	游戏库中的游戏	ライブラリのゲーム数
-Приставок с играми: %d.	Consoles with games: %d.	有游戏的主机：%d 台。	ゲームのある機種: %d。
-Папка с данными	Data folder	数据文件夹	データフォルダ
-Настройки, сохранения, обложки и ядра:\n	Settings, saves, covers and cores:\n	设置、存档、封面和核心：\n	設定・セーブ・カバー・コア:\n
-Экшен	Action	动作	アクション
-Спорт	Sports	体育	スポーツ
-Платформер	Platformer	平台跳跃	プラットフォーマー
-Ролевая игра	Role-playing	角色扮演	RPG
-Приключения	Adventure	冒险	アドベンチャー
-Гонки	Racing	竞速	レース
-Стратегия	Strategy	策略	ストラテジー
-Головоломка	Puzzle	益智	パズル
-Симулятор	Simulation	模拟	シミュレーション
-Файтинг	Fighting	格斗	格闘
-Шутер	Shooter	射击	シューティング
-Настольная игра	Board game	桌游	ボードゲーム
-Азартная игра	Gambling	博彩	ギャンブル
-Скролл-шутер	Shoot 'em up	清版射击	シューティング（STG）
-Beat 'em up	Beat 'em up	清版动作	ベルトスクロールアクション
-Сборник	Compilation	合集	オムニバス
-Охота и рыбалка	Hunting & fishing	狩猎与钓鱼	狩猟・釣り
-Викторина	Quiz	问答	クイズ
-Карточная игра	Card game	卡牌	カードゲーム
-Обучающая	Educational	教育	学習
-Маджонг	Mahjong	麻将	麻雀
-Пинбол	Pinball	弹珠台	ピンボール
-Музыкальная	Music	音乐	音楽
-Баскетбол	Basketball	篮球	バスケットボール
-Танцевальная	Dance	舞蹈	ダンス
-Футбол	Football	足球	サッカー
-Рестлинг	Wrestling	摔角	プロレス
-Тир	Light gun	光枪射击	ガンシューティング
-Бокс	Boxing	拳击	ボクシング
-Теннис	Tennis	网球	テニス
-Мини-игры	Mini-games	小游戏	ミニゲーム
-Разное	Misc	其他	その他
-Музыка и танцы	Music & dance	音乐与舞蹈	音楽・ダンス
-Спорт с животными	Animal sports	动物运动	動物スポーツ
-Казуальная	Casual	休闲	カジュアル
-1 игрок	1 player	1 名玩家	1人
-1–%d игрок|1–%d игрока|1–%d игроков	1–%d players|1–%d players	1–%d 名玩家	1～%d人
-США	USA	美国	アメリカ
-Европа	Europe	欧洲	ヨーロッパ
-Япония	Japan	日本	日本
-Весь мир	World	全球	全世界
-США и Европа	USA & Europe	美国和欧洲	アメリカ・ヨーロッパ
-США и Япония	USA & Japan	美国和日本	アメリカ・日本
-Россия	Russia	俄罗斯	ロシア
-Корея	Korea	韩国	韓国
-Франция	France	法国	フランス
-Германия	Germany	德国	ドイツ
-Испания	Spain	西班牙	スペイン
-Италия	Italy	意大利	イタリア
-Австралия	Australia	澳大利亚	オーストラリア
-Бразилия	Brazil	巴西	ブラジル
-Китай	China	中国	中国
-%s и %s	%s & %s	%s和%s	%s・%s
-все диски	all discs	全部光盘	全ディスク
-без пометок	no tags	无标记	タグなし
-проверенная	verified	已验证	検証済み
-перевод %s	%s translation	%s 翻译	%s 翻訳
-повреждённая	bad dump	损坏	破損
-с лишними данными	overdump	含多余数据	余分なデータあり
-альтернативная	alternate	替代版	別バージョン
-хак	hack	修改版	改造版
-с трейнером	with trainer	带修改器	トレーナー付き
-пиратская	pirate	盗版	海賊版
-исправленная	fixed	修正版	修正版
-копия файла	file copy	文件副本	ファイルのコピー
-диск %s	disc %s	光盘 %s	ディスク %s
-русский перевод	Russian translation	俄语翻译	ロシア語翻訳
-прототип	prototype	原型	プロトタイプ
-бета/демо	beta/demo	测试版/体验版	ベータ／体験版
-ревизия %s	revision %s	修订 %s	リビジョン %s
-0 игр	0 games	0 款游戏	ゲーム 0 本
-Название игры	Game title	游戏名称	ゲーム名
-Запуск: вчера	Played: yesterday	上次游玩：昨天	最終プレイ: 昨日
-Слот 1	Slot 1	存档位 1	スロット 1
-Название	Title	名称	タイトル
-Приставка	Console	主机	機種
-Год · Жанр · Игроки	Year · Genre · Players	年份 · 类型 · 玩家	年 · ジャンル · 人数
-Описание	Description	简介	説明
-▶  Играть	▶  Play	▶  开始游戏	▶  プレイ
-Другая версия	Other version	其他版本	別バージョン
-Обложка…	Cover…	封面…	カバー…
-Сохранения	Saves	存档	セーブ
-+ Папка с играми	+ Game folder	+ 游戏文件夹	+ ゲームフォルダ
-Продолжить играть	Continue playing	继续游戏	続きから遊ぶ
-Приставки	Consoles	主机	機種
-Время в игре: —	Play time: —	游戏时长：—	プレイ時間: —
-Версии	Versions	版本	バージョン
-Пауза	Paused	暂停	ポーズ
-Начать заново	Restart	重新开始	最初から
-Выйти в библиотеку	Exit to library	返回游戏库	ライブラリに戻る
-Не удалось запустить игру	Couldn't start the game	无法启动游戏	ゲームを起動できませんでした
-Причина	Reason	原因	原因
-Nintendo Entertainment System	Nintendo Entertainment System	任天堂红白机（NES）	ファミリーコンピュータ（NES）
-Super Nintendo	Super Nintendo	超级任天堂	スーパーファミコン
-Nintendo 64	Nintendo 64	任天堂 64	NINTENDO64
-Game Boy	Game Boy	Game Boy	ゲームボーイ
-Game Boy Color	Game Boy Color	Game Boy Color	ゲームボーイカラー
-Game Boy Advance	Game Boy Advance	Game Boy Advance	ゲームボーイアドバンス
-Sega Master System	Sega Master System	世嘉 Master System	セガ・マスターシステム
-Sega Mega Drive	Sega Mega Drive	世嘉 Mega Drive	メガドライブ
-Sega Game Gear	Sega Game Gear	世嘉 Game Gear	ゲームギア
-PC Engine	PC Engine	PC Engine	PCエンジン
-PlayStation	PlayStation	PlayStation	プレイステーション
-Atari 2600	Atari 2600	雅达利 2600	Atari 2600
-Аркадные автоматы	Arcade	街机	アーケード
-Пока здесь пусто.\nНажмите «+ Папка с играми» и выберите папку, где лежат ваши ROM-файлы.	Nothing here yet.\nPress “+ Game folder” and pick the folder with your ROM files.	这里还什么都没有。\n点击“+ 游戏文件夹”，选择存放 ROM 文件的文件夹。	まだ何もありません。\n「+ ゲームフォルダ」を押して、ROM ファイルのあるフォルダを選んでください。
-Скриншот	Screenshot	截图	スクリーンショット
-Скриншот сохранён: %s	Screenshot saved: %s	截图已保存：%s	スクリーンショットを保存しました: %s
-Не удалось сохранить скриншот	Couldn't save the screenshot	无法保存截图	スクリーンショットを保存できませんでした
-Папка скриншотов	Screenshots folder	截图文件夹	スクリーンショットフォルダ
-Скриншоты игр (F12 или Share на геймпаде):\n	Game screenshots (F12 or Share on the controller):\n	游戏截图（F12 或手柄上的 Share 键）：\n	ゲームのスクリーンショット（F12 またはコントローラーの Share）:\n
-Кнопка Share («Поделиться») есть на геймпадах Xbox Series и PlayStation 5. На других геймпадах — пункт «Скриншот» в меню паузы.	The Share button is on Xbox Series and PlayStation 5 controllers. On other controllers, use “Screenshot” in the pause menu.	Xbox Series 和 PlayStation 5 手柄上有 Share（分享）键。其他手柄请使用暂停菜单中的“截图”。	Share ボタンは Xbox Series と PlayStation 5 のコントローラーにあります。他のコントローラーではポーズメニューの「スクリーンショット」を使ってください。
-Читать полностью ▸	Read more ▸	阅读全文 ▸	続きを読む ▸
-Прокрутить	Scroll	滚动	スクロール
-Закрыть	Close	关闭	閉じる
-Поиск…	Search…	搜索…	検索…
-Поиск	Search	搜索	検索
-Сортировка: %s	Sort: %s	排序：%s	並び替え: %s
-Сортировка	Sort	排序	並び替え
-По названию	By title	按名称	タイトル順
-По приставке	By console	按主机	機種順
-Недавние	Recent	最近游玩	最近遊んだ順
-%d из %s	%d of %s	%d / %s	%d / %s
-Ничего не найдено	Nothing found	未找到结果	見つかりませんでした
-Ввести	Type	输入	入力
-Стереть	Delete	删除	削除
-Пробел	Space	空格	スペース
-Раскладка	Layout	键盘布局	配列
-Найти	Find	查找	検索
-Звуки интерфейса	Interface sounds	界面音效	インターフェース音
-Тихий щелчок при переходе между играми и «бульк» при запуске игры. Свои звуки можно положить в папку data/sounds (click.wav и launch.wav).	A soft click when moving between games and a “bloop” when a game starts. You can put your own sounds in data/sounds (click.wav and launch.wav).	在游戏之间移动时发出轻微的咔嗒声，启动游戏时发出“啵”的一声。可以把自己的音效放到 data/sounds 文件夹（click.wav 和 launch.wav）。	ゲーム間を移動するときの小さなクリック音と、ゲーム起動時の「ポコッ」という音。自分の音を data/sounds（click.wav と launch.wav）に置くこともできます。
-Кнопки приставок	Console buttons	主机按键	ゲーム機のボタン
-Своя раскладка для каждой приставки: какая кнопка вашего геймпада — это A, B или Start приставки. С рисунками геймпадов.	A separate button layout for each console: which button on your controller acts as the console's A, B or Start. With pictures of both controllers.	为每台主机单独设置按键：手柄上的哪个键对应主机的 A、B 或 Start。附有手柄示意图。	ゲーム機ごとのボタン配置：コントローラーのどのボタンがゲーム機の A・B・Start になるかを設定します。コントローラーの図付き。
-Геймпад %s	%s controller	%s 手柄	%s のコントローラー
-Ваш геймпад (%s)	Your controller (%s)	你的手柄（%s）	あなたのコントローラー（%s）
-Нажмите кнопку…	Press a button…	请按下按键…	ボタンを押してください…
-Раскладка кнопок	Button layout	按键布局	ボタン配置
-По надписям	By label	按标记	刻印どおり
-Своя	Custom	自定义	カスタム
-Вернуть обычную раскладку	Restore the standard layout	恢复默认布局	標準の配置に戻す
-Назначить	Assign	设置	割り当て
-Кнопка «%s» не назначена.	The “%s” button isn't assigned.	“%s”键未设置。	「%s」ボタンは割り当てられていません。
-Кнопка «%s» — это %s на вашем геймпаде.	The “%s” button is %s on your controller.	“%s”键对应你手柄上的 %s。	「%s」ボタンは、あなたのコントローラーの %s です。
-«Назначить» — и нажмите нужную кнопку на геймпаде. ◀ ▶ — выбрать из списка. Если кнопка уже занята, они поменяются местами.	“Assign”, then press the button you want on your controller. ◀ ▶ picks from a list. If that button is already taken, the two swap places.	选择“设置”，然后按下手柄上想用的按键。◀ ▶ 可从列表中选择。如果该键已被占用，两个键会互换。	「割り当て」を選んで、コントローラーの使いたいボタンを押します。◀ ▶ で一覧から選ぶこともできます。そのボタンが使用中なら、2つのボタンが入れ替わります。
-По положению — кнопки стоят там же, где на геймпаде приставки. По надписям — A на A, B на B.	By position: buttons sit where they are on the console's controller. By label: A on A, B on B.	按位置：按键与主机手柄上的位置相同。按标记：A 对 A，B 对 B。	位置どおり：ゲーム機のコントローラーと同じ位置。刻印どおり：A は A、B は B。
-Раскладка по положению кнопок — как была с самого начала.	The by-position layout, as it was from the start.	按位置的布局，即最初的设置。	最初からの「位置どおり」の配置です。
-Клавиатура: стрелки, Z X A S Q W, Enter — Start, Shift — Select.	Keyboard: arrows, Z X A S Q W, Enter is Start, Shift is Select.	键盘：方向键、Z X A S Q W，Enter 为 Start，Shift 为 Select。	キーボード：矢印キー、Z X A S Q W、Enter が Start、Shift が Select。
-Обычная раскладка для %s	Standard layout for %s	%s 已恢复默认布局	%s を標準の配置にしました
-Нажмите на геймпаде кнопку для «%s». Через 5 секунд или по Esc — отмена.	Press the controller button for “%s”. Cancels after 5 seconds or with Esc.	请按下用作“%s”的手柄按键。5 秒后或按 Esc 取消。	「%s」にするボタンをコントローラーで押してください。5秒たつか Esc でキャンセルします。
-меню	menu	菜单	メニュー
-C-кнопки у ядра Nintendo 64 — на правом стике. Стики Shellbit в игру пока не передаёт, поэтому C-кнопки не работают.	The Nintendo 64 core puts the C buttons on the right stick. Shellbit doesn't pass sticks to games yet, so the C buttons don't work.	Nintendo 64 核心把 C 键放在右摇杆上。Shellbit 目前还不会把摇杆传给游戏，所以 C 键无法使用。	Nintendo 64 のコアでは C ボタンは右スティックです。Shellbit はまだスティックをゲームに渡さないため、C ボタンは使えません。
-В аркадных автоматах кнопки у каждой игры свои: где-то нужна одна, где-то шесть.	In arcade games, every game uses its own buttons: some need one, some need six.	街机游戏的按键因游戏而异：有的只用一个，有的要用六个。	アーケードではゲームごとにボタンが違います。1つだけのものも、6つ使うものもあります。
-%s: кнопка %s на геймпаде, %s на клавиатуре.	%s: %s on the controller, %s on the keyboard.	%s：手柄上的 %s，键盘上的 %s。	%s：コントローラーの %s、キーボードの %s。
-1 минута	1 minute	1 分钟	1分
-10 секунд	10 seconds	10 秒	10秒
-20 секунд	20 seconds	20 秒	20秒
-30 секунд	30 seconds	30 秒	30秒
-Shellbit запоминает последние секунды игры. Пока держите кнопку перемотки, игра идёт назад — можно исправить ошибку. Чем длиннее запись, тем больше памяти она занимает (не больше %d МБ).	Shellbit remembers the last few seconds of play. While you hold the rewind button, the game runs backwards, so you can undo a mistake. A longer recording uses more memory (no more than %d MB).	Shellbit 会记住最近几秒的游戏过程。按住倒带键时游戏会倒退，可以挽回失误。记录越长，占用内存越多（最多 %d MB）。	Shellbit は直前の数秒間のプレイを記録します。巻き戻しボタンを押している間はゲームが逆再生され、ミスをやり直せます。記録が長いほどメモリを使います（最大 %d MB）。
-Во сколько раз быстрее идёт игра, пока включено ускорение. Удобно, чтобы проскочить долгие диалоги и прогулки. Звук при этом прерывистый.	How many times faster the game runs while fast-forward is on. Handy for skipping long dialogue and walking. The sound gets choppy.	快进时游戏加速的倍数。适合跳过冗长的对话和跑路。此时声音会断断续续。	早送り中にゲームが何倍速になるか。長い会話や移動を飛ばすのに便利です。音は途切れ途切れになります。
-Выключена	Off	关闭	オフ
-Держать	Hold	按住	押し続ける
-Игра	Gameplay	游戏	ゲームプレイ
-Игра ускоряется, пока кнопка зажата.	The game speeds up while the button is held.	按住按键时游戏加速。	ボタンを押している間だけ速くなります。
-Кнопка ускорения	Fast-forward button	快进键	早送りボタン
-Кнопки перемотки и ускорения	Rewind and fast-forward buttons	倒带和快进按键	巻き戻し・早送りボタン
-На геймпаде — LT (перемотка) и RT (ускорение), если приставке курки не нужны. На клавиатуре — Backspace и пробел. Поменять можно в «Кнопках приставок» для каждой приставки.	On the controller: LT (rewind) and RT (fast-forward), if the console doesn't need the triggers. On the keyboard: Backspace and Space. You can change them for each console in “Console buttons”.	手柄上：LT（倒带）和 RT（快进），前提是该主机不需要扳机键。键盘上：Backspace 和空格。可以在“主机按键”中为每台主机单独更改。	コントローラーでは LT（巻き戻し）と RT（早送り）。ただしゲーム機がトリガーを使わない場合です。キーボードでは Backspace とスペース。「ゲーム機のボタン」でゲーム機ごとに変更できます。
-Нажали — ускорение включилось, нажали ещё раз — выключилось.	Press once to turn fast-forward on, press again to turn it off.	按一次开启快进，再按一次关闭。	1回押すと早送りがオンに、もう一度押すとオフになります。
-Нажать один раз	Press once	按一次	1回押す
-Перемотка выключена — игра не тратит на неё память.	Rewind is off, so it uses no memory.	倒带已关闭，不占用内存。	巻き戻しはオフです。メモリを使いません。
-Перемотка назад	Rewind	倒带	巻き戻し
-Сейчас перемотка выключена.	Rewind is currently off.	倒带目前已关闭。	現在、巻き戻しはオフです。
-Скорость ускорения и длина перемотки — в Настройках, раздел «Игра».	Fast-forward speed and rewind length are in Settings → Gameplay.	快进速度和倒带时长在“设置 → 游戏”中。	早送りの速さと巻き戻しの長さは「設定 → ゲームプレイ」で変更できます。
-Ускорение	Fast-forward	快进	早送り
-Ускорение и перемотка назад во время игры.	Fast-forward and rewind during play.	游戏中的快进和倒带。	プレイ中の早送りと巻き戻し。
-не назначена	not assigned	未设置	未割り当て
-Игра начнётся с самого начала. Место выхода заменится новым, ручные слоты останутся.	The game will start from the very beginning. “Where you left off” will be replaced; manual slots stay.	游戏将从头开始。“上次退出处”会被替换，手动存档位保留。	ゲームを最初から始めます。「中断した場所」は上書きされますが、手動スロットは残ります。
-Новая игра	New game	新游戏	ニューゲーム
+Как в системе	System default	跟随系统	システムに合わせる	Systemsprache	Langue du système	Idioma del sistema	Idioma do sistema	시스템 언어
+%d игра|%d игры|%d игр	%d game|%d games	%d 款游戏	ゲーム %d 本	%d Spiel|%d Spiele	%d jeu|%d jeux	%d juego|%d juegos	%d jogo|%d jogos	게임 %d개
+меньше минуты	less than a minute	不到 1 分钟	1分未満	weniger als eine Minute	moins d'une minute	menos de un minuto	menos de um minuto	1분 미만
+%d мин	%d min	%d 分钟	%d分	%d Min.	%d min	%d min	%d min	%d분
+%d ч %d мин	%d h %d min	%d 小时 %d 分钟	%d時間%d分	%d Std. %d Min.	%d h %d min	%d h %d min	%d h %d min	%d시간 %d분
+ещё не запускалась	never played	尚未游玩	未プレイ	noch nie gespielt	jamais joué	nunca jugado	nunca jogado	플레이 기록 없음
+сегодня	today	今天	今日	heute	aujourd'hui	hoy	hoje	오늘
+вчера	yesterday	昨天	昨日	gestern	hier	ayer	ontem	어제
+%d дн. назад	%d days ago	%d 天前	%d日前	vor %d Tagen	il y a %d jours	hace %d días	há %d dias	%d일 전
+Игрок %d	Player %d	玩家 %d	プレイヤー %d	Spieler %d	Joueur %d	Jugador %d	Jogador %d	플레이어 %d
+Геймпад подключён	Controller connected	手柄已连接	コントローラーが接続されました	Controller verbunden	Manette connectée	Mando conectado	Controle conectado	컨트롤러 연결됨
+Геймпад	Controller	手柄	コントローラー	Controller	Manette	Mando	Controle	컨트롤러
+Геймпад отключён	Controller disconnected	手柄已断开	コントローラーが切断されました	Controller getrennt	Manette déconnectée	Mando desconectado	Controle desconectado	컨트롤러 연결 해제됨
+Выбрать свою обложку…	Choose your own cover…	选择自定义封面…	自分のカバーを選ぶ…	Eigenes Cover wählen…	Choisir sa propre jaquette…	Elegir portada propia…	Escolher capa própria…	직접 표지 고르기…
+Убрать свою обложку	Remove custom cover	移除自定义封面	自分のカバーを外す	Eigenes Cover entfernen	Retirer la jaquette perso	Quitar portada propia	Remover capa própria	직접 고른 표지 지우기
+Отмена	Cancel	取消	キャンセル	Abbrechen	Annuler	Cancelar	Cancelar	취소
+Картинка для обложки	Cover image	封面图片	カバー画像	Cover-Bild	Image de jaquette	Imagen de portada	Imagem da capa	표지 이미지
+Картинки	Images	图片	画像	Bilder	Images	Imágenes	Imagens	이미지
+Своя обложка убрана	Custom cover removed	已移除自定义封面	自分のカバーを外しました	Eigenes Cover entfernt	Jaquette perso retirée	Portada propia quitada	Capa própria removida	직접 고른 표지를 지웠습니다
+Обложка обновлена	Cover updated	封面已更新	カバーを更新しました	Cover aktualisiert	Jaquette mise à jour	Portada actualizada	Capa atualizada	표지를 바꿨습니다
+Не получилось открыть картинку	Couldn't open the image	无法打开图片	画像を開けませんでした	Bild konnte nicht geöffnet werden	Impossible d'ouvrir l'image	No se pudo abrir la imagen	Não foi possível abrir a imagem	이미지를 열 수 없습니다
+Запуск: %s · %s	Played: %s · %s	上次游玩：%s · %s	最終プレイ: %s · %s	Gespielt: %s · %s	Joué : %s · %s	Jugado: %s · %s	Jogado: %s · %s	플레이: %s · %s
+Место выхода	Where you left off	上次退出处	中断した場所	Letzte Stelle	Là où vous étiez	Donde lo dejaste	Onde você parou	마지막 위치
+Слот %s	Slot %s	存档位 %s	スロット %s	Slot %s	Emplacement %s	Ranura %s	Slot %s	슬롯 %s
+пусто	empty	空	空き	leer	vide	vacío	vazio	비어 있음
+сегодня, %s	today, %s	今天 %s	今日 %s	heute, %s	aujourd'hui, %s	hoy, %s	hoje, %s	오늘 %s
+вчера, %s	yesterday, %s	昨天 %s	昨日 %s	gestern, %s	hier, %s	ayer, %s	ontem, %s	어제 %s
+Выбрать	Select	选择	決定	Auswählen	Choisir	Elegir	Selecionar	선택
+Избранное	Favorite	收藏	お気に入り	Favorit	Favori	Favorito	Favorito	즐겨찾기
+Версия	Version	版本	バージョン	Version	Version	Versión	Versão	버전
+Обложка	Cover	封面	カバー	Cover	Jaquette	Portada	Capa	표지
+Назад	Back	返回	戻る	Zurück	Retour	Atrás	Voltar	뒤로
+Открыть	Open	打开	開く	Öffnen	Ouvrir	Abrir	Abrir	열기
+Обновить список	Refresh list	刷新列表	リストを更新	Liste aktualisieren	Actualiser la liste	Actualizar lista	Atualizar lista	목록 새로고침
+Настройки	Settings	设置	設定	Einstellungen	Paramètres	Ajustes	Configurações	설정
+Другая приставка	Other console	切换主机	他の機種	Andere Konsole	Autre console	Otra consola	Outro console	다른 게임기
+Загрузить	Load	读取	ロード	Laden	Charger	Cargar	Carregar	불러오기
+Сохранить сюда	Save here	存到这里	ここにセーブ	Hier speichern	Sauvegarder ici	Guardar aquí	Salvar aqui	여기에 저장
+В игру	Back to game	返回游戏	ゲームに戻る	Zurück zum Spiel	Retour au jeu	Volver al juego	Voltar ao jogo	게임으로 돌아가기
+Изменить	Change	更改	変更	Ändern	Modifier	Cambiar	Alterar	변경
+%s в игре	%s played	已游玩 %s	プレイ時間 %s	%s gespielt	%s de jeu	%s jugado	%s jogado	%s 플레이
+Версия: %s	Version: %s	版本：%s	バージョン: %s	Version: %s	Version : %s	Versión: %s	Versão: %s	버전: %s
+(всего %d)	(%d total)	（共 %d 个）	（全 %d 種）	(%d insgesamt)	(%d au total)	(%d en total)	(%d no total)	(총 %d개)
+★ В избранном	★ Favorited	★ 已收藏	★ お気に入り済み	★ Favorit	★ En favori	★ En favoritos	★ Nos favoritos	★ 즐겨찾기됨
+В избранное	Add to favorites	加入收藏	お気に入りに追加	Zu Favoriten	Ajouter aux favoris	Añadir a favoritos	Adicionar aos favoritos	즐겨찾기에 추가
+Продолжить	Continue	继续	続ける	Fortsetzen	Continuer	Continuar	Continuar	이어하기
+Играть	Play	开始游戏	プレイ	Spielen	Jouer	Jugar	Jogar	플레이
+Слот %s пуст — сохраниться можно в меню паузы	Slot %s is empty — you can save from the pause menu	存档位 %s 为空——可在暂停菜单中存档	スロット %s は空です — セーブはポーズメニューからできます	Slot %s ist leer — speichern kannst du im Pausenmenü	L'emplacement %s est vide — sauvegardez depuis le menu pause	La ranura %s está vacía: puedes guardar desde el menú de pausa	O slot %s está vazio — você pode salvar no menu de pausa	슬롯 %s이(가) 비어 있습니다. 일시정지 메뉴에서 저장할 수 있습니다
+Список игр обновлён: %s	Game list updated: %s	游戏列表已刷新：%s	ゲームリストを更新しました: %s	Spieleliste aktualisiert: %s	Liste des jeux mise à jour : %s	Lista de juegos actualizada: %s	Lista de jogos atualizada: %s	게임 목록을 새로고침했습니다: %s
+Найдено: %s	Found: %s	已找到：%s	見つかりました: %s	Gefunden: %s	Trouvé : %s	Encontrado: %s	Encontrado: %s	찾음: %s
+Неизвестная приставка	Unknown console	未知主机	不明な機種	Unbekannte Konsole	Console inconnue	Consola desconocida	Console desconhecido	알 수 없는 게임기
+Время в игре: %s	Play time: %s	游戏时长：%s	プレイ時間: %s	Spielzeit: %s	Temps de jeu : %s	Tiempo de juego: %s	Tempo de jogo: %s	플레이 시간: %s
+Последний запуск: %s	Last played: %s	上次游玩：%s	最終プレイ: %s	Zuletzt gespielt: %s	Dernière partie : %s	Última vez: %s	Última vez: %s	마지막 플레이: %s
+%d версия|%d версии|%d версий	%d version|%d versions	%d 个版本	バージョン %d 種	%d Version|%d Versionen	%d version|%d versions	%d versión|%d versiones	%d versão|%d versões	버전 %d개
+…и ещё %d	…and %d more	……还有 %d 个	…ほか %d 件	…und %d weitere	…et %d de plus	…y %d más	…e mais %d	…외 %d개
+У этой игры только одна версия	This game has only one version	此游戏只有一个版本	このゲームのバージョンは1つだけです	Dieses Spiel hat nur eine Version	Ce jeu n'a qu'une seule version	Este juego solo tiene una versión	Este jogo tem só uma versão	이 게임은 버전이 하나뿐입니다
+Не передана игра.	No game was passed.	未指定游戏。	ゲームが指定されていません。	Kein Spiel übergeben.	Aucun jeu transmis.	No se ha pasado ningún juego.	Nenhum jogo foi passado.	전달된 게임이 없습니다.
+C++-модуль shellbit_core не собран. Запустите native/build.bat и перезапустите Godot.	The C++ module shellbit_core is not built. Run native/build.bat and restart Godot.	C++ 模块 shellbit_core 尚未编译。请运行 native/build.bat 并重启 Godot。	C++ モジュール shellbit_core がビルドされていません。native/build.bat を実行して Godot を再起動してください。	Das C++-Modul shellbit_core ist nicht gebaut. Starte native/build.bat und dann Godot neu.	Le module C++ shellbit_core n'est pas compilé. Lancez native/build.bat puis redémarrez Godot.	El módulo C++ shellbit_core no está compilado. Ejecuta native/build.bat y reinicia Godot.	O módulo C++ shellbit_core não está compilado. Rode native/build.bat e reinicie o Godot.	C++ 모듈 shellbit_core가 빌드되지 않았습니다. native/build.bat를 실행하고 Godot를 다시 시작하세요.
+Нет ядра %s.\nСкачайте его и положите в папку ядер:\n%s	Core %s is missing.\nDownload it and put it in the cores folder:\n%s	缺少核心 %s。\n请下载并放入核心文件夹：\n%s	コア %s がありません。\nダウンロードしてコアフォルダに入れてください:\n%s	Core %s fehlt.\nLade ihn herunter und lege ihn in den Core-Ordner:\n%s	Le cœur %s est absent.\nTéléchargez-le et placez-le dans le dossier des cœurs :\n%s	Falta el núcleo %s.\nDescárgalo y ponlo en la carpeta de núcleos:\n%s	O núcleo %s não foi encontrado.\nBaixe-o e coloque na pasta de núcleos:\n%s	코어 %s이(가) 없습니다.\n내려받아 코어 폴더에 넣으세요:\n%s
+Ядро %s не загрузилось (подробности — во вкладке Output).	Core %s failed to load (see the Output tab for details).	核心 %s 加载失败（详情见 Output 选项卡）。	コア %s を読み込めませんでした（詳細は Output タブ）。	Core %s konnte nicht geladen werden (Details im Output-Tab).	Le cœur %s n'a pas pu se charger (détails dans l'onglet Output).	El núcleo %s no se pudo cargar (detalles en la pestaña Output).	O núcleo %s não carregou (detalhes na aba Output).	코어 %s을(를) 불러오지 못했습니다(자세한 내용은 Output 탭 참고).
+Ядро не смогло открыть файл игры:\n%s	The core couldn't open the game file:\n%s	核心无法打开游戏文件：\n%s	コアがゲームファイルを開けませんでした:\n%s	Der Core konnte die Spieldatei nicht öffnen:\n%s	Le cœur n'a pas pu ouvrir le fichier du jeu :\n%s	El núcleo no pudo abrir el archivo del juego:\n%s	O núcleo não conseguiu abrir o arquivo do jogo:\n%s	코어가 게임 파일을 열지 못했습니다:\n%s
+Esc — меню	Esc — menu	Esc — 菜单	Esc — メニュー	Esc — Menü	Échap — menu	Esc — menú	Esc — menu	Esc — 메뉴
+Правый стик — меню	Right stick — menu	按下右摇杆 — 菜单	右スティック押し込み — メニュー	Rechter Stick — Menü	Stick droit — menu	Stick derecho — menú	Analógico direito — menu	오른쪽 스틱 — 메뉴
+Продолжаем с места выхода	Resuming where you left off	从上次退出处继续	中断した場所から再開	Weiter an der letzten Stelle	Reprise là où vous étiez	Continuando donde lo dejaste	Continuando de onde você parou	마지막 위치부터 이어합니다
+Загружен слот %s	Loaded slot %s	已读取存档位 %s	スロット %s をロードしました	Slot %s geladen	Emplacement %s chargé	Ranura %s cargada	Slot %s carregado	슬롯 %s 불러옴
+Сохранено в слот %s	Saved to slot %s	已存到存档位 %s	スロット %s にセーブしました	In Slot %s gespeichert	Sauvegardé dans l'emplacement %s	Guardado en la ranura %s	Salvo no slot %s	슬롯 %s에 저장함
+Это ядро не умеет сохранять состояние	This core can't save states	此核心不支持即时存档	このコアはステートセーブに対応していません	Dieser Core kann keine Spielstände speichern	Ce cœur ne sait pas sauvegarder l'état	Este núcleo no puede guardar estados	Este núcleo não salva estados	이 코어는 상태 저장을 지원하지 않습니다
+Не удалось загрузить слот %s	Couldn't load slot %s	无法读取存档位 %s	スロット %s をロードできませんでした	Slot %s konnte nicht geladen werden	Impossible de charger l'emplacement %s	No se pudo cargar la ranura %s	Não foi possível carregar o slot %s	슬롯 %s을(를) 불러오지 못했습니다
+Папки с играми	Game folders	游戏文件夹	ゲームフォルダ	Spieleordner	Dossiers de jeux	Carpetas de juegos	Pastas de jogos	게임 폴더
+Где Shellbit ищет игры. Файлы на диске он не меняет.	Where Shellbit looks for games. It never changes files on disk.	Shellbit 在这些文件夹中查找游戏，不会修改磁盘上的文件。	Shellbit がゲームを探す場所です。ディスク上のファイルは変更しません。	Wo Shellbit nach Spielen sucht. Dateien auf der Festplatte werden nie verändert.	Où Shellbit cherche les jeux. Il ne modifie jamais les fichiers sur le disque.	Dónde busca Shellbit los juegos. Nunca cambia los archivos del disco.	Onde o Shellbit procura jogos. Ele nunca altera arquivos no disco.	Shellbit이 게임을 찾는 위치입니다. 디스크의 파일은 절대 바꾸지 않습니다.
+Управление	Controls	操作	操作	Steuerung	Commandes	Controles	Controles	조작
+Геймпады, клавиатура и кнопки меню.	Controllers, keyboard and menu buttons.	手柄、键盘和菜单按键。	コントローラー、キーボード、メニューボタン。	Controller, Tastatur und Menütasten.	Manettes, clavier et boutons de menu.	Mandos, teclado y botones de menú.	Controles, teclado e botões de menu.	컨트롤러, 키보드, 메뉴 버튼.
+Видео	Video	视频	映像	Video	Vidéo	Vídeo	Vídeo	화면
+Как выглядит картинка во время игры.	How the picture looks while playing.	游戏时的画面效果。	プレイ中の画面の見え方。	Wie das Bild beim Spielen aussieht.	L'aspect de l'image en jeu.	Cómo se ve la imagen al jugar.	Como a imagem fica durante o jogo.	게임 중 화면이 보이는 방식.
+Звук	Sound	声音	サウンド	Ton	Son	Sonido	Som	소리
+Громкость приложения и игр.	Volume of the app and games.	应用和游戏的音量。	アプリとゲームの音量。	Lautstärke der App und der Spiele.	Volume de l'application et des jeux.	Volumen de la aplicación y los juegos.	Volume do app e dos jogos.	앱과 게임의 음량.
+Язык	Language	语言 / Language	言語 / Language	Sprache / Language	Langue / Language	Idioma / Language	Idioma / Language	언어 / Language
+Язык интерфейса Shellbit.	Shellbit's interface language.	Shellbit 的界面语言。	Shellbit の表示言語。	Sprache der Shellbit-Oberfläche.	Langue de l'interface de Shellbit.	Idioma de la interfaz de Shellbit.	Idioma da interface do Shellbit.	Shellbit 화면 언어.
+Ядра и BIOS	Cores & BIOS	核心与 BIOS	コアと BIOS	Cores & BIOS	Cœurs et BIOS	Núcleos y BIOS	Núcleos e BIOS	코어 및 BIOS
+Ядро — это эмулятор одной приставки. Здесь видно, каких ядер не хватает.	A core is an emulator for one console. Here you can see which cores are missing.	核心就是某一台主机的模拟器。这里可以看到缺少哪些核心。	コアは1機種分のエミュレーターです。足りないコアがここで分かります。	Ein Core ist ein Emulator für eine Konsole. Hier siehst du, welche Cores fehlen.	Un cœur est l'émulateur d'une console. Ici, vous voyez quels cœurs manquent.	Un núcleo es el emulador de una consola. Aquí ves qué núcleos faltan.	Um núcleo é o emulador de um console. Aqui você vê quais núcleos faltam.	코어는 한 게임기를 위한 에뮬레이터입니다. 어떤 코어가 없는지 여기서 볼 수 있습니다.
+О программе	About	关于	このアプリについて	Über	À propos	Acerca de	Sobre	정보
+Версия и полезные папки.	Version and useful folders.	版本和常用文件夹。	バージョンと便利なフォルダ。	Version und nützliche Ordner.	Version et dossiers utiles.	Versión y carpetas útiles.	Versão e pastas úteis.	버전과 유용한 폴더.
++ Добавить папку…	+ Add folder…	+ 添加文件夹…	+ フォルダを追加…	+ Ordner hinzufügen…	+ Ajouter un dossier…	+ Añadir carpeta…	+ Adicionar pasta…	+ 폴더 추가…
+Выберите папку с играми. Shellbit найдёт игры и во вложенных папках.	Pick a folder with games. Shellbit will also find games in its subfolders.	选择存放游戏的文件夹。Shellbit 也会在子文件夹中查找游戏。	ゲームが入ったフォルダを選んでください。サブフォルダ内のゲームも見つけます。	Wähle einen Ordner mit Spielen. Shellbit findet auch Spiele in Unterordnern.	Choisissez un dossier de jeux. Shellbit trouvera aussi les jeux des sous-dossiers.	Elige una carpeta con juegos. Shellbit también encontrará juegos en sus subcarpetas.	Escolha uma pasta com jogos. O Shellbit também encontra jogos nas subpastas.	게임이 있는 폴더를 고르세요. 하위 폴더의 게임도 찾습니다.
+Обновить список игр	Refresh game list	刷新游戏列表	ゲームリストを更新	Spieleliste aktualisieren	Actualiser la liste des jeux	Actualizar lista de juegos	Atualizar lista de jogos	게임 목록 새로고침
+Заново просмотреть все папки — если вы добавили или удалили игры.	Scan all folders again — if you added or removed games.	重新扫描所有文件夹——在添加或删除游戏后使用。	すべてのフォルダを再スキャンします（ゲームを追加・削除したとき）。	Alle Ordner erneut durchsuchen — wenn du Spiele hinzugefügt oder entfernt hast.	Réanalyser tous les dossiers — si vous avez ajouté ou supprimé des jeux.	Volver a revisar todas las carpetas, por si añadiste o quitaste juegos.	Verificar todas as pastas de novo — se você adicionou ou removeu jogos.	게임을 추가하거나 지웠다면 모든 폴더를 다시 살펴봅니다.
+Папок пока нет	No folders yet	暂无文件夹	フォルダはまだありません	Noch keine Ordner	Aucun dossier pour l'instant	Aún no hay carpetas	Nenhuma pasta ainda	아직 폴더가 없습니다
+Добавьте папку, в которой лежат ваши игры.	Add a folder where your games are.	请添加存放游戏的文件夹。	ゲームが入っているフォルダを追加してください。	Füge einen Ordner mit deinen Spielen hinzu.	Ajoutez le dossier où se trouvent vos jeux.	Añade la carpeta donde están tus juegos.	Adicione a pasta onde estão seus jogos.	게임이 있는 폴더를 추가하세요.
+Убрать	Remove	移除	外す	Entfernen	Retirer	Quitar	Remover	제거
+A — убрать папку из списка. Сами игры на диске останутся.	A — remove the folder from the list. The games stay on disk.	A — 从列表中移除文件夹。游戏文件仍保留在磁盘上。	A — リストからフォルダを外します。ゲーム自体はディスクに残ります。	A — Ordner aus der Liste entfernen. Die Spiele bleiben auf der Festplatte.	A — retirer le dossier de la liste. Les jeux restent sur le disque.	A: quitar la carpeta de la lista. Los juegos siguen en el disco.	A — remover a pasta da lista. Os jogos continuam no disco.	A — 목록에서 폴더를 뺍니다. 게임 파일은 디스크에 그대로 남습니다.
+Нажмите ещё раз	Press again	再按一次	もう一度押す	Nochmal drücken	Appuyez encore	Pulsa otra vez	Pressione de novo	한 번 더 누르세요
+Папка убрана · %s	Folder removed · %s	已移除文件夹 · %s	フォルダを外しました · %s	Ordner entfernt · %s	Dossier retiré · %s	Carpeta quitada · %s	Pasta removida · %s	폴더를 뺐습니다 · %s
+Геймпад Xbox	Xbox controller	Xbox 手柄	Xbox コントローラー	Xbox-Controller	Manette Xbox	Mando de Xbox	Controle de Xbox	Xbox 컨트롤러
+Геймпад PlayStation	PlayStation controller	PlayStation 手柄	PlayStation コントローラー	PlayStation-Controller	Manette PlayStation	Mando de PlayStation	Controle de PlayStation	PlayStation 컨트롤러
+Клавиатура	Keyboard	键盘	キーボード	Tastatur	Clavier	Teclado	Teclado	키보드
+Сейчас управление	Current input	当前输入方式	現在の入力	Aktuelle Eingabe	Entrée actuelle	Entrada actual	Entrada atual	현재 입력
+Shellbit сам замечает, чем вы пользуетесь, и меняет значки в подсказках внизу.	Shellbit notices what you're using and switches the button icons in the hints below.	Shellbit 会自动识别你在使用什么，并切换下方提示中的按键图标。	Shellbit は使っている入力機器を自動で判別し、下のヒントのボタン表示を切り替えます。	Shellbit erkennt, was du benutzt, und passt die Tastensymbole in den Hinweisen unten an.	Shellbit détecte ce que vous utilisez et adapte les icônes de boutons en bas.	Shellbit detecta lo que usas y cambia los iconos de botones de abajo.	O Shellbit percebe o que você está usando e troca os ícones dos botões nas dicas abaixo.	Shellbit이 사용 중인 입력 장치를 알아채고 아래 안내의 버튼 아이콘을 바꿉니다.
+Игрок %d: %s	Player %d: %s	玩家 %d：%s	プレイヤー %d: %s	Spieler %d: %s	Joueur %d : %s	Jugador %d: %s	Jogador %d: %s	플레이어 %d: %s
+Подключённые геймпады	Connected controllers	已连接的手柄	接続中のコントローラー	Verbundene Controller	Manettes connectées	Mandos conectados	Controles conectados	연결된 컨트롤러
+нет	none	无	なし	keine	aucune	ninguno	nenhum	없음
+Подключите геймпад — он появится здесь.	Connect a controller — it will show up here.	连接手柄后会显示在这里。	コントローラーを接続するとここに表示されます。	Schließe einen Controller an — er erscheint hier.	Branchez une manette — elle apparaîtra ici.	Conecta un mando y aparecerá aquí.	Conecte um controle — ele vai aparecer aqui.	컨트롤러를 연결하면 여기에 표시됩니다.
+Меню паузы в игре	In-game pause menu	游戏内暂停菜单	ゲーム中のポーズメニュー	Pausenmenü im Spiel	Menu pause en jeu	Menú de pausa en el juego	Menu de pausa no jogo	게임 중 일시정지 메뉴
+Нажмите правый стик, Select и Start вместе или Esc на клавиатуре.	Press the right stick, Select + Start together, or Esc on the keyboard.	按下右摇杆、同时按 Select 和 Start，或按键盘上的 Esc。	右スティック押し込み、Select と Start の同時押し、またはキーボードの Esc。	Drücke den rechten Stick, Select + Start zusammen oder Esc auf der Tastatur.	Appuyez sur le stick droit, sur Select + Start ensemble ou sur Échap au clavier.	Pulsa el stick derecho, Select + Start a la vez o Esc en el teclado.	Pressione o analógico direito, Select + Start juntos ou Esc no teclado.	오른쪽 스틱을 누르거나, Select + Start를 함께 누르거나, 키보드의 Esc를 누르세요.
+Кнопки в игре	In-game buttons	游戏内按键	ゲーム内のボタン	Tasten im Spiel	Boutons en jeu	Botones en el juego	Botões no jogo	게임 버튼
+По положению	By position	按位置	位置で対応	Nach Position	Par position	Por posición	Por posição	위치대로
+Нижняя кнопка геймпада (A на Xbox) — это нижняя кнопка приставки (B на SNES). Полная таблица — в README.	The bottom face button (A on Xbox) is the console's bottom button (B on SNES). The full table is in the README.	手柄下方的按键（Xbox 的 A）对应主机下方的按键（SNES 的 B）。完整对照表见 README。	下のボタン（Xbox の A）は本体の下のボタン（SNES の B）に対応します。一覧は README にあります。	Die untere Aktionstaste (A bei Xbox) ist die untere Taste der Konsole (B beim SNES). Die ganze Tabelle steht in der README.	Le bouton du bas (A sur Xbox) est le bouton du bas de la console (B sur SNES). Le tableau complet est dans le README.	El botón inferior (A en Xbox) es el botón inferior de la consola (B en SNES). La tabla completa está en el README.	O botão de baixo (A no Xbox) é o botão de baixo do console (B no SNES). A tabela completa está no README.	아래쪽 버튼(Xbox의 A)이 게임기의 아래쪽 버튼(SNES의 B)입니다. 전체 표는 README에 있습니다.
+Переназначение кнопок	Button remapping	按键重新映射	ボタン割り当て	Tastenbelegung ändern	Réassigner les boutons	Reasignar botones	Remapear botões	버튼 재배치
+Скоро	Coming soon	即将推出	近日対応	Demnächst	Bientôt	Próximamente	Em breve	곧 지원
+Свою раскладку кнопок можно будет задать в следующих версиях.	Custom button layouts will come in a future version.	自定义按键布局将在后续版本中提供。	ボタン配置の変更は今後のバージョンで対応予定です。	Eigene Tastenbelegungen kommen in einer späteren Version.	Les dispositions personnalisées arriveront dans une prochaine version.	Las distribuciones personalizadas llegarán en una versión futura.	Layouts personalizados virão numa versão futura.	직접 버튼 배치는 다음 버전에서 지원합니다.
+Фильтр изображения	Image filter	画面滤镜	画面フィルター	Bildfilter	Filtre d'image	Filtro de imagen	Filtro de imagem	화면 필터
+Чёткие пиксели	Sharp pixels	清晰像素	くっきりピクセル	Scharfe Pixel	Pixels nets	Píxeles nítidos	Pixels nítidos	선명한 픽셀
+Каждый пиксель приставки — ровный квадрат. Так игры выглядят на современных экранах.	Every console pixel is a crisp square. This is how games look on modern screens.	每个像素都是清晰的方块，这就是游戏在现代屏幕上的样子。	1ピクセルがくっきりした正方形になります。現代の画面での見た目です。	Jedes Konsolenpixel ist ein klares Quadrat. So sehen Spiele auf modernen Bildschirmen aus.	Chaque pixel de la console est un carré net. C'est ainsi que les jeux s'affichent sur les écrans modernes.	Cada píxel de la consola es un cuadrado nítido. Así se ven los juegos en pantallas modernas.	Cada pixel do console é um quadrado nítido. É assim que os jogos aparecem em telas modernas.	게임기의 픽셀 하나하나가 또렷한 사각형입니다. 요즘 화면에서 게임이 보이는 모습입니다.
+Сглаживание	Smooth	平滑	なめらか	Geglättet	Lissé	Suavizado	Suavizado	부드럽게
+Сглаживает края пикселей. Картинка мягче, но немного размыта.	Smooths pixel edges. A softer picture, but a little blurry.	平滑像素边缘。画面更柔和，但略显模糊。	ピクセルの輪郭をなめらかにします。柔らかくなる反面、少しぼやけます。	Glättet Pixelkanten. Weicheres Bild, aber etwas unscharf.	Adoucit les bords des pixels. Image plus douce, mais un peu floue.	Suaviza los bordes de los píxeles. Imagen más suave, pero algo borrosa.	Suaviza as bordas dos pixels. Imagem mais suave, mas um pouco borrada.	픽셀 가장자리를 부드럽게 합니다. 화면이 부드럽지만 조금 흐려집니다.
+ЭЛТ-телевизор	CRT TV	CRT 电视	ブラウン管テレビ	Röhrenfernseher	Téléviseur CRT	Televisor CRT	TV de tubo	CRT TV
+Добавляет полосы развёртки и лёгкое скругление, как на старом телевизоре. Шейдер crt.gdshader.	Adds scanlines and a slight curve, like an old TV. Shader crt.gdshader.	添加扫描线和轻微弧度，像老式电视一样。着色器 crt.gdshader。	走査線とわずかな丸みを加え、昔のテレビのようにします。シェーダー crt.gdshader。	Fügt Scanlines und eine leichte Wölbung hinzu, wie bei einem alten Fernseher. Shader crt.gdshader.	Ajoute des lignes de balayage et une légère courbure, comme une vieille télé. Shader crt.gdshader.	Añade líneas de barrido y una ligera curvatura, como una tele antigua. Shader crt.gdshader.	Adiciona linhas de varredura e uma leve curvatura, como uma TV antiga. Shader crt.gdshader.	옛날 TV처럼 주사선과 살짝 둥근 화면을 더합니다. 셰이더 crt.gdshader.
+Сетка LCD	LCD grid	LCD 网格	液晶グリッド	LCD-Raster	Grille LCD	Rejilla LCD	Grade LCD	LCD 격자
+Тонкая сетка между пикселями, как на экране Game Boy. Хорошо подходит портативным приставкам. Шейдер lcd.gdshader.	A thin grid between pixels, like a Game Boy screen. Great for handhelds. Shader lcd.gdshader.	像 Game Boy 屏幕那样在像素之间加上细网格，很适合掌机。着色器 lcd.gdshader。	ゲームボーイの画面のように、ピクセルの間に細い格子を入れます。携帯機に最適です。シェーダー lcd.gdshader。	Ein feines Raster zwischen den Pixeln, wie beim Game-Boy-Bildschirm. Ideal für Handhelds. Shader lcd.gdshader.	Une fine grille entre les pixels, comme l'écran d'une Game Boy. Idéal pour les portables. Shader lcd.gdshader.	Una fina rejilla entre píxeles, como la pantalla de Game Boy. Ideal para portátiles. Shader lcd.gdshader.	Uma grade fina entre os pixels, como a tela do Game Boy. Ótima para portáteis. Shader lcd.gdshader.	게임보이 화면처럼 픽셀 사이에 얇은 격자가 생깁니다. 휴대용 게임기에 잘 어울립니다. 셰이더 lcd.gdshader.
+Масштаб	Scale	缩放	拡大方法	Skalierung	Échelle	Escala	Escala	크기
+Во весь экран	Fill screen	填满屏幕	画面いっぱい	Bildschirm füllen	Plein écran	Llenar pantalla	Preencher a tela	화면 채우기
+Картинка занимает всю высоту экрана. Пиксели могут получиться чуть разного размера.	The picture fills the screen height. Pixels may end up slightly different sizes.	画面占满屏幕高度，像素大小可能略有不同。	画面の高さいっぱいに表示します。ピクセルの大きさが少し不揃いになることがあります。	Das Bild füllt die Bildschirmhöhe. Pixel können leicht unterschiedlich groß werden.	L'image occupe toute la hauteur de l'écran. Les pixels peuvent être de tailles légèrement différentes.	La imagen ocupa toda la altura de la pantalla. Los píxeles pueden quedar de tamaños algo distintos.	A imagem ocupa toda a altura da tela. Os pixels podem ficar com tamanhos levemente diferentes.	화면 높이를 꽉 채웁니다. 픽셀 크기가 조금씩 다를 수 있습니다.
+Целые пиксели	Integer scaling	整数倍缩放	整数倍	Ganzzahlige Skalierung	Mise à l'échelle entière	Escalado entero	Escala inteira	정수 배율
+Каждый пиксель увеличен ровно в 2, 3, 4… раза — все одинаковые и ровные. Картинка может быть чуть меньше экрана.	Each pixel is scaled exactly 2×, 3×, 4×… — all the same size. The picture may be a little smaller than the screen.	每个像素都按整数倍（2、3、4……）放大，大小完全一致。画面可能比屏幕略小。	各ピクセルをちょうど2倍、3倍、4倍…に拡大し、すべて同じ大きさになります。画面より少し小さくなることがあります。	Jedes Pixel wird genau 2×, 3×, 4×… vergrößert — alle gleich groß. Das Bild kann etwas kleiner als der Bildschirm sein.	Chaque pixel est agrandi exactement 2×, 3×, 4×… — tous de la même taille. L'image peut être un peu plus petite que l'écran.	Cada píxel se amplía exactamente 2×, 3×, 4×…: todos del mismo tamaño. La imagen puede quedar algo más pequeña que la pantalla.	Cada pixel é ampliado exatamente 2×, 3×, 4×… — todos do mesmo tamanho. A imagem pode ficar um pouco menor que a tela.	각 픽셀을 정확히 2배, 3배, 4배…로 키워 모두 같은 크기가 됩니다. 화면보다 조금 작아질 수 있습니다.
+Пропорции	Aspect ratio	画面比例	縦横比	Seitenverhältnis	Format d'image	Relación de aspecto	Proporção	화면 비율
+Как у приставки	Console's own	与主机一致	本体どおり	Wie die Konsole	Celui de la console	El de la consola	O do console	게임기 원래 비율
+Пропорции, которые сообщает эмулятор, — как картинка выглядела на телевизоре (обычно 4:3).	The ratio the emulator reports — how the picture looked on a TV (usually 4:3).	模拟器报告的比例，即画面在电视上的样子（通常为 4:3）。	エミュレーターが報告する比率で、テレビでの見た目と同じです（通常 4:3）。	Das Verhältnis, das der Emulator meldet — so sah das Bild auf dem Fernseher aus (meist 4:3).	Le format indiqué par l'émulateur — l'image telle qu'elle était sur une télé (souvent 4:3).	La relación que indica el emulador: cómo se veía en la tele (normalmente 4:3).	A proporção informada pelo emulador — como a imagem era na TV (geralmente 4:3).	에뮬레이터가 알려 주는 비율로, TV에서 보이던 모습입니다(보통 4:3).
+Квадратные пиксели	Square pixels	方形像素	正方形ピクセル	Quadratische Pixel	Pixels carrés	Píxeles cuadrados	Pixels quadrados	정사각형 픽셀
+Каждый пиксель квадратный. Картинка может стать чуть уже или шире, чем на телевизоре.	Every pixel is square. The picture may be slightly narrower or wider than on a TV.	每个像素都是正方形。画面可能比电视上略窄或略宽。	すべてのピクセルが正方形になります。テレビより少し細く、または広くなることがあります。	Jedes Pixel ist quadratisch. Das Bild kann etwas schmaler oder breiter sein als auf dem Fernseher.	Chaque pixel est carré. L'image peut être un peu plus étroite ou plus large qu'à la télé.	Cada píxel es cuadrado. La imagen puede quedar algo más estrecha o ancha que en la tele.	Cada pixel é quadrado. A imagem pode ficar um pouco mais estreita ou larga do que na TV.	모든 픽셀이 정사각형입니다. TV보다 조금 좁거나 넓어 보일 수 있습니다.
+Растянуть на экран	Stretch to screen	拉伸至全屏	画面に引き伸ばす	Auf Bildschirm strecken	Étirer à l'écran	Estirar a la pantalla	Esticar na tela	화면에 늘이기
+Картинка растягивается на весь экран. Без полей, но фигуры становятся шире.	The picture is stretched across the whole screen. No borders, but shapes get wider.	画面拉伸铺满整个屏幕。没有黑边，但图形会变宽。	画面全体に引き伸ばします。余白はなくなりますが、形が横に広がります。	Das Bild wird über den ganzen Bildschirm gestreckt. Keine Ränder, aber Formen werden breiter.	L'image est étirée sur tout l'écran. Pas de bandes, mais les formes s'élargissent.	La imagen se estira por toda la pantalla. Sin bordes, pero las formas se ensanchan.	A imagem é esticada na tela toda. Sem bordas, mas as formas ficam mais largas.	화면 전체로 늘립니다. 여백은 없지만 모양이 넓어집니다.
+Поля по бокам	Side borders	两侧边框	左右の余白	Seitenränder	Bandes latérales	Bordes laterales	Bordas laterais	양옆 여백
+Чёрные	Black	黑色	黒	Schwarz	Noires	Negros	Pretas	검은색
+Пустое место по бокам от картинки — чёрное.	The empty space beside the picture is black.	画面两侧的空白为黑色。	画面の左右の空きは黒になります。	Der freie Platz neben dem Bild ist schwarz.	L'espace vide à côté de l'image est noir.	El espacio vacío junto a la imagen es negro.	O espaço vazio ao lado da imagem fica preto.	화면 옆 빈 공간이 검은색입니다.
+Размытый кадр	Blurred frame	模糊画面	ぼかした画面	Verschwommenes Bild	Image floutée	Imagen difuminada	Imagem desfocada	흐린 화면
+По бокам — та же игра, но сильно размытая и затемнённая. Шейдер blur.gdshader.	The sides show the same game, heavily blurred and darkened. Shader blur.gdshader.	两侧显示同一游戏画面，经过强烈模糊和压暗。着色器 blur.gdshader。	左右に同じゲーム画面を、強くぼかして暗くして表示します。シェーダー blur.gdshader。	An den Seiten läuft dasselbe Spiel, stark verschwommen und abgedunkelt. Shader blur.gdshader.	Les côtés affichent le même jeu, très flouté et assombri. Shader blur.gdshader.	A los lados se ve el mismo juego, muy difuminado y oscurecido. Shader blur.gdshader.	Nas laterais aparece o mesmo jogo, bem desfocado e escurecido. Shader blur.gdshader.	양옆에 같은 게임 화면을 많이 흐리고 어둡게 보여 줍니다. 셰이더 blur.gdshader.
+Вертикальная синхронизация	V-Sync	垂直同步	垂直同期	V-Sync	Synchro verticale	Sincronización vertical	V-Sync	수직 동기화
+Кадры выводятся в такт монитору — картинка не «рвётся» при движении. Выключайте, только если игра идёт рывками.	Frames are shown in step with the monitor, so the picture doesn't tear in motion. Turn it off only if the game stutters.	让画面与显示器同步刷新，运动时不会撕裂。只有在游戏卡顿时才关闭。	モニターに合わせてフレームを表示し、動く場面で画面が裂けないようにします。ゲームがカクつくときだけオフにしてください。	Bilder werden im Takt des Monitors ausgegeben, damit das Bild bei Bewegung nicht zerreißt. Nur ausschalten, wenn das Spiel ruckelt.	Les images suivent le rythme de l'écran : pas de déchirure en mouvement. Désactivez-la seulement si le jeu saccade.	Los fotogramas van al ritmo del monitor y la imagen no se rompe en movimiento. Desactívala solo si el juego va a tirones.	Os quadros seguem o ritmo do monitor, e a imagem não rasga em movimento. Desligue só se o jogo travar.	모니터 주기에 맞춰 화면을 내보내 움직일 때 찢어지지 않습니다. 게임이 끊길 때만 끄세요.
+Без звука	Muted	静音	ミュート	Stumm	Muet	Silencio	Mudo	음소거
+Громкость	Volume	音量	音量	Lautstärke	Volume	Volumen	Volume	음량
+Общая громкость Shellbit и игр. ◀ ▶ — тише или громче.	Overall volume of Shellbit and games. ◀ ▶ — quieter or louder.	Shellbit 和游戏的总音量。◀ ▶ 调小或调大。	Shellbit とゲーム全体の音量です。◀ ▶ で小さく・大きく。	Gesamtlautstärke von Shellbit und den Spielen. ◀ ▶ — leiser oder lauter.	Volume général de Shellbit et des jeux. ◀ ▶ — moins ou plus fort.	Volumen general de Shellbit y los juegos. ◀ ▶: más bajo o más alto.	Volume geral do Shellbit e dos jogos. ◀ ▶ — mais baixo ou mais alto.	Shellbit과 게임의 전체 음량. ◀ ▶ — 작게 또는 크게.
+Язык интерфейса	Interface language	界面语言	表示言語	Sprache der Oberfläche	Langue de l'interface	Idioma de la interfaz	Idioma da interface	화면 언어
+Описания игр берутся из файлов рядом с играми — в них можно написать текст на каждом языке (см. README). «Как в системе» — язык Windows.	Game descriptions come from files next to the games — you can write text for each language there (see the README). “System default” uses the Windows language.	游戏简介来自游戏旁边的文件，可以在其中为每种语言分别撰写（见 README）。“跟随系统”即使用 Windows 的语言。	ゲームの説明はゲームの隣にあるファイルから読み込まれ、言語ごとに書けます（README を参照）。「システムに合わせる」は Windows の言語を使います。	Spielbeschreibungen stammen aus Dateien neben den Spielen — dort kannst du Text für jede Sprache schreiben (siehe README). „Systemsprache“ nutzt die Windows-Sprache.	Les descriptions des jeux viennent de fichiers placés à côté des jeux — vous pouvez y écrire un texte pour chaque langue (voir le README). « Langue du système » utilise la langue de Windows.	Las descripciones de los juegos salen de archivos junto a los juegos; ahí puedes escribir texto para cada idioma (mira el README). «Idioma del sistema» usa el idioma de Windows.	As descrições dos jogos vêm de arquivos ao lado dos jogos — lá você pode escrever um texto para cada idioma (veja o README). “Idioma do sistema” usa o idioma do Windows.	게임 설명은 게임 옆에 있는 파일에서 가져옵니다. 거기에 언어별로 글을 쓸 수 있습니다(README 참고). '시스템 언어'는 Windows 언어를 따릅니다.
+Открыть папку ядер	Open cores folder	打开核心文件夹	コアフォルダを開く	Core-Ordner öffnen	Ouvrir le dossier des cœurs	Abrir carpeta de núcleos	Abrir pasta de núcleos	코어 폴더 열기
+Сюда кладут файлы ядер (.dll):\n	Put core files (.dll) here:\n	核心文件（.dll）放在这里：\n	コアファイル（.dll）はここに置きます:\n	Hier liegen die Core-Dateien (.dll):\n	Placez ici les fichiers des cœurs (.dll) :\n	Pon aquí los archivos de núcleos (.dll):\n	Coloque aqui os arquivos de núcleo (.dll):\n	코어 파일(.dll)을 여기에 넣으세요:\n
+Открыть папку BIOS	Open BIOS folder	打开 BIOS 文件夹	BIOS フォルダを開く	BIOS-Ordner öffnen	Ouvrir le dossier BIOS	Abrir carpeta de BIOS	Abrir pasta de BIOS	BIOS 폴더 열기
+Сюда кладут файлы BIOS:\n	Put BIOS files here:\n	BIOS 文件放在这里：\n	BIOS ファイルはここに置きます:\n	Hier liegen die BIOS-Dateien:\n	Placez ici les fichiers BIOS :\n	Pon aquí los archivos de BIOS:\n	Coloque aqui os arquivos de BIOS:\n	BIOS 파일을 여기에 넣으세요:\n
+Ядро %s — %s.	Core %s — %s.	核心 %s：%s。	コア %s — %s。	Core %s — %s.	Cœur %s — %s.	Núcleo %s: %s.	Núcleo %s — %s.	코어 %s — %s.
+найдено	found	已找到	あり	gefunden	trouvé	encontrado	encontrado	있음
+не найдено	not found	未找到	なし	nicht gefunden	introuvable	no encontrado	não encontrado	없음
+найден	found	已找到	あり	gefunden	trouvé	encontrado	encontrado	있음
+не найден	not found	未找到	なし	nicht gefunden	introuvable	no encontrado	não encontrado	없음
+Готово	Ready	就绪	準備完了	Bereit	Prêt	Listo	Pronto	준비됨
+Нет ядра	No core	缺少核心	コアなし	Kein Core	Pas de cœur	Sin núcleo	Sem núcleo	코어 없음
+Без BIOS	No BIOS	无 BIOS	BIOS なし	Ohne BIOS	Sans BIOS	Sin BIOS	Sem BIOS	BIOS 없음
+этап 1	stage 1	第 1 阶段	ステージ 1	Stufe 1	étape 1	etapa 1	etapa 1	1단계
+Фронтенд для ретро-эмуляторов на Godot. Маскот — рак-отшельник Пип.	A retro emulator frontend made with Godot. Mascot: Pip the hermit crab.	基于 Godot 的复古模拟器前端。吉祥物是寄居蟹皮普。	Godot で作ったレトロエミュレーターのフロントエンド。マスコットはヤドカリのピップ。	Ein Frontend für Retro-Emulatoren, gebaut mit Godot. Maskottchen: Einsiedlerkrebs Pip.	Une interface pour émulateurs rétro, faite avec Godot. Mascotte : Pip le bernard-l'ermite.	Un frontend para emuladores retro hecho con Godot. Mascota: Pip, el cangrejo ermitaño.	Um frontend para emuladores retrô feito com Godot. Mascote: Pip, o caranguejo-eremita.	Godot로 만든 레트로 에뮬레이터 프런트엔드. 마스코트: 소라게 핍.
+Движок	Engine	引擎	エンジン	Engine	Moteur	Motor	Motor	엔진
+Сделано на Godot Engine.	Made with Godot Engine.	使用 Godot Engine 制作。	Godot Engine で作られています。	Gebaut mit der Godot Engine.	Fait avec Godot Engine.	Hecho con Godot Engine.	Feito com Godot Engine.	Godot Engine으로 만들었습니다.
+Игр в библиотеке	Games in library	游戏库中的游戏	ライブラリのゲーム数	Spiele in der Bibliothek	Jeux dans la bibliothèque	Juegos en la biblioteca	Jogos na biblioteca	라이브러리의 게임
+Приставок с играми: %d.	Consoles with games: %d.	有游戏的主机：%d 台。	ゲームのある機種: %d。	Konsolen mit Spielen: %d.	Consoles avec des jeux : %d.	Consolas con juegos: %d.	Consoles com jogos: %d.	게임이 있는 게임기: %d대.
+Папка с данными	Data folder	数据文件夹	データフォルダ	Datenordner	Dossier des données	Carpeta de datos	Pasta de dados	데이터 폴더
+Настройки, сохранения, обложки и ядра:\n	Settings, saves, covers and cores:\n	设置、存档、封面和核心：\n	設定・セーブ・カバー・コア:\n	Einstellungen, Spielstände, Cover und Cores:\n	Paramètres, sauvegardes, jaquettes et cœurs :\n	Ajustes, partidas guardadas, portadas y núcleos:\n	Configurações, saves, capas e núcleos:\n	설정, 저장 파일, 표지, 코어:\n
+Экшен	Action	动作	アクション	Action	Action	Acción	Ação	액션
+Спорт	Sports	体育	スポーツ	Sport	Sport	Deportes	Esportes	스포츠
+Платформер	Platformer	平台跳跃	プラットフォーマー	Jump 'n' Run	Plates-formes	Plataformas	Plataforma	플랫포머
+Ролевая игра	Role-playing	角色扮演	RPG	Rollenspiel	Jeu de rôle	Rol	RPG	롤플레잉
+Приключения	Adventure	冒险	アドベンチャー	Adventure	Aventure	Aventura	Aventura	어드벤처
+Гонки	Racing	竞速	レース	Rennspiel	Course	Carreras	Corrida	레이싱
+Стратегия	Strategy	策略	ストラテジー	Strategie	Stratégie	Estrategia	Estratégia	전략
+Головоломка	Puzzle	益智	パズル	Puzzle	Réflexion	Puzle	Quebra-cabeça	퍼즐
+Симулятор	Simulation	模拟	シミュレーション	Simulation	Simulation	Simulación	Simulação	시뮬레이션
+Файтинг	Fighting	格斗	格闘	Kampfspiel	Combat	Lucha	Luta	대전 격투
+Шутер	Shooter	射击	シューティング	Shooter	Tir	Disparos	Tiro	슈팅
+Настольная игра	Board game	桌游	ボードゲーム	Brettspiel	Jeu de plateau	Juego de mesa	Jogo de tabuleiro	보드게임
+Азартная игра	Gambling	博彩	ギャンブル	Glücksspiel	Jeux d'argent	Apuestas	Apostas	도박
+Скролл-шутер	Shoot 'em up	清版射击	シューティング（STG）	Shoot 'em up	Shoot 'em up	Matamarcianos	Shoot 'em up	슈팅(슛뎀업)
+Beat 'em up	Beat 'em up	清版动作	ベルトスクロールアクション	Beat 'em up	Beat 'em all	Yo contra el barrio	Beat 'em up	벨트스크롤 액션
+Сборник	Compilation	合集	オムニバス	Sammlung	Compilation	Recopilación	Coletânea	모음집
+Охота и рыбалка	Hunting & fishing	狩猎与钓鱼	狩猟・釣り	Jagen & Angeln	Chasse et pêche	Caza y pesca	Caça e pesca	사냥·낚시
+Викторина	Quiz	问答	クイズ	Quiz	Quiz	Preguntas	Quiz	퀴즈
+Карточная игра	Card game	卡牌	カードゲーム	Kartenspiel	Jeu de cartes	Cartas	Cartas	카드 게임
+Обучающая	Educational	教育	学習	Lernspiel	Éducatif	Educativo	Educativo	교육
+Маджонг	Mahjong	麻将	麻雀	Mahjong	Mahjong	Mahjong	Mahjong	마작
+Пинбол	Pinball	弹珠台	ピンボール	Flipper	Flipper	Pinball	Pinball	핀볼
+Музыкальная	Music	音乐	音楽	Musik	Musique	Música	Música	음악
+Баскетбол	Basketball	篮球	バスケットボール	Basketball	Basket-ball	Baloncesto	Basquete	농구
+Танцевальная	Dance	舞蹈	ダンス	Tanz	Danse	Baile	Dança	댄스
+Футбол	Football	足球	サッカー	Fußball	Football	Fútbol	Futebol	축구
+Рестлинг	Wrestling	摔角	プロレス	Wrestling	Catch	Lucha libre	Luta livre	레슬링
+Тир	Light gun	光枪射击	ガンシューティング	Lightgun	Pistolet optique	Pistola de luz	Pistola de luz	광선총
+Бокс	Boxing	拳击	ボクシング	Boxen	Boxe	Boxeo	Boxe	복싱
+Теннис	Tennis	网球	テニス	Tennis	Tennis	Tenis	Tênis	테니스
+Мини-игры	Mini-games	小游戏	ミニゲーム	Minispiele	Mini-jeux	Minijuegos	Minigames	미니게임
+Разное	Misc	其他	その他	Verschiedenes	Divers	Varios	Diversos	기타
+Музыка и танцы	Music & dance	音乐与舞蹈	音楽・ダンス	Musik & Tanz	Musique et danse	Música y baile	Música e dança	음악·댄스
+Спорт с животными	Animal sports	动物运动	動物スポーツ	Tiersport	Sports animaliers	Deportes con animales	Esportes com animais	동물 스포츠
+Казуальная	Casual	休闲	カジュアル	Gelegenheitsspiel	Casual	Casual	Casual	캐주얼
+1 игрок	1 player	1 名玩家	1人	1 Spieler	1 joueur	1 jugador	1 jogador	1인
+1–%d игрок|1–%d игрока|1–%d игроков	1–%d players|1–%d players	1–%d 名玩家	1～%d人	1–%d Spieler|1–%d Spieler	1 à %d joueurs|1 à %d joueurs	1–%d jugadores|1–%d jugadores	1–%d jogadores|1–%d jogadores	1~%d인
+США	USA	美国	アメリカ	USA	États-Unis	EE. UU.	EUA	미국
+Европа	Europe	欧洲	ヨーロッパ	Europa	Europe	Europa	Europa	유럽
+Япония	Japan	日本	日本	Japan	Japon	Japón	Japão	일본
+Весь мир	World	全球	全世界	Welt	Monde	Mundial	Mundial	전 세계
+США и Европа	USA & Europe	美国和欧洲	アメリカ・ヨーロッパ	USA & Europa	États-Unis et Europe	EE. UU. y Europa	EUA e Europa	미국·유럽
+США и Япония	USA & Japan	美国和日本	アメリカ・日本	USA & Japan	États-Unis et Japon	EE. UU. y Japón	EUA e Japão	미국·일본
+Россия	Russia	俄罗斯	ロシア	Russland	Russie	Rusia	Rússia	러시아
+Корея	Korea	韩国	韓国	Korea	Corée	Corea	Coreia	한국
+Франция	France	法国	フランス	Frankreich	France	Francia	França	프랑스
+Германия	Germany	德国	ドイツ	Deutschland	Allemagne	Alemania	Alemanha	독일
+Испания	Spain	西班牙	スペイン	Spanien	Espagne	España	Espanha	스페인
+Италия	Italy	意大利	イタリア	Italien	Italie	Italia	Itália	이탈리아
+Австралия	Australia	澳大利亚	オーストラリア	Australien	Australie	Australia	Austrália	호주
+Бразилия	Brazil	巴西	ブラジル	Brasilien	Brésil	Brasil	Brasil	브라질
+Китай	China	中国	中国	China	Chine	China	China	중국
+%s и %s	%s & %s	%s和%s	%s・%s	%s & %s	%s et %s	%s y %s	%s e %s	%s·%s
+все диски	all discs	全部光盘	全ディスク	alle Discs	tous les disques	todos los discos	todos os discos	모든 디스크
+без пометок	no tags	无标记	タグなし	ohne Merkmale	sans étiquette	sin etiquetas	sem marcações	표시 없음
+проверенная	verified	已验证	検証済み	geprüft	vérifié	verificado	verificado	검증됨
+перевод %s	%s translation	%s 翻译	%s 翻訳	Übersetzung %s	traduction %s	traducción %s	tradução %s	%s 번역
+повреждённая	bad dump	损坏	破損	fehlerhafter Dump	dump défectueux	volcado defectuoso	dump com erro	손상된 덤프
+с лишними данными	overdump	含多余数据	余分なデータあり	Overdump	surdump	volcado sobredimensionado	overdump	오버덤프
+альтернативная	alternate	替代版	別バージョン	Alternative	alternative	alternativa	alternativa	대체판
+хак	hack	修改版	改造版	Hack	hack	hack	hack	해킹판
+с трейнером	with trainer	带修改器	トレーナー付き	mit Trainer	avec trainer	con trainer	com trainer	트레이너 포함
+пиратская	pirate	盗版	海賊版	Raubkopie	pirate	pirata	pirata	해적판
+исправленная	fixed	修正版	修正版	korrigiert	corrigé	corregido	corrigido	수정판
+копия файла	file copy	文件副本	ファイルのコピー	Dateikopie	copie du fichier	copia del archivo	cópia do arquivo	파일 사본
+диск %s	disc %s	光盘 %s	ディスク %s	Disc %s	disque %s	disco %s	disco %s	디스크 %s
+русский перевод	Russian translation	俄语翻译	ロシア語翻訳	russische Übersetzung	traduction russe	traducción al ruso	tradução em russo	러시아어 번역
+прототип	prototype	原型	プロトタイプ	Prototyp	prototype	prototipo	protótipo	프로토타입
+бета/демо	beta/demo	测试版/体验版	ベータ／体験版	Beta/Demo	bêta/démo	beta/demo	beta/demo	베타/데모
+ревизия %s	revision %s	修订 %s	リビジョン %s	Revision %s	révision %s	revisión %s	revisão %s	리비전 %s
+0 игр	0 games	0 款游戏	ゲーム 0 本	0 Spiele	0 jeu	0 juegos	0 jogo	게임 0개
+Название игры	Game title	游戏名称	ゲーム名	Spieltitel	Titre du jeu	Título del juego	Título do jogo	게임 제목
+Запуск: вчера	Played: yesterday	上次游玩：昨天	最終プレイ: 昨日	Gespielt: gestern	Joué : hier	Jugado: ayer	Jogado: ontem	플레이: 어제
+Слот 1	Slot 1	存档位 1	スロット 1	Slot 1	Emplacement 1	Ranura 1	Slot 1	슬롯 1
+Название	Title	名称	タイトル	Titel	Titre	Título	Título	제목
+Приставка	Console	主机	機種	Konsole	Console	Consola	Console	게임기
+Год · Жанр · Игроки	Year · Genre · Players	年份 · 类型 · 玩家	年 · ジャンル · 人数	Jahr · Genre · Spieler	Année · Genre · Joueurs	Año · Género · Jugadores	Ano · Gênero · Jogadores	연도 · 장르 · 인원
+Описание	Description	简介	説明	Beschreibung	Description	Descripción	Descrição	설명
+▶  Играть	▶  Play	▶  开始游戏	▶  プレイ	▶  Spielen	▶  Jouer	▶  Jugar	▶  Jogar	▶  플레이
+Другая версия	Other version	其他版本	別バージョン	Andere Version	Autre version	Otra versión	Outra versão	다른 버전
+Обложка…	Cover…	封面…	カバー…	Cover…	Jaquette…	Portada…	Capa…	표지…
+Сохранения	Saves	存档	セーブ	Spielstände	Sauvegardes	Partidas guardadas	Saves	저장
++ Папка с играми	+ Game folder	+ 游戏文件夹	+ ゲームフォルダ	+ Spieleordner	+ Dossier de jeux	+ Carpeta de juegos	+ Pasta de jogos	+ 게임 폴더
+Продолжить играть	Continue playing	继续游戏	続きから遊ぶ	Weiterspielen	Reprendre	Seguir jugando	Continuar jogando	이어서 플레이
+Приставки	Consoles	主机	機種	Konsolen	Consoles	Consolas	Consoles	게임기
+Время в игре: —	Play time: —	游戏时长：—	プレイ時間: —	Spielzeit: —	Temps de jeu : —	Tiempo de juego: —	Tempo de jogo: —	플레이 시간: —
+Версии	Versions	版本	バージョン	Versionen	Versions	Versiones	Versões	버전
+Пауза	Paused	暂停	ポーズ	Pause	Pause	Pausa	Pausado	일시정지
+Начать заново	Restart	重新开始	最初から	Neu starten	Recommencer	Empezar de nuevo	Recomeçar	처음부터
+Выйти в библиотеку	Exit to library	返回游戏库	ライブラリに戻る	Zur Bibliothek	Retour à la bibliothèque	Salir a la biblioteca	Sair para a biblioteca	라이브러리로 나가기
+Не удалось запустить игру	Couldn't start the game	无法启动游戏	ゲームを起動できませんでした	Spiel konnte nicht gestartet werden	Impossible de lancer le jeu	No se pudo iniciar el juego	Não foi possível iniciar o jogo	게임을 시작하지 못했습니다
+Причина	Reason	原因	原因	Grund	Raison	Motivo	Motivo	이유
+Nintendo Entertainment System	Nintendo Entertainment System	任天堂红白机（NES）	ファミリーコンピュータ（NES）	Nintendo Entertainment System	Nintendo Entertainment System	Nintendo Entertainment System	Nintendo Entertainment System	Nintendo Entertainment System
+Super Nintendo	Super Nintendo	超级任天堂	スーパーファミコン	Super Nintendo	Super Nintendo	Super Nintendo	Super Nintendo	슈퍼 닌텐도
+Nintendo 64	Nintendo 64	任天堂 64	NINTENDO64	Nintendo 64	Nintendo 64	Nintendo 64	Nintendo 64	닌텐도 64
+Game Boy	Game Boy	Game Boy	ゲームボーイ	Game Boy	Game Boy	Game Boy	Game Boy	게임보이
+Game Boy Color	Game Boy Color	Game Boy Color	ゲームボーイカラー	Game Boy Color	Game Boy Color	Game Boy Color	Game Boy Color	게임보이 컬러
+Game Boy Advance	Game Boy Advance	Game Boy Advance	ゲームボーイアドバンス	Game Boy Advance	Game Boy Advance	Game Boy Advance	Game Boy Advance	게임보이 어드밴스
+Sega Master System	Sega Master System	世嘉 Master System	セガ・マスターシステム	Sega Master System	Sega Master System	Sega Master System	Sega Master System	세가 마스터 시스템
+Sega Mega Drive	Sega Mega Drive	世嘉 Mega Drive	メガドライブ	Sega Mega Drive	Sega Mega Drive	Sega Mega Drive	Sega Mega Drive	세가 메가 드라이브
+Sega Game Gear	Sega Game Gear	世嘉 Game Gear	ゲームギア	Sega Game Gear	Sega Game Gear	Sega Game Gear	Sega Game Gear	세가 게임 기어
+PC Engine	PC Engine	PC Engine	PCエンジン	PC Engine	PC Engine	PC Engine	PC Engine	PC 엔진
+PlayStation	PlayStation	PlayStation	プレイステーション	PlayStation	PlayStation	PlayStation	PlayStation	플레이스테이션
+Atari 2600	Atari 2600	雅达利 2600	Atari 2600	Atari 2600	Atari 2600	Atari 2600	Atari 2600	아타리 2600
+Аркадные автоматы	Arcade	街机	アーケード	Arcade-Automaten	Bornes d'arcade	Recreativas	Fliperamas	아케이드
+Пока здесь пусто.\nНажмите «+ Папка с играми» и выберите папку, где лежат ваши ROM-файлы.	Nothing here yet.\nPress “+ Game folder” and pick the folder with your ROM files.	这里还什么都没有。\n点击“+ 游戏文件夹”，选择存放 ROM 文件的文件夹。	まだ何もありません。\n「+ ゲームフォルダ」を押して、ROM ファイルのあるフォルダを選んでください。	Hier ist noch nichts.\nDrücke „+ Spieleordner“ und wähle den Ordner mit deinen ROM-Dateien.	Rien pour l'instant.\nAppuyez sur « + Dossier de jeux » et choisissez le dossier de vos fichiers ROM.	Aquí no hay nada todavía.\nPulsa «+ Carpeta de juegos» y elige la carpeta con tus archivos ROM.	Ainda não há nada aqui.\nPressione “+ Pasta de jogos” e escolha a pasta com seus arquivos ROM.	아직 아무것도 없습니다.\n'+ 게임 폴더'를 눌러 ROM 파일이 있는 폴더를 고르세요.
+Скриншот	Screenshot	截图	スクリーンショット	Screenshot	Capture d'écran	Captura	Captura de tela	스크린샷
+Скриншот сохранён: %s	Screenshot saved: %s	截图已保存：%s	スクリーンショットを保存しました: %s	Screenshot gespeichert: %s	Capture enregistrée : %s	Captura guardada: %s	Captura salva: %s	스크린샷 저장됨: %s
+Не удалось сохранить скриншот	Couldn't save the screenshot	无法保存截图	スクリーンショットを保存できませんでした	Screenshot konnte nicht gespeichert werden	Impossible d'enregistrer la capture	No se pudo guardar la captura	Não foi possível salvar a captura	스크린샷을 저장하지 못했습니다
+Папка скриншотов	Screenshots folder	截图文件夹	スクリーンショットフォルダ	Screenshot-Ordner	Dossier des captures	Carpeta de capturas	Pasta de capturas	스크린샷 폴더
+Скриншоты игр (F12 или Share на геймпаде):\n	Game screenshots (F12 or Share on the controller):\n	游戏截图（F12 或手柄上的 Share 键）：\n	ゲームのスクリーンショット（F12 またはコントローラーの Share）:\n	Screenshots aus Spielen (F12 oder Share am Controller):\n	Captures des jeux (F12 ou Share sur la manette) :\n	Capturas de los juegos (F12 o Share en el mando):\n	Capturas dos jogos (F12 ou Share no controle):\n	게임 스크린샷(F12 또는 컨트롤러의 Share):\n
+Кнопка Share («Поделиться») есть на геймпадах Xbox Series и PlayStation 5. На других геймпадах — пункт «Скриншот» в меню паузы.	The Share button is on Xbox Series and PlayStation 5 controllers. On other controllers, use “Screenshot” in the pause menu.	Xbox Series 和 PlayStation 5 手柄上有 Share（分享）键。其他手柄请使用暂停菜单中的“截图”。	Share ボタンは Xbox Series と PlayStation 5 のコントローラーにあります。他のコントローラーではポーズメニューの「スクリーンショット」を使ってください。	Die Share-Taste gibt es an Xbox-Series- und PlayStation-5-Controllern. Bei anderen Controllern nutze „Screenshot“ im Pausenmenü.	Le bouton Share existe sur les manettes Xbox Series et PlayStation 5. Sur les autres, utilisez « Capture d'écran » dans le menu pause.	El botón Share está en los mandos de Xbox Series y PlayStation 5. En otros mandos, usa «Captura» en el menú de pausa.	O botão Share existe nos controles do Xbox Series e do PlayStation 5. Em outros controles, use “Captura de tela” no menu de pausa.	Share 버튼은 Xbox Series와 PlayStation 5 컨트롤러에 있습니다. 다른 컨트롤러에서는 일시정지 메뉴의 '스크린샷'을 쓰세요.
+Читать полностью ▸	Read more ▸	阅读全文 ▸	続きを読む ▸	Weiterlesen ▸	Lire la suite ▸	Leer más ▸	Ler mais ▸	더 보기 ▸
+Прокрутить	Scroll	滚动	スクロール	Blättern	Défiler	Desplazar	Rolar	스크롤
+Закрыть	Close	关闭	閉じる	Schließen	Fermer	Cerrar	Fechar	닫기
+Поиск…	Search…	搜索…	検索…	Suchen…	Rechercher…	Buscar…	Buscar…	검색…
+Поиск	Search	搜索	検索	Suche	Recherche	Buscar	Buscar	검색
+Сортировка: %s	Sort: %s	排序：%s	並び替え: %s	Sortierung: %s	Tri : %s	Orden: %s	Ordem: %s	정렬: %s
+Сортировка	Sort	排序	並び替え	Sortieren	Trier	Ordenar	Ordenar	정렬
+По названию	By title	按名称	タイトル順	Nach Titel	Par titre	Por título	Por título	제목순
+По приставке	By console	按主机	機種順	Nach Konsole	Par console	Por consola	Por console	게임기순
+Недавние	Recent	最近游玩	最近遊んだ順	Zuletzt gespielt	Récents	Recientes	Recentes	최근순
+%d из %s	%d of %s	%d / %s	%d / %s	%d von %s	%d sur %s	%d de %s	%d de %s	%s 중 %d
+Ничего не найдено	Nothing found	未找到结果	見つかりませんでした	Nichts gefunden	Aucun résultat	No se encontró nada	Nada encontrado	찾은 게임이 없습니다
+Ввести	Type	输入	入力	Eingeben	Saisir	Escribir	Digitar	입력
+Стереть	Delete	删除	削除	Löschen	Effacer	Borrar	Apagar	지우기
+Пробел	Space	空格	スペース	Leertaste	Espace	Espacio	Espaço	띄어쓰기
+Раскладка	Layout	键盘布局	配列	Layout	Disposition	Distribución	Layout	자판
+Найти	Find	查找	検索	Suchen	Rechercher	Buscar	Buscar	찾기
+Звуки интерфейса	Interface sounds	界面音效	インターフェース音	Oberflächenklänge	Sons de l'interface	Sonidos de la interfaz	Sons da interface	인터페이스 소리
+Тихий щелчок при переходе между играми и «бульк» при запуске игры. Свои звуки можно положить в папку data/sounds (click.wav и launch.wav).	A soft click when moving between games and a “bloop” when a game starts. You can put your own sounds in data/sounds (click.wav and launch.wav).	在游戏之间移动时发出轻微的咔嗒声，启动游戏时发出“啵”的一声。可以把自己的音效放到 data/sounds 文件夹（click.wav 和 launch.wav）。	ゲーム間を移動するときの小さなクリック音と、ゲーム起動時の「ポコッ」という音。自分の音を data/sounds（click.wav と launch.wav）に置くこともできます。	Ein leises Klicken beim Wechseln zwischen Spielen und ein „Blubb“ beim Spielstart. Eigene Klänge kannst du in data/sounds ablegen (click.wav und launch.wav).	Un léger clic quand on passe d'un jeu à l'autre et un « bloup » au lancement d'un jeu. Vous pouvez mettre vos propres sons dans data/sounds (click.wav et launch.wav).	Un clic suave al moverte entre juegos y un «blup» al iniciar un juego. Puedes poner tus propios sonidos en data/sounds (click.wav y launch.wav).	Um clique suave ao passar entre jogos e um “blup” quando um jogo começa. Você pode colocar seus próprios sons em data/sounds (click.wav e launch.wav).	게임 사이를 옮길 때 작은 딸깍 소리, 게임을 시작할 때 '퐁' 소리가 납니다. data/sounds에 직접 만든 소리(click.wav, launch.wav)를 넣을 수 있습니다.
+Кнопки приставок	Console buttons	主机按键	ゲーム機のボタン	Konsolentasten	Boutons des consoles	Botones de las consolas	Botões dos consoles	게임기 버튼
+Своя раскладка для каждой приставки: какая кнопка вашего геймпада — это A, B или Start приставки. С рисунками геймпадов.	A separate button layout for each console: which button on your controller acts as the console's A, B or Start. With pictures of both controllers.	为每台主机单独设置按键：手柄上的哪个键对应主机的 A、B 或 Start。附有手柄示意图。	ゲーム機ごとのボタン配置：コントローラーのどのボタンがゲーム機の A・B・Start になるかを設定します。コントローラーの図付き。	Eine eigene Tastenbelegung für jede Konsole: welche Taste deines Controllers A, B oder Start der Konsole ist. Mit Bildern beider Controller.	Une disposition propre à chaque console : quel bouton de votre manette sert de A, B ou Start de la console. Avec les images des deux manettes.	Una distribución propia para cada consola: qué botón de tu mando hace de A, B o Start de la consola. Con imágenes de ambos mandos.	Um layout próprio para cada console: qual botão do seu controle faz o papel de A, B ou Start do console. Com imagens dos dois controles.	게임기마다 따로 버튼 배치를 정합니다. 내 컨트롤러의 어떤 버튼이 게임기의 A, B, Start가 될지 정하며, 두 컨트롤러 그림을 함께 보여 줍니다.
+Геймпад %s	%s controller	%s 手柄	%s のコントローラー	%s-Controller	Manette %s	Mando de %s	Controle do %s	%s 컨트롤러
+Ваш геймпад (%s)	Your controller (%s)	你的手柄（%s）	あなたのコントローラー（%s）	Dein Controller (%s)	Votre manette (%s)	Tu mando (%s)	Seu controle (%s)	내 컨트롤러(%s)
+Нажмите кнопку…	Press a button…	请按下按键…	ボタンを押してください…	Taste drücken…	Appuyez sur un bouton…	Pulsa un botón…	Pressione um botão…	버튼을 누르세요…
+Раскладка кнопок	Button layout	按键布局	ボタン配置	Tastenbelegung	Disposition des boutons	Distribución de botones	Layout dos botões	버튼 배치
+По надписям	By label	按标记	刻印どおり	Nach Beschriftung	Par étiquette	Por letra	Por letra	글자대로
+Своя	Custom	自定义	カスタム	Eigene	Personnalisée	Personalizada	Personalizado	사용자 지정
+Вернуть обычную раскладку	Restore the standard layout	恢复默认布局	標準の配置に戻す	Standardbelegung wiederherstellen	Rétablir la disposition standard	Restaurar la distribución estándar	Restaurar o layout padrão	기본 배치로 되돌리기
+Назначить	Assign	设置	割り当て	Zuweisen	Assigner	Asignar	Atribuir	지정
+Кнопка «%s» не назначена.	The “%s” button isn't assigned.	“%s”键未设置。	「%s」ボタンは割り当てられていません。	Die Taste „%s“ ist nicht zugewiesen.	Le bouton « %s » n'est pas assigné.	El botón «%s» no está asignado.	O botão “%s” não está atribuído.	'%s' 버튼이 지정되지 않았습니다.
+Кнопка «%s» — это %s на вашем геймпаде.	The “%s” button is %s on your controller.	“%s”键对应你手柄上的 %s。	「%s」ボタンは、あなたのコントローラーの %s です。	Die Taste „%s“ ist %s auf deinem Controller.	Le bouton « %s » correspond à %s sur votre manette.	El botón «%s» es %s en tu mando.	O botão “%s” é %s no seu controle.	'%s' 버튼은 내 컨트롤러의 %s입니다.
+«Назначить» — и нажмите нужную кнопку на геймпаде. ◀ ▶ — выбрать из списка. Если кнопка уже занята, они поменяются местами.	“Assign”, then press the button you want on your controller. ◀ ▶ picks from a list. If that button is already taken, the two swap places.	选择“设置”，然后按下手柄上想用的按键。◀ ▶ 可从列表中选择。如果该键已被占用，两个键会互换。	「割り当て」を選んで、コントローラーの使いたいボタンを押します。◀ ▶ で一覧から選ぶこともできます。そのボタンが使用中なら、2つのボタンが入れ替わります。	„Zuweisen“ wählen und dann die gewünschte Taste am Controller drücken. ◀ ▶ wählt aus einer Liste. Ist die Taste schon belegt, tauschen beide die Plätze.	« Assigner », puis appuyez sur le bouton voulu de la manette. ◀ ▶ choisit dans une liste. Si ce bouton est déjà pris, les deux échangent leur place.	«Asignar» y luego pulsa el botón que quieras en el mando. ◀ ▶ elige de una lista. Si ese botón ya está ocupado, los dos se intercambian.	“Atribuir” e depois pressione o botão desejado no controle. ◀ ▶ escolhe de uma lista. Se o botão já estiver em uso, os dois trocam de lugar.	'지정'을 고른 뒤 컨트롤러에서 원하는 버튼을 누르세요. ◀ ▶로 목록에서 고를 수도 있습니다. 이미 쓰는 버튼이면 두 버튼이 자리를 바꿉니다.
+По положению — кнопки стоят там же, где на геймпаде приставки. По надписям — A на A, B на B.	By position: buttons sit where they are on the console's controller. By label: A on A, B on B.	按位置：按键与主机手柄上的位置相同。按标记：A 对 A，B 对 B。	位置どおり：ゲーム機のコントローラーと同じ位置。刻印どおり：A は A、B は B。	Nach Position: Die Tasten liegen wie auf dem Konsolen-Controller. Nach Beschriftung: A auf A, B auf B.	Par position : les boutons sont placés comme sur la manette de la console. Par étiquette : A sur A, B sur B.	Por posición: los botones están donde en el mando de la consola. Por letra: A en A, B en B.	Por posição: os botões ficam onde estão no controle do console. Por letra: A no A, B no B.	위치대로: 게임기 컨트롤러와 같은 자리입니다. 글자대로: A는 A, B는 B.
+Раскладка по положению кнопок — как была с самого начала.	The by-position layout, as it was from the start.	按位置的布局，即最初的设置。	最初からの「位置どおり」の配置です。	Die Belegung nach Position, wie von Anfang an.	La disposition par position, comme au départ.	La distribución por posición, como al principio.	O layout por posição, como era no início.	처음부터 쓰던 '위치대로' 배치입니다.
+Клавиатура: стрелки, Z X A S Q W, Enter — Start, Shift — Select.	Keyboard: arrows, Z X A S Q W, Enter is Start, Shift is Select.	键盘：方向键、Z X A S Q W，Enter 为 Start，Shift 为 Select。	キーボード：矢印キー、Z X A S Q W、Enter が Start、Shift が Select。	Tastatur: Pfeiltasten, Z X A S Q W, Enter ist Start, Umschalt ist Select.	Clavier : flèches, Z X A S Q W, Entrée = Start, Maj = Select.	Teclado: flechas, Z X A S Q W, Intro es Start, Mayús es Select.	Teclado: setas, Z X A S Q W, Enter é Start, Shift é Select.	키보드: 방향키, Z X A S Q W, Enter는 Start, Shift는 Select.
+Обычная раскладка для %s	Standard layout for %s	%s 已恢复默认布局	%s を標準の配置にしました	Standardbelegung für %s	Disposition standard pour %s	Distribución estándar para %s	Layout padrão para %s	%s 기본 배치로 되돌림
+Нажмите на геймпаде кнопку для «%s». Через 5 секунд или по Esc — отмена.	Press the controller button for “%s”. Cancels after 5 seconds or with Esc.	请按下用作“%s”的手柄按键。5 秒后或按 Esc 取消。	「%s」にするボタンをコントローラーで押してください。5秒たつか Esc でキャンセルします。	Drücke die Controller-Taste für „%s“. Abbruch nach 5 Sekunden oder mit Esc.	Appuyez sur le bouton de la manette pour « %s ». Annulation après 5 secondes ou avec Échap.	Pulsa el botón del mando para «%s». Se cancela a los 5 segundos o con Esc.	Pressione o botão do controle para “%s”. Cancela após 5 segundos ou com Esc.	'%s'(으)로 쓸 컨트롤러 버튼을 누르세요. 5초가 지나거나 Esc를 누르면 취소됩니다.
+меню	menu	菜单	メニュー	Menü	menu	menú	menu	메뉴
+C-кнопки у ядра Nintendo 64 — на правом стике. Стики Shellbit в игру пока не передаёт, поэтому C-кнопки не работают.	The Nintendo 64 core puts the C buttons on the right stick. Shellbit doesn't pass sticks to games yet, so the C buttons don't work.	Nintendo 64 核心把 C 键放在右摇杆上。Shellbit 目前还不会把摇杆传给游戏，所以 C 键无法使用。	Nintendo 64 のコアでは C ボタンは右スティックです。Shellbit はまだスティックをゲームに渡さないため、C ボタンは使えません。	Der Nintendo-64-Core legt die C-Tasten auf den rechten Stick. Shellbit gibt Sticks noch nicht an Spiele weiter, daher funktionieren die C-Tasten nicht.	Le cœur Nintendo 64 place les boutons C sur le stick droit. Shellbit ne transmet pas encore les sticks aux jeux, donc les boutons C ne fonctionnent pas.	El núcleo de Nintendo 64 pone los botones C en el stick derecho. Shellbit aún no pasa los sticks a los juegos, así que los botones C no funcionan.	O núcleo do Nintendo 64 põe os botões C no analógico direito. O Shellbit ainda não passa os analógicos para os jogos, então os botões C não funcionam.	닌텐도 64 코어는 C 버튼을 오른쪽 스틱에 둡니다. Shellbit은 아직 스틱을 게임에 전달하지 않아 C 버튼이 작동하지 않습니다.
+В аркадных автоматах кнопки у каждой игры свои: где-то нужна одна, где-то шесть.	In arcade games, every game uses its own buttons: some need one, some need six.	街机游戏的按键因游戏而异：有的只用一个，有的要用六个。	アーケードではゲームごとにボタンが違います。1つだけのものも、6つ使うものもあります。	Bei Arcade-Spielen hat jedes Spiel eigene Tasten: manche brauchen eine, manche sechs.	Dans les jeux d'arcade, chaque jeu a ses propres boutons : certains en utilisent un, d'autres six.	En los juegos arcade, cada juego usa sus propios botones: unos necesitan uno y otros seis.	Nos jogos de fliperama, cada jogo usa seus próprios botões: alguns precisam de um, outros de seis.	아케이드 게임은 게임마다 버튼이 다릅니다. 하나만 쓰는 게임도, 여섯 개를 쓰는 게임도 있습니다.
+%s: кнопка %s на геймпаде, %s на клавиатуре.	%s: %s on the controller, %s on the keyboard.	%s：手柄上的 %s，键盘上的 %s。	%s：コントローラーの %s、キーボードの %s。	%s: %s am Controller, %s auf der Tastatur.	%s : %s sur la manette, %s au clavier.	%s: %s en el mando, %s en el teclado.	%s: %s no controle, %s no teclado.	%s: 컨트롤러는 %s, 키보드는 %s.
+1 минута	1 minute	1 分钟	1分	1 Minute	1 minute	1 minuto	1 minuto	1분
+10 секунд	10 seconds	10 秒	10秒	10 Sekunden	10 secondes	10 segundos	10 segundos	10초
+20 секунд	20 seconds	20 秒	20秒	20 Sekunden	20 secondes	20 segundos	20 segundos	20초
+30 секунд	30 seconds	30 秒	30秒	30 Sekunden	30 secondes	30 segundos	30 segundos	30초
+Shellbit запоминает последние секунды игры. Пока держите кнопку перемотки, игра идёт назад — можно исправить ошибку. Чем длиннее запись, тем больше памяти она занимает (не больше %d МБ).	Shellbit remembers the last few seconds of play. While you hold the rewind button, the game runs backwards, so you can undo a mistake. A longer recording uses more memory (no more than %d MB).	Shellbit 会记住最近几秒的游戏过程。按住倒带键时游戏会倒退，可以挽回失误。记录越长，占用内存越多（最多 %d MB）。	Shellbit は直前の数秒間のプレイを記録します。巻き戻しボタンを押している間はゲームが逆再生され、ミスをやり直せます。記録が長いほどメモリを使います（最大 %d MB）。	Shellbit merkt sich die letzten Sekunden des Spiels. Solange du die Rückspultaste hältst, läuft das Spiel rückwärts — so machst du Fehler rückgängig. Eine längere Aufnahme braucht mehr Speicher (höchstens %d MB).	Shellbit retient les dernières secondes de jeu. Tant que vous maintenez le bouton de retour arrière, le jeu remonte le temps : vous pouvez effacer une erreur. Un enregistrement plus long utilise plus de mémoire (%d Mo au maximum).	Shellbit recuerda los últimos segundos de juego. Mientras mantienes el botón de rebobinar, el juego va hacia atrás y puedes deshacer un error. Una grabación más larga usa más memoria (como máximo %d MB).	O Shellbit lembra os últimos segundos de jogo. Enquanto você segura o botão de voltar, o jogo anda para trás e dá para desfazer um erro. Uma gravação mais longa usa mais memória (no máximo %d MB).	Shellbit은 최근 몇 초의 플레이를 기억합니다. 되감기 버튼을 누르고 있으면 게임이 거꾸로 흘러 실수를 되돌릴 수 있습니다. 기록이 길수록 메모리를 더 씁니다(최대 %d MB).
+Во сколько раз быстрее идёт игра, пока включено ускорение. Удобно, чтобы проскочить долгие диалоги и прогулки. Звук при этом прерывистый.	How many times faster the game runs while fast-forward is on. Handy for skipping long dialogue and walking. The sound gets choppy.	快进时游戏加速的倍数。适合跳过冗长的对话和跑路。此时声音会断断续续。	早送り中にゲームが何倍速になるか。長い会話や移動を飛ばすのに便利です。音は途切れ途切れになります。	Wie viel schneller das Spiel bei Schnellvorlauf läuft. Praktisch, um lange Dialoge und Wege zu überspringen. Der Ton wird abgehackt.	Combien de fois plus vite le jeu tourne en avance rapide. Pratique pour passer les longs dialogues et trajets. Le son devient haché.	Cuántas veces más rápido va el juego con el avance rápido. Útil para saltar diálogos largos y caminatas. El sonido se entrecorta.	Quantas vezes mais rápido o jogo roda no avanço rápido. Bom para pular diálogos longos e caminhadas. O som fica picotado.	빨리 감기 중 게임이 몇 배 빨라지는지 정합니다. 긴 대화나 이동을 건너뛸 때 편합니다. 소리는 끊겨 들립니다.
+Выключена	Off	关闭	オフ	Aus	Désactivé	Desactivado	Desligado	끔
+Держать	Hold	按住	押し続ける	Halten	Maintenir	Mantener	Segurar	누르고 있기
+Игра	Gameplay	游戏	ゲームプレイ	Spiel	Jeu	Juego	Jogo	게임 플레이
+Игра ускоряется, пока кнопка зажата.	The game speeds up while the button is held.	按住按键时游戏加速。	ボタンを押している間だけ速くなります。	Das Spiel läuft schneller, solange die Taste gehalten wird.	Le jeu accélère tant que le bouton est maintenu.	El juego se acelera mientras mantienes el botón.	O jogo acelera enquanto o botão estiver pressionado.	버튼을 누르고 있는 동안 게임이 빨라집니다.
+Кнопка ускорения	Fast-forward button	快进键	早送りボタン	Schnellvorlauf-Taste	Bouton d'avance rapide	Botón de avance rápido	Botão de avanço rápido	빨리 감기 버튼
+Кнопки перемотки и ускорения	Rewind and fast-forward buttons	倒带和快进按键	巻き戻し・早送りボタン	Tasten für Rückspulen und Schnellvorlauf	Boutons retour arrière et avance rapide	Botones de rebobinar y avance rápido	Botões de voltar e avanço rápido	되감기·빨리 감기 버튼
+На геймпаде — LT (перемотка) и RT (ускорение), если приставке курки не нужны. На клавиатуре — Backspace и пробел. Поменять можно в «Кнопках приставок» для каждой приставки.	On the controller: LT (rewind) and RT (fast-forward), if the console doesn't need the triggers. On the keyboard: Backspace and Space. You can change them for each console in “Console buttons”.	手柄上：LT（倒带）和 RT（快进），前提是该主机不需要扳机键。键盘上：Backspace 和空格。可以在“主机按键”中为每台主机单独更改。	コントローラーでは LT（巻き戻し）と RT（早送り）。ただしゲーム機がトリガーを使わない場合です。キーボードでは Backspace とスペース。「ゲーム機のボタン」でゲーム機ごとに変更できます。	Am Controller: LT (Rückspulen) und RT (Schnellvorlauf), wenn die Konsole die Trigger nicht braucht. Auf der Tastatur: Rücktaste und Leertaste. Für jede Konsole änderbar unter „Konsolentasten“.	Sur la manette : LT (retour arrière) et RT (avance rapide), si la console n'utilise pas les gâchettes. Au clavier : Retour arrière et Espace. Modifiable pour chaque console dans « Boutons des consoles ».	En el mando: LT (rebobinar) y RT (avance rápido), si la consola no usa los gatillos. En el teclado: Retroceso y Espacio. Puedes cambiarlos para cada consola en «Botones de las consolas».	No controle: LT (voltar) e RT (avanço rápido), se o console não usar os gatilhos. No teclado: Backspace e Espaço. Dá para mudar em “Botões dos consoles” para cada console.	컨트롤러: 게임기가 트리거를 쓰지 않으면 LT(되감기), RT(빨리 감기). 키보드: Backspace와 스페이스. '게임기 버튼'에서 게임기마다 바꿀 수 있습니다.
+Нажали — ускорение включилось, нажали ещё раз — выключилось.	Press once to turn fast-forward on, press again to turn it off.	按一次开启快进，再按一次关闭。	1回押すと早送りがオンに、もう一度押すとオフになります。	Einmal drücken schaltet den Schnellvorlauf ein, nochmal drücken wieder aus.	Appuyez une fois pour activer l'avance rapide, encore une fois pour l'arrêter.	Pulsa una vez para activar el avance rápido y otra vez para desactivarlo.	Pressione uma vez para ligar o avanço rápido e de novo para desligar.	한 번 누르면 빨리 감기가 켜지고, 다시 누르면 꺼집니다.
+Нажать один раз	Press once	按一次	1回押す	Einmal drücken	Appuyer une fois	Pulsar una vez	Pressionar uma vez	한 번 누르기
+Перемотка выключена — игра не тратит на неё память.	Rewind is off, so it uses no memory.	倒带已关闭，不占用内存。	巻き戻しはオフです。メモリを使いません。	Rückspulen ist aus und braucht keinen Speicher.	Le retour arrière est désactivé et n'utilise pas de mémoire.	El rebobinado está desactivado y no usa memoria.	O voltar está desligado e não usa memória.	되감기가 꺼져 있어 메모리를 쓰지 않습니다.
+Перемотка назад	Rewind	倒带	巻き戻し	Rückspulen	Retour arrière	Rebobinar	Voltar no tempo	되감기
+Сейчас перемотка выключена.	Rewind is currently off.	倒带目前已关闭。	現在、巻き戻しはオフです。	Rückspulen ist gerade aus.	Le retour arrière est désactivé.	El rebobinado está desactivado.	O voltar está desligado no momento.	지금은 되감기가 꺼져 있습니다.
+Скорость ускорения и длина перемотки — в Настройках, раздел «Игра».	Fast-forward speed and rewind length are in Settings → Gameplay.	快进速度和倒带时长在“设置 → 游戏”中。	早送りの速さと巻き戻しの長さは「設定 → ゲームプレイ」で変更できます。	Schnellvorlauf-Tempo und Rückspullänge findest du unter Einstellungen → Spiel.	Vitesse d'avance rapide et durée du retour arrière : Paramètres → Jeu.	La velocidad del avance rápido y la duración del rebobinado están en Ajustes → Juego.	A velocidade do avanço rápido e a duração do voltar ficam em Configurações → Jogo.	빨리 감기 속도와 되감기 길이는 설정 → 게임 플레이에 있습니다.
+Ускорение	Fast-forward	快进	早送り	Schnellvorlauf	Avance rapide	Avance rápido	Avanço rápido	빨리 감기
+Ускорение и перемотка назад во время игры.	Fast-forward and rewind during play.	游戏中的快进和倒带。	プレイ中の早送りと巻き戻し。	Schnellvorlauf und Rückspulen während des Spiels.	Avance rapide et retour arrière pendant le jeu.	Avance rápido y rebobinado durante el juego.	Avanço rápido e voltar durante o jogo.	게임 중 빨리 감기와 되감기.
+не назначена	not assigned	未设置	未割り当て	nicht zugewiesen	non assigné	sin asignar	não atribuído	지정 안 됨
+Игра начнётся с самого начала. Место выхода заменится новым, ручные слоты останутся.	The game will start from the very beginning. “Where you left off” will be replaced; manual slots stay.	游戏将从头开始。“上次退出处”会被替换，手动存档位保留。	ゲームを最初から始めます。「中断した場所」は上書きされますが、手動スロットは残ります。	Das Spiel beginnt ganz von vorn. „Letzte Stelle“ wird ersetzt, manuelle Slots bleiben.	Le jeu reprendra depuis le tout début. « Là où vous étiez » sera remplacé ; les emplacements manuels restent.	El juego empezará desde el principio. «Donde lo dejaste» se reemplazará; las ranuras manuales se conservan.	O jogo vai começar do início. “Onde você parou” será substituído; os slots manuais continuam.	게임을 맨 처음부터 시작합니다. '마지막 위치'는 새로 바뀌고, 직접 저장한 슬롯은 남습니다.
+Новая игра	New game	新游戏	ニューゲーム	Neues Spiel	Nouvelle partie	Nueva partida	Novo jogo	새 게임

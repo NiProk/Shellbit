@@ -23,6 +23,8 @@ const FONTS := {
 	"default": ["Segoe UI", "Noto Sans", "DejaVu Sans", "sans-serif"],
 	"zh": ["Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "sans-serif"],
 	"ja": ["Yu Gothic UI", "Meiryo UI", "Meiryo", "Noto Sans CJK JP", "Noto Sans JP", "sans-serif"],
+	# Корейский: Malgun Gothic есть в любой Windows.
+	"ko": ["Malgun Gothic", "Noto Sans CJK KR", "Noto Sans KR", "sans-serif"],
 }
 
 var theme := Theme.new()

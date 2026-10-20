@@ -8,7 +8,7 @@ extends Node
 ##    tr() — встроенная функция Godot: ищет перевод для текущего языка,
 ##    а если не нашла — возвращает текст как есть.
 ## 2. Переводы лежат в таблице data/i18n/strings.tsv — по строке на текст:
-##        ru <TAB> en <TAB> zh <TAB> ja
+##        ru <TAB> en <TAB> zh <TAB> ja <TAB> de <TAB> fr <TAB> es <TAB> pt <TAB> ko
 ##    Первый столбец — русский текст. Он же «ключ», по которому tr() ищет перевод.
 ##    Таблицу удобно править в Excel или LibreOffice Calc.
 ## 3. Тексты, написанные прямо в сценах (.tscn), Godot переводит сам,
@@ -22,7 +22,9 @@ extends Node
 signal language_changed
 
 const STRINGS_PATH := "res://data/i18n/strings.tsv"
-const SUPPORTED := ["ru", "en", "zh", "ja"]
+## Коды языков — как их называет Windows (OS.get_locale_language()).
+## "pt" — португальский; перевод сделан для Бразилии.
+const SUPPORTED := ["ru", "en", "zh", "ja", "de", "fr", "es", "pt", "ko"]
 
 ## Варианты для экрана настроек. Названия языков — на самих языках:
 ## так человек найдёт свой язык, даже если случайно включил чужой.
@@ -32,9 +34,14 @@ const CHOICES := [
 	["en", "English"],
 	["zh", "中文（简体）"],
 	["ja", "日本語"],
+	["de", "Deutsch"],
+	["fr", "Français"],
+	["es", "Español"],
+	["pt", "Português (Brasil)"],
+	["ko", "한국어"],
 ]
 
-## Текущий язык: "ru", "en", "zh" или "ja".
+## Текущий язык: "ru", "en", "zh", "ja", "de", "fr", "es", "pt" или "ko".
 var language := "ru"
 
 
@@ -66,7 +73,8 @@ func t(text: String) -> String:
 ## Число со словом в правильной форме.
 ##   Lang.n("%d игра|%d игры|%d игр", 5)  → "5 игр" / "5 games" / "5 个游戏"
 ## Формы разделены знаком |. В русском их три (1 игра, 2 игры, 5 игр),
-## в английском две (1 game, 2 games), в китайском и японском — одна.
+## в английском, немецком, французском, испанском и португальском две
+## (1 game, 2 games), в китайском, японском и корейском — одна.
 ## Ключ в таблице — русские формы, перевод — формы своего языка.
 func n(forms_key: String, number: int) -> String:
 	var forms := t(forms_key).split("|")
@@ -84,10 +92,14 @@ func _plural_index(number: int) -> int:
 			if number % 10 in [2, 3, 4] and not (number % 100 in [12, 13, 14]):
 				return 1
 			return 2
-		"en":
+		"en", "de", "es":
 			return 0 if number == 1 else 1
+		"fr", "pt":
+			# Во французском и бразильском португальском 0 — тоже «один»:
+			# «0 jeu», «1 jeu», но «2 jeux».
+			return 0 if number <= 1 else 1
 		_:
-			return 0  # в китайском и японском форма одна
+			return 0  # в китайском, японском и корейском форма одна
 
 
 # Прочитать таблицу переводов и отдать её Godot (TranslationServer).
