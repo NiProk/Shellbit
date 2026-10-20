@@ -24,6 +24,8 @@ var _groups: Array = []  # игры этого экрана (в порядке �
 
 # Меню «Обложка» (компонент scenes/components/CoverPicker.gd).
 var _cover_picker := CoverPicker.new()
+# Экранная клавиатура для поиска с геймпада (scenes/components/ScreenKeyboard.gd).
+var _keyboard := ScreenKeyboard.new()
 
 
 func _ready() -> void:
@@ -54,6 +56,9 @@ func _ready() -> void:
 		["cancel", "Назад"],
 	])
 	add_child(_cover_picker)
+	add_child(_keyboard)
+	# Клавиатуру закрыли — переходим к найденным играм.
+	_keyboard.closed.connect(_leave_search)
 	_focus_first_card.call_deferred()
 
 
@@ -68,9 +73,7 @@ func _setup_search_and_sort() -> void:
 	%Search.text_changed.connect(func(_text: String) -> void: _apply_filter())
 	# Enter в поле поиска — перейти к найденным карточкам.
 	%Search.text_submitted.connect(func(_text: String) -> void: _focus_first_card())
-	# Пришли в поле стрелкой с геймпада или клавиатуры — сразу можно печатать.
-	# (В Godot 4.4+ поле в фокусе ещё не «редактируется», пока его не включить.)
-	%Search.focus_entered.connect(%Search.edit)
+	%Search.focus_entered.connect(_on_search_focused)
 
 	%SortButton.pressed.connect(_next_sort)
 	%SortButton.mouse_entered.connect(%SortButton.grab_focus)
@@ -99,6 +102,7 @@ func _build_grid() -> void:
 func _apply_filter() -> void:
 	var query: String = %Search.text.strip_edges()
 	var shown := 0
+	var first_shown: GameCard = null
 	for card: GameCard in %Grid.get_children():
 		# findn — поиск БЕЗ учёта регистра: «toad» найдёт «Battletoads».
 		# Возвращает место, где нашёлся текст, или −1, если не нашёлся.
@@ -106,6 +110,13 @@ func _apply_filter() -> void:
 		card.visible = match_title
 		if match_title:
 			shown += 1
+			if first_shown == null:
+				first_shown = card
+
+	# Панель сведений справа — о первой найденной игре,
+	# чтобы там не осталась игра, которую поиск уже спрятал.
+	if first_shown:
+		_show_info(first_shown.game)
 
 	var total := _groups.size()
 	if query == "":
@@ -162,11 +173,35 @@ func _update_sort_button() -> void:
 			%SortButton.tooltip_text = tr("Сортировка: %s") % tr(sort[1])
 
 
-func _focus_first_card() -> void:
+## Пришли в поле поиска.
+func _on_search_focused() -> void:
+	if InputMapper.style == "keyboard":
+		# С клавиатурой печатаем прямо в поле. В Godot 4.4+ поле в фокусе
+		# ещё не «редактируется», пока его не включить, — включаем сразу.
+		%Search.edit()
+	else:
+		# С геймпада печатать нечем — открываем экранную клавиатуру.
+		# call_deferred — «сделать в конце кадра». Сразу нельзя: мы внутри
+		# обработчика focus_entered, и если прямо отсюда отдать фокус клавише,
+		# Godot закончит начатое и вернёт фокус полю — оно снова откроет
+		# клавиатуру, и так без конца (программа зависнет).
+		_keyboard.open.call_deferred(%Search)
+
+
+## Уйти из поиска к результатам. Если ничего не нашлось — на кнопку сортировки,
+## а не обратно в поле (иначе клавиатура тут же открылась бы снова).
+func _leave_search() -> void:
+	if not _focus_first_card():
+		%SortButton.grab_focus()
+
+
+## Поставить фокус на первую видимую карточку. false — если видимых нет.
+func _focus_first_card() -> bool:
 	for card: Control in %Grid.get_children():
 		if card.visible:
 			card.grab_focus()
-			return
+			return true
+	return false
 
 
 # Поле поиска в цветах приложения (у LineEdit своего стиля в теме нет).

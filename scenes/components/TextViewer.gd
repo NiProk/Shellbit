@@ -28,6 +28,9 @@ func _ready() -> void:
 	# к кнопкам страницы, которые остались под ним.
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
+	# Выше выделенных карточек и кнопок (у них z_index 1), иначе они
+	# рисовались бы поверх окна.
+	z_index = 10
 
 	# Затемнение всего экрана.
 	var dim := ColorRect.new()
