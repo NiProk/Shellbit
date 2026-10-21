@@ -5,14 +5,26 @@ extends Node
 ## и из любого скрипта к нему можно обратиться по имени: Settings.get_value(...)
 ##
 ## Настройки лежат в файле user://settings.cfg.
-## user:// — это личная папка приложения. В Windows это
-## %APPDATA%\Godot\app_userdata\Shellbit
+## user:// — это личная папка приложения. В Windows это %APPDATA%\Shellbit,
+## в Linux — ~/.local/share/Shellbit. Своё имя папки включено в project.godot:
+## application/config/use_custom_user_dir и custom_user_dir_name.
+## Без этого Godot кладёт данные в общую папку Godot\app_userdata\Shellbit.
 
 ## Сигнал: какую-то настройку поменяли. Экраны могут подписаться
 ## и сразу применить новое значение.
 signal changed(section: String, key: String)
 
 const PATH := "user://settings.cfg"
+
+## Где данные лежали раньше, до своей папки (в Windows — с большой буквы,
+## в Linux — с маленькой). Отсюда они один раз переезжают на новое место.
+const OLD_DIRS := ["Godot/app_userdata/Shellbit", "godot/app_userdata/Shellbit"]
+## Эти папки Godot создаёт сам (журналы, кеш шейдеров) — их не переносим.
+const SKIP_DIRS := ["logs", "shader_cache", "vulkan", "objectdb_snapshots"]
+
+## Откуда перенесли данные при этом запуске ("" — ничего не переносили).
+## Главный экран покажет об этом сообщение.
+var moved_from := ""
 
 ## Сколько памяти (в мегабайтах) можно отдать под «ленту» перемотки.
 ## Если игра тяжёлая (PlayStation), снимки делаются реже, чтобы уложиться.
@@ -49,6 +61,9 @@ var _cfg := ConfigFile.new()
 
 
 func _ready() -> void:
+	# Settings — первый синглтон в списке, поэтому переезд данных
+	# случится раньше, чем библиотека и обложки начнут их читать.
+	_move_old_data()
 	# Если файла ещё нет (первый запуск), load() вернёт ошибку,
 	# а настройки просто останутся пустыми. Это нормально.
 	_cfg.load(PATH)
@@ -102,6 +117,52 @@ func remove_rom_folder(path: String) -> void:
 	if index >= 0:
 		folders.remove_at(index)
 		set_value("library", "folders", folders)
+
+
+# --- Переезд данных в свою папку --------------------------------------------
+
+## Если на новом месте настроек ещё нет, а в старой папке Godot есть —
+## копируем туда всё: настройки, библиотеку, сохранения, обложки, ядра.
+## Копируем, а не переносим: если что-то пойдёт не так, старая папка цела.
+func _move_old_data() -> void:
+	if FileAccess.file_exists(PATH):
+		return  # данные уже на новом месте
+	var here := ProjectSettings.globalize_path("user://").simplify_path()
+	for old_name: String in OLD_DIRS:
+		# OS.get_data_dir() — общая папка программ: %APPDATA% в Windows,
+		# ~/.local/share в Linux.
+		var old := OS.get_data_dir().path_join(old_name).simplify_path()
+		if old.to_lower() == here.to_lower():
+			return  # своя папка выключена — переезжать некуда
+		if FileAccess.file_exists(old.path_join("settings.cfg")):
+			var count := _copy_dir(old, here)
+			moved_from = old
+			print("Данные Shellbit перенесены: %s → %s (файлов: %d)" % [old, here, count])
+			# Записка в старой папке — чтобы было понятно, что её можно удалить.
+			var note := FileAccess.open(old.path_join("ДАННЫЕ ПЕРЕЕХАЛИ.txt"), FileAccess.WRITE)
+			if note:
+				note.store_string("Данные Shellbit скопированы в папку:\n%s\n\nЭту папку можно удалить.\n" % here)
+			return
+
+
+## Скопировать папку со всем содержимым. Возвращает, сколько файлов скопировано.
+## Функция вызывает сама себя для каждой вложенной папки — это называется рекурсия.
+func _copy_dir(from: String, to: String) -> int:
+	var dir := DirAccess.open(from)
+	if dir == null:
+		return 0
+	DirAccess.make_dir_recursive_absolute(to)
+	var count := 0
+	for file_name in dir.get_files():
+		var target := to.path_join(file_name)
+		# Файл, который уже есть на новом месте, не трогаем.
+		if not FileAccess.file_exists(target) \
+				and DirAccess.copy_absolute(from.path_join(file_name), target) == OK:
+			count += 1
+	for dir_name in dir.get_directories():
+		if not SKIP_DIRS.has(dir_name):
+			count += _copy_dir(from.path_join(dir_name), to.path_join(dir_name))
+	return count
 
 
 # --- Применение настроек ----------------------------------------------------

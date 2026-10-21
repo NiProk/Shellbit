@@ -52,11 +52,11 @@ cmake --build "%BUILD_DIR%" || goto :fail
 echo.
 echo === Готово! Файл лежит в addons\shellbit_core\bin\ ===
 echo Теперь откройте проект в Godot.
-pause
+if not defined SHELLBIT_QUIET pause
 exit /b 0
 
 :fail
 echo.
 echo === Сборка не удалась. Скопируйте текст выше и покажите Claude. ===
-pause
+if not defined SHELLBIT_QUIET pause
 exit /b 1

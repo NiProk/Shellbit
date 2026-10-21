@@ -1,0 +1,9 @@
+# Godot: кеш импорта, создаётся сам
+.godot/
+
+# Готовая программа и архивы (Build.bat, Publish.bat)
+build/
+dist/
+
+# Путь к Godot на этом компьютере (tools/godot.bat)
+godot_path.txt

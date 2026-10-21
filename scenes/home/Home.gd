@@ -24,6 +24,11 @@ func _ready() -> void:
 	%Hints.set_hints([["accept", "Открыть"], ["details", "Обновить список"], ["menu", "Настройки"]])
 	_refresh()
 
+	# Данные только что переехали в свою папку — скажем об этом один раз.
+	if Settings.moved_from != "":
+		SceneRouter.toast(tr("Данные Shellbit перенесены в новую папку: %s") % ProjectSettings.globalize_path("user://"))
+		Settings.moved_from = ""
+
 
 ## Перерисовать всё: карточки недавних игр и плитки приставок.
 func _refresh() -> void:

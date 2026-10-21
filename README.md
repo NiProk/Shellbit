@@ -31,14 +31,30 @@
 | `native/` | C++-модуль RetroCore (исходники + godot-cpp) |
 | `addons/shellbit_core/` | Собранный модуль (.dll) и его описание для Godot |
 
-`user://` в Windows — это `%APPDATA%\Godot\app_userdata\Shellbit`.
+`user://` в Windows — это `%APPDATA%\Shellbit`, в Linux — `~/.local/share/Shellbit`
+(своё имя папки задано в `project.godot`: `use_custom_user_dir`).
+Раньше данные лежали в `%APPDATA%\Godot\app_userdata\Shellbit`: при первом запуске новой версии
+Shellbit сам копирует их на новое место и оставляет в старой папке файл «ДАННЫЕ ПЕРЕЕХАЛИ.txt» —
+после проверки старую папку можно удалить.
 
-## Важно при экспорте в .exe
+## Запуск и сборка — двойным щелчком
 
-`data/systems.json`, указатели обложек `data/covers/*.txt`, справочники `data/meta/*.txt` и таблица переводов `data/i18n/strings.tsv` — не ресурсы Godot, поэтому в настройках экспорта
-добавь их вручную: **Project → Export → Resources → Filters to export non-resource files** → впиши `data/*.json, data/covers/*.txt, data/meta/*.txt, data/i18n/*.tsv, *.ico`.
-(`data/*.json` захватывает и `data/pads.json`, а `*.ico` — иконку окна `icon.ico`.)
-Иконка самого .exe: **Project → Export → Windows → Application → Icon** → `res://icon.ico`.
+| Файл | Что делает |
+| --- | --- |
+| `Run.bat` | Запускает Shellbit из проекта, не открывая редактор |
+| `Build.bat` | Собирает готовую программу в `build\Shellbit\` (`Shellbit.exe`, `Shellbit.pck` и `.dll` модуля) |
+| `Publish.bat` | То же + архив для раздачи `dist\Shellbit-<версия>-windows.zip` |
+| `native\build.bat` | Собирает C++-модуль (обычно его вызывает `Build.bat` сам) |
+
+- При первом запуске `tools\godot.bat` попросит перетащить в окно файл Godot (`Godot_v4.7.2-stable_win64.exe`)
+  и запомнит путь в `godot_path.txt`. Godot переехал — удалите этот файл.
+- Для `Build.bat` нужны **шаблоны экспорта**: в Godot — Редактор → Управление шаблонами экспорта → Загрузить и установить.
+- Если нет release-версии C++-модуля, `Build.bat` сначала соберёт её — **Godot должен быть закрыт**.
+- Версия программы — `application/config/version` в `project.godot` (её же видно в «О программе»).
+  Перед новым выпуском поменяйте её, и `Publish.bat` назовёт архив по ней.
+- Настройки экспорта лежат в `export_presets.cfg`: там уже прописаны иконка `icon.ico`
+  и фильтр файлов, которые не являются ресурсами Godot
+  (`data/*.json, data/covers/*.txt, data/meta/*.txt, data/i18n/*.tsv, *.ico`). Новый тип таких файлов — добавьте его туда.
 
 ## Этап 1: сборка C++-модуля (Windows, один раз)
 
@@ -56,7 +72,7 @@
 https://buildbot.libretro.com/nightly/windows/x86_64/latest/ (например, `fceumm_libretro.dll.zip` для NES),
 распакуй и положи `.dll` в папку ядер:
 
-`%APPDATA%\Godot\app_userdata\Shellbit\cores`
+`%APPDATA%\Shellbit\cores`
 
 (Её можно открыть кнопкой «Открыть папку ядер» на экране ошибки.) Какое ядро нужно какой приставке —
 поле `default_core` в `data/systems.json`.
@@ -64,7 +80,7 @@ https://buildbot.libretro.com/nightly/windows/x86_64/latest/ (например, 
 ### PlayStation 1
 
 - Ядро: **`pcsx_rearmed_libretro.dll`**. Работает и без BIOS (встроенная замена), но с настоящим BIOS
-  совместимость выше: положи свой дамп `scph5501.bin` в `%APPDATA%\Godot\app_userdata\Shellbit\system`.
+  совместимость выше: положи свой дамп `scph5501.bin` в `%APPDATA%\Shellbit\system`.
 - Форматы игр: `.cue` (рядом с ним лежат `.bin`), `.chd`, `.pbp`, `.m3u`.
 - Многодисковые игры: создай `Название (USA).m3u` — текстовый файл, где по строке перечислены `.cue` всех дисков.
   Shellbit покажет игру одной карточкой и запустит набор целиком.
@@ -127,12 +143,12 @@ https://buildbot.libretro.com/nightly/windows/x86_64/latest/ (например, 
 - **Меню паузы:** продолжить, начать заново, 3 слота сохранений, выйти в библиотеку.
 - На слоте: **A** — загрузить (в пустой — сохранить), **X** — сохранить сюда.
 - При выходе игра **сохраняется сама**, а при следующем запуске продолжается с того же места.
-- Файлы лежат в `%APPDATA%\Godot\app_userdata\Shellbit\states\` — своя папка для каждого файла игры.
+- Файлы лежат в `%APPDATA%\Shellbit\states\` — своя папка для каждого файла игры.
 
 ## Обложки
 
 Обложки скачиваются сами из бесплатного архива [libretro-thumbnails](https://github.com/libretro-thumbnails)
-(сначала с thumbnails.libretro.com, при ошибке — с GitHub) и хранятся в `%APPDATA%\Godot\app_userdata\Shellbit\covers\`.
+(сначала с thumbnails.libretro.com, при ошибке — с GitHub) и хранятся в `%APPDATA%\Shellbit\covers\`.
 Указатели `data/covers/<приставка>.txt` («ключ игры → имя обложки») собраны заранее из этого архива.
 Если игры нет в архиве, на карточке остаётся название текстом.
 

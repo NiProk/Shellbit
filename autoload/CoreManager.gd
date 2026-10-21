@@ -7,7 +7,7 @@ extends Node
 
 const SYSTEMS_PATH := "res://data/systems.json"
 
-## Папки в user:// (в Windows: %APPDATA%\Godot\app_userdata\Shellbit\...)
+## Папки в user:// (в Windows: %APPDATA%\Shellbit\...)
 const CORES_DIR := "user://cores"    # сюда кладём .dll ядер libretro
 const SYSTEM_DIR := "user://system"  # сюда кладём BIOS
 const SAVES_DIR := "user://saves"    # сюда ядра пишут сохранения
