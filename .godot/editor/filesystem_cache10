@@ -1,12 +1,14 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1792607563
+::res://::1792609375
+export_presets.cfg::TextFile::-1::1792608649::0::1::::<><><>0<>0<><>::
+godot_path.txt::TextFile::-1::1792609216::0::1::::<><><>0<>0<><>::
 icon.ico::OtherFile::-1::1792503453::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::1551284183138099858::1792503452::1792504387::1::::<><><>0<>0<>1c584b337cc060e9b96619de93e25e37<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
-README.md::TextFile::-1::1792607256::0::1::::<><><>0<>0<><>::
+README.md::TextFile::-1::1792608653::0::1::::<><><>0<>0<><>::
 ::res://addons/::1792112514
 ::res://addons/shellbit_core/::1792139930
 shellbit_core.gdextension::GDExtension::348900452575680587::1792112514::0::1::::<><><>0<>0<><>::
-::res://addons/shellbit_core/bin/::1792607559
+::res://addons/shellbit_core/bin/::1792609482
 ::res://autoload/::1792607250
 CoreManager.gd::GDScript::8531947650408633834::1792607250::0::1::::<>Node<><>0<>0<><>::
 Covers.gd::GDScript::1209880393175295986::1792162537::0::1::::<>Node<><>0<>0<><>::
@@ -71,7 +73,7 @@ pip_happy.png::CompressedTexture2D::5556682828706316774::1792503455::1792504387:
 pip_sleepy.png::CompressedTexture2D::461012252692012551::1792503457::1792504387::1::::<><><>0<>0<>6716524c3f24907ba811db44b33d5824<>res://.godot/imported/pip_sleepy.png-2be66b85f6b6369358d84b17646eb783.ctex::
 pip_surprised.png::CompressedTexture2D::2191828067788878176::1792503456::1792504387::1::::<><><>0<>0<>f806af01a3ece4ece4e4b238e7ec87cc<>res://.godot/imported/pip_surprised.png-b1f3e3e82ea5b7b611fc9ac28a774ec6.ctex::
 ::res://scenes/::1792363676
-::res://scenes/components/::1792527992
+::res://scenes/components/::1792607564
 ButtonHints.gd::GDScript::1643795851335535276::1792500982::0::1::::<>PanelContainer<><>0<>0<><>::
 ButtonHints.tscn::PackedScene::-1::1792110339::0::1::::<><><>0<>0<><>::res://scenes/components/ButtonHints.gd
 ConsoleTile.gd::GDScript::2421766102608685192::1792365005::0::1::::ConsoleTile<>Button<><>0<>0<><>::
@@ -115,3 +117,4 @@ SettingsScreen.tscn::PackedScene::-1::1792503452::0::1::::<><><>0<>0<><>::res://
 GameInfo.gd::GDScript::5581722037469496077::1792527984::0::1::::GameInfo<>RefCounted<><>0<>0<><>::
 RomInfo.gd::GDScript::313297776079179520::1792365011::0::1::::RomInfo<>RefCounted<><>0<>0<><>::
 SaveStates.gd::GDScript::4790555304925425334::1792365011::0::1::::SaveStates<>RefCounted<><>0<>0<><>::
+::res://tools/::1792608648

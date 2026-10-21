@@ -286,7 +286,7 @@ Atari 2600	Atari 2600	雅达利 2600	Atari 2600	Atari 2600	Atari 2600	Atari 2600
 По названию	By title	按名称	タイトル順	Nach Titel	Par titre	Por título	Por título	제목순
 По приставке	By console	按主机	機種順	Nach Konsole	Par console	Por consola	Por console	게임기순
 Недавние	Recent	最近游玩	最近遊んだ順	Zuletzt gespielt	Récents	Recientes	Recentes	최근순
-%d из %s	%d of %s	%d / %s	%d / %s	%d von %s	%d sur %s	%d de %s	%d de %s	%s 중 %d
+%d из %s	%d of %s	%d / %s	%d / %s	%d von %s	%d sur %s	%d de %s	%d de %s	%d / %s
 Ничего не найдено	Nothing found	未找到结果	見つかりませんでした	Nichts gefunden	Aucun résultat	No se encontró nada	Nada encontrado	찾은 게임이 없습니다
 Ввести	Type	输入	入力	Eingeben	Saisir	Escribir	Digitar	입력
 Стереть	Delete	删除	削除	Löschen	Effacer	Borrar	Apagar	지우기
@@ -342,3 +342,7 @@ Shellbit запоминает последние секунды игры. Пок
 Игра начнётся с самого начала. Место выхода заменится новым, ручные слоты останутся.	The game will start from the very beginning. “Where you left off” will be replaced; manual slots stay.	游戏将从头开始。“上次退出处”会被替换，手动存档位保留。	ゲームを最初から始めます。「中断した場所」は上書きされますが、手動スロットは残ります。	Das Spiel beginnt ganz von vorn. „Letzte Stelle“ wird ersetzt, manuelle Slots bleiben.	Le jeu reprendra depuis le tout début. « Là où vous étiez » sera remplacé ; les emplacements manuels restent.	El juego empezará desde el principio. «Donde lo dejaste» se reemplazará; las ranuras manuales se conservan.	O jogo vai começar do início. “Onde você parou” será substituído; os slots manuais continuam.	게임을 맨 처음부터 시작합니다. '마지막 위치'는 새로 바뀌고, 직접 저장한 슬롯은 남습니다.
 Новая игра	New game	新游戏	ニューゲーム	Neues Spiel	Nouvelle partie	Nueva partida	Novo jogo	새 게임
 Данные Shellbit перенесены в новую папку: %s	Shellbit data moved to a new folder: %s	Shellbit 数据已移到新文件夹：%s	Shellbit のデータを新しいフォルダーに移しました: %s	Shellbit-Daten wurden in einen neuen Ordner verschoben: %s	Les données de Shellbit ont été déplacées dans un nouveau dossier : %s	Los datos de Shellbit se movieron a una carpeta nueva: %s	Os dados do Shellbit foram movidos para uma nova pasta: %s	Shellbit 데이터를 새 폴더로 옮겼습니다: %s
+Последний запуск: —	Last played: —	上次游玩：—	最終プレイ: —	Zuletzt gespielt: —	Dernière partie : —	Última vez: —	Última vez: —	마지막 플레이: —
+↺  Начать заново	↺  Restart	↺  重新开始	↺  最初から	↺  Neu starten	↺  Recommencer	↺  Empezar de nuevo	↺  Recomeçar	↺  처음부터
+Геймпад приставки	Console controller	主机手柄	ゲーム機のコントローラー	Konsolen-Controller	Manette de la console	Mando de la consola	Controle do console	게임기 컨트롤러
+Ваш геймпад	Your controller	你的手柄	あなたのコントローラー	Dein Controller	Votre manette	Tu mando	Seu controle	내 컨트롤러
