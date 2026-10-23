@@ -389,6 +389,13 @@ func _on_joy_connection_changed(_device: int, _connected: bool) -> void:
 
 
 func _build_video() -> void:
+	var window := _choice("Режим окна", "video", "window_mode", [
+		["fullscreen", tr("Полный экран"),
+			tr("Shellbit занимает весь экран, как настоящая приставка. F11 или Alt+Enter — переключить в окно.")],
+		["windowed", tr("Окно"),
+			tr("Shellbit открывается в обычном окне — его можно двигать и менять размер. F11 или Alt+Enter — во весь экран.")],
+	])
+	window.value_changed.connect(func(_value: Variant) -> void: Settings.apply_window_mode())
 	var filter := _choice("Фильтр изображения", "video", "filter", [
 		["none", tr("Чёткие пиксели"),
 			tr("Каждый пиксель приставки — ровный квадрат. Так игры выглядят на современных экранах.")],

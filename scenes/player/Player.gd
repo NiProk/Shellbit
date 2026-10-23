@@ -27,6 +27,9 @@ var _start_msec := 0
 
 var _paused := false
 var _missing_core := false  # игра не запустилась, потому что нет ядра
+# Файл, который отдаём ядру: сам файл игры или распакованный из архива.
+var _content_path := ""
+var _status_label: Label     # «Распаковываю игру…» по центру экрана
 # После закрытия меню ждём, пока игрок отпустит все кнопки.
 # Иначе нажатие «A — Продолжить» дошло бы до игры как прыжок,
 # а Esc, которым закрыли меню, тут же открыл бы его снова.
@@ -71,6 +74,20 @@ func _ready() -> void:
 ## Запустить игру; не получилось — показать почему.
 ## Вызывается при открытии экрана и ещё раз — когда скачалось ядро.
 func _begin() -> void:
+	_content_path = game.get("path", "")
+	# Игра в архиве (.zip, .7z) — сначала распаковать. Это может занять
+	# несколько секунд, поэтому ждём (await) и показываем надпись.
+	if Archives.needs_extraction(game):
+		_show_status(tr("Распаковываю игру…"))
+		var result: Dictionary = await Archives.prepare(game)
+		_show_status("")
+		if not is_inside_tree():
+			return  # пока распаковывали, человек ушёл с экрана
+		if result["error"] != "":
+			_show_error(result["error"])
+			return
+		_content_path = result["path"]
+
 	var error := _start_game(SceneRouter.params.get("slot", SaveStates.AUTO))
 	if error != "":
 		_show_error(error)
@@ -107,7 +124,7 @@ func _start_game(start_slot: String) -> String:
 
 	if not core.load_core(core_path):
 		return tr("Ядро %s не загрузилось (подробности — во вкладке Output).") % core_path.get_file()
-	if not core.load_game(game["path"]):
+	if not core.load_game(_content_path):
 		return tr("Ядро не смогло открыть файл игры:\n%s") % game["path"]
 
 	# Сведения о картинке и звуке: размер, пропорции, кадры/с, частота звука.
@@ -431,6 +448,19 @@ func _show_error(text: String) -> void:
 		%DownloadButton.grab_focus()
 	else:
 		%OpenCoresButton.grab_focus()
+
+
+# Надпись по центру экрана («Распаковываю игру…»); "" — спрятать.
+func _show_status(text: String) -> void:
+	if _status_label == null:
+		_status_label = Label.new()
+		_status_label.theme_type_variation = &"HeaderLabel"
+		_status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		_status_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		add_child(_status_label)
+		_status_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_status_label.text = text
+	_status_label.visible = text != ""
 
 
 # --- Скачивание ядра с экрана ошибки --------------------------------------------

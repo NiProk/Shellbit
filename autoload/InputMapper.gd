@@ -41,6 +41,16 @@ func _ready() -> void:
 	# Capture на Switch Pro. У старых геймпадов её нет — для них есть пункт
 	# «Скриншот» в меню паузы.
 	_add_action(&"screenshot", JOY_BUTTON_MISC1, KEY_F12)
+	# Полный экран ↔ окно: F11 или Alt+Enter, как во многих играх и плеерах.
+	# Ловит это нажатие Settings (см. Settings._input).
+	InputMap.add_action(&"fullscreen")
+	var f11 := InputEventKey.new()
+	f11.physical_keycode = KEY_F11
+	InputMap.action_add_event(&"fullscreen", f11)
+	var alt_enter := InputEventKey.new()
+	alt_enter.physical_keycode = KEY_ENTER
+	alt_enter.alt_pressed = true
+	InputMap.action_add_event(&"fullscreen", alt_enter)
 
 	_load_pads()
 	# Поменяли раскладку в настройках — забываем готовые таблицы,

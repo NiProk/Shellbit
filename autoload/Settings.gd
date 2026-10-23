@@ -37,6 +37,7 @@ const DEFAULTS := {
 		"language": "auto",  # auto (как в Windows) / ru / en / zh / ja
 	},
 	"video": {
+		"window_mode": "fullscreen",  # fullscreen (во весь экран) / windowed (в окне)
 		"filter": "none",   # none / smooth / crt / lcd
 		"scale": "fit",     # fit (во весь экран) / integer (целые пиксели)
 		"aspect": "core",   # core (как у приставки) / square / stretch
@@ -69,6 +70,7 @@ func _ready() -> void:
 	_cfg.load(PATH)
 	# Сразу применяем то, что действует на всё приложение.
 	apply_vsync()
+	apply_window_mode()
 	apply_volume()
 
 
@@ -166,6 +168,43 @@ func _copy_dir(from: String, to: String) -> int:
 
 
 # --- Применение настроек ----------------------------------------------------
+
+## Полный экран или окно. Shellbit и так стартует во весь экран
+## (window/size/mode = 3 в project.godot — без «мигания» окна при запуске),
+## а здесь применяем выбор человека из Настроек → Видео.
+func apply_window_mode() -> void:
+	if DisplayServer.get_name() == "headless":
+		return  # без окна (автотесты) переключать нечего
+	var full_modes := [DisplayServer.WINDOW_MODE_FULLSCREEN, DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN]
+	if get_value("video", "window_mode") == "fullscreen":
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		return
+	var was_full := DisplayServer.window_get_mode() in full_modes
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	if was_full:
+		# Из полного экрана — в окно 1280×720 посередине монитора.
+		var screen := DisplayServer.window_get_current_screen()
+		var size := Vector2i(1280, 720)
+		DisplayServer.window_set_size(size)
+		DisplayServer.window_set_position(DisplayServer.screen_get_position(screen)
+				+ (DisplayServer.screen_get_size(screen) - size) / 2)
+
+
+## Переключить: полный экран ↔ окно (F11 или Alt+Enter).
+func toggle_window_mode() -> void:
+	var mode := "windowed" if get_value("video", "window_mode") == "fullscreen" else "fullscreen"
+	set_value("video", "window_mode", mode)
+	apply_window_mode()
+
+
+# _input получает нажатия раньше кнопок интерфейса — поэтому F11 работает
+# на любом экране, даже в игре.
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen") and not event.is_echo():
+		toggle_window_mode()
+		# Enter из Alt+Enter не должен заодно нажать кнопку на экране.
+		get_viewport().set_input_as_handled()
+
 
 ## Вертикальная синхронизация: кадры выводятся в такт монитору,
 ## поэтому картинка не «рвётся» при движении.

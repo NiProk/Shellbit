@@ -18,6 +18,20 @@ func test_defaults() -> void:
 	check_eq(Settings.get_value("нет_такого", "ключа", 42), 42, "своё значение по умолчанию")
 
 
+func test_fullscreen_toggle() -> void:
+	about("По умолчанию — полный экран; F11 переключает и запоминает")
+	check_eq(Settings.get_value("video", "window_mode"), "fullscreen")
+	var f11 := InputEventKey.new()
+	f11.physical_keycode = KEY_F11
+	f11.pressed = true
+	Input.parse_input_event(f11)
+	Input.flush_buffered_events()
+	check_eq(Settings.get_value("video", "window_mode"), "windowed", "после F11 — окно")
+	Settings.toggle_window_mode()
+	check_eq(Settings.get_value("video", "window_mode"), "fullscreen", "и обратно")
+	Settings.set_value("video", "window_mode", null)
+
+
 func test_set_and_erase() -> void:
 	about("Настройка сохраняется, а null её удаляет")
 	Settings.set_value("test", "value", 7)
@@ -45,10 +59,15 @@ func test_scan_fixture_games() -> void:
 	about("Библиотека находит игры и складывает версии вместе")
 	Settings.set_value("library", "folders", PackedStringArray([ProjectSettings.globalize_path(FIXTURE_ROMS)]))
 	Library.scan()
-	# Contra (USA) и (Japan) — одна игра; readme.txt — не игра; Mega Man 2 — во вложенной папке.
-	check_eq(Library.groups.size(), 5, "игр всего")
-	check_eq(Library.groups_for_system("nes").size(), 4, "игр NES")
+	# Contra (USA) и (Japan) — одна игра; readme.txt — не игра; Mega Man 2 — во вложенной папке;
+	# Duck Hunt (World).zip — NES в архиве; pacman.zip — аркада; Sonic….7z — Mega Drive,
+	# если 7-Zip есть (иначе .7z ждёт, пока 7-Zip скачается).
+	var has_7zip := Archives.seven_zip() != ""
+	check_eq(Library.groups.size(), 7 + (1 if has_7zip else 0), "игр всего")
+	check_eq(Library.groups_for_system("nes").size(), 5, "игр NES (одна — в zip)")
 	check_eq(Library.groups_for_system("gb").size(), 1, "игр Game Boy")
+	check_eq(Library.groups_for_system("arcade").size(), 1, "аркада в zip")
+	check_eq(Library.groups_for_system("md").size(), 1 if has_7zip else 0, "Mega Drive в 7z")
 	var contra := _group("Contra")
 	check_eq(contra.get("variants", []).size(), 2, "у Contra две версии")
 

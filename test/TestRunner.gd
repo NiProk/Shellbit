@@ -35,6 +35,8 @@ func _ready() -> void:
 
 	# Обложки в тестах не скачиваем: Covers думает, что все «каналы» заняты.
 	Covers._active = 1_000_000
+	# И 7-Zip из интернета не качаем — тесты с .7z работают, только если он уже есть.
+	Archives._download_tried = true
 
 	var errors := ErrorCounter.new()
 	OS.add_logger(errors)

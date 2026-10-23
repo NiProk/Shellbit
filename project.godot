@@ -28,6 +28,7 @@ Settings="*res://autoload/Settings.gd"
 Lang="*res://autoload/Lang.gd"
 CoreManager="*res://autoload/CoreManager.gd"
 CoreDownloader="*res://autoload/CoreDownloader.gd"
+Archives="*res://autoload/Archives.gd"
 Library="*res://autoload/Library.gd"
 Covers="*res://autoload/Covers.gd"
 InputMapper="*res://autoload/InputMapper.gd"
@@ -40,5 +41,6 @@ UiSounds="*res://autoload/UiSounds.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"

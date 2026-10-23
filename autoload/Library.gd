@@ -15,7 +15,8 @@ extends Node
 ##     "score": 130,                  # из RomInfo: чем больше, тем лучше версия
 ##     "favorite": false,
 ##     "last_played": 0,              # Unix-время последнего запуска (0 = ни разу)
-##     "play_seconds": 0              # сколько секунд наиграно
+##     "play_seconds": 0,             # сколько секунд наиграно
+##     "archive_checked": true        # только у .zip/.7z: приставку узнали по файлу внутри
 ##   }
 ##
 ## 2. ИГРА (группа) — все версии одной игры вместе. Именно группы видит
@@ -41,6 +42,8 @@ const FAVORITES_COLOR := "#f5c542"  # золотой — цвет звезды
 const MAX_DEPTH := 6  # насколько глубоко заходить во вложенные папки
 
 var games: Array[Dictionary] = []   # все файлы
+# При поиске нашлись .7z, а 7-Zip ещё нет — скачаем его и поищем снова.
+var _waiting_for_7zip := false
 var groups: Array[Dictionary] = []  # все игры (группы файлов)
 
 
@@ -63,6 +66,7 @@ func scan() -> void:
 		old[game["path"]] = game
 
 	var found: Array[Dictionary] = []
+	_waiting_for_7zip = false
 	for folder in Settings.get_rom_folders():
 		_scan_dir(folder, found, old, 0)
 
@@ -70,6 +74,15 @@ func scan() -> void:
 	_rebuild_groups()
 	_save()
 	scan_finished.emit()
+	if _waiting_for_7zip:
+		# call_deferred — после того как все синглтоны готовы (scan вызывается
+		# и при запуске программы, когда SceneRouter ещё не создан).
+		_fetch_7zip_and_rescan.call_deferred()
+
+
+func _fetch_7zip_and_rescan() -> void:
+	if await Archives.ensure_seven_zip():
+		scan()  # теперь .7z откроются
 
 
 # Рекурсивная функция: смотрит файлы в папке, а для каждой
@@ -85,20 +98,35 @@ func _scan_dir(path: String, found: Array[Dictionary], old: Dictionary, depth: i
 		_scan_dir(path.path_join(sub), found, old, depth + 1)
 
 	for file in dir.get_files():
-		var system_id := CoreManager.system_for_extension(file.get_extension())
+		var full_path := path.path_join(file)
+		var archive := Archives.is_archive(full_path)
+		var system_id := ""
+		if archive:
+			# Архив: приставку узнаём по файлу внутри («Contra.nes» → NES).
+			# Если этот архив уже смотрели — берём ответ из прошлого раза.
+			if old.has(full_path) and old[full_path].get("archive_checked", false):
+				system_id = old[full_path]["system"]
+			else:
+				system_id = Archives.detect_system(full_path)
+				if system_id == "":
+					_waiting_for_7zip = true  # .7z, а открыть его пока нечем
+					continue
+		else:
+			system_id = CoreManager.system_for_extension(file.get_extension())
 		if system_id == "":
 			continue  # это не игра (или приставка, которую мы не знаем)
-		var full_path := path.path_join(file)
-		if old.has(full_path):
-			found.append(old[full_path])
-		else:
-			found.append({
-				"path": full_path,
-				"system": system_id,
-				"favorite": false,
-				"last_played": 0,
-				"play_seconds": 0,
-			})
+
+		var entry: Dictionary = old.get(full_path, {
+			"path": full_path,
+			"favorite": false,
+			"last_played": 0,
+			"play_seconds": 0,
+		})
+		# Раньше любой .zip считался аркадой — у старых записей приставку уточняем.
+		entry["system"] = system_id
+		if archive:
+			entry["archive_checked"] = true
+		found.append(entry)
 
 
 # Собрать файлы в группы. Вызывается после любого изменения.

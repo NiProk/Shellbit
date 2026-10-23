@@ -11,5 +11,5 @@
   {"id": "pce", "short": "PCE", "name": "PC Engine", "extensions": ["pce"], "default_core": "mednafen_pce_fast_libretro.dll", "bios": [], "color": "#F06A8B", "aspect": 1.333, "image": "res://data/consoles/PC Engine NEC.png", "thumbnails": "NEC - PC Engine - TurboGrafx 16"},
   {"id": "psx", "short": "PS1", "name": "PlayStation", "extensions": ["cue", "chd", "pbp", "m3u"], "default_core": "pcsx_rearmed_libretro.dll", "bios": ["scph5501.bin"], "color": "#B8C0D0", "aspect": 1.333, "image": "res://data/consoles/PS1.png", "thumbnails": "Sony - PlayStation"},
   {"id": "atari2600", "short": "Atari", "name": "Atari 2600", "extensions": ["a26"], "default_core": "stella_libretro.dll", "bios": [], "color": "#D4A373", "aspect": 1.333, "image": "res://data/consoles/Atari.png", "thumbnails": "Atari - 2600"},
-  {"id": "arcade", "short": "Arcade", "name": "Аркадные автоматы", "extensions": ["zip"], "default_core": "fbneo_libretro.dll", "bios": [], "color": "#E040FB", "aspect": 1.333, "image": "res://data/consoles/Arcade.png", "thumbnails": "FBNeo - Arcade Games"}
+  {"id": "arcade", "short": "Arcade", "name": "Аркадные автоматы", "extensions": ["zip", "7z"], "default_core": "fbneo_libretro.dll", "bios": [], "color": "#E040FB", "aspect": 1.333, "image": "res://data/consoles/Arcade.png", "thumbnails": "FBNeo - Arcade Games"}
 ]
