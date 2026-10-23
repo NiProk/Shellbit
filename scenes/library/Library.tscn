@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/library/Library.gd" id="1_lib"]
 [ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
 [ext_resource type="Texture2D" path="res://data/ui/pip_surprised.png" id="3_pip"]
+[ext_resource type="Script" path="res://scenes/components/VirtualGrid.gd" id="9_vgrid"]
 
 [node name="Library" type="Control"]
 layout_mode = 3
@@ -90,7 +91,6 @@ theme_override_constants/separation = 24
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-follow_focus = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
@@ -125,12 +125,12 @@ theme_override_font_sizes/font_size = 22
 text = "Ничего не найдено"
 horizontal_alignment = 1
 
-[node name="Grid" type="GridContainer" parent="Margin/VBox/Body/Scroll/Pad"]
+[node name="Grid" type="Control" parent="Margin/VBox/Body/Scroll/Pad"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/h_separation = 18
-theme_override_constants/v_separation = 18
-columns = 4
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("9_vgrid")
 
 [node name="Info" type="PanelContainer" parent="Margin/VBox/Body"]
 custom_minimum_size = Vector2(340, 0)

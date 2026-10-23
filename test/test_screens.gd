@@ -83,10 +83,12 @@ func test_library_remembers_game() -> void:
 	about("Открыл игру, вернулся «Назад» — фокус на той же игре, а не на первой")
 	await _open("home")
 	await _open("library", {"system": "nes"})
-	var cards: Array = get_tree().current_scene.get_node("%Grid").get_children()
-	var last: GameCard = cards[-1]
+	var grid: VirtualGrid = get_tree().current_scene.get_node("%Grid")
+	var last_index := grid.items.size() - 1
+	grid.select(last_index)  # дошли до последней игры
+	await frames(1)
+	var last: GameCard = grid.card_for(last_index)
 	var key: String = last.game["key"]  # сама карточка исчезнет вместе с экраном
-	last.grab_focus()
 	last.pressed.emit()  # открыть страницу игры
 	await _wait_router()
 	check_eq(get_tree().current_scene.scene_file_path.get_file(), "GameDetails.tscn")
@@ -116,3 +118,28 @@ func _wait_router() -> void:
 	await frames(2)
 	while SceneRouter._busy:
 		await frames(1)
+
+
+func test_virtual_grid() -> void:
+	about("Сетка игр: карточек — только на экран, стрелки ходят по всем играм")
+	await _open("library", {"system": "nes"})
+	var grid: VirtualGrid = get_tree().current_scene.get_node("%Grid")
+	var many := []
+	for i in 500:  # 500 игр — больше, чем помещается на экран
+		many.append({"key": "test_%d" % i, "title": "Game %d" % i, "system": "nes",
+				"variants": [{"path": "x%d.nes" % i, "version": "", "favorite": false}],
+				"favorite": false, "last_played": 0, "play_seconds": 0})
+	grid.set_items(many)
+	await frames(2)
+	check(grid.get_child_count() < 60, "карточек меньше 60, а игр 500")
+	grid.select(0)
+	await frames(1)
+	for i in 30:  # 30 раз «вниз»
+		var event := InputEventAction.new()
+		event.action = &"ui_down"
+		event.pressed = true
+		grid.card_for(grid.selected).gui_input.emit(event)
+	await frames(2)
+	check_eq(grid.selected, 30 * VirtualGrid.COLUMNS, "30 рядов вниз")
+	var focused := get_viewport().gui_get_focus_owner()
+	check(focused is GameCard and focused.game["key"] == "test_%d" % grid.selected, "фокус на выбранной игре")

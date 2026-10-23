@@ -56,9 +56,14 @@ func _ready() -> void:
 
 
 ## Заполнить карточку данными игры. Вызывается после add_child().
+## Можно вызывать снова для другой игры — так делает VirtualGrid,
+## когда карточка «переезжает» при прокрутке.
 func setup(new_game: Dictionary, style: Style = Style.WIDE) -> void:
 	game = new_game
 	_style = style
+	# Картинка прошлой игры этой карточке больше не нужна.
+	_has_snapshot = false
+	_hide_picture()
 
 	match style:
 		Style.WIDE_BIG:

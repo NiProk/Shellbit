@@ -54,6 +54,12 @@ const RESULT_NAMES := {
 
 var _indexes := {}    # id приставки → {ключ игры: имя обложки}
 var _textures := {}   # ключ группы → Texture2D (уже загруженные в память)
+## Сколько обложек держать в памяти. Обложка — около 0,4 МБ видеопамяти;
+## на 2000 игр это было бы 700 МБ. Храним последние MAX_TEXTURES:
+## на экране видно ~30, остальные — запас, чтобы при прокрутке назад
+## не читать их с диска заново. Самые давние выбрасываем.
+const MAX_TEXTURES := 300
+var _order: Array[String] = []  # ключи в порядке использования: давние — в начале
 var _missing := {}    # ключи, для которых обложки нет (в этот запуск не ищем)
 var _pending := {}    # ключи, которые сейчас в очереди или качаются
 var _queue: Array[Dictionary] = []
@@ -62,35 +68,82 @@ var _active := 0      # сколько скачиваний идёт прямо 
 
 ## Обложка игры (группы) или null. Если null — обложка уже ищется,
 ## и позже придёт сигнал cover_ready.
-func get_cover(group: Dictionary) -> Texture2D:
+##
+## now = false (по умолчанию): картинку с диска читаем в фоновом потоке.
+## Чтение и распаковка PNG — несколько миллисекунд, и когда при прокрутке
+## библиотеки сразу появляется ряд из 4–8 карточек, интерфейс бы
+## подтормаживал. now = true — прочитать сразу (страница одной игры).
+func get_cover(group: Dictionary, now := false) -> Texture2D:
 	var key: String = group["key"]
 	if _textures.has(key):
+		_touch(key)
 		return _textures[key]
+	if _loading.has(key):
+		return null  # уже читаем с диска — придёт сигналом
 
 	# Своя обложка — выбранная в программе или лежащая рядом с игрой.
 	var own := _find_own_cover(group)
 	if own != "":
-		var texture := _load_texture(own)
-		if texture:
-			_textures[key] = texture
-			return texture
+		return _read(key, ProjectSettings.globalize_path(own), true, now)
 
 	if _missing.has(key) or _pending.has(key):
 		return null
 
-	# Может, уже скачали в прошлый раз?
+	# Может, уже скачали в прошлый раз? (скачанные уже уменьшены)
 	var path := _cache_path(group)
 	if FileAccess.file_exists(path):
-		var image := Image.load_from_file(ProjectSettings.globalize_path(path))
-		if image:
-			_textures[key] = ImageTexture.create_from_image(image)
-			return _textures[key]
+		return _read(key, ProjectSettings.globalize_path(path), false, now)
 	if FileAccess.file_exists(path + ".none"):
 		_missing[key] = true  # в прошлый раз сервер ответил «нет такой»
 		return null
 
 	_enqueue(group)
 	return null
+
+
+# --- Чтение с диска в фоновом потоке ---------------------------------------
+# WorkerThreadPool — готовый «пул» потоков Godot: отдаём ему функцию,
+# он выполняет её на свободном ядре процессора, не останавливая интерфейс.
+
+var _loading := {}  # ключи обложек, которые сейчас читаются с диска
+
+
+func _read(key: String, path: String, shrink: bool, now: bool) -> Texture2D:
+	if now:
+		var image := _load_image(path, shrink)
+		if image == null:
+			return null
+		_remember(key, ImageTexture.create_from_image(image))
+		return _textures[key]
+	_loading[key] = true
+	WorkerThreadPool.add_task(_read_in_thread.bind(key, path, shrink))
+	return null
+
+
+# Работает В ДРУГОМ ПОТОКЕ. Здесь можно читать файлы и менять Image,
+# но нельзя трогать узлы и посылать сигналы интерфейсу — поэтому
+# результат передаём в главный поток через call_deferred.
+func _read_in_thread(key: String, path: String, shrink: bool) -> void:
+	var image := _load_image(path, shrink)
+	_on_read.call_deferred(key, image)
+
+
+func _load_image(path: String, shrink: bool) -> Image:
+	var image := Image.load_from_file(path)
+	if image == null or image.is_empty():
+		return null
+	if shrink:
+		_shrink(image)
+	return image
+
+
+# Снова в главном потоке: картинка прочитана.
+func _on_read(key: String, image: Image) -> void:
+	_loading.erase(key)
+	if image == null:
+		_missing[key] = true  # файл испорчен — больше не пробуем
+		return
+	_set_texture(key, ImageTexture.create_from_image(image))
 
 
 # --- Свои обложки ----------------------------------------------------------
@@ -117,9 +170,10 @@ func has_custom_cover(group: Dictionary) -> bool:
 func remove_custom_cover(group: Dictionary) -> void:
 	DirAccess.remove_absolute(_custom_path(group))
 	_textures.erase(group["key"])
+	_order.erase(group["key"])
 	_missing.erase(group["key"])
 	# Ищем заново. Если обложку надо скачать — она придёт сигналом позже.
-	cover_ready.emit(group["key"], get_cover(group))
+	cover_ready.emit(group["key"], get_cover(group, true))
 
 
 # Путь к своей обложке или "" если её нет.
@@ -135,18 +189,27 @@ func _find_own_cover(group: Dictionary) -> String:
 	return ""
 
 
-func _load_texture(path: String) -> Texture2D:
-	var image := Image.load_from_file(ProjectSettings.globalize_path(path))
-	if image == null or image.is_empty():
-		return null
-	_shrink(image)
-	return ImageTexture.create_from_image(image)
-
-
 func _set_texture(key: String, texture: Texture2D) -> void:
-	_textures[key] = texture
+	_remember(key, texture)
 	_missing.erase(key)
 	cover_ready.emit(key, texture)
+
+
+# Положить обложку в память. Если их стало слишком много — выбросить самую
+# давнюю. Карточка, которая её показывает, сохранит свою копию ссылки,
+# так что на экране ничего не пропадёт: из памяти обложка уйдёт, когда
+# её перестанут показывать.
+func _remember(key: String, texture: Texture2D) -> void:
+	_textures[key] = texture
+	_touch(key)
+	while _order.size() > MAX_TEXTURES:
+		_textures.erase(_order.pop_front())
+
+
+# Отметить, что обложку только что использовали: переставить её ключ в конец.
+func _touch(key: String) -> void:
+	_order.erase(key)
+	_order.append(key)
 
 
 func _shrink(image: Image) -> void:

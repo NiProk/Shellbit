@@ -104,7 +104,7 @@ func _refresh() -> void:
 		if card.slot == SaveStates.AUTO:
 			card.visible = has_auto
 
-	_show_cover(Covers.get_cover(group))
+	_show_cover(Covers.get_cover(group, true))  # true — сразу, без «мигания»
 
 
 # Цвета сведений об игре. Можно менять на свой вкус.

@@ -45,6 +45,12 @@ var games: Array[Dictionary] = []   # все файлы
 # При поиске нашлись .7z, а 7-Zip ещё нет — скачаем его и поищем снова.
 var _waiting_for_7zip := false
 var groups: Array[Dictionary] = []  # все игры (группы файлов)
+var _by_key := {}  # ключ игры → группа: найти игру по ключу сразу, не перебирая все
+## Разобранные имена файлов: путь → результат RomInfo.parse().
+## Разбор — это несколько регулярных выражений на файл; на 5000 игр
+## это ~0,1 с, а группы пересобираются при каждом запуске и выходе из игры.
+## Имя файла не меняется — разбираем его один раз.
+var _parsed := {}
 
 
 func _ready() -> void:
@@ -52,7 +58,9 @@ func _ready() -> void:
 	_rebuild_groups()
 	# Описания версий («США · проверенная») зависят от языка —
 	# при смене языка собираем группы заново.
-	Lang.language_changed.connect(_rebuild_groups)
+	Lang.language_changed.connect(func() -> void:
+		_parsed.clear()  # описания версий — на старом языке, разберём заново
+		_rebuild_groups())
 	# Если папки уже выбраны — проверяем, не появились ли новые игры.
 	if not Settings.get_rom_folders().is_empty():
 		scan()
@@ -134,9 +142,13 @@ func _rebuild_groups() -> void:
 	var by_key := {}  # ключ группы → группа
 
 	for game in games:
-		# Каждый раз заново разбираем имя: если правила в RomInfo
-		# улучшатся, старые записи тоже получат правильные названия.
-		var info := RomInfo.parse(game["path"].get_file())
+		# Имя разбираем при каждом запуске программы (а не храним в
+		# library.json): если правила в RomInfo улучшатся, старые записи тоже
+		# получат правильные названия. В пределах запуска — берём из _parsed.
+		var path: String = game["path"]
+		if not _parsed.has(path):
+			_parsed[path] = RomInfo.parse(path.get_file())
+		var info: Dictionary = _parsed[path]
 		game["title"] = info["title"]
 		game["version"] = info["label"]
 		game["score"] = info["score"]
@@ -152,6 +164,7 @@ func _rebuild_groups() -> void:
 		by_key[key]["variants"].append(game)
 
 	groups.clear()
+	_by_key = by_key
 	for group: Dictionary in by_key.values():
 		var variants: Array = group["variants"]
 		# Лучшая версия — первая. При равной оценке — по имени файла.
@@ -197,10 +210,9 @@ func browse_ids() -> Array[String]:
 
 ## Найти игру (группу) по ключу, например "nes_battletoads". {} — если нет.
 func find_group(key: String) -> Dictionary:
-	for group in groups:
-		if group["key"] == key:
-			return group
-	return {}
+	# Словарь находит запись по ключу сразу — даже среди 10 000 игр.
+	# Перебор groups в цикле на большой коллекции занимал около миллисекунды.
+	return _by_key.get(key, {})
 
 
 ## Игры, в которые играли, — самые свежие первыми.
@@ -294,7 +306,9 @@ func last_played_text(unix_time: int) -> String:
 func _save() -> void:
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
-		file.store_string(JSON.stringify(games, "\t"))
+		# Без отступов: на тысячах игр файл получается вдвое меньше
+		# и пишется быстрее (а его пишут при каждом запуске игры).
+		file.store_string(JSON.stringify(games))
 
 
 func _load() -> void:

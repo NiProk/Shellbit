@@ -8,7 +8,6 @@ extends Control
 ##
 ## Каждая карточка — это ИГРА (группа версий), а не отдельный файл.
 
-const GameCardScene := preload("res://scenes/components/GameCard.tscn")
 const MAX_VERSION_LINES := 8  # сколько версий показывать в панели
 
 ## Способы сортировки: [значение для настроек, надпись на кнопке].
@@ -43,6 +42,11 @@ func _ready() -> void:
 		%SystemName.text = tr(system.get("name", "Неизвестная приставка"))
 	_groups = groups
 
+	# Сетка «виртуальная»: карточек в ней ровно столько, сколько видно
+	# на экране (см. scenes/components/VirtualGrid.gd). Так экран
+	# с тысячами игр открывается мгновенно.
+	%Grid.card_pressed.connect(_on_game_pressed)
+	%Grid.card_focused.connect(_show_info)
 	_setup_search_and_sort()
 	# Вернулись со страницы игры — восстанавливаем поиск, как был.
 	# text = … не вызывает text_changed, фильтр применит _build_grid().
@@ -83,43 +87,26 @@ func _setup_search_and_sort() -> void:
 	_update_sort_button()
 
 
-## Создать карточки заново — в порядке текущей сортировки.
+## Отсортировать игры и показать их — в порядке текущей сортировки.
 func _build_grid() -> void:
-	for child in %Grid.get_children():
-		%Grid.remove_child(child)
-		child.queue_free()
-
 	_sort_groups()
-	for group: Dictionary in _groups:
-		var card: GameCard = GameCardScene.instantiate()
-		%Grid.add_child(card)
-		card.setup(group, GameCard.Style.COVER)
-		card.pressed.connect(_on_game_pressed.bind(group))
-		# Когда карточка получает фокус — показываем её данные справа.
-		card.focus_entered.connect(_show_info.bind(group))
 	_apply_filter()
 
 
-## Спрятать карточки, в названии которых нет текста из поиска.
-## GridContainer сам «сдвигает» видимые карточки — пустых дыр не будет.
+## Показать только игры, в названии которых есть текст из поиска.
 func _apply_filter() -> void:
 	var query: String = %Search.text.strip_edges()
-	var shown := 0
-	var first_shown: GameCard = null
-	for card: GameCard in %Grid.get_children():
-		# findn — поиск БЕЗ учёта регистра: «toad» найдёт «Battletoads».
-		# Возвращает место, где нашёлся текст, или −1, если не нашёлся.
-		var match_title: bool = query == "" or card.game["title"].findn(query) != -1
-		card.visible = match_title
-		if match_title:
-			shown += 1
-			if first_shown == null:
-				first_shown = card
+	# findn — поиск БЕЗ учёта регистра: «toad» найдёт «Battletoads».
+	# Возвращает место, где нашёлся текст, или −1, если не нашёлся.
+	var found := _groups.filter(func(group: Dictionary) -> bool:
+		return query == "" or group["title"].findn(query) != -1)
+	%Grid.set_items(found)
+	var shown := found.size()
 
 	# Панель сведений справа — о первой найденной игре,
 	# чтобы там не осталась игра, которую поиск уже спрятал.
-	if first_shown:
-		_show_info(first_shown.game)
+	if not found.is_empty():
+		_show_info(found[0])
 
 	var total := _groups.size()
 	if query == "":
@@ -210,26 +197,21 @@ func _restore_focus() -> void:
 	# не поймёт, куда прокручивать.
 	await get_tree().process_frame
 	var key: String = SceneRouter.params.get("focus_key", "")
-	for card: GameCard in %Grid.get_children():
-		if card.visible and card.game["key"] == key:
-			card.grab_focus()
-			# follow_focus прокрутил бы «впритык» — карточка оказалась бы у
-			# самого края. Ставим её посередине экрана: так видно и соседей.
-			await get_tree().process_frame
-			var content: Control = %Scroll.get_child(0)  # то, что прокручивается
-			var top := card.global_position.y - content.global_position.y
-			%Scroll.scroll_vertical = int(top - (%Scroll.size.y - card.size.y) / 2.0)
+	var items: Array = %Grid.items
+	for i in items.size():
+		if items[i]["key"] == key:
+			# Посередине экрана — так видно и соседние игры.
+			%Grid.select(i, true)
 			return
 	_focus_first_card()
 
 
-## Поставить фокус на первую видимую карточку. false — если видимых нет.
+## Поставить фокус на первую игру. false — если игр нет (поиск ничего не нашёл).
 func _focus_first_card() -> bool:
-	for card: Control in %Grid.get_children():
-		if card.visible:
-			card.grab_focus()
-			return true
-	return false
+	if %Grid.items.is_empty():
+		return false
+	%Grid.select(0)
+	return true
 
 
 # Поле поиска в цветах приложения (у LineEdit своего стиля в теме нет).
@@ -255,7 +237,10 @@ func _show_info(group: Dictionary) -> void:
 	# В избранном игры с разных приставок — подписываем, с какой.
 	if _is_favorites():
 		info_lines.append(tr(CoreManager.get_system(group["system"]).get("name", "")))
-	info_lines.append(tr("Время в игре: %s") % Library.playtime_text(int(group["play_seconds"])))
+	# Ни разу не играли — время не показываем («меньше минуты» сбивало бы с толку).
+	# Так же сделано и на странице игры.
+	if int(group["play_seconds"]) > 0:
+		info_lines.append(tr("Время в игре: %s") % Library.playtime_text(int(group["play_seconds"])))
 	info_lines.append(tr("Последний запуск: %s") % Library.last_played_text(int(group["last_played"])))
 	%InfoText.text = "\n".join(info_lines)
 
@@ -307,11 +292,23 @@ func _unhandled_input(event: InputEvent) -> void:
 		_switch_system(-1)
 	elif event.is_action_pressed("page_right"):
 		_switch_system(1)
-	elif focused == null and event.is_action_pressed("ui_down"):
-		_focus_first_card()
+	elif focused == null and _is_direction(event):
+		# Фокуса нет (прокрутили колесом так, что выделенная игра ушла
+		# за край) — стрелка возвращает его на выделенную игру.
+		if %Grid.selected >= 0:
+			%Grid.select(%Grid.selected)
+		else:
+			_focus_first_card()
 	else:
 		return  # нажатие нам не нужно — пусть идёт дальше
 	get_viewport().set_input_as_handled()
+
+
+func _is_direction(event: InputEvent) -> bool:
+	for action in ["ui_up", "ui_down", "ui_left", "ui_right"]:
+		if event.is_action_pressed(action):
+			return true
+	return false
 
 
 func _next_version(group: Dictionary) -> void:
