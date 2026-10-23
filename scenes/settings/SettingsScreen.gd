@@ -36,6 +36,7 @@ const PAGES := [
 
 var _page := ""  # id открытого раздела
 var _dropdown: DropdownList  # выпадающий список языков (создаётся при первом открытии)
+var _core_rows := {}  # файл ядра → строки, где показываем, как оно качается
 
 
 func _ready() -> void:
@@ -45,6 +46,9 @@ func _ready() -> void:
 	# Подключаем обычную функцию, а не лямбду: когда экран закроется,
 	# Godot сам отключит её от сигнала.
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
+	# Скачивание ядер: проценты в строках и сообщение, когда готово.
+	CoreDownloader.progress.connect(_on_core_progress)
+	CoreDownloader.finished.connect(_on_core_finished)
 
 	%Preview.texture = _preview_texture()
 
@@ -170,12 +174,14 @@ func _show_page(id: String) -> void:
 
 ## Пересобрать текущий раздел (например, после добавления папки).
 func _rebuild_page() -> void:
-	var was_in_rows := get_viewport().gui_get_focus_owner() is SettingRow
+	var focused := get_viewport().gui_get_focus_owner()
+	var was_in_rows := focused is SettingRow
+	var index := focused.get_index() if was_in_rows else 0  # остаться на той же строке
 	var id := _page
 	_page = ""  # иначе _show_page решит, что раздел уже открыт
 	_show_page(id)
 	if was_in_rows:
-		_enter_rows.call_deferred()
+		_enter_rows.call_deferred(index)
 
 
 ## Перейти из разделов к строкам (index — на какую строку встать).
@@ -486,8 +492,21 @@ func _on_language_changed(value: Variant) -> void:
 
 
 func _build_cores() -> void:
+	_core_rows.clear()
 	var cores_dir := ProjectSettings.globalize_path(CoreManager.CORES_DIR)
 	var bios_dir := ProjectSettings.globalize_path(CoreManager.SYSTEM_DIR)
+
+	# Сколько разных ядер не хватает (у Game Boy и Game Boy Color оно общее).
+	var missing := {}
+	for system in CoreDownloader.missing_systems():
+		missing[CoreManager.core_path(system).get_file()] = true
+	if missing.is_empty():
+		_info("Все ядра на месте", "", tr("Ядра для всех приставок уже скачаны."))
+	else:
+		_action("Скачать недостающие ядра", str(missing.size()),
+				tr("Shellbit скачает ядра для всех приставок, где их нет, с официального сервера libretro (buildbot.libretro.com). BIOS не скачиваются — их нужно положить в папку BIOS самим."),
+				func() -> void: CoreDownloader.download_missing())
+
 	_action("Открыть папку ядер", "", tr("Сюда кладут файлы ядер (.dll):\n") + cores_dir,
 			CoreManager.open_cores_folder)
 	_action("Открыть папку BIOS", "", tr("Сюда кладут файлы BIOS:\n") + bios_dir,
@@ -495,8 +514,9 @@ func _build_cores() -> void:
 
 	for system: Dictionary in CoreManager.systems:
 		var core_path := CoreManager.core_path(system)
+		var core_file := core_path.get_file()
 		var has_core := FileAccess.file_exists(core_path)
-		var text := tr("Ядро %s — %s.") % [core_path.get_file(), tr("найдено") if has_core else tr("не найдено")]
+		var text := tr("Ядро %s — %s.") % [core_file, tr("найдено") if has_core else tr("не найдено")]
 
 		var missing_bios := PackedStringArray()
 		for bios: String in system.get("bios", []):
@@ -504,12 +524,46 @@ func _build_cores() -> void:
 				missing_bios.append(bios)
 			text += "\nBIOS %s — %s." % [bios, tr("не найден") if missing_bios.has(bios) else tr("найден")]
 
-		var value := tr("Готово")
 		if not has_core:
-			value = tr("Нет ядра")
-		elif not missing_bios.is_empty():
-			value = tr("Без BIOS")
-		_info(system["name"], value, text, not has_core)
+			# Ядра нет — строка становится кнопкой «Скачать».
+			var row := _action(system["name"], "Скачать",
+					text + "\n\n" + tr("A — скачать ядро с официального сервера libretro."), Callable())
+			row.pressed.connect(func() -> void: CoreDownloader.download(system))
+			_core_rows.get_or_add(core_file, []).append(row)
+			_show_core_state(row, core_file, -2)
+			continue
+		_info(system["name"], tr("Без BIOS") if not missing_bios.is_empty() else tr("Готово"), text, false)
+
+
+# Что написать справа в строке ядра: «Скачать», «в очереди» или «45 %».
+# percent: -2 — ничего не качается, -1 — в очереди, 0…100 — скачано процентов.
+func _show_core_state(row: SettingRow, core_file: String, percent: int) -> void:
+	if percent == -2 and CoreDownloader.is_busy(core_file):
+		percent = -1
+	match percent:
+		-2:
+			row.info_text = "Скачать"
+		-1:
+			row.info_text = "в очереди"
+		_:
+			row.info_text = "%d %%" % percent
+	row.warn = percent == -2  # красным — пока ядра нет и оно не качается
+	row.refresh()
+
+
+func _on_core_progress(core_file: String, percent: int) -> void:
+	for row: SettingRow in _core_rows.get(core_file, []):
+		if is_instance_valid(row):
+			_show_core_state(row, core_file, percent)
+
+
+func _on_core_finished(core_file: String, ok: bool, message: String) -> void:
+	if ok:
+		SceneRouter.toast(tr("Ядро %s скачано") % core_file)
+	else:
+		SceneRouter.toast(tr("Не удалось скачать ядро %s: %s") % [core_file, message])
+	if _page == "cores":
+		_rebuild_page()  # ядро появилось — строка станет «Готово»
 
 
 func _build_about() -> void:

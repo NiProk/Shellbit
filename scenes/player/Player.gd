@@ -26,6 +26,7 @@ var _time_bank := 0.0          # накопленное время, которо
 var _start_msec := 0
 
 var _paused := false
+var _missing_core := false  # игра не запустилась, потому что нет ядра
 # После закрытия меню ждём, пока игрок отпустит все кнопки.
 # Иначе нажатие «A — Продолжить» дошло бы до игры как прыжок,
 # а Esc, которым закрыли меню, тут же открыл бы его снова.
@@ -46,6 +47,9 @@ var _speed_label: Label      # значок «▶▶ ×3» / «◀◀» в уг�
 func _ready() -> void:
 	game = SceneRouter.params.get("game", {})
 	%OpenCoresButton.pressed.connect(CoreManager.open_cores_folder)
+	%DownloadButton.pressed.connect(_download_core)
+	CoreDownloader.progress.connect(_on_core_progress)
+	CoreDownloader.finished.connect(_on_core_finished)
 
 	# Подписываемся на сигналы меню паузы.
 	%PauseMenu.resume_requested.connect(_resume)
@@ -61,6 +65,12 @@ func _ready() -> void:
 
 	# С какого сохранения начать: "auto" — с места выхода (по умолчанию),
 	# "1".."3" — с ручного слота (их выбирают на странице игры).
+	_begin()
+
+
+## Запустить игру; не получилось — показать почему.
+## Вызывается при открытии экрана и ещё раз — когда скачалось ядро.
+func _begin() -> void:
 	var error := _start_game(SceneRouter.params.get("slot", SaveStates.AUTO))
 	if error != "":
 		_show_error(error)
@@ -74,6 +84,7 @@ func _ready() -> void:
 ## Запустить игру и загрузить сохранение из слота start_slot ("" — с самого начала).
 ## Возвращает "" если всё хорошо, иначе — текст ошибки.
 func _start_game(start_slot: String) -> String:
+	_missing_core = false
 	if game.is_empty():
 		return tr("Не передана игра.")
 
@@ -84,8 +95,9 @@ func _start_game(start_slot: String) -> String:
 
 	var system := CoreManager.get_system(game["system"])
 	var core_path := CoreManager.core_path(system)
-	if not FileAccess.file_exists(core_path):
-		return tr("Нет ядра %s.\nСкачайте его и положите в папку ядер:\n%s") % [
+	_missing_core = not FileAccess.file_exists(core_path)
+	if _missing_core:
+		return tr("Нет ядра %s.\nНажмите «Скачать ядро» — Shellbit скачает его сам. Или положите файл в папку ядер:\n%s") % [
 			core_path.get_file(), core_path.get_base_dir()]
 
 	core = ClassDB.instantiate("RetroCore")
@@ -410,8 +422,46 @@ func _show_error(text: String) -> void:
 	%ErrorText.text = text
 	%Error.visible = true
 	%Hints.visible = true
-	%Hints.set_hints([["cancel", "Назад"]])
+	%Hints.set_hints([["accept", "Выбрать"], ["cancel", "Назад"]])
+	# Нет ядра — главная кнопка «Скачать ядро».
+	%DownloadButton.visible = _missing_core
+	%DownloadButton.text = tr("Скачать ядро")
+	%DownloadButton.disabled = false
+	if _missing_core:
+		%DownloadButton.grab_focus()
+	else:
+		%OpenCoresButton.grab_focus()
+
+
+# --- Скачивание ядра с экрана ошибки --------------------------------------------
+
+func _core_file() -> String:
+	return CoreManager.core_path(CoreManager.get_system(game.get("system", ""))).get_file()
+
+
+func _download_core() -> void:
+	CoreDownloader.download(CoreManager.get_system(game["system"]))
+	%DownloadButton.text = tr("Скачиваю…")
+	%DownloadButton.disabled = true  # второй раз не нажмёшь
 	%OpenCoresButton.grab_focus()
+
+
+func _on_core_progress(core_file: String, percent: int) -> void:
+	if core_file == _core_file() and percent >= 0:
+		%DownloadButton.text = tr("Скачиваю…") + " %d %%" % percent
+
+
+func _on_core_finished(core_file: String, ok: bool, message: String) -> void:
+	if core_file != _core_file() or not %Error.visible:
+		return
+	if ok:
+		# Ядро на месте — прячем ошибку и запускаем игру ещё раз.
+		%Error.visible = false
+		%Hints.visible = false
+		SceneRouter.toast(tr("Ядро %s скачано") % core_file)
+		_begin()
+	else:
+		_show_error(tr("Не удалось скачать ядро %s: %s") % [core_file, message])
 
 
 func _unhandled_input(event: InputEvent) -> void:
