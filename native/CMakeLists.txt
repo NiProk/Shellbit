@@ -19,6 +19,13 @@ add_library(shellbit_core SHARED
 
 target_link_libraries(shellbit_core PRIVATE godot-cpp ${CMAKE_DL_LIBS})
 
+# Linux: стандартную библиотеку C++ вшиваем прямо в .so. Тогда модуль
+# не зависит от версии libstdc++ в системе — важно для Steam Deck,
+# где система обновляется реже, чем, например, CachyOS.
+if(UNIX AND NOT APPLE)
+    target_link_options(shellbit_core PRIVATE -static-libstdc++ -static-libgcc)
+endif()
+
 get_target_property(GODOTCPP_SUFFIX godot-cpp GODOTCPP_SUFFIX)
 set(OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../addons/shellbit_core/bin/")
 

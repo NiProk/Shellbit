@@ -195,7 +195,8 @@ func _start_game(start_slot: String) -> String:
 	# Класс RetroCore появляется, только если C++-модуль собран.
 	# Проверяем через ClassDB, чтобы проект открывался и без модуля.
 	if not ClassDB.class_exists("RetroCore"):
-		return tr("C++-модуль shellbit_core не собран. Запустите native/build.bat и перезапустите Godot.")
+		var script := "native/build.bat" if OS.get_name() == "Windows" else "native/build.sh"
+		return tr("C++-модуль shellbit_core не собран. Запустите %s и перезапустите Godot.") % script
 
 	var system := CoreManager.get_system(game["system"])
 	var core_path := CoreManager.core_path(system)

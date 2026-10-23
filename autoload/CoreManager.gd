@@ -55,11 +55,17 @@ func get_system(id: String) -> Dictionary:
 ## globalize_path превращает "user://..." в настоящий путь на диске.
 func core_path(system: Dictionary) -> String:
 	var file_name: String = system.get("default_core", "")
-	if OS.get_name() != "Windows":
-		file_name = file_name.replace(".dll", ".so")
+	# В systems.json ядра записаны по-виндовому: fceumm_libretro.dll.
+	# В Linux те же ядра называются fceumm_libretro.so.
+	file_name = file_name.replace(".dll", core_extension())
 	return ProjectSettings.globalize_path(CORES_DIR.path_join(file_name))
 
 
-## Открыть папку с ядрами в Проводнике.
+## Расширение файлов ядер: ".dll" в Windows, ".so" в Linux (и на Steam Deck).
+func core_extension() -> String:
+	return ".dll" if OS.get_name() == "Windows" else ".so"
+
+
+## Открыть папку с ядрами в Проводнике (в Linux — в Dolphin, Nautilus и т.п.).
 func open_cores_folder() -> void:
 	OS.shell_open(ProjectSettings.globalize_path(CORES_DIR))

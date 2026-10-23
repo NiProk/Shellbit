@@ -3,3 +3,6 @@
 
 # .bat-файлы Windows читает только с переводами строк CRLF
 *.bat text eol=crlf
+
+# .sh-файлы Linux читает только с переводами строк LF
+*.sh text eol=lf

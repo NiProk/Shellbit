@@ -527,7 +527,7 @@ func _build_cores() -> void:
 				tr("Shellbit скачает ядра для всех приставок, где их нет, с официального сервера libretro (buildbot.libretro.com). BIOS не скачиваются — их нужно положить в папку BIOS самим."),
 				func() -> void: CoreDownloader.download_missing())
 
-	_action("Открыть папку ядер", "", tr("Сюда кладут файлы ядер (.dll):\n") + cores_dir,
+	_action("Открыть папку ядер", "", tr("Сюда кладут файлы ядер (%s):\n") % CoreManager.core_extension() + cores_dir,
 			CoreManager.open_cores_folder)
 	_action("Открыть папку BIOS", "", tr("Сюда кладут файлы BIOS:\n") + bios_dir,
 			func() -> void: OS.shell_open(bios_dir))
