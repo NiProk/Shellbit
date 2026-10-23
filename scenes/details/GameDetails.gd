@@ -50,6 +50,10 @@ func _ready() -> void:
 	])
 	_refresh()
 	%PlayButton.grab_focus.call_deferred()
+	# Всё, что справа от обложки, лежит в InfoScroll — ScrollContainer,
+	# «окошке с прокруткой». Колесо мыши он прокручивает сам, а для
+	# геймпада следим, куда ушёл фокус, и прокручиваем к нему.
+	get_viewport().gui_focus_changed.connect(_scroll_to)
 
 
 ## Заполнить экран данными игры. Вызывается и после смены версии.
@@ -161,6 +165,23 @@ func _show_cover(texture: Texture2D) -> void:
 func _on_cover_ready(key: String, texture: Texture2D) -> void:
 	if key == group["key"]:
 		_show_cover(texture)
+
+
+## Фокус перешёл на control — прокрутить так, чтобы его было видно.
+## У ScrollContainer есть готовый follow_focus, но он прокручивает
+## «впритык» — и светящаяся рамка фокуса обрезается краем. Поэтому сами:
+##  - карточки сохранений — в самом низу, туда и прокручиваем до упора
+##    (с отступом Pad, рамка поместится целиком);
+##  - всё остальное — сначала наверх, а если и там не видно — к самой кнопке.
+func _scroll_to(control: Control) -> void:
+	var scroll: ScrollContainer = %InfoScroll
+	if control == null or not scroll.is_ancestor_of(control):
+		return  # фокус где-то ещё (например, в окне выбора обложки)
+	if control.get_parent() == %Saves:
+		scroll.scroll_vertical = int(scroll.get_v_scroll_bar().max_value)
+	else:
+		scroll.scroll_vertical = 0
+		scroll.ensure_control_visible(control)
 
 
 # --- Действия --------------------------------------------------------------

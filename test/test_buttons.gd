@@ -101,3 +101,14 @@ func test_table_follows_changes() -> void:
 	check_has(InputMapper._table("snes"), ["a", InputMapper.PAD_B])
 	InputMapper.assign("snes", "b", "x")
 	check_has(InputMapper._table("snes"), ["x", InputMapper.PAD_B], "B приставки теперь на X")
+
+
+func test_back_trigger_combo() -> void:
+	about("Back + курок — перемотка там, где курки заняты игрой")
+	check_eq(InputMapper.combo_trigger("psx", "rewind"), "lt", "PlayStation: Back + LT")
+	check_eq(InputMapper.combo_trigger("psx", "fast_forward"), "rt", "PlayStation: Back + RT")
+	check_eq(InputMapper.combo_trigger("n64", "rewind"), "lt", "Nintendo 64: Z на LT")
+	check_eq(InputMapper.combo_trigger("snes", "rewind"), "", "SNES: курок свободен — сочетание не нужно")
+	# Перенесли L2 приставки на другую кнопку — курок свободен, сочетание не нужно.
+	InputMapper.assign("psx", "rewind", "lt")
+	check_eq(InputMapper.combo_trigger("psx", "rewind"), "", "LT отдан перемотке напрямую")

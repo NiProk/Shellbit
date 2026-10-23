@@ -219,6 +219,11 @@ func _refresh() -> void:
 				value.add_theme_color_override("font_color", UiTheme.ACCENT)
 			else:
 				var glyph := InputMapper.glyph(physical)
+				# Перемотка без своей кнопки — показываем сочетание «Back + LT».
+				if physical == "" and row.has_meta("hotkey"):
+					var combo := InputMapper.combo_text(_system_id, button["id"])
+					if combo != "":
+						glyph = combo
 				value.text = ("‹  %s  ›" % glyph) if arrows else glyph
 				var color := InputMapper.glyph_color(physical) if physical != "" else UiTheme.TEXT_DIM
 				value.add_theme_color_override("font_color", color)
@@ -262,8 +267,12 @@ func _note_for(row: Button) -> String:
 		var hotkey: Dictionary = row.get_meta("button")
 		var physical: String = InputMapper.get_mapping(_system_id)[hotkey["id"]]
 		var key := OS.get_keycode_string(InputMapper.HOTKEY_KEYS[hotkey["id"]])
-		var pad := InputMapper.glyph(physical) if physical != "" else tr("не назначена")
+		var combo := InputMapper.combo_text(_system_id, hotkey["id"])
+		var pad := InputMapper.glyph(physical) if physical != "" else (combo if combo != "" else tr("не назначена"))
 		lines.append(tr("%s: кнопка %s на геймпаде, %s на клавиатуре.") % [tr(hotkey["name"]), pad, key])
+		if combo != "":
+			var back := InputMapper.glyph(InputMapper.COMBO_MODIFIER)
+			lines.append(tr("Курки у этой приставки нужны самой игре, поэтому перемотка и ускорение — через %s: сначала зажмите %s, потом нажмите курок. Пока %s зажата, курки в игру не уходят.") % [combo, back, back])
 		lines.append(tr("Скорость ускорения и длина перемотки — в Настройках, раздел «Игра»."))
 		if hotkey["id"] == "rewind" and int(Settings.get_value("play", "rewind_seconds")) == 0:
 			lines.append(tr("Сейчас перемотка выключена."))

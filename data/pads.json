@@ -43,7 +43,7 @@
       {"label": "C", "kind": "small", "color": "#e3b51c", "pos": [477, 90]},
       {"label": "C", "kind": "small", "color": "#e3b51c", "pos": [533, 90]}
     ],
-    "note": "C-кнопки у ядра Nintendo 64 — на правом стике. Стики Shellbit в игру пока не передаёт, поэтому C-кнопки не работают.",
+    "note": "Стик Nintendo 64 — левый стик геймпада (на клавиатуре — стрелки), C-кнопки — правый стик.",
     "buttons": [
       {"id": "a", "label": "A", "pad": "b", "default": "a", "color": "#2f53c9", "shape": "round", "pos": [440, 135]},
       {"id": "b", "label": "B", "pad": "y", "default": "x", "color": "#2e9a46", "shape": "round", "pos": [400, 95]},

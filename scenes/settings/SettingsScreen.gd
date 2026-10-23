@@ -345,10 +345,21 @@ func _build_controls() -> void:
 			tr("Нажмите правый стик, Select и Start вместе или Esc на клавиатуре."))
 	_info("Скриншот", "F12 · Share",
 			tr("Кнопка Share («Поделиться») есть на геймпадах Xbox Series и PlayStation 5. На других геймпадах — пункт «Скриншот» в меню паузы."))
+	_info("Перемотка и ускорение", "%s · %s" % [InputMapper.glyph("lt"), InputMapper.glyph("rt")],
+			_hotkeys_text())
 	var pad_row := _action("Кнопки приставок", "",
 			tr("Своя раскладка для каждой приставки: какая кнопка вашего геймпада — это A, B или Start приставки. С рисунками геймпадов."),
 			Callable())
 	pad_row.pressed.connect(_open_pad_map.bind(pad_row))
+
+
+## Как включать перемотку и ускорение. Подписи кнопок — под ваш геймпад:
+## у Xbox это LT, RT и Back, у PlayStation — L2, R2 и Share.
+func _hotkeys_text() -> String:
+	var lt := InputMapper.glyph("lt")
+	var rt := InputMapper.glyph("rt")
+	var back := InputMapper.glyph(InputMapper.COMBO_MODIFIER)
+	return tr("На геймпаде: %s — перемотка назад, %s — ускорение. У PlayStation и Nintendo 64 курки нужны самой игре — там зажмите %s и нажмите %s или %s. На клавиатуре — Backspace и пробел.") % [lt, rt, back, lt, rt]
 
 
 # Открыть экран «Кнопки приставок». Запоминаем в параметрах этого экрана
@@ -378,7 +389,7 @@ func _build_play() -> void:
 		[60, tr("1 минута"), rewind_description],
 	], "", false)
 	var pad_row := _action("Кнопки перемотки и ускорения", "",
-			tr("На геймпаде — LT (перемотка) и RT (ускорение), если приставке курки не нужны. На клавиатуре — Backspace и пробел. Поменять можно в «Кнопках приставок» для каждой приставки."),
+			_hotkeys_text() + " " + tr("Поменять можно в «Кнопках приставок» для каждой приставки."),
 			Callable())
 	pad_row.pressed.connect(_open_pad_map.bind(pad_row))
 

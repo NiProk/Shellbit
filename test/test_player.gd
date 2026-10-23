@@ -119,3 +119,40 @@ func _tap(key: Key) -> void:
 	_key(key, true)
 	_play(1)
 	_key(key, false)
+
+
+func test_sticks_n64_keyboard() -> void:
+	about("Nintendo 64: стрелки — это стик игры, а не крестовина")
+	player.game = {"system": "n64", "path": "test.z64", "title": "Test"}
+	player._analog = true
+	_key(KEY_RIGHT, true)
+	_play(2)
+	check_eq(core.sticks.get(Vector2i(0, 0)), Vector2(1, 0), "стик вправо до упора")
+	check_eq(core.inputs[0] & (1 << InputMapper.PAD_RIGHT), 0, "крестовина не нажата")
+	_key(KEY_RIGHT, false)
+	_play(2)
+	check_eq(core.sticks.get(Vector2i(0, 0)), Vector2.ZERO, "отпустили — стик в центре")
+
+
+func test_sticks_snes_dpad() -> void:
+	about("SNES: стиков нет — стрелки нажимают крестовину")
+	_key(KEY_RIGHT, true)
+	_play(2)
+	check(core.inputs[0] & (1 << InputMapper.PAD_RIGHT) != 0, "крестовина вправо")
+	check(core.sticks.is_empty(), "стики в ядро не передаются")
+	_key(KEY_RIGHT, false)
+
+
+func test_stick_deadzone() -> void:
+	about("Мёртвая зона стика: дрожание — ноль, дальше — плавно до 1")
+	check_eq(InputMapper.apply_deadzone(Vector2(0.05, -0.08)), Vector2.ZERO, "дрожание в покое")
+	check(InputMapper.apply_deadzone(Vector2(0.2, 0)).x < 0.1, "чуть за краем зоны — маленькое значение")
+	check_eq(InputMapper.apply_deadzone(Vector2(1, 0)), Vector2(1, 0), "до упора — 1")
+
+
+func test_pick_dualshock() -> void:
+	about("PlayStation: из контроллеров ядра выбирается DualShock")
+	var types := [{"name": "standard", "id": 1}, {"name": "analog", "id": 5}, {"name": "dualshock", "id": 261}]
+	check_eq(player._pick_analog_type(types), 261)
+	check_eq(player._pick_analog_type(types.slice(0, 2)), 5, "без DualShock — любой со стиками")
+	check_eq(player._pick_analog_type([]), -1, "список пуст")

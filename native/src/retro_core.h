@@ -11,6 +11,7 @@
 
 #include <godot_cpp/classes/image.hpp>
 #include <godot_cpp/classes/node.hpp>
+#include <godot_cpp/variant/array.hpp>
 #include <godot_cpp/variant/dictionary.hpp>
 #include <godot_cpp/variant/packed_byte_array.hpp>
 #include <godot_cpp/variant/packed_vector2_array.hpp>
@@ -63,6 +64,14 @@ public:
 
 	void run_frame();
 	void set_input(int port, int mask); // mask — по биту на каждую кнопку
+	// Положение стика: stick 0 — левый, 1 — правый; x и y — от -1 до 1
+	// (как Input.get_joy_axis в Godot: вправо и вниз — плюс).
+	void set_analog(int port, int stick, float x, float y);
+	// Какие контроллеры ядро умеет подключать к порту — ядро само
+	// присылает этот список. [{"name": "DualShock", "id": 517}, ...]
+	Array get_controller_types(int port) const;
+	// «Вставить» в порт другой контроллер (например, DualShock вместо обычного).
+	void set_controller_type(int port, int device);
 
 	bool has_new_frame() const { return new_frame; }
 	Ref<Image> get_frame();
@@ -109,6 +118,7 @@ private:
 		bool (*unserialize)(const void *, size_t);
 		void *(*get_memory_data)(unsigned);
 		size_t (*get_memory_size)(unsigned);
+		void (*set_controller_port_device)(unsigned, unsigned); // может не быть
 	};
 
 	// libretro вызывает НАШИ функции (колбэки), когда ему что-то нужно:
@@ -154,6 +164,9 @@ private:
 
 	PackedVector2Array audio;
 	uint16_t input_masks[4] = { 0, 0, 0, 0 };
+	// analog[порт][стик][0 — X, 1 — Y], от -32767 до 32767, как просит libretro.
+	int16_t analog[4][2][2] = {};
+	Array controller_types; // по массиву типов на каждый порт
 };
 
 } // namespace godot

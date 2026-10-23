@@ -37,18 +37,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 56
-theme_override_constants/margin_top = 48
+theme_override_constants/margin_top = 28
 theme_override_constants/margin_right = 56
 theme_override_constants/margin_bottom = 72
 
 [node name="HBox" type="HBoxContainer" parent="Margin"]
 layout_mode = 2
-theme_override_constants/separation = 44
+theme_override_constants/separation = 24
 
 [node name="CoverColumn" type="VBoxContainer" parent="Margin/HBox"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 14
+
+[node name="TopGap" type="Control" parent="Margin/HBox/CoverColumn"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
 
 [node name="CoverBox" type="PanelContainer" parent="Margin/HBox/CoverColumn"]
 clip_contents = true
@@ -90,19 +94,33 @@ theme_type_variation = &"DimLabel"
 text = "Последний запуск: —"
 autowrap_mode = 3
 
-[node name="Info" type="VBoxContainer" parent="Margin/HBox"]
+[node name="InfoScroll" type="ScrollContainer" parent="Margin/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="Pad" type="MarginContainer" parent="Margin/HBox/InfoScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Info" type="VBoxContainer" parent="Margin/HBox/InfoScroll/Pad"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="SystemTag" type="Label" parent="Margin/HBox/Info"]
+[node name="SystemTag" type="Label" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 17
 text = "Приставка"
 
-[node name="Title" type="Label" parent="Margin/HBox/Info"]
+[node name="Title" type="Label" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
@@ -113,13 +131,13 @@ autowrap_mode = 3
 text_overrun_behavior = 3
 max_lines_visible = 2
 
-[node name="Meta" type="HFlowContainer" parent="Margin/HBox/Info"]
+[node name="Meta" type="HFlowContainer" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 0
 
-[node name="Description" type="Label" parent="Margin/HBox/Info"]
+[node name="Description" type="Label" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
@@ -130,11 +148,11 @@ autowrap_mode = 3
 text_overrun_behavior = 3
 max_lines_visible = 3
 
-[node name="VersionRow" type="HBoxContainer" parent="Margin/HBox/Info"]
+[node name="VersionRow" type="HBoxContainer" parent="Margin/HBox/InfoScroll/Pad/Info"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Version" type="Label" parent="Margin/HBox/Info/VersionRow"]
+[node name="Version" type="Label" parent="Margin/HBox/InfoScroll/Pad/Info/VersionRow"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -142,7 +160,7 @@ theme_type_variation = &"DimLabel"
 theme_override_font_sizes/font_size = 16
 text = "Версия"
 
-[node name="MoreButton" type="Button" parent="Margin/HBox/Info/VersionRow"]
+[node name="MoreButton" type="Button" parent="Margin/HBox/InfoScroll/Pad/Info/VersionRow"]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 36)
@@ -150,58 +168,58 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Читать полностью ▸"
 
-[node name="Gap" type="Control" parent="Margin/HBox/Info"]
+[node name="Gap" type="Control" parent="Margin/HBox/InfoScroll/Pad/Info"]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
-[node name="Buttons" type="HFlowContainer" parent="Margin/HBox/Info"]
+[node name="Buttons" type="HFlowContainer" parent="Margin/HBox/InfoScroll/Pad/Info"]
 layout_mode = 2
 theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 
-[node name="PlayButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+[node name="PlayButton" type="Button" parent="Margin/HBox/InfoScroll/Pad/Info/Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 theme_override_font_sizes/font_size = 21
 text = "▶  Играть"
 
-[node name="RestartButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+[node name="RestartButton" type="Button" parent="Margin/HBox/InfoScroll/Pad/Info/Buttons"]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 text = "↺  Начать заново"
 
-[node name="FavButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+[node name="FavButton" type="Button" parent="Margin/HBox/InfoScroll/Pad/Info/Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 text = "В избранное"
 
-[node name="VersionButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+[node name="VersionButton" type="Button" parent="Margin/HBox/InfoScroll/Pad/Info/Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 text = "Другая версия"
 
-[node name="CoverButton" type="Button" parent="Margin/HBox/Info/Buttons"]
+[node name="CoverButton" type="Button" parent="Margin/HBox/InfoScroll/Pad/Info/Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 text = "Обложка…"
 
-[node name="Gap2" type="Control" parent="Margin/HBox/Info"]
+[node name="Gap2" type="Control" parent="Margin/HBox/InfoScroll/Pad/Info"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
-[node name="SavesTitle" type="Label" parent="Margin/HBox/Info"]
+[node name="SavesTitle" type="Label" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"CardTitleLabel"
 text = "Сохранения"
 
-[node name="Saves" type="HBoxContainer" parent="Margin/HBox/Info"]
+[node name="Saves" type="HBoxContainer" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 14

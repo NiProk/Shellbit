@@ -176,6 +176,12 @@ const KEY_TO_PAD := {
 }
 
 const STICK_DEADZONE := 0.5
+## Мёртвая зона стика, когда он передаётся в игру как стик: геймпад
+## в покое редко показывает ровно 0 (0,03…0,08), и без этого персонаж
+## потихоньку «ползёт» сам. Всё, что меньше 12% хода, считаем нулём.
+const ANALOG_DEADZONE := 0.12
+
+const ARROW_KEYS := [KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT]
 
 
 ## Маска нажатых кнопок для игрока port (0 = первый игрок).
@@ -185,8 +191,14 @@ const STICK_DEADZONE := 0.5
 func get_retropad_mask(port: int, system_id := "") -> int:
 	var mask := 0
 
+	# У Nintendo 64 крестовина и стик — разные вещи. Там левый стик
+	# (и стрелки на клавиатуре) управляют стиком игры, а не крестовиной.
+	var stick_is_dpad := stick_moves_dpad(system_id)
+
 	if port == 0:
 		for key: Key in KEY_TO_PAD:
+			if not stick_is_dpad and key in ARROW_KEYS:
+				continue  # стрелки уходят в стик — см. get_analog()
 			if Input.is_physical_key_pressed(key):
 				mask |= 1 << KEY_TO_PAD[key]
 
@@ -194,8 +206,13 @@ func get_retropad_mask(port: int, system_id := "") -> int:
 	if port < pads_list.size():
 		var device: int = pads_list[port]
 		if pads.has(system_id):
+			# Back + курок — перемотка или ускорение (см. combo_trigger ниже).
+			# Пока это сочетание зажато, ни Back, ни курки в игру не уходят.
+			var combo := is_combo_held(device, system_id)
 			# Таблица этой приставки: пары [кнопка геймпада, бит RetroPad].
 			for pair: Array in _table(system_id):
+				if combo and pair[0] in [COMBO_MODIFIER, "lt", "rt"]:
+					continue
 				if is_physical_pressed(device, pair[0]):
 					mask |= 1 << pair[1]
 		else:
@@ -212,7 +229,9 @@ func get_retropad_mask(port: int, system_id := "") -> int:
 		if Input.is_joy_button_pressed(device, JOY_BUTTON_DPAD_LEFT): mask |= 1 << PAD_LEFT
 		if Input.is_joy_button_pressed(device, JOY_BUTTON_DPAD_RIGHT): mask |= 1 << PAD_RIGHT
 
-		# Левый стик работает как крестовина.
+		# Левый стик работает как крестовина (кроме Nintendo 64).
+		if not stick_is_dpad:
+			return mask
 		var x := Input.get_joy_axis(device, JOY_AXIS_LEFT_X)
 		var y := Input.get_joy_axis(device, JOY_AXIS_LEFT_Y)
 		if x < -STICK_DEADZONE: mask |= 1 << PAD_LEFT
@@ -221,6 +240,62 @@ func get_retropad_mask(port: int, system_id := "") -> int:
 		if y > STICK_DEADZONE: mask |= 1 << PAD_DOWN
 
 	return mask
+
+
+# =====================================================================
+# Стики
+# =====================================================================
+#
+# У NES или Mega Drive стиков нет — там левый стик просто нажимает
+# крестовину (это делает get_retropad_mask выше).
+# У PlayStation и Nintendo 64 стики есть, и игре важно, НАСКОЛЬКО
+# стик наклонён: чуть-чуть — Марио идёт, до упора — бежит.
+# Такие приставки отмечены в data/systems.json строкой "analog": true.
+
+
+## Передаёт ли Shellbit стики в игры этой приставки.
+func has_analog(system_id: String) -> bool:
+	return CoreManager.get_system(system_id).get("analog", false)
+
+
+## Нажимает ли левый стик крестовину. Да — везде, кроме приставок
+## с "stick_dpad": false (Nintendo 64: там у стика своя работа).
+func stick_moves_dpad(system_id: String) -> bool:
+	return CoreManager.get_system(system_id).get("stick_dpad", true)
+
+
+## Положение стика игрока port: stick 0 — левый, 1 — правый.
+## Vector2 от (-1, -1) до (1, 1): x — влево/вправо, y — вверх/вниз
+## (вниз — плюс, как в Godot и в libretro).
+func get_analog(port: int, stick: int, system_id := "") -> Vector2:
+	var value := Vector2.ZERO
+	var pads_list := Input.get_connected_joypads()
+	if port < pads_list.size():
+		var device: int = pads_list[port]
+		if stick == 0:
+			value = Vector2(Input.get_joy_axis(device, JOY_AXIS_LEFT_X), Input.get_joy_axis(device, JOY_AXIS_LEFT_Y))
+		else:
+			value = Vector2(Input.get_joy_axis(device, JOY_AXIS_RIGHT_X), Input.get_joy_axis(device, JOY_AXIS_RIGHT_Y))
+		value = apply_deadzone(value)
+
+	# Клавиатура: если стрелки не крестовина (Nintendo 64), они — левый стик.
+	if port == 0 and stick == 0 and value == Vector2.ZERO and not stick_moves_dpad(system_id):
+		value = Vector2(
+				float(Input.is_physical_key_pressed(KEY_RIGHT)) - float(Input.is_physical_key_pressed(KEY_LEFT)),
+				float(Input.is_physical_key_pressed(KEY_DOWN)) - float(Input.is_physical_key_pressed(KEY_UP)))
+		value = value.limit_length(1.0)  # по диагонали — тоже не дальше края
+	return value
+
+
+## Мёртвая зона «по кругу»: маленькие наклоны — ноль, а остальной ход
+## растягиваем, чтобы от края мёртвой зоны значение росло плавно с нуля
+## (иначе стик «прыгал» бы сразу с 0 на 0,12).
+func apply_deadzone(value: Vector2) -> Vector2:
+	var length := value.length()
+	if length < ANALOG_DEADZONE:
+		return Vector2.ZERO
+	var scaled := minf(1.0, (length - ANALOG_DEADZONE) / (1.0 - ANALOG_DEADZONE))
+	return value / length * scaled
 
 
 # =====================================================================
@@ -289,6 +364,13 @@ const HOTKEYS := [
 ## На клавиатуре — как в RetroArch: Backspace и пробел.
 const HOTKEY_KEYS := {"rewind": KEY_BACKSPACE, "fast_forward": KEY_SPACE}
 
+## Если курок занят игрой (L2 и R2 у PlayStation, Z у Nintendo 64),
+## перемотка и ускорение работают через сочетание: зажать Back, потом курок.
+## Back — «модификатор», как Shift на клавиатуре: сам по себе он Select,
+## а вместе с курком — команда для Shellbit.
+const COMBO_MODIFIER := "back"
+const COMBO_TRIGGERS := {"rewind": "lt", "fast_forward": "rt"}
+
 ## Описания геймпадов приставок из pads.json: {"snes": {...}, ...}
 var pads: Dictionary = {}
 
@@ -332,7 +414,48 @@ func is_hotkey_pressed(system_id: String, hotkey: String) -> bool:
 	var key := system_id + ":" + hotkey
 	if not _tables.has(key):
 		_tables[key] = get_mapping(system_id).get(hotkey, "")
-	return is_physical_pressed(pads_list[0], _tables[key])
+	var device: int = pads_list[0]
+	if is_physical_pressed(device, _tables[key]):
+		return true
+	# Back + курок — если курок занят игрой.
+	var trigger := combo_trigger(system_id, hotkey)
+	return trigger != "" and is_physical_pressed(device, COMBO_MODIFIER) \
+			and is_physical_pressed(device, trigger)
+
+
+## Курок для сочетания «Back + курок» ("lt" или "rt") — или "", если
+## сочетание не нужно: курок свободен, и перемотка висит на нём напрямую.
+## Решает раскладка: занят курок, если на нём стоит кнопка приставки.
+func combo_trigger(system_id: String, hotkey: String) -> String:
+	var key := system_id + ":combo:" + hotkey
+	if not _tables.has(key):
+		var trigger: String = COMBO_TRIGGERS[hotkey]
+		var mapping := get_mapping(system_id)
+		var busy := false
+		for button: Dictionary in pads.get(system_id, {}).get("buttons", []):
+			if mapping.get(button["id"], "") == trigger:
+				busy = true
+		_tables[key] = trigger if busy else ""
+	return _tables[key]
+
+
+## Подпись сочетания для экрана: "Back + LT" (или "Share + L2" на геймпаде PlayStation).
+func combo_text(system_id: String, hotkey: String) -> String:
+	var trigger := combo_trigger(system_id, hotkey)
+	if trigger == "":
+		return ""
+	return "%s + %s" % [glyph(COMBO_MODIFIER), glyph(trigger)]
+
+
+## Зажато ли сейчас сочетание Back + занятый игрой курок.
+func is_combo_held(device: int, system_id: String) -> bool:
+	if not is_physical_pressed(device, COMBO_MODIFIER):
+		return false
+	for hotkey: String in COMBO_TRIGGERS:
+		var trigger := combo_trigger(system_id, hotkey)
+		if trigger != "" and is_physical_pressed(device, trigger):
+			return true
+	return false
 
 
 ## Нажата ли кнопка геймпада ("a", "lt"...) на устройстве device.

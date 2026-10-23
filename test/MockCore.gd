@@ -19,6 +19,12 @@ func set_input(port: int, mask: int) -> void:
 	inputs[port] = mask
 
 
+var sticks := {}  # Vector2i(порт, стик) → Vector2
+
+func set_analog(port: int, stick: int, x: float, y: float) -> void:
+	sticks[Vector2i(port, stick)] = Vector2(x, y)
+
+
 func run_frame() -> void:
 	frame += 1
 	_audio += 800  # звуковые кадры, как будто ядро что-то сыграло

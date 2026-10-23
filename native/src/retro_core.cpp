@@ -34,6 +34,9 @@ void RetroCore::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("is_running"), &RetroCore::is_running);
 	ClassDB::bind_method(D_METHOD("run_frame"), &RetroCore::run_frame);
 	ClassDB::bind_method(D_METHOD("set_input", "port", "mask"), &RetroCore::set_input);
+	ClassDB::bind_method(D_METHOD("set_analog", "port", "stick", "x", "y"), &RetroCore::set_analog);
+	ClassDB::bind_method(D_METHOD("get_controller_types", "port"), &RetroCore::get_controller_types);
+	ClassDB::bind_method(D_METHOD("set_controller_type", "port", "device"), &RetroCore::set_controller_type);
 	ClassDB::bind_method(D_METHOD("has_new_frame"), &RetroCore::has_new_frame);
 	ClassDB::bind_method(D_METHOD("get_frame"), &RetroCore::get_frame);
 	ClassDB::bind_method(D_METHOD("take_audio"), &RetroCore::take_audio);
@@ -120,6 +123,9 @@ bool RetroCore::load_core(const String &path) {
 	LOAD_SYMBOL(get_memory_data, "retro_get_memory_data");
 	LOAD_SYMBOL(get_memory_size, "retro_get_memory_size");
 #undef LOAD_SYMBOL
+	// Эта функция у ядра необязательная: без неё просто нельзя сменить контроллер.
+	api.set_controller_port_device = reinterpret_cast<decltype(api.set_controller_port_device)>(
+			library.symbol("retro_set_controller_port_device"));
 
 	if (!ok) {
 		library.close();
@@ -128,6 +134,11 @@ bool RetroCore::load_core(const String &path) {
 
 	current = this;
 	pixel_format = RETRO_PIXEL_FORMAT_0RGB1555; // формат по умолчанию по стандарту libretro
+
+	// Ядро сообщит свои контроллеры прямо внутри set_environment —
+	// поэтому прошлый список очищаем заранее.
+	controller_types.clear();
+	memset(analog, 0, sizeof(analog));
 
 	// Отдаём ядру наши колбэки и запускаем его.
 	api.set_environment(&RetroCore::environment_cb);
@@ -215,6 +226,28 @@ void RetroCore::run_frame() {
 void RetroCore::set_input(int port, int mask) {
 	if (port >= 0 && port < 4) {
 		input_masks[port] = (uint16_t)mask;
+	}
+}
+
+void RetroCore::set_analog(int port, int stick, float x, float y) {
+	if (port < 0 || port >= 4 || stick < 0 || stick > 1) {
+		return;
+	}
+	// -1..1 → -32767..32767. CLAMP — на случай, если пришло чуть больше 1.
+	analog[port][stick][0] = (int16_t)(std::clamp(x, -1.0f, 1.0f) * 32767.0f);
+	analog[port][stick][1] = (int16_t)(std::clamp(y, -1.0f, 1.0f) * 32767.0f);
+}
+
+Array RetroCore::get_controller_types(int port) const {
+	if (port < 0 || port >= controller_types.size()) {
+		return Array();
+	}
+	return controller_types[port];
+}
+
+void RetroCore::set_controller_type(int port, int device) {
+	if (core_loaded && api.set_controller_port_device && port >= 0 && port < 4 && device >= 0) {
+		api.set_controller_port_device((unsigned)port, (unsigned)device);
 	}
 }
 
@@ -391,10 +424,28 @@ void RetroCore::input_poll_cb() {
 }
 
 int16_t RetroCore::input_state_cb(unsigned port, unsigned device, unsigned index, unsigned id) {
-	if (!current || port >= 4 || (device & RETRO_DEVICE_MASK) != RETRO_DEVICE_JOYPAD) {
+	if (!current || port >= 4) {
 		return 0;
 	}
 	uint16_t mask = current->input_masks[port];
+
+	// Стики. Ядро спрашивает: «где левый стик по X?» —
+	// index = RETRO_DEVICE_INDEX_ANALOG_LEFT, id = RETRO_DEVICE_ID_ANALOG_X.
+	if ((device & RETRO_DEVICE_MASK) == RETRO_DEVICE_ANALOG) {
+		if (index <= RETRO_DEVICE_INDEX_ANALOG_RIGHT && id <= RETRO_DEVICE_ID_ANALOG_Y) {
+			return current->analog[port][index][id];
+		}
+		// «Насколько сильно нажата кнопка?» (курки у некоторых ядер).
+		// Аналоговых кнопок у нас нет: нажата — значит до упора.
+		if (index == RETRO_DEVICE_INDEX_ANALOG_BUTTON && id < 16) {
+			return ((mask >> id) & 1) ? 0x7fff : 0;
+		}
+		return 0;
+	}
+
+	if ((device & RETRO_DEVICE_MASK) != RETRO_DEVICE_JOYPAD) {
+		return 0;
+	}
 	if (id == RETRO_DEVICE_ID_JOYPAD_MASK) {
 		return (int16_t)mask; // ядро просит сразу все кнопки
 	}
@@ -460,6 +511,24 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 		}
 		case RETRO_ENVIRONMENT_SHUTDOWN:
 			return true;
+
+		// --- Контроллеры ---
+		case RETRO_ENVIRONMENT_SET_CONTROLLER_INFO: {
+			// Массив по портам; каждый — список типов {описание, номер}.
+			// Конец массива — элемент с types == NULL.
+			controller_types.clear();
+			for (const retro_controller_info *port = (const retro_controller_info *)data; port && port->types; port++) {
+				Array types;
+				for (unsigned i = 0; i < port->num_types; i++) {
+					Dictionary type;
+					type["name"] = String::utf8(port->types[i].desc ? port->types[i].desc : "");
+					type["id"] = (int64_t)port->types[i].id;
+					types.push_back(type);
+				}
+				controller_types.push_back(types);
+			}
+			return true;
+		}
 
 		// --- Настройки ядра ---
 		case RETRO_ENVIRONMENT_GET_CORE_OPTIONS_VERSION:

@@ -98,6 +98,56 @@ func _begin() -> void:
 	_setup_rewind()
 
 
+# --- Стики ----------------------------------------------------------------
+
+## Передаём ли стики в игру (только PlayStation и Nintendo 64).
+var _analog := false
+
+
+## Включить стики, если приставка их знает. Вызывается после load_game.
+func _setup_analog() -> void:
+	# has_method — на случай старого shellbit_core.dll, собранного до стиков:
+	# тогда игра просто работает как раньше, без стиков.
+	_analog = InputMapper.has_analog(game["system"]) and core.has_method("set_analog")
+	if not _analog:
+		return
+	# Ядро PlayStation по умолчанию «вставляет» обычный геймпад без стиков.
+	# Список контроллеров, которые оно умеет, ядро присылает само —
+	# выбираем из него DualShock (или любой другой со стиками).
+	for port in 2:
+		var types: Array = core.get_controller_types(port)
+		var chosen := _pick_analog_type(types)
+		if chosen >= 0:
+			core.set_controller_type(port, chosen)
+			print("Порт %d: контроллер %d (%s)" % [port + 1, chosen,
+					", ".join(types.map(func(t: Dictionary) -> String: return "%s=%d" % [t["name"], t["id"]]))])
+
+
+## Из списка контроллеров ядра — номер DualShock, иначе первого со стиками.
+## -1 — список пуст (так у ядра Nintendo 64: стик у него есть всегда).
+static func _pick_analog_type(types: Array) -> int:
+	const DEVICE_ANALOG := 5   # RETRO_DEVICE_ANALOG в libretro.h
+	const DEVICE_MASK := 0xff  # младший байт — «вид» контроллера, старшие — разновидность
+	for type: Dictionary in types:
+		if String(type["name"]).to_lower().contains("dualshock"):
+			return type["id"]
+	for type: Dictionary in types:
+		if int(type["id"]) & DEVICE_MASK == DEVICE_ANALOG:
+			return type["id"]
+	return -1
+
+
+## Каждый кадр — где сейчас стики. muted — во время перемотки и после
+## меню, пока человек не отпустил кнопки: тогда стики «в центре».
+func _send_sticks(system_id: String, muted: bool) -> void:
+	if not _analog:
+		return
+	for port in 2:
+		for stick in 2:
+			var value := Vector2.ZERO if muted else InputMapper.get_analog(port, stick, system_id)
+			core.set_analog(port, stick, value.x, value.y)
+
+
 ## Запустить игру и загрузить сохранение из слота start_slot ("" — с самого начала).
 ## Возвращает "" если всё хорошо, иначе — текст ошибки.
 func _start_game(start_slot: String) -> String:
@@ -126,6 +176,7 @@ func _start_game(start_slot: String) -> String:
 		return tr("Ядро %s не загрузилось (подробности — во вкладке Output).") % core_path.get_file()
 	if not core.load_game(_content_path):
 		return tr("Ядро не смогло открыть файл игры:\n%s") % game["path"]
+	_setup_analog()
 
 	# Сведения о картинке и звуке: размер, пропорции, кадры/с, частота звука.
 	var av: Dictionary = core.get_av_info()
@@ -191,6 +242,7 @@ func _process(delta: float) -> void:
 
 	core.set_input(0, 0 if rewinding else mask0)
 	core.set_input(1, 0 if rewinding else mask1)
+	_send_sticks(system_id, rewinding or _wait_release)
 
 	# Монитор может обновляться 60, 75 или 144 раза в секунду, а NES
 	# всегда работает на ~60 кадрах. Поэтому копим прошедшее время и
