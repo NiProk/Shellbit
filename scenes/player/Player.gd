@@ -148,6 +148,43 @@ func _send_sticks(system_id: String, muted: bool) -> void:
 			core.set_analog(port, stick, value.x, value.y)
 
 
+# --- Вибрация -------------------------------------------------------------
+#
+# Ядро говорит, с какой силой крутить моторы геймпада (их обычно два:
+# тяжёлый «сильный» — гул, лёгкий «слабый» — дрожь). Мы каждый кадр
+# смотрим, что оно хочет, и передаём это в Godot: Input.start_joy_vibration.
+
+## Что мы последний раз отправили на геймпады игроков 1 и 2.
+var _rumble_sent: Array[Vector2] = [Vector2.ZERO, Vector2.ZERO]
+## Когда отправили (мс). Вибрацию включаем на 1 секунду и, пока игра
+## её не выключила, продлеваем каждые полсекунды: если Shellbit вдруг
+## зависнет или вылетит, геймпад не будет трястись бесконечно.
+var _rumble_msec: Array[int] = [0, 0]
+
+
+## stop = true — выключить моторы (пауза, перемотка, выход из игры).
+func _update_rumble(stop := false) -> void:
+	if core == null or not core.has_method("get_rumble"):
+		return  # старый shellbit_core без вибрации
+	var enabled: bool = Settings.get_value("play", "rumble")
+	var pads := Input.get_connected_joypads()
+	var now := Time.get_ticks_msec()
+	for port in 2:
+		var value: Vector2 = Vector2.ZERO if stop or not enabled else core.get_rumble(port)
+		var renew := value != Vector2.ZERO and now - _rumble_msec[port] > 500
+		if value == _rumble_sent[port] and not renew:
+			continue  # ничего не изменилось
+		_rumble_sent[port] = value
+		_rumble_msec[port] = now
+		if port >= pads.size():
+			continue  # у этого игрока нет геймпада
+		if value == Vector2.ZERO:
+			Input.stop_joy_vibration(pads[port])
+		else:
+			# weak — лёгкий мотор, strong — тяжёлый, duration — секунды.
+			Input.start_joy_vibration(pads[port], value.x, value.y, 1.0)
+
+
 ## Запустить игру и загрузить сохранение из слота start_slot ("" — с самого начала).
 ## Возвращает "" если всё хорошо, иначе — текст ошибки.
 func _start_game(start_slot: String) -> String:
@@ -262,6 +299,7 @@ func _process(delta: float) -> void:
 		_time_bank = 0.0  # компьютер не успевает — не пытаемся догнать
 
 	_update_speed_label(rewinding, speed)
+	_update_rumble(rewinding)
 	_show_frame()
 	_push_audio(speed, rewinding)
 
@@ -421,6 +459,7 @@ func _wants_menu(mask: int) -> bool:
 
 func _open_menu() -> void:
 	_paused = true
+	_update_rumble(true)  # на паузе геймпад не трясётся
 	_speed_label.visible = false
 	# Записываем внутриигровые сохранения на диск (на случай, если
 	# программу потом закроют неаккуратно).
@@ -472,6 +511,7 @@ func _restart() -> void:
 
 
 func _exit_game() -> void:
+	_update_rumble(true)
 	# Автосохранение: при следующем запуске продолжим отсюда.
 	SaveStates.save_slot(core, game, SaveStates.AUTO)
 	var seconds := (Time.get_ticks_msec() - _start_msec) / 1000
@@ -555,6 +595,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Если окно закрыли прямо во время игры — сохраняемся и выключаем ядро.
 func _exit_tree() -> void:
+	_update_rumble(true)
 	if core != null:
 		SaveStates.save_slot(core, game, SaveStates.AUTO)
 		core.unload()

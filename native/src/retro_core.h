@@ -15,6 +15,7 @@
 #include <godot_cpp/variant/dictionary.hpp>
 #include <godot_cpp/variant/packed_byte_array.hpp>
 #include <godot_cpp/variant/packed_vector2_array.hpp>
+#include <godot_cpp/variant/vector2.hpp>
 
 #include <cstdint>
 #include <map>
@@ -72,6 +73,9 @@ public:
 	Array get_controller_types(int port) const;
 	// «Вставить» в порт другой контроллер (например, DualShock вместо обычного).
 	void set_controller_type(int port, int device);
+	// Вибрация, которую сейчас хочет игра: x — слабый (быстрый) мотор,
+	// y — сильный (тяжёлый), от 0 до 1. Ядро меняет их, когда захочет.
+	Vector2 get_rumble(int port) const;
 
 	bool has_new_frame() const { return new_frame; }
 	Ref<Image> get_frame();
@@ -133,6 +137,7 @@ private:
 	static void input_poll_cb();
 	static int16_t input_state_cb(unsigned port, unsigned device, unsigned index, unsigned id);
 	static void log_cb(enum retro_log_level level, const char *fmt, ...);
+	static bool rumble_cb(unsigned port, enum retro_rumble_effect effect, uint16_t strength);
 
 	bool on_environment(unsigned cmd, void *data);
 	void on_video(const void *data, unsigned width, unsigned height, size_t pitch);
@@ -167,6 +172,7 @@ private:
 	// analog[порт][стик][0 — X, 1 — Y], от -32767 до 32767, как просит libretro.
 	int16_t analog[4][2][2] = {};
 	Array controller_types; // по массиву типов на каждый порт
+	float rumble[4][2] = {}; // rumble[порт][0 — сильный, 1 — слабый], от 0 до 1
 };
 
 } // namespace godot

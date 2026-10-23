@@ -25,6 +25,14 @@ func set_analog(port: int, stick: int, x: float, y: float) -> void:
 	sticks[Vector2i(port, stick)] = Vector2(x, y)
 
 
+var rumble := Vector2.ZERO  # какую вибрацию «хочет игра»
+var rumble_asked := 0       # сколько раз Player спросил про вибрацию
+
+func get_rumble(_port: int) -> Vector2:
+	rumble_asked += 1
+	return rumble
+
+
 func run_frame() -> void:
 	frame += 1
 	_audio += 800  # звуковые кадры, как будто ядро что-то сыграло

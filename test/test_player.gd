@@ -156,3 +156,18 @@ func test_pick_dualshock() -> void:
 	check_eq(player._pick_analog_type(types), 261)
 	check_eq(player._pick_analog_type(types.slice(0, 2)), 5, "без DualShock — любой со стиками")
 	check_eq(player._pick_analog_type([]), -1, "список пуст")
+
+
+func test_rumble() -> void:
+	about("Вибрация: Player передаёт её дальше, на паузе и при перемотке — выключает")
+	core.rumble = Vector2(1.0, 0.5)
+	_play(1)
+	check_eq(player._rumble_sent[0], Vector2(1.0, 0.5), "игра хочет вибрацию — отправили")
+	_key(KEY_BACKSPACE, true)  # перемотка
+	_play(1)
+	check_eq(player._rumble_sent[0], Vector2.ZERO, "при перемотке моторы выключены")
+	_key(KEY_BACKSPACE, false)
+	Settings.set_value("play", "rumble", false)
+	_play(1)
+	check_eq(player._rumble_sent[0], Vector2.ZERO, "вибрация выключена в настройках")
+	Settings.set_value("play", "rumble", null)

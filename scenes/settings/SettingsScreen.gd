@@ -388,6 +388,8 @@ func _build_play() -> void:
 		[30, tr("30 секунд"), rewind_description],
 		[60, tr("1 минута"), rewind_description],
 	], "", false)
+	_toggle("Вибрация", "play", "rumble",
+			tr("Геймпад вибрирует, когда этого хочет игра: удары, взрывы, мотор машины. Работает у PlayStation (игры с поддержкой DualShock) и у картриджей Game Boy и Game Boy Advance со встроенным моторчиком."))
 	var pad_row := _action("Кнопки перемотки и ускорения", "",
 			_hotkeys_text() + " " + tr("Поменять можно в «Кнопках приставок» для каждой приставки."),
 			Callable())

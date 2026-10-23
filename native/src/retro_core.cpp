@@ -37,6 +37,7 @@ void RetroCore::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_analog", "port", "stick", "x", "y"), &RetroCore::set_analog);
 	ClassDB::bind_method(D_METHOD("get_controller_types", "port"), &RetroCore::get_controller_types);
 	ClassDB::bind_method(D_METHOD("set_controller_type", "port", "device"), &RetroCore::set_controller_type);
+	ClassDB::bind_method(D_METHOD("get_rumble", "port"), &RetroCore::get_rumble);
 	ClassDB::bind_method(D_METHOD("has_new_frame"), &RetroCore::has_new_frame);
 	ClassDB::bind_method(D_METHOD("get_frame"), &RetroCore::get_frame);
 	ClassDB::bind_method(D_METHOD("take_audio"), &RetroCore::take_audio);
@@ -139,6 +140,7 @@ bool RetroCore::load_core(const String &path) {
 	// поэтому прошлый список очищаем заранее.
 	controller_types.clear();
 	memset(analog, 0, sizeof(analog));
+	memset(rumble, 0, sizeof(rumble));
 
 	// Отдаём ядру наши колбэки и запускаем его.
 	api.set_environment(&RetroCore::environment_cb);
@@ -249,6 +251,15 @@ void RetroCore::set_controller_type(int port, int device) {
 	if (core_loaded && api.set_controller_port_device && port >= 0 && port < 4 && device >= 0) {
 		api.set_controller_port_device((unsigned)port, (unsigned)device);
 	}
+}
+
+Vector2 RetroCore::get_rumble(int port) const {
+	if (port < 0 || port >= 4) {
+		return Vector2();
+	}
+	// В libretro моторы: STRONG = 0, WEAK = 1. В Godot — наоборот по порядку:
+	// start_joy_vibration(device, weak, strong). Поэтому x — слабый, y — сильный.
+	return Vector2(rumble[port][RETRO_RUMBLE_WEAK], rumble[port][RETRO_RUMBLE_STRONG]);
 }
 
 Ref<Image> RetroCore::get_frame() {
@@ -452,6 +463,15 @@ int16_t RetroCore::input_state_cb(unsigned port, unsigned device, unsigned index
 	return (id < 16) ? (int16_t)((mask >> id) & 1) : 0;
 }
 
+// Ядро: «включи мотор effect на порту port с силой strength (0…65535)».
+bool RetroCore::rumble_cb(unsigned port, enum retro_rumble_effect effect, uint16_t strength) {
+	if (!current || port >= 4 || (effect != RETRO_RUMBLE_STRONG && effect != RETRO_RUMBLE_WEAK)) {
+		return false;
+	}
+	current->rumble[port][effect] = strength / 65535.0f;
+	return true;
+}
+
 void RetroCore::log_cb(enum retro_log_level level, const char *fmt, ...) {
 	char buffer[1024];
 	va_list args;
@@ -510,6 +530,12 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 			return true;
 		}
 		case RETRO_ENVIRONMENT_SHUTDOWN:
+			return true;
+
+		// --- Вибрация ---
+		case RETRO_ENVIRONMENT_GET_RUMBLE_INTERFACE:
+			// Отдаём ядру нашу функцию: через неё оно будет включать моторы.
+			((retro_rumble_interface *)data)->set_rumble_state = &RetroCore::rumble_cb;
 			return true;
 
 		// --- Контроллеры ---
