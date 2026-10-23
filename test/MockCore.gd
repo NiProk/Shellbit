@@ -25,6 +25,23 @@ func set_analog(port: int, stick: int, x: float, y: float) -> void:
 	sticks[Vector2i(port, stick)] = Vector2(x, y)
 
 
+var disk_count := 1   # сколько «дисков» у игры
+var disk_index := 0
+
+func get_disk_count() -> int:
+	return disk_count
+
+func get_disk_index() -> int:
+	return disk_index
+
+func get_disk_path(index: int) -> String:
+	return "disc%d.cue" % (index + 1)
+
+func set_disk(index: int) -> bool:
+	disk_index = index
+	return true
+
+
 var rumble := Vector2.ZERO  # какую вибрацию «хочет игра»
 var rumble_asked := 0       # сколько раз Player спросил про вибрацию
 
@@ -52,6 +69,10 @@ func load_state(data: PackedByteArray) -> bool:
 
 func has_new_frame() -> bool:
 	return false
+
+
+func get_frame() -> Image:
+	return null  # картинки у ненастоящего ядра нет
 
 
 func take_audio() -> PackedVector2Array:

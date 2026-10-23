@@ -10,6 +10,7 @@ const ConsoleTileScene := preload("res://scenes/components/ConsoleTile.tscn")
 func _ready() -> void:
 	%AddFolderButton.pressed.connect(_on_add_folder_pressed)
 	_add_settings_button()
+	_add_quit_button()
 	%FolderDialog.dir_selected.connect(_on_folder_selected)
 	Library.scan_finished.connect(_refresh)
 
@@ -77,11 +78,27 @@ func _refresh() -> void:
 
 
 func _focus_first() -> void:
+	# Вернулись из библиотеки или из игры — фокус туда же, где был.
+	var remembered: String = SceneRouter.params.get("focus", "")
+	for row: Control in [%RecentRow, %SystemsRow]:
+		for item: Control in row.get_children():
+			if remembered != "" and _focus_id(item) == remembered:
+				item.grab_focus()
+				return
 	for row: Control in [%RecentRow, %SystemsRow]:
 		if row.is_visible_in_tree() and row.get_child_count() > 0:
 			row.get_child(0).grab_focus()
 			return
 	%AddFolderButton.grab_focus()
+
+
+## Что за элемент: "game:nes_contra" для карточки игры, "system:nes" для плитки.
+func _focus_id(item: Control) -> String:
+	if item is GameCard:
+		return "game:" + item.game["key"]
+	if item is ConsoleTile:
+		return "system:" + item.system_id
+	return ""
 
 
 func _clear(container: Node) -> void:
@@ -130,6 +147,29 @@ func _add_settings_button() -> void:
 	button.mouse_entered.connect(button.grab_focus)
 
 
+# Кнопка «Выход» — последней в шапке. Выход — в два нажатия:
+# с геймпада легко нажать A лишний раз, а закрытая программа — это обидно.
+func _add_quit_button() -> void:
+	var button := Button.new()
+	button.name = "QuitButton"
+	button.text = tr("Выход")
+	# В шапку, сразу перед часами: «+ Папка с играми», «Настройки», «Выход», 12:34.
+	var header := %Clock.get_parent()
+	header.add_child(button)
+	header.move_child(button, %Clock.get_index())
+	button.mouse_entered.connect(button.grab_focus)
+	button.pressed.connect(func() -> void:
+		if button.get_meta("armed", false):
+			get_tree().quit()  # настройки и библиотека уже сохранены на диск
+		else:
+			button.set_meta("armed", true)
+			button.text = tr("Точно выйти? Нажмите ещё раз"))
+	# Ушли с кнопки — отменяем «Точно выйти?».
+	button.focus_exited.connect(func() -> void:
+		button.set_meta("armed", false)
+		button.text = tr("Выход"))
+
+
 # --- Обработчики нажатий -------------------------------------------------
 
 func _on_add_folder_pressed() -> void:
@@ -143,9 +183,11 @@ func _on_folder_selected(path: String) -> void:
 
 
 func _on_system_pressed(system_id: String) -> void:
+	SceneRouter.params["focus"] = "system:" + system_id  # вернёмся — фокус на эту плитку
 	SceneRouter.go_to("library", {"system": system_id})
 
 
 # Карточка — это игра (группа версий). Запускаем выбранную версию.
 func _on_game_pressed(group: Dictionary) -> void:
+	SceneRouter.params["focus"] = "game:" + group["key"]
 	SceneRouter.go_to("player", {"game": Library.chosen_variant(group)})

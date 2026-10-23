@@ -51,6 +51,12 @@ func _ready() -> void:
 	for file: String in files:
 		var script: GDScript = load(TEST_DIR + file)
 		print("\n%s" % file)
+		# Файл с ошибкой в коде Godot не может загрузить — без этой проверки
+		# его тесты молча пропали бы, а итог выглядел бы как «всё прошло».
+		if script == null or not script.can_instantiate():
+			failed += 1
+			print("  ✗ файл не загрузился — ошибка в коде, подробности выше")
+			continue
 		for method: Dictionary in script.get_script_method_list():
 			var method_name: String = method["name"]
 			if not method_name.begins_with("test_"):

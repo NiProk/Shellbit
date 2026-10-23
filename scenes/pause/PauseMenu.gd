@@ -15,10 +15,13 @@ signal exit_requested                   ## «Выйти в библиотеку�
 signal save_requested(slot: String)     ## X на слоте (или A на пустом)
 signal load_requested(slot: String)     ## A на заполненном слоте
 signal screenshot_requested             ## «Скриншот»
+signal disc_requested(index: int)       ## «Сменить диск» → выбрали диск (с нуля)
 
 const SaveSlotScene := preload("res://scenes/components/SaveSlot.tscn")
 
 var _game: Dictionary = {}
+var _discs: Dictionary = {}  # {"count": 3, "index": 0} — у многодисковых игр
+var _dropdown: DropdownList  # список дисков
 
 
 func _ready() -> void:
@@ -29,6 +32,11 @@ func _ready() -> void:
 	%RestartButton.pressed.connect(restart_requested.emit)
 	%ExitButton.pressed.connect(exit_requested.emit)
 	%ScreenshotButton.pressed.connect(screenshot_requested.emit)
+	%DiscButton.pressed.connect(_choose_disc)
+	_dropdown = DropdownList.new()
+	add_child(_dropdown)
+	_dropdown.chosen.connect(func(index: Variant) -> void: disc_requested.emit(int(index)))
+	_dropdown.closed.connect(%DiscButton.grab_focus)
 
 	# Слоты создаём один раз. При обновлении меняем только надписи —
 	# иначе кнопка в фокусе исчезла бы, и фокус «потерялся».
@@ -39,17 +47,26 @@ func _ready() -> void:
 		button.pressed.connect(_on_slot_pressed.bind(slot))
 		button.focus_entered.connect(_update_hints)
 
-	for button: Button in [%ContinueButton, %RestartButton, %ScreenshotButton, %ExitButton]:
+	for button: Button in [%ContinueButton, %DiscButton, %RestartButton, %ScreenshotButton, %ExitButton]:
 		button.focus_entered.connect(_update_hints)
 		button.mouse_entered.connect(button.grab_focus)
 
 
-## Показать меню для игры.
-func open(game: Dictionary) -> void:
+## Показать меню для игры. discs — {"count": 3, "index": 0}, если у игры
+## несколько дисков: тогда в меню есть «Сменить диск».
+func open(game: Dictionary, discs := {}) -> void:
 	_game = game
+	_discs = discs
 	%GameTitle.text = game["title"]
+	%DiscButton.visible = discs.get("count", 0) > 1
+	if %DiscButton.visible:
+		%DiscButton.text = tr("Сменить диск") + "  ·  " + tr("сейчас %d из %d") % [discs["index"] + 1, discs["count"]]
 	refresh_slots()
 	visible = true
+	# Меню в ScrollContainer: если пунктов больше, чем влезает в экран
+	# (маленькое окно, длинное название игры), его можно прокрутить.
+	# Открываем всегда с самого верха.
+	%Scroll.scroll_vertical = 0
 	%ContinueButton.grab_focus()
 
 
@@ -64,6 +81,14 @@ func refresh_slots() -> void:
 	_update_hints()
 
 
+## Список дисков: «Диск 1», «Диск 2»… Выбранный — тот, что сейчас в приставке.
+func _choose_disc() -> void:
+	var items := []
+	for i in _discs["count"]:
+		items.append([i, tr("Диск %d") % (i + 1)])
+	_dropdown.open(items, _discs["index"], %DiscButton)
+
+
 func _on_slot_pressed(slot: String) -> void:
 	if SaveStates.exists(_game, slot):
 		load_requested.emit(slot)
@@ -72,8 +97,8 @@ func _on_slot_pressed(slot: String) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not visible:
-		return
+	if not visible or _dropdown.visible:
+		return  # пока открыт список дисков, B закрывает его, а не меню
 	var focused := get_viewport().gui_get_focus_owner()
 
 	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("game_menu"):

@@ -38,6 +38,12 @@ void RetroCore::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_controller_types", "port"), &RetroCore::get_controller_types);
 	ClassDB::bind_method(D_METHOD("set_controller_type", "port", "device"), &RetroCore::set_controller_type);
 	ClassDB::bind_method(D_METHOD("get_rumble", "port"), &RetroCore::get_rumble);
+	ClassDB::bind_method(D_METHOD("get_disk_count"), &RetroCore::get_disk_count);
+	ClassDB::bind_method(D_METHOD("get_disk_index"), &RetroCore::get_disk_index);
+	ClassDB::bind_method(D_METHOD("get_disk_label", "index"), &RetroCore::get_disk_label);
+	ClassDB::bind_method(D_METHOD("get_disk_path", "index"), &RetroCore::get_disk_path);
+	ClassDB::bind_method(D_METHOD("set_disk", "index"), &RetroCore::set_disk);
+	ClassDB::bind_method(D_METHOD("set_initial_disk", "index", "path"), &RetroCore::set_initial_disk);
 	ClassDB::bind_method(D_METHOD("has_new_frame"), &RetroCore::has_new_frame);
 	ClassDB::bind_method(D_METHOD("get_frame"), &RetroCore::get_frame);
 	ClassDB::bind_method(D_METHOD("take_audio"), &RetroCore::take_audio);
@@ -141,6 +147,8 @@ bool RetroCore::load_core(const String &path) {
 	controller_types.clear();
 	memset(analog, 0, sizeof(analog));
 	memset(rumble, 0, sizeof(rumble));
+	memset(&disk, 0, sizeof(disk));
+	initial_disk = -1;
 
 	// Отдаём ядру наши колбэки и запускаем его.
 	api.set_environment(&RetroCore::environment_cb);
@@ -182,6 +190,12 @@ bool RetroCore::load_game(const String &path) {
 		game.data = game_data.data();
 		game.size = game_data.size();
 	}
+
+	// «Начни со второго диска» — ядро должно узнать об этом до загрузки игры.
+	if (initial_disk >= 0 && disk.set_initial_image) {
+		disk.set_initial_image((unsigned)initial_disk, initial_disk_path.c_str());
+	}
+	initial_disk = -1;
 
 	if (!api.load_game(&game)) {
 		UtilityFunctions::push_error(String::utf8("RetroCore: ядро не смогло загрузить игру "), path);
@@ -260,6 +274,56 @@ Vector2 RetroCore::get_rumble(int port) const {
 	// В libretro моторы: STRONG = 0, WEAK = 1. В Godot — наоборот по порядку:
 	// start_joy_vibration(device, weak, strong). Поэтому x — слабый, y — сильный.
 	return Vector2(rumble[port][RETRO_RUMBLE_WEAK], rumble[port][RETRO_RUMBLE_STRONG]);
+}
+
+// =====================================================================
+// Диски
+// =====================================================================
+// Настоящая PlayStation меняет диск так: открыть крышку, вынуть диск,
+// вставить другой, закрыть крышку. Ядро libretro просит то же самое:
+// set_eject_state(true) → set_image_index(n) → set_eject_state(false).
+
+int RetroCore::get_disk_count() const {
+	return (game_loaded && disk.get_num_images) ? (int)disk.get_num_images() : 0;
+}
+
+int RetroCore::get_disk_index() const {
+	return (game_loaded && disk.get_image_index) ? (int)disk.get_image_index() : 0;
+}
+
+String RetroCore::get_disk_label(int index) const {
+	char label[512] = {};
+	if (game_loaded && disk.get_image_label && index >= 0 &&
+			disk.get_image_label((unsigned)index, label, sizeof(label))) {
+		return String::utf8(label);
+	}
+	return String();
+}
+
+String RetroCore::get_disk_path(int index) const {
+	char path[4096] = {};
+	if (game_loaded && disk.get_image_path && index >= 0 &&
+			disk.get_image_path((unsigned)index, path, sizeof(path))) {
+		return String::utf8(path);
+	}
+	return String();
+}
+
+bool RetroCore::set_disk(int index) {
+	if (index < 0 || index >= get_disk_count() || !disk.set_eject_state || !disk.set_image_index) {
+		return false;
+	}
+	if (!disk.set_eject_state(true)) { // открыть крышку
+		return false;
+	}
+	bool ok = disk.set_image_index((unsigned)index); // сменить диск
+	disk.set_eject_state(false); // закрыть крышку (даже если сменить не вышло)
+	return ok;
+}
+
+void RetroCore::set_initial_disk(int index, const String &path) {
+	initial_disk = index;
+	initial_disk_path = path.utf8().get_data();
 }
 
 Ref<Image> RetroCore::get_frame() {
@@ -530,6 +594,19 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 			return true;
 		}
 		case RETRO_ENVIRONMENT_SHUTDOWN:
+			return true;
+
+		// --- Смена дисков ---
+		case RETRO_ENVIRONMENT_GET_DISK_CONTROL_INTERFACE_VERSION:
+			*(unsigned *)data = 1; // понимаем новую («ext») версию
+			return true;
+		case RETRO_ENVIRONMENT_SET_DISK_CONTROL_INTERFACE:
+			// Старая версия: только первые поля. Остальные (названия, пути) — пустые.
+			memset(&disk, 0, sizeof(disk));
+			memcpy(&disk, data, sizeof(retro_disk_control_callback));
+			return true;
+		case RETRO_ENVIRONMENT_SET_DISK_CONTROL_EXT_INTERFACE:
+			disk = *(const retro_disk_control_ext_callback *)data;
 			return true;
 
 		// --- Вибрация ---

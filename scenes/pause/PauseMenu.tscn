@@ -4,10 +4,6 @@
 [ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-content_margin_left = 36.0
-content_margin_top = 32.0
-content_margin_right = 36.0
-content_margin_bottom = 24.0
 bg_color = Color(0.055, 0.075, 0.11, 0.96)
 
 [node name="PauseMenu" type="Control"]
@@ -37,16 +33,32 @@ offset_bottom = -56.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBox" type="VBoxContainer" parent="Panel"]
+[node name="Scroll" type="ScrollContainer" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 10
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="PauseLabel" type="Label" parent="Panel/VBox"]
+[node name="Pad" type="MarginContainer" parent="Panel/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Scroll/Pad"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PauseLabel" type="Label" parent="Panel/Scroll/Pad/VBox"]
 layout_mode = 2
 theme_type_variation = &"DimLabel"
 text = "Пауза"
 
-[node name="GameTitle" type="Label" parent="Panel/VBox"]
+[node name="GameTitle" type="Label" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(368, 0)
 layout_mode = 2
@@ -55,48 +67,56 @@ text = "Название игры"
 autowrap_mode = 3
 max_lines_visible = 2
 
-[node name="Gap1" type="Control" parent="Panel/VBox"]
+[node name="Gap1" type="Control" parent="Panel/Scroll/Pad/VBox"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="ContinueButton" type="Button" parent="Panel/VBox"]
+[node name="ContinueButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 46)
+custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 text = "Продолжить"
 alignment = 0
 
-[node name="RestartButton" type="Button" parent="Panel/VBox"]
+[node name="DiscButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 46)
+visible = false
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "Сменить диск"
+alignment = 0
+
+[node name="RestartButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 text = "Начать заново"
 alignment = 0
 
-[node name="ScreenshotButton" type="Button" parent="Panel/VBox"]
+[node name="ScreenshotButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 46)
+custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 text = "Скриншот"
 alignment = 0
 
-[node name="SlotsTitle" type="Label" parent="Panel/VBox"]
+[node name="SlotsTitle" type="Label" parent="Panel/Scroll/Pad/VBox"]
 layout_mode = 2
 theme_type_variation = &"CardTitleLabel"
 text = "Сохранения"
 
-[node name="Slots" type="VBoxContainer" parent="Panel/VBox"]
+[node name="Slots" type="VBoxContainer" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Spacer" type="Control" parent="Panel/VBox"]
+[node name="Spacer" type="Control" parent="Panel/Scroll/Pad/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ExitButton" type="Button" parent="Panel/VBox"]
+[node name="ExitButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 46)
+custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.941, 0.541, 0.502, 1)
 theme_override_colors/font_hover_color = Color(0.941, 0.541, 0.502, 1)

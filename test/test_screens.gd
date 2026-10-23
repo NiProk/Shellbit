@@ -77,3 +77,42 @@ func _open(screen: String, params := {}) -> String:
 	# Имя узла не годится: корень Library.tscn называется так же, как синглтон
 	# Library, и Godot переименовывает его. Поэтому берём имя файла сцены.
 	return current.scene_file_path.get_file().get_basename() if current else ""
+
+
+func test_library_remembers_game() -> void:
+	about("Открыл игру, вернулся «Назад» — фокус на той же игре, а не на первой")
+	await _open("home")
+	await _open("library", {"system": "nes"})
+	var cards: Array = get_tree().current_scene.get_node("%Grid").get_children()
+	var last: GameCard = cards[-1]
+	var key: String = last.game["key"]  # сама карточка исчезнет вместе с экраном
+	last.grab_focus()
+	last.pressed.emit()  # открыть страницу игры
+	await _wait_router()
+	check_eq(get_tree().current_scene.scene_file_path.get_file(), "GameDetails.tscn")
+	SceneRouter.back()
+	await _wait_router()
+	await frames(2)
+	var focused := get_viewport().gui_get_focus_owner()
+	check(focused is GameCard and focused.game["key"] == key, "фокус на последней открытой игре")
+
+
+func test_home_quit_button() -> void:
+	about("На главном экране есть «Выход» — в два нажатия")
+	await _open("home")
+	var quit: Button = get_tree().current_scene.find_child("QuitButton", true, false)
+	check(quit != null, "кнопка есть")
+	if quit == null:
+		return
+	quit.set_meta("armed", false)
+	quit.grab_focus()
+	quit.pressed.emit()  # первое нажатие только спрашивает (второе закрыло бы тесты)
+	check(quit.get_meta("armed", false), "после первого нажатия — «Нажмите ещё раз»")
+	quit.release_focus()
+	check(not quit.get_meta("armed", false), "ушли с кнопки — вопрос снят")
+
+
+func _wait_router() -> void:
+	await frames(2)
+	while SceneRouter._busy:
+		await frames(1)

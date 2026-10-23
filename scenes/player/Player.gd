@@ -61,6 +61,7 @@ func _ready() -> void:
 	%PauseMenu.save_requested.connect(_on_save_requested)
 	%PauseMenu.load_requested.connect(_on_load_requested)
 	%PauseMenu.screenshot_requested.connect(_take_screenshot)
+	%PauseMenu.disc_requested.connect(_on_disc_requested)
 
 	# Окно поменяло размер — пересчитать, где и какого размера картинка.
 	resized.connect(_apply_layout)
@@ -87,6 +88,15 @@ func _begin() -> void:
 			_show_error(result["error"])
 			return
 		_content_path = result["path"]
+
+	# Один из дисков многодисковой игры («…(Disc 2).cue»)? Составим список
+	# всех дисков (.m3u), чтобы их можно было менять. Начнём с выбранного.
+	_start_disc = {}
+	if not Archives.needs_extraction(game):
+		var playlist := Discs.playlist_for(_content_path, game["system"])
+		if not playlist.is_empty():
+			_content_path = playlist["path"]
+			_start_disc = {"index": playlist["index"], "path": playlist["disc_path"]}
 
 	var error := _start_game(SceneRouter.params.get("slot", SaveStates.AUTO))
 	if error != "":
@@ -212,8 +222,20 @@ func _start_game(start_slot: String) -> String:
 
 	if not core.load_core(core_path):
 		return tr("Ядро %s не загрузилось (подробности — во вкладке Output).") % core_path.get_file()
+	# С какого диска начать: на каком сохранились в этот слот,
+	# а если не знаем — какой выбрал человек. Ядро должно узнать это ДО load_game.
+	var disc: Dictionary = SaveStates.disc_of(game, start_slot) if start_slot != "" else {}
+	if disc.is_empty():
+		disc = _start_disc
+	var can_swap: bool = core.has_method("set_initial_disk")
+	if can_swap and not disc.is_empty():
+		core.set_initial_disk(disc["index"], disc["path"])
 	if not core.load_game(_content_path):
 		return tr("Ядро не смогло открыть файл игры:\n%s") % game["path"]
+	# Ядро не умеет «начать с диска N»? Тогда меняем диск сразу после запуска.
+	if can_swap and not disc.is_empty() and core.get_disk_count() > 1 \
+			and core.get_disk_index() != disc["index"]:
+		core.set_disk(disc["index"])
 	_setup_analog()
 
 	# Сведения о картинке и звуке: размер, пропорции, кадры/с, частота звука.
@@ -466,7 +488,7 @@ func _open_menu() -> void:
 	# программу потом закроют неаккуратно).
 	core.save_sram()
 	%Audio.stream_paused = true  # звук замирает вместе с игрой
-	%PauseMenu.open(game)
+	%PauseMenu.open(game, _disc_info())
 
 
 func _resume() -> void:
@@ -475,6 +497,35 @@ func _resume() -> void:
 	_time_bank = 0.0  # время, проведённое в меню, не «догоняем»
 	_wait_release = true
 	_paused = false
+
+
+# --- Диски ------------------------------------------------------------------
+
+## С какого диска начинать, если про слот ничего не известно:
+## {"index": 1, "path": "…(Disc 2).cue"} — когда человек выбрал второй диск.
+var _start_disc: Dictionary = {}
+
+
+## Сколько у игры дисков и какой вставлен — для меню паузы. {} — один диск.
+func _disc_info() -> Dictionary:
+	if core == null or not core.has_method("get_disk_count") or core.get_disk_count() < 2:
+		return {}
+	return {"count": core.get_disk_count(), "index": core.get_disk_index()}
+
+
+## «Сменить диск» → выбрали диск index (с нуля).
+func _on_disc_requested(index: int) -> void:
+	if index == core.get_disk_index():
+		_resume()  # выбрали тот же диск — просто возвращаемся в игру
+		return
+	if core.set_disk(index):
+		# Лента перемотки — с прошлого диска. Отмотать туда нельзя: игра
+		# увидела бы старые данные на новом диске. Начинаем ленту заново.
+		_setup_rewind()
+		_resume()
+		SceneRouter.toast(tr("Вставлен диск %d") % (index + 1))
+	else:
+		SceneRouter.toast(tr("Не удалось сменить диск"))
 
 
 func _on_save_requested(slot: String) -> void:

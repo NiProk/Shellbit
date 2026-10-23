@@ -44,6 +44,9 @@ func _ready() -> void:
 	_groups = groups
 
 	_setup_search_and_sort()
+	# Вернулись со страницы игры — восстанавливаем поиск, как был.
+	# text = … не вызывает text_changed, фильтр применит _build_grid().
+	%Search.text = SceneRouter.params.get("search", "")
 	_build_grid()
 
 	%Hints.set_hints([
@@ -59,7 +62,7 @@ func _ready() -> void:
 	add_child(_keyboard)
 	# Клавиатуру закрыли — переходим к найденным играм.
 	_keyboard.closed.connect(_leave_search)
-	_focus_first_card.call_deferred()
+	_restore_focus()
 
 
 # =====================================================================
@@ -195,6 +198,31 @@ func _leave_search() -> void:
 		%SortButton.grab_focus()
 
 
+## Фокус — на игру, которую открывали перед уходом со страницы
+## (SceneRouter.params["focus_key"]), иначе на первую.
+##
+## Зачем: долистал до 30-й игры, открыл её, вернулся — и список снова
+## с начала. Поэтому, уходя на страницу игры, мы запоминаем её ключ
+## в параметрах ЭТОГО экрана (см. _on_game_pressed), а SceneRouter
+## по «Назад» возвращает их нам.
+func _restore_focus() -> void:
+	# Ждём кадр: карточки должны встать по местам, иначе ScrollContainer
+	# не поймёт, куда прокручивать.
+	await get_tree().process_frame
+	var key: String = SceneRouter.params.get("focus_key", "")
+	for card: GameCard in %Grid.get_children():
+		if card.visible and card.game["key"] == key:
+			card.grab_focus()
+			# follow_focus прокрутил бы «впритык» — карточка оказалась бы у
+			# самого края. Ставим её посередине экрана: так видно и соседей.
+			await get_tree().process_frame
+			var content: Control = %Scroll.get_child(0)  # то, что прокручивается
+			var top := card.global_position.y - content.global_position.y
+			%Scroll.scroll_vertical = int(top - (%Scroll.size.y - card.size.y) / 2.0)
+			return
+	_focus_first_card()
+
+
 ## Поставить фокус на первую видимую карточку. false — если видимых нет.
 func _focus_first_card() -> bool:
 	for card: Control in %Grid.get_children():
@@ -314,4 +342,7 @@ func _switch_system(step: int) -> void:
 # Передаём не саму группу, а её ключ: пока мы играем, библиотека
 # пересобирает группы, и старый словарь устарел бы.
 func _on_game_pressed(group: Dictionary) -> void:
+	# Запоминаем, где были: SceneRouter вернёт эти параметры по «Назад».
+	SceneRouter.params["focus_key"] = group["key"]
+	SceneRouter.params["search"] = %Search.text
 	SceneRouter.go_to("details", {"key": group["key"]})

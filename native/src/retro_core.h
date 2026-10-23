@@ -77,6 +77,17 @@ public:
 	// y — сильный (тяжёлый), от 0 до 1. Ядро меняет их, когда захочет.
 	Vector2 get_rumble(int port) const;
 
+	// Диски (многодисковые игры PS1: .m3u или .pbp с несколькими дисками).
+	// Работают, только если ядро умеет менять диски (disk control).
+	int get_disk_count() const;            // сколько дисков; 0 — смена дисков не поддерживается
+	int get_disk_index() const;            // какой диск сейчас в приставке (с нуля)
+	String get_disk_label(int index) const; // название диска, если ядро его знает
+	String get_disk_path(int index) const;  // путь к файлу диска, если ядро его знает
+	bool set_disk(int index);              // открыть крышку, сменить диск, закрыть крышку
+	// С какого диска начать: вызывать ДО load_game. path — путь к файлу этого
+	// диска (как его вернул get_disk_path): ядро сверяет его, чтобы не перепутать.
+	void set_initial_disk(int index, const String &path);
+
 	bool has_new_frame() const { return new_frame; }
 	Ref<Image> get_frame();
 	PackedVector2Array take_audio();
@@ -173,6 +184,12 @@ private:
 	int16_t analog[4][2][2] = {};
 	Array controller_types; // по массиву типов на каждый порт
 	float rumble[4][2] = {}; // rumble[порт][0 — сильный, 1 — слабый], от 0 до 1
+
+	// Функции смены дисков, которые ядро нам отдало. Новая («ext») версия
+	// начинается теми же полями, что и старая, и добавляет к ним ещё несколько.
+	retro_disk_control_ext_callback disk = {};
+	int initial_disk = -1;          // set_initial_disk(): номер диска, -1 — не задан
+	std::string initial_disk_path;
 };
 
 } // namespace godot

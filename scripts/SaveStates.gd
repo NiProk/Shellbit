@@ -48,6 +48,8 @@ static func save_slot(core: Node, game: Dictionary, slot: String) -> bool:
 	file.store_buffer(data)
 	file.close()
 
+	_remember_disc(core, game, slot)
+
 	# Миниатюра: копия текущего кадра, уменьшенная до 256 пикселей в ширину.
 	var frame: Image = core.get_frame()
 	if frame != null:
@@ -63,7 +65,50 @@ static func load_slot(core: Node, game: Dictionary, slot: String) -> bool:
 	if not exists(game, slot):
 		return false
 	var data := FileAccess.get_file_as_bytes(_state_path(game, slot))
+	# Сохранились на втором диске, а сейчас вставлен первый? Сначала меняем
+	# диск — иначе игра «проснётся» на втором диске, читая данные первого.
+	var disc := disc_of(game, slot)
+	if not disc.is_empty() and core.has_method("get_disk_count") \
+			and core.get_disk_count() > 1 and core.get_disk_index() != disc["index"]:
+		core.set_disk(disc["index"])
 	return core.load_state(data)
+
+
+# --- Диски (многодисковые игры) -------------------------------------------
+# Рядом со слотами лежит discs.json: какой диск был в приставке
+# при каждом сохранении. {"auto": {"index": 1, "path": "…(Disc 2).cue"}}
+
+static func _discs_path(game: Dictionary) -> String:
+	return _dir(game).path_join("discs.json")
+
+
+static func _read_discs(game: Dictionary) -> Dictionary:
+	if not FileAccess.file_exists(_discs_path(game)):
+		return {}
+	var all: Variant = JSON.parse_string(FileAccess.get_file_as_string(_discs_path(game)))
+	return all if all is Dictionary else {}
+
+
+## Какой диск был вставлен, когда сохранялись в слот. {} — не знаем
+## (игра однодисковая или сохранение старое).
+static func disc_of(game: Dictionary, slot: String) -> Dictionary:
+	var all := _read_discs(game)
+	if all.get(slot) is Dictionary:
+		var disc: Dictionary = all[slot]
+		disc["index"] = int(disc.get("index", 0))  # JSON читает числа как 1.0
+		return disc
+	return {}
+
+
+static func _remember_disc(core: Node, game: Dictionary, slot: String) -> void:
+	if not core.has_method("get_disk_count") or core.get_disk_count() < 2:
+		return  # один диск — запоминать нечего
+	var all := _read_discs(game)
+	var index: int = core.get_disk_index()
+	all[slot] = {"index": index, "path": core.get_disk_path(index)}
+	var file := FileAccess.open(_discs_path(game), FileAccess.WRITE)
+	if file != null:
+		file.store_string(JSON.stringify(all, "\t"))
 
 
 static func exists(game: Dictionary, slot: String) -> bool:
