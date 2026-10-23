@@ -177,26 +177,98 @@ func _on_card_focused(card: GameCard) -> void:
 		card_focused.emit(items[index])
 
 
-## Стрелки и стик на карточке. Сами решаем, какая игра следующая:
-## соседней карточки за краем экрана может не быть — она ещё не создана.
-func _on_card_input(event: InputEvent, card: GameCard) -> void:
+# =====================================================================
+# Стрелки, крестовина и стик
+# =====================================================================
+#
+# Стик — это не кнопка, а ОСЬ: пока его держат, геймпад шлёт десятки
+# событий в секунду («наклон 0,81», «0,83», «0,82»…). Если двигаться
+# на каждое событие, список улетает на несколько рядов за мгновение.
+#
+# Поэтому шаги делаем сами, по таймеру — как повтор клавиши на клавиатуре:
+#   нажал — сразу шаг;
+#   держишь — пауза FIRST_DELAY, потом шаг каждые REPEAT секунд;
+#   держишь дольше FAST_AFTER — шаги чаще (REPEAT_FAST), чтобы быстро
+#   долистать до конца большой коллекции.
+# Так одинаково ведут себя стик, крестовина и стрелки на клавиатуре.
+
+const FIRST_DELAY := 0.4   # пауза перед повтором, с
+const REPEAT := 0.12       # шаг при удержании: ~8 в секунду
+const REPEAT_FAST := 0.05  # шаг, если держат долго: 20 в секунду
+const FAST_AFTER := 2.0    # через сколько секунд удержания ускоряться
+const DIRECTIONS := ["ui_up", "ui_down", "ui_left", "ui_right"]
+
+var _held := ""         # какое направление держат сейчас ("" — никакое)
+var _repeat_left := 0.0 # сколько ждать до следующего шага
+var _held_time := 0.0   # сколько уже держат
+
+
+## Направления на карточке забираем себе (accept_event), чтобы Godot
+## не двигал фокус сам. Сами шаги делает _process — по таймеру.
+func _on_card_input(event: InputEvent, _card: GameCard) -> void:
+	for action: String in DIRECTIONS:
+		if event.is_action(action):
+			accept_event()  # «нажатие обработано»
+			return
+
+
+func _process(delta: float) -> void:
+	# Работаем, только когда фокус на одной из наших карточек.
+	var focused := get_viewport().gui_get_focus_owner()
+	if not (focused is GameCard and focused.get_parent() == self):
+		_held = ""
+		return
+
+	var direction := ""
+	for action: String in DIRECTIONS:
+		if Input.is_action_pressed(action):
+			direction = action
+			break
+
+	if direction != _held:
+		# Нажали новое направление (или отпустили) — шаг сразу.
+		_held = direction
+		_held_time = 0.0
+		_repeat_left = FIRST_DELAY
+		if direction != "":
+			_step(direction, focused)
+		return
+	if direction == "":
+		return
+
+	_held_time += delta
+	_repeat_left -= delta
+	if _repeat_left <= 0.0:
+		_repeat_left = REPEAT_FAST if _held_time > FAST_AFTER else REPEAT
+		_step(direction, focused)
+
+
+## Один шаг: какая игра следующая. Соседней карточки за краем экрана
+## может не быть — она ещё не создана, поэтому считаем по номерам игр.
+func _step(direction: String, card: GameCard) -> void:
 	var index: int = card.get_meta("index")
 	var target := -1
-	if event.is_action_pressed("ui_right", true) and index % COLUMNS < COLUMNS - 1:
-		target = index + 1
-	elif event.is_action_pressed("ui_left", true) and index % COLUMNS > 0:
-		target = index - 1
-	elif event.is_action_pressed("ui_down", true):
-		# В последнем неполном ряду — на последнюю игру.
-		if index / COLUMNS < (items.size() - 1) / COLUMNS:
-			target = mini(index + COLUMNS, items.size() - 1)
-		else:
-			accept_event()  # ниже ничего нет — остаёмся на месте
-			return
-	elif event.is_action_pressed("ui_up", true) and index >= COLUMNS:
-		target = index - COLUMNS
-	# Вверх из первого ряда не перехватываем: Godot сам уведёт фокус
-	# на поиск и сортировку над сеткой.
+	match direction:
+		"ui_right":
+			if index % COLUMNS < COLUMNS - 1:
+				target = index + 1
+		"ui_left":
+			if index % COLUMNS > 0:
+				target = index - 1
+		"ui_down":
+			# Из предпоследнего ряда — в последний, даже если он неполный.
+			if index / COLUMNS < (items.size() - 1) / COLUMNS:
+				target = mini(index + COLUMNS, items.size() - 1)
+		"ui_up":
+			if index >= COLUMNS:
+				target = index - COLUMNS
+			else:
+				# Из первого ряда — наверх, к поиску и сортировке. Кто там
+				# сосед, Godot знает: find_valid_focus_neighbor ищет ближайший
+				# элемент с той стороны.
+				var above := card.find_valid_focus_neighbor(SIDE_TOP)
+				if above:
+					above.grab_focus()
+				return
 	if target >= 0 and target < items.size():
-		accept_event()  # «нажатие обработано» — Godot не будет искать соседа сам
 		select(target)

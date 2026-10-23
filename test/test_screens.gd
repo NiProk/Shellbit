@@ -134,12 +134,38 @@ func test_virtual_grid() -> void:
 	check(grid.get_child_count() < 60, "карточек меньше 60, а игр 500")
 	grid.select(0)
 	await frames(1)
-	for i in 30:  # 30 раз «вниз»
-		var event := InputEventAction.new()
-		event.action = &"ui_down"
-		event.pressed = true
-		grid.card_for(grid.selected).gui_input.emit(event)
+	for i in 30:  # 30 раз нажать и отпустить «вниз»
+		Input.action_press("ui_down")
+		grid._process(0.016)
+		Input.action_release("ui_down")
+		grid._process(0.016)
 	await frames(2)
 	check_eq(grid.selected, 30 * VirtualGrid.COLUMNS, "30 рядов вниз")
 	var focused := get_viewport().gui_get_focus_owner()
 	check(focused is GameCard and focused.game["key"] == "test_%d" % grid.selected, "фокус на выбранной игре")
+
+
+func test_grid_stick_repeat() -> void:
+	about("Стик в сетке: шаг сразу, потом пауза и ровный повтор — не «улетает»")
+	await _open("library", {"system": "nes"})
+	var grid: VirtualGrid = get_tree().current_scene.get_node("%Grid")
+	var many := []
+	for i in 400:
+		many.append({"key": "stick_%d" % i, "title": "Game %d" % i, "system": "nes",
+				"variants": [{"path": "s%d.nes" % i, "version": "", "favorite": false}],
+				"favorite": false, "last_played": 0, "play_seconds": 0})
+	grid.set_items(many)
+	await frames(2)
+	grid.select(0)
+	await frames(1)
+	Input.action_press("ui_down")  # как будто стик наклонили вниз и держат
+	grid._process(0.016)
+	check_eq(grid.selected, VirtualGrid.COLUMNS, "сразу — один ряд")
+	for i in 20:  # ещё 0,32 с — меньше паузы перед повтором
+		grid._process(0.016)
+	check_eq(grid.selected, VirtualGrid.COLUMNS, "пока пауза — стоим")
+	for i in 60:  # ещё ~1 с удержания
+		grid._process(0.016)
+	var rows: int = grid.selected / VirtualGrid.COLUMNS
+	check(rows >= 6 and rows <= 11, "за секунду — около 8 рядов, а не десятки (вышло %d)" % rows)
+	Input.action_release("ui_down")
