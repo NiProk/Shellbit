@@ -23,6 +23,7 @@ var _texture: ImageTexture
 var _playback: AudioStreamGeneratorPlayback
 var _frame_time := 1.0 / 60.0  # сколько секунд длится один кадр приставки
 var _time_bank := 0.0          # накопленное время, которое ещё не «отыграно»
+var _sync := AudioSync.new()   # синхронизация по звуку (scripts/AudioSync.gd)
 var _start_msec := 0
 
 var _paused := false
@@ -249,6 +250,13 @@ func _start_game(start_slot: String) -> String:
 	generator.mix_rate = av["sample_rate"]
 	%Audio.play()
 	_playback = %Audio.get_stream_playback()
+	# Пустой буфер — это сколько звука он вмещает. Сразу заполняем его
+	# тишиной до нормы (40%): так у звука с первого кадра есть запас.
+	_sync.capacity = _playback.get_frames_available()
+	_sync.reset()
+	var silence := PackedVector2Array()
+	silence.resize(int(_sync.capacity * AudioSync.TARGET_FILL))
+	_playback.push_buffer(silence)
 
 	# Продолжаем с того места, где вышли в прошлый раз.
 	# Подсказка при запуске: как открыть меню.
@@ -309,17 +317,25 @@ func _process(delta: float) -> void:
 	# просчитываем столько кадров приставки, сколько «положено».
 	# При ускорении ×3 за каждый «положенный» кадр просчитываем три.
 	_time_bank += delta
-	var slots := 0
-	while _time_bank >= _frame_time and slots < 3:
+	var due := 0  # сколько кадров приставки «положено» посчитать сейчас
+	while _time_bank >= _frame_time and due < 3:
+		_time_bank -= _frame_time
+		due += 1
+	if due == 3:
+		_time_bank = 0.0  # компьютер не успевает — не пытаемся догнать
+
+	# Синхронизация по звуку: если буфер звука почти пуст — досчитываем
+	# кадр (иначе щелчок), если почти полон — этот кадр пропускаем.
+	# При ускорении и перемотке не нужно: там звук и так урезан.
+	if not rewinding and speed == 1 and _playback != null:
+		due = maxi(0, due + _sync.extra_frames(_audio_fill()))
+
+	for slot in due:
 		if rewinding:
 			_rewind_step()
 		else:
 			for i in speed:
 				_run_frame()
-		_time_bank -= _frame_time
-		slots += 1
-	if slots == 3:
-		_time_bank = 0.0  # компьютер не успевает — не пытаемся догнать
 
 	_update_speed_label(rewinding, speed)
 	_update_rumble(rewinding)
@@ -464,10 +480,22 @@ func _push_audio(speed := 1, rewinding := false) -> void:
 		# Звука в speed раз больше, чем успеют проиграть динамики.
 		# Оставляем только последний кусочек — звук прерывистый, но слышен.
 		frames = frames.slice(frames.size() - frames.size() / speed)
+	else:
+		# Обычная скорость: чуть растягиваем или сжимаем звук, чтобы буфер
+		# оставался заполненным на 40% (см. scripts/AudioSync.gd).
+		var current_fill := _audio_fill()
+		if current_fill <= 0.0:
+			_sync.underruns += 1  # звук успел кончиться — был щелчок
+		frames = _sync.resample(frames, _sync.ratio(current_fill))
 	var room := _playback.get_frames_available()
 	if frames.size() > room:
 		frames = frames.slice(0, room)  # буфер полон — лишнее выбрасываем
 	_playback.push_buffer(frames)
+
+
+## Насколько заполнен буфер звука: 0 — пуст, 1 — полон.
+func _audio_fill() -> float:
+	return _sync.fill(_playback.get_frames_available())
 
 
 func _wants_menu(mask: int) -> bool:
@@ -563,6 +591,8 @@ func _restart() -> void:
 
 
 func _exit_game() -> void:
+	if _sync.underruns > 0:
+		print("Звук прерывался %d раз(а) за игру" % _sync.underruns)
 	_update_rumble(true)
 	# Автосохранение: при следующем запуске продолжим отсюда.
 	SaveStates.save_slot(core, game, SaveStates.AUTO)

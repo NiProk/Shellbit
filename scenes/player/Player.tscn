@@ -9,7 +9,7 @@
 shader = ExtResource("4_blur")
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_1"]
-buffer_length = 0.1
+buffer_length = 0.06
 
 [node name="Player" type="Control"]
 layout_mode = 3
