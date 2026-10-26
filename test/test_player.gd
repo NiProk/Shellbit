@@ -20,6 +20,7 @@ func before_each() -> void:
 	core = load("res://test/MockCore.gd").new()
 	player.add_child(core)
 	player.core = core
+	player._has_rumble = true  # MockCore «умеет» вибрацию
 	player.game = SceneRouter.params["game"]
 	player._frame_time = FRAME
 	player._setup_rewind()
@@ -171,3 +172,22 @@ func test_rumble() -> void:
 	_play(1)
 	check_eq(player._rumble_sent[0], Vector2.ZERO, "вибрация выключена в настройках")
 	Settings.set_value("play", "rumble", null)
+
+
+func test_emulation_thread() -> void:
+	about("Поток эмуляции: кадры идут сами, даже если главный поток «завис»")
+	player._start_emulation()
+	var start: int = core.frame
+	# Главный поток «зависает» на 0,3 с — как будто интерфейс что-то грузит.
+	OS.delay_msec(300)
+	var counted: int = core.frame - start
+	check(counted >= 12 and counted <= 24, "за 0,3 с — около 18 кадров (вышло %d)" % counted)
+	# Меню паузы — поток стоит.
+	player._paused = true
+	await frames(2)
+	var paused_at: int = core.frame
+	OS.delay_msec(100)
+	check_eq(core.frame, paused_at, "на паузе кадры не идут")
+	player._paused = false
+	player._stop_emulation()
+	check(player._thread == null, "поток остановлен")

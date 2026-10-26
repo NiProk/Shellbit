@@ -10,6 +10,11 @@ extends Control
 ##
 ## Ускорение (RT / пробел) и перемотка назад (LT / Backspace) —
 ## см. раздел «Ускорение и перемотка» внизу.
+##
+## Кадры приставки считаются В ОТДЕЛЬНОМ ПОТОКЕ (см. раздел «Поток эмуляции»):
+## главный поток рисует интерфейс и читает кнопки, а поток эмуляции
+## считает кадры, звук и снимки перемотки. Так подвисание интерфейса
+## (открылось меню, Windows подгрузила что-то с диска) не сбивает игру.
 
 const CRT_SHADER := preload("res://scenes/player/crt.gdshader")
 const LCD_SHADER := preload("res://scenes/player/lcd.gdshader")
@@ -24,6 +29,7 @@ var _playback: AudioStreamGeneratorPlayback
 var _frame_time := 1.0 / 60.0  # сколько секунд длится один кадр приставки
 var _time_bank := 0.0          # накопленное время, которое ещё не «отыграно»
 var _sync := AudioSync.new()   # синхронизация по звуку (scripts/AudioSync.gd)
+var _has_rumble := false       # ядро умеет вибрацию (shellbit_core новый)
 var _start_msec := 0
 
 var _paused := false
@@ -107,6 +113,7 @@ func _begin() -> void:
 	Library.mark_played(game)
 	_start_msec = Time.get_ticks_msec()
 	_setup_rewind()
+	_start_emulation()
 
 
 # --- Стики ----------------------------------------------------------------
@@ -150,13 +157,17 @@ static func _pick_analog_type(types: Array) -> int:
 
 ## Каждый кадр — где сейчас стики. muted — во время перемотки и после
 ## меню, пока человек не отпустил кнопки: тогда стики «в центре».
-func _send_sticks(system_id: String, muted: bool) -> void:
+## Где сейчас стики: [порт 1 левый, порт 1 правый, порт 2 левый, порт 2 правый].
+## Читаем в главном потоке, а в ядро передаёт поток эмуляции (_emulate).
+## muted — во время перемотки и после меню, пока не отпустили кнопки.
+func _read_sticks(system_id: String, muted: bool) -> Array[Vector2]:
+	var sticks: Array[Vector2] = []
 	if not _analog:
-		return
+		return sticks
 	for port in 2:
 		for stick in 2:
-			var value := Vector2.ZERO if muted else InputMapper.get_analog(port, stick, system_id)
-			core.set_analog(port, stick, value.x, value.y)
+			sticks.append(Vector2.ZERO if muted else InputMapper.get_analog(port, stick, system_id))
+	return sticks
 
 
 # --- Вибрация -------------------------------------------------------------
@@ -175,13 +186,17 @@ var _rumble_msec: Array[int] = [0, 0]
 
 ## stop = true — выключить моторы (пауза, перемотка, выход из игры).
 func _update_rumble(stop := false) -> void:
-	if core == null or not core.has_method("get_rumble"):
+	if core == null or not _has_rumble:
 		return  # старый shellbit_core без вибрации
+	# Что хочет игра, узнаёт поток эмуляции — берём у него.
+	_shared_lock.lock()
+	var wanted := _rumble_now.duplicate()
+	_shared_lock.unlock()
 	var enabled: bool = Settings.get_value("play", "rumble")
 	var pads := Input.get_connected_joypads()
 	var now := Time.get_ticks_msec()
 	for port in 2:
-		var value: Vector2 = Vector2.ZERO if stop or not enabled else core.get_rumble(port)
+		var value: Vector2 = Vector2.ZERO if stop or not enabled else wanted[port]
 		var renew := value != Vector2.ZERO and now - _rumble_msec[port] > 500
 		if value == _rumble_sent[port] and not renew:
 			continue  # ничего не изменилось
@@ -238,6 +253,7 @@ func _start_game(start_slot: String) -> String:
 			and core.get_disk_index() != disc["index"]:
 		core.set_disk(disc["index"])
 	_setup_analog()
+	_has_rumble = core.has_method("get_rumble")
 
 	# Сведения о картинке и звуке: размер, пропорции, кадры/с, частота звука.
 	var av: Dictionary = core.get_av_info()
@@ -308,9 +324,109 @@ func _process(delta: float) -> void:
 			and InputMapper.is_hotkey_pressed(system_id, "rewind")
 	var speed := 1 if rewinding or _wait_release else _fast_forward_speed(system_id)
 
-	core.set_input(0, 0 if rewinding else mask0)
-	core.set_input(1, 0 if rewinding else mask1)
-	_send_sticks(system_id, rewinding or _wait_release)
+	# Что делать потоку эмуляции: какие кнопки нажаты, ускорение, перемотка.
+	# Целиком заменяем словарь под замком — поток всегда видит
+	# «согласованный» набор, а не половину старого и половину нового.
+	_shared_lock.lock()
+	_cmd = {
+		"mask0": 0 if rewinding else mask0,
+		"mask1": 0 if rewinding else mask1,
+		"speed": speed,
+		"rewinding": rewinding,
+		"sticks": _read_sticks(system_id, rewinding or _wait_release),
+	}
+	_shared_lock.unlock()
+
+	if _thread == null:
+		# Потока нет (автотесты подставляют своё ядро) — считаем кадры здесь.
+		_emulate(delta)
+
+	_update_speed_label(rewinding, speed)
+	_update_rumble(rewinding)
+	_show_frame()
+
+
+# =====================================================================
+# Поток эмуляции
+# =====================================================================
+#
+# Thread — отдельная «нить» выполнения: она идёт ОДНОВРЕМЕННО с главной,
+# на другом ядре процессора. Главная нить рисует экран и читает кнопки,
+# наша — в цикле считает кадры приставки (_emulation_loop).
+#
+# Главное правило потоков: две нити не должны одновременно трогать одно
+# и то же. Иначе одна, например, сохраняет игру в слот, а другая в этот
+# момент меняет память приставки — сохранение выйдет испорченным.
+# Поэтому есть «замки» — Mutex. lock() — «занято, жди»; unlock() — «свободно».
+#   _core_lock   — на ядро: кадр, сохранение, загрузка, смена диска;
+#   _shared_lock — на обмен данными: команды (_cmd), картинка, вибрация.
+
+var _thread: Thread              # null — поток не запущен
+var _stop_thread := false        # просьба потоку закончить работу
+var _core_lock := Mutex.new()
+var _shared_lock := Mutex.new()
+## Команды потоку (пишет главный поток в _process).
+var _cmd := {"mask0": 0, "mask1": 0, "speed": 1, "rewinding": false, "sticks": []}
+var _new_image: Image            # свежая картинка от потока (забирает _show_frame)
+var _rumble_now: Array = [Vector2.ZERO, Vector2.ZERO]  # какую вибрацию хочет игра
+
+
+func _start_emulation() -> void:
+	if _thread != null or core == null:
+		return
+	_stop_thread = false
+	_thread = Thread.new()
+	_thread.start(_emulation_loop)
+
+
+## Остановить поток и дождаться, пока он закончит кадр.
+## Нужно перед выгрузкой ядра: иначе поток обратился бы к ядру, которого уже нет.
+func _stop_emulation() -> void:
+	if _thread == null:
+		return
+	_stop_thread = true
+	_thread.wait_to_finish()  # ждём, пока цикл в потоке увидит просьбу и выйдет
+	_thread = null
+
+
+## Цикл потока эмуляции. Работает, пока не попросят остановиться.
+func _emulation_loop() -> void:
+	var last := Time.get_ticks_usec()  # микросекунды — точнее, чем миллисекунды
+	while not _stop_thread:
+		var now := Time.get_ticks_usec()
+		var delta := (now - last) / 1000000.0
+		last = now
+		if _paused:
+			OS.delay_msec(5)  # меню паузы — просто ждём, не тратя процессор
+			continue
+		_emulate(delta)
+		# Спим до следующего кадра приставки. На 1 мс меньше, чем нужно:
+		# сон в Windows бывает неточным, а проспать кадр хуже, чем проснуться
+		# чуть раньше (тогда цикл просто пройдёт ещё раз, ничего не посчитав).
+		var wait := int((_frame_time - _time_bank) * 1000000.0) - 1000
+		if wait > 0:
+			OS.delay_usec(mini(wait, 20000))
+
+
+## Посчитать кадры приставки, которые «положены» за delta секунд, и
+## отдать звук. Вызывается в потоке эмуляции (или в _process, если потока нет).
+## Здесь нельзя трогать узлы интерфейса — только ядро и свои переменные.
+func _emulate(delta: float) -> void:
+	_shared_lock.lock()
+	var cmd := _cmd
+	_shared_lock.unlock()
+	var speed: int = cmd["speed"]
+	var rewinding: bool = cmd["rewinding"]
+
+	_core_lock.lock()
+	if not core.is_running():
+		_core_lock.unlock()
+		return
+	core.set_input(0, cmd["mask0"])
+	core.set_input(1, cmd["mask1"])
+	var sticks: Array = cmd["sticks"]
+	for i in sticks.size():
+		core.set_analog(i / 2, i % 2, sticks[i].x, sticks[i].y)
 
 	# Монитор может обновляться 60, 75 или 144 раза в секунду, а NES
 	# всегда работает на ~60 кадрах. Поэтому копим прошедшее время и
@@ -337,16 +453,27 @@ func _process(delta: float) -> void:
 			for i in speed:
 				_run_frame()
 
-	_update_speed_label(rewinding, speed)
-	_update_rumble(rewinding)
-	_show_frame()
+	var image: Image = core.get_frame() if core.has_new_frame() else null
 	_push_audio(speed, rewinding)
+	var rumble: Array = [core.get_rumble(0), core.get_rumble(1)] if _has_rumble else [Vector2.ZERO, Vector2.ZERO]
+	_core_lock.unlock()
+
+	# Картинку и вибрацию отдаём главному потоку — он их покажет.
+	_shared_lock.lock()
+	if image != null:
+		_new_image = image  # ядро каждый кадр делает новую картинку — можно отдать как есть
+	_rumble_now = rumble
+	_shared_lock.unlock()
 
 
+## Показать свежую картинку от потока эмуляции, если она есть.
 func _show_frame() -> void:
-	if not core.has_new_frame():
-		return
-	var image: Image = core.get_frame()
+	_shared_lock.lock()
+	var image := _new_image
+	_new_image = null
+	_shared_lock.unlock()
+	if image == null:
+		return  # новой картинки нет — на экране остаётся прошлая
 	if _texture == null or _texture.get_size() != Vector2(image.get_size()):
 		_texture = ImageTexture.create_from_image(image)  # первый кадр или новый размер
 		%Screen.texture = _texture
@@ -513,8 +640,11 @@ func _open_menu() -> void:
 	_update_rumble(true)  # на паузе геймпад не трясётся
 	_speed_label.visible = false
 	# Записываем внутриигровые сохранения на диск (на случай, если
-	# программу потом закроют неаккуратно).
+	# программу потом закроют неаккуратно). Замок: поток эмуляции может
+	# как раз досчитывать кадр — ждём его, а потом сохраняем.
+	_core_lock.lock()
 	core.save_sram()
+	_core_lock.unlock()
 	%Audio.stream_paused = true  # звук замирает вместе с игрой
 	%PauseMenu.open(game, _disc_info())
 
@@ -536,17 +666,24 @@ var _start_disc: Dictionary = {}
 
 ## Сколько у игры дисков и какой вставлен — для меню паузы. {} — один диск.
 func _disc_info() -> Dictionary:
-	if core == null or not core.has_method("get_disk_count") or core.get_disk_count() < 2:
+	if core == null or not core.has_method("get_disk_count"):
 		return {}
-	return {"count": core.get_disk_count(), "index": core.get_disk_index()}
+	_core_lock.lock()
+	var info := {"count": core.get_disk_count(), "index": core.get_disk_index()}
+	_core_lock.unlock()
+	return info if info["count"] > 1 else {}
 
 
 ## «Сменить диск» → выбрали диск index (с нуля).
 func _on_disc_requested(index: int) -> void:
-	if index == core.get_disk_index():
+	_core_lock.lock()
+	var same: bool = index == core.get_disk_index()
+	var swapped: bool = not same and core.set_disk(index)
+	_core_lock.unlock()
+	if same:
 		_resume()  # выбрали тот же диск — просто возвращаемся в игру
 		return
-	if core.set_disk(index):
+	if swapped:
 		# Лента перемотки — с прошлого диска. Отмотать туда нельзя: игра
 		# увидела бы старые данные на новом диске. Начинаем ленту заново.
 		_setup_rewind()
@@ -557,7 +694,10 @@ func _on_disc_requested(index: int) -> void:
 
 
 func _on_save_requested(slot: String) -> void:
-	if SaveStates.save_slot(core, game, slot):
+	_core_lock.lock()
+	var saved := SaveStates.save_slot(core, game, slot)
+	_core_lock.unlock()
+	if saved:
 		SceneRouter.toast(tr("Сохранено в слот %s") % slot)
 	else:
 		SceneRouter.toast(tr("Это ядро не умеет сохранять состояние"))
@@ -565,10 +705,12 @@ func _on_save_requested(slot: String) -> void:
 
 
 func _on_load_requested(slot: String) -> void:
-	if SaveStates.load_slot(core, game, slot):
+	_core_lock.lock()
+	var loaded := SaveStates.load_slot(core, game, slot)
+	_core_lock.unlock()
+	if loaded:
 		_setup_rewind()  # старая «лента» — от другого места игры
 		_resume()
-		_show_frame()
 		SceneRouter.toast(tr("Загружен слот %s") % slot)
 	else:
 		SceneRouter.toast(tr("Не удалось загрузить слот %s") % slot)
@@ -576,7 +718,8 @@ func _on_load_requested(slot: String) -> void:
 
 func _restart() -> void:
 	# Самый надёжный «сброс» — заново загрузить ядро и игру,
-	# но без автосохранения.
+	# но без автосохранения. Сначала останавливаем поток эмуляции.
+	_stop_emulation()
 	core.unload()
 	core.queue_free()
 	_texture = null
@@ -587,6 +730,7 @@ func _restart() -> void:
 		_show_error(error)
 		return
 	_setup_rewind()
+	_start_emulation()
 	_resume()
 
 
@@ -594,6 +738,7 @@ func _exit_game() -> void:
 	if _sync.underruns > 0:
 		print("Звук прерывался %d раз(а) за игру" % _sync.underruns)
 	_update_rumble(true)
+	_stop_emulation()  # поток больше не нужен — и не помешает сохранению
 	# Автосохранение: при следующем запуске продолжим отсюда.
 	SaveStates.save_slot(core, game, SaveStates.AUTO)
 	var seconds := (Time.get_ticks_msec() - _start_msec) / 1000
@@ -606,6 +751,7 @@ func _exit_game() -> void:
 func _show_error(text: String) -> void:
 	# Ядро могло загрузиться, а игра — нет. Выключаем ядро, иначе экран
 	# будет считать, что игра идёт, и кнопка «Назад» не сработает.
+	_stop_emulation()
 	if core != null:
 		core.unload()
 		core.queue_free()
@@ -678,6 +824,7 @@ func _unhandled_input(event: InputEvent) -> void:
 # Если окно закрыли прямо во время игры — сохраняемся и выключаем ядро.
 func _exit_tree() -> void:
 	_update_rumble(true)
+	_stop_emulation()
 	if core != null:
 		SaveStates.save_slot(core, game, SaveStates.AUTO)
 		core.unload()
@@ -699,6 +846,13 @@ func _exit_tree() -> void:
 
 ## Подготовить пустую ленту перемотки под текущую игру.
 func _setup_rewind() -> void:
+	# Лентой пользуется поток эмуляции — меняем её под замком.
+	_core_lock.lock()
+	_fill_rewind_settings()
+	_core_lock.unlock()
+
+
+func _fill_rewind_settings() -> void:
 	_tape.clear()
 	_snap_count = 0
 	_tape_max = 0
