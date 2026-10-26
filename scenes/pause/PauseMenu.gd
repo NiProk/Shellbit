@@ -16,6 +16,7 @@ signal save_requested(slot: String)     ## X на слоте (или A на пу
 signal load_requested(slot: String)     ## A на заполненном слоте
 signal screenshot_requested             ## «Скриншот»
 signal disc_requested(index: int)       ## «Сменить диск» → выбрали диск (с нуля)
+signal options_requested                ## «Настройки ядра»
 
 const SaveSlotScene := preload("res://scenes/components/SaveSlot.tscn")
 
@@ -33,6 +34,7 @@ func _ready() -> void:
 	%ExitButton.pressed.connect(exit_requested.emit)
 	%ScreenshotButton.pressed.connect(screenshot_requested.emit)
 	%DiscButton.pressed.connect(_choose_disc)
+	%OptionsButton.pressed.connect(options_requested.emit)
 	_dropdown = DropdownList.new()
 	add_child(_dropdown)
 	_dropdown.chosen.connect(func(index: Variant) -> void: disc_requested.emit(int(index)))
@@ -47,16 +49,18 @@ func _ready() -> void:
 		button.pressed.connect(_on_slot_pressed.bind(slot))
 		button.focus_entered.connect(_update_hints)
 
-	for button: Button in [%ContinueButton, %DiscButton, %RestartButton, %ScreenshotButton, %ExitButton]:
+	for button: Button in [%ContinueButton, %DiscButton, %RestartButton, %ScreenshotButton, %OptionsButton, %ExitButton]:
 		button.focus_entered.connect(_update_hints)
 		button.mouse_entered.connect(button.grab_focus)
 
 
 ## Показать меню для игры. discs — {"count": 3, "index": 0}, если у игры
 ## несколько дисков: тогда в меню есть «Сменить диск».
-func open(game: Dictionary, discs := {}) -> void:
+## has_options = false — у ядра нет списка настроек (старый shellbit_core).
+func open(game: Dictionary, discs := {}, has_options := true) -> void:
 	_game = game
 	_discs = discs
+	%OptionsButton.visible = has_options
 	%GameTitle.text = game["title"]
 	%DiscButton.visible = discs.get("count", 0) > 1
 	if %DiscButton.visible:

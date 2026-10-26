@@ -83,6 +83,15 @@ func get_value(section: String, key: String, default: Variant = null) -> Variant
 	return _cfg.get_value(section, key, default)
 
 
+## Все значения раздела: {ключ: значение}. Пустой словарь — раздела нет.
+func get_section(section: String) -> Dictionary:
+	var result := {}
+	if _cfg.has_section(section):
+		for key in _cfg.get_section_keys(section):
+			result[key] = _cfg.get_value(section, key)
+	return result
+
+
 ## Записать значение и сразу сохранить файл на диск.
 func set_value(section: String, key: String, value: Variant) -> void:
 	_cfg.set_value(section, key, value)

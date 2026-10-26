@@ -54,6 +54,9 @@ void RetroCore::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("save_sram"), &RetroCore::save_sram);
 	ClassDB::bind_method(D_METHOD("set_option", "key", "value"), &RetroCore::set_option);
 	ClassDB::bind_method(D_METHOD("get_options"), &RetroCore::get_options);
+	ClassDB::bind_method(D_METHOD("get_option_list"), &RetroCore::get_option_list);
+	ClassDB::bind_method(D_METHOD("refresh_option_display"), &RetroCore::refresh_option_display);
+	ClassDB::bind_method(D_METHOD("set_language", "language"), &RetroCore::set_language);
 
 	BIND_CONSTANT(BUTTON_B);
 	BIND_CONSTANT(BUTTON_Y);
@@ -149,6 +152,11 @@ bool RetroCore::load_core(const String &path) {
 	memset(rumble, 0, sizeof(rumble));
 	memset(&disk, 0, sizeof(disk));
 	initial_disk = -1;
+	option_defs.clear();
+	option_categories.clear();
+	hidden_options.clear();
+	update_display = nullptr;
+	options_updated = false;
 
 	// Отдаём ядру наши колбэки и запускаем его.
 	api.set_environment(&RetroCore::environment_cb);
@@ -457,6 +465,138 @@ void RetroCore::remember_default(const char *key, const char *value) {
 
 void RetroCore::set_option(const String &key, const String &value) {
 	options[key.utf8().get_data()] = value.utf8().get_data();
+	options_updated = true; // ядро спросит «что-то поменялось?» и перечитает
+}
+
+void RetroCore::set_language(int new_language) {
+	language = (unsigned)new_language;
+}
+
+bool RetroCore::refresh_option_display() {
+	return update_display != nullptr && update_display();
+}
+
+Array RetroCore::get_option_list() const {
+	Array result;
+	for (const OptionDef &def : option_defs) {
+		Dictionary item;
+		item["key"] = String::utf8(def.key.c_str());
+		item["label"] = String::utf8(def.label.c_str());
+		item["info"] = String::utf8(def.info.c_str());
+		item["category"] = String::utf8(def.category.c_str());
+		auto category = option_categories.find(def.category);
+		item["category_label"] = category != option_categories.end() ? String::utf8(category->second.c_str()) : String();
+		Array values;
+		for (const OptionValue &value : def.values) {
+			Array pair;
+			pair.push_back(String::utf8(value.value.c_str()));
+			pair.push_back(String::utf8(value.label.c_str()));
+			values.push_back(pair);
+		}
+		item["values"] = values;
+		item["default"] = String::utf8(def.default_value.c_str());
+		auto current = options.find(def.key);
+		item["value"] = String::utf8((current != options.end() ? current->second : def.default_value).c_str());
+		item["visible"] = hidden_options.count(def.key) == 0;
+		result.push_back(item);
+	}
+	return result;
+}
+
+// Строка из ядра (может быть NULL) → std::string.
+static std::string text_or(const char *text, const char *fallback = "") {
+	return text ? text : (fallback ? fallback : "");
+}
+
+// Формат v1: key, desc, info, values[], default_value.
+// local — те же настройки на языке интерфейса (может быть NULL или неполным):
+// берём из него надписи, где они есть, остальное — из английского us.
+void RetroCore::read_options_v1(const retro_core_option_definition *us, const retro_core_option_definition *local) {
+	option_defs.clear();
+	option_categories.clear();
+	for (; us && us->key; us++) {
+		const retro_core_option_definition *loc = nullptr;
+		for (const retro_core_option_definition *l = local; l && l->key; l++) {
+			if (strcmp(l->key, us->key) == 0) {
+				loc = l;
+				break;
+			}
+		}
+		OptionDef def;
+		def.key = us->key;
+		def.label = text_or(loc && loc->desc ? loc->desc : us->desc, us->key);
+		def.info = text_or(loc && loc->info ? loc->info : us->info);
+		def.default_value = text_or(us->default_value, us->values[0].value);
+		for (int i = 0; i < RETRO_NUM_CORE_OPTION_VALUES_MAX && us->values[i].value; i++) {
+			const char *label = us->values[i].label;
+			if (loc) { // у перевода ищем то же значение и берём его надпись
+				for (int j = 0; j < RETRO_NUM_CORE_OPTION_VALUES_MAX && loc->values[j].value; j++) {
+					if (strcmp(loc->values[j].value, us->values[i].value) == 0 && loc->values[j].label) {
+						label = loc->values[j].label;
+					}
+				}
+			}
+			def.values.push_back({ us->values[i].value, text_or(label, us->values[i].value) });
+		}
+		remember_default(def.key.c_str(), def.default_value.c_str());
+		option_defs.push_back(def);
+	}
+}
+
+// Формат v2: то же самое плюс категории («Видео», «Звук», «Управление»…).
+void RetroCore::read_options_v2(const retro_core_options_v2 *us, const retro_core_options_v2 *local) {
+	option_defs.clear();
+	option_categories.clear();
+	if (us == nullptr) {
+		return;
+	}
+	for (const retro_core_option_v2_category *c = us->categories; c && c->key; c++) {
+		std::string label = text_or(c->desc, c->key);
+		for (const retro_core_option_v2_category *l = local ? local->categories : nullptr; l && l->key; l++) {
+			if (strcmp(l->key, c->key) == 0 && l->desc) {
+				label = l->desc;
+			}
+		}
+		option_categories[c->key] = label;
+	}
+	for (const retro_core_option_v2_definition *d = us->definitions; d && d->key; d++) {
+		const retro_core_option_v2_definition *loc = nullptr;
+		for (const retro_core_option_v2_definition *l = local ? local->definitions : nullptr; l && l->key; l++) {
+			if (strcmp(l->key, d->key) == 0) {
+				loc = l;
+				break;
+			}
+		}
+		OptionDef def;
+		def.key = d->key;
+		def.category = text_or(d->category_key);
+		// Внутри категории у настройки бывает название короче (desc_categorized):
+		// «Разрешение» вместо «Видео > Разрешение».
+		const char *desc = d->desc_categorized && d->category_key ? d->desc_categorized : d->desc;
+		const char *info = d->info_categorized && d->category_key ? d->info_categorized : d->info;
+		if (loc) {
+			const char *loc_desc = loc->desc_categorized && d->category_key ? loc->desc_categorized : loc->desc;
+			const char *loc_info = loc->info_categorized && d->category_key ? loc->info_categorized : loc->info;
+			if (loc_desc) desc = loc_desc;
+			if (loc_info) info = loc_info;
+		}
+		def.label = text_or(desc, d->key);
+		def.info = text_or(info);
+		def.default_value = text_or(d->default_value, d->values[0].value);
+		for (int i = 0; i < RETRO_NUM_CORE_OPTION_VALUES_MAX && d->values[i].value; i++) {
+			const char *label = d->values[i].label;
+			if (loc) {
+				for (int j = 0; j < RETRO_NUM_CORE_OPTION_VALUES_MAX && loc->values[j].value; j++) {
+					if (strcmp(loc->values[j].value, d->values[i].value) == 0 && loc->values[j].label) {
+						label = loc->values[j].label;
+					}
+				}
+			}
+			def.values.push_back({ d->values[i].value, text_or(label, d->values[i].value) });
+		}
+		remember_default(def.key.c_str(), def.default_value.c_str());
+		option_defs.push_back(def);
+	}
 }
 
 Dictionary RetroCore::get_options() const {
@@ -637,41 +777,69 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 		case RETRO_ENVIRONMENT_GET_CORE_OPTIONS_VERSION:
 			*(unsigned *)data = 2; // понимаем самый новый формат
 			return true;
+		case RETRO_ENVIRONMENT_GET_LANGUAGE:
+			*(unsigned *)data = language; // на каком языке описывать настройки
+			return true;
 		case RETRO_ENVIRONMENT_SET_VARIABLES: {
 			// Старый формат: value = "Описание; по_умолчанию|вариант2|вариант3"
+			option_defs.clear();
+			option_categories.clear();
 			for (const retro_variable *v = (const retro_variable *)data; v && v->key; v++) {
 				std::string text = v->value ? v->value : "";
 				size_t start = text.find("; ");
+				OptionDef def;
+				def.key = v->key;
+				def.label = (start == std::string::npos) ? v->key : text.substr(0, start);
 				std::string values = (start == std::string::npos) ? text : text.substr(start + 2);
-				remember_default(v->key, values.substr(0, values.find('|')).c_str());
+				size_t from = 0;
+				while (from <= values.size()) {
+					size_t bar = values.find('|', from);
+					std::string value = values.substr(from, bar == std::string::npos ? std::string::npos : bar - from);
+					def.values.push_back({ value, value });
+					if (bar == std::string::npos) {
+						break;
+					}
+					from = bar + 1;
+				}
+				def.default_value = def.values.empty() ? "" : def.values[0].value;
+				remember_default(v->key, def.default_value.c_str());
+				option_defs.push_back(def);
 			}
 			return true;
 		}
 		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS:
+			read_options_v1((const retro_core_option_definition *)data, nullptr);
+			return true;
 		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_INTL: {
-			const retro_core_option_definition *defs = (cmd == RETRO_ENVIRONMENT_SET_CORE_OPTIONS)
-					? (const retro_core_option_definition *)data
-					: ((const retro_core_options_intl *)data)->us;
-			for (; defs && defs->key; defs++) {
-				remember_default(defs->key, defs->default_value ? defs->default_value : defs->values[0].value);
-			}
+			const retro_core_options_intl *intl = (const retro_core_options_intl *)data;
+			read_options_v1(intl->us, intl->local);
 			return true;
 		}
 		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_V2:
+			read_options_v2((const retro_core_options_v2 *)data, nullptr);
+			return data != nullptr;
 		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_V2_INTL: {
-			const retro_core_options_v2 *opts = (cmd == RETRO_ENVIRONMENT_SET_CORE_OPTIONS_V2)
-					? (const retro_core_options_v2 *)data
-					: ((const retro_core_options_v2_intl *)data)->us;
-			if (opts == nullptr) {
-				return false;
-			}
-			for (const retro_core_option_v2_definition *d = opts->definitions; d && d->key; d++) {
-				remember_default(d->key, d->default_value ? d->default_value : d->values[0].value);
+			const retro_core_options_v2_intl *intl = (const retro_core_options_v2_intl *)data;
+			read_options_v2(intl->us, intl->local);
+			return intl->us != nullptr;
+		}
+		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_DISPLAY: {
+			// Ядро просит показать или спрятать настройку в меню.
+			const retro_core_option_display *display = (const retro_core_option_display *)data;
+			if (display && display->key) {
+				if (display->visible) {
+					hidden_options.erase(display->key);
+				} else {
+					hidden_options.insert(display->key);
+				}
 			}
 			return true;
 		}
-		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_DISPLAY:
-			return true; // «показать/скрыть настройку в меню» — меню настроек пока нет
+		case RETRO_ENVIRONMENT_SET_CORE_OPTIONS_UPDATE_DISPLAY_CALLBACK: {
+			const retro_core_options_update_display_callback *cb = (const retro_core_options_update_display_callback *)data;
+			update_display = cb ? cb->callback : nullptr;
+			return true;
+		}
 		case RETRO_ENVIRONMENT_GET_VARIABLE: {
 			retro_variable *v = (retro_variable *)data;
 			auto it = v->key ? options.find(v->key) : options.end();
@@ -679,7 +847,9 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 			return v->value != nullptr;
 		}
 		case RETRO_ENVIRONMENT_GET_VARIABLE_UPDATE:
-			*(bool *)data = false; // настройки во время игры пока не меняются
+			// «Поменялись ли настройки?» — да, если с прошлого вопроса вызывали set_option.
+			*(bool *)data = options_updated;
+			options_updated = false;
 			return true;
 		default:
 			return false;

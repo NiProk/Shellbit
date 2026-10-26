@@ -19,6 +19,7 @@
 
 #include <cstdint>
 #include <map>
+#include <set>
 #include <string>
 #include <vector>
 
@@ -107,6 +108,17 @@ public:
 	// а фронтенд может поменять: set_option("pcsx_rearmed_memcard2", "enabled").
 	void set_option(const String &key, const String &value);
 	Dictionary get_options() const;
+	// Полное описание настроек для экрана «Настройки ядра»:
+	// [{"key", "label", "info", "category", "category_label",
+	//   "values": [[значение, надпись], ...], "default", "value", "visible"}, ...]
+	Array get_option_list() const;
+	// Ядро может прятать настройки, которые сейчас не имеют смысла
+	// (например, «разрешение» при выключенном улучшении графики).
+	// Вызывать после set_option: true — видимость каких-то настроек изменилась.
+	bool refresh_option_display();
+	// Язык, на котором ядро будет описывать свои настройки (если умеет):
+	// номер RETRO_LANGUAGE_* из libretro.h. Вызывать ДО load_core.
+	void set_language(int language);
 
 protected:
 	static void _bind_methods();
@@ -169,6 +181,24 @@ private:
 	// при добавлении новых, поэтому указатель value.c_str(), отданный ядру,
 	// остаётся рабочим.
 	std::map<std::string, std::string> options;
+
+	// Описания настроек, как их прислало ядро (в том порядке).
+	struct OptionValue {
+		std::string value, label;
+	};
+	struct OptionDef {
+		std::string key, label, info, category, default_value;
+		std::vector<OptionValue> values;
+	};
+	std::vector<OptionDef> option_defs;
+	std::map<std::string, std::string> option_categories; // ключ категории → название
+	std::set<std::string> hidden_options;                 // ключи спрятанных настроек
+	bool options_updated = false; // настройку поменяли — ядро узнает в GET_VARIABLE_UPDATE
+	retro_core_options_update_display_callback_t update_display = nullptr;
+	unsigned language = RETRO_LANGUAGE_ENGLISH;
+
+	void read_options_v1(const retro_core_option_definition *us, const retro_core_option_definition *local);
+	void read_options_v2(const retro_core_options_v2 *us, const retro_core_options_v2 *local);
 	std::vector<uint8_t> game_data; // ядру нужен файл игры в памяти, пока игра идёт
 
 	retro_pixel_format pixel_format = RETRO_PIXEL_FORMAT_0RGB1555;

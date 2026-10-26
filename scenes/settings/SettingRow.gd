@@ -37,6 +37,11 @@ var options: Array = []
 ## или остановиться (false — удобно для громкости).
 var wrap := true
 var info_text := ""      # для INFO и ACTION: текст справа
+## Значение по умолчанию, если в Settings ничего не записано (для CHOICE).
+## Обычно оно берётся из Settings.DEFAULTS, но у настроек ядра свои
+## умолчания — их сообщает само ядро. Выбрали умолчание — запись
+## из Settings удаляется: храним только то, что человек поменял.
+var default_value: Variant = null
 var warn := false        # покрасить текст справа в красный
 
 var _value_label: Label
@@ -130,20 +135,27 @@ func _on_pressed() -> void:
 
 
 func _store(value: Variant) -> void:
-	if value == Settings.get_value(section, key):
+	if value == _current():
 		return  # уже такое
-	Settings.set_value(section, key, value)
+	var keep: Variant = null if default_value != null and value == default_value else value
+	Settings.set_value(section, key, keep)
 	refresh()
 	value_changed.emit(value)
 
 
 # Номер текущего варианта в списке options (0, если не нашли).
 func _option_index() -> int:
-	var value: Variant = Settings.get_value(section, key)
+	var value: Variant = _current()
 	for i in options.size():
 		if options[i][0] == value:
 			return i
 	return 0
+
+
+# Текущее значение: из Settings, а если там пусто — default_value.
+func _current() -> Variant:
+	var value: Variant = Settings.get_value(section, key)
+	return default_value if value == null else value
 
 
 # --- Внешний вид ------------------------------------------------------------

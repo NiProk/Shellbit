@@ -69,6 +69,11 @@ func _ready() -> void:
 	%PauseMenu.load_requested.connect(_on_load_requested)
 	%PauseMenu.screenshot_requested.connect(_take_screenshot)
 	%PauseMenu.disc_requested.connect(_on_disc_requested)
+	%PauseMenu.options_requested.connect(_open_core_options)
+	add_child(_options_panel)
+	_options_panel.option_changed.connect(_on_option_changed)
+	_options_panel.reset_requested.connect(_on_options_reset)
+	_options_panel.closed.connect(func() -> void: %PauseMenu.get_node("%OptionsButton").grab_focus())
 
 	# Окно поменяло размер — пересчитать, где и какого размера картинка.
 	resized.connect(_apply_layout)
@@ -233,11 +238,20 @@ func _start_game(start_slot: String) -> String:
 
 	core = ClassDB.instantiate("RetroCore")
 	add_child(core)
+	# На каком языке ядру описывать свои настройки (если у него есть перевод).
+	if core.has_method("set_language"):
+		core.set_language(RETRO_LANGUAGES.get(Lang.language, 0))
 	core.set_system_directory(ProjectSettings.globalize_path(CoreManager.SYSTEM_DIR))
 	core.set_save_directory(ProjectSettings.globalize_path(CoreManager.SAVES_DIR))
 
 	if not core.load_core(core_path):
 		return tr("Ядро %s не загрузилось (подробности — во вкладке Output).") % core_path.get_file()
+	# Настройки ядра, которые человек поменял (Пауза → Настройки ядра).
+	# Отдаём их ДО загрузки игры: многие ядра читают настройки при запуске.
+	var saved_options := Settings.get_section(_options_section())
+	for key: String in saved_options:
+		core.set_option(key, str(saved_options[key]))
+
 	# С какого диска начать: на каком сохранились в этот слот,
 	# а если не знаем — какой выбрал человек. Ядро должно узнать это ДО load_game.
 	var disc: Dictionary = SaveStates.disc_of(game, start_slot) if start_slot != "" else {}
@@ -646,7 +660,7 @@ func _open_menu() -> void:
 	core.save_sram()
 	_core_lock.unlock()
 	%Audio.stream_paused = true  # звук замирает вместе с игрой
-	%PauseMenu.open(game, _disc_info())
+	%PauseMenu.open(game, _disc_info(), core.has_method("get_option_list"))
 
 
 func _resume() -> void:
@@ -655,6 +669,61 @@ func _resume() -> void:
 	_time_bank = 0.0  # время, проведённое в меню, не «догоняем»
 	_wait_release = true
 	_paused = false
+
+
+# --- Настройки ядра -----------------------------------------------------------
+
+## Номера языков из libretro.h (RETRO_LANGUAGE_*): ядро опишет
+## свои настройки на этом языке, если у него есть перевод.
+const RETRO_LANGUAGES := {"en": 0, "ja": 1, "fr": 2, "es": 3, "de": 4,
+		"pt": 7, "ru": 9, "ko": 10, "zh": 12}
+
+var _options_panel := CoreOptionsPanel.new()
+
+
+## Раздел settings.cfg для настроек этого ядра: «core_pcsx_rearmed».
+## Без .dll/.so — чтобы настройки были общими для Windows и Linux.
+func _options_section() -> String:
+	var file := CoreManager.core_path(CoreManager.get_system(game.get("system", ""))).get_file()
+	return "core_" + file.get_basename().trim_suffix("_libretro")
+
+
+func _open_core_options() -> void:
+	_core_lock.lock()
+	var options: Array = core.get_option_list()
+	var core_name: String = core.get_system_info().get("name", "")
+	_core_lock.unlock()
+	_options_panel.open(options, _options_section(), core_name)
+
+
+## Поменяли настройку. Ядро узнает о ней на следующем кадре
+## (оно само спрашивает «поменялось ли что-нибудь?»).
+func _on_option_changed(key: String, value: String) -> void:
+	_core_lock.lock()
+	core.set_option(key, value)
+	# Ядро может спрятать или показать зависимые настройки.
+	var changed: bool = core.refresh_option_display()
+	var options: Array = core.get_option_list() if changed else []
+	_core_lock.unlock()
+	if changed:
+		_options_panel.update_visibility(options)
+
+
+## «Вернуть всё как было»: стираем сохранённое и отдаём ядру его умолчания.
+func _on_options_reset() -> void:
+	var section := _options_section()
+	for key: String in Settings.get_section(section):
+		Settings.set_value(section, key, null)
+	_core_lock.lock()
+	var options: Array = core.get_option_list()
+	for option: Dictionary in options:
+		core.set_option(option["key"], option["default"])
+	core.refresh_option_display()
+	options = core.get_option_list()
+	_core_lock.unlock()
+	_options_panel.refresh_values()
+	_options_panel.update_visibility(options)
+	SceneRouter.toast(tr("Настройки ядра — как в самом начале"))
 
 
 # --- Диски ------------------------------------------------------------------

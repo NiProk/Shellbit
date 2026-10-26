@@ -100,6 +100,13 @@ layout_mode = 2
 text = "Скриншот"
 alignment = 0
 
+[node name="OptionsButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "Настройки ядра"
+alignment = 0
+
 [node name="SlotsTitle" type="Label" parent="Panel/Scroll/Pad/VBox"]
 layout_mode = 2
 theme_type_variation = &"CardTitleLabel"
