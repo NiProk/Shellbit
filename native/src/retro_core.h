@@ -24,6 +24,7 @@
 #include <vector>
 
 #include "dynamic_library.h"
+#include "gl_context.h"
 #include "libretro.h"
 
 namespace godot {
@@ -120,6 +121,11 @@ public:
 	// номер RETRO_LANGUAGE_* из libretro.h. Вызывать ДО load_core.
 	void set_language(int language);
 
+	// Аппаратная отрисовка: ядро рисует через OpenGL (см. gl_context.h).
+	bool is_hw_render() const { return hw_render; }
+	// Почему не получилось запустить игру с аппаратной отрисовкой ("" — всё хорошо).
+	String get_hw_error() const { return String::utf8(hw_error.c_str()); }
+
 protected:
 	static void _bind_methods();
 
@@ -161,6 +167,8 @@ private:
 	static int16_t input_state_cb(unsigned port, unsigned device, unsigned index, unsigned id);
 	static void log_cb(enum retro_log_level level, const char *fmt, ...);
 	static bool rumble_cb(unsigned port, enum retro_rumble_effect effect, uint16_t strength);
+	static uintptr_t hw_get_framebuffer_cb();
+	static retro_proc_address_t hw_get_proc_cb(const char *sym);
 
 	bool on_environment(unsigned cmd, void *data);
 	void on_video(const void *data, unsigned width, unsigned height, size_t pitch);
@@ -196,6 +204,29 @@ private:
 	bool options_updated = false; // настройку поменяли — ядро узнает в GET_VARIABLE_UPDATE
 	retro_core_options_update_display_callback_t update_display = nullptr;
 	unsigned language = RETRO_LANGUAGE_ENGLISH;
+
+	// --- Аппаратная отрисовка ---
+	bool hw_render = false;          // ядро попросило OpenGL (SET_HW_RENDER)
+	retro_hw_render_callback hw = {}; // что ядро попросило: тип, версию, свои функции
+	GLContext gl;                    // наш невидимый OpenGL
+	bool fb_resize = false;          // ядро сменило размер кадра — пересоздать холст
+	std::string hw_error;
+	bool broken = false; // аппаратная отрисовка не запустилась — ядро не выгружаем
+	bool setup_hw_context();         // создать контекст и холст после load_game
+	// Сделать контекст текущим на время вызова ядра (в любом потоке).
+	struct GlScope {
+		RetroCore *core;
+		explicit GlScope(RetroCore *c) : core(c) {
+			if (core->hw_render && core->gl.is_valid()) {
+				core->gl.make_current();
+			}
+		}
+		~GlScope() {
+			if (core->hw_render && core->gl.is_valid()) {
+				core->gl.release();
+			}
+		}
+	};
 
 	void read_options_v1(const retro_core_option_definition *us, const retro_core_option_definition *local);
 	void read_options_v2(const retro_core_options_v2 *us, const retro_core_options_v2 *local);

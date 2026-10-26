@@ -17,6 +17,10 @@ public:
 	void close();
 	bool is_open() const { return handle != nullptr; }
 
+	// «Забыть» библиотеку, не закрывая её: она останется в памяти до выхода
+	// из программы. Нужно, когда ядро в таком состоянии, что выгружать опасно.
+	void leak() { handle = nullptr; }
+
 	// Найти функцию по имени. nullptr — если такой нет.
 	void *symbol(const char *name) const;
 

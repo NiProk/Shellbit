@@ -6,6 +6,7 @@
 
 #include <algorithm>
 #include <cstdarg>
+#include <cstdlib>
 #include <cstring>
 #include <cstdio>
 
@@ -57,6 +58,8 @@ void RetroCore::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_option_list"), &RetroCore::get_option_list);
 	ClassDB::bind_method(D_METHOD("refresh_option_display"), &RetroCore::refresh_option_display);
 	ClassDB::bind_method(D_METHOD("set_language", "language"), &RetroCore::set_language);
+	ClassDB::bind_method(D_METHOD("is_hw_render"), &RetroCore::is_hw_render);
+	ClassDB::bind_method(D_METHOD("get_hw_error"), &RetroCore::get_hw_error);
 
 	BIND_CONSTANT(BUTTON_B);
 	BIND_CONSTANT(BUTTON_Y);
@@ -152,6 +155,9 @@ bool RetroCore::load_core(const String &path) {
 	memset(rumble, 0, sizeof(rumble));
 	memset(&disk, 0, sizeof(disk));
 	initial_disk = -1;
+	hw_render = false;
+	hw = {};
+	hw_error.clear();
 	option_defs.clear();
 	option_categories.clear();
 	hidden_options.clear();
@@ -213,6 +219,21 @@ bool RetroCore::load_game(const String &path) {
 
 	api.get_system_av_info(&av_info);
 	game_loaded = true;
+	if (hw_render && (getenv("SHELLBIT_TEST_NO_HW") != nullptr || !setup_hw_context())) {
+		// Видеокарта не смогла дать то, что просит ядро, — играть не выйдет.
+		if (hw_error.empty()) {
+			hw_error = "проверка: аппаратная отрисовка отключена (SHELLBIT_TEST_NO_HW)";
+		}
+		UtilityFunctions::push_error(String::utf8("RetroCore: аппаратная отрисовка не запустилась: "), String::utf8(hw_error.c_str()));
+		// Выгружать игру и ядро нельзя: ядро при выгрузке освобождает свои
+		// текстуры через OpenGL, а OpenGL-то у него и нет — программа упала бы.
+		// Поэтому оставляем ядро в памяти «как есть» (немного памяти —
+		// не страшно) и больше его не трогаем.
+		game_loaded = false;
+		core_loaded = false;
+		broken = true;
+		return false;
+	}
 	load_sram();
 	new_frame = false;
 	audio.clear();
@@ -220,14 +241,32 @@ bool RetroCore::load_game(const String &path) {
 }
 
 void RetroCore::unload() {
-	if (game_loaded) {
-		save_sram(); // пока игра ещё в памяти — записываем её сохранения
-		api.unload_game();
-		game_loaded = false;
+	{
+		// Ядру с OpenGL контекст нужен и при выгрузке: оно освобождает
+		// свои текстуры и шейдеры.
+		GlScope scope(this);
+		if (game_loaded) {
+			save_sram(); // пока игра ещё в памяти — записываем её сохранения
+			api.unload_game();
+			game_loaded = false;
+		}
+		if (hw_render && gl.is_valid() && hw.context_destroy) {
+			hw.context_destroy(); // «контекст сейчас исчезнет — забудь про него»
+		}
+		if (core_loaded) {
+			api.deinit();
+			core_loaded = false;
+		}
 	}
-	if (core_loaded) {
-		api.deinit();
-		core_loaded = false;
+	gl.destroy();
+	hw_render = false;
+	if (broken) {
+		// См. load_game: ядро без OpenGL не выгружаем — просто забываем о нём.
+		library.leak();
+		if (current == this) {
+			current = nullptr;
+		}
+		return;
 	}
 	library.close();
 	game_data.clear();
@@ -242,9 +281,82 @@ void RetroCore::unload() {
 // Один кадр
 // =====================================================================
 void RetroCore::run_frame() {
-	if (game_loaded) {
-		api.run(); // внутри ядро вызовет video_cb, audio_*_cb и input_state_cb
+	if (!game_loaded) {
+		return;
 	}
+	GlScope scope(this); // ядро с OpenGL рисует в нашем контексте — делаем его текущим
+	if (fb_resize && hw_render) {
+		fb_resize = false;
+		gl.create_framebuffer(av_info.geometry.max_width, av_info.geometry.max_height, hw.depth, hw.stencil);
+	}
+	api.run(); // внутри ядро вызовет video_cb, audio_*_cb и input_state_cb
+}
+
+// =====================================================================
+// Аппаратная отрисовка (OpenGL)
+// =====================================================================
+// Ядро сказало SET_HW_RENDER: «мне нужен OpenGL такой-то версии».
+// После load_game создаём свой контекст (gl_context.cpp) и «холст» —
+// framebuffer размером с самый большой кадр, — и говорим ядру
+// context_reset: «контекст готов, загружай свои шейдеры и текстуры».
+// Каждый кадр ядро рисует в холст и вызывает video_cb с особым значением
+// RETRO_HW_FRAME_BUFFER_VALID вместо пикселей — пиксели мы читаем сами.
+bool RetroCore::setup_hw_context() {
+	GLContext::Api api_type = GLContext::DESKTOP_GL;
+	int major = (int)hw.version_major, minor = (int)hw.version_minor;
+	switch (hw.context_type) {
+		case RETRO_HW_CONTEXT_OPENGL:
+			api_type = GLContext::DESKTOP_GL;
+			if (major == 0) {
+				major = 2;
+				minor = 1;
+			}
+			break;
+		case RETRO_HW_CONTEXT_OPENGL_CORE:
+			api_type = GLContext::DESKTOP_GL_CORE;
+			if (major < 3) {
+				major = 3;
+				minor = 2;
+			}
+			break;
+		case RETRO_HW_CONTEXT_OPENGLES2:
+			api_type = GLContext::GLES;
+			major = 2;
+			minor = 0;
+			break;
+		case RETRO_HW_CONTEXT_OPENGLES3:
+			api_type = GLContext::GLES;
+			major = 3;
+			minor = 0;
+			break;
+		case RETRO_HW_CONTEXT_OPENGLES_VERSION:
+			api_type = GLContext::GLES;
+			break;
+		default:
+			hw_error = "ядро просит Vulkan или Direct3D — Shellbit пока умеет только OpenGL";
+			return false;
+	}
+	if (!gl.create(api_type, major, minor)) {
+		hw_error = gl.error();
+		return false;
+	}
+	GlScope scope(this);
+	if (!gl.create_framebuffer(av_info.geometry.max_width, av_info.geometry.max_height, hw.depth, hw.stencil)) {
+		hw_error = gl.error();
+		return false;
+	}
+	if (hw.context_reset) {
+		hw.context_reset(); // «контекст готов» — ядро загружает шейдеры и текстуры
+	}
+	return true;
+}
+
+uintptr_t RetroCore::hw_get_framebuffer_cb() {
+	return current ? (uintptr_t)current->gl.framebuffer() : 0;
+}
+
+retro_proc_address_t RetroCore::hw_get_proc_cb(const char *sym) {
+	return current ? (retro_proc_address_t)current->gl.get_proc(sym) : nullptr;
 }
 
 void RetroCore::set_input(int port, int mask) {
@@ -385,6 +497,7 @@ PackedByteArray RetroCore::save_state() {
 	if (!game_loaded) {
 		return data;
 	}
+	GlScope scope(this); // некоторым ядрам с OpenGL контекст нужен и для снимка
 	size_t size = api.serialize_size();
 	if (size == 0) {
 		return data;
@@ -400,6 +513,7 @@ bool RetroCore::load_state(const PackedByteArray &data) {
 	if (!game_loaded || data.is_empty()) {
 		return false;
 	}
+	GlScope scope(this);
 	return api.unserialize(data.ptr(), (size_t)data.size());
 }
 
@@ -727,6 +841,7 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 			return true;
 		case RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO:
 			av_info = *(const retro_system_av_info *)data;
+			fb_resize = true; // кадр мог стать больше — холст пересоздадим перед следующим кадром
 			return true;
 		case RETRO_ENVIRONMENT_SET_MESSAGE: {
 			const retro_message *message = (const retro_message *)data;
@@ -735,6 +850,32 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 		}
 		case RETRO_ENVIRONMENT_SHUTDOWN:
 			return true;
+
+		// --- Аппаратная отрисовка ---
+		case RETRO_ENVIRONMENT_SET_HW_RENDER: {
+			retro_hw_render_callback *cb = (retro_hw_render_callback *)data;
+			switch (cb->context_type) {
+				case RETRO_HW_CONTEXT_OPENGL:
+				case RETRO_HW_CONTEXT_OPENGL_CORE:
+				case RETRO_HW_CONTEXT_OPENGLES2:
+				case RETRO_HW_CONTEXT_OPENGLES3:
+				case RETRO_HW_CONTEXT_OPENGLES_VERSION:
+					break;
+				default:
+					return false; // Vulkan, Direct3D — не умеем; ядро может выбрать другое
+			}
+			// Отдаём ядру две наши функции: «куда рисовать» и «где функции OpenGL».
+			cb->get_current_framebuffer = &RetroCore::hw_get_framebuffer_cb;
+			cb->get_proc_address = &RetroCore::hw_get_proc_cb;
+			hw = *cb;
+			hw_render = true;
+			return true;
+		}
+		case RETRO_ENVIRONMENT_GET_PREFERRED_HW_RENDER:
+			*(unsigned *)data = RETRO_HW_CONTEXT_OPENGL_CORE; // «мне удобнее всего OpenGL»
+			return true;
+		case RETRO_ENVIRONMENT_SET_HW_SHARED_CONTEXT & ~RETRO_ENVIRONMENT_EXPERIMENTAL:
+			return true; // контекст у ядра и так свой, ни с кем не общий
 
 		// --- Смена дисков ---
 		case RETRO_ENVIRONMENT_GET_DISK_CONTROL_INTERFACE_VERSION:
@@ -860,8 +1001,25 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 // Видео: переводим пиксели ядра в формат RGBA8, который понимает Godot.
 // =====================================================================
 void RetroCore::on_video(const void *data, unsigned width, unsigned height, size_t pitch) {
-	if (data == nullptr || data == RETRO_HW_FRAME_BUFFER_VALID || width == 0 || height == 0) {
+	if (data == nullptr || width == 0 || height == 0) {
 		return; // повтор прошлого кадра — картинка не меняется
+	}
+
+	// Ядро нарисовало кадр через OpenGL в наш холст — читаем его оттуда.
+	if (data == RETRO_HW_FRAME_BUFFER_VALID) {
+		frame_pixels.resize((int64_t)width * height * 4);
+		uint8_t *out = frame_pixels.ptrw();
+		// bottom_left_origin = true: ядро рисует «как обычно в OpenGL»,
+		// снизу вверх, — тогда кадр нужно перевернуть.
+		if (!gl.read_pixels((int)width, (int)height, hw.bottom_left_origin, out)) {
+			return;
+		}
+		for (int64_t i = 3; i < frame_pixels.size(); i += 4) {
+			out[i] = 255; // прозрачность ядру не нужна, а нам — мешает
+		}
+		frame = Image::create_from_data((int32_t)width, (int32_t)height, false, Image::FORMAT_RGBA8, frame_pixels);
+		new_frame = true;
+		return;
 	}
 
 	frame_pixels.resize((int64_t)width * height * 4);

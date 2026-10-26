@@ -261,6 +261,11 @@ func _start_game(start_slot: String) -> String:
 	if can_swap and not disc.is_empty():
 		core.set_initial_disk(disc["index"], disc["path"])
 	if not core.load_game(_content_path):
+		# Ядро просило видеокарту (OpenGL), а она не дала? Это другая беда —
+		# файл игры тут ни при чём, так и говорим.
+		var hw_error: String = core.get_hw_error() if core.has_method("get_hw_error") else ""
+		if hw_error != "":
+			return tr("Этой приставке нужна видеокарта с OpenGL 3.3, но запустить его не вышло:\n%s\n\nОбновите драйвер видеокарты.") % hw_error
 		return tr("Ядро не смогло открыть файл игры:\n%s") % game["path"]
 	# Ядро не умеет «начать с диска N»? Тогда меняем диск сразу после запуска.
 	if can_swap and not disc.is_empty() and core.get_disk_count() > 1 \

@@ -15,9 +15,17 @@ add_library(shellbit_core SHARED
     src/register_types.cpp
     src/retro_core.cpp
     src/dynamic_library.cpp
+    src/gl_context.cpp
 )
 
 target_link_libraries(shellbit_core PRIVATE godot-cpp ${CMAKE_DL_LIBS})
+
+# Аппаратная отрисовка (gl_context.cpp): в Windows — OpenGL через WGL.
+# opengl32 — сам OpenGL, gdi32 — выбор формата пикселей, user32 — скрытое окно.
+# В Linux библиотеку EGL загружаем сами (dlopen), подключать ничего не нужно.
+if(WIN32)
+    target_link_libraries(shellbit_core PRIVATE opengl32 gdi32 user32)
+endif()
 
 # Linux: стандартную библиотеку C++ вшиваем прямо в .so. Тогда модуль
 # не зависит от версии libstdc++ в системе — важно для Steam Deck,
