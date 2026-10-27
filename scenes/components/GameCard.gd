@@ -31,7 +31,7 @@ var _has_snapshot := false  # на широкой карточке показа�
 const FOCUS_SCALE := 1.06  # во сколько раз увеличивается выделенная карточка
 const FOCUS_TIME := 0.15   # за сколько секунд проходит анимация
 var _glow := 0.0           # сила подсветки: 0.0 — нет, 1.0 — полная
-var _glow_box: StyleBoxFlat  # «кисть», которой рисуем рамку со свечением
+var _accent := UiTheme.ACCENT  # цвет рамки — цвет приставки этой игры
 var _focus_tween: Tween    # текущая анимация (чтобы остановить её при новой)
 
 # % —«уникальное имя» узла в сцене. Так скрипт находит узел,
@@ -45,6 +45,9 @@ var _focus_tween: Tween    # текущая анимация (чтобы ост�
 # --- Обложка-заглушка ---
 const PlaceholderShader := preload("res://scenes/components/placeholder.gdshader")
 const SilhouetteShader := preload("res://scenes/components/silhouette.gdshader")
+# Скругление углов обложки и затемнения — тот же шейдер, что у плиток приставок.
+const RoundedShader := preload("res://scenes/components/RoundedCorners.gdshader")
+const CORNER_RADIUS := 14.0  # как у фона карточки (UiTheme: _box(CARD, 14))
 # Один материал силуэта на все карточки: настройки у всех одинаковые.
 static var _silhouette_material: ShaderMaterial
 var _placeholder: ColorRect  # градиент (рисует шейдер placeholder.gdshader)
@@ -60,14 +63,17 @@ func _ready() -> void:
 	# Увеличиваться карточка должна от центра, а не от левого угла.
 	resized.connect(func() -> void: pivot_offset = size / 2.0)
 
-	# Рамку берём из общей темы (UiTheme), чтобы она была такой же,
-	# как у остальных кнопок: бирюзовая, со свечением.
-	# duplicate() — делаем свою копию: мы будем менять ей прозрачность,
-	# и это не должно задеть другие кнопки.
-	_glow_box = UiTheme.theme.get_stylebox("focus", "Button").duplicate() as StyleBoxFlat
+	# Рамку и тень рисует UiTheme.draw_focus_lift — цвета приставки.
 	# Стандартная рамка фокуса появляется мгновенно, а нам нужно плавно.
 	# Поэтому стандартную отключаем (пустой стиль) и рисуем свою в _draw().
 	add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	# Обложка и затемнение под текстом — прямоугольные картинки. Без этого
+	# у карточки скруглён только фон, а углы картинки поверх него — острые.
+	for picture: TextureRect in [_shot, _shade]:
+		var rounded := ShaderMaterial.new()
+		rounded.shader = RoundedShader
+		rounded.set_shader_parameter("radius", CORNER_RADIUS)
+		picture.material = rounded
 	_build_placeholder()
 
 
@@ -91,6 +97,7 @@ func setup(new_game: Dictionary, style: Style = Style.WIDE) -> void:
 
 	var system := CoreManager.get_system(game["system"])
 	_setup_placeholder(system)
+	_accent = Color(system.get("color", UiTheme.ACCENT))
 	_tag.text = system.get("short", "?")
 	_tag.add_theme_stylebox_override("normal", UiTheme.tag_box(Color(system.get("color", "#888888"))))
 
@@ -195,12 +202,8 @@ func _set_glow(value: float) -> void:
 ## Всё, что нарисовано тут, оказывается ПОД дочерними узлами (обложкой, текстом).
 ## Но рамка лежит снаружи карточки (expand_margin), поэтому обложка её не закрывает.
 func _draw() -> void:
-	if _glow <= 0.0:
-		return  # карточка не выделена — рисовать нечего
-	# Прозрачность цвета зависит от _glow — так рамка плавно проявляется и гаснет.
-	_glow_box.border_color = Color(UiTheme.ACCENT, _glow)
-	_glow_box.shadow_color = Color(UiTheme.ACCENT, 0.35 * _glow)
-	draw_style_box(_glow_box, Rect2(Vector2.ZERO, size))
+	# Тень снизу и рамка цвета приставки; _glow — насколько проявились.
+	UiTheme.draw_focus_lift(self, Rect2(Vector2.ZERO, size), _accent, _glow)
 
 
 # =====================================================================
@@ -286,6 +289,9 @@ func _place_placeholder_parts() -> void:
 	if _letter == null:
 		return
 	_placeholder.material.set_shader_parameter("size", size)
+	# Обложке и затемнению тоже нужен размер — для скругления углов.
+	_shot.material.set_shader_parameter("size", size)
+	_shade.material.set_shader_parameter("size", size)
 	var font_size := int(size.y * 0.5)
 	_letter.add_theme_font_size_override("font_size", font_size)
 	# Буква — слева сверху; немного «вылезает» за отступы, так смотрится крупнее.

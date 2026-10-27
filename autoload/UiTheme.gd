@@ -130,3 +130,38 @@ func badge_box(color: Color) -> StyleBoxFlat:
 	box.content_margin_left = 8
 	box.content_margin_right = 8
 	return box
+
+
+# --- «Приподнятая» выделенная карточка ------------------------------------
+# Карточки игр и плитки приставок при выделении рисуют рамку ЦВЕТА СВОЕЙ
+# ПРИСТАВКИ (NES — красная, GBA — оранжевая) и тёмную тень снизу, будто
+# карточку приподняли над экраном. Кнопки меню остаются бирюзовыми (ACCENT).
+
+var _lift_shadow: StyleBoxFlat  # тень под карточкой
+var _lift_frame: StyleBoxFlat   # рамка со свечением
+
+
+## Нарисовать рамку и тень выделения. amount — от 0 (нет) до 1 (полностью):
+## анимация выделения плавно меняет его, и рамка с тенью проявляются.
+## Вызывать из _draw() карточки: item.draw_… работает только там.
+func draw_focus_lift(item: CanvasItem, rect: Rect2, color: Color, amount: float) -> void:
+	if amount <= 0.0:
+		return
+	if _lift_shadow == null:
+		_lift_shadow = StyleBoxFlat.new()
+		_lift_shadow.draw_center = false  # только тень, саму карточку не закрашиваем
+		_lift_shadow.set_corner_radius_all(18)
+		# Размер и сдвиг тени — в сумме меньше 26 пикселей: столько отступа
+		# под карточками в рядах с прокруткой, иначе тень обрежется.
+		_lift_shadow.shadow_size = 14
+		_lift_frame = _focus_box()
+	# Тень уходит вниз тем дальше, чем выше «подняли» карточку.
+	_lift_shadow.shadow_color = Color(0, 0, 0, 0.55 * amount)
+	_lift_shadow.shadow_offset = Vector2(0, 9 * amount)
+	item.draw_style_box(_lift_shadow, rect)
+	# Рамка — цвета приставки, но заметно светлее: так она видна и на тёмном
+	# фоне, и на обложке-заглушке того же цвета (красная рамка на красной карточке).
+	var frame_color := color.lightened(0.35)
+	_lift_frame.border_color = Color(frame_color, amount)
+	_lift_frame.shadow_color = Color(frame_color, 0.35 * amount)
+	item.draw_style_box(_lift_frame, rect)
