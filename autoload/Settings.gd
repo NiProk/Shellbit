@@ -52,6 +52,7 @@ const DEFAULTS := {
 	},
 	"look": {
 		"pattern": "none",  # узор фона меню: none / grid / stars / dither / scanlines
+		"transition": "fade",  # переход между экранами: fade / mosaic / dissolve
 	},
 	"audio": {
 		"volume": 100,      # громкость в процентах: 0..100
