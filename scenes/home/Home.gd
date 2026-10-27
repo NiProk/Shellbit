@@ -15,8 +15,10 @@ func _ready() -> void:
 	add_child(backdrop)
 	move_child(backdrop, $Background.get_index() + 1)
 
-	# Пип в логотипе моргает (scenes/components/PipBlink.gd).
+	# Пип в логотипе моргает и иногда машет клешнёй
+	# (scenes/components/PipBlink.gd и PipWave.gd).
 	$Margin/VBox/Header/Pip.add_child(PipBlink.new())
+	$Margin/VBox/Header/Pip.add_child(PipWave.new())
 
 	%AddFolderButton.pressed.connect(_on_add_folder_pressed)
 	_add_settings_button()

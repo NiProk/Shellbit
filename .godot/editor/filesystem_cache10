@@ -9,7 +9,7 @@ README.md::TextFile::-1::1793124655::0::1::::<><><>0<>0<><>::
 ::res://addons/::1792112514
 ::res://addons/shellbit_core/::1792139930
 shellbit_core.gdextension::GDExtension::348900452575680587::1792112514::0::1::::<><><>0<>0<><>::
-::res://addons/shellbit_core/bin/::1793135826
+::res://addons/shellbit_core/bin/::1793138047
 ::res://autoload/::1793134851
 Archives.gd::GDScript::6185293928791721078::1792774372::0::1::::<>Node<><>0<>0<><>::
 CoreDownloader.gd::GDScript::3840579977087554393::1792770944::0::1::::<>Node<><>0<>0<><>::
@@ -70,14 +70,16 @@ snes.txt::TextFile::-1::1792169040::0::1::::<><><>0<>0<><>::
 ::res://data/sounds/::1792502902
 click.wav::AudioStreamWAV::310914012211551539::1792502818::1792502902::1::::<><><>0<>0<>ddaeb89e438d67b8b39582fcb3513450<>res://.godot/imported/click.wav-5f3708df2318f2ba3ba3674e1722c6ea.sample::
 launch.wav::AudioStreamWAV::5670931593908026572::1792502818::1792502902::1::::<><><>0<>0<>1d4e1adb1c6aa392108af79d32732b88<>res://.godot/imported/launch.wav-f5dba4acebb8988522ea5d213534aeac.sample::
-::res://data/ui/::1792504387
+::res://data/ui/::1793137937
 pip_add.png::CompressedTexture2D::1535813812120763305::1792503455::1792504387::1::::<><><>0<>0<>56336ae152da3cc70c8f45a018b45add<>res://.godot/imported/pip_add.png-9291d2b6e7cc1ff815b6e0250a7fed46.ctex::
+pip_body.png::CompressedTexture2D::6003701622563660918::1793137936::1793138050::1::::<><><>0<>0<>a73078a42b9856dc424bcbd321783095<>res://.godot/imported/pip_body.png-a34aee66a69ce63ad6b05a0747353efc.ctex::
+pip_claw.png::CompressedTexture2D::1158617272295572742::1793137937::1793138050::1::::<><><>0<>0<>8dbb30fe01b1f4d77ccdac7b8dbf1a01<>res://.godot/imported/pip_claw.png-cd4dddee1259663ee65d91ce4a25a0c5.ctex::
 pip_front.png::CompressedTexture2D::9123915430202634035::1792503454::1792504387::1::::<><><>0<>0<>dcf5b90550934c01204b7424e83c6b49<>res://.godot/imported/pip_front.png-be5a77275fdab7bf7f9915802dcb0017.ctex::
 pip_happy.png::CompressedTexture2D::5556682828706316774::1792503455::1792504387::1::::<><><>0<>0<>399371b18826f909cfd39f5fda3fdd6e<>res://.godot/imported/pip_happy.png-21c933689d152c51c71bf53e9aa15810.ctex::
 pip_sleepy.png::CompressedTexture2D::461012252692012551::1792503457::1792504387::1::::<><><>0<>0<>6716524c3f24907ba811db44b33d5824<>res://.godot/imported/pip_sleepy.png-2be66b85f6b6369358d84b17646eb783.ctex::
 pip_surprised.png::CompressedTexture2D::2191828067788878176::1792503456::1792504387::1::::<><><>0<>0<>f806af01a3ece4ece4e4b238e7ec87cc<>res://.godot/imported/pip_surprised.png-b1f3e3e82ea5b7b611fc9ac28a774ec6.ctex::
 ::res://scenes/::1792363676
-::res://scenes/components/::1793135707
+::res://scenes/components/::1793137935
 Backdrop.gd::GDScript::5813770010649431823::1793134853::0::1::::Backdrop<>Control<><>0<>0<><>::
 backdrop.gdshader::Shader::2379156658730992792::1793127190::0::1::::<><><>0<>0<><>::
 ButtonHints.gd::GDScript::1643795851335535276::1793124653::0::1::::<>PanelContainer<><>0<>0<><>::
@@ -91,6 +93,7 @@ GameCard.tscn::PackedScene::-1::1792170463::0::1::::<><><>0<>0<><>::res://scenes
 glow.gdshader::Shader::8969232597453720294::1793127757::0::1::::<><><>0<>0<><>::
 PadView.gd::GDScript::6147383795807541253::1792507851::0::1::::PadView<>Control<><>0<>0<><>::
 PipBlink.gd::GDScript::5495432470880601094::1793135706::0::1::::PipBlink<>Node<><>0<>0<><>::
+PipWave.gd::GDScript::642176173896672045::1793137935::0::1::::PipWave<>Node<><>0<>0<><>::
 pip_blink.gdshader::Shader::6203903817538158213::1793135707::0::1::::<><><>0<>0<><>::
 placeholder.gdshader::Shader::5694698685576273654::1793129520::0::1::::<><><>0<>0<><>::
 RoundedCorners.gdshader::Shader::5195972666364386290::1793131225::0::1::::<><><>0<>0<><>::
@@ -101,7 +104,7 @@ ScreenKeyboard.gd::GDScript::5924019293871222765::1792502183::0::1::::ScreenKeyb
 silhouette.gdshader::Shader::49191358454314915::1793129520::0::1::::<><><>0<>0<><>::
 TextViewer.gd::GDScript::3218028702276406433::1792502183::0::1::::TextViewer<>Control<><>0<>0<><>::
 VirtualGrid.gd::GDScript::8871746764016429431::1793123194::0::1::::VirtualGrid<>Control<><>0<>0<><>::
-::res://scenes/components/patterns/::1793134855
+::res://scenes/components/patterns/::1793135829
 dither.gdshader::Shader::2939979136612795432::1793134855::0::1::::<><><>0<>0<><>::
 grid.gdshader::Shader::2626508561145829106::1793134854::0::1::::<><><>0<>0<><>::
 scanlines.gdshader::Shader::8924924162056887071::1793134855::0::1::::<><><>0<>0<><>::
@@ -109,8 +112,8 @@ stars.gdshader::Shader::8655371287535580527::1793134855::0::1::::<><><>0<>0<><>:
 ::res://scenes/details/::1793127758
 GameDetails.gd::GDScript::2953969303219561899::1793127758::0::1::::<>Control<><>0<>0<><>::
 GameDetails.tscn::PackedScene::-1::1792777811::0::1::::<><><>0<>0<><>::res://scenes/details/GameDetails.gd<>res://scenes/components/ButtonHints.tscn
-::res://scenes/home/::1793135708
-Home.gd::GDScript::3433105223925091331::1793135708::0::1::::<>Control<><>0<>0<><>::
+::res://scenes/home/::1793137935
+Home.gd::GDScript::3433105223925091331::1793137935::0::1::::<>Control<><>0<>0<><>::
 Home.tscn::PackedScene::3956545247751545099::1792503450::0::1::::<><><>0<>0<><>::uid://bo6a0hefewe4j::::res://scenes/home/Home.gd<>res://scenes/components/ButtonHints.tscn<>res://data/ui/pip_front.png<>res://data/ui/pip_add.png
 ::res://scenes/library/::1793127758
 Library.gd::GDScript::8117163659746829905::1793127758::0::1::::<>Control<><>0<>0<><>::
