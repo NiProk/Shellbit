@@ -13,6 +13,7 @@ const ART_DIM := Color(0.8, 0.8, 0.8)
 const ART_BRIGHT := Color(1.0, 1.0, 1.0)
 
 var system_id := ""
+var color := Color.GRAY  ## цвет приставки — для полоски и свечения фона (Backdrop)
 var _focus_tween: Tween
 
 @onready var _art: TextureRect = %Art
@@ -31,7 +32,8 @@ func _ready() -> void:
 
 func setup(system: Dictionary, game_count: int) -> void:
 	system_id = system["id"]
-	_strip.color = Color(system["color"])
+	color = Color(system["color"])
+	_strip.color = color
 	_name.text = system["short"]
 	_count.text = Library.count_text(game_count)
 	tooltip_text = tr(system["name"])

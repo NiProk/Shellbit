@@ -176,6 +176,7 @@ func _update_backdrop() -> void:
 		_backdrop = Backdrop.new()
 		add_child(_backdrop)
 		move_child(_backdrop, $Background.get_index() + 1)
+		_backdrop.show_glow(Backdrop.system_color(group["system"]))
 		# thumbnail() каждый раз читает файл и создаёт НОВУЮ картинку —
 		# Backdrop счёл бы её другой и делал бы «наплыв» заново. Читаем один раз.
 		_snapshot = SaveStates.thumbnail(Library.chosen_variant(group), SaveStates.AUTO)

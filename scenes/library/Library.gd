@@ -85,6 +85,8 @@ func _ready() -> void:
 	backdrop.clear_off_games = false
 	add_child(backdrop)
 	move_child(backdrop, $Background.get_index() + 1)
+	# Свечение цвета приставки — сразу, ещё до выбора игры.
+	backdrop.show_glow(Backdrop.system_color(system_id))
 	# Клавиатуру закрыли — переходим к найденным играм.
 	_keyboard.closed.connect(_leave_search)
 	_restore_focus()

@@ -15,14 +15,23 @@ extends Control
 ## то же размытие, но почти бесплатно. Шейдер (backdrop.gdshader)
 ## потом только смешивает его с цветом фона.
 ##
+## А ещё — свечение цвета приставки (glow.gdshader): встал на плитку NES —
+## из левого нижнего угла мягко разливается красный свет, на SNES —
+## фиолетовый, на Game Boy — зелёный. На карточке игры — цвет её приставки.
+## Цвет не появляется и не гаснет, а ПЕРЕТЕКАЕТ из одного в другой.
+##
 ## Использование — добавить в сцену сразу после фона (Background):
 ##   var backdrop := Backdrop.new()
 ##   add_child(backdrop)
 ##   move_child(backdrop, %Background.get_index() + 1)
 ##   backdrop.follow_focus = true      # сам следит за карточками игр
 ##   backdrop.show_picture(texture)    # или показывать картинку вручную
+##   backdrop.show_glow(Color("#E05252"))  # и свечение — тоже вручную
 
 const BackdropShader := preload("res://scenes/components/backdrop.gdshader")
+const GlowShader := preload("res://scenes/components/glow.gdshader")
+## Сила свечения: 0 — нет, 1 — во всю силу цвета. Больше 0,5 — уже ярко.
+const GLOW_STRENGTH := 0.32
 const FADE_TIME := 0.6               # за сколько секунд одна картинка сменяет другую
 const DELAY := 0.15                  # пауза перед сменой: листаешь быстро — фон не мелькает
 const BLUR_SIZE := Vector2i(32, 18)  # до какого размера сжимаем (меньше — сильнее размытие)
@@ -42,6 +51,9 @@ var _pending: Texture2D = null  # что покажем после паузы DE
 var _timer := Timer.new()
 var _card: GameCard = null      # карточка в фокусе (её картинка может смениться)
 var _tween: Tween               # идущий «наплыв» — остановим, если начнётся новый
+var _glow: ColorRect            # слой свечения
+var _glow_color := Color(0, 0, 0, 0)  # какое свечение сейчас (alpha — сила)
+var _glow_tween: Tween
 
 # Уже размытые картинки: исходная → размытая. Вернулся к той же игре —
 # размывать заново не нужно. static — общий для всех экранов.
@@ -70,6 +82,16 @@ func _ready() -> void:
 		add_child(layer)
 		_layers.append(layer)
 
+	# Свечение — поверх картинки: свет ложится и на неё.
+	_glow = ColorRect.new()
+	_glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var glow_material := ShaderMaterial.new()
+	glow_material.shader = GlowShader
+	_glow.material = glow_material
+	_glow.visible = false
+	add_child(_glow)
+
 	_timer.one_shot = true
 	_timer.wait_time = DELAY
 	_timer.timeout.connect(func() -> void: _apply(_pending))
@@ -83,6 +105,34 @@ func show_picture(texture: Texture2D) -> void:
 	_timer.start()  # если таймер уже шёл — начнёт отсчёт заново
 
 
+## Свечение цвета приставки. Color(0, 0, 0, 0) (или alpha = 0) — погасить.
+func show_glow(color: Color) -> void:
+	var target := Color(color, GLOW_STRENGTH if color.a > 0.0 else 0.0)
+	if color.a == 0.0:
+		target = Color(_glow_color, 0.0)  # гаснет тем же цветом, а не через чёрный
+	if target == _glow_color:
+		return
+	if _glow_tween:
+		_glow_tween.kill()
+	_glow_tween = create_tween().set_trans(Tween.TRANS_SINE)
+	# tween_method вызывает функцию много раз, передавая промежуточный цвет:
+	# красный → (красно-фиолетовый) → фиолетовый. Так цвет «перетекает».
+	_glow_tween.tween_method(_set_glow, _glow_color, target, FADE_TIME)
+
+
+func _set_glow(color: Color) -> void:
+	_glow_color = color
+	_glow.material.set_shader_parameter("glow_color", color)
+	_glow.visible = color.a > 0.001  # не светим — не рисуем вовсе
+
+
+## Цвет приставки по её id ("nes"). Избранное — золотой.
+static func system_color(system_id: String) -> Color:
+	if system_id == Library.FAVORITES:
+		return Color(Library.FAVORITES_COLOR)
+	return Color(CoreManager.get_system(system_id).get("color", "#888888"))
+
+
 func _on_focus_changed(node: Control) -> void:
 	if not follow_focus or not is_visible_in_tree():
 		return
@@ -94,8 +144,13 @@ func _on_focus_changed(node: Control) -> void:
 		# Обложка может докачаться, пока карточка в фокусе, — тогда обновим фон.
 		_card.picture_changed.connect(_on_card_picture)
 		show_picture(_card.picture())
+		show_glow(system_color(_card.game.get("system", "")))
+	elif node is ConsoleTile:
+		show_picture(null)
+		show_glow(node.color)
 	elif clear_off_games:
 		show_picture(null)
+		show_glow(Color(0, 0, 0, 0))
 
 
 func _on_card_picture() -> void:
