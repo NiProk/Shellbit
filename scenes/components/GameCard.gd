@@ -10,7 +10,9 @@ extends Button
 ##   • широкая («Продолжить играть») — кадр, на котором вышли из игры;
 ##     если его нет — обложка;
 ##   • вертикальная (библиотека) — обложка.
-## Пока обложки нет, видны цветная плашка и название текстом.
+## Пока обложки нет — «обложка-заглушка» (см. _build_placeholder):
+## градиент цвета приставки, большая первая буква названия
+## и силуэт приставки в углу. У каждой игры оттенок чуть свой.
 
 ## Три вида карточки: большая и обычная (для «Продолжить играть»)
 ## и вертикальная «обложка» (для сетки библиотеки).
@@ -40,6 +42,15 @@ var _focus_tween: Tween    # текущая анимация (чтобы ост�
 @onready var _shot: TextureRect = %Shot
 @onready var _shade: TextureRect = $Shot/Shade
 
+# --- Обложка-заглушка ---
+const PlaceholderShader := preload("res://scenes/components/placeholder.gdshader")
+const SilhouetteShader := preload("res://scenes/components/silhouette.gdshader")
+# Один материал силуэта на все карточки: настройки у всех одинаковые.
+static var _silhouette_material: ShaderMaterial
+var _placeholder: ColorRect  # градиент (рисует шейдер placeholder.gdshader)
+var _letter: Label           # большая первая буква названия
+var _console_art: TextureRect  # силуэт приставки
+
 
 func _ready() -> void:
 	focus_entered.connect(_on_focus_changed.bind(true))
@@ -57,6 +68,7 @@ func _ready() -> void:
 	# Стандартная рамка фокуса появляется мгновенно, а нам нужно плавно.
 	# Поэтому стандартную отключаем (пустой стиль) и рисуем свою в _draw().
 	add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	_build_placeholder()
 
 
 ## Заполнить карточку данными игры. Вызывается после add_child().
@@ -78,6 +90,7 @@ func setup(new_game: Dictionary, style: Style = Style.WIDE) -> void:
 			custom_minimum_size = Vector2(168, 224)
 
 	var system := CoreManager.get_system(game["system"])
+	_setup_placeholder(system)
 	_tag.text = system.get("short", "?")
 	_tag.add_theme_stylebox_override("normal", UiTheme.tag_box(Color(system.get("color", "#888888"))))
 
@@ -121,6 +134,7 @@ func _hide_picture() -> void:
 	_has_cover = false
 	_shade.visible = true
 	_tag.visible = true
+	_placeholder.visible = true
 	if had:
 		picture_changed.emit()
 
@@ -132,6 +146,7 @@ func _show_picture(texture: Texture2D) -> void:
 	# На обложке уже нарисовано название — затемнение и текст не нужны.
 	_shade.visible = not _has_cover
 	_tag.visible = not _has_cover
+	_placeholder.visible = false  # картинка закрывает всю карточку — заглушка не нужна
 	picture_changed.emit()
 
 
@@ -186,3 +201,98 @@ func _draw() -> void:
 	_glow_box.border_color = Color(UiTheme.ACCENT, _glow)
 	_glow_box.shadow_color = Color(UiTheme.ACCENT, 0.35 * _glow)
 	draw_style_box(_glow_box, Rect2(Vector2.ZERO, size))
+
+
+# =====================================================================
+# Обложка-заглушка
+# =====================================================================
+#
+# Без неё у игры без обложки — пустой тёмный прямоугольник, и на
+# коллекции в 2800 игр NES большая часть сетки одинаковая. Заглушка:
+#   • градиент цвета приставки (шейдер placeholder.gdshader);
+#   • большая полупрозрачная первая буква названия — по ней глаз
+#     быстро понимает, где в алфавите ты сейчас листаешь;
+#   • тёмный силуэт приставки в правом верхнем углу.
+# Узлы создаём один раз, а при смене игры (VirtualGrid переиспользует
+# карточки) меняем только цвета, букву и картинку.
+
+func _build_placeholder() -> void:
+	_placeholder = ColorRect.new()
+	_placeholder.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_placeholder.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var material := ShaderMaterial.new()
+	material.shader = PlaceholderShader
+	_placeholder.material = material
+	# Буква и силуэт не вылезают за карточку (обрезка по прямоугольнику — дёшево).
+	_placeholder.clip_contents = true
+	add_child(_placeholder)
+	move_child(_placeholder, 0)  # самым нижним: над ним картинка и надписи
+
+	_console_art = TextureRect.new()
+	_console_art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_console_art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_console_art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	# Шейдер silhouette.gdshader вырезает фон картинки и красит приставку
+	# одним тёмным цветом. alpha 0.3 — полупрозрачно, чтобы не спорил с надписями.
+	if _silhouette_material == null:
+		_silhouette_material = ShaderMaterial.new()
+		_silhouette_material.shader = SilhouetteShader
+	_console_art.material = _silhouette_material
+	_console_art.modulate = Color(1, 1, 1, 0.3)
+	_placeholder.add_child(_console_art)
+
+	_letter = Label.new()
+	_letter.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_letter.add_theme_font_override("font", UiTheme.bold)
+	_letter.add_theme_color_override("font_color", Color(1, 1, 1, 0.22))
+	_letter.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED  # буква — не перевод
+	_placeholder.add_child(_letter)
+
+	# Шейдеру нужен размер карточки (для скругления углов). Передаём
+	# сразу и при каждом изменении размера. «Сразу» важно: если карточка
+	# с самого начала нужного размера, сигнал resized не придёт вовсе.
+	resized.connect(_place_placeholder_parts)
+	_place_placeholder_parts()
+
+
+func _setup_placeholder(system: Dictionary) -> void:
+	var base := Color(system.get("color", "#888888"))
+	# Свой оттенок для каждой игры: hash() превращает название в число,
+	# одно и то же для одного названия. Из него — небольшой сдвиг цвета
+	# (±0,04 по кругу оттенков, ±15% яркости). Карточки остаются «цвета NES»,
+	# но соседние уже не одинаковые.
+	var number: int = abs(hash(game.get("title", "")))
+	var hue_shift := ((number % 1000) / 1000.0 - 0.5) * 0.08
+	var value_shift := (((number / 1000) % 1000) / 1000.0 - 0.5) * 0.3
+	var top := Color.from_hsv(fposmod(base.h + hue_shift, 1.0), base.s * 0.85,
+			clampf(base.v * 0.62 + value_shift * 0.4, 0.2, 0.8))
+	var bottom := UiTheme.CARD.lerp(top, 0.18).darkened(0.25)
+	_placeholder.material.set_shader_parameter("top_color", top)
+	_placeholder.material.set_shader_parameter("bottom_color", bottom)
+
+	# Первая буква или цифра названия: «Battletoads» → B, «1942» → 1.
+	# Genres.simplify оставляет только буквы и цифры (и делает их маленькими).
+	var simple := Genres.simplify(game.get("title", ""))
+	_letter.text = simple.substr(0, 1).to_upper()
+
+	# Картинка приставки — та же, что на плитке главного экрана.
+	var image_path: String = system.get("image", "")
+	_console_art.texture = load(image_path) if image_path != "" and ResourceLoader.exists(image_path) else null
+	_place_placeholder_parts()
+
+
+# Размер буквы и силуэта — от размера карточки (у трёх видов они разные).
+func _place_placeholder_parts() -> void:
+	if _letter == null:
+		return
+	_placeholder.material.set_shader_parameter("size", size)
+	var font_size := int(size.y * 0.5)
+	_letter.add_theme_font_size_override("font_size", font_size)
+	# Буква — слева сверху; немного «вылезает» за отступы, так смотрится крупнее.
+	_letter.position = Vector2(size.x * 0.08, -font_size * 0.12)
+	_letter.size = Vector2.ZERO  # ужаться по тексту
+	# На картинках приставок много пустого фона вокруг (силуэт его вырезает),
+	# поэтому сама картинка крупнее, чем видимый силуэт.
+	var art := Vector2(size.x * 0.7, size.y * 0.42)
+	_console_art.size = art
+	_console_art.position = Vector2(size.x - art.x, size.y * 0.02)
