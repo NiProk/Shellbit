@@ -36,6 +36,7 @@ UiTheme="*res://autoload/UiTheme.gd"
 SceneRouter="*res://autoload/SceneRouter.gd"
 PadNotifier="*res://autoload/PadNotifier.gd"
 UiSounds="*res://autoload/UiSounds.gd"
+Watchdog="*res://autoload/Watchdog.gd"
 
 [display]
 

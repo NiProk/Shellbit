@@ -48,6 +48,14 @@ const SilhouetteShader := preload("res://scenes/components/silhouette.gdshader")
 # Скругление углов обложки и затемнения — тот же шейдер, что у плиток приставок.
 const RoundedShader := preload("res://scenes/components/RoundedCorners.gdshader")
 const CORNER_RADIUS := 14.0  # как у фона карточки (UiTheme: _box(CARD, 14))
+
+# --- «Живая» картинка (эффект Кена Бёрнса) ---
+# На широких карточках («Продолжить играть») кадр из игры еле-еле
+# приближается и медленно сдвигается, потом так же возвращается — по кругу.
+# Так делают в документальных фильмах с фотографиями: картинка будто живёт.
+const KB_ZOOM := 1.08    # насколько приближаем: 1,08 — на 8%
+const KB_TIME := 12.0    # секунд на одно приближение (и столько же — обратно)
+var _kb_tween: Tween
 # Один материал силуэта на все карточки: настройки у всех одинаковые.
 static var _silhouette_material: ShaderMaterial
 var _placeholder: ColorRect  # градиент (рисует шейдер placeholder.gdshader)
@@ -136,6 +144,7 @@ func picture() -> Texture2D:
 
 func _hide_picture() -> void:
 	var had := _shot.texture != null
+	_stop_ken_burns()
 	_shot.texture = null
 	_shot.visible = false
 	_has_cover = false
@@ -149,6 +158,7 @@ func _hide_picture() -> void:
 func _show_picture(texture: Texture2D) -> void:
 	_shot.texture = texture
 	_shot.visible = true
+	_start_ken_burns()
 	_has_cover = _style == Style.COVER
 	# На обложке уже нарисовано название — затемнение и текст не нужны.
 	_shade.visible = not _has_cover
@@ -302,3 +312,45 @@ func _place_placeholder_parts() -> void:
 	var art := Vector2(size.x * 0.7, size.y * 0.42)
 	_console_art.size = art
 	_console_art.position = Vector2(size.x - art.x, size.y * 0.02)
+
+
+# =====================================================================
+# «Живая» картинка — эффект Кена Бёрнса
+# =====================================================================
+#
+# Приближение делает шейдер обложки (RoundedCorners.gdshader): у него
+# есть zoom — во сколько раз приблизить — и pivot — к какой точке.
+# Мы медленно меняем оба: приближаемся, одновременно смещая точку,
+# и картинка будто плывёт. Обложки в сетке библиотеки не трогаем:
+# там карточек много, и всё бы шевелилось — рябило бы в глазах.
+
+func _start_ken_burns() -> void:
+	_stop_ken_burns()
+	if _style == Style.COVER:
+		return
+	# Откуда и куда «плывём» — своё для каждой игры (из названия, через hash),
+	# чтобы соседние карточки не двигались одинаково, как по команде.
+	var number: int = abs(hash(game.get("key", "")))
+	var from := Vector2(0.35 + (number % 30) / 100.0, 0.4 + ((number / 30) % 20) / 100.0)
+	var to := Vector2(1.0, 1.0) - from  # в противоположную сторону от центра
+	# tween_method вызывает функцию, передавая число от 0 до 1 и обратно.
+	# set_loops() — повторять бесконечно (пока карточка существует).
+	_kb_tween = create_tween().set_loops()
+	_kb_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)  # плавно разгоняется и тормозит
+	var step := func(t: float) -> void: _set_ken_burns(t, from, to)
+	_kb_tween.tween_method(step, 0.0, 1.0, KB_TIME)
+	_kb_tween.tween_method(step, 1.0, 0.0, KB_TIME)
+
+
+func _stop_ken_burns() -> void:
+	if _kb_tween:
+		_kb_tween.kill()
+		_kb_tween = null
+	_set_ken_burns(0.0, Vector2(0.5, 0.5), Vector2(0.5, 0.5))
+
+
+# t = 0 — картинка как есть, t = 1 — приближена к точке to.
+func _set_ken_burns(t: float, from: Vector2, to: Vector2) -> void:
+	var material := _shot.material as ShaderMaterial
+	material.set_shader_parameter("zoom", lerpf(1.0, KB_ZOOM, t))
+	material.set_shader_parameter("pivot", from.lerp(to, t))

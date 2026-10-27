@@ -106,12 +106,16 @@ func get_cover(group: Dictionary, now := false) -> Texture2D:
 # он выполняет её на свободном ядре процессора, не останавливая интерфейс.
 
 var _loading := {}  # ключи обложек, которые сейчас читаются с диска
+var _broken := {}   # пути картинок, которые не прочитались, — больше не пробуем
 
 
 func _read(key: String, path: String, shrink: bool, now: bool) -> Texture2D:
+	if _broken.has(path):
+		return null  # уже пробовали — файл не читается
 	if now:
 		var image := _load_image(path, shrink)
 		if image == null:
+			_broken[path] = true
 			return null
 		_remember(key, ImageTexture.create_from_image(image))
 		return _textures[key]
@@ -125,23 +129,49 @@ func _read(key: String, path: String, shrink: bool, now: bool) -> Texture2D:
 # результат передаём в главный поток через call_deferred.
 func _read_in_thread(key: String, path: String, shrink: bool) -> void:
 	var image := _load_image(path, shrink)
-	_on_read.call_deferred(key, image)
+	_on_read.call_deferred(key, image, path)
 
 
 func _load_image(path: String, shrink: bool) -> Image:
-	var image := Image.load_from_file(path)
-	if image == null or image.is_empty():
+	var image := load_any_image(path)
+	if image == null:
 		return null
 	if shrink:
 		_shrink(image)
 	return image
 
 
+## Прочитать картинку, узнав её формат по СОДЕРЖИМОМУ, а не по расширению.
+## Бывает, что JPG сохранили с расширением .png (так было с обложкой
+## Mizzurna Falls) — Image.load_from_file тогда отказывается её читать.
+## А у каждого формата первые байты файла свои («подпись»):
+##   PNG — 89 50 4E 47 («‰PNG»), JPG — FF D8, WebP — «RIFF....WEBP».
+## null — не картинка или файл испорчен.
+static func load_any_image(path: String) -> Image:
+	var bytes := FileAccess.get_file_as_bytes(path)
+	if bytes.size() < 12:
+		return null
+	var image := Image.new()
+	var error := ERR_FILE_UNRECOGNIZED
+	if bytes[0] == 0x89 and bytes[1] == 0x50:
+		error = image.load_png_from_buffer(bytes)
+	elif bytes[0] == 0xFF and bytes[1] == 0xD8:
+		error = image.load_jpg_from_buffer(bytes)
+	elif bytes.slice(0, 4).get_string_from_ascii() == "RIFF" and bytes.slice(8, 12).get_string_from_ascii() == "WEBP":
+		error = image.load_webp_from_buffer(bytes)
+	if error != OK or image.is_empty():
+		return null
+	return image
+
+
 # Снова в главном потоке: картинка прочитана.
-func _on_read(key: String, image: Image) -> void:
+func _on_read(key: String, image: Image, path: String) -> void:
 	_loading.erase(key)
 	if image == null:
-		_missing[key] = true  # файл испорчен — больше не пробуем
+		# Файл испорчен — больше не пробуем. Раньше Shellbit читал его заново
+		# при каждом показе карточки, и журнал заполнялся одной и той же ошибкой.
+		_broken[path] = true
+		push_warning("Обложка не читается (это не PNG, JPG или WebP): " + path)
 		return
 	_set_texture(key, ImageTexture.create_from_image(image))
 
