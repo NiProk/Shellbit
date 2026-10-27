@@ -20,6 +20,9 @@ extends Control
 ## фиолетовый, на Game Boy — зелёный. На карточке игры — цвет её приставки.
 ## Цвет не появляется и не гаснет, а ПЕРЕТЕКАЕТ из одного в другой.
 ##
+## И узор фона (раздел настроек «Оформление»): пиксельная сетка, звёзды,
+## дизеринг или строки кинескопа — поверх картинки и свечения.
+##
 ## Использование — добавить в сцену сразу после фона (Background):
 ##   var backdrop := Backdrop.new()
 ##   add_child(backdrop)
@@ -30,6 +33,13 @@ extends Control
 
 const BackdropShader := preload("res://scenes/components/backdrop.gdshader")
 const GlowShader := preload("res://scenes/components/glow.gdshader")
+## Узоры фона: значение настройки → шейдер (папка patterns).
+const PATTERNS := {
+	"grid": preload("res://scenes/components/patterns/grid.gdshader"),
+	"stars": preload("res://scenes/components/patterns/stars.gdshader"),
+	"dither": preload("res://scenes/components/patterns/dither.gdshader"),
+	"scanlines": preload("res://scenes/components/patterns/scanlines.gdshader"),
+}
 ## Сила свечения: 0 — нет, 1 — во всю силу цвета. Больше 0,5 — уже ярко.
 const GLOW_STRENGTH := 0.32
 const FADE_TIME := 0.6               # за сколько секунд одна картинка сменяет другую
@@ -54,6 +64,7 @@ var _tween: Tween               # идущий «наплыв» — остано
 var _glow: ColorRect            # слой свечения
 var _glow_color := Color(0, 0, 0, 0)  # какое свечение сейчас (alpha — сила)
 var _glow_tween: Tween
+var _pattern: ColorRect         # слой узора
 
 # Уже размытые картинки: исходная → размытая. Вернулся к той же игре —
 # размывать заново не нужно. static — общий для всех экранов.
@@ -92,6 +103,18 @@ func _ready() -> void:
 	_glow.visible = false
 	add_child(_glow)
 
+	# Узор — самым верхним слоем фона: и поверх картинки, и поверх свечения.
+	_pattern = ColorRect.new()
+	_pattern.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_pattern.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_pattern.material = ShaderMaterial.new()
+	add_child(_pattern)
+	_apply_pattern()
+	# Поменяли узор в настройках — сразу показать новый.
+	Settings.changed.connect(func(section: String, key: String) -> void:
+		if section == "look" and key == "pattern":
+			_apply_pattern())
+
 	_timer.one_shot = true
 	_timer.wait_time = DELAY
 	_timer.timeout.connect(func() -> void: _apply(_pending))
@@ -124,6 +147,13 @@ func _set_glow(color: Color) -> void:
 	_glow_color = color
 	_glow.material.set_shader_parameter("glow_color", color)
 	_glow.visible = color.a > 0.001  # не светим — не рисуем вовсе
+
+
+## Показать узор, выбранный в настройках. "none" (или незнакомый) — без узора.
+func _apply_pattern() -> void:
+	var shader: Shader = PATTERNS.get(Settings.get_value("look", "pattern"))
+	_pattern.visible = shader != null  # нет узора — слой вообще не рисуется
+	(_pattern.material as ShaderMaterial).shader = shader
 
 
 ## Цвет приставки по её id ("nes"). Избранное — золотой.

@@ -50,6 +50,9 @@ const DEFAULTS := {
 		"rewind_seconds": 20,   # длина «ленты» перемотки, 0 — перемотка выключена
 		"rumble": true,         # вибрация геймпада, если игра её использует
 	},
+	"look": {
+		"pattern": "none",  # узор фона меню: none / grid / stars / dither / scanlines
+	},
 	"audio": {
 		"volume": 100,      # громкость в процентах: 0..100
 		"ui_sounds": true,  # щелчки при переходах и «бульк» при запуске игры

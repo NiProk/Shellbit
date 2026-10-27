@@ -24,6 +24,8 @@ const PAGES := [
 		"about": "Ускорение и перемотка назад во время игры."},
 	{"id": "video", "title": "Видео",
 		"about": "Как выглядит картинка во время игры."},
+	{"id": "look", "title": "Оформление",
+		"about": "Как выглядят меню Shellbit."},
 	{"id": "audio", "title": "Звук",
 		"about": "Громкость приложения и игр."},
 	{"id": "language", "title": "Язык",
@@ -51,6 +53,10 @@ func _ready() -> void:
 	CoreDownloader.finished.connect(_on_core_finished)
 
 	%Preview.texture = _preview_texture()
+	# Узор фона — и здесь: выбираешь вариант и сразу видишь его на экране.
+	var backdrop := Backdrop.new()
+	add_child(backdrop)
+	move_child(backdrop, $Background.get_index() + 1)
 
 	var start: String = SceneRouter.params.get("page", "video")
 	_show_page(start)
@@ -159,6 +165,7 @@ func _show_page(id: String) -> void:
 		"controls": _build_controls()
 		"play": _build_play()
 		"video": _build_video()
+		"look": _build_look()
 		"audio": _build_audio()
 		"language": _build_language()
 		"cores": _build_cores()
@@ -443,6 +450,20 @@ func _build_video() -> void:
 	var vsync := _toggle("Вертикальная синхронизация", "video", "vsync",
 			tr("Кадры выводятся в такт монитору — картинка не «рвётся» при движении. Выключайте, только если игра идёт рывками."))
 	vsync.value_changed.connect(func(_value: Variant) -> void: Settings.apply_vsync())
+
+
+func _build_look() -> void:
+	_choice("Узор фона", "look", "pattern", [
+		["none", tr("Без узора"), tr("Чистый тёмный фон.")],
+		["grid", tr("Пиксельная сетка"),
+			tr("Мелкие точки через ровные промежутки, как экран старого монитора вблизи.")],
+		["stars", tr("Пиксельные звёзды"),
+			tr("Звёздное небо из 8-битной игры: звёзды мерцают и медленно плывут вверх.")],
+		["dither", tr("Дизеринг"),
+			tr("Шахматные клеточки, которыми в играх NES и Game Boy рисовали полутени.")],
+		["scanlines", tr("Строки кинескопа"),
+			tr("Тонкие тёмные линии и затемнённые края, как на старом телевизоре.")],
+	])
 
 
 func _build_audio() -> void:

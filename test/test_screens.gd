@@ -31,7 +31,7 @@ func test_main_screens() -> void:
 
 func test_settings_pages() -> void:
 	about("Все разделы настроек открываются")
-	for page in ["folders", "controls", "play", "video", "audio", "language", "cores", "about"]:
+	for page in ["folders", "controls", "play", "video", "look", "audio", "language", "cores", "about"]:
 		check_eq(await _open("settings", {"page": page, "rows": true}), "SettingsScreen", "раздел " + page)
 		check(get_tree().current_scene.get_node("%Rows").get_child_count() > 0, "в разделе %s есть строки" % page)
 
