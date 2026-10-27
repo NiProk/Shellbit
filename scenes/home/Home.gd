@@ -15,6 +15,9 @@ func _ready() -> void:
 	add_child(backdrop)
 	move_child(backdrop, $Background.get_index() + 1)
 
+	# Пип в логотипе моргает (scenes/components/PipBlink.gd).
+	$Margin/VBox/Header/Pip.add_child(PipBlink.new())
+
 	%AddFolderButton.pressed.connect(_on_add_folder_pressed)
 	_add_settings_button()
 	_add_quit_button()
