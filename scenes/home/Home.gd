@@ -8,6 +8,13 @@ const ConsoleTileScene := preload("res://scenes/components/ConsoleTile.tscn")
 
 
 func _ready() -> void:
+	# Фон по выбранной игре (scenes/components/Backdrop.gd) — сразу поверх
+	# обычного фона, под всем остальным. На плитке приставки — гаснет.
+	var backdrop := Backdrop.new()
+	backdrop.follow_focus = true
+	add_child(backdrop)
+	move_child(backdrop, $Background.get_index() + 1)
+
 	%AddFolderButton.pressed.connect(_on_add_folder_pressed)
 	_add_settings_button()
 	_add_quit_button()

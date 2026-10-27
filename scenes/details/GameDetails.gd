@@ -7,6 +7,8 @@ extends Control
 
 const SaveCardScene := preload("res://scenes/components/SaveCard.tscn")
 
+var _backdrop: Backdrop  # фон по этой игре (scenes/components/Backdrop.gd)
+var _snapshot: Texture2D  # кадр выхода из игры для фона (читаем с диска один раз)
 var group: Dictionary = {}
 var _viewer := TextViewer.new()  # окно с полным описанием
 var _picker := CoverPicker.new()
@@ -70,6 +72,10 @@ func _refresh() -> void:
 	%Title.text = title
 	%CoverPlaceholder.text = title
 
+	# Жанр по папке (см. scripts/Genres.gd) важнее жанра из базы: его выбрал
+	# сам человек, и он совпадает с фильтром в библиотеке.
+	if group.get("genre", "") != "":
+		info["genre"] = Genres.title(group["genre"])
 	# «1991 · Beat 'em up · 1–2 игрока · Rareware» — каждое сведение своим цветом.
 	_fill_meta(info)
 
@@ -160,6 +166,20 @@ func _update_more_button() -> void:
 func _show_cover(texture: Texture2D) -> void:
 	%Cover.texture = texture
 	%CoverPlaceholder.visible = texture == null
+	_update_backdrop()
+
+
+## Фон страницы — размытый кадр, на котором вышли из игры (он живее),
+## а если в игру ещё не играли — обложка.
+func _update_backdrop() -> void:
+	if _backdrop == null:
+		_backdrop = Backdrop.new()
+		add_child(_backdrop)
+		move_child(_backdrop, $Background.get_index() + 1)
+		# thumbnail() каждый раз читает файл и создаёт НОВУЮ картинку —
+		# Backdrop счёл бы её другой и делал бы «наплыв» заново. Читаем один раз.
+		_snapshot = SaveStates.thumbnail(Library.chosen_variant(group), SaveStates.AUTO)
+	_backdrop.show_picture(_snapshot if _snapshot else %Cover.texture)
 
 
 func _on_cover_ready(key: String, texture: Texture2D) -> void:

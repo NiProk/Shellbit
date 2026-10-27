@@ -6,9 +6,9 @@ extends PanelContainer
 ## Значки сами меняются под Xbox, PlayStation или клавиатуру.
 
 const LABELS := {
-	"xbox": {"accept": "A", "cancel": "B", "details": "X", "favorite": "Y", "page": "LB RB", "menu": "Start", "change": "←→", "scroll": "↑↓", "search": "↑"},
-	"playstation": {"accept": "✕", "cancel": "○", "details": "□", "favorite": "△", "page": "L1 R1", "menu": "Options", "change": "←→", "scroll": "↑↓", "search": "↑"},
-	"keyboard": {"accept": "Enter", "cancel": "Esc", "details": "Tab", "favorite": "F", "page": "Q E", "menu": "F1", "change": "←→", "scroll": "↑↓", "search": "Ctrl+F"},
+	"xbox": {"accept": "A", "cancel": "B", "details": "X", "favorite": "Y", "page": "LB RB", "menu": "Start", "genre": "View", "change": "←→", "scroll": "↑↓", "search": "↑"},
+	"playstation": {"accept": "✕", "cancel": "○", "details": "□", "favorite": "△", "page": "L1 R1", "menu": "Options", "genre": "Share", "change": "←→", "scroll": "↑↓", "search": "↑"},
+	"keyboard": {"accept": "Enter", "cancel": "Esc", "details": "Tab", "favorite": "F", "page": "Q E", "menu": "F1", "genre": "G", "change": "←→", "scroll": "↑↓", "search": "Ctrl+F"},
 }
 
 # Цвета кнопок как на геймпаде Xbox. Для остальных — серый значок.

@@ -27,6 +27,54 @@ static func _dir(game: Dictionary) -> String:
 	return ROOT.path_join(game["path"].md5_text())
 
 
+## Игру переложили в другую папку: перенести её сохранения.
+## Папка сохранений названа по md5 пути — у нового пути она другая.
+## Если на новом месте уже успели сохраниться — те слоты не трогаем,
+## переносим только недостающие.
+static func move_game(old_path: String, new_path: String) -> void:
+	var old_dir := ProjectSettings.globalize_path(_dir({"path": old_path}))
+	var new_dir := ProjectSettings.globalize_path(_dir({"path": new_path}))
+	if not DirAccess.dir_exists_absolute(old_dir):
+		return  # сохранений не было
+	DirAccess.make_dir_recursive_absolute(new_dir)
+	for file in DirAccess.get_files_at(old_dir):
+		if not FileAccess.file_exists(new_dir.path_join(file)):
+			DirAccess.rename_absolute(old_dir.path_join(file), new_dir.path_join(file))
+	DirAccess.remove_absolute(old_dir)  # удалится, только если опустела
+
+	# В discs.json записаны полные пути дисков — они тоже переехали
+	# (диски набора лежат в одной папке с игрой).
+	var game := {"path": new_path}
+	var all := _read_discs(game)
+	var old_folder := old_path.get_base_dir()
+	var new_folder := new_path.get_base_dir()
+	for slot: String in all:
+		var disc: Variant = all[slot]
+		if disc is Dictionary and String(disc.get("path", "")).get_base_dir() == old_folder:
+			disc["path"] = new_folder.path_join(String(disc["path"]).get_file())
+	if not all.is_empty():
+		var out := FileAccess.open(_discs_path(game), FileAccess.WRITE)
+		if out != null:
+			out.store_string(JSON.stringify(all, "\t"))
+
+
+## Сохранения самой игры (батарейка картриджа, карта памяти PS1) пишет ядро
+## в user://saves и называет по имени файла игры: «Contra (USA).srm».
+## Если при переезде файл переименовали — переименовываем и их,
+## иначе ядро их не найдёт.
+static func move_core_saves(old_path: String, new_path: String) -> void:
+	var old_name := old_path.get_file().get_basename()
+	var new_name := new_path.get_file().get_basename()
+	if old_name == new_name:
+		return
+	var saves := ProjectSettings.globalize_path(CoreManager.SAVES_DIR)
+	for file in DirAccess.get_files_at(saves):
+		if file.begins_with(old_name + "."):
+			var target := saves.path_join(new_name + file.substr(old_name.length()))
+			if not FileAccess.file_exists(target):
+				DirAccess.rename_absolute(saves.path_join(file), target)
+
+
 static func _state_path(game: Dictionary, slot: String) -> String:
 	return _dir(game).path_join(slot + ".state")
 

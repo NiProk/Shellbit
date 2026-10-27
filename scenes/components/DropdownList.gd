@@ -165,7 +165,13 @@ func _place(anchor: Control, count: int) -> void:
 	if top + height > screen.y - HINTS_HEIGHT - 16:
 		top = maxf(16, screen.y - HINTS_HEIGHT - 16 - height)
 	_scroll.custom_minimum_size = Vector2(width - MARGIN * 2, height - MARGIN * 2)
-	_panel.position = Vector2(area.position.x, top)
+	# Кнопка у правого края экрана (как «Жанр» в библиотеке) — список
+	# не помещается справа. Тогда сдвигаем его влево, чтобы правый край
+	# списка совпал с правым краем кнопки (но не дальше левого края экрана).
+	var left := area.position.x
+	if left + width > screen.x - 16:
+		left = maxf(16, area.end.x - width)
+	_panel.position = Vector2(left, top)
 	_panel.size = Vector2(width, height)
 
 

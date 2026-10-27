@@ -18,6 +18,34 @@ const PLAYLIST_DIR := "user://cache/m3u"
 static var _disc_regex := RegEx.create_from_string("(?i)\\s*\\((?:disc|disk|cd)\\s*(\\d+)(?:\\s*of\\s*\\d+)?\\)")
 
 
+## Код набора дисков: md5 от «папка/имя без пометки диска».
+## Из него — имя .m3u, а значит, и имя карты памяти, которую ядро
+## заведёт для этой игры (ядро называет её по имени .m3u).
+## "" — в имени файла нет пометки диска.
+static func set_id(path: String) -> String:
+	var found := _disc_regex.search(path.get_file())
+	if found == null:
+		return ""
+	var set_name := path.get_file().replace(found.get_string(), "")
+	return path.get_base_dir().path_join(set_name).md5_text()
+
+
+## Игру переложили из old_path в new_path. Код набора поменялся (в нём
+## есть папка), и ядро не нашло бы старую карту памяти — переименовываем её:
+## user://saves/<старый код>.srm → <новый код>.srm (и другие файлы ядра).
+static func move_saves(old_path: String, new_path: String) -> void:
+	var old_id := set_id(old_path)
+	var new_id := set_id(new_path)
+	if old_id == "" or old_id == new_id:
+		return
+	var saves := ProjectSettings.globalize_path(CoreManager.SAVES_DIR)
+	for file in DirAccess.get_files_at(saves):
+		if file.begins_with(old_id + "."):
+			var target := saves.path_join(new_id + file.substr(old_id.length()))
+			if not FileAccess.file_exists(target):  # новую не затираем
+				DirAccess.rename_absolute(saves.path_join(file), target)
+
+
 ## Если path — один из дисков набора, составить список всех дисков.
 ## Возвращает {} (это не набор дисков) или:
 ##   {"path": "<путь к .m3u>", "index": 1, "disc_path": "<путь к этому диску>"}
@@ -54,8 +82,7 @@ static func playlist_for(path: String, system_id: String) -> Dictionary:
 
 	# Имя .m3u — по набору, чтобы у одной игры был один список.
 	DirAccess.make_dir_recursive_absolute(PLAYLIST_DIR)
-	var playlist := ProjectSettings.globalize_path(
-			PLAYLIST_DIR.path_join(folder.path_join(set_name).md5_text() + ".m3u"))
+	var playlist := ProjectSettings.globalize_path(PLAYLIST_DIR.path_join(set_id(path) + ".m3u"))
 	var out := FileAccess.open(playlist, FileAccess.WRITE)
 	if out == null:
 		return {}

@@ -16,7 +16,8 @@ extends Node
 ##     "favorite": false,
 ##     "last_played": 0,              # Unix-время последнего запуска (0 = ни разу)
 ##     "play_seconds": 0,             # сколько секунд наиграно
-##     "archive_checked": true        # только у .zip/.7z: приставку узнали по файлу внутри
+##     "archive_checked": true,       # только у .zip/.7z: приставку узнали по файлу внутри
+##     "genre": "platformer"          # по папке, см. scripts/Genres.gd ("" — не узнали)
 ##   }
 ##
 ## 2. ИГРА (группа) — все версии одной игры вместе. Именно группы видит
@@ -26,6 +27,7 @@ extends Node
 ##     "title": "Battletoads",
 ##     "system": "nes",
 ##     "variants": [ ...файлы, лучший первым... ],
+##     "genre": "platformer",                     # первый узнанный жанр среди файлов
 ##     "favorite", "last_played", "play_seconds"  # собраны со всех файлов
 ##   }
 
@@ -51,6 +53,8 @@ var _by_key := {}  # ключ игры → группа: найти игру п�
 ## это ~0,1 с, а группы пересобираются при каждом запуске и выходе из игры.
 ## Имя файла не меняется — разбираем его один раз.
 var _parsed := {}
+## Жанры файлов: путь → id жанра. Тоже считаем один раз на файл.
+var _genres := {}
 
 
 func _ready() -> void:
@@ -75,17 +79,103 @@ func scan() -> void:
 
 	var found: Array[Dictionary] = []
 	_waiting_for_7zip = false
+	_genres.clear()  # папки могли переложить — жанры узнаем заново
 	for folder in Settings.get_rom_folders():
 		_scan_dir(folder, found, old, 0)
 
+	var moved := _carry_over_moved(old, found)
 	games = found
 	_rebuild_groups()
 	_save()
 	scan_finished.emit()
+	if moved > 0:
+		print("Library: переложенных игр — %d, их данные перенесены" % moved)
+		# call_deferred — scan бывает при запуске, когда SceneRouter ещё не готов.
+		_announce_moved.call_deferred(moved)
 	if _waiting_for_7zip:
 		# call_deferred — после того как все синглтоны готовы (scan вызывается
 		# и при запуске программы, когда SceneRouter ещё не создан).
 		_fetch_7zip_and_rescan.call_deferred()
+
+
+# =====================================================================
+# Игры переложили в другие папки
+# =====================================================================
+#
+# Shellbit узнаёт файл по полному пути. Переложил «Battletoads» из
+# NES/Battletoads/ в NES/Beat 'em Up/Battletoads/ — для программы это
+# ДРУГОЙ файл: старый пропал, новый появился. Без переноса пропали бы
+# избранное, время в игре, выбранная версия и сохранения в слотах.
+#
+# Поэтому после поиска сравниваем: какие файлы пропали и какие появились.
+# Пропал «Battletoads (U) [!].nes» и появился файл с ТАКИМ ЖЕ именем
+# (той же приставки) — значит, его переложили. Переносим на новый путь всё,
+# что было привязано к старому.
+#
+# Имена сравниваем «упрощёнными» — только буквы и цифры (Genres.simplify):
+# при раскладке файл могли и чуть переименовать,
+# «Atlantis(FullRus)Лисы.chd» → «Atlantis (FullRus) Лисы.chd».
+#
+# Если файлов с одинаковым именем пропало или появилось несколько
+# (например, «Batman (U).nes» с разных сборников), угадать, какой куда
+# переехал, нельзя — такие не трогаем.
+
+## Перенести данные переложенных игр. Возвращает, сколько игр нашлось.
+func _carry_over_moved(old: Dictionary, found: Array[Dictionary]) -> int:
+	var found_paths := {}
+	for entry in found:
+		found_paths[entry["path"]] = true
+
+	# Пропавшие и появившиеся — по ключу «приставка + упрощённое имя файла».
+	var lost := {}      # ключ → [старые записи]
+	var appeared := {}  # ключ → [новые записи]
+	for path: String in old:
+		if not found_paths.has(path):
+			var entry: Dictionary = old[path]
+			_add_to(lost, _move_key(entry), entry)
+	for entry in found:
+		if not old.has(entry["path"]):
+			_add_to(appeared, _move_key(entry), entry)
+
+	var count := 0
+	for key: String in lost:
+		var was: Array = lost[key]
+		var now: Array = appeared.get(key, [])
+		if was.size() != 1 or now.size() != 1:
+			continue  # не нашёлся или неясно, какой из одинаковых
+		_move_entry(was[0], now[0])
+		count += 1
+	return count
+
+
+func _move_key(entry: Dictionary) -> String:
+	return entry.get("system", "") + "/" + Genres.simplify(String(entry["path"]).get_file())
+
+
+func _add_to(index: Dictionary, key: String, entry: Dictionary) -> void:
+	if not index.has(key):
+		index[key] = []
+	index[key].append(entry)
+
+
+# Всё, что было у старого пути, — новому.
+func _move_entry(was: Dictionary, now: Dictionary) -> void:
+	var old_path: String = was["path"]
+	var new_path: String = now["path"]
+	for field in ["favorite", "last_played", "play_seconds"]:
+		now[field] = was.get(field, now[field])
+	# Выбранная версия: в настройках [versions] ключ игры → путь файла.
+	var versions := Settings.get_section("versions")
+	for key: String in versions:
+		if versions[key] == old_path:
+			Settings.set_value("versions", key, new_path)
+	SaveStates.move_game(old_path, new_path)
+	SaveStates.move_core_saves(old_path, new_path)
+	Discs.move_saves(old_path, new_path)
+
+
+func _announce_moved(count: int) -> void:
+	SceneRouter.toast(tr("Игры переложены в другие папки: %d. Сохранения и время в игре перенесены.") % count)
 
 
 func _fetch_7zip_and_rescan() -> void:
@@ -141,6 +231,7 @@ func _scan_dir(path: String, found: Array[Dictionary], old: Dictionary, depth: i
 func _rebuild_groups() -> void:
 	var by_key := {}  # ключ группы → группа
 
+	var roots := Settings.get_rom_folders()
 	for game in games:
 		# Имя разбираем при каждом запуске программы (а не храним в
 		# library.json): если правила в RomInfo улучшатся, старые записи тоже
@@ -152,6 +243,9 @@ func _rebuild_groups() -> void:
 		game["title"] = info["title"]
 		game["version"] = info["label"]
 		game["score"] = info["score"]
+		if not _genres.has(path):
+			_genres[path] = Genres.from_path(path, roots)
+		game["genre"] = _genres[path]
 
 		var key: String = game["system"] + "_" + info["group"]
 		if not by_key.has(key):
@@ -174,6 +268,13 @@ func _rebuild_groups() -> void:
 			return a["path"] < b["path"])
 		# Название берём у лучшей версии (у «плохих» оно бывает кривым).
 		group["title"] = variants[0]["title"]
+		# Жанр — у первой версии, чей жанр узнали. Обычно все версии игры
+		# лежат в одной папке, но если одну забыли в _Unsorted — не страшно.
+		group["genre"] = ""
+		for variant: Dictionary in variants:
+			if variant["genre"] != "":
+				group["genre"] = variant["genre"]
+				break
 		group["favorite"] = variants.any(func(v: Dictionary) -> bool: return v["favorite"])
 		group["last_played"] = variants.map(func(v: Dictionary) -> int: return int(v["last_played"])).max()
 		group["play_seconds"] = variants.reduce(func(sum: int, v: Dictionary) -> int: return sum + int(v["play_seconds"]), 0)

@@ -59,6 +59,12 @@ func set_items(new_items: Array) -> void:
 	var rows := ceili(items.size() / float(COLUMNS))
 	custom_minimum_size.y = maxf(0.0, rows * (CARD_SIZE.y + GAP) - GAP)
 	_first_shown = -1  # всё перерисовать
+	# Список игр новый: карточка №0 теперь должна показать ДРУГУЮ игру №0.
+	# _layout перерисовывает карточку, только если у неё сменился номер, —
+	# поэтому стираем номера у всех (иначе после поиска или фильтра
+	# на карточках остались бы старые игры).
+	for card in _cards:
+		card.set_meta("index", -1)
 	_layout()
 
 

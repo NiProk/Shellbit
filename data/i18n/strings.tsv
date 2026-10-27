@@ -398,3 +398,13 @@ Shellbit открывается в обычном окне — его можно
 Выкл	Off	关	オフ	Aus	Désactivé	No	Desligado	꺼짐
 Авто	Auto	自动	自動	Auto	Auto	Auto	Auto	자동
 Этой приставке нужна видеокарта с OpenGL 3.3, но запустить его не вышло:\n%s\n\nОбновите драйвер видеокарты.	This console needs a graphics card with OpenGL 3.3, but it could not be started:\n%s\n\nUpdate your graphics driver.	这台主机需要支持 OpenGL 3.3 的显卡，但无法启动它：\n%s\n\n请更新显卡驱动。	このゲーム機には OpenGL 3.3 対応のグラフィックカードが必要ですが、起動できませんでした：\n%s\n\nグラフィックドライバーを更新してください。	Diese Konsole braucht eine Grafikkarte mit OpenGL 3.3, aber es ließ sich nicht starten:\n%s\n\nAktualisiere den Grafiktreiber.	Cette console a besoin d\'une carte graphique OpenGL 3.3, mais il n\'a pas pu démarrer :\n%s\n\nMettez à jour le pilote graphique.	Esta consola necesita una tarjeta gráfica con OpenGL 3.3, pero no se pudo iniciar:\n%s\n\nActualiza el controlador de la tarjeta gráfica.	Este console precisa de uma placa de vídeo com OpenGL 3.3, mas não foi possível iniciá-lo:\n%s\n\nAtualize o driver da placa de vídeo.	이 게임기에는 OpenGL 3.3을 지원하는 그래픽 카드가 필요하지만 시작하지 못했습니다:\n%s\n\n그래픽 드라이버를 업데이트하세요.
+Хоррор	Horror	恐怖	ホラー	Horror	Horreur	Terror	Terror	호러
+Настольные и карточные	Board & card	桌游与卡牌	テーブル・カード	Brett- & Kartenspiele	Plateau et cartes	Mesa y cartas	Tabuleiro e cartas	보드·카드
+Обучение и викторины	Educational & quiz	教育与问答	学習・クイズ	Lernspiele & Quiz	Éducatif et quiz	Educativos y preguntas	Educativos e quiz	교육·퀴즈
+Программы	Utilities	实用工具	ユーティリティ	Programme	Utilitaires	Utilidades	Utilitários	유틸리티
+Для взрослых	Adult	成人	アダルト	Für Erwachsene	Pour adultes	Para adultos	Adulto	성인용
+Без жанра	No genre	未分类	ジャンルなし	Ohne Genre	Sans genre	Sin género	Sem gênero	장르 없음
+Все жанры	All genres	全部类型	すべてのジャンル	Alle Genres	Tous les genres	Todos los géneros	Todos os gêneros	모든 장르
+Жанр: %s	Genre: %s	类型：%s	ジャンル: %s	Genre: %s	Genre : %s	Género: %s	Gênero: %s	장르: %s
+Игры переложены в другие папки: %d. Сохранения и время в игре перенесены.	Games moved to other folders: %d. Saves and play time carried over.	游戏已移至其他文件夹：%d 个。存档和游戏时间已转移。	ほかのフォルダーに移されたゲーム: %d 本。セーブとプレイ時間を引き継ぎました。	Spiele in andere Ordner verschoben: %d. Spielstände und Spielzeit übernommen.	Jeux déplacés dans d'autres dossiers : %d. Sauvegardes et temps de jeu conservés.	Juegos movidos a otras carpetas: %d. Partidas y tiempo de juego conservados.	Jogos movidos para outras pastas: %d. Saves e tempo de jogo mantidos.	다른 폴더로 옮긴 게임: %d개. 저장과 플레이 시간을 옮겼습니다.
+Жанр	Genre	类型	ジャンル	Genre	Genre	Género	Gênero	장르

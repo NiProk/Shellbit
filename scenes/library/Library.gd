@@ -5,6 +5,8 @@ extends Control
 ##   SceneRouter.go_to("library", {"system": "snes"})
 ## Избранное со всех приставок открывается так же:
 ##   SceneRouter.go_to("library", {"system": Library.FAVORITES})
+## Можно сразу открыть с фильтром по жанру:
+##   SceneRouter.go_to("library", {"system": "nes", "genre": "platformer"})
 ##
 ## Каждая карточка — это ИГРА (группа версий), а не отдельный файл.
 
@@ -20,6 +22,12 @@ const SORTS := [
 
 var system_id := ""
 var _groups: Array = []  # игры этого экрана (в порядке сортировки)
+## Какой жанр показываем: "" — все, Genres.NONE — игры без жанра,
+## иначе id жанра ("platformer"). См. scripts/Genres.gd.
+var _genre := ""
+var _genre_list := DropdownList.new()  # выпадающий список жанров
+var _genre_just_chosen := false  # выбрали жанр (а не закрыли список кнопкой B)
+var _focus_before_genres: Control  # где был фокус, когда открыли список жанров
 
 # Меню «Обложка» (компонент scenes/components/CoverPicker.gd).
 var _cover_picker := CoverPicker.new()
@@ -48,13 +56,18 @@ func _ready() -> void:
 	%Grid.card_pressed.connect(_on_game_pressed)
 	%Grid.card_focused.connect(_show_info)
 	_setup_search_and_sort()
+	_setup_genres()
 	# Вернулись со страницы игры — восстанавливаем поиск, как был.
 	# text = … не вызывает text_changed, фильтр применит _build_grid().
 	%Search.text = SceneRouter.params.get("search", "")
 	_build_grid()
 
-	%Hints.set_hints([
-		["page", "Другая приставка"],
+	# Подсказки внизу. «Жанр» — только если у игр этого экрана есть жанры.
+	# Строка длинная, поэтому подписи короткие: «Приставка», а не «Другая приставка».
+	var hints := [["page", "Приставка"]]
+	if %GenreButton.visible:
+		hints.append(["genre", "Жанр"])
+	hints.append_array([
 		["accept", "Открыть"],
 		["details", "Версия"],
 		["favorite", "Избранное"],
@@ -62,8 +75,16 @@ func _ready() -> void:
 		["search", "Поиск"],
 		["cancel", "Назад"],
 	])
+	%Hints.set_hints(hints)
 	add_child(_cover_picker)
 	add_child(_keyboard)
+	add_child(_genre_list)
+	# Фон по выбранной игре. Ушёл к поиску или жанрам — фон остаётся.
+	var backdrop := Backdrop.new()
+	backdrop.follow_focus = true
+	backdrop.clear_off_games = false
+	add_child(backdrop)
+	move_child(backdrop, $Background.get_index() + 1)
 	# Клавиатуру закрыли — переходим к найденным играм.
 	_keyboard.closed.connect(_leave_search)
 	_restore_focus()
@@ -81,6 +102,7 @@ func _setup_search_and_sort() -> void:
 	# Enter в поле поиска — перейти к найденным карточкам.
 	%Search.text_submitted.connect(func(_text: String) -> void: _focus_first_card())
 	%Search.focus_entered.connect(_on_search_focused)
+	%Search.gui_input.connect(_on_search_input)
 
 	%SortButton.pressed.connect(_next_sort)
 	%SortButton.mouse_entered.connect(%SortButton.grab_focus)
@@ -96,10 +118,11 @@ func _build_grid() -> void:
 ## Показать только игры, в названии которых есть текст из поиска.
 func _apply_filter() -> void:
 	var query: String = %Search.text.strip_edges()
+	# Игра остаётся, только если подходит И под поиск, И под жанр.
 	# findn — поиск БЕЗ учёта регистра: «toad» найдёт «Battletoads».
 	# Возвращает место, где нашёлся текст, или −1, если не нашёлся.
 	var found := _groups.filter(func(group: Dictionary) -> bool:
-		return query == "" or group["title"].findn(query) != -1)
+		return (query == "" or group["title"].findn(query) != -1) and _genre_matches(group))
 	%Grid.set_items(found)
 	var shown := found.size()
 
@@ -109,7 +132,7 @@ func _apply_filter() -> void:
 		_show_info(found[0])
 
 	var total := _groups.size()
-	if query == "":
+	if query == "" and _genre == "":
 		%Count.text = Library.count_text(total)
 	else:
 		%Count.text = tr("%d из %s") % [shown, Library.count_text(total)]
@@ -161,6 +184,98 @@ func _update_sort_button() -> void:
 			# Полное «Сортировка: …» — во всплывающей подсказке для мыши.
 			%SortButton.text = "↕ " + tr(sort[1])
 			%SortButton.tooltip_text = tr("Сортировка: %s") % tr(sort[1])
+
+
+# =====================================================================
+# Жанры
+# =====================================================================
+#
+# Жанр игры Library узнаёт по папке (Platformer, RPG…) — см. scripts/Genres.gd.
+# Здесь — кнопка «Все жанры ▾» в шапке и выпадающий список: в нём только
+# те жанры, что есть у игр этого экрана, и сколько в каждом игр.
+
+func _setup_genres() -> void:
+	_genre = SceneRouter.params.get("genre", "")
+	# Жанр пришёл с другой приставки, а здесь таких игр нет — показываем все.
+	if not _genre_counts().has(_genre):
+		_genre = ""
+	%GenreButton.pressed.connect(_open_genres)
+	%GenreButton.mouse_entered.connect(%GenreButton.grab_focus)
+	_genre_list.chosen.connect(_choose_genre)
+	_genre_list.closed.connect(_on_genres_closed)
+	_update_genre_button()
+
+
+## Сколько игр в каждом жанре на этом экране: {"": все, "rpg": 12, "none": 3…}.
+func _genre_counts() -> Dictionary:
+	var counts := {"": _groups.size()}
+	for group: Dictionary in _groups:
+		var genre: String = group.get("genre", "")
+		var id := genre if genre != "" else Genres.NONE
+		counts[id] = counts.get(id, 0) + 1
+	return counts
+
+
+func _genre_matches(group: Dictionary) -> bool:
+	if _genre == "":
+		return true
+	if _genre == Genres.NONE:
+		return group.get("genre", "") == ""
+	return group.get("genre", "") == _genre
+
+
+func _open_genres() -> void:
+	var counts := _genre_counts()
+	var ids := counts.keys()
+	ids.erase("")
+	# Порядок — как в Genres.LIST, «Без жанра» — в конце.
+	ids.sort_custom(func(a: String, b: String) -> bool: return Genres.order(a) < Genres.order(b))
+	# Пары [значение, надпись] для DropdownList. Надписи уже переведены.
+	var items := [["", "%s  · %d" % [tr("Все жанры"), counts[""]]]]
+	for id: String in ids:
+		items.append([id, "%s  · %d" % [Genres.title(id), counts[id]]])
+	_genre_just_chosen = false
+	# Список могли открыть кнопкой View/G прямо с карточки — запоминаем,
+	# куда вернуть фокус, если закроют без выбора.
+	_focus_before_genres = get_viewport().gui_get_focus_owner()
+	_genre_list.open(items, _genre, %GenreButton)
+
+
+func _choose_genre(id: String) -> void:
+	_genre = id
+	_genre_just_chosen = true
+	_update_genre_button()
+	_apply_filter()
+
+
+# Список закрылся. Выбрали жанр — сразу к играм. Закрыли кнопкой B —
+# туда, где были до этого (на карточку или на кнопку жанра).
+func _on_genres_closed() -> void:
+	if _genre_just_chosen and _focus_first_card():
+		return
+	if is_instance_valid(_focus_before_genres) and _focus_before_genres.is_visible_in_tree() \
+			and not _genre_list.is_ancestor_of(_focus_before_genres):
+		_focus_before_genres.grab_focus()
+	else:
+		%GenreButton.grab_focus()
+
+
+func _update_genre_button() -> void:
+	# Если ни одна игра этого экрана не лежит в папке жанра — кнопка не нужна.
+	var counts := _genre_counts()
+	%GenreButton.visible = counts.size() > 2 or (counts.size() == 2 and not counts.has(Genres.NONE))
+	var text := tr("Все жанры") if _genre == "" else Genres.title(_genre)
+	%GenreButton.text = text + "  ▾"
+	%GenreButton.tooltip_text = tr("Жанр: %s") % text
+
+
+## Стрелка вправо в поле поиска. Обычно она двигает курсор по тексту,
+## но если курсор уже в самом конце — уходим к кнопкам сортировки и жанра.
+## Иначе с клавиатуры до них было бы не добраться.
+func _on_search_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_right") and %Search.caret_column >= %Search.text.length():
+		%Search.accept_event()  # «нажатие обработано» — поле курсор не двигает
+		%SortButton.grab_focus()
 
 
 ## Пришли в поле поиска.
@@ -237,6 +352,8 @@ func _show_info(group: Dictionary) -> void:
 	# В избранном игры с разных приставок — подписываем, с какой.
 	if _is_favorites():
 		info_lines.append(tr(CoreManager.get_system(group["system"]).get("name", "")))
+	if group.get("genre", "") != "":
+		info_lines.append(tr("Жанр: %s") % Genres.title(group.get("genre", "")))
 	# Ни разу не играли — время не показываем («меньше минуты» сбивало бы с толку).
 	# Так же сделано и на странице игры.
 	if int(group["play_seconds"]) > 0:
@@ -286,6 +403,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		focused.refresh()
 	elif event.is_action_pressed("details") and focused is GameCard:
 		_next_version(focused.game)
+	elif event.is_action_pressed("genre") and %GenreButton.visible and not _genre_list.visible:
+		_open_genres()
 	elif event.is_action_pressed("menu") and focused is GameCard:
 		_cover_picker.open(focused.game, focused)
 	elif event.is_action_pressed("page_left"):
@@ -332,7 +451,9 @@ func _switch_system(step: int) -> void:
 		return
 	var index := ids.find(system_id)
 	var next_id := ids[(index + step + ids.size()) % ids.size()]
-	SceneRouter.replace("library", {"system": next_id})
+	# Жанр берём с собой: смотрел платформеры NES — на SNES тоже платформеры.
+	# Если у той приставки такого жанра нет, она покажет все игры.
+	SceneRouter.replace("library", {"system": next_id, "genre": _genre})
 
 
 # Карточка — это игра (группа версий). Открываем её страницу.
@@ -342,4 +463,5 @@ func _on_game_pressed(group: Dictionary) -> void:
 	# Запоминаем, где были: SceneRouter вернёт эти параметры по «Назад».
 	SceneRouter.params["focus_key"] = group["key"]
 	SceneRouter.params["search"] = %Search.text
+	SceneRouter.params["genre"] = _genre
 	SceneRouter.go_to("details", {"key": group["key"]})

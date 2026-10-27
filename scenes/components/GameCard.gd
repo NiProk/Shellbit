@@ -16,6 +16,10 @@ extends Button
 ## и вертикальная «обложка» (для сетки библиотеки).
 enum Style { WIDE_BIG, WIDE, COVER }
 
+## Картинка на карточке сменилась (например, обложка докачалась).
+## Её слушает Backdrop — фон по выбранной игре.
+signal picture_changed
+
 var game: Dictionary = {}
 var _style := Style.WIDE
 var _has_cover := false  # на вертикальной карточке показана обложка
@@ -105,12 +109,20 @@ func _on_cover_ready(group_key: String, texture: Texture2D) -> void:
 	refresh()
 
 
+## Что сейчас нарисовано на карточке: кадр из игры, обложка или null.
+func picture() -> Texture2D:
+	return _shot.texture
+
+
 func _hide_picture() -> void:
+	var had := _shot.texture != null
 	_shot.texture = null
 	_shot.visible = false
 	_has_cover = false
 	_shade.visible = true
 	_tag.visible = true
+	if had:
+		picture_changed.emit()
 
 
 func _show_picture(texture: Texture2D) -> void:
@@ -120,6 +132,7 @@ func _show_picture(texture: Texture2D) -> void:
 	# На обложке уже нарисовано название — затемнение и текст не нужны.
 	_shade.visible = not _has_cover
 	_tag.visible = not _has_cover
+	picture_changed.emit()
 
 
 ## Обновить надписи (например, после добавления в избранное).

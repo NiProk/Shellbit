@@ -29,6 +29,10 @@ func _ready() -> void:
 	_add_action(&"page_left", JOY_BUTTON_LEFT_SHOULDER, KEY_Q)
 	_add_action(&"page_right", JOY_BUTTON_RIGHT_SHOULDER, KEY_E)
 	_add_action(&"menu", JOY_BUTTON_START, KEY_F1)
+	# Список жанров в библиотеке: View (⧉, слева от кнопки Xbox; на
+	# PlayStation — Share/Create) или G. В играх эта кнопка — Select,
+	# но в меню она свободна.
+	_add_action(&"genre", JOY_BUTTON_BACK, KEY_G)
 	# Меню паузы в игре: нажатие правого стика (R3) или Esc.
 	# В играх NES, SNES и Sega правый стик не нужен, поэтому кнопка свободна.
 	# Ещё работает Select + Start — см. Player.gd.
