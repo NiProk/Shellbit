@@ -25,6 +25,8 @@ config/windows_native_icon="res://icon.ico"
 [autoload]
 
 Settings="*res://autoload/Settings.gd"
+Family="*res://autoload/Family.gd"
+Profiles="*res://autoload/Profiles.gd"
 Lang="*res://autoload/Lang.gd"
 CoreManager="*res://autoload/CoreManager.gd"
 CoreDownloader="*res://autoload/CoreDownloader.gd"

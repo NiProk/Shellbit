@@ -60,7 +60,9 @@ func _ready() -> void:
 func open(game: Dictionary, discs := {}, has_options := true) -> void:
 	_game = game
 	_discs = discs
-	%OptionsButton.visible = has_options
+	# Детский режим (autoload/Family.gd): без настроек ядра и «Начать заново».
+	%OptionsButton.visible = has_options and not Family.is_on()
+	%RestartButton.visible = not Family.is_on()
 	%GameTitle.text = game["title"]
 	%DiscButton.visible = discs.get("count", 0) > 1
 	if %DiscButton.visible:
@@ -108,7 +110,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("game_menu"):
 		resume_requested.emit()
 	elif event.is_action_pressed("details") and focused is SaveSlot:
-		save_requested.emit(focused.slot)
+		if Family.is_on() and SaveStates.exists(_game, focused.slot):
+			# Детский режим: занятый слот не перезаписываем — пропал бы прошлый прогресс.
+			SceneRouter.toast(tr("В детском режиме можно сохраняться только в пустые слоты"))
+		else:
+			save_requested.emit(focused.slot)
 	else:
 		return
 	get_viewport().set_input_as_handled()
@@ -118,7 +124,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func _update_hints() -> void:
 	var focused := get_viewport().gui_get_focus_owner()
 	if focused is SaveSlot:
-		if SaveStates.exists(_game, focused.slot):
+		if SaveStates.exists(_game, focused.slot) and Family.is_on():
+			%Hints.set_hints([["accept", "Загрузить"], ["cancel", "В игру"]])
+		elif SaveStates.exists(_game, focused.slot):
 			%Hints.set_hints([["accept", "Загрузить"], ["details", "Сохранить сюда"], ["cancel", "В игру"]])
 		else:
 			%Hints.set_hints([["accept", "Сохранить сюда"], ["cancel", "В игру"]])

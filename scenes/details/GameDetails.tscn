@@ -122,7 +122,6 @@ text = "Приставка"
 
 [node name="Title" type="Label" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 theme_type_variation = &"TitleLabel"
 theme_override_font_sizes/font_size = 40
@@ -133,13 +132,11 @@ max_lines_visible = 2
 
 [node name="Meta" type="HFlowContainer" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 0
 
 [node name="Description" type="Label" parent="Margin/HBox/InfoScroll/Pad/Info"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.784, 0.812, 0.863, 1)
 theme_override_font_sizes/font_size = 18

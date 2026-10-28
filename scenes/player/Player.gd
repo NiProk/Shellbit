@@ -242,7 +242,10 @@ func _start_game(start_slot: String) -> String:
 	if core.has_method("set_language"):
 		core.set_language(RETRO_LANGUAGES.get(Lang.language, 0))
 	core.set_system_directory(ProjectSettings.globalize_path(CoreManager.SYSTEM_DIR))
-	core.set_save_directory(ProjectSettings.globalize_path(CoreManager.SAVES_DIR))
+	# Сохранения самой игры — в папку текущего игрока (autoload/Profiles.gd).
+	var saves := ProjectSettings.globalize_path(Profiles.saves_dir())
+	DirAccess.make_dir_recursive_absolute(saves)
+	core.set_save_directory(saves)
 
 	if not core.load_core(core_path):
 		return tr("Ядро %s не загрузилось (подробности — во вкладке Output).") % core_path.get_file()

@@ -32,11 +32,16 @@ const LAYOUTS := {
 }
 const KEY_SIZE := Vector2(56, 50)
 
+## Надпись на главной клавише. Для поиска — «Найти», для имени — «Сохранить».
+## (Пишем по-русски, переводит клавиатура сама.)
+var done_text := "Найти"
+
 ## Какая раскладка была в прошлый раз. static — общая для всех клавиатур,
 ## поэтому выбор сохраняется, пока программа запущена.
 static var _layout := "latin"
 
 var _target: LineEdit
+var _hints: Control
 var _rows: VBoxContainer
 
 
@@ -79,20 +84,22 @@ func _ready() -> void:
 	panel.add_child(_rows)
 
 	# Свои подсказки внизу — поверх подсказок экрана.
-	var hints := ButtonHintsScene.instantiate()
-	add_child(hints)
-	hints.set_hints([
-		["accept", "Ввести"],
-		["cancel", "Стереть"],
-		["details", "Пробел"],
-		["favorite", "Раскладка"],
-		["menu", "Найти"],
-	])
+	_hints = ButtonHintsScene.instantiate()
+	add_child(_hints)
 
 
 ## Показать клавиатуру и печатать в поле line_edit.
 func open(line_edit: LineEdit) -> void:
 	_target = line_edit
+	# Подсказки — здесь, а не в _ready: надпись главной клавиши (done_text)
+	# могли поменять уже после создания клавиатуры.
+	_hints.set_hints([
+		["accept", "Ввести"],
+		["cancel", "Стереть"],
+		["details", "Пробел"],
+		["favorite", "Раскладка"],
+		["menu", done_text],
+	])
 	_build()
 	visible = true
 	_focus_key(1, 0)  # первая буква (ряд 0 — цифры)
@@ -125,7 +132,7 @@ func _build() -> void:
 	bottom.add_child(_key("АБВ" if _layout == "latin" else "ABC", _switch_layout, 96))
 	bottom.add_child(_key(tr("Пробел"), _type.bind(" "), 280))
 	bottom.add_child(_key("⌫", _backspace, 96))
-	var find := _key(tr("Найти"), _finish, 140)
+	var find := _key(tr(done_text), _finish, 140)
 	_paint(find, UiTheme.ACCENT, UiTheme.BG)  # главная кнопка — акцентная
 	bottom.add_child(find)
 

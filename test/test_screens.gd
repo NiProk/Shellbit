@@ -31,7 +31,7 @@ func test_main_screens() -> void:
 
 func test_settings_pages() -> void:
 	about("Все разделы настроек открываются")
-	for page in ["folders", "controls", "play", "video", "look", "audio", "language", "cores", "about"]:
+	for page in ["folders", "controls", "play", "video", "look", "players", "family", "audio", "language", "cores", "about"]:
 		check_eq(await _open("settings", {"page": page, "rows": true}), "SettingsScreen", "раздел " + page)
 		check(get_tree().current_scene.get_node("%Rows").get_child_count() > 0, "в разделе %s есть строки" % page)
 
@@ -140,7 +140,7 @@ func test_virtual_grid() -> void:
 		Input.action_release("ui_down")
 		grid._process(0.016)
 	await frames(2)
-	check_eq(grid.selected, 30 * VirtualGrid.COLUMNS, "30 рядов вниз")
+	check_eq(grid.selected, 30 * grid.columns, "30 рядов вниз")
 	var focused := get_viewport().gui_get_focus_owner()
 	check(focused is GameCard and focused.game["key"] == "test_%d" % grid.selected, "фокус на выбранной игре")
 
@@ -160,12 +160,12 @@ func test_grid_stick_repeat() -> void:
 	await frames(1)
 	Input.action_press("ui_down")  # как будто стик наклонили вниз и держат
 	grid._process(0.016)
-	check_eq(grid.selected, VirtualGrid.COLUMNS, "сразу — один ряд")
+	check_eq(grid.selected, grid.columns, "сразу — один ряд")
 	for i in 20:  # ещё 0,32 с — меньше паузы перед повтором
 		grid._process(0.016)
-	check_eq(grid.selected, VirtualGrid.COLUMNS, "пока пауза — стоим")
+	check_eq(grid.selected, grid.columns, "пока пауза — стоим")
 	for i in 60:  # ещё ~1 с удержания
 		grid._process(0.016)
-	var rows: int = grid.selected / VirtualGrid.COLUMNS
+	var rows: int = grid.selected / grid.columns
 	check(rows >= 6 and rows <= 11, "за секунду — около 8 рядов, а не десятки (вышло %d)" % rows)
 	Input.action_release("ui_down")

@@ -15,25 +15,35 @@ extends RefCounted
 ## одинаковая для одного пути. Так нам не страшны пробелы, скобки
 ## и русские буквы в имени игры.
 ##
+## У каждого игрока (autoload/Profiles.gd) своя папка states: у первого —
+## user://states, у остальных — user://profiles/<id>/states.
+##
 ## Как и RomInfo, это класс со static-функциями: SaveStates.save_slot(...).
 
-const ROOT := "user://states"
 const AUTO := "auto"
 const MANUAL_SLOTS := ["1", "2", "3"]
 const THUMB_WIDTH := 256  # ширина миниатюры в пикселях
 
 
-static func _dir(game: Dictionary) -> String:
-	return ROOT.path_join(game["path"].md5_text())
+## Папка слотов игры у текущего игрока (root — у другого игрока).
+static func _dir(game: Dictionary, root := "") -> String:
+	if root == "":
+		root = Profiles.states_dir()
+	return root.path_join(game["path"].md5_text())
 
 
 ## Игру переложили в другую папку: перенести её сохранения.
 ## Папка сохранений названа по md5 пути — у нового пути она другая.
 ## Если на новом месте уже успели сохраниться — те слоты не трогаем,
-## переносим только недостающие.
+## переносим только недостающие. Переносим у ВСЕХ игроков.
 static func move_game(old_path: String, new_path: String) -> void:
-	var old_dir := ProjectSettings.globalize_path(_dir({"path": old_path}))
-	var new_dir := ProjectSettings.globalize_path(_dir({"path": new_path}))
+	for id: String in Profiles.ids():
+		_move_game_in(Profiles.states_dir(id), old_path, new_path)
+
+
+static func _move_game_in(root: String, old_path: String, new_path: String) -> void:
+	var old_dir := ProjectSettings.globalize_path(_dir({"path": old_path}, root))
+	var new_dir := ProjectSettings.globalize_path(_dir({"path": new_path}, root))
 	if not DirAccess.dir_exists_absolute(old_dir):
 		return  # сохранений не было
 	DirAccess.make_dir_recursive_absolute(new_dir)
@@ -45,7 +55,7 @@ static func move_game(old_path: String, new_path: String) -> void:
 	# В discs.json записаны полные пути дисков — они тоже переехали
 	# (диски набора лежат в одной папке с игрой).
 	var game := {"path": new_path}
-	var all := _read_discs(game)
+	var all := _read_discs(game, root)
 	var old_folder := old_path.get_base_dir()
 	var new_folder := new_path.get_base_dir()
 	for slot: String in all:
@@ -53,7 +63,7 @@ static func move_game(old_path: String, new_path: String) -> void:
 		if disc is Dictionary and String(disc.get("path", "")).get_base_dir() == old_folder:
 			disc["path"] = new_folder.path_join(String(disc["path"]).get_file())
 	if not all.is_empty():
-		var out := FileAccess.open(_discs_path(game), FileAccess.WRITE)
+		var out := FileAccess.open(_discs_path(game, root), FileAccess.WRITE)
 		if out != null:
 			out.store_string(JSON.stringify(all, "\t"))
 
@@ -67,7 +77,13 @@ static func move_core_saves(old_path: String, new_path: String) -> void:
 	var new_name := new_path.get_file().get_basename()
 	if old_name == new_name:
 		return
-	var saves := ProjectSettings.globalize_path(CoreManager.SAVES_DIR)
+	for id: String in Profiles.ids():  # у каждого игрока своя папка saves
+		_rename_core_saves(ProjectSettings.globalize_path(Profiles.saves_dir(id)), old_name, new_name)
+
+
+## Переименовать в папке saves файлы «old_name.*» в «new_name.*».
+## Если такой новый файл уже есть — старый не трогаем (не затираем).
+static func _rename_core_saves(saves: String, old_name: String, new_name: String) -> void:
 	for file in DirAccess.get_files_at(saves):
 		if file.begins_with(old_name + "."):
 			var target := saves.path_join(new_name + file.substr(old_name.length()))
@@ -126,14 +142,14 @@ static func load_slot(core: Node, game: Dictionary, slot: String) -> bool:
 # Рядом со слотами лежит discs.json: какой диск был в приставке
 # при каждом сохранении. {"auto": {"index": 1, "path": "…(Disc 2).cue"}}
 
-static func _discs_path(game: Dictionary) -> String:
-	return _dir(game).path_join("discs.json")
+static func _discs_path(game: Dictionary, root := "") -> String:
+	return _dir(game, root).path_join("discs.json")
 
 
-static func _read_discs(game: Dictionary) -> Dictionary:
-	if not FileAccess.file_exists(_discs_path(game)):
+static func _read_discs(game: Dictionary, root := "") -> Dictionary:
+	if not FileAccess.file_exists(_discs_path(game, root)):
 		return {}
-	var all: Variant = JSON.parse_string(FileAccess.get_file_as_string(_discs_path(game)))
+	var all: Variant = JSON.parse_string(FileAccess.get_file_as_string(_discs_path(game, root)))
 	return all if all is Dictionary else {}
 
 

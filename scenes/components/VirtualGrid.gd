@@ -29,10 +29,15 @@ signal card_focused(group: Dictionary)
 const GameCardScene := preload("res://scenes/components/GameCard.tscn")
 const CARD_SIZE := Vector2(168, 224)  # размер вертикальной карточки (GameCard.Style.COVER)
 const GAP := 18                       # расстояние между карточками
-const COLUMNS := 4
+const MIN_COLUMNS := 2
+const MAX_COLUMNS := 4
 const SPARE_ROWS := 1                 # рядов про запас сверху и снизу
 
 var items: Array = []        # игры (группы), которые показываем, по порядку
+## Сколько карточек в ряду. Не постоянное число: сетка считает, сколько
+## помещается по ширине (_fit_columns). При крупном интерфейсе для
+## телевизора места меньше — и колонок меньше.
+var columns := MAX_COLUMNS
 var selected := -1           # номер выделенной игры в items (-1 — нет)
 
 var _scroll: ScrollContainer  # окно, через которое видно сетку
@@ -48,15 +53,33 @@ func _ready() -> void:
 	_scroll = parent
 	# Прокрутили (колесом, полосой или из кода) — переставить карточки.
 	_scroll.get_v_scroll_bar().value_changed.connect(func(_value: float) -> void: _layout())
-	_scroll.resized.connect(_layout)
-	custom_minimum_size.x = COLUMNS * (CARD_SIZE.x + GAP) - GAP
+	_scroll.resized.connect(_fit_columns)
+	_fit_columns()
+
+
+# Сколько колонок помещается в ширину окошка прокрутки. Поменялось —
+# расставляем карточки заново (выделенная игра остаётся выделенной).
+func _fit_columns() -> void:
+	var pad: Control = _scroll.get_child(0)  # Pad (MarginContainer) — отступы по краям
+	var room := _scroll.size.x - pad.get_theme_constant("margin_left") - pad.get_theme_constant("margin_right")
+	var fit := floori((room + GAP) / (CARD_SIZE.x + GAP))
+	var new_columns := clampi(fit, MIN_COLUMNS, MAX_COLUMNS)
+	custom_minimum_size.x = new_columns * (CARD_SIZE.x + GAP) - GAP
+	if new_columns == columns:
+		_layout()
+		return
+	columns = new_columns
+	var keep := selected
+	set_items(items)
+	if keep >= 0:
+		select(keep)
 
 
 ## Показать игры. Выделение сбрасывается.
 func set_items(new_items: Array) -> void:
 	items = new_items
 	selected = -1
-	var rows := ceili(items.size() / float(COLUMNS))
+	var rows := ceili(items.size() / float(columns))
 	custom_minimum_size.y = maxf(0.0, rows * (CARD_SIZE.y + GAP) - GAP)
 	_first_shown = -1  # всё перерисовать
 	# Список игр новый: карточка №0 теперь должна показать ДРУГУЮ игру №0.
@@ -83,7 +106,7 @@ func select(index: int, center := false) -> void:
 	if index < 0 or index >= items.size():
 		return
 	selected = index
-	var top := _row_top(index / COLUMNS) + _offset_in_scroll()
+	var top := _row_top(index / columns) + _offset_in_scroll()
 	var bottom := top + CARD_SIZE.y
 	var view_top := _scroll.scroll_vertical
 	var view_height := _scroll.size.y
@@ -123,15 +146,15 @@ func _layout() -> void:
 		return
 	var row_height := CARD_SIZE.y + GAP
 	var visible_rows := ceili(_scroll.size.y / row_height) + 1 + SPARE_ROWS * 2
-	if _cards.size() < visible_rows * COLUMNS:
+	if _cards.size() < visible_rows * columns:
 		# Окно стало выше (или это первый раз) — нужны ещё карточки.
-		_ensure_cards(visible_rows * COLUMNS)
+		_ensure_cards(visible_rows * columns)
 		_first_shown = -1  # и всё расставить заново
 
 	# Первый видимый ряд: сколько рядов «уехало» вверх за край окна.
 	var scrolled := _scroll.scroll_vertical - _offset_in_scroll()
 	var first_row := maxi(0, floori(scrolled / row_height) - SPARE_ROWS)
-	var first := first_row * COLUMNS
+	var first := first_row * columns
 	if first == _first_shown:
 		return  # видны те же ряды — ничего не меняем
 	_first_shown = first
@@ -144,7 +167,7 @@ func _layout() -> void:
 			card.set_meta("index", -1)
 			continue
 		card.visible = true
-		card.position = Vector2((index % COLUMNS) * (CARD_SIZE.x + GAP), _row_top(index / COLUMNS))
+		card.position = Vector2((index % columns) * (CARD_SIZE.x + GAP), _row_top(index / columns))
 		if card.get_meta("index", -1) != index:
 			card.set_meta("index", index)
 			card.setup(items[index], GameCard.Style.COVER)
@@ -256,18 +279,18 @@ func _step(direction: String, card: GameCard) -> void:
 	var target := -1
 	match direction:
 		"ui_right":
-			if index % COLUMNS < COLUMNS - 1:
+			if index % columns < columns - 1:
 				target = index + 1
 		"ui_left":
-			if index % COLUMNS > 0:
+			if index % columns > 0:
 				target = index - 1
 		"ui_down":
 			# Из предпоследнего ряда — в последний, даже если он неполный.
-			if index / COLUMNS < (items.size() - 1) / COLUMNS:
-				target = mini(index + COLUMNS, items.size() - 1)
+			if index / columns < (items.size() - 1) / columns:
+				target = mini(index + columns, items.size() - 1)
 		"ui_up":
-			if index >= COLUMNS:
-				target = index - COLUMNS
+			if index >= columns:
+				target = index - columns
 			else:
 				# Из первого ряда — наверх, к поиску и сортировке. Кто там
 				# сосед, Godot знает: find_valid_focus_neighbor ищет ближайший

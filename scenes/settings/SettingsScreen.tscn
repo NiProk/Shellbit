@@ -60,11 +60,17 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 16
 
-[node name="CategoriesPad" type="MarginContainer" parent="Margin/VBox/Body"]
+[node name="CategoriesScroll" type="ScrollContainer" parent="Margin/VBox/Body"]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="CategoriesPad" type="MarginContainer" parent="Margin/VBox/Body/CategoriesScroll"]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
-[node name="Categories" type="VBoxContainer" parent="Margin/VBox/Body/CategoriesPad"]
+[node name="Categories" type="VBoxContainer" parent="Margin/VBox/Body/CategoriesScroll/CategoriesPad"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2

@@ -49,6 +49,7 @@ func _ready() -> void:
 		%Strip.color = Color(system.get("color", "#888888"))
 		%SystemName.text = tr(system.get("name", "Неизвестная приставка"))
 	_groups = groups
+	_fit_to_screen()
 
 	# Сетка «виртуальная»: карточек в ней ровно столько, сколько видно
 	# на экране (см. scenes/components/VirtualGrid.gd). Так экран
@@ -71,7 +72,10 @@ func _ready() -> void:
 		["accept", "Открыть"],
 		["details", "Версия"],
 		["favorite", "Избранное"],
-		["menu", "Обложка"],
+	])
+	if not Family.is_on():
+		hints.append(["menu", "Обложка"])  # в детском режиме обложки не меняем
+	hints.append_array([
 		["search", "Поиск"],
 		["cancel", "Назад"],
 	])
@@ -407,7 +411,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_next_version(focused.game)
 	elif event.is_action_pressed("genre") and %GenreButton.visible and not _genre_list.visible:
 		_open_genres()
-	elif event.is_action_pressed("menu") and focused is GameCard:
+	elif event.is_action_pressed("menu") and focused is GameCard and not Family.is_on():
 		_cover_picker.open(focused.game, focused)
 	elif event.is_action_pressed("page_left"):
 		_switch_system(-1)
@@ -467,3 +471,13 @@ func _on_game_pressed(group: Dictionary) -> void:
 	SceneRouter.params["search"] = %Search.text
 	SceneRouter.params["genre"] = _genre
 	SceneRouter.go_to("details", {"key": group["key"]})
+
+
+# Крупный интерфейс («Для телевизора» в настройках): экран в пересчёте
+# на «виртуальные» пиксели становится уже. Тогда панель справа с данными
+# игры прячем (то же самое есть на странице игры), а поиск делаем короче —
+# так сетке остаётся место хотя бы на 3 колонки.
+func _fit_to_screen() -> void:
+	if UiTheme.is_compact(self):
+		$Margin/VBox/Body/Info.visible = false
+		%Search.custom_minimum_size.x = 200

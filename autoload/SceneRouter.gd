@@ -15,6 +15,7 @@ const SCENES := {
 	"player": "res://scenes/player/Player.tscn",
 	"settings": "res://scenes/settings/SettingsScreen.tscn",
 	"pad_map": "res://scenes/settings/PadMapScreen.tscn",
+	"who": "res://scenes/profiles/WhoScreen.tscn",
 }
 
 ## Параметры текущего экрана. Экран читает их в своём _ready():
@@ -56,12 +57,59 @@ func _ready() -> void:
 	_layer.add_child(_fade)
 
 
+## Экраны, закрытые в детском режиме (см. autoload/Family.gd):
+## чтобы их открыть, нужен PIN-код взрослого.
+const LOCKED_SCREENS := ["settings", "pad_map"]
+
+var _pin_dialog: PinDialog       # окно PIN-кода (создаётся при первом запросе)
+var _focus_before_pin: Control   # куда вернуть фокус, если PIN не ввели
+
+
 ## Открыть экран и запомнить текущий в истории.
 func go_to(screen: String, new_params: Dictionary = {}) -> void:
 	if _busy:
 		return
+	if screen in LOCKED_SCREENS and Family.is_on():
+		_ask_pin(screen, new_params)  # детский режим — сначала PIN взрослого
+		return
 	_history.append({"screen": _current, "params": params})
 	_open(screen, new_params)
+
+
+## Открыть экран «с чистого листа»: история забывается, «Назад» некуда.
+## Так открываем главный экран, когда включили детский режим, — иначе
+## «Назад» вернул бы ребёнка в настройки.
+func reset_to(screen: String, new_params: Dictionary = {}) -> void:
+	if _busy:
+		return
+	_history.clear()
+	_open(screen, new_params)
+
+
+# Детский режим: спросить PIN. Верный — режим выключается и экран открывается.
+func _ask_pin(screen: String, new_params: Dictionary) -> void:
+	if _pin_dialog == null:
+		_pin_dialog = PinDialog.new()
+		_layer.add_child(_pin_dialog)
+		_layer.move_child(_pin_dialog, _fade.get_index())  # под шторкой перехода
+	# Старые подключения убираем: экран, который открыть, каждый раз свой.
+	for connection in _pin_dialog.entered.get_connections():
+		_pin_dialog.entered.disconnect(connection["callable"])
+	for connection in _pin_dialog.cancelled.get_connections():
+		_pin_dialog.cancelled.disconnect(connection["callable"])
+	_pin_dialog.entered.connect(func(pin: String) -> void:
+		if not Family.check_pin(pin):
+			_pin_dialog.show_error("Неверный PIN-код")
+			return
+		_pin_dialog.close()
+		Family.disable()
+		toast(tr("Детский режим выключен"))
+		go_to(screen, new_params))
+	_pin_dialog.cancelled.connect(func() -> void:
+		if is_instance_valid(_focus_before_pin):
+			_focus_before_pin.grab_focus())
+	_focus_before_pin = get_viewport().gui_get_focus_owner()
+	_pin_dialog.open("Детский режим", "Чтобы выйти из детского режима, введите PIN-код взрослого.")
 
 
 ## Заменить текущий экран, не добавляя его в историю

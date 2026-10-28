@@ -9,8 +9,8 @@ README.md::TextFile::-1::1793124655::0::1::::<><><>0<>0<><>::
 ::res://addons/::1792112514
 ::res://addons/shellbit_core/::1792139930
 shellbit_core.gdextension::GDExtension::348900452575680587::1792112514::0::1::::<><><>0<>0<><>::
-::res://addons/shellbit_core/bin/::1793138047
-::res://autoload/::1793134851
+::res://addons/shellbit_core/bin/::1793181967
+::res://autoload/::1793138848
 Archives.gd::GDScript::6185293928791721078::1792774372::0::1::::<>Node<><>0<>0<><>::
 CoreDownloader.gd::GDScript::3840579977087554393::1792770944::0::1::::<>Node<><>0<>0<><>::
 CoreManager.gd::GDScript::8531947650408633834::1792784247::0::1::::<>Node<><>0<>0<><>::
@@ -19,8 +19,8 @@ InputMapper.gd::GDScript::55137186329625875::1793124653::0::1::::<>Node<><>0<>0<
 Lang.gd::GDScript::2694440131260186068::1792527981::0::1::::<>Node<><>0<>0<><>::
 Library.gd::GDScript::1874571017332703945::1793124259::0::1::::<>Node<><>0<>0<><>::
 PadNotifier.gd::GDScript::4163437920952838810::1792365002::0::1::::<>CanvasLayer<><>0<>0<><>::
-SceneRouter.gd::GDScript::7067618504705765785::1792505940::0::1::::<>Node<><>0<>0<><>::
-Settings.gd::GDScript::4611220658134037817::1793134851::0::1::::<>Node<><>0<>0<><>::
+SceneRouter.gd::GDScript::7067618504705765785::1793138848::0::1::::<>Node<><>0<>0<><>::
+Settings.gd::GDScript::4611220658134037817::1793138848::0::1::::<>Node<><>0<>0<><>::
 UiSounds.gd::GDScript::7033343419481799515::1792502819::0::1::::<>Node<><>0<>0<><>::
 UiTheme.gd::GDScript::2372853890926243645::1793130573::0::1::::<>Node<><>0<>0<><>::
 Watchdog.gd::GDScript::7183046938436563003::1793132634::0::1::::<>Node<><>0<>0<><>::
@@ -54,7 +54,7 @@ pce.txt::TextFile::-1::1792158554::0::1::::<><><>0<>0<><>::
 psx.txt::TextFile::-1::1792162168::0::1::::<><><>0<>0<><>::
 sms.txt::TextFile::-1::1792158553::0::1::::<><><>0<>0<><>::
 snes.txt::TextFile::-1::1792162168::0::1::::<><><>0<>0<><>::
-::res://data/i18n/::1793134854
+::res://data/i18n/::1793138849
 ::res://data/meta/::1792169045
 gb.txt::TextFile::-1::1792169041::0::1::::<><><>0<>0<><>::
 gba.txt::TextFile::-1::1792169042::0::1::::<><><>0<>0<><>::
@@ -70,7 +70,7 @@ snes.txt::TextFile::-1::1792169040::0::1::::<><><>0<>0<><>::
 ::res://data/sounds/::1792502902
 click.wav::AudioStreamWAV::310914012211551539::1792502818::1792502902::1::::<><><>0<>0<>ddaeb89e438d67b8b39582fcb3513450<>res://.godot/imported/click.wav-5f3708df2318f2ba3ba3674e1722c6ea.sample::
 launch.wav::AudioStreamWAV::5670931593908026572::1792502818::1792502902::1::::<><><>0<>0<>1d4e1adb1c6aa392108af79d32732b88<>res://.godot/imported/launch.wav-f5dba4acebb8988522ea5d213534aeac.sample::
-::res://data/ui/::1793137937
+::res://data/ui/::1793138050
 pip_add.png::CompressedTexture2D::1535813812120763305::1792503455::1792504387::1::::<><><>0<>0<>56336ae152da3cc70c8f45a018b45add<>res://.godot/imported/pip_add.png-9291d2b6e7cc1ff815b6e0250a7fed46.ctex::
 pip_body.png::CompressedTexture2D::6003701622563660918::1793137936::1793138050::1::::<><><>0<>0<>a73078a42b9856dc424bcbd321783095<>res://.godot/imported/pip_body.png-a34aee66a69ce63ad6b05a0747353efc.ctex::
 pip_claw.png::CompressedTexture2D::1158617272295572742::1793137937::1793138050::1::::<><><>0<>0<>8dbb30fe01b1f4d77ccdac7b8dbf1a01<>res://.godot/imported/pip_claw.png-cd4dddee1259663ee65d91ce4a25a0c5.ctex::
@@ -79,7 +79,7 @@ pip_happy.png::CompressedTexture2D::5556682828706316774::1792503455::1792504387:
 pip_sleepy.png::CompressedTexture2D::461012252692012551::1792503457::1792504387::1::::<><><>0<>0<>6716524c3f24907ba811db44b33d5824<>res://.godot/imported/pip_sleepy.png-2be66b85f6b6369358d84b17646eb783.ctex::
 pip_surprised.png::CompressedTexture2D::2191828067788878176::1792503456::1792504387::1::::<><><>0<>0<>f806af01a3ece4ece4e4b238e7ec87cc<>res://.godot/imported/pip_surprised.png-b1f3e3e82ea5b7b611fc9ac28a774ec6.ctex::
 ::res://scenes/::1792363676
-::res://scenes/components/::1793137935
+::res://scenes/components/::1793138849
 Backdrop.gd::GDScript::5813770010649431823::1793134853::0::1::::Backdrop<>Control<><>0<>0<><>::
 backdrop.gdshader::Shader::2379156658730992792::1793127190::0::1::::<><><>0<>0<><>::
 ButtonHints.gd::GDScript::1643795851335535276::1793124653::0::1::::<>PanelContainer<><>0<>0<><>::
@@ -109,6 +109,9 @@ dither.gdshader::Shader::2939979136612795432::1793134855::0::1::::<><><>0<>0<><>
 grid.gdshader::Shader::2626508561145829106::1793134854::0::1::::<><><>0<>0<><>::
 scanlines.gdshader::Shader::8924924162056887071::1793134855::0::1::::<><><>0<>0<><>::
 stars.gdshader::Shader::8655371287535580527::1793134855::0::1::::<><><>0<>0<><>::
+::res://scenes/components/transitions/::1793138850
+dissolve.gdshader::Shader::5427871530215141363::1793138850::0::1::::<><><>0<>0<><>::
+mosaic.gdshader::Shader::7192540073361645423::1793138849::0::1::::<><><>0<>0<><>::
 ::res://scenes/details/::1793127758
 GameDetails.gd::GDScript::2953969303219561899::1793127758::0::1::::<>Control<><>0<>0<><>::
 GameDetails.tscn::PackedScene::-1::1792777811::0::1::::<><><>0<>0<><>::res://scenes/details/GameDetails.gd<>res://scenes/components/ButtonHints.tscn
@@ -128,11 +131,11 @@ crt.gdshader::Shader::8775855794759372730::1792363675::0::1::::<><><>0<>0<><>::
 lcd.gdshader::Shader::5607470998139443547::1792363675::0::1::::<><><>0<>0<><>::
 Player.gd::GDScript::2361613125418856912::1793036798::0::1::::<>Control<><>0<>0<><>::
 Player.tscn::PackedScene::-1::1792918395::0::1::::<><><>0<>0<><>::res://scenes/player/Player.gd<>res://scenes/components/ButtonHints.tscn<>res://scenes/pause/PauseMenu.tscn<>res://scenes/player/blur.gdshader
-::res://scenes/settings/::1793134852
+::res://scenes/settings/::1793138848
 PadMapScreen.gd::GDScript::4611667512043844034::1792779632::0::1::::<>Control<><>0<>0<><>::
 PadMapScreen.tscn::PackedScene::-1::1792505943::0::1::::<><><>0<>0<><>::res://scenes/settings/PadMapScreen.gd<>res://scenes/components/PadView.gd<>res://scenes/components/ButtonHints.tscn
 SettingRow.gd::GDScript::8082904809288780799::1793032069::0::1::::SettingRow<>Button<><>0<>0<><>::
-SettingsScreen.gd::GDScript::5987029758752805101::1793134852::0::1::::<>Control<><>0<>0<><>::
+SettingsScreen.gd::GDScript::5987029758752805101::1793138848::0::1::::<>Control<><>0<>0<><>::
 SettingsScreen.tscn::PackedScene::-1::1792503452::0::1::::<><><>0<>0<><>::res://scenes/settings/SettingsScreen.gd<>res://scenes/components/ButtonHints.tscn<>res://data/ui/pip_happy.png
 ::res://scripts/::1793124261
 AudioSync.gd::GDScript::3556634323600394846::1792918394::0::1::::AudioSync<>RefCounted<><>0<>0<><>::
@@ -141,7 +144,7 @@ GameInfo.gd::GDScript::5581722037469496077::1792527984::0::1::::GameInfo<>RefCou
 Genres.gd::GDScript::8385536034695864573::1793124260::0::1::::Genres<>RefCounted<><>0<>0<><>::
 RomInfo.gd::GDScript::313297776079179520::1792365011::0::1::::RomInfo<>RefCounted<><>0<>0<><>::
 SaveStates.gd::GDScript::4790555304925425334::1793124260::0::1::::SaveStates<>RefCounted<><>0<>0<><>::
-::res://test/::1793134852
+::res://test/::1793138850
 MockCore.gd::GDScript::977174988223902941::1792778997::0::1::::<>Node<><>0<>0<><>::
 run_tests.tscn::PackedScene::-1::1792610079::0::1::::<><><>0<>0<><>::res://test/TestRunner.gd
 TestCase.gd::GDScript::6055765573450336026::1792610078::0::1::::TestCase<>Node<><>0<>0<><>::
@@ -158,6 +161,7 @@ test_player.gd::GDScript::4606548811552415033::1793029382::0::1::::<>TestCase<><
 test_rom_info.gd::GDScript::9148791399709008612::1792610080::0::1::::<>TestCase<><>0<>0<><>::
 test_screens.gd::GDScript::8185547918658575381::1793134852::0::1::::<>TestCase<><>0<>0<><>::
 test_settings_library.gd::GDScript::6887604152553345839::1792777444::0::1::::<>TestCase<><>0<>0<><>::
+test_transitions.gd::GDScript::2019685732390689160::1793138850::0::1::::<>TestCase<><>0<>0<><>::
 test_translations.gd::GDScript::3244720461181458751::1792610082::0::1::::<>TestCase<><>0<>0<><>::
 test_watchdog.gd::GDScript::2043983334921191651::1793132636::0::1::::<>TestCase<><>0<>0<><>::
 ::res://tools/::1792784242

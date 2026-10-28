@@ -165,3 +165,11 @@ func draw_focus_lift(item: CanvasItem, rect: Rect2, color: Color, amount: float)
 	_lift_frame.border_color = Color(frame_color, amount)
 	_lift_frame.shadow_color = Color(frame_color, 0.35 * amount)
 	item.draw_style_box(_lift_frame, rect)
+
+
+## «Тесно»: интерфейс крупный (для телевизора), и места на экране мало.
+## Экраны тогда перестраиваются: меньше колонок, уже панели и т.д.
+## Ширина — в «точках интерфейса»: экран 1280 точек при масштабе 115%
+## превращается в 1113, при 130% — в 985. Оба случая — «тесно».
+func is_compact(node: CanvasItem) -> bool:
+	return node.get_viewport_rect().size.x < 1200.0

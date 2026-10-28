@@ -53,6 +53,10 @@ const DEFAULTS := {
 	"look": {
 		"pattern": "none",  # узор фона меню: none / grid / stars / dither / scanlines
 		"transition": "fade",  # переход между экранами: fade / mosaic / dissolve
+		"ui_scale": 100,       # размер интерфейса, %: 100 / 115 / 130 (для телевизора)
+	},
+	"profiles": {
+		"ask_on_start": true,  # спрашивать «Кто играет?» при запуске (если игроков больше одного)
 	},
 	"audio": {
 		"volume": 100,      # громкость в процентах: 0..100
@@ -77,6 +81,7 @@ func _ready() -> void:
 	apply_vsync()
 	apply_window_mode()
 	apply_volume()
+	apply_ui_scale()
 
 
 ## Прочитать значение. Если его нет — вернуть default,
@@ -186,6 +191,18 @@ func _copy_dir(from: String, to: String) -> int:
 ## Полный экран или окно. Shellbit и так стартует во весь экран
 ## (window/size/mode = 3 в project.godot — без «мигания» окна при запуске),
 ## а здесь применяем выбор человека из Настроек → Видео.
+## Размер интерфейса (раздел «Оформление»): для телевизора, на который
+## смотрят с дивана, всё крупнее.
+##
+## content_scale_factor — встроенный «множитель» Godot для всего окна:
+## 1,3 — всё на 30% крупнее. Экран при этом остаётся того же размера,
+## поэтому места для кнопок и карточек становится меньше (как будто
+## экран не 1280×720, а 985×554), и экраны под это подстраиваются —
+## см. UiTheme.is_compact().
+func apply_ui_scale() -> void:
+	get_tree().root.content_scale_factor = int(get_value("look", "ui_scale")) / 100.0
+
+
 func apply_window_mode() -> void:
 	if DisplayServer.get_name() == "headless":
 		return  # без окна (автотесты) переключать нечего

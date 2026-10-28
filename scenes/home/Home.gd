@@ -6,6 +6,10 @@ extends Control
 const GameCardScene := preload("res://scenes/components/GameCard.tscn")
 const ConsoleTileScene := preload("res://scenes/components/ConsoleTile.tscn")
 
+var _settings_button: Button
+var _quit_button: Button
+var _profile_button: Button
+
 
 func _ready() -> void:
 	# Фон по выбранной игре (scenes/components/Backdrop.gd) — сразу поверх
@@ -21,6 +25,7 @@ func _ready() -> void:
 	$Margin/VBox/Header/Pip.add_child(PipWave.new())
 
 	%AddFolderButton.pressed.connect(_on_add_folder_pressed)
+	_add_profile_button()
 	_add_settings_button()
 	_add_quit_button()
 	%FolderDialog.dir_selected.connect(_on_folder_selected)
@@ -34,8 +39,14 @@ func _ready() -> void:
 	timer.start()
 	_update_clock()
 
-	%Hints.set_hints([["accept", "Открыть"], ["details", "Обновить список"], ["menu", "Настройки"]])
+	_apply_family()
 	_refresh()
+	# Сменили игрока — у него другое избранное и «Продолжить играть».
+	Profiles.changed.connect(_refresh)
+
+	# Только что запустили программу, а игроков несколько — спросить, кто играет.
+	if Profiles.should_ask():
+		SceneRouter.reset_to.call_deferred("who")
 
 	# Данные только что переехали в свою папку — скажем об этом один раз.
 	if Settings.moved_from != "":
@@ -147,10 +158,41 @@ func _is_direction(event: InputEvent) -> bool:
 	return false
 
 
+# Кнопка игрока в шапке: аватар и имя («Н Никита»). Нажал — экран
+# «Кто играет?». Видна, только когда игроков больше одного: одному
+# выбирать не из кого.
+func _add_profile_button() -> void:
+	var button := Button.new()
+	_profile_button = button
+	button.text = Profiles.name_of(Profiles.current())
+	button.visible = Profiles.count() > 1
+	var avatar := ProfileAvatar.new()
+	avatar.profile_id = Profiles.current()
+	avatar.custom_minimum_size = Vector2(28, 28)
+	avatar.size = avatar.custom_minimum_size
+	button.add_child(avatar)
+	# Кружок — у левого края, по центру по высоте (высоту кнопка узнает
+	# только после расстановки — поэтому пересчитываем при каждом resized).
+	button.resized.connect(func() -> void:
+		avatar.position = Vector2(14, (button.size.y - avatar.size.y) / 2.0))
+	%AddFolderButton.add_sibling(button)
+	# Слева в кнопке — аватар. Он не часть текста, а отдельный узел поверх
+	# кнопки, поэтому у фона кнопки делаем отступ слева пошире: текст
+	# сдвинется вправо и не наедет на кружок. Стиль берём ПОСЛЕ add_sibling:
+	# тема Shellbit достаётся кнопке от родителей, только когда она в дереве.
+	for state in ["normal", "hover", "pressed"]:
+		var box: StyleBox = button.get_theme_stylebox(state).duplicate()
+		box.content_margin_left += 34
+		button.add_theme_stylebox_override(state, box)
+	button.pressed.connect(SceneRouter.go_to.bind("who", {"from_home": true}))
+	button.mouse_entered.connect(button.grab_focus)
+
+
 # Кнопка «Настройки» в шапке, рядом с «+ Папка с играми».
 # Создаём её из кода: так не нужно менять сцену Home.tscn.
 func _add_settings_button() -> void:
 	var button := Button.new()
+	_settings_button = button
 	button.text = tr("Настройки")
 	# add_sibling — поставить новую кнопку сразу после «+ Папка с играми»,
 	# в тот же ряд. Внешний вид она возьмёт из общей темы UiTheme.
@@ -163,6 +205,7 @@ func _add_settings_button() -> void:
 # с геймпада легко нажать A лишний раз, а закрытая программа — это обидно.
 func _add_quit_button() -> void:
 	var button := Button.new()
+	_quit_button = button
 	button.name = "QuitButton"
 	button.text = tr("Выход")
 	# В шапку, сразу перед часами: «+ Папка с играми», «Настройки», «Выход», 12:34.
@@ -180,6 +223,18 @@ func _add_quit_button() -> void:
 	button.focus_exited.connect(func() -> void:
 		button.set_meta("armed", false)
 		button.text = tr("Выход"))
+
+
+# Детский режим (autoload/Family.gd): прячем всё, что ребёнку не нужно.
+# «Настройки» превращаются в «Родителям» — она спросит PIN-код
+# (это делает SceneRouter: в детском режиме настройки открываются только по PIN).
+func _apply_family() -> void:
+	var kids := Family.is_on()
+	%AddFolderButton.visible = not kids
+	_quit_button.visible = not kids
+	_settings_button.text = tr("Родителям") if kids else tr("Настройки")
+	%Hints.set_hints([["accept", "Открыть"], ["details", "Обновить список"],
+			["menu", "Родителям" if kids else "Настройки"]])
 
 
 # --- Обработчики нажатий -------------------------------------------------

@@ -26,6 +26,10 @@ const PAGES := [
 		"about": "Как выглядит картинка во время игры."},
 	{"id": "look", "title": "Оформление",
 		"about": "Как выглядят меню Shellbit."},
+	{"id": "players", "title": "Игроки",
+		"about": "У каждого игрока своё избранное, время в игре и сохранения."},
+	{"id": "family", "title": "Семья",
+		"about": "Детский режим: ребёнок может только играть."},
 	{"id": "audio", "title": "Звук",
 		"about": "Громкость приложения и игр."},
 	{"id": "language", "title": "Язык",
@@ -42,6 +46,7 @@ var _core_rows := {}  # файл ядра → строки, где показы�
 
 
 func _ready() -> void:
+	_fit_to_screen()
 	_build_categories()
 	%FolderDialog.dir_selected.connect(_on_folder_selected)
 	# Если геймпад подключили, пока открыт раздел «Управление», — обновим список.
@@ -152,6 +157,8 @@ func _style_categories() -> void:
 func _show_page(id: String) -> void:
 	if id == _page:
 		return
+	if id != "players":
+		_editing_player = ""  # ушли из раздела «Игроки» — потом снова откроется список
 	_page = id
 	_style_categories()
 
@@ -166,6 +173,8 @@ func _show_page(id: String) -> void:
 		"play": _build_play()
 		"video": _build_video()
 		"look": _build_look()
+		"players": _build_players()
+		"family": _build_family()
 		"audio": _build_audio()
 		"language": _build_language()
 		"cores": _build_cores()
@@ -176,6 +185,7 @@ func _show_page(id: String) -> void:
 	%PreviewBox.visible = id == "video"
 	# В «О программе» вместо предпросмотра — радостный Пип.
 	%AboutPip.visible = id == "about"
+	_show_player_preview()
 	_update_preview()
 
 
@@ -453,6 +463,17 @@ func _build_video() -> void:
 
 
 func _build_look() -> void:
+	var scale := _choice("Размер интерфейса", "look", "ui_scale", [
+		[100, tr("Обычный"), tr("Для монитора, перед которым сидишь близко.")],
+		[115, tr("Крупнее"), tr("Всё немного крупнее: удобно на ноутбуке или небольшом телевизоре.")],
+		[130, tr("Для телевизора"),
+			tr("Всё крупно, чтобы читалось с дивана. На экране помещается меньше: в библиотеке меньше колонок, а панель сведений об игре прячется.")],
+	])
+	scale.value_changed.connect(func(_value: Variant) -> void:
+		Settings.apply_ui_scale()
+		# Экран настроек уже собран под старый размер — открываем его заново,
+		# на той же строке (row 0 — «Размер интерфейса»).
+		SceneRouter.replace("settings", {"page": "look", "rows": true, "row": 0}))
 	_choice("Узор фона", "look", "pattern", [
 		["none", tr("Без узора"), tr("Чистый тёмный фон.")],
 		["grid", tr("Пиксельная сетка"),
@@ -471,6 +492,246 @@ func _build_look() -> void:
 		["dissolve", tr("Рассыпание"),
 			tr("Экран распадается на квадраты, которые гаснут в случайном порядке.")],
 	])
+
+
+# --- Игроки (autoload/Profiles.gd) -------------------------------------------
+# Раздел в два уровня: сначала список игроков, а A на игроке открывает
+# его настройки (имя, цвет, удалить). Какой игрок открыт — _editing_player
+# ("" — показываем список).
+
+var _editing_player := ""
+var _player_preview: ProfileAvatar  # большой кружок игрока справа (создаётся при первом показе)
+var _name_editor: Control  # окно ввода имени (создаётся при первом открытии)
+
+
+func _build_players() -> void:
+	if _editing_player != "":
+		_build_player(_editing_player)
+		return
+	for id: String in Profiles.ids():
+		var playing := id == Profiles.current()
+		_action(Profiles.name_of(id), tr("Сейчас играет") if playing else "",
+				tr("Имя и цвет игрока. Здесь же игрока можно удалить."),
+				_open_player.bind(id))
+	if Profiles.count() < Profiles.MAX_PROFILES:
+		_action("+ Добавить игрока", "",
+				tr("Новый игрок начинает с чистого листа: своё избранное, своё «Продолжить играть» и свои сохранения. Игры и настройки — общие."),
+				_add_player)
+	_toggle("Спрашивать «Кто играет?»", "profiles", "ask_on_start",
+			tr("При запуске Shellbit показать экран выбора игрока. Работает, если игроков больше одного. Сменить игрока можно и кнопкой с именем на главном экране."))
+
+
+func _build_player(id: String) -> void:
+	_action("Имя", Profiles.name_of(id), tr("Как зовут игрока. Первая буква имени будет на его кружке."),
+			_ask_player_name.bind(id))
+	var colors := Profiles.COLORS.map(func(option: Array) -> Array:
+		return [option[0], tr(option[1]), tr("Цвет кружка игрока и рамки на экране «Кто играет?».")])
+	var color := _choice("Цвет", Profiles.section_of(id), "color", colors)
+	# Цвет поменялся — кружки игрока на всех экранах перерисуются.
+	color.value_changed.connect(func(_value: Variant) -> void: Profiles.changed.emit())
+
+	# Картинка: ◀ ▶ листают встроенные (data/avatars), первая — «Буква имени».
+	var about_avatar := tr("Картинка в кружке игрока. Листайте ◀ ▶ — справа сразу видно, как получится.")
+	var avatars: Array = [["", tr("Буква имени"), about_avatar]]
+	for avatar: Array in Profiles.AVATARS:
+		avatars.append([Profiles.AVATAR_DIR.path_join(avatar[0] + ".png"), tr(avatar[1]), about_avatar])
+	if Profiles.avatar_of(id).begins_with("user://"):
+		avatars.append([Profiles.avatar_of(id), tr("Своя картинка"), about_avatar])
+	var avatar_row := _choice("Аватар", Profiles.section_of(id), "avatar", avatars)
+	avatar_row.value_changed.connect(func(_value: Variant) -> void: Profiles.changed.emit())
+	_action("Своя картинка…", "", tr("Выбрать картинку на компьютере: фото или рисунок (PNG, JPG, WebP). Shellbit сохранит себе её копию, обрезанную до квадрата."),
+			_pick_avatar_file.bind(id))
+	if id != Profiles.MAIN:
+		var remove := _action("Удалить игрока", "",
+				tr("Удалятся избранное, время в игре и все сохранения этого игрока. Игры на диске не тронутся."),
+				Callable())
+		# Удаление — в два нажатия, как «Выход»: сохранения не вернуть.
+		remove.pressed.connect(func() -> void:
+			if remove.get_meta("armed", false):
+				var player_name := Profiles.name_of(id)
+				Profiles.remove(id)
+				_close_player()
+				SceneRouter.toast(tr("Игрок удалён: %s") % player_name)
+			else:
+				remove.set_meta("armed", true)
+				remove.info_text = tr("Точно? Нажмите ещё раз")
+				remove.refresh())
+		remove.focus_exited.connect(func() -> void:
+			remove.set_meta("armed", false)
+			remove.info_text = ""
+			remove.refresh())
+	else:
+		_info("Первый игрок", "", tr("Первого игрока нельзя удалить: у него хранятся сохранения, сделанные до появления игроков. Переименовать — можно."))
+	_action("← Все игроки", "", tr("Вернуться к списку игроков."), _close_player)
+
+
+# Своя картинка: окно выбора файла Windows (use_native_dialog — настоящее
+# окно системы, а не нарисованное Godot). Создаём его один раз.
+var _avatar_dialog: FileDialog
+
+
+func _pick_avatar_file(id: String) -> void:
+	if _avatar_dialog == null:
+		_avatar_dialog = FileDialog.new()
+		_avatar_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+		_avatar_dialog.access = FileDialog.ACCESS_FILESYSTEM
+		_avatar_dialog.use_native_dialog = true
+		_avatar_dialog.filters = PackedStringArray(["*.png, *.jpg, *.jpeg, *.webp ; " + tr("Картинки")])
+		add_child(_avatar_dialog)
+	# Подключение — на один раз: в следующий раз игрок может быть другой.
+	for connection in _avatar_dialog.file_selected.get_connections():
+		_avatar_dialog.file_selected.disconnect(connection["callable"])
+	_avatar_dialog.file_selected.connect(func(path: String) -> void:
+		if not Profiles.set_custom_avatar(id, path):
+			SceneRouter.toast(tr("Не получилось открыть картинку"))
+		_rebuild_page()  # в списке «Аватар» появится «Своя картинка»
+		_enter_rows.call_deferred(2))  # строка «Аватар»
+	_avatar_dialog.popup_centered_ratio(0.7)
+
+
+# В настройках игрока справа — его кружок крупно: листаешь цвет и картинку
+# и сразу видишь результат.
+func _show_player_preview() -> void:
+	var show := _page == "players" and _editing_player != ""
+	if _player_preview == null:
+		if not show:
+			return
+		_player_preview = ProfileAvatar.new()
+		_player_preview.custom_minimum_size = Vector2(160, 160)
+		_player_preview.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+		%PreviewBox.add_sibling(_player_preview)
+	_player_preview.visible = show
+	if show:
+		_player_preview.profile_id = _editing_player
+
+
+func _open_player(id: String) -> void:
+	_editing_player = id
+	_rebuild_page()
+	_enter_rows.call_deferred(0)
+
+
+func _close_player() -> void:
+	var id := _editing_player
+	_editing_player = ""
+	_rebuild_page()
+	# Фокус — на того игрока, из которого вышли (если он ещё есть).
+	_enter_rows.call_deferred(maxi(Profiles.ids().find(id), 0))
+
+
+func _add_player() -> void:
+	var id := Profiles.add()
+	if id == "":
+		return
+	_editing_player = id
+	_rebuild_page()
+	_ask_player_name(id)  # сразу спросить имя
+
+
+# Окно ввода имени: поле с именем и экранная клавиатура под ним
+# (scenes/components/ScreenKeyboard.gd — та же, что в поиске).
+func _ask_player_name(id: String) -> void:
+	if _name_editor == null:
+		_name_editor = _make_name_editor()
+	var field: LineEdit = _name_editor.get_meta("field")
+	var keyboard: ScreenKeyboard = _name_editor.get_meta("keyboard")
+	field.text = Profiles.name_of(id)
+	field.caret_column = field.text.length()
+	# Клавиатуру закрыли — сохраняем имя. CONNECT_ONE_SHOT — «один раз»:
+	# после срабатывания подключение само убирается (в следующий раз
+	# здесь будет другой игрок).
+	keyboard.closed.connect(func() -> void:
+		Profiles.rename(id, field.text)
+		_name_editor.visible = false
+		_rebuild_page()
+		_enter_rows.call_deferred(0), CONNECT_ONE_SHOT)
+	_name_editor.visible = true
+	keyboard.open(field)
+
+
+func _make_name_editor() -> Control:
+	var editor := Control.new()
+	editor.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	editor.mouse_filter = Control.MOUSE_FILTER_STOP
+	editor.z_index = 9  # клавиатура — на этаже 10, поверх
+	add_child(editor)
+	var dim := ColorRect.new()
+	dim.color = Color(UiTheme.BG, 0.85)
+	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	editor.add_child(dim)
+	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 14)
+	editor.add_child(column)
+	column.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	column.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	column.offset_top = 48
+	var title := Label.new()
+	title.text = tr("Имя игрока")
+	title.theme_type_variation = &"HeaderLabel"
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	column.add_child(title)
+	var field := LineEdit.new()
+	field.custom_minimum_size = Vector2(420, 52)
+	field.max_length = 20
+	field.alignment = HORIZONTAL_ALIGNMENT_CENTER
+	field.add_theme_font_size_override("font_size", 24)
+	# Печатает экранная клавиатура, а не само поле: фокус полю не нужен.
+	field.focus_mode = Control.FOCUS_NONE
+	column.add_child(field)
+
+	var keyboard := ScreenKeyboard.new()
+	keyboard.done_text = "Сохранить"
+	editor.add_child(keyboard)
+	editor.set_meta("field", field)
+	editor.set_meta("keyboard", keyboard)
+	return editor
+
+
+# --- Семья: детский режим (autoload/Family.gd) -------------------------------
+
+var _pin_dialog: PinDialog
+var _new_pin := ""  # первый ввод нового PIN — ждём повтора
+
+
+func _build_family() -> void:
+	var row := _action("Детский режим", tr("Выключен"),
+			tr("Ребёнок сможет только играть. Спрячутся настройки, «+ Папка с играми», выход из программы, смена обложек, «Начать заново», настройки ядра и перезапись сохранений, а игры жанра «Для взрослых» скроются. Выйти из режима можно только по PIN-коду."),
+			Callable())
+	row.pressed.connect(func() -> void: _ask_new_pin(row))
+
+
+# Включение: придумать PIN → повторить → совпало — режим включён.
+func _ask_new_pin(row: SettingRow) -> void:
+	if _pin_dialog == null:
+		_pin_dialog = PinDialog.new()
+		add_child(_pin_dialog)
+		_pin_dialog.entered.connect(_on_pin_entered)
+		_pin_dialog.cancelled.connect(func() -> void: _focus_family_row())
+	_new_pin = ""
+	_pin_dialog.open("Придумайте PIN-код", "4 цифры. Он понадобится, чтобы выйти из детского режима — ребёнку его не показывайте.")
+
+
+func _on_pin_entered(pin: String) -> void:
+	if _new_pin == "":
+		_new_pin = pin
+		_pin_dialog.open("Повторите PIN-код", "Чтобы не ошибиться — ещё раз те же 4 цифры.")
+	elif pin != _new_pin:
+		_new_pin = ""
+		_pin_dialog.open("Придумайте PIN-код", "")
+		_pin_dialog.show_error("Коды не совпали. Придумайте PIN-код ещё раз.")
+	else:
+		_pin_dialog.close()
+		Family.enable(pin)
+		# На главный экран «с чистого листа»: иначе «Назад» вернул бы в настройки.
+		SceneRouter.reset_to("home")
+		SceneRouter.toast(tr("Детский режим включён"))
+
+
+func _focus_family_row() -> void:
+	if %Rows.get_child_count() > 0:
+		%Rows.get_child(0).grab_focus()
 
 
 func _build_audio() -> void:
@@ -671,7 +932,9 @@ func _update_preview() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	var focused := get_viewport().gui_get_focus_owner()
 	if event.is_action_pressed("ui_cancel"):
-		if focused is SettingRow:
+		if focused is SettingRow and _editing_player != "":
+			_close_player()  # из настроек игрока — к списку игроков
+		elif focused is SettingRow:
 			_category_button(_page).grab_focus()  # из строк — к разделам
 		else:
 			SceneRouter.back()  # из разделов — выйти из настроек
@@ -680,3 +943,40 @@ func _unhandled_input(event: InputEvent) -> void:
 	else:
 		return
 	get_viewport().set_input_as_handled()
+
+
+# Крупный интерфейс («Для телевизора»): в пересчёте на «виртуальные»
+# пиксели экран становится уже (985 вместо 1280). Три колонки рядом —
+# разделы, пункты, пояснение — уже не помещаются: названия пунктов
+# обрезались бы до «Размер …». Поэтому колонку с пояснением переносим
+# ПОД пункты: из трёх колонок получается две.
+#
+# reparent() — «пересадить» узел к другому родителю. Уникальные имена
+# (%Rows, %Description) при этом продолжают работать: хозяин узлов
+# (owner) остаётся тем же — корень сцены.
+func _fit_to_screen() -> void:
+	if not UiTheme.is_compact(self):
+		return
+	%Categories.custom_minimum_size.x = 200
+	var body: HBoxContainer = $Margin/VBox/Body
+	var rows_scroll: ScrollContainer = $Margin/VBox/Body/RowsScroll
+	var side: VBoxContainer = $Margin/VBox/Body/Side
+	var middle := VBoxContainer.new()  # новая колонка: пункты, а под ними пояснение
+	middle.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	middle.add_theme_constant_override("separation", 0)
+	body.add_child(middle)
+	body.move_child(middle, rows_scroll.get_index())
+	rows_scroll.reparent(middle)
+	rows_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	# Пояснение — во всю ширину колонки, с теми же отступами по бокам,
+	# что у пунктов (24 — как у Pad внутри RowsScroll).
+	var pad := MarginContainer.new()
+	pad.add_theme_constant_override("margin_left", 24)
+	pad.add_theme_constant_override("margin_right", 24)
+	middle.add_child(pad)
+	side.reparent(pad)
+	side.custom_minimum_size.x = 0
+	%Description.custom_minimum_size.x = 0
+	%PreviewBox.custom_minimum_size = Vector2(220, 147)
+	%PreviewBox.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	%AboutPip.custom_minimum_size = Vector2(0, 110)

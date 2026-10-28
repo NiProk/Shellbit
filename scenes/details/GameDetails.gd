@@ -15,6 +15,7 @@ var _picker := CoverPicker.new()
 
 
 func _ready() -> void:
+	_fit_to_screen()
 	group = Library.find_group(SceneRouter.params.get("key", ""))
 	if group.is_empty():
 		SceneRouter.back.call_deferred()  # игру удалили с диска — возвращаемся
@@ -43,13 +44,14 @@ func _ready() -> void:
 		%Saves.add_child(card)
 		card.pressed.connect(_play.bind(slot))
 
-	%Hints.set_hints([
-		["accept", "Выбрать"],
-		["favorite", "Избранное"],
-		["details", "Версия"],
-		["menu", "Обложка"],
-		["cancel", "Назад"],
-	])
+	# Детский режим (autoload/Family.gd): без смены обложки.
+	var kids := Family.is_on()
+	%CoverButton.visible = not kids
+	var hints := [["accept", "Выбрать"], ["favorite", "Избранное"], ["details", "Версия"]]
+	if not kids:
+		hints.append(["menu", "Обложка"])
+	hints.append(["cancel", "Назад"])
+	%Hints.set_hints(hints)
 	_refresh()
 	%PlayButton.grab_focus.call_deferred()
 	# Всё, что справа от обложки, лежит в InfoScroll — ScrollContainer,
@@ -102,7 +104,9 @@ func _refresh() -> void:
 	%PlayButton.text = "▶  " + (tr("Продолжить") if has_auto else tr("Играть"))
 	# «Начать заново» нужна, только если есть место выхода, — иначе
 	# «Играть» и так запускает игру с самого начала.
-	%RestartButton.visible = has_auto
+	# В детском режиме «Начать заново» нет: место выхода заменилось бы
+	# новым, и ребёнок мог бы случайно потерять прогресс.
+	%RestartButton.visible = has_auto and not Family.is_on()
 	_disarm_restart()
 	for card: SaveSlot in %Saves.get_children():
 		card.setup(variant, card.slot)
@@ -257,7 +261,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_toggle_favorite()
 	elif event.is_action_pressed("details"):
 		_next_version()
-	elif event.is_action_pressed("menu"):
+	elif event.is_action_pressed("menu") and not Family.is_on():
 		_picker.open(group, focused if focused else %PlayButton)
 	elif focused == null and (event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right")):
 		%PlayButton.grab_focus()
@@ -290,3 +294,17 @@ func _pill(button: Button, color: Color, hover: Color, text: Color) -> void:
 	var focus: StyleBoxFlat = UiTheme.theme.get_stylebox("focus", "Button").duplicate()
 	focus.set_corner_radius_all(32)
 	button.add_theme_stylebox_override("focus", focus)
+
+
+# Крупный интерфейс («Для телевизора»): на узком «виртуальном» экране
+# обложка поменьше, чтобы справа хватило места названию и описанию.
+# Размер 330×440 и 250×333 — одна пропорция 3:4, как у коробок игр.
+func _fit_to_screen() -> void:
+	if not UiTheme.is_compact(self):
+		return
+	var width := 250.0
+	$Margin/HBox/CoverColumn/CoverBox.custom_minimum_size = Vector2(width, width * 4.0 / 3.0)
+	%CoverPlaceholder.custom_minimum_size.x = width - 40.0
+	%PlayTime.custom_minimum_size.x = width
+	%LastPlayed.custom_minimum_size.x = width
+	%Title.add_theme_font_size_override("font_size", 32)

@@ -38,12 +38,9 @@ static func move_saves(old_path: String, new_path: String) -> void:
 	var new_id := set_id(new_path)
 	if old_id == "" or old_id == new_id:
 		return
-	var saves := ProjectSettings.globalize_path(CoreManager.SAVES_DIR)
-	for file in DirAccess.get_files_at(saves):
-		if file.begins_with(old_id + "."):
-			var target := saves.path_join(new_id + file.substr(old_id.length()))
-			if not FileAccess.file_exists(target):  # новую не затираем
-				DirAccess.rename_absolute(saves.path_join(file), target)
+	# У каждого игрока своя папка saves (autoload/Profiles.gd) — у всех и переименуем.
+	for id: String in Profiles.ids():
+		SaveStates._rename_core_saves(ProjectSettings.globalize_path(Profiles.saves_dir(id)), old_id, new_id)
 
 
 ## Если path — один из дисков набора, составить список всех дисков.

@@ -16,6 +16,10 @@ extends Node
 ##     "favorite": false,
 ##     "last_played": 0,              # Unix-время последнего запуска (0 = ни разу)
 ##     "play_seconds": 0,             # сколько секунд наиграно
+##     "stats": {                     # то же самое — у каждого игрока своё
+##       "p1": {"favorite": true, "last_played": 1730000000, "play_seconds": 5400},
+##       "p2": {...}
+##     },
 ##     "archive_checked": true,       # только у .zip/.7z: приставку узнали по файлу внутри
 ##     "genre": "platformer"          # по папке, см. scripts/Genres.gd ("" — не узнали)
 ##   }
@@ -30,6 +34,12 @@ extends Node
 ##     "genre": "platformer",                     # первый узнанный жанр среди файлов
 ##     "favorite", "last_played", "play_seconds"  # собраны со всех файлов
 ##   }
+##
+## Игроки (autoload/Profiles.gd). У каждого своё избранное и время в игре —
+## они лежат в "stats" по id игрока. А поля "favorite", "last_played",
+## "play_seconds" — это значения ТЕКУЩЕГО игрока: их копирует туда
+## _apply_profile(). Так весь остальной код (экраны, сортировка) просто
+## читает game["favorite"] и даже не знает, что игроков несколько.
 
 ## Сигнал: поиск игр закончен. Экраны подписываются на него и обновляются.
 signal scan_finished
@@ -42,6 +52,8 @@ const SAVE_PATH := "user://library.json"
 const FAVORITES := "favorites"
 const FAVORITES_COLOR := "#f5c542"  # золотой — цвет звезды
 const MAX_DEPTH := 6  # насколько глубоко заходить во вложенные папки
+## Поля, которые у каждого игрока свои.
+const STAT_FIELDS := ["favorite", "last_played", "play_seconds"]
 
 var games: Array[Dictionary] = []   # все файлы
 # При поиске нашлись .7z, а 7-Zip ещё нет — скачаем его и поищем снова.
@@ -59,7 +71,12 @@ var _genres := {}
 
 func _ready() -> void:
 	_load()
+	_apply_profile()
 	_rebuild_groups()
+	# Сменился игрок — у игр теперь его избранное и время.
+	Profiles.changed.connect(func() -> void:
+		_apply_profile()
+		_rebuild_groups())
 	# Описания версий («США · проверенная») зависят от языка —
 	# при смене языка собираем группы заново.
 	Lang.language_changed.connect(func() -> void:
@@ -162,8 +179,9 @@ func _add_to(index: Dictionary, key: String, entry: Dictionary) -> void:
 func _move_entry(was: Dictionary, now: Dictionary) -> void:
 	var old_path: String = was["path"]
 	var new_path: String = now["path"]
-	for field in ["favorite", "last_played", "play_seconds"]:
+	for field: String in STAT_FIELDS:
 		now[field] = was.get(field, now[field])
+	now["stats"] = was.get("stats", {})  # и избранное с временем всех игроков
 	# Выбранная версия: в настройках [versions] ключ игры → путь файла.
 	var versions := Settings.get_section("versions")
 	for key: String in versions:
@@ -219,6 +237,7 @@ func _scan_dir(path: String, found: Array[Dictionary], old: Dictionary, depth: i
 			"favorite": false,
 			"last_played": 0,
 			"play_seconds": 0,
+			"stats": {},
 		})
 		# Раньше любой .zip считался аркадой — у старых записей приставку уточняем.
 		entry["system"] = system_id
@@ -283,9 +302,17 @@ func _rebuild_groups() -> void:
 
 # --- Вопросы к библиотеке -------------------------------------------------
 
+## Игры, которые можно показывать. В детском режиме — без жанра
+## «Для взрослых» (см. autoload/Family.gd). Все списки ниже берут игры отсюда.
+func visible_groups() -> Array:
+	if not Family.is_on():
+		return groups
+	return groups.filter(Family.allows)
+
+
 ## Игры (группы) одной приставки, по алфавиту.
 func groups_for_system(system_id: String) -> Array:
-	var result := groups.filter(func(g: Dictionary) -> bool: return g["system"] == system_id)
+	var result := visible_groups().filter(func(g: Dictionary) -> bool: return g["system"] == system_id)
 	result.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
 		return a["title"].naturalnocasecmp_to(b["title"]) < 0)
 	return result
@@ -293,7 +320,7 @@ func groups_for_system(system_id: String) -> Array:
 
 ## Избранные игры со всех приставок, по алфавиту.
 func favorite_groups() -> Array:
-	var result := groups.filter(func(g: Dictionary) -> bool: return g["favorite"])
+	var result := visible_groups().filter(func(g: Dictionary) -> bool: return g["favorite"])
 	result.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
 		return a["title"].naturalnocasecmp_to(b["title"]) < 0)
 	return result
@@ -318,7 +345,7 @@ func find_group(key: String) -> Dictionary:
 
 ## Игры, в которые играли, — самые свежие первыми.
 func get_recent(limit: int) -> Array:
-	var result := groups.filter(func(g: Dictionary) -> bool: return g["last_played"] > 0)
+	var result := visible_groups().filter(func(g: Dictionary) -> bool: return g["last_played"] > 0)
 	result.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
 		return a["last_played"] > b["last_played"])
 	return result.slice(0, limit)
@@ -327,8 +354,11 @@ func get_recent(limit: int) -> Array:
 ## id приставок, у которых есть хотя бы одна игра (в порядке systems.json).
 func systems_with_games() -> Array[String]:
 	var result: Array[String] = []
+	var present := {}  # приставки, у которых есть хоть одна видимая игра
+	for group: Dictionary in visible_groups():
+		present[group["system"]] = true
 	for system in CoreManager.systems:
-		if games.any(func(g: Dictionary) -> bool: return g["system"] == system["id"]):
+		if present.has(system["id"]):
 			result.append(system["id"])
 	return result
 
@@ -357,12 +387,14 @@ func choose_next_variant(group: Dictionary) -> Dictionary:
 
 func mark_played(game: Dictionary) -> void:
 	game["last_played"] = int(Time.get_unix_time_from_system())
+	_store_stats(game)
 	_rebuild_groups()
 	_save()
 
 
 func add_playtime(game: Dictionary, seconds: int) -> void:
 	game["play_seconds"] = int(game["play_seconds"]) + seconds
+	_store_stats(game)
 	_rebuild_groups()
 	_save()
 
@@ -371,6 +403,40 @@ func toggle_favorite(group: Dictionary) -> void:
 	group["favorite"] = not group["favorite"]
 	for variant: Dictionary in group["variants"]:
 		variant["favorite"] = group["favorite"]
+		_store_stats(variant)
+	_save()
+
+
+# --- Игроки ------------------------------------------------------------------
+
+## Разложить по играм избранное и время ТЕКУЩЕГО игрока.
+func _apply_profile() -> void:
+	var id := Profiles.current()
+	for game in games:
+		var stats: Dictionary = game.get("stats", {}).get(id, {})
+		game["favorite"] = bool(stats.get("favorite", false))
+		# int(): JSON все числа читает как дробные (5400.0).
+		game["last_played"] = int(stats.get("last_played", 0))
+		game["play_seconds"] = int(stats.get("play_seconds", 0))
+
+
+## Запомнить в "stats" то, что у файла сейчас, — за текущего игрока.
+func _store_stats(game: Dictionary) -> void:
+	# get_or_add — взять "stats", а если его нет — сначала создать пустой.
+	var all: Dictionary = game.get_or_add("stats", {})
+	var mine := {}
+	for field: String in STAT_FIELDS:
+		mine[field] = game[field]
+	if mine["favorite"] or mine["last_played"] or mine["play_seconds"]:
+		all[Profiles.current()] = mine
+	else:
+		all.erase(Profiles.current())  # пусто — не храним, файл меньше
+
+
+## Игрока удалили — стереть его избранное и время.
+func forget_profile(id: String) -> void:
+	for game in games:
+		game.get("stats", {}).erase(id)
 	_save()
 
 
@@ -418,3 +484,14 @@ func _load() -> void:
 	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(SAVE_PATH))
 	if data is Array:
 		games.assign(data)
+	# Файл из версии, где игроков ещё не было: избранное и время в игре
+	# лежат прямо в записи — отдаём их первому игроку.
+	for game in games:
+		if not game.has("stats"):
+			game["stats"] = {}
+			if game.get("favorite", false) or game.get("last_played", 0) or game.get("play_seconds", 0):
+				game["stats"][Profiles.MAIN] = {
+					"favorite": game.get("favorite", false),
+					"last_played": game.get("last_played", 0),
+					"play_seconds": game.get("play_seconds", 0),
+				}

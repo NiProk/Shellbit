@@ -24,7 +24,7 @@ func test_moved_game_keeps_data() -> void:
 	Library.add_playtime(group["variants"][0], 600)
 	Settings.set_value("versions", group["key"], old_path)
 	# Слот сохранения — как его записал бы SaveStates.save_slot.
-	var old_states := _abs(SaveStates.ROOT.path_join(old_path.md5_text()))
+	var old_states := _abs(Profiles.states_dir().path_join(old_path.md5_text()))
 	DirAccess.make_dir_recursive_absolute(old_states)
 	FileAccess.open(old_states.path_join("1.state"), FileAccess.WRITE).store_string("STATE")
 
@@ -40,7 +40,7 @@ func test_moved_game_keeps_data() -> void:
 	check(SaveStates.exists({"path": new_path}, "1"), "слот 1 переехал")
 	check(not DirAccess.dir_exists_absolute(old_states), "старая папка сохранений убрана")
 	Settings.set_value("versions", group["key"], null)
-	_remove(_abs(SaveStates.ROOT.path_join(new_path.md5_text())))
+	_remove(_abs(Profiles.states_dir().path_join(new_path.md5_text())))
 
 
 func test_renamed_while_moving() -> void:
