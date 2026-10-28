@@ -52,6 +52,7 @@ var _snap_every := 2         # делать снимок раз в стольк�
 var _snap_count := 0         # кадров с прошлого снимка
 var _rewind_wait := 0        # при перемотке: сколько кадров ждать до следующего шага назад
 var _speed_label: Label      # значок «▶▶ ×3» / «◀◀» в углу экрана
+var _gun: LightGun           # световой пистолет (Duck Hunt и т.п.), null — игра без него
 
 
 func _ready() -> void:
@@ -254,6 +255,14 @@ func _start_game(start_slot: String) -> String:
 	var saved_options := Settings.get_section(_options_section())
 	for key: String in saved_options:
 		core.set_option(key, str(saved_options[key]))
+	# Игра со световым пистолетом (scenes/player/LightGun.gd)? Тогда ядру —
+	# «пистолет с прицелом» и без своего крестика: прицел рисуем мы.
+	# has_method — на случай старого shellbit_core, собранного до пистолета.
+	var gun_port := LightGun.port_for(game) if core.has_method("set_lightgun") else -1
+	if gun_port >= 0:
+		var gun_options := LightGun.core_options(game)
+		for key: String in gun_options:
+			core.set_option(key, gun_options[key])
 
 	# С какого диска начать: на каком сохранились в этот слот,
 	# а если не знаем — какой выбрал человек. Ядро должно узнать это ДО load_game.
@@ -276,6 +285,14 @@ func _start_game(start_slot: String) -> String:
 		core.set_disk(disc["index"])
 	_setup_analog()
 	_has_rumble = core.has_method("get_rumble")
+	if gun_port >= 0:
+		_gun = LightGun.new()
+		%Screen.add_child(_gun)  # поверх картинки игры, ровно по её размеру
+		if _gun.plug_in(core, gun_port):
+			_gun.set_active(true)
+		else:
+			_gun.queue_free()  # ядро не знает Zapper — играем без пистолета
+			_gun = null
 
 	# Сведения о картинке и звуке: размер, пропорции, кадры/с, частота звука.
 	var av: Dictionary = core.get_av_info()
@@ -299,6 +316,8 @@ func _start_game(start_slot: String) -> String:
 	# Продолжаем с того места, где вышли в прошлый раз.
 	# Подсказка при запуске: как открыть меню.
 	var hint := tr("Esc — меню") if InputMapper.style == "keyboard" else tr("Правый стик — меню")
+	if _gun != null:
+		hint += " · " + tr("Целиться — мышью или стиком, стрелять — левой кнопкой мыши или правым курком")
 	if start_slot != "" and SaveStates.load_slot(core, game, start_slot):
 		if start_slot == SaveStates.AUTO:
 			SceneRouter.toast(tr("Продолжаем с места выхода") + " · " + hint)
@@ -356,6 +375,8 @@ func _process(delta: float) -> void:
 		"speed": speed,
 		"rewinding": rewinding,
 		"sticks": _read_sticks(system_id, rewinding or _wait_release),
+		# Пистолет: [порт, x, y, курок, выстрел мимо экрана] — или пусто.
+		"gun": [_gun.port] + _gun.aim(delta, rewinding or _wait_release) if _gun != null else [],
 	}
 	_shared_lock.unlock()
 
@@ -449,6 +470,9 @@ func _emulate(delta: float) -> void:
 	var sticks: Array = cmd["sticks"]
 	for i in sticks.size():
 		core.set_analog(i / 2, i % 2, sticks[i].x, sticks[i].y)
+	var gun: Array = cmd.get("gun", [])
+	if gun.size() == 5:
+		core.set_lightgun(gun[0], gun[1], gun[2], gun[3], gun[4])
 
 	# Монитор может обновляться 60, 75 или 144 раза в секунду, а NES
 	# всегда работает на ~60 кадрах. Поэтому копим прошедшее время и
@@ -668,6 +692,8 @@ func _open_menu() -> void:
 	core.save_sram()
 	_core_lock.unlock()
 	%Audio.stream_paused = true  # звук замирает вместе с игрой
+	if _gun != null:
+		_gun.set_active(false)  # в меню — обычный курсор мыши вместо прицела
 	%PauseMenu.open(game, _disc_info(), core.has_method("get_option_list"))
 
 
@@ -677,6 +703,8 @@ func _resume() -> void:
 	_time_bank = 0.0  # время, проведённое в меню, не «догоняем»
 	_wait_release = true
 	_paused = false
+	if _gun != null:
+		_gun.set_active(true)
 
 
 # --- Настройки ядра -----------------------------------------------------------
@@ -982,6 +1010,10 @@ func _rewind_step() -> void:
 ## Во сколько раз ускорить игру сейчас (1 — обычная скорость).
 func _fast_forward_speed(system_id: String) -> int:
 	var down := InputMapper.is_hotkey_pressed(system_id, "fast_forward")
+	if _gun != null:
+		# В играх с пистолетом правый курок — это курок пистолета.
+		# Ускорение остаётся только на клавиатуре (пробел).
+		down = Input.is_physical_key_pressed(InputMapper.HOTKEY_KEYS["fast_forward"])
 	var on := down
 	if Settings.get_value("play", "ff_mode") == "toggle":
 		if down and not _ff_was_down:  # кнопку только что нажали

@@ -25,6 +25,19 @@ func set_analog(port: int, stick: int, x: float, y: float) -> void:
 	sticks[Vector2i(port, stick)] = Vector2(x, y)
 
 
+var gun := []           # что Player передал пистолету: [порт, x, y, курок, мимо экрана]
+var plugged := {}       # порт → какой контроллер «вставили»
+
+func set_lightgun(port: int, x: float, y: float, trigger: bool, reload: bool) -> void:
+	gun = [port, x, y, trigger, reload]
+
+func get_controller_types(_port: int) -> Array:
+	return [{"name": "Auto", "id": 1}, {"name": "Zapper", "id": 258}]
+
+func set_controller_type(port: int, device: int) -> void:
+	plugged[port] = device
+
+
 var disk_count := 1   # сколько «дисков» у игры
 var disk_index := 0
 

@@ -15,6 +15,9 @@ corner_radius_top_right = 14
 corner_radius_bottom_right = 14
 corner_radius_bottom_left = 14
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_title"]
+content_margin_left = 24.0
+
 [node name="SettingsScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -41,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 56
+theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 56
 theme_override_constants/margin_bottom = 72
@@ -53,22 +56,26 @@ theme_override_constants/separation = 20
 [node name="Title" type="Label" parent="Margin/VBox"]
 layout_mode = 2
 theme_type_variation = &"TitleLabel"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_title")
 text = "Настройки"
 
 [node name="Body" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 16
+theme_override_constants/separation = 0
 
 [node name="CategoriesScroll" type="ScrollContainer" parent="Margin/VBox/Body"]
 layout_mode = 2
-follow_focus = true
+follow_focus = false
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
 [node name="CategoriesPad" type="MarginContainer" parent="Margin/VBox/Body/CategoriesScroll"]
 layout_mode = 2
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
 
 [node name="Categories" type="VBoxContainer" parent="Margin/VBox/Body/CategoriesScroll/CategoriesPad"]
 unique_name_in_owner = true
@@ -79,14 +86,14 @@ theme_override_constants/separation = 6
 [node name="RowsScroll" type="ScrollContainer" parent="Margin/VBox/Body"]
 layout_mode = 2
 size_flags_horizontal = 3
-follow_focus = true
+follow_focus = false
 horizontal_scroll_mode = 0
 
 [node name="Pad" type="MarginContainer" parent="Margin/VBox/Body/RowsScroll"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
@@ -102,7 +109,7 @@ layout_mode = 2
 theme_override_constants/separation = 14
 
 [node name="SideGap" type="Control" parent="Margin/VBox/Body/Side"]
-custom_minimum_size = Vector2(0, 12)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
 [node name="PreviewBox" type="PanelContainer" parent="Margin/VBox/Body/Side"]

@@ -191,3 +191,29 @@ func test_emulation_thread() -> void:
 	player._paused = false
 	player._stop_emulation()
 	check(player._thread == null, "поток остановлен")
+
+
+func test_light_gun() -> void:
+	about("Duck Hunt: пистолет во втором порту, прицел мышью/стиком доходит до ядра")
+	check_eq(LightGun.port_for({"system": "nes", "title": "Duck Hunt"}), 1, "Duck Hunt — пистолет в порт 2")
+	check_eq(LightGun.port_for({"system": "nes", "title": "Super Mario Bros. + Duck Hunt"}), 1, "сборник с Duck Hunt — тоже")
+	check_eq(LightGun.port_for({"system": "nes", "title": "Contra"}), -1, "Contra — без пистолета")
+	check_eq(LightGun.port_for({"system": "snes", "title": "Duck Hunt"}), -1, "только у NES")
+
+	var gun := LightGun.new()
+	player.get_node("%Screen").add_child(gun)
+	check(gun.plug_in(core, 1), "Zapper нашёлся в списке ядра")
+	check_eq(core.plugged, {1: 258}, "и вставлен во второй порт")
+	player._gun = gun
+	gun.set_active(true)
+	gun._aim = Vector2(0.25, 0.75)
+	player._process(FRAME)
+	check_eq(core.gun.slice(0, 3), [1, 0.25, 0.75], "ядро знает, куда целимся")
+	check(not core.gun[3], "курок не нажат")
+	_key(KEY_SPACE, true)
+	player._process(FRAME)
+	check_eq(player._fast_forward_speed("nes"), 3, "пробел — по-прежнему ускорение")
+	_key(KEY_SPACE, false)
+	gun.set_active(false)
+	player._gun = null
+	gun.queue_free()

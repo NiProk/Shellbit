@@ -36,6 +36,7 @@ void RetroCore::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("run_frame"), &RetroCore::run_frame);
 	ClassDB::bind_method(D_METHOD("set_input", "port", "mask"), &RetroCore::set_input);
 	ClassDB::bind_method(D_METHOD("set_analog", "port", "stick", "x", "y"), &RetroCore::set_analog);
+	ClassDB::bind_method(D_METHOD("set_lightgun", "port", "x", "y", "trigger", "reload"), &RetroCore::set_lightgun);
 	ClassDB::bind_method(D_METHOD("get_controller_types", "port"), &RetroCore::get_controller_types);
 	ClassDB::bind_method(D_METHOD("set_controller_type", "port", "device"), &RetroCore::set_controller_type);
 	ClassDB::bind_method(D_METHOD("get_rumble", "port"), &RetroCore::get_rumble);
@@ -372,6 +373,18 @@ void RetroCore::set_analog(int port, int stick, float x, float y) {
 	// -1..1 → -32767..32767. CLAMP — на случай, если пришло чуть больше 1.
 	analog[port][stick][0] = (int16_t)(std::clamp(x, -1.0f, 1.0f) * 32767.0f);
 	analog[port][stick][1] = (int16_t)(std::clamp(y, -1.0f, 1.0f) * 32767.0f);
+}
+
+void RetroCore::set_lightgun(int port, float x, float y, bool trigger, bool reload) {
+	if (port < 0 || port >= 4) {
+		return;
+	}
+	gun_offscreen[port] = x < 0.0f || x > 1.0f || y < 0.0f || y > 1.0f;
+	// 0..1 → -32767..32767: 0 — левый край, 0.5 — середина, 1 — правый край.
+	gun_x[port] = (int16_t)((std::clamp(x, 0.0f, 1.0f) * 2.0f - 1.0f) * 32767.0f);
+	gun_y[port] = (int16_t)((std::clamp(y, 0.0f, 1.0f) * 2.0f - 1.0f) * 32767.0f);
+	gun_trigger[port] = trigger;
+	gun_reload[port] = reload;
 }
 
 Array RetroCore::get_controller_types(int port) const {
@@ -770,6 +783,31 @@ int16_t RetroCore::input_state_cb(unsigned port, unsigned device, unsigned index
 			return ((mask >> id) & 1) ? 0x7fff : 0;
 		}
 		return 0;
+	}
+
+	// Световой пистолет. Ядро спрашивает по очереди: «куда целятся по X?»,
+	// «по Y?», «мимо экрана?», «нажат ли курок?» — отвечаем тем, что
+	// прислал Shellbit через set_lightgun().
+	if ((device & RETRO_DEVICE_MASK) == RETRO_DEVICE_LIGHTGUN) {
+		switch (id) {
+			case RETRO_DEVICE_ID_LIGHTGUN_SCREEN_X:
+				return current->gun_x[port];
+			case RETRO_DEVICE_ID_LIGHTGUN_SCREEN_Y:
+				return current->gun_y[port];
+			case RETRO_DEVICE_ID_LIGHTGUN_IS_OFFSCREEN:
+				return current->gun_offscreen[port] ? 1 : 0;
+			case RETRO_DEVICE_ID_LIGHTGUN_TRIGGER:
+				return current->gun_trigger[port] ? 1 : 0;
+			case RETRO_DEVICE_ID_LIGHTGUN_RELOAD:
+				return current->gun_reload[port] ? 1 : 0;
+			// Start и Select на пистолетах некоторых приставок — берём с геймпада.
+			case RETRO_DEVICE_ID_LIGHTGUN_START:
+				return (mask >> RETRO_DEVICE_ID_JOYPAD_START) & 1;
+			case RETRO_DEVICE_ID_LIGHTGUN_SELECT:
+				return (mask >> RETRO_DEVICE_ID_JOYPAD_SELECT) & 1;
+			default:
+				return 0;
+		}
 	}
 
 	if ((device & RETRO_DEVICE_MASK) != RETRO_DEVICE_JOYPAD) {

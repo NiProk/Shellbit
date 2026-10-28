@@ -70,6 +70,11 @@ public:
 	// Положение стика: stick 0 — левый, 1 — правый; x и y — от -1 до 1
 	// (как Input.get_joy_axis в Godot: вправо и вниз — плюс).
 	void set_analog(int port, int stick, float x, float y);
+	// Световой пистолет (Zapper у NES): куда прицелились и нажат ли курок.
+	// x и y — от 0 до 1 по картинке игры (0,0 — левый верхний угол).
+	// За пределами 0…1 — «целимся мимо экрана». reload — выстрел мимо
+	// экрана (в некоторых играх так перезаряжают).
+	void set_lightgun(int port, float x, float y, bool trigger, bool reload);
 	// Какие контроллеры ядро умеет подключать к порту — ядро само
 	// присылает этот список. [{"name": "DualShock", "id": 517}, ...]
 	Array get_controller_types(int port) const;
@@ -243,6 +248,11 @@ private:
 	uint16_t input_masks[4] = { 0, 0, 0, 0 };
 	// analog[порт][стик][0 — X, 1 — Y], от -32767 до 32767, как просит libretro.
 	int16_t analog[4][2][2] = {};
+	// Пистолет: координаты прицела так, как их просит libretro, —
+	// от -32767 (левый/верхний край картинки) до 32767 (правый/нижний).
+	int16_t gun_x[4] = {}, gun_y[4] = {};
+	bool gun_offscreen[4] = { true, true, true, true };
+	bool gun_trigger[4] = {}, gun_reload[4] = {};
 	Array controller_types; // по массиву типов на каждый порт
 	float rumble[4][2] = {}; // rumble[порт][0 — сильный, 1 — слабый], от 0 до 1
 

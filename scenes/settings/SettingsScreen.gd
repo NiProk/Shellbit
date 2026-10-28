@@ -57,6 +57,7 @@ func _ready() -> void:
 	CoreDownloader.progress.connect(_on_core_progress)
 	CoreDownloader.finished.connect(_on_core_finished)
 
+	_add_category_fades()
 	%Preview.texture = _preview_texture()
 	# Узор фона — и здесь: выбираешь вариант и сразу видишь его на экране.
 	var backdrop := Backdrop.new()
@@ -100,6 +101,44 @@ func _build_categories() -> void:
 		button.focus_neighbor_left = button.get_path_to(button)
 
 
+# Разделов больше, чем помещается по высоте, — список прокручивается.
+# Чтобы было видно, что ниже (или выше) есть ещё, край списка плавно
+# растворяется в фоне, а не обрезается «ножом» посреди слова.
+func _add_category_fades() -> void:
+	var scroll: ScrollContainer = $Margin/VBox/Body/CategoriesScroll
+	var fades: Array[TextureRect] = []
+	for top in [true, false]:
+		var gradient := Gradient.new()
+		# Сверху вниз: у верхней «шторки» — от фона к прозрачному, у нижней — наоборот.
+		gradient.colors = PackedColorArray([UiTheme.BG, Color(UiTheme.BG, 0.0)] if top else [Color(UiTheme.BG, 0.0), UiTheme.BG])
+		var texture := GradientTexture2D.new()
+		texture.gradient = gradient
+		texture.fill_from = Vector2(0, 0)
+		texture.fill_to = Vector2(0, 1)  # градиент по вертикали
+		var fade := TextureRect.new()
+		fade.texture = texture
+		fade.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		# Не внутрь ScrollContainer (он решил бы, что это ещё один раздел),
+		# а поверх экрана — и двигаем вслед за списком.
+		add_child(fade)
+		fades.append(fade)
+	var bar := scroll.get_v_scroll_bar()
+	var update := func() -> void:
+		var height := 40.0
+		fades[0].position = scroll.global_position
+		fades[0].size = Vector2(scroll.size.x, height)
+		fades[1].position = scroll.global_position + Vector2(0, scroll.size.y - height)
+		fades[1].size = Vector2(scroll.size.x, height)
+		# Шторка видна, только если в ту сторону ещё есть что прокручивать.
+		fades[0].visible = bar.value > 1.0
+		fades[1].visible = bar.value + bar.page < bar.max_value - 1.0
+	bar.value_changed.connect(func(_value: float) -> void: update.call())
+	bar.changed.connect(update)
+	scroll.resized.connect(update)
+	update.call_deferred()
+
+
 func _on_category_input(event: InputEvent, button: Button) -> void:
 	# ▶ на разделе — перейти к его настройкам.
 	if event.is_action_pressed("ui_right"):
@@ -108,9 +147,37 @@ func _on_category_input(event: InputEvent, button: Button) -> void:
 
 
 func _on_category_focused(id: String) -> void:
+	_scroll_to(_category_button(id))
 	_show_page(id)
 	%Description.text = tr(_page_info(id)["about"])
 	%Hints.set_hints([["accept", tr("Выбрать")], ["cancel", tr("Назад")]])
+
+
+# Прокрутить список так, чтобы выделенная кнопка была видна ЦЕЛИКОМ —
+# вместе со свечением рамки. У ScrollContainer есть своё follow_focus,
+# но оно двигает список ровно до края кнопки, и свечение (≈23 пикселя
+# вокруг) обрезалось краем списка. Поэтому follow_focus выключено
+# в сцене, а прокручиваем сами — с запасом GLOW_ROOM.
+const GLOW_ROOM := 28.0
+
+
+func _scroll_to(item: Control) -> void:
+	# Ищем, в каком ScrollContainer лежит кнопка (разделы или строки).
+	var scroll := item.get_parent()
+	while scroll != null and not scroll is ScrollContainer:
+		scroll = scroll.get_parent()
+	if scroll == null:
+		return
+	await get_tree().process_frame  # новая страница могла ещё не разложиться
+	if not is_instance_valid(item) or not item.is_inside_tree():
+		return
+	# Где кнопка относительно видимого окошка списка: 0 — у верхнего края.
+	var top: float = item.global_position.y - scroll.global_position.y
+	var bottom: float = top + item.size.y
+	if top - GLOW_ROOM < 0.0:
+		scroll.scroll_vertical += int(top - GLOW_ROOM)
+	elif bottom + GLOW_ROOM > scroll.size.y:
+		scroll.scroll_vertical += int(bottom + GLOW_ROOM - scroll.size.y)
 
 
 func _category_button(id: String) -> Button:
@@ -220,6 +287,7 @@ func _link_rows() -> void:
 
 
 func _on_row_focused(row: SettingRow) -> void:
+	_scroll_to(row)
 	%Description.text = row.current_description()
 	match row.kind:
 		SettingRow.Kind.CHOICE, SettingRow.Kind.TOGGLE:
