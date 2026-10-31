@@ -34,6 +34,8 @@ var _start_msec := 0
 
 var _paused := false
 var _missing_core := false  # игра не запустилась, потому что нет ядра
+var _missing_bios := false  # …или потому что нет BIOS (кнопка тогда открывает папку BIOS)
+var _bios_folder := ""      # какую папку открывает кнопка при нехватке BIOS
 # Файл, который отдаём ядру: сам файл игры или распакованный из архива.
 var _content_path := ""
 var _status_label: Label     # «Распаковываю игру…» по центру экрана
@@ -57,7 +59,13 @@ var _gun: LightGun           # световой пистолет (Duck Hunt и �
 
 func _ready() -> void:
 	game = SceneRouter.params.get("game", {})
-	%OpenCoresButton.pressed.connect(CoreManager.open_cores_folder)
+	%OpenCoresButton.pressed.connect(func() -> void:
+		if _missing_bios and not Platform.can_open_folders():
+			_pick_bios_files()  # Android: папку не открыть — выбираем файлы и копируем
+		elif _missing_bios:
+			OS.shell_open(_bios_folder)
+		else:
+			CoreManager.open_cores_folder())
 	%DownloadButton.pressed.connect(_download_core)
 	CoreDownloader.progress.connect(_on_core_progress)
 	CoreDownloader.finished.connect(_on_core_finished)
@@ -75,10 +83,17 @@ func _ready() -> void:
 	_options_panel.option_changed.connect(_on_option_changed)
 	_options_panel.reset_requested.connect(_on_options_reset)
 	_options_panel.closed.connect(func() -> void: %PauseMenu.get_node("%OptionsButton").grab_focus())
+	%PauseMenu.cheats_requested.connect(_open_cheats)
+	add_child(_cheats_panel)
+	_cheats_panel.changed.connect(_on_cheats_changed)
+	_cheats_panel.closed.connect(func() -> void:
+		%PauseMenu.refresh_cheats()  # «Читы · включено 2»
+		%PauseMenu.get_node("%CheatsButton").grab_focus())
 
 	# Окно поменяло размер — пересчитать, где и какого размера картинка.
 	resized.connect(_apply_layout)
 	_create_speed_label()
+	_create_touch_pause()
 
 	# С какого сохранения начать: "auto" — с места выхода (по умолчанию),
 	# "1".."3" — с ручного слота (их выбирают на странице игры).
@@ -161,6 +176,28 @@ static func _pick_analog_type(types: Array) -> int:
 	return -1
 
 
+## Долгое сообщение внизу экрана (дольше обычного всплывающего —
+## чтобы успеть прочитать, что делать).
+func _show_notice(text: String) -> void:
+	var label := Label.new()
+	label.text = text
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.custom_minimum_size.x = 640
+	var box := UiTheme.badge_box(Color("7a2e2e"))
+	box.set_content_margin_all(16)
+	box.set_corner_radius_all(14)
+	label.add_theme_stylebox_override("normal", box)
+	add_child(label)
+	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM, Control.PRESET_MODE_MINSIZE, 40)
+	label.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	label.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	var tween := create_tween()
+	tween.tween_interval(10.0)
+	tween.tween_property(label, "modulate:a", 0.0, 0.5)
+	tween.tween_callback(label.queue_free)
+
+
 ## Каждый кадр — где сейчас стики. muted — во время перемотки и после
 ## меню, пока человек не отпустил кнопки: тогда стики «в центре».
 ## Где сейчас стики: [порт 1 левый, порт 1 правый, порт 2 левый, порт 2 правый].
@@ -233,20 +270,47 @@ func _start_game(start_slot: String) -> String:
 	var system := CoreManager.get_system(game["system"])
 	var core_path := CoreManager.core_path(system)
 	_missing_core = not FileAccess.file_exists(core_path)
+	if _missing_core and not Platform.can_open_folders():
+		# Android: в папку программы файл руками не положить — только «Скачать».
+		return tr("Нет ядра %s.\nНажмите «Скачать ядро» — Shellbit скачает его сам.") % core_path.get_file()
 	if _missing_core:
 		return tr("Нет ядра %s.\nНажмите «Скачать ядро» — Shellbit скачает его сам. Или положите файл в папку ядер:\n%s") % [
 			core_path.get_file(), core_path.get_base_dir()]
+
+	# Диск, а у приставки для дисков нужен свой BIOS (PC Engine CD — syscard3.pce)?
+	# Без него ядро просто отказывается открывать игру, и человек видел бы
+	# непонятное «ядро не смогло открыть файл». Проверяем заранее и говорим прямо.
+	var missing := _missing_disc_bios(system)
+	_missing_bios = missing != ""
+	_bios_folder = ProjectSettings.globalize_path(CoreManager.SYSTEM_DIR)
+	var arcade_bios := _missing_arcade_bios()
+	if arcade_bios != "":
+		# Аркада без BIOS автомата (neogeo.zip у Metal Slug и KOF). FBNeo сам
+		# показал бы только английский экран «romset is missing files».
+		_missing_bios = true
+		_bios_folder = _content_path.get_base_dir()
+		if not Platform.can_open_folders():
+			return tr("Этой игре нужен BIOS автомата %s — файл %s.\n\nЭто «прошивка» самого игрового автомата, раздавать её свободно нельзя, поэтому Shellbit её не скачивает. Если у вас есть этот файл, нажмите «Добавить файлы BIOS…» и выберите его — Shellbit скопирует его к себе. Или положите его в ту же папку, что и игра.") % [
+				ArcadeNames.bios_title(arcade_bios), arcade_bios + ".zip"]
+		return tr("Этой игре нужен BIOS автомата %s — файл %s.\n\nЭто «прошивка» самого игрового автомата, раздавать её свободно нельзя, поэтому Shellbit её не скачивает. Положите %s в ту же папку, что и игра:\n%s") % [
+			ArcadeNames.bios_title(arcade_bios), arcade_bios + ".zip", arcade_bios + ".zip", _bios_folder]
+	if _missing_bios and not Platform.can_open_folders():
+		return tr("Для дисков %s нужен BIOS %s.\n\nShellbit не может скачать его сам: это программа из самой приставки, раздавать её свободно нельзя. Если у вас есть этот файл, нажмите «Добавить файлы BIOS…» и выберите его — Shellbit скопирует его к себе.") % [
+			tr(system.get("name", "")) + " CD", missing]
+	if _missing_bios:
+		return tr("Для дисков %s нужен BIOS %s.\n\nShellbit не может скачать его сам: это программа из самой приставки, раздавать её свободно нельзя. Если у вас есть этот файл, положите его в папку BIOS:\n%s") % [
+			tr(system.get("name", "")) + " CD", missing, ProjectSettings.globalize_path(CoreManager.SYSTEM_DIR)]
 
 	core = ClassDB.instantiate("RetroCore")
 	add_child(core)
 	# На каком языке ядру описывать свои настройки (если у него есть перевод).
 	if core.has_method("set_language"):
 		core.set_language(RETRO_LANGUAGES.get(Lang.language, 0))
-	core.set_system_directory(ProjectSettings.globalize_path(CoreManager.SYSTEM_DIR))
+	core.set_system_directory(_native(ProjectSettings.globalize_path(CoreManager.SYSTEM_DIR)))
 	# Сохранения самой игры — в папку текущего игрока (autoload/Profiles.gd).
 	var saves := ProjectSettings.globalize_path(Profiles.saves_dir())
 	DirAccess.make_dir_recursive_absolute(saves)
-	core.set_save_directory(saves)
+	core.set_save_directory(_native(saves))
 
 	if not core.load_core(core_path):
 		return tr("Ядро %s не загрузилось (подробности — во вкладке Output).") % core_path.get_file()
@@ -271,8 +335,8 @@ func _start_game(start_slot: String) -> String:
 		disc = _start_disc
 	var can_swap: bool = core.has_method("set_initial_disk")
 	if can_swap and not disc.is_empty():
-		core.set_initial_disk(disc["index"], disc["path"])
-	if not core.load_game(_content_path):
+		core.set_initial_disk(disc["index"], _native(disc["path"]))
+	if not core.load_game(_native(_content_path)):
 		# Ядро просило видеокарту (OpenGL), а она не дала? Это другая беда —
 		# файл игры тут ни при чём, так и говорим.
 		var hw_error: String = core.get_hw_error() if core.has_method("get_hw_error") else ""
@@ -284,6 +348,7 @@ func _start_game(start_slot: String) -> String:
 			and core.get_disk_index() != disc["index"]:
 		core.set_disk(disc["index"])
 	_setup_analog()
+	_apply_cheats()  # включённые читы — сразу с первого кадра
 	_has_rumble = core.has_method("get_rumble")
 	if gun_port >= 0:
 		_gun = LightGun.new()
@@ -293,6 +358,8 @@ func _start_game(start_slot: String) -> String:
 		else:
 			_gun.queue_free()  # ядро не знает Zapper — играем без пистолета
 			_gun = null
+	if _touch_pad != null:
+		_touch_pad.configure(game["system"], _gun != null)
 
 	# Сведения о картинке и звуке: размер, пропорции, кадры/с, частота звука.
 	var av: Dictionary = core.get_av_info()
@@ -316,8 +383,24 @@ func _start_game(start_slot: String) -> String:
 	# Продолжаем с того места, где вышли в прошлый раз.
 	# Подсказка при запуске: как открыть меню.
 	var hint := tr("Esc — меню") if InputMapper.style == "keyboard" else tr("Правый стик — меню")
-	if _gun != null:
-		hint += " · " + tr("Целиться — мышью или стиком, стрелять — левой кнопкой мыши или правым курком")
+	var touch := TouchGamepad.wanted()
+	if touch:
+		hint = tr("❚❚ — меню")
+	# Аркада: игра ждёт «монету», как настоящий автомат. Подсказываем, где она.
+	if game.get("system", "") == "arcade" and not touch:
+		var keyboard := InputMapper.style == "keyboard"
+		hint += " · " + tr("Монета — %s, старт — %s") % [
+			"Shift" if keyboard else InputMapper.glyph("back"),
+			"Enter" if keyboard else InputMapper.glyph("start")]
+	if _gun != null and touch:
+		hint += " · " + tr("Стрелять — касанием экрана")
+	elif _gun != null:
+		hint += " · " + tr("Целиться — мышью или стиком, стрелять — левой кнопкой мыши, RT или RB")
+	elif LightGun.port_for(game) >= 0:
+		# Игра с пистолетом, а модуль shellbit_core собран до пистолета —
+		# не молчим, а говорим, что делать (иначе непонятно, куда делся прицел).
+		var script := "native\\build.bat" if OS.get_name() == "Windows" else "native/build.sh"
+		_show_notice(tr("Для светового пистолета нужен новый модуль shellbit_core. Закройте Godot, запустите %s и откройте проект снова.") % script)
 	if start_slot != "" and SaveStates.load_slot(core, game, start_slot):
 		if start_slot == SaveStates.AUTO:
 			SceneRouter.toast(tr("Продолжаем с места выхода") + " · " + hint)
@@ -331,6 +414,11 @@ func _start_game(start_slot: String) -> String:
 
 
 func _process(delta: float) -> void:
+	var playing: bool = core != null and core.is_running() and not _paused
+	if _touch_pause != null:
+		_touch_pause.visible = playing
+	if _touch_pad != null:
+		_touch_pad.visible = playing and TouchGamepad.wanted()
 	# Скриншот работает и в игре, и в меню паузы — поэтому проверяем
 	# его до строчки, которая на паузе останавливает всё остальное.
 	if core != null and Input.is_action_just_pressed("screenshot"):
@@ -339,9 +427,17 @@ func _process(delta: float) -> void:
 	if core == null or not core.is_running() or _paused:
 		return
 
+	# Детский режим с лимитом времени: считаем, пока игра идёт (пауза не в счёт).
+	if Family.limit_active():
+		_count_kids_time(delta)
+		if core == null:
+			return  # время вышло — игра уже закрыта
+
 	# Раскладка кнопок — своя для каждой приставки (Настройки → Управление).
 	var mask0: int = InputMapper.get_retropad_mask(0, game["system"])
 	var mask1: int = InputMapper.get_retropad_mask(1, game["system"])
+	if _touch_pad != null:
+		mask0 |= _touch_pad.mask()  # экранный геймпад — тоже первый игрок
 	var raw0 := mask0  # нажатия как есть — для проверки комбинации
 
 	# Select работает как «модификатор»: пока он зажат, Start не уходит
@@ -362,7 +458,8 @@ func _process(delta: float) -> void:
 	# Перемотка и ускорение. Пока ждём отпускания кнопок после меню — ни то ни другое.
 	var system_id: String = game["system"]
 	var rewinding := _tape_max > 0 and not _wait_release \
-			and InputMapper.is_hotkey_pressed(system_id, "rewind")
+			and (InputMapper.is_hotkey_pressed(system_id, "rewind") \
+				or (_touch_pad != null and _touch_pad.hotkey_held("rewind")))
 	var speed := 1 if rewinding or _wait_release else _fast_forward_speed(system_id)
 
 	# Что делать потоку эмуляции: какие кнопки нажаты, ускорение, перемотка.
@@ -374,7 +471,7 @@ func _process(delta: float) -> void:
 		"mask1": 0 if rewinding else mask1,
 		"speed": speed,
 		"rewinding": rewinding,
-		"sticks": _read_sticks(system_id, rewinding or _wait_release),
+		"sticks": _touch_sticks(_read_sticks(system_id, rewinding or _wait_release)),
 		# Пистолет: [порт, x, y, курок, выстрел мимо экрана] — или пусто.
 		"gun": [_gun.port] + _gun.aim(delta, rewinding or _wait_release) if _gun != null else [],
 	}
@@ -416,6 +513,17 @@ var _rumble_now: Array = [Vector2.ZERO, Vector2.ZERO]  # какую вибрац
 
 func _start_emulation() -> void:
 	if _thread != null or core == null:
+		return
+	# Некоторым ядрам нужен ОДИН поток на всё: и запуск игры, и кадры.
+	# Ядро Nintendo 64 (mupen64plus-next) внутри устроено на «сопрограммах»
+	# (библиотека libco): при запуске оно создаёт вторую «нить» исполнения
+	# и потом прыгает между ней и основной. В Windows такие прыжки работают
+	# только в том потоке, где «нить» создали, — то есть в главном, где
+	# игра запускалась. Прыжок из нашего потока эмуляции = вылет программы.
+	# (В Linux libco устроена иначе — там это работало, поэтому ошибку
+	# не поймали автотесты.) Таким ядрам — без отдельного потока: кадры
+	# считает главный поток в _process, как было раньше.
+	if CoreManager.get_system(game.get("system", "")).get("one_thread", false):
 		return
 	_stop_thread = false
 	_thread = Thread.new()
@@ -528,6 +636,31 @@ func _show_frame() -> void:
 		_texture.update(image)  # быстро: просто обновить пиксели
 
 
+# --- Лимит времени в детском режиме (autoload/Family.gd) ----------------------
+
+func _count_kids_time(delta: float) -> void:
+	var before := Family.seconds_left()
+	Family.add_play_time(delta)
+	var left := Family.seconds_left()
+	# Предупреждаем один раз — в тот кадр, когда «перешли черту».
+	if before > 300.0 and left <= 300.0:
+		Haptics.confirm()
+		SceneRouter.toast(tr("Осталось 5 минут игры на сегодня"))
+	elif before > 60.0 and left <= 60.0:
+		Haptics.confirm()
+		SceneRouter.toast(tr("Осталась 1 минута — потом игра сохранится и закроется"))
+	if left <= 0.0:
+		_time_up()
+
+
+## Время вышло: сохраняем место выхода и закрываем игру, как «Выйти в библиотеку».
+## Завтра (или после PIN взрослого) игра продолжится с этого места.
+func _time_up() -> void:
+	Haptics.error()
+	SceneRouter.toast(tr("Время игры на сегодня закончилось. Игра сохранена."))
+	_exit_game()
+
+
 # --- Скриншот ------------------------------------------------------------------
 
 ## Сохранить кадр игры в «Изображения\Shellbit».
@@ -546,14 +679,9 @@ func _take_screenshot() -> void:
 	if shown.x > 0 and shown.y > 0:
 		image.resize(shown.x, shown.y, Image.INTERPOLATE_NEAREST)
 
-	# Имя файла: «Battletoads 2026-10-19 16-23-05.png».
-	# В именах файлов Windows нельзя использовать \ / : * ? " < > | —
-	# убираем их из названия игры, а двоеточия во времени меняем на «-».
-	var title: String = game.get("title", "Shellbit")
-	for bad in ["\\", "/", ":", "*", "?", "\"", "<", ">", "|"]:
-		title = title.replace(bad, "")
-	var stamp := Time.get_datetime_string_from_system().replace("T", " ").replace(":", "-")
-	var file_name := "%s %s.png" % [title.strip_edges(), stamp]
+	# Имя файла: «Battletoads 2026-10-19 16-23-05.png». По нему галерея
+	# на странице игры узнаёт, чей это снимок (scripts/Screenshots.gd).
+	var file_name := Screenshots.file_name(game.get("title", "Shellbit"))
 	var folder := Settings.screenshots_dir()
 	DirAccess.make_dir_recursive_absolute(folder)  # создать папку, если её ещё нет
 
@@ -681,6 +809,23 @@ func _wants_menu(mask: int) -> bool:
 
 # --- Меню паузы ------------------------------------------------------------
 
+## Android: приложение свернули (звонок, кнопка «Домой», другое приложение).
+## Свёрнутое приложение Android может закрыть в любой момент без
+## предупреждения — поэтому сразу ставим игру на паузу и сохраняем место
+## выхода. Вернулись — видим меню паузы, «Продолжить» — и играем дальше.
+func _notification(what: int) -> void:
+	if what != NOTIFICATION_APPLICATION_PAUSED:
+		return
+	if core == null or not core.is_running():
+		return
+	if not _paused:
+		_open_menu()
+	Family.save_play_time()
+	_core_lock.lock()
+	SaveStates.save_slot(core, game, SaveStates.AUTO)
+	_core_lock.unlock()
+
+
 func _open_menu() -> void:
 	_paused = true
 	_update_rumble(true)  # на паузе геймпад не трясётся
@@ -694,7 +839,10 @@ func _open_menu() -> void:
 	%Audio.stream_paused = true  # звук замирает вместе с игрой
 	if _gun != null:
 		_gun.set_active(false)  # в меню — обычный курсор мыши вместо прицела
-	%PauseMenu.open(game, _disc_info(), core.has_method("get_option_list"))
+	# Читы: у старого модуля (без cheat_set) кнопку оставляем — окно
+	# подскажет пересобрать модуль. Прячем, только если само ядро не умеет.
+	var has_cheats: bool = not core.has_method("has_cheats") or core.has_cheats()
+	%PauseMenu.open(game, _disc_info(), core.has_method("get_option_list"), has_cheats)
 
 
 func _resume() -> void:
@@ -708,6 +856,37 @@ func _resume() -> void:
 
 
 # --- Настройки ядра -----------------------------------------------------------
+
+# --- Читы ----------------------------------------------------------------------
+# Какие коды включены — помнит autoload Cheats, окно — CheatsPanel.
+# Ядру передаём всегда ВЕСЬ список включённых: сначала cheat_reset()
+# («забудь все»), потом каждый код по номеру 0, 1, 2… Так проще, чем
+# помнить, какой чит под каким номером и что выключили.
+
+var _cheats_panel := CheatsPanel.new()
+
+
+func _open_cheats() -> void:
+	_cheats_panel.open(game, core.has_method("cheat_set"))
+
+
+func _on_cheats_changed() -> void:
+	_core_lock.lock()  # поток эмуляции на паузе стоит, но замок — правило
+	_apply_cheats()
+	_core_lock.unlock()
+
+
+## Передать ядру включённые коды. Вызывать под _core_lock (или до запуска потока).
+func _apply_cheats() -> void:
+	if not core.has_method("cheat_set") or not core.has_cheats():
+		return  # старый модуль или ядро без читов
+	core.cheat_reset()
+	var codes := Cheats.enabled_codes(game)
+	for i in codes.size():
+		core.cheat_set(i, true, codes[i])
+	if not codes.is_empty():
+		print("Читы включены: ", codes)
+
 
 ## Номера языков из libretro.h (RETRO_LANGUAGE_*): ядро опишет
 ## свои настройки на этом языке, если у него есть перевод.
@@ -804,6 +983,7 @@ func _on_save_requested(slot: String) -> void:
 	_core_lock.unlock()
 	if saved:
 		SceneRouter.toast(tr("Сохранено в слот %s") % slot)
+		Haptics.tap()
 	else:
 		SceneRouter.toast(tr("Это ядро не умеет сохранять состояние"))
 	%PauseMenu.refresh_slots()
@@ -840,6 +1020,7 @@ func _restart() -> void:
 
 
 func _exit_game() -> void:
+	Family.save_play_time()  # наигранное в детском режиме — в файл
 	if _sync.underruns > 0:
 		print("Звук прерывался %d раз(а) за игру" % _sync.underruns)
 	_update_rumble(true)
@@ -851,6 +1032,42 @@ func _exit_game() -> void:
 	core.unload()
 	core = null
 	SceneRouter.back()
+
+
+## Путь «как принято в системе». Godot везде пишет «/» (D:/Games/mslug.zip),
+## а в Windows родной разделитель — «\» (D:\Games\mslug.zip). Большинству ядер
+## всё равно, но некоторые ищут папку игры по последнему «\». Аркадное ядро
+## FBNeo так ищет архивы (neogeo.zip) рядом с игрой — и с «/» не находило
+## ни одного: «None of those archives was found in your paths».
+## Поэтому ядрам отдаём пути с «\» — как RetroArch.
+static func _native(path: String) -> String:
+	return path.replace("/", "\\") if OS.get_name() == "Windows" else path
+
+
+## BIOS автомата, которого не хватает аркадной игре ("" — не нужен или на месте).
+## FBNeo ищет его рядом с игрой и в папке system/fbneo — проверяем там же.
+func _missing_arcade_bios() -> String:
+	if game.get("system", "") != "arcade" or not ArcadeNames.knows(_content_path):
+		return ""
+	var bios := ArcadeNames.bios_of(_content_path)
+	if bios == "":
+		return ""
+	var places := [_content_path.get_base_dir(), ProjectSettings.globalize_path(CoreManager.SYSTEM_DIR.path_join("fbneo"))]
+	for folder: String in places:
+		for extension in ["zip", "7z"]:
+			if FileAccess.file_exists(folder.path_join(bios + "." + extension)):
+				return ""
+	return bios
+
+
+## BIOS для дисков, которого нет в папке system ("" — всё на месте или это не диск).
+func _missing_disc_bios(system: Dictionary) -> String:
+	if not _content_path.get_extension().to_lower() in Library.DISC_EXTENSIONS:
+		return ""  # картридж — BIOS для дисков не нужен
+	for bios: String in system.get("disc_bios", []):
+		if not FileAccess.file_exists(CoreManager.SYSTEM_DIR.path_join(bios)):
+			return bios
+	return ""
 
 
 func _show_error(text: String) -> void:
@@ -869,6 +1086,11 @@ func _show_error(text: String) -> void:
 	%DownloadButton.visible = _missing_core
 	%DownloadButton.text = tr("Скачать ядро")
 	%DownloadButton.disabled = false
+	%OpenCoresButton.text = tr("Открыть папку BIOS") if _missing_bios else tr("Открыть папку ядер")
+	if not Platform.can_open_folders():
+		# Android: папки не открыть. BIOS — выбрать файлы; ядро — только скачать.
+		%OpenCoresButton.text = tr("Добавить файлы BIOS…")
+		%OpenCoresButton.visible = _missing_bios
 	if _missing_core:
 		%DownloadButton.grab_focus()
 	else:
@@ -904,6 +1126,30 @@ func _download_core() -> void:
 func _on_core_progress(core_file: String, percent: int) -> void:
 	if core_file == _core_file() and percent >= 0:
 		%DownloadButton.text = tr("Скачиваю…") + " %d %%" % percent
+
+
+# Android: выбрать файлы BIOS, скопировать к себе (CoreManager.import_bios)
+# и сразу попробовать запустить игру ещё раз.
+var _bios_dialog: FileDialog
+
+
+func _pick_bios_files() -> void:
+	if _bios_dialog == null:
+		_bios_dialog = FileDialog.new()
+		_bios_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILES
+		_bios_dialog.access = FileDialog.ACCESS_FILESYSTEM
+		_bios_dialog.title = tr("Файлы BIOS")
+		Platform.setup_file_dialog(_bios_dialog)
+		add_child(_bios_dialog)
+		_bios_dialog.files_selected.connect(func(paths: PackedStringArray) -> void:
+			var copied := CoreManager.import_bios(paths)
+			SceneRouter.toast(tr("Скопировано файлов BIOS: %d") % copied)
+			if copied > 0:
+				%Error.visible = false
+				%Hints.visible = false
+				_begin())
+		_bios_dialog.canceled.connect(%OpenCoresButton.grab_focus)
+	_bios_dialog.popup_centered_ratio(0.8)
 
 
 func _on_core_finished(core_file: String, ok: bool, message: String) -> void:
@@ -1014,6 +1260,8 @@ func _fast_forward_speed(system_id: String) -> int:
 		# В играх с пистолетом правый курок — это курок пистолета.
 		# Ускорение остаётся только на клавиатуре (пробел).
 		down = Input.is_physical_key_pressed(InputMapper.HOTKEY_KEYS["fast_forward"])
+	if _touch_pad != null and _touch_pad.hotkey_held("fast_forward"):
+		down = true  # ▶▶ на экране
 	var on := down
 	if Settings.get_value("play", "ff_mode") == "toggle":
 		if down and not _ff_was_down:  # кнопку только что нажали
@@ -1021,6 +1269,58 @@ func _fast_forward_speed(system_id: String) -> int:
 		on = _ff_on
 	_ff_was_down = down
 	return int(Settings.get_value("play", "ff_speed")) if on else 1
+
+
+# --- Кнопка «Пауза» для сенсорного экрана --------------------------------------
+# На телефоне без геймпада нет кнопок Start или Select — меню паузы
+# открывает эта кнопка в левом верхнем углу (меню выезжает оттуда же,
+# слева). Полупрозрачная, чтобы не закрывать игру. Закрывают меню, смахнув
+# его влево или тапнув по игре (scenes/pause/PauseMenu.gd).
+
+var _touch_pause: Button
+var _touch_pad: TouchGamepad
+
+
+## Экранный стик (Nintendo 64) — вместо левого стика первого игрока,
+## пока его касается палец.
+func _touch_sticks(sticks: Array[Vector2]) -> Array[Vector2]:
+	if _touch_pad == null or sticks.is_empty():
+		return sticks
+	var touch := _touch_pad.stick()
+	if touch != Vector2.ZERO:
+		sticks[0] = touch
+	var c_buttons := _touch_pad.stick("cstick")  # C-кнопки Nintendo 64 = правый стик
+	if c_buttons != Vector2.ZERO and sticks.size() > 1:
+		sticks[1] = c_buttons
+	return sticks
+
+
+func _create_touch_pause() -> void:
+	if not Platform.touch_first():
+		return  # компьютер или Android TV — там есть клавиатура, геймпад или пульт
+	# Экранный геймпад (scenes/player/TouchGamepad.gd) — под кнопкой паузы.
+	_touch_pad = TouchGamepad.new()
+	add_child(_touch_pad)
+	move_child(_touch_pad, %PauseMenu.get_index())
+	_touch_pad.configure(game.get("system", ""))
+	_touch_pause = Button.new()
+	_touch_pause.text = "❚❚"
+	_touch_pause.focus_mode = Control.FOCUS_NONE  # геймпаду эта кнопка не нужна
+	_touch_pause.custom_minimum_size = Vector2(64, 64)
+	_touch_pause.add_theme_font_size_override("font_size", 22)
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]:
+		_touch_pause.add_theme_color_override(state, Color(1, 1, 1, 0.85))
+	for state in ["normal", "hover", "pressed"]:
+		var box := StyleBoxFlat.new()
+		box.bg_color = Color(0, 0, 0, 0.55 if state == "pressed" else 0.35)
+		box.set_corner_radius_all(32)  # круглая
+		_touch_pause.add_theme_stylebox_override(state, box)
+	add_child(_touch_pause)
+	_touch_pause.position = Vector2(20, 20)
+	move_child(_touch_pause, %PauseMenu.get_index())  # меню паузы — поверх кнопки
+	_touch_pause.pressed.connect(func() -> void:
+		if core != null and not _paused:
+			_open_menu())
 
 
 func _create_speed_label() -> void:

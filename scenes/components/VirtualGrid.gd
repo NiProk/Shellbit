@@ -23,6 +23,8 @@ extends Control
 
 ## Нажали карточку (A или мышь).
 signal card_pressed(group: Dictionary)
+## Карточку долго держали пальцем (или правая кнопка мыши) — меню игры.
+signal card_long_pressed(group: Dictionary, card: GameCard)
 ## Фокус перешёл на игру — например, чтобы показать её данные справа.
 signal card_focused(group: Dictionary)
 
@@ -193,7 +195,12 @@ func _ensure_cards(count: int) -> void:
 		card.custom_minimum_size = CARD_SIZE
 		card.size = CARD_SIZE
 		card.set_meta("index", -1)
-		card.pressed.connect(func() -> void: card_pressed.emit(items[card.get_meta("index")]))
+		card.pressed.connect(func() -> void:
+			if not card.consume_long_press():  # после долгого нажатия игру не открываем
+				card_pressed.emit(items[card.get_meta("index")]))
+		card.long_pressed.connect(func() -> void:
+			if card.get_meta("index") >= 0:
+				card_long_pressed.emit(items[card.get_meta("index")], card))
 		card.focus_entered.connect(_on_card_focused.bind(card))
 		card.gui_input.connect(_on_card_input.bind(card))
 		_cards.append(card)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dirokurxeuvan"
-path="res://.godot/imported/bear.png-4ca00572d5ff3032ac35624b745c9309.ctex"
+uid="uid://pdx7dyyyckma"
+path="res://.godot/imported/Melda.png-63a841a49afe523876fd2a1c60077084.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/avatars/bear.png"
-dest_files=["res://.godot/imported/bear.png-4ca00572d5ff3032ac35624b745c9309.ctex"]
+source_file="res://data/avatars/Melda.png"
+dest_files=["res://.godot/imported/Melda.png-63a841a49afe523876fd2a1c60077084.ctex"]
 
 [params]
 

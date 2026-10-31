@@ -29,12 +29,18 @@ const ButtonHintsScene := preload("res://scenes/components/ButtonHints.tscn")
 const LAYOUTS := {
 	"latin": ["1234567890", "QWERTYUIOP", "ASDFGHJKL'", "ZXCVBNM-.&"],
 	"cyrillic": ["1234567890", "ЙЦУКЕНГШЩЗХ", "ФЫВАПРОЛДЖЭ", "ЯЧСМИТЬБЮЁЪ"],
+	# Для кодов читов: только латиница, цифры и знаки из кодов —
+	# «7E0DBE:09» (Action Replay), «SXIOPO+AEIOZA» (несколько кодов сразу).
+	"code": ["1234567890", "QWERTYUIOP", "ASDFGHJKL:", "ZXCVBNM+-."],
 }
 const KEY_SIZE := Vector2(56, 50)
 
 ## Надпись на главной клавише. Для поиска — «Найти», для имени — «Сохранить».
 ## (Пишем по-русски, переводит клавиатура сама.)
 var done_text := "Найти"
+## Режим «код чита»: раскладка "code", буквы — ЗАГЛАВНЫЕ (так коды и пишут),
+## кириллицы нет. Обычный режим — false.
+var code_mode := false
 
 ## Какая раскладка была в прошлый раз. static — общая для всех клавиатур,
 ## поэтому выбор сохраняется, пока программа запущена.
@@ -93,13 +99,11 @@ func open(line_edit: LineEdit) -> void:
 	_target = line_edit
 	# Подсказки — здесь, а не в _ready: надпись главной клавиши (done_text)
 	# могли поменять уже после создания клавиатуры.
-	_hints.set_hints([
-		["accept", "Ввести"],
-		["cancel", "Стереть"],
-		["details", "Пробел"],
-		["favorite", "Раскладка"],
-		["menu", done_text],
-	])
+	var hints := [["accept", "Ввести"], ["cancel", "Стереть"], ["details", "Пробел"]]
+	if not code_mode:
+		hints.append(["favorite", "Раскладка"])  # у кодов раскладка одна
+	hints.append(["menu", done_text])
+	_hints.set_hints(hints)
 	_build()
 	visible = true
 	_focus_key(1, 0)  # первая буква (ряд 0 — цифры)
@@ -122,14 +126,15 @@ func _build() -> void:
 		_rows.remove_child(child)
 		child.queue_free()
 
-	for keys: String in LAYOUTS[_layout]:
+	for keys: String in LAYOUTS["code" if code_mode else _layout]:
 		var row := _new_row()
 		for letter in keys:  # строку можно перебирать по буквам
 			row.add_child(_key(letter, _type.bind(letter)))
 
 	# Нижний ряд: раскладка, пробел, стереть, найти.
 	var bottom := _new_row()
-	bottom.add_child(_key("АБВ" if _layout == "latin" else "ABC", _switch_layout, 96))
+	if not code_mode:
+		bottom.add_child(_key("АБВ" if _layout == "latin" else "ABC", _switch_layout, 96))
 	bottom.add_child(_key(tr("Пробел"), _type.bind(" "), 280))
 	bottom.add_child(_key("⌫", _backspace, 96))
 	var find := _key(tr(done_text), _finish, 140)
@@ -223,7 +228,8 @@ func _focus_key(row_index: int, key_index: int) -> void:
 
 func _type(letter: String) -> void:
 	# Для поиска регистр не важен, а строчные буквы читать приятнее.
-	_set_text(_target.text + letter.to_lower())
+	# Коды читов, наоборот, всегда пишут заглавными.
+	_set_text(_target.text + (letter.to_upper() if code_mode else letter.to_lower()))
 
 
 func _backspace() -> void:
@@ -243,6 +249,8 @@ func _set_text(text: String) -> void:
 
 
 func _switch_layout() -> void:
+	if code_mode:
+		return
 	# Запоминаем, где стоял фокус, чтобы после смены раскладки остаться там же.
 	var focused := get_viewport().gui_get_focus_owner()
 	var row_index := 0

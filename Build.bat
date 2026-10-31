@@ -7,7 +7,8 @@ rem  Build.bat - собрать готовую программу: build\Shellbi
 rem  Просто двойной щелчок.
 rem
 rem  Что делает:
-rem    1) если нет release-версии C++-модуля - собирает её (native\build.bat release);
+rem    1) обновляет release-версию C++-модуля (native\build.bat release) -
+rem       если код C++ не менялся, это пара секунд;
 rem    2) проверяет, что установлены шаблоны экспорта Godot;
 rem    3) экспортирует проект по пресету "Windows Desktop" (export_presets.cfg).
 rem
@@ -22,14 +23,14 @@ call "%ROOT%\tools\godot.bat" || goto :fail
 
 rem --- 1. C++-модуль для готовой программы ---
 set "DLL=addons\shellbit_core\bin\shellbit_core.windows.template_release.x86_64.dll"
-if exist "%DLL%" goto :templates
+rem Собираем ВСЕГДА, а не только если .dll нет: иначе после изменений
+rem в C++ в Shellbit.exe попадал бы старый модуль. Если ничего не менялось,
+rem сборка видит это сама и заканчивается за пару секунд.
 echo.
-echo === Нет release-версии C++-модуля, собираю её. Godot должен быть закрыт. ===
-rem SHELLBIT_QUIET - чтобы native\build.bat не ждал нажатия клавиши в конце.
-rem Потом возвращаем, как было: этот файл сам решает, ждать ли в конце.
+echo === Обновляю C++-модуль. Godot должен быть закрыт. ===
 set "WAS_QUIET=%SHELLBIT_QUIET%"
 set "SHELLBIT_QUIET=1"
-call native\build.bat release
+call native\build.bat release || goto :fail
 set "SHELLBIT_QUIET=%WAS_QUIET%"
 cd /d "%ROOT%"
 if not exist "%DLL%" goto :fail

@@ -21,6 +21,7 @@ boot_splash/stretch_mode=0
 boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
+config/quit_on_go_back=false
 
 [autoload]
 
@@ -38,6 +39,8 @@ UiTheme="*res://autoload/UiTheme.gd"
 SceneRouter="*res://autoload/SceneRouter.gd"
 PadNotifier="*res://autoload/PadNotifier.gd"
 UiSounds="*res://autoload/UiSounds.gd"
+Haptics="*res://autoload/Haptics.gd"
+Cheats="*res://autoload/Cheats.gd"
 Watchdog="*res://autoload/Watchdog.gd"
 
 [display]
@@ -47,3 +50,8 @@ window/size/viewport_height=720
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/handheld/orientation=4
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

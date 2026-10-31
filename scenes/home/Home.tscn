@@ -75,9 +75,10 @@ theme_override_font_sizes/font_size = 20
 text = "00:00"
 
 [node name="BodyScroll" type="ScrollContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-follow_focus = true
+follow_focus = false
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
@@ -122,17 +123,17 @@ text = "Продолжить играть"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 270)
 layout_mode = 2
-follow_focus = true
+follow_focus = false
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
 [node name="Pad" type="MarginContainer" parent="Margin/VBox/BodyScroll/Body/RecentScroll" unique_id=1743073873]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 26
-theme_override_constants/margin_top = 26
-theme_override_constants/margin_right = 26
-theme_override_constants/margin_bottom = 26
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 32
 
 [node name="RecentRow" type="HBoxContainer" parent="Margin/VBox/BodyScroll/Body/RecentScroll/Pad" unique_id=1239908245]
 unique_name_in_owner = true
@@ -149,17 +150,17 @@ text = "Приставки"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 156)
 layout_mode = 2
-follow_focus = true
+follow_focus = false
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
 [node name="Pad" type="MarginContainer" parent="Margin/VBox/BodyScroll/Body/SystemsScroll" unique_id=2050923902]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 26
-theme_override_constants/margin_top = 26
-theme_override_constants/margin_right = 26
-theme_override_constants/margin_bottom = 26
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 38
 
 [node name="SystemsRow" type="HBoxContainer" parent="Margin/VBox/BodyScroll/Body/SystemsScroll/Pad" unique_id=2077703171]
 unique_name_in_owner = true

@@ -52,6 +52,20 @@ const SAVE_PATH := "user://library.json"
 const FAVORITES := "favorites"
 const FAVORITES_COLOR := "#f5c542"  # золотой — цвет звезды
 const MAX_DEPTH := 6  # насколько глубоко заходить во вложенные папки
+
+## Образы дисков (.cue, .chd, .iso, .img) бывают не только у PlayStation:
+## такие же файлы у PC Engine CD, Sega CD, Saturn… По расширению их не
+## различить — смотрим на названия папок по пути к файлу. Лежит в папке
+## «PC Engine NEC» — значит, это PC Engine, а не PS1.
+## "" — приставка, которую Shellbit не поддерживает: такие игры пропускаем.
+const DISC_FOLDER_HINTS := {
+	"pce": ["pc engine", "pc-engine", "pcengine", "turbografx", "turbo grafx"],
+	"": ["sega cd", "mega cd", "mega-cd", "megacd", "segacd", "saturn", "dreamcast",
+		"3do", "neo geo cd", "neogeo cd", "pc-fx", "pcfx", "psp", "playstation 2", "ps2",
+		"gamecube", "wii", "xbox", "jaguar cd", "cd-i", "cdi"],
+}
+## Расширения образов дисков, для которых проверяем папки.
+const DISC_EXTENSIONS := ["cue", "chd", "iso", "img", "m3u"]
 ## Поля, которые у каждого игрока свои.
 const STAT_FIELDS := ["favorite", "last_played", "play_seconds"]
 
@@ -165,6 +179,41 @@ func _carry_over_moved(old: Dictionary, found: Array[Dictionary]) -> int:
 	return count
 
 
+# .bin — самое неопределённое расширение: так называют игры Mega Drive,
+# Atari 2600 и дорожки дисков PS1. По расширению не понять — смотрим внутрь:
+#   • у игры Mega Drive по адресу 0x100 написано «SEGA» (так устроен
+#     заголовок картриджа: без этой надписи настоящая приставка игру не запускала);
+#   • «SEGA 32X» — игра для приставки 32X: её Shellbit не запускает;
+#   • маленький файл (до 64 КБ) — картридж Atari 2600: они были крошечные.
+# "" — непонятно что: пропускаем.
+func _bin_system(path: String) -> String:
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		return ""
+	var size := file.get_length()
+	if size >= 0x110:
+		file.seek(0x100)
+		var header := file.get_buffer(16).get_string_from_ascii()
+		if header.begins_with("SEGA"):
+			return "" if header.contains("32X") else "md"
+	return "atari2600" if size <= 65536 else ""
+
+
+# Образ диска: какой он приставки — по названиям папок (DISC_FOLDER_HINTS).
+# Подсказок в пути нет — оставляем ту, что по расширению (PlayStation).
+func _disc_system(path: String, by_extension: String) -> String:
+	var folders := path.get_base_dir().to_lower().replace("\\", "/").split("/", false)
+	for system: String in DISC_FOLDER_HINTS:
+		for hint: String in DISC_FOLDER_HINTS[system]:
+			for folder in folders:
+				# Короткие подсказки («ps2», «wii») — только целым словом,
+				# иначе «wii» нашлось бы в «Wii Sports»… да и в любом слове с «wii».
+				if folder == hint or folder.begins_with(hint + " ") or folder.ends_with(" " + hint) \
+						or (hint.length() >= 6 and folder.contains(hint)):
+					return system
+	return by_extension
+
+
 func _move_key(entry: Dictionary) -> String:
 	return entry.get("system", "") + "/" + Genres.simplify(String(entry["path"]).get_file())
 
@@ -213,7 +262,10 @@ func _scan_dir(path: String, found: Array[Dictionary], old: Dictionary, depth: i
 	for sub in dir.get_directories():
 		_scan_dir(path.path_join(sub), found, old, depth + 1)
 
-	for file in dir.get_files():
+	var files := dir.get_files()
+	# Есть .cue в папке — значит, .bin рядом с ним это дорожки диска, а не игры.
+	var has_cue := Array(files).any(func(f: String) -> bool: return f.get_extension().to_lower() == "cue")
+	for file in files:
 		var full_path := path.path_join(file)
 		var archive := Archives.is_archive(full_path)
 		var system_id := ""
@@ -227,10 +279,22 @@ func _scan_dir(path: String, found: Array[Dictionary], old: Dictionary, depth: i
 				if system_id == "":
 					_waiting_for_7zip = true  # .7z, а открыть его пока нечем
 					continue
+		elif file.get_extension().to_lower() == "bin":
+			if has_cue:
+				continue  # дорожка диска PS1 — игру представляет .cue
+			# Чей .bin, узнаём по содержимому — один раз, потом берём из прошлого раза.
+			if old.has(full_path):
+				system_id = old[full_path]["system"]
+			else:
+				system_id = _bin_system(full_path)
 		else:
 			system_id = CoreManager.system_for_extension(file.get_extension())
+			if file.get_extension().to_lower() in DISC_EXTENSIONS:
+				system_id = _disc_system(full_path, system_id)
 		if system_id == "":
 			continue  # это не игра (или приставка, которую мы не знаем)
+		if system_id == "arcade" and ArcadeNames.is_bios(full_path):
+			continue  # neogeo.zip и т.п. — «прошивка» автомата, а не игра
 
 		var entry: Dictionary = old.get(full_path, {
 			"path": full_path,
@@ -257,7 +321,12 @@ func _rebuild_groups() -> void:
 		# получат правильные названия. В пределах запуска — берём из _parsed.
 		var path: String = game["path"]
 		if not _parsed.has(path):
-			_parsed[path] = RomInfo.parse(path.get_file())
+			# Аркадные автоматы: имя архива короткое («sf2.zip») — настоящее
+			# название берём из таблицы FinalBurn Neo (scripts/ArcadeNames.gd).
+			if game["system"] == "arcade" and ArcadeNames.knows(path):
+				_parsed[path] = ArcadeNames.parse(path)
+			else:
+				_parsed[path] = RomInfo.parse(path.get_file())
 		var info: Dictionary = _parsed[path]
 		game["title"] = info["title"]
 		game["version"] = info["label"]
@@ -370,6 +439,11 @@ func chosen_variant(group: Dictionary) -> Dictionary:
 		if variant["path"] == path:
 			return variant
 	return group["variants"][0]
+
+
+## Выбрать версию игры (например, нажали её пальцем в списке версий).
+func choose_variant(group: Dictionary, variant: Dictionary) -> void:
+	Settings.set_value("versions", group["key"], variant["path"])
 
 
 ## Выбрать следующую версию (по кругу). Возвращает выбранную.

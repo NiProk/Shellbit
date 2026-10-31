@@ -49,6 +49,7 @@ func _ready() -> void:
 	_fit_to_screen()
 	_build_categories()
 	%FolderDialog.dir_selected.connect(_on_folder_selected)
+	Platform.setup_file_dialog(%FolderDialog)  # на Android — своё окно Godot
 	# Если геймпад подключили, пока открыт раздел «Управление», — обновим список.
 	# Подключаем обычную функцию, а не лямбду: когда экран закроется,
 	# Godot сам отключит её от сигнала.
@@ -390,6 +391,7 @@ func _on_folder_row_pressed(row: SettingRow, path: String) -> void:
 		row.info_text = tr("Нажмите ещё раз")
 		row.warn = true
 		row.refresh()
+		Haptics.confirm()
 		return
 	Settings.remove_rom_folder(path)
 	Library.scan()
@@ -418,6 +420,12 @@ func _build_controls() -> void:
 	}
 	_info("Сейчас управление", style_names.get(InputMapper.style, "?"),
 			tr("Shellbit сам замечает, чем вы пользуетесь, и меняет значки в подсказках внизу."))
+	if Platform.touch_first():
+		_choice("Экранный геймпад", "controls", "touch_pad", [
+			["auto", tr("Авто"), tr("Крестовина и кнопки на экране, пока не подключён настоящий геймпад.")],
+			["always", tr("Всегда"), tr("Экранные кнопки видны, даже когда подключён геймпад.")],
+			["off", tr("Выкл"), tr("Только настоящий геймпад.")],
+		])
 
 	var pads := Input.get_connected_joypads()
 	var names := PackedStringArray()
@@ -432,6 +440,8 @@ func _build_controls() -> void:
 			tr("Кнопка Share («Поделиться») есть на геймпадах Xbox Series и PlayStation 5. На других геймпадах — пункт «Скриншот» в меню паузы."))
 	_info("Перемотка и ускорение", "%s · %s" % [InputMapper.glyph("lt"), InputMapper.glyph("rt")],
 			_hotkeys_text())
+	_toggle("Вибрация в меню", "controls", "ui_rumble",
+			tr("Геймпад коротко вздрагивает на важных действиях: «Точно выйти?», неверный PIN-код, избранное, сохранение в слот. На вибрацию в играх не влияет."))
 	var pad_row := _action("Кнопки приставок", "",
 			tr("Своя раскладка для каждой приставки: какая кнопка вашего геймпада — это A, B или Start приставки. С рисунками геймпадов."),
 			Callable())
@@ -487,13 +497,15 @@ func _on_joy_connection_changed(_device: int, _connected: bool) -> void:
 
 
 func _build_video() -> void:
-	var window := _choice("Режим окна", "video", "window_mode", [
-		["fullscreen", tr("Полный экран"),
-			tr("Shellbit занимает весь экран, как настоящая приставка. F11 или Alt+Enter — переключить в окно.")],
-		["windowed", tr("Окно"),
-			tr("Shellbit открывается в обычном окне — его можно двигать и менять размер. F11 или Alt+Enter — во весь экран.")],
-	])
-	window.value_changed.connect(func(_value: Variant) -> void: Settings.apply_window_mode())
+	# На Android окон нет — приложение всегда на весь экран.
+	if Platform.is_desktop():
+		var window := _choice("Режим окна", "video", "window_mode", [
+			["fullscreen", tr("Полный экран"),
+				tr("Shellbit занимает весь экран, как настоящая приставка. F11 или Alt+Enter — переключить в окно.")],
+			["windowed", tr("Окно"),
+				tr("Shellbit открывается в обычном окне — его можно двигать и менять размер. F11 или Alt+Enter — во весь экран.")],
+		])
+		window.value_changed.connect(func(_value: Variant) -> void: Settings.apply_window_mode())
 	var filter := _choice("Фильтр изображения", "video", "filter", [
 		["none", tr("Чёткие пиксели"),
 			tr("Каждый пиксель приставки — ровный квадрат. Так игры выглядят на современных экранах.")],
@@ -601,8 +613,8 @@ func _build_player(id: String) -> void:
 	# Картинка: ◀ ▶ листают встроенные (data/avatars), первая — «Буква имени».
 	var about_avatar := tr("Картинка в кружке игрока. Листайте ◀ ▶ — справа сразу видно, как получится.")
 	var avatars: Array = [["", tr("Буква имени"), about_avatar]]
-	for avatar: Array in Profiles.AVATARS:
-		avatars.append([Profiles.AVATAR_DIR.path_join(avatar[0] + ".png"), tr(avatar[1]), about_avatar])
+	for avatar: Array in Profiles.avatar_list():
+		avatars.append([avatar[0], avatar[1], about_avatar])
 	if Profiles.avatar_of(id).begins_with("user://"):
 		avatars.append([Profiles.avatar_of(id), tr("Своя картинка"), about_avatar])
 	var avatar_row := _choice("Аватар", Profiles.section_of(id), "avatar", avatars)
@@ -623,7 +635,8 @@ func _build_player(id: String) -> void:
 			else:
 				remove.set_meta("armed", true)
 				remove.info_text = tr("Точно? Нажмите ещё раз")
-				remove.refresh())
+				remove.refresh()
+				Haptics.confirm())
 		remove.focus_exited.connect(func() -> void:
 			remove.set_meta("armed", false)
 			remove.info_text = ""
@@ -643,7 +656,7 @@ func _pick_avatar_file(id: String) -> void:
 		_avatar_dialog = FileDialog.new()
 		_avatar_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 		_avatar_dialog.access = FileDialog.ACCESS_FILESYSTEM
-		_avatar_dialog.use_native_dialog = true
+		Platform.setup_file_dialog(_avatar_dialog)
 		_avatar_dialog.filters = PackedStringArray(["*.png, *.jpg, *.jpeg, *.webp ; " + tr("Картинки")])
 		add_child(_avatar_dialog)
 	# Подключение — на один раз: в следующий раз игрок может быть другой.
@@ -768,6 +781,15 @@ func _build_family() -> void:
 			tr("Ребёнок сможет только играть. Спрячутся настройки, «+ Папка с играми», выход из программы, смена обложек, «Начать заново», настройки ядра и перезапись сохранений, а игры жанра «Для взрослых» скроются. Выйти из режима можно только по PIN-коду."),
 			Callable())
 	row.pressed.connect(func() -> void: _ask_new_pin(row))
+	# Лимит времени задают заранее: в детском режиме настройки закрыты.
+	_choice("Время игры в день", Family.SECTION, "time_limit", [
+		[0, "Без ограничений"],
+		[30, "30 минут"],
+		[60, "1 час"],
+		[90, "1,5 часа"],
+		[120, "2 часа"],
+		[180, "3 часа"],
+	], tr("Работает в детском режиме. Считается только время, когда игра идёт. За 5 минут до конца — предупреждение, потом игра сохраняется и закрывается. Добавить %d минут можно по PIN-коду.") % Family.EXTRA_MINUTES, false)
 
 
 # Включение: придумать PIN → повторить → совпало — режим включён.
@@ -884,10 +906,17 @@ func _build_cores() -> void:
 				tr("Shellbit скачает ядра для всех приставок, где их нет, с официального сервера libretro (buildbot.libretro.com). BIOS не скачиваются — их нужно положить в папку BIOS самим."),
 				func() -> void: CoreDownloader.download_missing())
 
-	_action("Открыть папку ядер", "", tr("Сюда кладут файлы ядер (%s):\n") % CoreManager.core_extension() + cores_dir,
-			CoreManager.open_cores_folder)
-	_action("Открыть папку BIOS", "", tr("Сюда кладут файлы BIOS:\n") + bios_dir,
-			func() -> void: OS.shell_open(bios_dir))
+	if Platform.can_open_folders():
+		_action("Открыть папку ядер", "", tr("Сюда кладут файлы ядер (%s):\n") % CoreManager.core_extension() + cores_dir,
+				CoreManager.open_cores_folder)
+		_action("Открыть папку BIOS", "", tr("Сюда кладут файлы BIOS:\n") + bios_dir,
+				func() -> void: OS.shell_open(bios_dir))
+	else:
+		# Android: папки программы спрятаны от других приложений, положить
+		# туда файл руками нельзя. Поэтому выбираем BIOS и копируем к себе.
+		_action("Добавить файлы BIOS…", "",
+				tr("Выберите файлы BIOS во внутренней памяти или на карте памяти — Shellbit скопирует их к себе. Например, scph5501.bin для PlayStation или syscard3.pce для PC Engine CD."),
+				_pick_bios_files)
 
 	for system: Dictionary in CoreManager.systems:
 		var core_path := CoreManager.core_path(system)
@@ -900,6 +929,10 @@ func _build_cores() -> void:
 			if not FileAccess.file_exists(CoreManager.SYSTEM_DIR.path_join(bios)):
 				missing_bios.append(bios)
 			text += "\nBIOS %s — %s." % [bios, tr("не найден") if missing_bios.has(bios) else tr("найден")]
+		# BIOS только для дисковых игр (PC Engine CD): игры на картриджах работают и без него.
+		for bios: String in system.get("disc_bios", []):
+			var found := FileAccess.file_exists(CoreManager.SYSTEM_DIR.path_join(bios))
+			text += "\n" + tr("BIOS для дисков %s — %s (картриджам не нужен).") % [bios, tr("найден") if found else tr("не найден")]
 
 		if not has_core:
 			# Ядра нет — строка становится кнопкой «Скачать».
@@ -910,6 +943,25 @@ func _build_cores() -> void:
 			_show_core_state(row, core_file, -2)
 			continue
 		_info(system["name"], tr("Без BIOS") if not missing_bios.is_empty() else tr("Готово"), text, false)
+
+
+# Android: выбрать файлы BIOS и скопировать в папку BIOS программы.
+var _bios_dialog: FileDialog
+
+
+func _pick_bios_files() -> void:
+	if _bios_dialog == null:
+		_bios_dialog = FileDialog.new()
+		_bios_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILES  # можно несколько сразу
+		_bios_dialog.access = FileDialog.ACCESS_FILESYSTEM
+		_bios_dialog.title = tr("Файлы BIOS")
+		Platform.setup_file_dialog(_bios_dialog)
+		add_child(_bios_dialog)
+		_bios_dialog.files_selected.connect(func(paths: PackedStringArray) -> void:
+			var copied := CoreManager.import_bios(paths)
+			SceneRouter.toast(tr("Скопировано файлов BIOS: %d") % copied)
+			_rebuild_page())
+	_bios_dialog.popup_centered_ratio(0.8)
 
 
 # Что написать справа в строке ядра: «Скачать», «в очереди» или «45 %».
@@ -951,11 +1003,15 @@ func _build_about() -> void:
 	_info("Игр в библиотеке", Library.count_text(Library.groups.size()),
 			tr("Приставок с играми: %d.") % Library.systems_with_games().size())
 	var shots_dir := Settings.screenshots_dir()
+	var data_dir := ProjectSettings.globalize_path("user://")
+	if not Platform.can_open_folders():
+		# Android: папки не открыть — просто показываем, где что лежит.
+		_info("Папка скриншотов", "", tr("Скриншоты игр (F12 или Share на геймпаде):\n") + shots_dir)
+		return
 	_action("Папка скриншотов", "", tr("Скриншоты игр (F12 или Share на геймпаде):\n") + shots_dir,
 			func() -> void:
 				DirAccess.make_dir_recursive_absolute(shots_dir)  # до первого снимка папки ещё нет
 				OS.shell_open(shots_dir))
-	var data_dir := ProjectSettings.globalize_path("user://")
 	_action("Папка с данными", "", tr("Настройки, сохранения, обложки и ядра:\n") + data_dir,
 			func() -> void: OS.shell_open(data_dir))
 

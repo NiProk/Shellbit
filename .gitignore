@@ -8,3 +8,7 @@ dist/
 # Путь к Godot на этом компьютере (tools/godot.bat, tools/common.sh)
 godot_path.txt
 godot_path_linux.txt
+
+# Ключ подписи Android (Build-Android.bat). Не публикуем, но храним копию:
+# без него обновить Shellbit на телефоне можно только через удаление.
+keystore/

@@ -37,7 +37,7 @@ func _ready() -> void:
 	_dialog.title = tr("Картинка для обложки")
 	_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	_dialog.access = FileDialog.ACCESS_FILESYSTEM
-	_dialog.use_native_dialog = true
+	Platform.setup_file_dialog(_dialog)  # на Android — своё окно Godot
 	_dialog.filters = PackedStringArray(["*.png, *.jpg, *.jpeg, *.webp ; " + tr("Картинки")])
 	_dialog.file_selected.connect(_on_file_selected)
 	_dialog.canceled.connect(_restore_focus)

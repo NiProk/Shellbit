@@ -71,10 +71,13 @@ func _on_joy_connection_changed(device: int, connected: bool) -> void:
 		if player > 0:
 			details += " · " + tr("Игрок %d") % player
 		show_panel(true, tr("Геймпад подключён"), details)
+		UiSounds.play_pad(true)
+		Haptics.hello(device)  # подключённый геймпад сам коротко дрогнет
 	else:
 		var pad_name: String = _names.get(device, tr("Геймпад"))
 		_names.erase(device)
 		show_panel(false, tr("Геймпад отключён"), pad_name)
+		UiSounds.play_pad(false)
 
 
 ## Показать панель. connected выбирает цвет и картинку.

@@ -3,8 +3,12 @@
 #  Сборка C++-модуля Shellbit для Linux (shellbit_core....so).
 #  Linux-версия build.bat. Двойной щелчок (или ./build.sh в терминале).
 #
-#  build.sh          — отладочная версия (для редактора Godot)
-#  build.sh release  — версия для готовой программы
+#  build.sh          — обе версии сразу (так проще не запутаться):
+#                      отладочная — для редактора Godot и Run.sh,
+#                      release    — для готовой программы (Build.sh)
+#  build.sh debug    — только отладочная
+#  build.sh release  — только release
+#  Если код C++ не менялся, сборка занимает пару секунд.
 #
 #  Что нужно установить один раз (CachyOS / Arch):
 #    sudo pacman -S --needed base-devel cmake ninja python git
@@ -23,8 +27,9 @@ fail() {
     finish 1
 }
 
-TARGET="template_debug"
-[ "$1" = "release" ] && TARGET="template_release"
+TARGETS="template_debug template_release"
+[ "$1" = "debug" ] && TARGETS="template_debug"
+[ "$1" = "release" ] && TARGETS="template_release"
 
 # --- 1. Проверяем инструменты ---
 missing=""
@@ -50,15 +55,24 @@ if [ ! -f "godot-cpp/CMakeLists.txt" ]; then
     git clone --depth 1 -b godot-4.5-stable https://github.com/godotengine/godot-cpp.git godot-cpp || fail
 fi
 
-# --- 3. Сборка ---
-# Временные файлы сборки — в ~/.cache, а не рядом с проектом:
-# их сотни мегабайт, и синхронизировать их незачем.
-BUILD_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/shellbit-build/$TARGET"
-echo
-echo "=== Сборка $TARGET (первый раз — 5–15 минут) ==="
-cmake -S . -B "$BUILD_DIR" -G "$GENERATOR" -DCMAKE_BUILD_TYPE=Release -DGODOTCPP_TARGET=$TARGET || fail
-# nproc — сколько ядер у процессора: собираем на всех сразу.
-cmake --build "$BUILD_DIR" -j "$(nproc)" || fail
+# --- 3. Сборка: каждой версии по очереди ---
+for TARGET in $TARGETS; do
+    # Временные файлы сборки — в ~/.cache, а не рядом с проектом:
+    # их сотни мегабайт, и синхронизировать их незачем.
+    BUILD_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/shellbit-build/$TARGET"
+    # Временные файлы помнят, в какой папке лежал проект. Если проект
+    # переносили, CMake отказывается работать ("source ... does not match").
+    # Тогда удаляем старые временные файлы — они создадутся заново.
+    if [ -f "$BUILD_DIR/CMakeCache.txt" ] && ! grep -qF "CMAKE_HOME_DIRECTORY:INTERNAL=$HERE" "$BUILD_DIR/CMakeCache.txt"; then
+        echo "Проект переносили в другую папку — удаляю старые временные файлы сборки..."
+        rm -rf "$BUILD_DIR"
+    fi
+    echo
+    echo "=== Сборка $TARGET (первый раз — 5–15 минут) ==="
+    cmake -S . -B "$BUILD_DIR" -G "$GENERATOR" -DCMAKE_BUILD_TYPE=Release -DGODOTCPP_TARGET=$TARGET || fail
+    # nproc — сколько ядер у процессора: собираем на всех сразу.
+    cmake --build "$BUILD_DIR" -j "$(nproc)" || fail
+done
 
 echo
 echo "=== Готово! Файл лежит в addons/shellbit_core/bin/ ==="

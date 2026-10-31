@@ -133,6 +133,7 @@ func show_error(text: String) -> void:
 	_update_dots()
 	_message.text = tr(text)
 	_message.add_theme_color_override("font_color", Color("ff8a8a"))
+	Haptics.error()  # два толчка геймпада — «не то!»
 	# Окно «встряхивается» — так понятно без слов, что код неверный.
 	var tween := create_tween()
 	for offset in [14.0, -12.0, 8.0, -5.0, 0.0]:

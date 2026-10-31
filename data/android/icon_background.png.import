@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eeysov5qkkyx"
-path="res://.godot/imported/bunny.png-28f9d30e5bb49ad6326f4eefe91ce37c.ctex"
+uid="uid://ctpqfq0fpmj4m"
+path="res://.godot/imported/icon_background.png-30ff26c08c8ce9be135ca27be936bc5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/avatars/bunny.png"
-dest_files=["res://.godot/imported/bunny.png-28f9d30e5bb49ad6326f4eefe91ce37c.ctex"]
+source_file="res://data/android/icon_background.png"
+dest_files=["res://.godot/imported/icon_background.png-30ff26c08c8ce9be135ca27be936bc5f.ctex"]
 
 [params]
 

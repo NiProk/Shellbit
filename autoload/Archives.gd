@@ -230,7 +230,7 @@ func seven_zip() -> String:
 	if OS.get_name() == "Windows":
 		if FileAccess.file_exists(own):
 			_tool = own
-	elif not _tool_searched:
+	elif not _tool_searched and not Platform.is_android():
 		# Linux: ищем программу в системе. "command -v" печатает её путь.
 		for name in ["7zz", "7z", "7za", "7zr"]:
 			var output := []
@@ -286,6 +286,8 @@ func _seven_zip_downloaded(result: int, code: int, _headers: PackedStringArray, 
 
 
 func _no_tool_message() -> String:
+	if Platform.is_android():
+		return tr("На Android архивы .7z пока не открываются. Распакуйте игру или запакуйте её в .zip.")
 	if OS.get_name() == "Windows":
 		return tr("Для архивов .7z нужен 7-Zip, но он не скачался. Проверьте интернет и попробуйте ещё раз.")
 	return tr("Для архивов .7z нужен 7-Zip. Установите пакет p7zip или 7zip.")

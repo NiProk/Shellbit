@@ -232,6 +232,9 @@ bool GLContext::create(Api api, int major, int minor) {
 	destroy();
 	egl = dlopen("libEGL.so.1", RTLD_NOW | RTLD_LOCAL);
 	if (!egl) {
+		egl = dlopen("libEGL.so", RTLD_NOW | RTLD_LOCAL); // Android: без «.1» в имени
+	}
+	if (!egl) {
 		last_error = "нет библиотеки libEGL.so.1 (пакет mesa или драйвер видеокарты)";
 		return false;
 	}
@@ -398,6 +401,18 @@ void *GLContext::get_proc(const char *name) const {
 		return nullptr;
 	}
 	void *proc = ((EglGetProcAddress)dlsym(egl, "eglGetProcAddress"))(name);
+#ifdef __ANDROID__
+	// На Android eglGetProcAddress обязан отдавать только «расширения»;
+	// обычные функции (glGenFramebuffers…) лежат в библиотеке OpenGL ES.
+	if (!proc) {
+		static void *gles = dlopen("libGLESv3.so", RTLD_NOW | RTLD_LOCAL);
+		static void *gles2 = dlopen("libGLESv2.so", RTLD_NOW | RTLD_LOCAL);
+		proc = gles ? dlsym(gles, name) : nullptr;
+		if (!proc && gles2) {
+			proc = dlsym(gles2, name);
+		}
+	}
+#endif
 	return proc;
 }
 #endif

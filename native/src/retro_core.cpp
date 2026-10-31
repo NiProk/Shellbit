@@ -46,6 +46,9 @@ void RetroCore::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_disk_path", "index"), &RetroCore::get_disk_path);
 	ClassDB::bind_method(D_METHOD("set_disk", "index"), &RetroCore::set_disk);
 	ClassDB::bind_method(D_METHOD("set_initial_disk", "index", "path"), &RetroCore::set_initial_disk);
+	ClassDB::bind_method(D_METHOD("has_cheats"), &RetroCore::has_cheats);
+	ClassDB::bind_method(D_METHOD("cheat_reset"), &RetroCore::cheat_reset);
+	ClassDB::bind_method(D_METHOD("cheat_set", "index", "enabled", "code"), &RetroCore::cheat_set);
 	ClassDB::bind_method(D_METHOD("has_new_frame"), &RetroCore::has_new_frame);
 	ClassDB::bind_method(D_METHOD("get_frame"), &RetroCore::get_frame);
 	ClassDB::bind_method(D_METHOD("take_audio"), &RetroCore::take_audio);
@@ -140,6 +143,9 @@ bool RetroCore::load_core(const String &path) {
 	// Эта функция у ядра необязательная: без неё просто нельзя сменить контроллер.
 	api.set_controller_port_device = reinterpret_cast<decltype(api.set_controller_port_device)>(
 			library.symbol("retro_set_controller_port_device"));
+	// Читы — тоже необязательные: некоторые ядра их не поддерживают.
+	api.cheat_reset = reinterpret_cast<decltype(api.cheat_reset)>(library.symbol("retro_cheat_reset"));
+	api.cheat_set = reinterpret_cast<decltype(api.cheat_set)>(library.symbol("retro_cheat_set"));
 
 	if (!ok) {
 		library.close();
@@ -452,6 +458,28 @@ bool RetroCore::set_disk(int index) {
 	bool ok = disk.set_image_index((unsigned)index); // сменить диск
 	disk.set_eject_state(false); // закрыть крышку (даже если сменить не вышло)
 	return ok;
+}
+
+bool RetroCore::has_cheats() const {
+	return game_loaded && api.cheat_reset != nullptr && api.cheat_set != nullptr;
+}
+
+void RetroCore::cheat_reset() {
+	if (!has_cheats()) {
+		return;
+	}
+	GlScope scope(this); // как и для снимков: ядру с OpenGL может понадобиться контекст
+	api.cheat_reset();
+}
+
+void RetroCore::cheat_set(int index, bool enabled, const String &code) {
+	if (!has_cheats() || index < 0) {
+		return;
+	}
+	GlScope scope(this);
+	// utf8() — временная строка: держим её в переменной, пока ядро читает код.
+	CharString text = code.utf8();
+	api.cheat_set((unsigned)index, enabled, text.get_data());
 }
 
 void RetroCore::set_initial_disk(int index, const String &path) {
@@ -850,6 +878,18 @@ void RetroCore::log_cb(enum retro_log_level level, const char *fmt, ...) {
 // Отвечаем на самые нужные; на остальные — false («не умею»).
 // =====================================================================
 bool RetroCore::on_environment(unsigned cmd, void *data) {
+	// Ядро спрашивает или сообщает что-то, но без данных (data == nullptr)?
+	// Почти все команды с пустыми данными бессмысленны. Исключения — команды,
+	// где nullptr что-то значит сам по себе: SET_DISK_CONTROL_* — «дисков нет»,
+	// GET_INPUT_BITMASKS — вопрос «умеешь отдавать все кнопки разом?».
+	if (data == nullptr) {
+		unsigned plain = cmd & ~RETRO_ENVIRONMENT_EXPERIMENTAL;
+		if (plain != RETRO_ENVIRONMENT_SET_DISK_CONTROL_INTERFACE && plain != RETRO_ENVIRONMENT_SET_DISK_CONTROL_EXT_INTERFACE
+				&& plain != RETRO_ENVIRONMENT_SHUTDOWN && plain != RETRO_ENVIRONMENT_SET_HW_SHARED_CONTEXT
+				&& plain != (RETRO_ENVIRONMENT_GET_INPUT_BITMASKS & ~RETRO_ENVIRONMENT_EXPERIMENTAL)) {
+			return false;
+		}
+	}
 	switch (cmd & ~RETRO_ENVIRONMENT_EXPERIMENTAL) {
 		case RETRO_ENVIRONMENT_SET_PIXEL_FORMAT: {
 			retro_pixel_format format = *(const retro_pixel_format *)data;
@@ -910,7 +950,11 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 			return true;
 		}
 		case RETRO_ENVIRONMENT_GET_PREFERRED_HW_RENDER:
+#ifdef __ANDROID__
+			*(unsigned *)data = RETRO_HW_CONTEXT_OPENGLES3; // на телефонах есть только OpenGL ES
+#else
 			*(unsigned *)data = RETRO_HW_CONTEXT_OPENGL_CORE; // «мне удобнее всего OpenGL»
+#endif
 			return true;
 		case RETRO_ENVIRONMENT_SET_HW_SHARED_CONTEXT & ~RETRO_ENVIRONMENT_EXPERIMENTAL:
 			return true; // контекст у ядра и так свой, ни с кем не общий
@@ -921,11 +965,20 @@ bool RetroCore::on_environment(unsigned cmd, void *data) {
 			return true;
 		case RETRO_ENVIRONMENT_SET_DISK_CONTROL_INTERFACE:
 			// Старая версия: только первые поля. Остальные (названия, пути) — пустые.
+			// data == nullptr — «дисков нет, забудь прошлые функции»: так делает
+			// ядро Sega (Genesis Plus GX) для игр на картриджах. Раньше мы читали
+			// по пустому адресу — и программа вылетала при запуске любой игры
+			// Mega Drive.
 			memset(&disk, 0, sizeof(disk));
-			memcpy(&disk, data, sizeof(retro_disk_control_callback));
+			if (data != nullptr) {
+				memcpy(&disk, data, sizeof(retro_disk_control_callback));
+			}
 			return true;
 		case RETRO_ENVIRONMENT_SET_DISK_CONTROL_EXT_INTERFACE:
-			disk = *(const retro_disk_control_ext_callback *)data;
+			memset(&disk, 0, sizeof(disk));
+			if (data != nullptr) {
+				disk = *(const retro_disk_control_ext_callback *)data;
+			}
 			return true;
 
 		// --- Вибрация ---

@@ -1,0 +1,2615 @@
+88games	1988			Konami	Konami
+flagrall	1996			Promat?	Promat?
+005	1981			Sega	Sega
+10yard	1983			Irem	Irem
+gtmr	1994			Kaneko	Kaneko
+119	1986			Coreland / Sega	Coreland / Sega
+progolf	1981			Data East Corporation	Data East Corporation
+1941	1990			Capcom	Capcom
+1942	1984			Capcom	Capcom
+1943kai	1987			Capcom	Capcom
+1943	1987			Capcom	Capcom
+1943mii	1987			Capcom	Capcom
+1944	2000			Eighting / Raizing (Capcom license)	Eighting / Raizing (Capcom license)
+1945kiii	2000			Oriental Soft	Oriental Soft
+19xx	1996			Capcom	Capcom
+19yy	2022			hack	hack
+2020bb	1991			SNK / Pallas	SNK / Pallas
+test240p	2023			Artemio	Artemio
+3countb	1993			SNK	SNK
+3on3dunk	1996			Video System Co.	Video System Co.
+3x3puzzl	1998			Ace Enterprise	Ace Enterprise
+4enraya	1990			IDSA	IDSA
+4in1	1981			Armenia / Food and Fun	Armenia / Food and Fun
+4play				SNK	SNK
+4dwarrio	1985			Coreland / Sega	Coreland / Sega
+64street	1991			Jaleco	Jaleco
+7ordi	2002			Yun Sung	Yun Sung
+720	1986			Atari Games	Atari Games
+ad2083	1983			Midcoin	Midcoin
+abcop	1990			Sega	Sega
+abyssali	2021			Kako Eimon	Kako Eimon
+aceattac	1988			Sega	Sega
+acrobatm	1991			UPL (Taito license)	UPL (Taito license)
+dogfgt	1984			Technos Japan	Technos Japan
+actfancr	1989			Data East Corporation	Data East Corporation
+afighter	1986			Sega	Sega
+actionhw	1995			TCH / Proyesel	TCH / Proyesel
+adkw	1995			Alpha Denshi Co.	Alpha Denshi Co.
+adcanoe	1982			Taito Corporation	Taito Corporation
+hatena	1990			Capcom	Capcom
+cworld2j	1992			Capcom	Capcom
+aerofgt	1992			Video System Co.	Video System Co.
+sonicwi2	1994			Video System Co.	Video System Co.
+sonicwi3	1995			Video System Co.	Video System Co.
+aburner	1987			Sega	Sega
+aburner2	1987			Sega	Sega
+afterwar	1991			Dinamic / Inder	Dinamic / Inder
+aoh	2001			Unico	Unico
+superbon	1985			Signatron USA	Signatron USA
+aodk	1994			ADK / SNK	ADK / SNK
+agress	1991			Palco	Palco
+koshien	1990			Taito Corporation	Taito Corporation
+airass	1993			Irem	Irem
+airattck	1996			Comad	Comad
+airbustr	1990			Kaneko (Namco license)	Kaneko (Namco license)
+airduel	1990			Irem	Irem
+agallet	1996			Gazelle (Banpresto license)	Gazelle (Banpresto license)
+arescue	1992			Sega	Sega
+airwolf	1987			Kyugo	Kyugo
+ajax	1987			Konami	Konami
+akatana	2010			Cave	Cave
+akazukin	1983			Sigma	Sigma
+akkaarrh	1982			Atari	Atari
+alcon	1986			Toaplan / Taito America Corp.	Toaplan / Taito America Corp.
+alexkidd	1986			Sega	Sega
+alibaba	1982			Sega	Sega
+alienar	1985			Duncan Brown	Duncan Brown
+aa	2003			David Widel	David Widel
+aliencha	1994			IGS	IGS
+alinvade	198			Forbes?	Forbes?
+alienres	2019			MonstersGoBoom	MonstersGoBoom
+aliensec	1985			Namco	Namco
+astorm	1990			Sega	Sega
+aliensyn	1987			Sega	Sega
+avsp	1994			Capcom	Capcom
+alien3	1993			Sega	Sega
+aliens	1990			Konami	Konami
+aligator	1994			Gaelco	Gaelco
+alpham2	1991			SNK	SNK
+alpha1v	1988			Vision Electronics	Vision Electronics
+alpine	1982			Taito Corporation	Taito Corporation
+altbeast	1988			Sega	Sega
+altbeastng	2026			Teo Tormo	Teo Tormo
+ambush	1983			Tecfri	Tecfri
+horshoes	1990			Taito America Corporation	Taito America Corporation
+amspdwy	1987			Enerdyne Technologies Inc.	Enerdyne Technologies Inc.
+amidar	1982			Konami	Konami
+androdun	1992			Visco	Visco
+androidp	1987			Nasco	Nasco
+angelkds	1988			Sega / Nasco?	Sega / Nasco?
+cadanglr	1982			Data East Corporation	Data East Corporation
+anteater	1982			Tago Electronics	Tago Electronics
+apb	1987			Atari Games	Atari Games
+appoooh	1984			Sanritsu / Sega	Sanritsu / Sega
+aquajack	1990			Taito Corporation Japan	Taito Corporation Japan
+aquarium	1996			Excellent System	Excellent System
+arabfgt	1991			Sega	Sega
+arabianm	1992			Taito Corporation Japan	Taito Corporation Japan
+arabian	1983			Sun Electronics	Sun Electronics
+arbalest	1989			Jordan I.S. / Seta	Jordan I.S. / Seta
+arcadecl	1992			Atari Games	Atari Games
+arcadian	1994			NMK	NMK
+archrivl	1989			Bally Midway	Bally Midway
+argusg	1984			Gottlieb	Gottlieb
+argus	1986			NMK (Jaleco license)	NMK (Jaleco license)
+arkarea	1988			UPL	UPL
+arkanoid	1986			Taito Corporation Japan	Taito Corporation Japan
+arknoid2	1987			Taito Corporation Japan	Taito Corporation Japan
+arkretrn	1997			Taito Corporation	Taito Corporation
+arlingtn	1991			Strata / Incredible Technologies	Strata / Incredible Technologies
+armchmp2	1992			Jaleco	Jaleco
+armwrest	1985			Nintendo	Nintendo
+armedf	1988			Nichibutsu	Nichibutsu
+batrider	1998			Raizing / Eighting	Raizing / Eighting
+armorcar	1981			Stern Electronics	Stern Electronics
+armwar	1994			Capcom	Capcom
+aof	1992			SNK	SNK
+aof2	1994			SNK	SNK
+aof3	1996			SNK	SNK
+ashura	1990			Taito Corporation Japan	Taito Corporation Japan
+aso	1985			SNK	SNK
+assault	1988			Namco	Namco
+asterix	1992			Konami	Konami
+asteroid	1979			Atari	Atari
+astdelux	1980			Atari	Atari
+astrob	1981			Sega	Sega
+castfant	1981			Data East Corporation	Data East Corporation
+asuka	1988			Taito	Taito
+asurabld	1998			Fuuki	Fuuki
+asurabus	2001			Fuuki	Fuuki
+atehate	1993			Athena	Athena
+athena	1986			SNK	SNK
+atomicp	1990			Philko	Philko
+robokid	1988			UPL	UPL
+chelnov	1988			Data East Corporation	Data East Corporation
+au	1983			Tehkan	Tehkan
+aurail	1990			Sega / Westone	Sega / Westone
+avengers	1987			Capcom	Capcom
+avengrgs	1995			Data East Corporation	Data East Corporation
+avspirit	1991			Jaleco	Jaleco
+aztarac	1983			Centuri	Centuri
+azurian	1982			Rait Electronics Ltd	Rait Electronics Ltd
+bwings	1984			Data East Corporation	Data East Corporation
+bonkadv	1994			Kaneko (Hudson Soft / Red license)	Kaneko (Hudson Soft / Red license)
+bcstry	1997			SemiCom / Tirano	SemiCom / Tirano
+brapboys	1992			Kaneko	Kaneko
+backfirt	1988			Tecmo	Tecmo
+bssoccer	1996			SunA (Unico license)	SunA (Unico license)
+backfire	1995			Data East Corporation	Data East Corporation
+badapple	2017			Hpman	Hpman
+bdudes	2025			Balek Corp	Balek Corp
+baddudes	1988			Data East USA	Data East USA
+badlands	1989			Atari Games	Atari Games
+bagman	1982			Valadon Automation	Valadon Automation
+bakatono	1991			Monolith Corp.	Monolith Corp.
+bkrtmaq	1992			Namco	Namco
+bakutotu	1988			Namco	Namco
+balcube	1996			Metro	Metro
+bace	2003			David Widel	David Widel
+ballbros	1992			East Technology	East Technology
+baluba	1986			Able Corp, Ltd.	Able Corp, Ltd.
+banbam	1984			Sun Electronics	Sun Electronics
+bangball	1996			Banpresto / Kunihiko Tashiro+Goodhouse	Banpresto / Kunihiko Tashiro+Goodhouse
+b2b	2010			Visco	Visco
+b2b2	2025			PixelHeart	PixelHeart
+bangbead	2000			Visco	Visco
+bang	1998			Gaelco / Bit Managers	Gaelco / Bit Managers
+bankp	1984			Sanritsu / Sega	Sanritsu / Sega
+baryon	1997			SemiCom / Tirano	SemiCom / Tirano
+bstars2	1992			SNK	SNK
+bstars	1990			SNK	SNK
+batman	1991			Atari Games	Atari Games
+batsugun	1993			Toaplan	Toaplan
+battlnts	1987			Konami	Konami
+bbakraid	1999			Eighting	Eighting
+bchopper	1987			Irem	Irem
+batcir	1997			Capcom	Capcom
+battlex	1982			Omori Electric Co., Ltd.	Omori Electric Co., Ltd.
+bcruzm12	1983			Sigma Enterprises Inc.	Sigma Enterprises Inc.
+flipshot	1998			Visco	Visco
+bgaregga	1996			Raizing / Eighting	Raizing / Eighting
+btlkroad	1994			Psikyo	Psikyo
+battlane	1986			Technos Japan (Taito license)	Technos Japan (Taito license)
+atlantis	1981			Comsoft	Comsoft
+bshark	1989			Taito Corporation Japan	Taito Corporation Japan
+bzone	1980			Atari	Atari
+btoads	1994			Rare / Electronic Arts	Rare / Electronic Arts
+bayroute	1989			Sunsoft / Sega	Sunsoft / Sega
+wbbc97	1997			Comad	Comad
+bbusters	1989			SNK	SNK
+blswhstl	1991			Konami	Konami
+benberob	1984			Taito	Taito
+bermudat	1987			SNK	SNK
+berzerk	1980			Stern Electronics	Stern Electronics
+bbbxing	1994			Jaleco	Jaleco
+bestbest	1994			SunA	SunA
+bestri	1998			F2 System	F2 System
+bigbucks	1986			Dynasoft Inc.	Dynasoft Inc.
+bigfight	1992			Tatsumi	Tatsumi
+bigkarnk	1991			Gaelco	Gaelco
+bigrun	1989			Jaleco	Jaleco
+bigstrik	1992			Jaleco	Jaleco
+bigtwin	1995			Playmark	Playmark
+bikkuric	1987			Peni	Peni
+bilyard	198			Terminal	Terminal
+bngotime	1986			CLS	CLS
+bioatack	1983			Taito Corporation	Taito Corporation
+bioship	1990			UPL (American Sammy license)	UPL (American Sammy license)
+biomtoy	1995			Gaelco / Zeus	Gaelco / Zeus
+bionicc	1987			Capcom	Capcom
+birdtry	1988			Data East Corporation	Data East Corporation
+birdiy	1983			Mama Top	Mama Top
+bishi	1996			Konami	Konami
+sailormn	1995			Gazelle (Banpresto license)	Gazelle (Banpresto license)
+blkheart	1991			UPL	UPL
+blkhole	1981			TDS & MINTS	TDS & MINTS
+blkpnthr	1987			Konami	Konami
+blktiger	1987			Capcom	Capcom
+blackt96	1996			D.G.R.M.	D.G.R.M.
+bwidow	1982			Atari	Atari
+bmaster	1991			Irem	Irem
+bladestl	1987			Konami	Konami
+blandia	1992			Allumer	Allumer
+blastoff	1989			Namco	Namco
+blasted	1988			Bally Midway	Bally Midway
+blaster	1983			Williams / Vid Kidz	Williams / Vid Kidz
+blstroid	1987			Atari Games	Atari Games
+blasto	1978			Gremlin	Gremlin
+blazeon	1992			A.I (Atlus license)	A.I (Atlus license)
+blazer	1987			Namco	Namco
+blazstar	1998			Yumekobo	Yumekobo
+blzntrnd	1994			Human Amusement	Human Amusement
+block	1991			Capcom	Capcom
+blockcar	1992			Visco	Visco
+blockgal	1987			Sega / Vic Tokai	Sega / Vic Tokai
+blockhl	1989			Konami	Konami
+blockout	1989			Technos Japan / California Dreams	Technos Japan / California Dreams
+bpanicdx	2025			Blastar	Blastar
+blockade	1976			Gremlin	Gremlin
+blocken	1994			Visco / KID	Visco / KID
+blmbycar	1994			ABM & Gecas	ABM & Gecas
+bloodbro	1990			TAD Corporation	TAD Corporation
+bloodwar	1994			Kaneko	Kaneko
+bloodstm	1994			Strata / Incredible Technologies	Strata / Incredible Technologies
+bloxeed	1989			Sega / Elorg	Sega / Elorg
+blueandr	2026			Kaiju Wasp	Kaiju Wasp
+bluehawk	1993			Dooyong	Dooyong
+blueprnt	1982			Zilec Electronics / Bally Midway	Zilec Electronics / Bally Midway
+bjourney	1990			Alpha Denshi Co.	Alpha Denshi Co.
+bwcasino	1983			Epos Corporation	Epos Corporation
+bodyslam	1986			Sega	Sega
+bogeyman	1985			Technos Japan	Technos Japan
+boggy84	1983			Kaneko	Kaneko
+bombbee	1979			Namco	Namco
+bombjack	1984			Tehkan	Tehkan
+bombkick	1998			Yun Sung	Yun Sung
+bbmanw	1992			Irem	Irem
+bjtwin	1993			NMK	NMK
+bnzabros	1990			Sega	Sega
+bongo	1983			Jetsoft	Jetsoft
+bonusstage	2020			Totologic	Totologic
+bonzeadv	1988			Taito	Taito
+boogwing	1992			Data East Corporation	Data East Corporation
+boomrang	1983			Data East Corporation	Data East Corporation
+boonggab	2001			Taff System	Taff System
+brdrline	1981			Sega	Sega
+borench	1990			Sega	Sega
+bosco	1981			Namco	Namco
+botanic	1983			Itisa	Itisa
+bottom9	1989			Konami	Konami
+cbdash	1985			Data East Corporation	Data East Corporation
+bouldash	1990			Data East Corporation (licensed from First Star)	Data East Corporation (licensed from First Star)
+bballs	1991			Comad	Comad
+bowlrama	1991			P&P Marketing	P&P Marketing
+boxyboy	1990			Namco	Namco
+bradley	1980			Atari	Atari
+brain	1986			Coreland / Sega	Coreland / Sega
+brkthru	1986			Data East Corporation	Data East Corporation
+breakrev	1998			Visco	Visco
+breakers	1996			Visco	Visco
+brickzn	1992			SunA	SunA
+bubl2000	1998			Afega (Tuning license)	Afega (Tuning license)
+bublbobl	1986			Taito Corporation	Taito Corporation
+bublbob2	1994			Taito Corporation Japan	Taito Corporation Japan
+bubblem	1995			Taito Corporation Japan	Taito Corporation Japan
+bubbleopen	2026			neslou	neslou
+bubbletr	1992			Namco	Namco
+bubbles	1982			Williams	Williams
+buccanrs	1989			Duintronic	Duintronic
+buckrog	1982			Sega	Sega
+bucky	1992			Konami	Konami
+buggychl	1984			Taito Corporation	Taito Corporation
+bullfgtr	1984			Alpha Denshi Co.	Alpha Denshi Co.
+bullet	1987			Sega	Sega
+bullfgt	1984			Coreland / Sega	Coreland / Sega
+btime	1982			Data East Corporation	Data East Corporation
+cbtime	1983			Data East Corporation	Data East Corporation
+burglarx	1997			Unico	Unico
+cburnrub	1982			Data East Corporation	Data East Corporation
+brubber	1982			Data East	Data East
+burningf	1991			SNK	SNK
+burnforc	1989			Namco	Namco
+brival	1992			Sega	Sega
+butasan	1987			NMK (Jaleco license)	NMK (Jaleco license)
+bygone	1985			Taito Corporation	Taito Corporation
+cabal	1988			TAD Corporation	TAD Corporation
+cabalng	1988-2021			TAD Corporation - iq_132	TAD Corporation - iq_132
+cachat	1993			Taito Corporation	Taito Corporation
+cadash	1989			Taito	Taito
+dino	1993			Capcom	Capcom
+calibr50	1989			Seta	Seta
+calipso	1982			Tago Electronics	Tago Electronics
+calorie	1986			Sega	Sega
+cameltry	1989			Taito America Corporation	Taito America Corporation
+candy	1999			Eolith	Eolith
+cannonbp	1985			Novomatic	Novomatic
+cannball	1995			Yun Sung / Soft Vision	Yun Sung / Soft Vision
+canvas	1985			SNK	SNK
+canyon	1977			Atari	Atari
+cbasebal	1989			Capcom	Capcom
+capbowl	1988			Incredible Technologies / Capcom	Incredible Technologies / Capcom
+csclub	1997			Capcom	Capcom
+cworld	1989			Capcom	Capcom
+captaven	1991			Data East Corporation	Data East Corporation
+captainbarrel	2024			Neo Byte Force	Neo Byte Force
+captcomm	1991			Capcom	Capcom
+csilver	1987			Data East Corporation	Data East Corporation
+ctomaday	1999			Visco	Visco
+carjmbre	1983			Omori Electric Co., Ltd.	Omori Electric Co., Ltd.
+carket	1996			SemiCom	SemiCom
+carnival	1980			Sega	Sega
+cawing	1990			Capcom	Capcom
+casanova	199			Promat	Promat
+cashquiz	1986			Zilec-Zenitone	Zilec-Zenitone
+catacomb	1982			MTM Games	MTM Games
+cavelon	1983			Jetsoft	Jetsoft
+cninja	1991			Data East Corporation	Data East Corporation
+centiped	1980			Atari	Atari
+chaknpop	1983			Taito Corporation	Taito Corporation
+chainrec	1995			Data East Corporation	Data East Corporation
+chameleo	1983			Jaleco	Jaleco
+champbas	1983			Alpha Denshi Co. (Sega license)	Alpha Denshi Co. (Sega license)
+champbb2	1983			Alpha Denshi Co. (Sega license)	Alpha Denshi Co. (Sega license)
+champwr	1989			Taito Corporation Japan	Taito Corporation Japan
+csprint	1986			Atari Games	Atari Games
+chanbara	1985			Data East Corporation	Data East Corporation
+chkun	1988			Peni	Peni
+cairblad	1999			Sammy	Sammy
+changes	1982			Orca	Orca
+pgmdemo	2005			Raster	Raster
+cps1demo	2000			Chaos	Chaos
+neodemo	2002			Chaos	Chaos
+charlien	1995			Mitchell	Mitchell
+cbombers	1994			Taito Corporation Japan	Taito Corporation Japan
+chasehq	1988			Taito Corporation Japan	Taito Corporation Japan
+checkman	1982			Zilec-Zenitone	Zilec-Zenitone
+cheekyms	1980			Universal	Universal
+cheesech	1994			Art & Magic	Art & Magic
+chqflag	1988			Konami	Konami
+cheyenne	1984			Exidy	Exidy
+marukodq	1995			Takara	Takara
+chiller	1986			Exidy	Exidy
+chimerab	1993			Jaleco	Jaleco
+chinagat	1988			Technos Japan (Taito / Romstar license)	Technos Japan (Taito / Romstar license)
+chinatwn	1991			Data East Corporation	Data East Corporation
+chinhero	1984			Taiyo System	Taiyo System
+cndi	2009			Sergi	Sergi
+chokchok	1995			SemiCom	SemiCom
+choplift	1985			Sega	Sega
+chopper	1988			SNK	SNK
+berabohm	1988			Namco	Namco
+ironclad	1996			Saurus	Saurus
+chuckieegg	2023			Arlasoft	Arlasoft
+chukatai	1988			Taito Corporation Japan	Taito Corporation Japan
+dw2001	2001			IGS	IGS
+circus	1977			Exidy / Taito	Exidy / Taito
+circusc	1984			Konami	Konami
+cischeat	1990			Jaleco	Jaleco
+citybomb	1987			Konami	Konami
+citycon	1985			Jaleco	Jaleco
+clshroad	1986			Woodplace Inc.	Woodplace Inc.
+claypign	1986			Exidy	Exidy
+cleopatr	1996			Taito Corporation	Taito Corporation
+cloak	1983			Atari	Atari
+aquario	2021			Sega / Westone	Sega / Westone
+cloud9	1983			Atari	Atari
+cgraplop	1983			Data East Corporation	Data East Corporation
+cltchitr	1991			Sega	Sega
+cobracom	1988			Data East Corporation	Data East Corporation
+cnbe	2006			blastar@gmx.net	blastar@gmx.net
+colony7	1981			Taito	Taito
+columns	1990			Sega	Sega
+columnsn	20			homebrew	homebrew
+columns2	1990			Sega	Sega
+combat	1985			Exidy	Exidy
+combh	1987			Sanritsu / Sega	Sanritsu / Sega
+combatsc	1988			Konami	Konami
+toto	1996			SoftClub	SoftClub
+commandw	1992			Taito Corporation	Taito Corporation
+commsega	1983			Sega	Sega
+commando	1985			Capcom	Capcom
+comotion	1976			Gremlin	Gremlin
+compgolf	1986			Data East Corporation	Data East Corporation
+complexx	1984			Taito America Corporation	Taito America Corporation
+congo	1983			Sega	Sega
+contcirc	1987			Taito Corporation Japan	Taito Corporation Japan
+contra	1987			Konami	Konami
+cookbib	1995			SemiCom	SemiCom
+cookbib2	1996			SemiCom	SemiCom
+cookbib3	1997			SemiCom	SemiCom
+coolmini	1999			SemiCom	SemiCom
+cop01	1985			Nichibutsu	Nichibutsu
+cavenger	1981			Universal	Universal
+cosmccop	1991			Irem	Irem
+cgangpzl	1992			Namco	Namco
+cosmogng	1991			Namco	Namco
+galivan	1985			Nichibutsu	Nichibutsu
+cotton	1991			Success / Sega	Success / Sega
+countrun	1988			Nihon System (Sega license)	Nihon System (Sega license)
+countryc	1988			SNK	SNK
+crkdown	1989			Sega	Sega
+cracksht	1985			Exidy	Exidy
+crashh	2002			hack	hack
+crash	1979			Exidy	Exidy
+qcrayon2	1993			Taito Corporation	Taito Corporation
+crbaloon	1980			Taito Corporation	Taito Corporation
+cclimber	1980			Nichibutsu	Nichibutsu
+cclimbr2	1988			Nichibutsu	Nichibutsu
+crazyfgt	1996			Subsino	Subsino
+ckongpt2	1981			Falcon	Falcon
+ckong	1981			Kyoei / Falcon	Kyoei / Falcon
+crzrally	1985			Tecfri	Tecfri
+crazywar	2002			Eolith	Eolith
+crimec	1989			Taito Corporation Japan	Taito Corporation Japan
+crimfght	1989			Konami	Konami
+croquis	1996			Deniam	Deniam
+crospang	1998			F2 System	F2 System
+crossbow	1983			Exidy	Exidy
+crsword	1991			Alpha Denshi Co.	Alpha Denshi Co.
+crswd2bl	1996			bootleg (Razoola)	bootleg (Razoola)
+cphd	2013			Le Cortex	Le Cortex
+cbuster	1990			Data East Corporation	Data East Corporation
+crush	1981			Alpha Denshi Co. / Kural Samno Electric, Ltd.	Alpha Denshi Co. / Kural Samno Electric, Ltd.
+crusherm	1999			Takumi	Takumi
+ccastles	1983			Atari	Atari
+cubybop	199			Hot-B Co., Ltd.	Hot-B Co., Ltd.
+cuebrick	1989			Konami	Konami
+curvebal	1984			Mylstar	Mylstar
+cutefght	1998			SemiCom	SemiCom
+cutieq	1979			Namco	Namco
+cybattlr	1993			Jaleco	Jaleco
+eswat	1989			Sega	Sega
+eswatng	2026			Teo Tormo	Teo Tormo
+cybertnk	1988			Coreland	Coreland
+cyberlip	1990			SNK	SNK
+cybots	1995			Capcom	Capcom
+cyborgforce	2023			Neo Byte Force	Neo Byte Force
+cyclemb	1984			Taito Corporation	Taito Corporation
+cyclshtg	1986			Taito	Taito
+cyclwarr	1991			Tatsumi	Tatsumi
+cyvern	1998			Kaneko	Kaneko
+dcon	1992			Success	Success
+ddayjlc	1984			Jaleco	Jaleco
+dday	1982			Olympia	Olympia
+ddcrew	1991			Sega	Sega
+dacholer	1983			Nichibutsu	Nichibutsu
+daikaiju	1986			Taito	Taito
+daioh	1993			Athena	Athena
+daitorid	1995			Metro	Metro
+dambustr	1981			South West Research	South West Research
+dankuga	1994			Taito Corporation	Taito Corporation
+ddungeon	1992			The Game Room	The Game Room
+dangseed	1989			Namco	Namco
+darius	1986			Taito Corporation Japan	Taito Corporation Japan
+dariusg	1994			Taito Corporation Japan	Taito Corporation Japan
+dariusgx	1994			Taito Corporation	Taito Corporation
+darius2	1989			Taito Corporation	Taito Corporation
+darkedge	1992			Sega	Sega
+darkplnt	1982			Stern Electronics	Stern Electronics
+darkseal	1990			Data East Corporation	Data East Corporation
+darktowr	1992			The Game Room	The Game Room
+dstlk	1994			Capcom	Capcom
+dwi	2009			Sergi	Sergi
+darwin	1986			Data East Corporation	Data East Corporation
+dquizgo	1998			SemiCom / AceVer	SemiCom / AceVer
+dquizgo2	2000			SemiCom	SemiCom
+deadang	1988			Seibu Kaihatsu	Seibu Kaihatsu
+deadconx	1992			Taito Corporation Japan	Taito Corporation Japan
+dderby	2003			David Widel	David Widel
+deathsml	2007			Cave (AMI license)	Cave (AMI license)
+dsmbl	2008			Cave (AMI license)	Cave (AMI license)
+decomult	2008			bootleg (David Widel)	bootleg (David Widel)
+deerhunt	2000			Sammy USA Corporation	Sammy USA Corporation
+redufo	1981			Artic	Artic
+defender	1980			Williams	Williams
+deluxe5	2000			ESD	ESD
+demoderb	1984			Bally Midway	Bally Midway
+dmnfrnt	2002			IGS	IGS
+demonwld	1990			Toaplan	Toaplan
+demndrgn	1982			Dave Nutting Associates / Bally Midway	Dave Nutting Associates / Bally Midway
+denjinmk	1994			Winkysoft (Banpresto license)	Winkysoft (Banpresto license)
+depthch	1977			Gremlin	Gremlin
+deroon	1995			Tecmo	Tecmo
+desertbr	1992			Sega	Sega
+desertdn	1982			Kawakusu (Video Optics license)	Kawakusu (Video Optics license)
+desertwr	1995			Jaleco	Jaleco
+devstors	1988			Konami	Konami
+devilfsh	1982			Artic	Artic
+devilw	1987			Konami	Konami
+dharma	1994			Metro	Metro
+diamrun	1989			KH Video	KH Video
+dicegame	1991			bootleg (Tuning)	bootleg (Tuning)
+dtfamily	2001			SemiCom	SemiCom
+dietgo	1992			Data East Corporation	Data East Corporation
+digdug	1982			Namco	Namco
+digdug2	1985			Namco	Namco
+diggerma	2000			Kyle Hodgetts	Kyle Hodgetts
+digger	1980			Sega	Sega
+dimahoo	2000			Eighting / Raizing (Capcom license)	Eighting / Raizing (Capcom license)
+dingo	1983			Ashby Computers and Graphics Ltd. (Jaleco license)	Ashby Computers and Graphics Ltd. (Jaleco license)
+dinorex	1992			Taito Corporation Japan	Taito Corporation Japan
+dirtfoxj	1989			Namco	Namco
+discoboy	1993			Soft Art Co.	Soft Art Co.
+cdiscon1	1982			Data East Corporation	Data East Corporation
+disco	1982			Data East	Data East
+dotron	1983			Bally Midway	Bally Midway
+diverboy	1992			Gamart (Electronic Devices Italy license)	Gamart (Electronic Devices Italy license)
+djboy	1989			Kaneko	Kaneko
+dorunrun	1984			Universal	Universal
+dockman	1982			Taito Corporation	Taito Corporation
+dodgeman	1983			Omori Electric Co., Ltd.	Omori Electric Co., Ltd.
+ddonpach	1997			Cave (Atlus license)	Cave (Atlus license)
+dfkbl	2010			Cave	Cave
+ddpdfk	2008			Cave (AMI license)	Cave (AMI license)
+ddpdojt	2010			IGS / Cave (Tong Li Animation license)	IGS / Cave (Tong Li Animation license)
+ddp2	2001			IGS	IGS
+ddp3	2002			Cave (AMI license)	Cave (AMI license)
+ddpsdoj	2012			Cave	Cave
+dogfight	1983			Orca / Thunderbolt	Orca / Thunderbolt
+dogyuun	1992			Toaplan	Toaplan
+dokaben	1989			Capcom	Capcom
+dokaben2	1989			Capcom	Capcom
+dolmen	1995			Afega	Afega
+domino	1982			Bally Midway	Bally Midway
+dommy	1983			Technos Japan	Technos Japan
+dondokod	1989			Taito Corporation Japan	Taito Corporation Japan
+dkong	1981			Nintendo of America	Nintendo of America
+dkong3	1983			Nintendo of America	Nintendo of America
+dkongjr	1982			Nintendo of America	Nintendo of America
+donpachi	1995			Cave (Atlus license)	Cave (Atlus license)
+doomgeo	2026			Sabino	Sabino
+dorachan	1980			Alpha Denshi Co. / Craul Denshi	Alpha Denshi Co. / Craul Denshi
+dorodon	1982			UPL (Falcon license?)	UPL (Falcon license?)
+dotrikun	1990			Sega	Sega
+dblaxle	1991			Taito America Corporation	Taito America Corporation
+doubledr	1995			Technos Japan	Technos Japan
+ddragon	1987			Technos Japan (Taito license)	Technos Japan (Taito license)
+ddragon3	1990			East Technology / Technos Japan	East Technology / Technos Japan
+ddragon2	1988			Technos Japan	Technos Japan
+doubled1	2025			OzzyOuzo	OzzyOuzo
+ddribble	1986			Konami	Konami
+dblpoint	1995			Min Corp.	Min Corp.
+dblewing	1993			Mitchell	Mitchell
+downtown	1989			Seta	Seta
+drmicro	1983			Sanritsu	Sanritsu
+drtomy	1993			Playmark	Playmark
+drtoppel	1987			Kaneko / Taito Corporation Japan	Kaneko / Taito Corporation Japan
+dbz	1993			Banpresto	Banpresto
+dbz2	1994			Banpresto	Banpresto
+dbzvrvs	1994			Sega / Banpresto	Sega / Banpresto
+dragnblz	2000			Psikyo	Psikyo
+drgnbowl	1992			Nics	Nics
+dbreed	1989			Irem	Irem
+drgnbstr	1984			Namco	Namco
+dragngun	1993			Data East Corporation	Data East Corporation
+drgnmst	1994			Unico	Unico
+dsaber	1990			Namco	Namco
+dspirit	1987			Namco	Namco
+drgnunit	1989			Athena / Seta	Athena / Seta
+drgnwrld	1997			IGS	IGS
+drgw3	1998			IGS	IGS
+dwex	2000			IGS	IGS
+drgw2	1997			IGS	IGS
+dragonsh	1997			Face	Face
+drakton	1984			Epos Corporation	Epos Corporation
+keithlcy	1993			Visco	Visco
+dreambal	1993			NDK / Data East	NDK / Data East
+dremshpr	1982			Sanritsu	Sanritsu
+dsoccr94	1994			Irem (Data East Corporation license)	Irem (Data East Corporation license)
+dreamwld	2000			SemiCom	SemiCom
+dribling	1983			Model Racing	Model Racing
+drifto94	1994			Visco	Visco
+driftout	1991			Visco	Visco
+drivfrcp	1984			Shinkai Inc. (Magic Electronics Inc. license)	Shinkai Inc. (Magic Electronics Inc. license)
+cdsteljn	1981			Data East Corporation	Data East Corporation
+ducki	2009			Sergi	Sergi
+ddsom	1996			Capcom	Capcom
+ddtod	1993			Capcom	Capcom
+dunkshot	1987			Sega	Sega
+dyger	1989			Philko	Philko
+dynagear	1993			Sammy	Sammy
+dynablst	1991			Irem (licensed from Hudson Soft)	Irem (licensed from Hudson Soft)
+dcclub	1991			Sega	Sega
+dynamski	1984			Taiyo System (Nichibutsu license)	Taiyo System (Nichibutsu license)
+dynabomb	2000			Limenko	Limenko
+dynduke	1989			Seibu Kaihatsu	Seibu Kaihatsu
+ddux	1988			Sega	Sega
+dleague	1990			Taito America Corporation	Taito America Corporation
+dynwar	1989			Capcom	Capcom
+ejanhs	1996			Seibu Kaihatsu	Seibu Kaihatsu
+ejsakura	1999			Seibu Kaihatsu	Seibu Kaihatsu
+edf	1991			Jaleco	Jaleco
+eaglshot	1994			Sammy	Sammy
+ecofghtr	1993			Capcom	Capcom
+eeekk	1983			Epos Corporation	Epos Corporation
+egghunt	1995			Invi Image	Invi Image
+eggor	1983			Telko	Telko
+8ballact	1984			Seatongrove UK, Ltd. (Magic Electronics USA license)	Seatongrove UK, Ltd. (Magic Electronics USA license)
+eightfrc	1994			Tecmo	Tecmo
+eightman	1991			SNK / Pallas	SNK / Pallas
+efdt	1981			Niemer	Niemer
+elevator	1983			Taito Corporation	Taito Corporation
+elvactr	1994			Taito Corporation Japan	Taito Corporation Japan
+elim2	1981			Gremlin	Gremlin
+emeralda	1993			Namco	Namco
+empcity	1986			Seibu Kaihatsu	Seibu Kaihatsu
+enduror	1986			Sega	Sega
+enforce	1988			Taito Corporation Japan	Taito Corporation Japan
+enmadaio	1993			Toaplan / Taito	Toaplan / Taito
+equites	1984			Alpha Denshi Co.	Alpha Denshi Co.
+eprom	1989			Atari Games	Atari Games
+esckids	1991			Konami	Konami
+esprade	1998			Cave (Atlus license)	Cave (Atlus license)
+espgal	2003			Cave (AMI license)	Cave (AMI license)
+espgal2	2005			Cave (AMI license)	Cave (AMI license)
+espial	1983			Orca / Thunderbolt	Orca / Thunderbolt
+euroch92	1992			Taito Corporation Japan	Taito Corporation Japan
+evilston	1990			Spacy Industrial, Ltd.	Spacy Industrial, Ltd.
+excelsr	1996			Playmark	Playmark
+exctleag	1988			Sega	Sega
+exctsccr	1983			Alpha Denshi Co.	Alpha Denshi Co.
+exctscc2	1984			Alpha Denshi Co.	Alpha Denshi Co.
+exedexes	1985			Capcom	Capcom
+exerion	1983			Jaleco	Jaleco
+cexplore	1982			Data East Corporation	Data East Corporation
+explbrkr	1992			Kaneko	Kaneko
+exprraid	1986			Data East Corporation	Data East Corporation
+extrmatn	1987			Taito Corporation Japan	Taito Corporation Japan
+exterm	1989			Premier Technology	Premier Technology
+ebases	1980			Dave Nutting Associates / Midway	Dave Nutting Associates / Midway
+extdwnhl	1995			Sammy Industries Japan	Sammy Industries Japan
+exvania	1992			Namco	Namco
+exzisus	1987			Taito Corporation	Taito Corporation
+eyes	1982			Techstar (Rock-Ola license)	Techstar (Rock-Ola license)
+f1dream	1988			Capcom (Romstar license)	Capcom (Romstar license)
+f1gp	1991			Video System Co.	Video System Co.
+f1gp2	1992			Video System Co.	Video System Co.
+f1gpstr2	1993			Jaleco	Jaleco
+f1en	1991			Sega	Sega
+f1lap	1993			Sega	Sega
+faceoff	1988			Namco	Namco
+fncywld	1996			Unico	Unico
+fantasia	1994			Comad & New Japan System	Comad & New Japan System
+fantsia2	1997			Comad	Comad
+fantastc	198			Taito do Brasil	Taito do Brasil
+fantasyu	1981			SNK (Rock-Ola license)	SNK (Rock-Ola license)
+fantland	19			Electronic Devices Italy	Electronic Devices Italy
+fantzone	1986			Sega	Sega
+fantzn2	1988			Sega	Sega
+fantzn2x	2008			Sega / M2	Sega / M2
+kabukikl	1995			Hudson	Hudson
+fastlane	1987			Konami	Konami
+sqbert	1983			Mylstar	Mylstar
+fatfury1	1991			SNK	SNK
+fatfury2	1992			SNK	SNK
+fatfury3	1995			SNK	SNK
+fatfursp	1993			SNK	SNK
+fax	1983			Exidy	Exidy
+feversos	1998			Cave (Nihon System license)	Cave (Nihon System license)
+fcombat	1985			Jaleco	Jaleco
+fightfev	1994			Viccom	Viccom
+fghtatck	1992			Namco	Namco
+fghthist	1993			Data East Corporation	Data East Corporation
+fghtbskt	1984			Paradise Co. Ltd.	Paradise Co. Ltd.
+fhawk	1988			Taito Corporation Japan	Taito Corporation Japan
+cfghtice	1984			Data East Corporation	Data East Corporation
+fightrol	1983			Kaneko (Taito license)	Kaneko (Taito license)
+fsoccer	1988			SNK	SNK
+finalb	1988			Taito Corporation Japan	Taito Corporation Japan
+ffight	1989			Capcom	Capcom
+ffex2u	2026			Strygo	Strygo
+ffightaec2	2022			bootleg	bootleg
+finalgdr	2001			SemiCom	SemiCom
+finallap	1987			Namco	Namco
+finalap2	1990			Namco	Namco
+finalap3	1992			Namco	Namco
+fstarfrc	1992			Tecmo	Tecmo
+finalttr	1993			Jeil Computer System	Jeil Computer System
+finalizr	1985			Konami	Konami
+finehour	1989			Namco	Namco
+fball	1992			FM Work	FM Work
+firebatl	1984			Woodplace Inc. (Taito license)	Woodplace Inc. (Taito license)
+fireshrk	1990			Toaplan	Toaplan
+firetrap	1986			Woodplace Inc. (Data East USA license)	Woodplace Inc. (Data East USA license)
+firebeas	1983			Atari	Atari
+fixeight	1992			Toaplan	Toaplan
+flapchck	2023			Blastar	Blastar
+cfboy0a1	1981			Data East Corporation	Data East Corporation
+fpoint	1989			Sega	Sega
+flashgal	1985			Kyugo / Sega	Kyugo / Sega
+flicky	1984			Sega	Sega
+flipjack	1983			Jackson Co., Ltd.	Jackson Co., Ltd.
+flower	1986			Clarue (Komax license)	Clarue (Komax license)
+flyboy	1982			Kaneko	Kaneko
+cflyball	1985			Data East Corporation	Data East Corporation
+fshark	1987			Toaplan / Taito Corporation	Toaplan / Taito Corporation
+flytiger	1992			Dooyong	Dooyong
+foodf	1982			General Computer Corporation (Atari license)	General Computer Corporation (Atari license)
+foodfight	2025			iq_132	iq_132
+footchmp	1990			Taito Corporation Japan	Taito Corporation Japan
+fbfrenzy	1992			SNK	SNK
+forgottn	1988			Capcom	Capcom
+formatz	1984			Jaleco	Jaleco
+fort2b	2001			Eolith	Eolith
+fourtrax	1989			Namco	Namco
+freekick	1987			Nihon System (Merit license)	Nihon System (Merit license)
+freeze	1984			Cinematronics	Cinematronics
+frenzy	1982			Stern Electronics	Stern Electronics
+friskyt	1981			Nichibutsu	Nichibutsu
+fspiderb	1981			Taito Corporation	Taito Corporation
+cps1frog	2006			Rastersoft (Homebrew)	Rastersoft (Homebrew)
+pgmfrog	2006			RasterSoft	RasterSoft
+frogger	1981			Konami	Konami
+frontlin	1982			Taito Corporation	Taito Corporation
+funkybee	1982			Orca	Orca
+fnkyfish	1981			Sun Electronics	Sun Electronics
+funkyjet	1992			Mitchell	Mitchell
+funybubl	1999			In Chang Electronic Co	In Chang Electronic Co
+futspy	1984			Sega	Sega
+gloc	1990			Sega	Sega
+gstream	2002			Oriental Soft Japan	Oriental Soft Japan
+gijoe	1992			Konami	Konami
+gaialast	1999			SemiCom / XESS	SemiCom / XESS
+gaia	1999			Noise Factory	Noise Factory
+gaiapols	1993			Konami	Konami
+gground	1988			Sega	Sega
+galastrm	1992			Taito Corporation	Taito Corporation
+bs_gwarrior	1985			Konami	Konami
+gwarrior	1985			Konami	Konami
+galaga88	1987			Namco	Namco
+galaga	1981			Namco	Namco
+neogalag	2013			Cristiano Bei/www.iocerom.com	Cristiano Bei/www.iocerom.com
+galaxian	1979			Namco	Namco
+galaxianng	1979-2023			Namco - tcdev	Namco - tcdev
+galaxyfg	1995			Sunsoft	Sunsoft
+gforce2	1988			Sega	Sega
+galgame	1971			Computer Recreations, Inc	Computer Recreations, Inc
+galaxygn	1989			Electronic Devices Italy	Electronic Devices Italy
+galmedes	1992			Visco	Visco
+galsnew	1990			Kaneko	Kaneko
+galpanic	1990			Kaneko	Kaneko
+galpani3	1995			Kaneko	Kaneko
+galpani4	1996			Kaneko	Kaneko
+galpanis	1997			Kaneko	Kaneko
+galpans2	1999			Kaneko	Kaneko
+galpans3	2002			Kaneko	Kaneko
+galspnbl	1996			Comad	Comad
+usgames	1992			U.S. Games, Inc.	U.S. Games, Inc.
+ginkun	1995			Tecmo	Tecmo
+ganbare	2000			Capcom	Capcom
+gbusters	1988			Konami	Konami
+gangwars	1989			Alpha Denshi Co.	Alpha Denshi Co.
+ganryu	1999			Visco	Visco
+gaplus	1984			Namco	Namco
+gardia	1986			Coreland / Sega	Coreland / Sega
+garogun	2000			Yun Sung	Yun Sung
+garou	1999			SNK	SNK
+garyoret	1987			Data East Corporation	Data East Corporation
+gauntlet	1985			Atari Games	Atari Games
+gaunt2	1986			Atari Games	Atari Games
+geebee	1978			Namco	Namco
+gekiridn	1995			Taito Corporation	Taito Corporation
+gekisou	1985			Eastern Corp.	Eastern Corp.
+gemini	1987			Tecmo	Tecmo
+genix	1994			NIX	NIX
+genpeitd	1986			Namco	Namco
+ghostbi	2009			Sergi	Sergi
+gpilots	1991			SNK	SNK
+ghostlop	1996			Data East Corporation	Data East Corporation
+gmgalax	1981			bootleg	bootleg
+gng	1985			Capcom	Capcom
+ghouls	1988			Capcom	Capcom
+ghox	1991			Toaplan	Toaplan
+gigawing	1999			Takumi (Capcom license)	Takumi (Capcom license)
+gigandes	1989			East Technology	East Technology
+gigas	1986			Sega	Sega
+gigasm2	1986			Sega	Sega
+ginganin	1987			Jaleco	Jaleco
+gladiatr	1986			Allumer / Taito America Corporation	Allumer / Taito America Corporation
+sgladiat	1984			SNK	SNK
+gladmort	2025			PixelHeart	PixelHeart
+glass	1994			OMK / Gaelco	OMK / Gaelco
+go2000	2000			SunA	SunA
+yamagchi	1985			Kaneko / Taito	Kaneko / Taito
+goalx3	1995			Visco	Visco
+godzilla	1993			Banpresto	Banpresto
+plegends	1995			Atlus	Atlus
+goindol	1987			SunA	SunA
+goldmedl	1988			SNK	SNK
+goldnaxe	1989			Sega	Sega
+goldnaxeng	2025			h0ffman	h0ffman
+ga2	1992			Sega	Sega
+gfire2	1992			Topis Corp	Topis Corp
+gpgolf	1992			Strata / Incredible Technologies	Strata / Incredible Technologies
+gt97	1997			Incredible Technologies	Incredible Technologies
+gt98	1998			Incredible Technologies	Incredible Technologies
+gt99	1999			Incredible Technologies	Incredible Technologies
+gt2k	2000			Incredible Technologies	Incredible Technologies
+gt3d	1995			Incredible Technologies	Incredible Technologies
+gtclassc	2001			Incredible Technologies	Incredible Technologies
+gtg	1990			Strata / Incredible Technologies	Strata / Incredible Technologies
+gtg2	1992			Strata / Incredible Technologies	Strata / Incredible Technologies
+gollygho	1990			Namco	Namco
+gondo	1987			Data East Corporation	Data East Corporation
+goori	1999			Unico	Unico
+gorf	1981			Dave Nutting Associates / Midway	Dave Nutting Associates / Midway
+gorodki	198			Terminal	Terminal
+gotcha	1997			Dongsung / Para	Dongsung / Para
+ryorioh	1998			Visco	Visco
+gprider	1990			Sega	Sega
+bs_gradius	1985			Konami	Konami
+gradius3	1989			Konami	Konami
+f1gpstar	1992			Jaleco	Jaleco
+gstrik2	1996			Human Amusement	Human Amusement
+grndtour	1993			IGS	IGS
+grasspin	1983			Zilec Electronics / Jaleco	Zilec Electronics / Jaleco
+gratia	1996			Jaleco	Jaleco
+gravitar	1982			Atari	Atari
+gslgr94u	1994			Namco	Namco
+gslugrsj	1993			Namco	Namco
+gberet	1985			Konami	Konami
+gseeker	1992			Taito Corporation Japan	Taito Corporation Japan
+gridiron	1985			Tehkan	Tehkan
+gridlee	1983			Videa	Videa
+grindstm	1992			Toaplan	Toaplan
+grobda	1984			Namco	Namco
+groundfx	1992			Taito Corporation	Taito Corporation
+growl	1990			Taito Corporation Japan	Taito Corporation Japan
+grmatch	1989			Yankee Game Technology	Yankee Game Technology
+grdian	1986			Toaplan / Taito America Corporation (Kitkorp license)	Toaplan / Taito America Corporation (Kitkorp license)
+grdnstrm	1998			Afega (Apples Industries license)	Afega (Apples Industries license)
+grdians	1995			Winkysoft (Banpresto license)	Winkysoft (Banpresto license)
+gwar	1987			SNK	SNK
+gulfstrm	1991			Dooyong	Dooyong
+gulfwar2	1991			Comad	Comad
+gulunpa	1993			Capcom	Capcom
+gumbo	1994			Min Corp.	Min Corp.
+gunfront	1990			Taito Corporation Japan	Taito Corporation Japan
+gundl94	1994			Dooyong	Dooyong
+gunforc2	1994			Irem	Irem
+gunmast	1994			Metro	Metro
+gunsmoke	1985			Capcom	Capcom
+gnbarich	2001			Psikyo	Psikyo
+gunbird	1994			Psikyo	Psikyo
+gunbird2	1998			Psikyo	Psikyo
+gunbustr	1992			Taito Corporation Japan	Taito Corporation Japan
+gundhara	1995			Banpresto	Banpresto
+gunforce	1991			Irem	Irem
+gunlock	1993			Taito Corporation Japan	Taito Corporation Japan
+gunnail	1993			NMK / Tecmo	NMK / Tecmo
+gururin	1994			Face	Face
+gutsn	2000			Kaneko / Kouyousha	Kaneko / Kouyousha
+guwange	1999			Cave (Atlus license)	Cave (Atlus license)
+guzzler	1983			Tehkan	Tehkan
+pbancho	1996			Fuuki	Fuuki
+gyrodine	1984			Crux	Crux
+gyruss	1983			Konami	Konami
+hachamf	1991			NMK	NMK
+hachoo	1989			Jaleco	Jaleco
+hal21	1985			SNK	SNK
+halleysc	1986			Taito America Corporation (Coin-It license)	Taito America Corporation (Coin-It license)
+halozero	2025			earok - misentropy	earok - misentropy
+hamaway	1991			Sega / Santos	Sega / Santos
+hamboy	1990			Dinamic / Inder	Dinamic / Inder
+hharry	1990			Irem	Irem
+hangon	1985			Sega	Sega
+hangonng	2026			ShinobiZ	ShinobiZ
+hangonjr	1985			Sega	Sega
+hangzo	1992			Hot-B	Hot-B
+harddunk	1994			Sega	Sega
+hardhat	1982			Exidy	Exidy
+hardhea2	1991			SunA	SunA
+hardhead	1988			SunA	SunA
+hrdtimes	1994			Playmark	Playmark
+hardyard	1993			Strata / Incredible Technologies	Strata / Incredible Technologies
+harem	1983			I.G.R.	I.G.R.
+hasamu	1991			Irem	Irem
+htchctch	1995			SemiCom	SemiCom
+hatris	1990			Video System Co.	Video System Co.
+hcastle	1988			Konami	Konami
+hayaosi2	1994			Jaleco	Jaleco
+hayaosi3	1994			Jaleco	Jaleco
+hayaosi1	1993			Jaleco	Jaleco
+headon	1979			Gremlin	Gremlin
+hedpanic	2000			ESD	ESD
+heatbrl	1992			TAD Corporation	TAD Corporation
+hbarrel	1987			Data East Corporation	Data East Corporation
+hvymetal	1985			Sega	Sega
+hvysmsh	1993			Data East Corporation	Data East Corporation
+hvyunit	1988			Kaneko / Taito	Kaneko / Taito
+hwchamp	1987			Sega	Sega
+heberpop	1994			Sunsoft / Atlus	Sunsoft / Atlus
+heiankyo	1979			Denki Onkyo	Denki Onkyo
+hellfire	1989			Toaplan (Taito license)	Toaplan (Taito license)
+hero	1984			Century Electronics / Seatongrove Ltd	Century Electronics / Seatongrove Ltd
+heuksun	1997			Oksan / F2 System	Oksan / F2 System
+hexa	199			D.R. Korea	D.R. Korea
+hexion	1992			Konami	Konami
+hidnctch	1998			Eolith	Eolith
+hidctch2	1999			Eolith	Eolith
+hidnc2k	1999			Eolith	Eolith
+hidctch3	2000			Eolith	Eolith
+hiimpact	1990			Williams	Williams
+hvoltage	1985			Alpha Denshi Co.	Alpha Denshi Co.
+hwrace	1983			Taito Corporation	Taito Corporation
+chwy	1980			Data East Corporation	Data East Corporation
+himesiki	1989			Hi-Soft	Hi-Soft
+hippodrm	1989			Data East USA	Data East USA
+hitnmiss	1987			Exidy	Exidy
+hitice	1990			Taito Corporation (Williams license)	Taito Corporation (Williams license)
+hoccer	1983			Eastern Micro Electronics, Inc.	Eastern Micro Electronics, Inc.
+holeland	1984			Tecfri	Tecfri
+holo	1992			Sega	Sega
+honeydol	1995			Barko Corp.	Barko Corp.
+hook	1992			Irem	Irem
+hoops96	1996			Data East Corporation	Data East Corporation
+hopprobo	1983			Sega	Sega
+hopmappy	1986			Namco	Namco
+horizon	1985			Irem	Irem
+hotchase	1988			Konami	Konami
+hotmind	1995			Playmark	Playmark
+hotpinbl	1995			Comad & New Japan System	Comad & New Japan System
+hotrod	1988			Sega	Sega
+hotshock	1982			E.G. Felaco (Domino license)	E.G. Felaco (Domino license)
+hstennis	1990			Strata / Incredible Technologies	Strata / Incredible Technologies
+hotdogst	1996			Marble (Ace International license)	Marble (Ace International license)
+happy6	2004			IGS	IGS
+hunchbak	1983			Century Electronics	Century Electronics
+huncholy	1984			Seatongrove Ltd	Seatongrove Ltd
+hustle	1977			Gremlin	Gremlin
+hydra	1990			Atari Games	Atari Games
+hcrash	1987			Konami	Konami
+hyprduel	1993			Technosoft	Technosoft
+hyperpac	1995			SemiCom	SemiCom
+hyperspt	1984			Konami (Centuri license)	Konami (Centuri license)
+hsf2	2004			Capcom	Capcom
+hypernoid	2022			NeoHomeBrew	NeoHomeBrew
+imsorry	1985			Coreland / Sega	Coreland / Sega
+ibara	2005			Cave (AMI license)	Cave (AMI license)
+ibarablk	2006			Cave (AMI license)	Cave (AMI license)
+suchie2	1994			Jaleco	Jaleco
+froman2b	1995			bootleg	bootleg
+igmo	1984			Epos Corporation	Epos Corporation
+ikari3	1989			SNK	SNK
+ikari	1986			SNK	SNK
+ikki	1985			Sun Electronics	Sun Electronics
+imgfight	1988			Irem	Irem
+imago	1984			Acom	Acom
+inthehunt	2025			OzzyOuzo	OzzyOuzo
+inthunt	1993			Irem	Irem
+inyourfa	1991			Jaleco	Jaleco
+indytemp	1985			Atari Games	Atari Games
+insector	1982			Gottlieb	Gottlieb
+insectx	1989			Taito Corporation Japan	Taito Corporation Japan
+intcup94	1994			Taito Corporation Japan	Taito Corporation Japan
+intrepid	1983			Nova Games Ltd.	Nova Games Ltd.
+invds	1979			Sega	Sega
+invinco	1979			Sega	Sega
+iqblock	1993			IGS	IGS
+ironfort	1998			Eolith	Eolith
+ironhors	1986			Konami	Konami
+itaten	1984			Nichibutsu / Alice	Nichibutsu / Alice
+ixion	1983			Sega	Sega
+vshoot	1994			Namco	Namco
+jjsquawk	1993			Athena / Able	Athena / Able
+jackrabt	1984			Zaccaria	Zaccaria
+jack	1982			Hara Industries (Cinematronics license)	Hara Industries (Cinematronics license)
+jackal	1986			Konami	Konami
+jchan	1995			Kaneko	Kaneko
+jchan2	1995			Kaneko	Kaneko
+jailbrek	1986			Konami	Konami
+jammin	1985			Atari Games	Atari Games
+jjparad2	1997			Electro Design	Electro Design
+jjparads	1996			Electro Design	Electro Design
+choko	2001			Mitchell (Capcom license)	Mitchell (Capcom license)
+janshin	1994			Aicom	Aicom
+jetpac	2026			Tardis Remakes	Tardis Remakes
+cultures	1994			Face	Face
+jin	1982			Falcon	Falcon
+jitsupro	1989			Jaleco	Jaleco
+jockeygp	2001			Sun Amusement / BrezzaSoft	Sun Amusement / BrezzaSoft
+joemacr	1994			Data East Corporation	Data East Corporation
+joinem	1983			Global Corporation	Global Corporation
+jojoba	1999			Capcom	Capcom
+jojo	1998			Capcom	Capcom
+jollyjgr	1982			Taito Corporation	Taito Corporation
+ltorb	2005			blastar@gmx.net	blastar@gmx.net
+jongpute	1981			Alpha Denshi Co.	Alpha Denshi Co.
+journey	1983			Bally Midway	Bally Midway
+joust	1982			Williams	Williams
+joyfulr	1983			SNK	SNK
+jrpacman	1983			Bally Midway	Bally Midway
+jdreddp	1993			Midway	Midway
+jumpbug	1981			Hoei (Rock-Ola license)	Hoei (Rock-Ola license)
+jumpcoas	1983			Kaneko Elc. Co.	Kaneko Elc. Co.
+jumpkids	1993			Comad	Comad
+jumpkun	1984			Kaneko	Kaneko
+jumpshot	1985			Bally Midway	Bally Midway
+jmpbreak	1999			F2 System	F2 System
+jcross	1984			SNK	SNK
+jjack	1984			Universal	Universal
+jpopnics	1992			Nics	Nics
+jumppop	2001			ESD	ESD
+junglek	1982			Taito Corporation	Taito Corporation
+jungler	1981			Konami	Konami
+junofrst	1983			Konami	Konami
+jpark	1993			Sega	Sega
+jurl	2025			Tonsomo Entertainment	Tonsomo Entertainment
+jyangoku	1999			Capcom	Capcom
+kabukiz	1988			Kaneko / Taito Corporation Japan	Kaneko / Taito Corporation Japan
+kageki	1988			Kaneko / Taito Corporation	Kaneko / Taito Corporation
+kaiserkn	1994			Taito Corporation Japan	Taito Corporation Japan
+kaitei	1980			K.K. Tokki	K.K. Tokki
+kamikcab	1984			Data East Corporation	Data East Corporation
+kangaroo	1982			Sun Electronics	Sun Electronics
+karatblz	1991			Video System Co.	Video System Co.
+kchamp	1984			Data East USA	Data East USA
+kchampvs	1984			Data East USA	Data East USA
+karianx	1996			Deniam	Deniam
+karnov	1987			Data East USA	Data East USA
+karnovng	2025			iq_132	iq_132
+karnovr	1994			Data East Corporation	Data East Corporation
+keroppi	1995			American Sammy	American Sammy
+ket	2002			Cave (AMI license)	Cave (AMI license)
+kick	1981			Midway	Midway
+kicknrun	1986			Taito Corporation	Taito Corporation
+kickball	1998			Seoung Youn	Seoung Youn
+kickboy	1983			Nichibutsu	Nichibutsu
+kickgoal	1995			TCH / Proyesel	TCH / Proyesel
+kickoff	1988			Jaleco	Jaleco
+kickridr	1984			Universal	Universal
+kikstart	1984			Taito Corporation	Taito Corporation
+kicker	1985			Konami	Konami
+kidniki	1986			Irem	Irem
+horekidb3	1987-2022			Nichibutsu - iq_132	Nichibutsu - iq_132
+horekid	1987			Nichibutsu	Nichibutsu
+kikikai	1986			Taito Corporation	Taito Corporation
+kinst	1994			Rare/Nintendo	Rare/Nintendo
+kinst2	1995			Rare/Nintendo	Rare/Nintendo
+kingball	1980			Namco	Namco
+kingofb	1985			Woodplace Inc.	Woodplace Inc.
+kotm	1991			SNK	SNK
+kotm2	1992			SNK	SNK
+kingdmgp	1994			Raizing / Eighting	Raizing / Eighting
+kirameki	1997			Taito Corporation	Taito Corporation
+kittenk	1988			Konami	Konami
+kizuna	1996			SNK	SNK
+klax	1990			Atari Games	Atari Games
+klondkp	1999			Eolith	Eolith
+knightsch	2014			Neobitz	Neobitz
+kngtmare	1983			Gottlieb	Gottlieb
+knights	1991			Capcom	Capcom
+kov	1999			IGS	IGS
+kov2	2000			IGS	IGS
+kov2nl	2008			IGS	IGS
+kov2p	2001			IGS	IGS
+kov3	2011			IGS (Huatong license)	IGS (Huatong license)
+kovplus	1999			IGS	IGS
+kovsh	1999			IGS	IGS
+kovytzy	1999			IGS	IGS
+kovshp	2004			IGS	IGS
+kbash2	1999			bootleg	bootleg
+kbash	1993			Toaplan / Atari	Toaplan / Atari
+knckhead	1992			Namco	Namco
+kncljoe	1985			Seibu Kaihatsu (Taito license)	Seibu Kaihatsu (Taito license)
+koikois2	1997			Visco	Visco
+eto	1994			Visco	Visco
+konamigt	1985			Konami	Konami
+bs_rf2	1985			Konami	Konami
+kontest	1987			Konami	Konami
+pingpong	1985			Konami	Konami
+konek	198			Terminal	Terminal
+kong	198			Taito do Brasil	Taito do Brasil
+korokoro	1999			Takumi	Takumi
+myangel	1996			MOSS / Namco	MOSS / Namco
+myangel2	1997			MOSS / Namco	MOSS / Namco
+kot	198			Terminal	Terminal
+kouyakyu	1985			Alpha Denshi Co.	Alpha Denshi Co.
+strahl	1992			UPL	UPL
+kroozr	1982			Bally Midway	Bally Midway
+kozure	1987			Nichibutsu	Nichibutsu
+kram	1982			Taito America Corporation	Taito America Corporation
+krzybowl	1994			American Sammy	American Sammy
+krull	1983			Gottlieb	Gottlieb
+kungfum	1984			Irem	Irem
+kungfut	1984			Seibu Kaihatsu	Seibu Kaihatsu
+kurikint	1988			Taito Corporation Japan	Taito Corporation Japan
+ksayakyu	1985			Taito Corporation	Taito Corporation
+kyros	1987			Alpha Denshi Co. (World Games Inc. license)	Alpha Denshi Co. (World Games Inc. license)
+kyukaidk	1990			Namco	Namco
+divebomb	1989			Konami	Konami
+ladybug	1981			Universal	Universal
+ladyfrog	1990			Mondial Games	Mondial Games
+ladykill	1993			Yanyaka (Mitchell license)	Yanyaka (Mitchell license)
+ladymstr	1985			Kaneko / Taito	Kaneko / Taito
+landbrk	1999			Eolith	Eolith
+landmakr	1998			Taito Corporation	Taito Corporation
+lsasquad	1986			Taito	Taito
+lvgirl94	1994			Comad	Comad
+lghost	1990			Sega	Sega
+lasso	1982			SNK	SNK
+lastduel	1988			Capcom	Capcom
+lastfort	1994			Metro	Metro
+lasthope	2005			NG:DEV.TEAM	NG:DEV.TEAM
+lhcdb	2007			NG:Dev.Team	NG:Dev.Team
+lastkm	1995			Gaelco / Zeus	Gaelco / Zeus
+lastmisn	1986			Data East Corporation	Data East Corporation
+lresort	1992			SNK	SNK
+kyustrkr	1989			East Technology	East Technology
+lastsurv	1989			Sega	Sega
+lazybug	1981			David Widel	David Widel
+lbowling	1990			SNK	SNK
+leds2011	1988			Capcom	Capcom
+fitegolf	1988			SNK	SNK
+loht	1989			Irem	Irem
+legendoh	2000			Limenko	Limenko
+lomakai	1988			Jaleco	Jaleco
+legendos	1991			SNK / Wave	SNK / Wave
+lwings	1986			Capcom	Capcom
+legend	1986			Kyugo / Sega	Kyugo / Sega
+legion	1987			Nichibutsu	Nichibutsu
+legionna	1992			TAD Corporation	TAD Corporation
+lemmings	1991			Data East USA	Data East USA
+crshrace	1993			Video System Co.	Video System Co.
+lethalen	1992			Konami	Konami
+lethalth	1991			Irem	Irem
+levers	1983			Rock-Ola	Rock-Ola
+liblrabl	1983			Namco	Namco
+liberate	1984			Data East Corporation	Data East Corporation
+lightbr	1993			Taito Corporation Japan	Taito Corporation Japan
+lgtnfght	1990			Konami	Konami
+ltswords	1991			Irem	Irem
+loffire	1989			Sega	Sega
+linkypip	1998			Eolith	Eolith
+liquidk	1990			Taito Corporation Japan	Taito Corporation Japan
+littlerb	1994			TCH	TCH
+livequiz	1999			Andamiro	Andamiro
+lizwiz	1985			Techstar (Sunn license)	Techstar (Sunn license)
+lockonph	1991			Philko	Philko
+clocknch	1981			Data East Corporation	Data East Corporation
+lnc	1981			Data East Corporation	Data East Corporation
+lockon	1986			Tatsumi	Tatsumi
+locomotn	1982			Konami (Centuri license)	Konami (Centuri license)
+ldrun	1984			Irem (licensed from Broderbund)	Irem (licensed from Broderbund)
+loderndf	2000			Psikyo	Psikyo
+ldrun2	1984			Irem (licensed from Broderbund)	Irem (licensed from Broderbund)
+ldrun3	1985			Irem (licensed from Broderbund)	Irem (licensed from Broderbund)
+ldrun4	1986			Irem (licensed from Broderbund)	Irem (licensed from Broderbund)
+logicpr2	1997			Deniam	Deniam
+looptrsp	2022			Blastar	Blastar
+lordgun	1994			IGS	IGS
+losttomb	1982			Stern Electronics	Stern Electronics
+lotlot	1985			Irem (licensed from Tokuma Shoten)	Irem (licensed from Tokuma Shoten)
+lottofun	1987			HAR Management	HAR Management
+janjans1	1996			Visco	Visco
+janjans2	2000			Visco	Visco
+loverboy	1983			G.T Enterprise Inc	G.T Enterprise Inc
+luckywld	1992			Namco	Namco
+luckboom	1996			Playmark	Playmark
+cluckypo	1981			Data East Corporation	Data East Corporation
+luctoday	1980			Sigma	Sigma
+llander	1979			Atari	Atari
+mia	1989			Konami	Konami
+machbrkr	1995			Namco	Namco
+machomou	1982			Techstar	Techstar
+macrossp	1996			MOSS / Banpresto	MOSS / Banpresto
+madcrash	1984			SNK	SNK
+maddonna	1995			Promat (Tuning license)	Promat (Tuning license)
+madgear	1989			Capcom	Capcom
+madmotor	1989			Mitchell	Mitchell
+mplanets	1983			Gottlieb	Gottlieb
+madshark	1993			Allumer	Allumer
+magmax	1985			Nichibutsu	Nichibutsu
+magicbub	199			Yun Sung	Yun Sung
+magipur	1996			Unico	Unico
+magicstk	1995			Playmark	Playmark
+msword	1990			Capcom	Capcom
+mcatadv	1993			Wintechno	Wintechno
+mgcrystl	1991			Kaneko	Kaneko
+magdrop3	1997			Data East Corporation	Data East Corporation
+magdrop2	1996			Data East Corporation	Data East Corporation
+magerror	1994			Technosoft / Jaleco	Technosoft / Jaleco
+mpumpkin	1996			Capcom	Capcom
+magicbal	1994			SemiCom	SemiCom
+maglord	1990			Alpha Denshi Co.	Alpha Denshi Co.
+magix	1995			Yun Sung	Yun Sung
+akiss	1995			Jaleco	Jaleco
+mjgtaste	2002			Psikyo	Psikyo
+mgakuen2	1989			Face	Face
+mgakuen	1988			Yuga	Yuga
+hotgmcki	2001			Psikyo	Psikyo
+hypreact	1995			Sammy	Sammy
+hypreac2	1997			Sammy	Sammy
+mahretsu	1990			SNK	SNK
+mjkjidai	1986			Sanritsu	Sanritsu
+mjnquest	1990			Taito Corporation	Taito Corporation
+mainsnk	1984			SNK	SNK
+maiya	2026			Eagle Software	Eagle Software
+mhavoc	1983			Atari	Atari
+mjleague	1985			Sega	Sega
+majtitle	1990			Irem	Irem
+majtitl2	1992			Irem	Irem
+mangchi	2000			Afega	Afega
+cmanhat	1981			Data East Corporation	Data East Corporation
+maniach	1986			Technos Japan (Taito America license)	Technos Japan (Taito America license)
+maniacsq	1996			Gaelco	Gaelco
+maniacsp	1992			Gaelco	Gaelco
+manybloc	1991			Bee-Oh	Bee-Oh
+mappy	1983			Namco	Namco
+marble	1984			Atari Games	Atari Games
+marblmd2	1991			Atari Games	Atari Games
+mmaze	1988			Namco	Namco
+marineb	1982			Orca	Orca
+mariner	1981			Amenip	Amenip
+mario	1983			Nintendo of America	Nintendo of America
+markham	1983			Sun Electronics	Sun Electronics
+mmatrix	2000			Takumi (Capcom license)	Takumi (Capcom license)
+mars	1981			Artic	Artic
+mtlchamp	1993			Konami	Konami
+martmast	2001			IGS	IGS
+marvland	1989			Namco	Namco
+msh	1995			Capcom	Capcom
+mshvsf	1997			Capcom	Capcom
+mvsc	1998			Capcom	Capcom
+marvins	1983			SNK	SNK
+kamenrid	1993			Banpresto	Banpresto
+mastboyo	1987			Gaelco (Covielsa license)	Gaelco (Covielsa license)
+masterw	1989			Taito Corporation Japan	Taito Corporation Japan
+mastfury	1996			Unico	Unico
+matmania	1985			Technos Japan (Taito America license)	Technos Japan (Taito America license)
+matchit2	1993			Tamtex	Tamtex
+matchit	1989			Tamtex	Tamtex
+matrim	2003			Noise Factory / Atlus	Noise Factory / Atlus
+maxrpm	1986			Bally Midway	Bally Midway
+mayday	1980			Hoei	Hoei
+mazeinv	1981			Atari	Atari
+mofflott	1989			Taito	Taito
+mazinger	1994			Banpresto / Dynamic Pl. Toei Animation	Banpresto / Dynamic Pl. Toei Animation
+mechatt	1989			SNK	SNK
+megablst	1989			Taito Corporation Japan	Taito Corporation Japan
+megaman2	1996			Capcom	Capcom
+megaman	1995			Capcom	Capcom
+megaphx	1991			Dinamic / Inder	Dinamic / Inder
+mtwins	1990			Capcom	Capcom
+megazone	1983			Konami	Konami
+megadon	1982			Epos Corporation (Photar Industries license)	Epos Corporation (Photar Industries license)
+megrescu	1987			Sega / Exa	Sega / Exa
+meijinsn	1986			SNK	SNK
+kikcubic	1988			Irem	Irem
+meikyuh	1987			Data East Corporation	Data East Corporation
+meosism	1996			Sammy	Sammy
+mercs	1990			Capcom	Capcom
+merlinmm	1986			Zilec-Zenitone	Zilec-Zenitone
+metafox	1989			Jordan I.S. / Seta	Jordan I.S. / Seta
+metalb	1991			Taito Corporation Japan	Taito Corporation Japan
+metlclsh	1985			Data East Corporation	Data East Corporation
+metlfrzr	1989			Seibu Kaihatsu	Seibu Kaihatsu
+metlhawk	1988			Namco	Namco
+metlsavr	1994			First Amusement	First Amusement
+mslug	1996			Nazca	Nazca
+mslug2	1998			SNK	SNK
+mslug3	2000			SNK	SNK
+mslug3x	2022			WillNie	WillNie
+mslug4	2002			Mega / Noise Factory / Playmore	Mega / Noise Factory / Playmore
+ms5pcb	2003			SNK Playmore	SNK Playmore
+mslug5	2003			SNK Playmore	SNK Playmore
+mslugx	1999			SNK	SNK
+msisaac	1985			Taito Corporation	Taito Corporation
+metmqstr	1995			Banpresto / Pandorabox	Banpresto / Pandorabox
+metamrph	1993			Konami	Konami
+metrocrs	1985			Namco	Namco
+mwalk	1990			Sega	Sega
+micon2	1978			SNK	SNK
+midres	1989			Data East Corporation	Data East Corporation
+midnight	2026			Z-Team	Z-Team
+mightguy	1986			Nichibutsu	Nichibutsu
+mimonkey	1982			Universal Video Games	Universal Video Games
+mwarr	199			Elettronica Video-Games	Elettronica Video-Games
+mpang	2000			Mitchell (Capcom license)	Mitchell (Capcom license)
+mikie	1984			Konami	Konami
+gtmr2	1995			Kaneko	Kaneko
+milliped	1982			Atari	Atari
+minasan	1990			Monolith Corp.	Monolith Corp.
+minefld	1983			Stern Electronics	Stern Electronics
+mineswpr	1977			Amutech	Amutech
+minivadr	1990			Taito Corporation	Taito Corporation
+mmonkey	1982			Technos Japan / Roller Tron	Technos Japan / Roller Tron
+mirage	1994			Mitchell	Mitchell
+mirninja	1988			Namco	Namco
+mirax	1985			Current Technology, Inc.	Current Technology, Inc.
+msbingo	1994			Min Corp.	Min Corp.
+missb2	1996			Alpha Co.	Alpha Co.
+mspuzzle	1994			Min Corp.	Min Corp.
+missw96	1996			Comad	Comad
+missw02	2002			Comad	Comad
+missile	1980			Atari	Atari
+m660	1986			Wood Place Co. Ltd. (Taito America Corporation license)	Wood Place Co. Ltd. (Taito America Corporation license)
+misncrft	2000			Sun	Sun
+cmissnx	1982			Data East Corporation	Data East Corporation
+mrviking	1984			Sega	Sega
+quiz18k	1992			EIM	EIM
+gundamex	1994			Banpresto	Banpresto
+gdfs	1995			Banpresto	Banpresto
+msgundam	1993			Banpresto / Allumer	Banpresto / Allumer
+moguchan	1982			Orca (Eastern Commerce Inc. license)	Orca (Eastern Commerce Inc. license)
+mogura	1991			Konami	Konami
+mole	1982			Yachiyo Electronics	Yachiyo Electronics
+momoko	1986			Jaleco	Jaleco
+monymony	1983			Zaccaria	Zaccaria
+miexchng	1997			Face	Face
+headonch	1994			hack	hack
+ngmontst	2022			M.Priewe / NeoHomeBrew	M.Priewe / NeoHomeBrew
+mmagic	1979			Nintendo	Nintendo
+monsterb	1982			Sega	Sega
+mmaulers	1993			Konami	Konami
+mslider	1997			Visco / Datt Japan	Visco / Datt Japan
+mstworld	1994			bootleg (TCH)	bootleg (TCH)
+moonal2	1980			Namco / Nichibutsu	Namco / Nichibutsu
+mooncrst	1980			Nichibutsu	Nichibutsu
+mpatrol	1982			Irem	Irem
+moonqsr	1980			Nichibutsu	Nichibutsu
+mshuttle	1981			Nichibutsu	Nichibutsu
+moonwarp	1981			Stern Electronics	Stern Electronics
+moonwar	1981			Stern Electronics	Stern Electronics
+moremorp	1999			SemiCom / Exit	SemiCom / Exit
+moremore	1999			SemiCom / Exit	SemiCom / Exit
+quizhuhu	1995			Taito Corporation	Taito Corporation
+mk	1992			Midway	Midway
+mk3	1994			Midway	Midway
+mk2	1993			Midway	Midway
+mortalr	1995			New Dream Games	New Dream Games
+mosaicf2	1999			F2 System	F2 System
+mosaic	1990			Space	Space
+motos	1985			Namco	Namco
+msgogo	1995			Metro	Metro
+mtrap	1981			Exidy	Exidy
+mouser	1983			UPL	UPL
+mrdig	2000			Sun	Sun
+mrdo	1982			Universal	Universal
+dowild	1984			Universal	Universal
+docastle	1983			Universal	Universal
+mrgoemon	1986			Konami	Konami
+mrjong	1983			Kiwako	Kiwako
+mrkicker	2001			SemiCom	SemiCom
+mrkougar	1984			ATW	ATW
+mrtnt	1983			Techstar (Telko license)	Techstar (Telko license)
+donight	2013			Krazy Ivan	Krazy Ivan
+mrsdyna	1982			Universal	Universal
+mspactwin	1992			hack (Susilu)	hack (Susilu)
+20pacgal	2000			Namco / Cosmodog	Namco / Cosmodog
+mspacman	1981			Midway / General Computer Corporation	Midway / General Computer Corporation
+rocktrv2	1986			Triumph Software Inc.	Triumph Software Inc.
+mmpork	2007			Cave (AMI license)	Cave (AMI license)
+mugsmash	1990			Electronic Devices Italy / 3D Games England	Electronic Devices Italy / 3D Games England
+semibase	1997			SemiCom / DMD	SemiCom / DMD
+nmg5	1998			Yun Sung	Yun Sung
+multchmp	1999			ESD	ESD
+mchampdx	2000			ESD	ESD
+mbombrd	1993			Capcom	Capcom
+musclem	1997			Inter Geo	Inter Geo
+mushisam	2004			Cave (AMI license)	Cave (AMI license)
+futaribl	2007			Cave (AMI license)	Cave (AMI license)
+futari15	2006			Cave (AMI license)	Cave (AMI license)
+matsuri15	2011			Cave (AMI license)	Cave (AMI license)
+musicbal	1988			Tecfri / Desystem S.A.	Tecfri / Desystem S.A.
+shoottv	199			Incredible Technologies	Incredible Technologies
+mustache	1987			Seibu Kaihatsu (March license)	Seibu Kaihatsu (March license)
+mutantf	1991			Data East Corporation	Data East Corporation
+mnight	1987			UPL	UPL
+mutnat	1992			SNK	SNK
+mvp	1989			Sega	Sega
+mx5000	1987			Konami	Konami
+myhero	1985			Coreland / Sega	Coreland / Sega
+mystston	1984			Technos Japan	Technos Japan
+mysticri	1992			Irem	Irem
+mystwarr	1993			Konami	Konami
+nsub	1980			Sega	Sega
+nycaptor	1985			Taito	Taito
+nam1975	1990			SNK	SNK
+namenayo	1982			Cat's	Cat's
+naname	1994			Atlus	Atlus
+narc	1988			Williams	Williams
+nastar	1988			Taito Corporation Japan	Taito Corporation Japan
+natodef	1982			Pacific Novelty	Pacific Novelty
+naughtyb	1982			Jaleco	Jaleco
+nmouse	1981			Amenip (Palcom Queen River)	Amenip (Palcom Queen River)
+navarone	1980			Namco	Namco
+nbahangt	1996			Midway	Midway
+nbajam	1993			Midway	Midway
+nbajamte	1994			Midway	Midway
+cnebula	1981			Data East Corporation	Data East Corporation
+nebulray	1994			Namco	Namco
+neckneck	1992			Bundra Games / Incredible Technologies	Bundra Games / Incredible Technologies
+nemesis	1985			Konami	Konami
+nemo	1990			Capcom	Capcom
+neo2048	2021			Nicole Express	Nicole Express
+neo2500	2004			blastar@gmx.net	blastar@gmx.net
+nblktiger	2020			OzzyOuzo	OzzyOuzo
+neobombe	1997			Hudson	Hudson
+neocstlv	2004			Barf/BarfHappy	Barf/BarfHappy
+neodrift	1996			Visco	Visco
+ngfrog	2006			Rastersoft	Rastersoft
+neocdz	1996			SNK	SNK
+neomrdo	1996			Visco	Visco
+neonopon	20			blastar@gmx.net	blastar@gmx.net
+neopang	2010			CeL	CeL
+neopong	2002			Neo Dev Corporation	Neo Dev Corporation
+nsmb	2020			OzzyOuzo	OzzyOuzo
+syscheck				blastar@gmx.net	blastar@gmx.net
+neothndr	2012			Sebastian Mihai	Sebastian Mihai
+turfmast	1996			Nazca	Nazca
+neocup98	1998			SNK	SNK
+neotet	2013			Crim/Stephen	Crim/Stephen
+neo3ddmo	2012			Oxygene	Oxygene
+ngcdtdd0	2020			Blastar	Blastar
+neotris	2020			Chipsonsteroids	Chipsonsteroids
+netwars	1983			Orca (Esco Trading Co license)	Orca (Esco Trading Co license)
+quiztou	1993			Namco	Namco
+newxpang	1999			F2 System	F2 System
+newfant	1995			Comad & New Japan System	Comad & New Japan System
+nhidctch	1999			Eolith	Eolith
+3in1semi	1998			SemiCom / XESS	SemiCom / XESS
+nrallyx	1981			Namco	Namco
+newsin7	1983			ATW USA, Inc.	ATW USA, Inc.
+news	1993			Poby / Virus	Poby / Virus
+ngem2k	2006			homebrew	homebrew
+ngftdemo	2012			CeL/redarmor.net	CeL/redarmor.net
+openice	1995			Midway	Midway
+nibbler	1982			Rock-Ola	Rock-Ola
+nitedrvr	1976			Atari	Atari
+nslasher	1994			Data East Corporation	Data East Corporation
+cnightst	1983			Data East Corporation	Data East Corporation
+nightstr	1989			Taito Corporation Japan	Taito Corporation Japan
+nwarr	1995			Capcom	Capcom
+nitd	2000			Eleven / Gavaking	Eleven / Gavaking
+nbbatman	1993			Irem	Irem
+ninclown	1991			Strata / Incredible Technologies	Strata / Incredible Technologies
+ncombat	1990			Alpha Denshi Co.	Alpha Denshi Co.
+ncommand	1992			Alpha Denshi Co.	Alpha Denshi Co.
+ninjemak	1986			Nichibutsu	Nichibutsu
+kazan	1988			Jaleco	Jaleco
+ninjamas	1996			ADK / SNK	ADK / SNK
+nspirit	1988			Irem	Irem
+ninjakd2	1987			UPL	UPL
+ninjakun	1984			UPL (Taito license)	UPL (Taito license)
+nitrobal	1992			Data East Corporation	Data East Corporation
+nob	1986			Coreland / Data East Corporation	Coreland / Data East Corporation
+nost	1993			Face	Face
+nostromo	198			bootleg	bootleg
+nouryoku	1995			Tecmo	Tecmo
+nova2001	1983			UPL	UPL
+numanath	1993			Namco	Namco
+cocean1a	1981			Data East Corporation	Data East Corporation
+ohmygod	1993			Atlus	Atlus
+oisipuzl	1993			Sunsoft / Atlus	Sunsoft / Atlus
+olibochu	1981			Irem (GDI license)	Irem (GDI license)
+omegaf	1989			UPL	UPL
+omegrace	1981			Midway	Midway
+omega	1986			Nihon System	Nihon System
+onetwo	1997			Barko	Barko
+oneshot	1996			Promat	Promat
+onna34ro	1985			Taito	Taito
+ooparts	1992			hack	hack
+coozumou	1984			Data East Corporation	Data East Corporation
+opaopa	1987			Sega	Sega
+othunder	1988			Taito Corporation Japan	Taito Corporation Japan
+opwolf	1987			Taito Corporation Japan	Taito Corporation Japan
+opwolf3	1994			Taito Corporation Japan	Taito Corporation Japan
+orbitron	1982			Comsoft (Signatron USA license)	Comsoft (Signatron USA license)
+orbs	1994			American Sammy	American Sammy
+ordyne	1988			Namco	Namco
+orlegend	1997			IGS	IGS
+oldsplus	2004			IGS	IGS
+orleg2	2007			IGS	IGS
+olds	1998			IGS	IGS
+osman	1996			Mitchell	Mitchell
+outrun	1986			Sega	Sega
+outzone	1990			Toaplan	Toaplan
+orunners	1992			Sega	Sega
+overtop	1996			ADK	ADK
+ozmawars	1979			SNK	SNK
+ozon1	1983			Proma	Proma
+p47aces	1995			Jaleco	Jaleco
+p47	1988			Jaleco	Jaleco
+pgemeni	2006			blastar@gmx.net	blastar@gmx.net
+pow	1988			SNK	SNK
+pacnpal	1983			Namco	Namco
+pacland	1984			Namco	Namco
+25pacman	2006			Namco / Cosmodog	Namco / Cosmodog
+pacplus	1982			Namco (Midway license)	Namco (Midway license)
+pacmania	1987			Namco	Namco
+sxyreact	1998			Sammy	Sammy
+sxyreac2	1999			Sammy	Sammy
+packbang	1994			Kaneko	Kaneko
+clubpacm	1989			hack (Miky SRL)	hack (Miky SRL)
+paddlema	1988			SNK	SNK
+pairs	1994			Strata / Incredible Technologies	Strata / Incredible Technologies
+pairlove	1991			Athena / Nihon System	Athena / Nihon System
+pairsred	1994			Strata / Incredible Technologies	Strata / Incredible Technologies
+palamed	1990			Hot-B Co., Ltd.	Hot-B Co., Ltd.
+pandajump	2022			Ben Larson	Ben Larson
+pandoras	1984			Konami / Interlogic	Konami / Interlogic
+pang	1989			Mitchell	Mitchell
+pangpang	1994			Dong Gue La Mi Ltd.	Dong Gue La Mi Ltd.
+pangpoms	1992			Metro	Metro
+pang3	1995			Mitchell	Mitchell
+panicbom	1994			Eighting / Hudson	Eighting / Hudson
+panicstr	1999			Kaneko	Kaneko
+paprazzi	1996			Yun Sung	Yun Sung
+paperboy	1984			Atari Games	Atari Games
+pturn	1984			Jaleco	Jaleco
+parodius	1990			Konami	Konami
+prtytime	1995			Mitchell	Mitchell
+pasha2	1998			Dong Sung	Dong Sung
+passsht	1988			Sega	Sega
+pass	1992			Oksan	Oksan
+pastelis	1993			Visco	Visco
+patapata	1993			Atlus	Atlus
+peekaboo	1993			Jaleco	Jaleco
+peggle	1991			Strata / Incredible Technologies	Strata / Incredible Technologies
+penfan	1999			Eolith	Eolith
+pengo	1982			Sega	Sega
+pengadvb	1988			bootleg (Screen)	bootleg (Screen)
+penbros	2000			Subsino	Subsino
+pkunwar	1985			UPL	UPL
+pepper2	1982			Exidy	Exidy
+perestro	1994			Promat	Promat
+pbillrd	1987			Nihon System (United Artists license)	Nihon System (United Artists license)
+perfrman	1985			Toaplan / Data East Corporation	Toaplan / Data East Corporation
+peterpak	1984			Atari Games	Atari Games
+cppicf	1984			Data East Corporation	Data East Corporation
+phelios	1988			Namco	Namco
+phoenix	1980			Amstar	Amstar
+photoy2k	1999			IGS	IGS
+py2k2	2001			IGS	IGS
+phozon	1983			Namco	Namco
+pickin	1983			Valadon Automation	Valadon Automation
+pignewt	1983			Sega	Sega
+pigskin	1990			Midway	Midway
+pbaction	1985			Tehkan	Tehkan
+pinbo	1984			Jaleco	Jaleco
+ppmast93	1993			Electronic Devices S.R.L.	Electronic Devices S.R.L.
+pinkswts	2006			Cave (AMI license)	Cave (AMI license)
+pballoon	1982			SNK	SNK
+pipedrm	1990			Video System Co.	Video System Co.
+pipibibs	1991			Toaplan	Toaplan
+higemaru	1984			Capcom	Capcom
+pirates	1994			NIX	NIX
+pisces	19			Subelectro	Subelectro
+pistoldm	1990			Namco	Namco
+pitnrun	1984			Taito Corporation	Taito Corporation
+pitfight	1990			Atari Games	Atari Games
+pitapat	1997			F2 System	F2 System
+pitfall2	1985			Sega	Sega
+pkscram	1993			Cosmo Electronics Corporation	Cosmo Electronics Corporation
+pprobe	1985			Crux / Kyugo?	Crux / Kyugo?
+plgirls2	1993			Hot-B Co., Ltd.	Hot-B Co., Ltd.
+plgirls	1992			Hot-B Co., Ltd.	Hot-B Co., Ltd.
+playball	1983			Williams	Williams
+pgoal	1996			Saurus	Saurus
+pleiads	1981			Tehkan	Tehkan
+plotting	1989			Taito Corporation Japan	Taito Corporation Japan
+plumppop	1987			Taito Corporation	Taito Corporation
+plusalph	1989			Jaleco	Jaleco
+pnickj	1994			Compile (Capcom license)	Compile (Capcom license)
+pnyaa	2003			Aiky / Taito	Aiky / Taito
+pcktgal	1987			Data East Corporation	Data East Corporation
+pktgaldx	1992			Data East Corporation	Data East Corporation
+pgalvip	1996			ACE International / Afega	ACE International / Afega
+ptblank	1994			Namco	Namco
+poitto	1993			Metro / Able Corp.	Metro / Able Corp.
+pokrdice	1991			Strata / Incredible Technologies	Strata / Incredible Technologies
+pkladies	1989			Mitchell	Mitchell
+poknight	199			Jeff Kurtz	Jeff Kurtz
+pokonyan	1994			Capcom	Capcom
+pollux	1991			Dooyong	Dooyong
+ponpoko	1982			Sigma Enterprises Inc.	Sigma Enterprises Inc.
+poosho	1999			F2 System	F2 System
+pooyan	1982			Konami	Konami
+popbounc	1997			Video System Co.	Video System Co.
+popbingo	1996			Dooyong	Dooyong
+popflame	1982			Jaleco	Jaleco
+popnpop	1997			Taito Corporation	Taito Corporation
+popspops	1999			Afega	Afega
+popeye	1982			Nintendo	Nintendo
+popper	1983			Omori Electric Co., Ltd.	Omori Electric Co., Ltd.
+porky	1985			Shinkai Inc. (Magic Electronics Inc. license)	Shinkai Inc. (Magic Electronics Inc. license)
+potopoto	1994			Sega	Sega
+poundfor	1990			Irem	Irem
+powerbal	1994			Playmark	Playmark
+pdrift	1988			Sega	Sega
+powerdrv	1986			Bally Midway	Bally Midway
+powerins	1993			Atlus	Atlus
+pwrinst2	1994			Atlus	Atlus
+pspikes	1991			Video System Co.	Video System Co.
+pspikes2	1994			Video System Co.	Video System Co.
+psurge	1988			Vision Electronics	Vision Electronics
+pubball	1996			Midway / Incredible Technologies	Midway / Incredible Technologies
+pbillian	1986			Kaneko / Taito	Kaneko / Taito
+preisle2	1999			Yumekobo / Saurus	Yumekobo / Saurus
+prehisle	1989			SNK	SNK
+neoprimo	2013			iocerom.com	iocerom.com
+cprobowl	1983			Data East Corporation	Data East Corporation
+cpsoccer	1983			Data East Corporation	Data East Corporation
+cptennis	1982			Data East Corporation	Data East Corporation
+wldcourt	1988			Namco	Namco
+ws	1988			Namco	Namco
+profpac	1983			Dave Nutting Associates / Bally Midway	Dave Nutting Associates / Bally Midway
+progear	2001			Cave (Capcom license)	Cave (Capcom license)
+promutrv	1985			Enerdyne Technologies Inc.	Enerdyne Technologies Inc.
+progress	1984			Chuo Co. Ltd	Chuo Co. Ltd
+proneon	2019			FULLSET	FULLSET
+psychic5	1987			Jaleco / NMK	Jaleco / NMK
+psychos	1987			SNK	SNK
+oscar	1987			Data East Corporation	Data East Corporation
+puchicar	1997			Taito Corporation	Taito Corporation
+puckman	1980			Namco	Namco
+pulirula	1991			Taito Corporation Japan	Taito Corporation Japan
+pulstar	1995			Aicom	Aicom
+punchout	1984			Nintendo	Nintendo
+punkshot	1990			Konami	Konami
+pururun	1995			Metro / Banpresto	Metro / Banpresto
+pushman	1990			Comad	Comad
+puyo	1992			Compile / Sega	Compile / Sega
+puyopuy2	1994			Compile (Sega license)	Compile (Sega license)
+puzzloop	1998			Mitchell	Mitchell
+pzloop2	2001			Mitchell (Capcom license)	Mitchell (Capcom license)
+ichir	1994			Sega	Sega
+tantr	1992			Sega	Sega
+pbobble	1994			Taito Corporation	Taito Corporation
+pbobblen	1994			Taito	Taito
+pbobble2	1995			Taito Corporation Japan	Taito Corporation Japan
+pbobbl2n	1999			Taito (SNK license)	Taito (SNK license)
+pbobble3	1996			Taito Corporation	Taito Corporation
+pbobble4	1997			Taito Corporation	Taito Corporation
+pzlbreak	1997			SemiCom / Tirano	SemiCom / Tirano
+puzlclub	1990			Namco	Namco
+pclubys	2000			Yun Sung	Yun Sung
+pzlbowl	1999			Nihon System / MOSS	Nihon System / MOSS
+puzzldpr	1997			Visco	Visco
+puzzledp	1995			Visco	Visco
+puzzlekg	1998			Eolith	Eolith
+4in1boot	2002			K1 Soft	K1 Soft
+puzlstar	1999			IGS (Metro license)	IGS (Metro license)
+uopoko	1998			Cave (Jaleco license)	Cave (Jaleco license)
+mushitam	2005			Cave (AMI license)	Cave (AMI license)
+joyjoy	1990			SNK	SNK
+puzzli	1995			Metro / Banpresto	Metro / Banpresto
+puzzli2	1999			IGS (Metro license)	IGS (Metro license)
+puzzlove	1994			Para	Para
+puzznic	1989			Taito Corporation Japan	Taito Corporation Japan
+qbert	1982			Gottlieb	Gottlieb
+qbertqub	1983			Mylstar	Mylstar
+qix	1981			Taito America Corporation	Taito America Corporation
+quantum	1982			General Computer Corporation (Atari license)	General Computer Corporation (Atari license)
+quartet	1986			Sega	Sega
+quester	1987			Namco	Namco
+qad	1992			Capcom	Capcom
+inufuku	1998			Video System Co.	Video System Co.
+quizmoon	1997			Banpresto	Banpresto
+qzchikyu	1991			Taito Corporation	Taito Corporation
+qcrayon	1993			Taito Corporation	Taito Corporation
+quizdais	1991			SNK	SNK
+hotdebut	2000			MOSS / Psikyo	MOSS / Psikyo
+quizf1	1992			Irem	Irem
+qgakumon	1993			Konami	Konami
+qgh	1994			Sega	Sega
+quizhq	1990			Taito Corporation	Taito Corporation
+qjinsei	1992			Taito Corporation	Taito Corporation
+quizkof	1995			Saurus (SNK license)	Saurus (SNK license)
+qzkklgy2	1993			Tecmo	Tecmo
+qzkklogy	1992			Tecmo	Tecmo
+quizdai2	1992			SNK	SNK
+quizmeku	1992			Sega	Sega
+qndream	1996			Capcom	Capcom
+quizo	1985			Seoul Coin Corp.	Seoul Coin Corp.
+qzquest	1991			Taito Corporation	Taito Corporation
+qrouka	1991			Sega	Sega
+qsangoku	1991			Capcom	Capcom
+qzshowby	1993			Taito Corporation	Taito Corporation
+qsww	1991			Sega	Sega
+qtheater	1994			Taito Corporation	Taito Corporation
+qtono1	1991			Capcom	Capcom
+qtono2j	1995			Capcom	Capcom
+qtorimon	1990			Taito Corporation	Taito Corporation
+rshark	1995			Dooyong	Dooyong
+rtype	1987			Irem	Irem
+rtype2	1989			Irem	Irem
+rtypeleo	1992			Irem	Irem
+r2dtank	1980			Sigma Enterprises Inc.	Sigma Enterprises Inc.
+rabbit	1997			Aorn / Electronic Arts	Aorn / Electronic Arts
+rabiolep	1987			V-System Co.	V-System Co.
+raccoon	1998			Eolith	Eolith
+racingb	1991			Taito Corporation Japan	Taito Corporation Japan
+rachero	1989			Sega	Sega
+rackemup	1987			Konami	Konami
+racknrol	1986			Senko Industries (Status license from Shinkai Inc.)	Senko Industries (Status license from Shinkai Inc.)
+radm	1990			Sega	Sega
+radr	1991			Sega	Sega
+radarscp	1980			Nintendo	Nintendo
+radrad	1982			Logitec Corp. (Nichibutsu USA license)	Logitec Corp. (Nichibutsu USA license)
+raflesia	1986			Coreland / Sega	Coreland / Sega
+rotd	2002			Evoga / Playmore	Evoga / Playmore
+ragnagrd	1996			Saurus	Saurus
+raiden	1990			Seibu Kaihatsu	Seibu Kaihatsu
+raidendx	1994			Seibu Kaihatsu	Seibu Kaihatsu
+rdft	1996			Seibu Kaihatsu (Tuning license)	Seibu Kaihatsu (Tuning license)
+rdft2	1997			Seibu Kaihatsu (Tuning license)	Seibu Kaihatsu (Tuning license)
+rfjet	1998			Seibu Kaihatsu (Tuning license)	Seibu Kaihatsu (Tuning license)
+raiden2	1993			Seibu Kaihatsu (Fabtek license)	Seibu Kaihatsu (Fabtek license)
+r2dx_v33	1996			Seibu Kaihatsu	Seibu Kaihatsu
+raiders5	1985			UPL	UPL
+stratof	1991			Tecmo	Tecmo
+rchase	1991			Sega	Sega
+raimais	1988			Taito Corporation Japan	Taito Corporation Japan
+rbisland	1987			Taito Corporation	Taito Corporation
+rbislande	1988			Taito Corporation	Taito Corporation
+rallybik	1988			Toaplan / Taito Corporation	Toaplan / Taito Corporation
+rallyx	1980			Namco	Namco
+rambo3	1989			Taito Europe Corporation	Taito Europe Corporation
+rampage	1986			Bally Midway	Bally Midway
+rmpgwt	1997			Midway	Midway
+rampart	1990			Atari Games	Atari Games
+rastan	1987			Taito Corporation Japan	Taito Corporation Japan
+razmataz	1983			Sega	Sega
+reactor	1982			Gottlieb	Gottlieb
+reaktor	1987			Zilec	Zilec
+rbff1	1995			SNK	SNK
+rbff2	1998			SNK	SNK
+rbffspec	1996			SNK	SNK
+recalh	1994			Taito Corporation	Taito Corporation
+recordbr	1988			Taito Corporation Japan	Taito Corporation Japan
+redbaron	1980			Atari	Atari
+redclash	1981			Kaneko	Kaneko
+redearth	1996			Capcom	Capcom
+redrobin	1986			Elettronolo	Elettronolo
+regulus	1983			Sega	Sega
+relief	1992			Atari Games	Atari Games
+reliefs1	1986			Atari Games	Atari Games
+renegade	1986			Technos Japan (Taito America license)	Technos Japan (Taito America license)
+repulse	1985			Crux / Sega	Crux / Sega
+rescue	1982			Stern Electronics	Stern Electronics
+retofinv	1985			Taito Corporation	Taito Corporation
+jedi	1984			Atari	Atari
+revngr84	1984			Epos Corporation	Epos Corporation
+revx	1994			Midway	Midway
+rezon	1992			Allumer	Allumer
+ribbit	1991			Sega	Sega
+rickdangdx	2026			Z-Team	Z-Team
+ridleofp	1986			Sega / Nasco	Sega / Nasco
+ridingf	1992			Taito Corporation Japan	Taito Corporation Japan
+ridhero	1990			SNK	SNK
+rimrockn	1991			Strata / Incredible Technologies	Strata / Incredible Technologies
+ringdest	1994			Capcom	Capcom
+ringrage	1992			Taito Corporation Japan	Taito Corporation Japan
+riot	1992			Tecmo (NMK license)	Tecmo (NMK license)
+riotcity	1991			Sega / Westone	Sega / Westone
+ripcord	1979			Exidy	Exidy
+riskchal	1993			Irem	Irem
+rpatrol	1981			Orca	Orca
+roadblst	1987			Atari Games	Atari Games
+roadf	1984			Konami	Konami
+roadrunn	1985			Atari Games	Atari Games
+roboarmy	1991			SNK	SNK
+robowres	1986			Sanritsu / Sega	Sanritsu / Sega
+robocopi	2009			Sergi	Sergi
+robocop	1988			Data East Corporation	Data East Corporation
+robocopng	2026			Teo Tormo	Teo Tormo
+robocop2	1991			Data East Corporation	Data East Corporation
+robotbwl	1977			Exidy	Exidy
+robotron	1982			Williams / Vid Kidz	Williams / Vid Kidz
+rocnrope	1983			Konami	Konami
+rockclim	1981			Taito	Taito
+rockduck	1983			Datel SAS	Datel SAS
+rocktris	1994			Yun Sung	Yun Sung
+rockn3	1999			Jaleco	Jaleco
+rockn4	2000			Jaleco / PCCWJ	Jaleco / PCCWJ
+rockrage	1986			Konami	Konami
+rockn	1999			Jaleco	Jaleco
+rockn2	1999			Jaleco	Jaleco
+rodland	1990			Jaleco	Jaleco
+rohga	1991			Data East Corporation	Data East Corporation
+rjammer	1984			Nichibutsu / Alice	Nichibutsu / Alice
+rollerg	1991			Konami	Konami
+rolcrush	1999			SemiCom / Exit (Trust license)	SemiCom / Exit (Trust license)
+rthunder	1986			Namco	Namco
+rthun2	1990			Namco	Namco
+rompers	1989			Namco	Namco
+clapapa	1983			Data East Corporation	Data East Corporation
+roughrac	1990			Sega	Sega
+roundup	1981			Taito Corporation (Amenip/Centuri license)	Taito Corporation (Amenip/Centuri license)
+route16	1981			Sun Electronics	Sun Electronics
+rumba	1984			Taito	Taito
+rygar	1986			Tecmo	Tecmo
+ryujin	1993			Taito Corporation	Taito Corporation
+ryukyu	1990			Success / Sega	Success / Sega
+kirarast	1996			Jaleco	Jaleco
+sosterm	198			Terminal	Terminal
+spy	1989			Konami	Konami
+srdmissn	1986			Kyugo / Taito Corporation	Kyugo / Taito Corporation
+ssmissin	1992			Comad	Comad
+svg	2005			IGS / Idea Factory	IGS / Idea Factory
+sabotenb	1992			NMK / Tecmo	NMK / Tecmo
+sadari	1993			Dooyong (NTC license)	Dooyong (NTC license)
+safarir	1979			SNK (Taito license)	SNK (Taito license)
+stdragon	1989			Jaleco / NMK	Jaleco / NMK
+salamand	1986			Konami	Konami
+samurai	1980			Sega	Sega
+samuraia	1993			Psikyo (Banpresto license)	Psikyo (Banpresto license)
+tsamurai	1985			Kaneko / Taito	Kaneko / Taito
+samsho	1993			SNK	SNK
+samsho2	1994			SNK	SNK
+samsho3	1995			SNK	SNK
+samsho4	1996			SNK	SNK
+samsho5	2003			Yuki Enterprise / SNK Playmore	Yuki Enterprise / SNK Playmore
+samsh5sp	2004			Yuki Enterprise / SNK Playmore	Yuki Enterprise / SNK Playmore
+sandscrp	1992			Face	Face
+3kokushi	1996			Mitchell	Mitchell
+santaball	2012			M.Priewe, NeoHomeBrew	M.Priewe, NeoHomeBrew
+searchar	1989			SNK	SNK
+sarge	1985			Bally Midway	Bally Midway
+sasuke	1980			SNK	SNK
+satansat	1981			SNK	SNK
+shollow	1981			Bally Midway	Bally Midway
+slammast	1993			Capcom	Capcom
+saturnzi	1983			Zilec Electronics / Jaleco	Zilec Electronics / Jaleco
+sauro	1987			Tecfri	Tecfri
+savagere	1995			SNK	SNK
+spacewin	1996			Playmark	Playmark
+schmeisr	1993			Hot-B	Hot-B
+scion	1984			Seibu Denshi	Seibu Denshi
+scotrsht	1985			Konami	Konami
+scorpion	1982			Zaccaria	Zaccaria
+sspirits	1988			Sega	Sega
+scregg	1983			Technos Japan	Technos Japan
+scramble	1981			Konami	Konami
+screwloo	1983			Mylstar	Mylstar
+cscrtry	1984			Data East Corporation	Data East Corporation
+scudhamm	1994			Jaleco	Jaleco
+sdfight	1996			SemiCom / Tirano	SemiCom / Tirano
+neobattl	1992			Banpresto	Banpresto
+sdgndmps	1991			Banpresto / Bandai	Banpresto / Bandai
+grainbow	1993			Banpresto	Banpresto
+sdi	1987			Sega	Sega
+sfposeid	1984			Taito Corporation	Taito Corporation
+seawolf2	1978			Dave Nutting Associates / Midway	Dave Nutting Associates / Midway
+searchey	1999			Yun Sung	Yun Sung
+searchp2	1999			Yun Sung	Yun Sung
+secretag	1989			Data East Corporation	Data East Corporation
+sectionz	1985			Capcom	Capcom
+seganinj	1985			Sega	Sega
+ssonicbr	1992			hack	hack
+sonicfgt	1993			Sega	Sega
+sonic	1992			Sega	Sega
+seicross	1984			Nichibutsu / Alice	Nichibutsu / Alice
+selfeena	1991			East Technology	East Technology
+senknow	1999			Kaneko / Kouyousha	Kaneko / Kouyousha
+sengekis	1997			Kaneko / Warashi	Kaneko / Warashi
+sengoku	1991			SNK	SNK
+sengoku2	1993			SNK	SNK
+sengoku3	2001			Noise Factory / SNK	Noise Factory / SNK
+senjyo	1983			Tehkan	Tehkan
+senkyu	1995			Seibu Kaihatsu	Seibu Kaihatsu
+sfx	1983			Nihon Game (Nichibutsu license)	Nihon Game (Nichibutsu license)
+shackled	1986			Data East USA	Data East USA
+shdancer	1989			Sega	Sega
+shadfrce	1993			Technos Japan	Technos Japan
+sgz	2026			JKM Corp.	JKM Corp.
+shadowlf	2026			Eagle Software	Eagle Software
+beast				Jeff Kurtz	Jeff Kurtz
+shadoww	1988			Tecmo	Tecmo
+shadowld	1987			Namco	Namco
+shangha3	1993			Sunsoft	Sunsoft
+shangkid	1985			Taiyo System (Data East license)	Taiyo System (Data East license)
+pgm3in1	2004			IGS	IGS
+sharkatt	1980			Pacific Novelty	Pacific Novelty
+tshingen	1988			Jaleco	Jaleco
+shinobi	1987			Sega	Sega
+shinfz	2008			bootleg (ISG)	bootleg (ISG)
+shinobing	2024			Hoffman	Hoffman
+shinygld	1996			Playmark	Playmark
+shocktro	1997			Saurus	Saurus
+shocktr2	1998			Saurus	Saurus
+shocking	1997			Yun Sung	Yun Sung
+shogwarr	1992			Kaneko	Kaneko
+shootout	1985			Data East USA	Data East USA
+shtngmst	1985			Sega	Sega
+shtrider	1985			Seibu Kaihatsu	Seibu Kaihatsu
+moshougi	1995			ADK / SNK	ADK / SNK
+showdown	1988			Exidy	Exidy
+shufshot	1997			Incredible Technologies	Incredible Technologies
+shuuz	1990			Atari Games	Atari Games
+sidearms	1986			Capcom	Capcom
+sidepckt	1986			Data East Corporation	Data East Corporation
+sidetrac	1979			Exidy	Exidy
+silentd	1992			Taito Corporation Japan	Taito Corporation Japan
+silkworm	1988			Tecmo	Tecmo
+silvmil	1995			Para	Para
+sindbadm	1983			Sega	Sega
+sinistar	1982			Williams	Williams
+cskater	1983			Data East Corporation	Data East Corporation
+skullxbo	1989			Atari Games	Atari Games
+skullfng	1996			Data East Corporation	Data East Corporation
+skyadvnt	1989			Alpha Denshi Co.	Alpha Denshi Co.
+skyalert	1992			Metro	Metro
+skyarmy	1982			Shoei	Shoei
+skybase	1982			Omori Electric Co., Ltd.	Omori Electric Co., Ltd.
+skydest	1985			Taito Corporation	Taito Corporation
+skyfox	1987			Jaleco (Nichibutsu USA license)	Jaleco (Nichibutsu USA license)
+skykid	1985			Namco	Namco
+skykiddx	1986			Namco	Namco
+skylance	2026			Eagle Software	Eagle Software
+skylancr	1983			Orca	Orca
+skyrobo	1989			Nichibutsu	Nichibutsu
+skyskipr	1981			Nintendo	Nintendo
+skysmash	1990			Nihon System	Nihon System
+skysoldr	1988			Alpha Denshi Co. (SNK of America/Romstar license)	Alpha Denshi Co. (SNK of America/Romstar license)
+slapshtr	1986			Sega	Sega
+slapshot	1994			Taito Corporation Japan	Taito Corporation Japan
+slipstrm	1995			Capcom	Capcom
+slither	1982			Century II (GDI license)	Century II (GDI license)
+smashtv	1990			Williams	Williams
+snapjack	1981			Universal	Universal
+snapper	1990			Philko	Philko
+koroleva	198			Terminal	Terminal
+svcpcb	2003			Playmore / Capcom	Playmore / Capcom
+svc	2003			Playmore / Capcom	Playmore / Capcom
+snowboar	1997			Gaelco / OMK	Gaelco / OMK
+snowbros	1990			Toaplan	Toaplan
+snowbro2	1994			Hanafram	Hanafram
+snowbro3	2002			Syrmex	Syrmex
+socbrawl	1991			SNK	SNK
+sokoban	2015			cmonkey	cmonkey
+sokonuke	1995			Sammy Industries	Sammy Industries
+soldivid	1997			Psikyo	Psikyo
+solarfox	1981			Bally Midway	Bally Midway
+soldam	1992			Jaleco	Jaleco
+amazoneo	2023			IQ_132	IQ_132
+amazon	1986			Nichibutsu	Nichibutsu
+solfigtr	1991			Taito Corporation Japan	Taito Corporation Japan
+slspirit	1999			Promat	Promat
+solomon	1986			Tecmo	Tecmo
+sonson	1984			Capcom	Capcom
+sbm	1990			Taito Corporation	Taito Corporation
+sonicbom	1987			Sega	Sega
+sstriker	1993			Raizing	Raizing
+kokoroj	1992			Sega	Sega
+kokoroj2	1993			Sega	Sega
+sos	1979			K.K. Tokki (Namco license)	K.K. Tokki (Namco license)
+sotsugyo	1995			Mitchell (Atlus license)	Mitchell (Atlus license)
+sbomber	1998			Psikyo	Psikyo
+spacecr	1981			Taito Corporation	Taito Corporation
+spacduel	1980			Atari	Atari
+sdungeon	1981			Taito America Corporation	Taito America Corporation
+spacefb	1980			Nintendo	Nintendo
+spacfury	1981			Sega	Sega
+spacegun	1990			Taito Corporation Japan	Taito Corporation Japan
+sharrier	1985			Sega	Sega
+spcinv95	1995			Taito Corporation Japan	Taito Corporation Japan
+invaders	1978			Taito / Midway	Taito / Midway
+spacedx	1994			Taito Corporation	Taito Corporation
+smiconk	1978			SNK	SNK
+spaceod	1981			Sega	Sega
+spcpostn	1986			Sega / Nasco	Sega / Nasco
+sraider	1982			Universal	Universal
+spaceskr	1981			Taito Corporation	Taito Corporation
+sstrangr	1978			Yachiyo Electric	Yachiyo Electric
+spacezap	1980			Midway	Midway
+sparkman	1989			SunA	SunA
+sparkz	1992			Atari Games	Atari Games
+spatter	1984			Sega	Sega
+speakres	1980			Sun Electronics	Sun Electronics
+speccies	2015			Sokurah	Sokurah
+sci	1989			Taito Corporation Japan	Taito Corporation Japan
+spectar	1980			Exidy	Exidy
+spec2k	2000			Yona Tech	Yona Tech
+speedbal	1987			Tecfri / Desystem S.A.	Tecfri / Desystem S.A.
+spdball	1985			Williams	Williams
+spdcoin	1984			Stern Electronics	Stern Electronics
+speedspn	1994			TCH	TCH
+spelunk2	1986			Irem (licensed from Broderbund)	Irem (licensed from Broderbund)
+spelunkr	1985			Irem (licensed from Broderbund)	Irem (licensed from Broderbund)
+spidman	1991			Sega	Sega
+spidermi	2009			Sergi	Sergi
+spinmast	1993			Data East Corporation	Data East Corporation
+spinlbrk	1990			V-System Co.	V-System Co.
+splash	1992			Gaelco / OMK Software	Gaelco / OMK Software
+splat	1982			Williams	Williams
+splatter	1988			Namco	Namco
+splndrbt	1985			Alpha Denshi Co.	Alpha Denshi Co.
+splndrbt2	1985			Alpha Denshi Co.	Alpha Denshi Co.
+spotty	2001			Prince Co.	Prince Co.
+springer	1982			Orca	Orca
+spyhunt2	1987			Bally Midway	Bally Midway
+spyhunt	1983			Bally Midway	Bally Midway
+sqij	2018			Sokurah	Sokurah
+squaitsa	1984			Itisa	Itisa
+squash	1992			Gaelco	Gaelco
+srdarwin	1987			Data East Corporation	Data East Corporation
+stkclmns	1994			Sega	Sega
+scross	1992			Sega	Sega
+stadhr96	1996			Data East Corporation	Data East Corporation
+stadhero	1988			Data East Corporation	Data East Corporation
+stagger1	1998			Afega	Afega
+stakwin	1995			Saurus	Saurus
+stakwin2	1996			Saurus	Saurus
+starfigh	1990			SunA	SunA
+starforc	1984			Tehkan	Tehkan
+stargrds	1987			Bally Midway	Bally Midway
+starjack	1983			Sega	Sega
+startrek	1982			Sega	Sega
+starwars	1983			Atari	Atari
+stargate	1981			Williams / Vid Kidz	Williams / Vid Kidz
+stealsee	2000			Moov Generation / Eolith	Moov Generation / Eolith
+stlforce	1994			Electronic Devices Italy / Ecogames S.L. Spain	Electronic Devices Italy / Ecogames S.L. Spain
+sgunner	1990			Namco	Namco
+sgunner2	1991			Namco	Namco
+stinger	1983			Seibu Denshi	Seibu Denshi
+stonebal	1994			Art & Magic	Art & Magic
+stmblade	1996			Visco	Visco
+stratab	1990			Strata / Incredible Technologies	Strata / Incredible Technologies
+stratgyx	1981			Konami	Konami
+streakng	1980			Shoei	Shoei
+sf	1987			Capcom	Capcom
+sfa2	1996			Capcom	Capcom
+sfa3	1998			Capcom	Capcom
+sfa	1995			Capcom	Capcom
+sf2ce	1992			Capcom	Capcom
+sf2hf	1992			Capcom	Capcom
+sf2	1991			Capcom	Capcom
+sfiii2	1997			Capcom	Capcom
+sfiii3	1999			Capcom	Capcom
+sfiii	1997			Capcom	Capcom
+sfzch	1995			Capcom	Capcom
+sfz2al	1996			Capcom	Capcom
+sftm	1995			Capcom / Incredible Technologies	Capcom / Incredible Technologies
+strhoop	1994			Data East Corporation	Data East Corporation
+streetsm	1989			SNK	SNK
+strnskil	1984			Sun Electronics	Sun Electronics
+strider	1989			Capcom	Capcom
+sbowling	1982			Taito Corporation	Taito Corporation
+strkfgtr	1991			Sega	Sega
+strkforc	1991			Midway	Midway
+stg	1991			Athena / Tecmo	Athena / Tecmo
+s1945	1995			Psikyo	Psikyo
+s1945iii	1999			Psikyo	Psikyo
+s1945ii	1997			Psikyo	Psikyo
+s1945p	1999			Psikyo	Psikyo
+stuntair	1983			Nuova Videotron	Nuova Videotron
+sub	1985			Sigma Enterprises Inc.	Sigma Enterprises Inc.
+subroc3d	1982			Sega	Sega
+scessjoe	1990			Taito Corporation / Wave	Taito Corporation / Wave
+sjryuko	1988			White Board	White Board
+sunaq	1994			SunA	SunA
+ssriders	1991			Konami	Konami
+csuperas	1981			Data East Corporation	Data East Corporation
+sbagman	1984			Valadon Automation	Valadon Automation
+sbasketb	1984			Konami	Konami
+sbishi	1998			Konami	Konami
+sb2003	2003			Limenko	Limenko
+sbubsm	1996			Sun Mixing	Sun Mixing
+sbp	2004			Vektorlogic	Vektorlogic
+supbtime	1990			Data East Corporation	Data East Corporation
+sucasino	1984			Data Amusement	Data Amusement
+sbasebal	1989			Alpha Denshi Co. (SNK of America license)	Alpha Denshi Co. (SNK of America license)
+superchs	1992			Taito Corporation Japan	Taito Corporation Japan
+scobra	1981			Konami	Konami
+scontra	1988			Konami	Konami
+sprcros2	1986			GM Shoji	GM Shoji
+scfinals	1993			Taito Corporation Japan	Taito Corporation Japan
+sderby	1996			Playmark	Playmark
+spdodgeb	1987			Technos Japan	Technos Japan
+sdodgeb	1996			Technos Japan	Technos Japan
+csdtenis	1983			Data East Corporation	Data East Corporation
+supduck	1992			Comad	Comad
+usg32	1987			U.S. Games, Inc.	U.S. Games, Inc.
+sgemf	1997			Capcom	Capcom
+suprglob	1983			Epos Corporation	Epos Corporation
+shangon	1987			Sega	Sega
+shimpact	1991			Midway	Midway
+suprleag	1987			Sega	Sega
+suprloco	1982			Sega	Sega
+suplup	1999			Omega System	Omega System
+smbneo	2026			sabino	sabino
+marukin	1990			Yuga	Yuga
+sgmast	1989			Sega	Sega
+smissw	1996			Comad	Comad
+supmodl2	1997			Comad	Comad
+supmodel	1994			Comad & New Japan System	Comad & New Japan System
+smgp	1989			Sega	Sega
+suprmous	1982			Taito Corporation	Taito Corporation
+superpac	1982			Namco	Namco
+spang	1990			Mitchell	Mitchell
+spbactn	1991			Tecmo	Tecmo
+spnchout	1984			Nintendo	Nintendo
+spf2t	1996			Capcom	Capcom
+sqix	1987			Kaneko / Taito	Kaneko / Taito
+sranger	1988			SunA	SunA
+srmp7	1997			Seta	Seta
+srmp4	1993			Seta	Seta
+suprridr	1983			Taito Corporation (Venture Line license)	Taito Corporation (Venture Line license)
+sshangha	1992			Hot-B Co., Ltd.	Hot-B Co., Ltd.
+ssideki	1992			SNK	SNK
+ssideki2	1994			SNK	SNK
+ssideki3	1995			SNK	SNK
+ssi	1990			Taito Corporation Japan	Taito Corporation Japan
+macross	1992			Banpresto	Banpresto
+macross2	1993			Banpresto	Banpresto
+ssrj	1985			Taito Corporation	Taito Corporation
+ssprint	1986			Atari Games	Atari Games
+sstingry	1986			Alpha Denshi Co.	Alpha Denshi Co.
+ssf2t	1994			Capcom	Capcom
+ssf2	1993			Capcom	Capcom
+superten	1988			U.S. Games, Inc.	U.S. Games, Inc.
+stoffy	1994			Midas	Midas
+suprtrio	1994			Gameace	Gameace
+strvmstr	1986			Enerdyne Technologies Inc.	Enerdyne Technologies Inc.
+svf	1994			Sega	Sega
+svolley	1989			V-System Co.	V-System Co.
+swcourt	1992			Namco	Namco
+sws92	1992			Namco	Namco
+sws93	1993			Namco	Namco
+sws95	1995			Namco	Namco
+sws96	1996			Namco	Namco
+sws97	1997			Namco	Namco
+sws	1992			Namco	Namco
+sxevious	1984			Namco	Namco
+szaxxon	1982			Sega	Sega
+superx	1994			Dooyong (NTC license)	Dooyong (NTC license)
+ssoldier	1993			Irem America	Irem America
+superman	1988			Taito Corporation	Taito Corporation
+suratk	1990			Konami	Konami
+survarts	1993			Sammy	Sammy
+gogomile	1995			Fuuki	Fuuki
+suzuka8h	1992			Namco	Namco
+suzuk8h2	1993			Namco	Namco
+swat	1984			Coreland / Sega	Coreland / Sega
+swatpolc	2001			ESD	ESD
+swimmer	1982			Tehkan	Tehkan
+swsodan	2026			BenDk97	BenDk97
+ssozumo	1984			Technos Japan	Technos Japan
+syvalion	1988			Taito Corporation	Taito Corporation
+tnk3	1985			SNK	SNK
+tacscan	1982			Sega	Sega
+tactcian	1982			Konami (Sega license)	Konami (Sega license)
+tail2nos	1989			V-System Co.	V-System Co.
+hotgmck	1997			Psikyo	Psikyo
+hotgmck3	1999			Psikyo	Psikyo
+hotgm4ev	2000			Psikyo	Psikyo
+hgkairak	1998			Psikyo	Psikyo
+cupfinal	1993			Taito Corporation Japan	Taito Corporation Japan
+pwrgoal	1994			Taito Corporation Japan	Taito Corporation Japan
+talbot	1982			Alpha Denshi Co. (Volt Electronics license)	Alpha Denshi Co. (Volt Electronics license)
+tangtang	2000			ESD	ESD
+tangramq	1983			SNK	SNK
+tankbatt	1980			Namco	Namco
+tankbust	1985			Valadon Automation	Valadon Automation
+tankfrce	1991			Namco	Namco
+taotaido	1993			Video System Co.	Video System Co.
+tapper	1983			Bally Midway	Bally Midway
+targeth	1994			Gaelco	Gaelco
+targ	1980			Exidy	Exidy
+tharrier	1989			UPL	UPL
+tattass	1994			Data East Pinball	Data East Pinball
+taxidriv	1984			Graphic Techno	Graphic Techno
+tazmania	1982			Stern Electronics	Stern Electronics
+tbowl	1987			Tecmo	Tecmo
+twcup90	1989			Tecmo	Tecmo
+twsoc96	1996			Tecmo	Tecmo
+teddybb	1985			Sega	Sega
+teedoff	1987			Tecmo	Tecmo
+tmnti	2009			Sergi	Sergi
+tmnt	1989			Konami	Konami
+tmnt2	1991			Konami	Konami
+teetert	1982			Exidy	Exidy
+tehkanwc	1985			Tehkan	Tehkan
+tekipaki	1991			Toaplan	Toaplan
+teljan	1999			Electro Design	Electro Design
+tempest	1980			Atari	Atari
+wofch	1994			Capcom	Capcom
+tengai	1996			Psikyo	Psikyo
+term2	1991			Midway	Midway
+terracre	1985			Nichibutsu	Nichibutsu
+terraf	1987			Nichibutsu	Nichibutsu
+cterrani	1981			Data East Corporation	Data East Corporation
+ctsttape	1981			Data East Corporation	Data East Corporation
+tetrsark	19			D.R. Korea	D.R. Korea
+tetrisse	1988			Sega	Sega
+atetris	1988			Atari Games	Atari Games
+tetris	1988			Sega	Sega
+tetrbx	2006			bootleg (ISG)	bootleg (ISG)
+tetrisp	1995			Jaleco / BPS	Jaleco / BPS
+tetrisp2	1997			Jaleco / The Tetris Company	Jaleco / The Tetris Company
+tgm2	2000			Arika	Arika
+thoop2	1994			Gaelco	Gaelco
+robby	1981			Dave Nutting Associates / Bally Midway	Dave Nutting Associates / Bally Midway
+alphaxz	1986			Ed Co., Ltd. (Wood Place Co., Ltd. license)	Ed Co., Ltd. (Wood Place Co., Ltd. license)
+mrflea	1982			Pacific Novelty	Pacific Novelty
+astyanax	1989			Jaleco	Jaleco
+battroad	1984			Irem	Irem
+berlwall	1991			Kaneko	Kaneko
+bigprowr	1983			Technos Japan	Technos Japan
+bounty	1982			Orca	Orca
+edrandy	1990			Data East Corporation	Data East Corporation
+ctribe	1990			Technos Japan	Technos Japan
+dealer	1984			Epos Corporation	Epos Corporation
+thedeep	1987			Woodplace Inc.	Woodplace Inc.
+dfjail	1991			Philko	Philko
+dbldynj	1989			Seibu Kaihatsu	Seibu Kaihatsu
+elecyoyo	1982			Taito America Corporation	Taito America Corporation
+esb	1985			Atari Games	Atari Games
+theend	1980			Konami	Konami
+teot	2022			OzzyOuzo	OzzyOuzo
+flstory	1985			Taito	Taito
+daraku	1998			Psikyo	Psikyo
+fround	1988			Konami	Konami
+gametngk	1995			Jaleco	Jaleco
+theglad	2003			IGS	IGS
+thehand	1981			T.I.C.	T.I.C.
+irrmaze	1997			SNK / Saurus	SNK / Saurus
+karatour	1992			Mitchell	Mitchell
+killbld	1998			IGS	IGS
+killbldp	2005			IGS	IGS
+kod	1991			Capcom	Capcom
+kof94	1994			SNK	SNK
+kof95	1995			SNK	SNK
+kof96	1996			SNK	SNK
+kof97	1997			SNK	SNK
+kof98	1998			SNK	SNK
+kof98umh	2009			IGS / SNK Playmore / New Channel	IGS / SNK Playmore / New Channel
+kof99	1999			SNK	SNK
+kof2000	2000			SNK	SNK
+kof2001	2001			Eolith / SNK	Eolith / SNK
+kof2002	2002			Eolith / Playmore	Eolith / Playmore
+kf2k3pcb	2003			SNK Playmore	SNK Playmore
+kof2003	2003			SNK Playmore	SNK Playmore
+lastblad	1997			SNK	SNK
+lastbld2	1998			SNK	SNK
+lastday	1990			Dooyong	Dooyong
+lkage	1984			Taito Corporation	Taito Corporation
+silkroad	1999			Unico	Unico
+darkmist	1986			Seibu Kaihatsu (Taito license)	Seibu Kaihatsu (Taito license)
+mainevt	1988			Konami	Konami
+mastkin	1988			Du Tech	Du Tech
+tnzs	1988			Taito Corporation Japan	Taito Corporation Japan
+tnextspc	1989			SNK	SNK
+ninjak	1990			Taito Corporation Japan	Taito Corporation Japan
+ninjaw	1987			Taito Corporation Japan	Taito Corporation Japan
+outfxies	1994			Namco	Namco
+percuss	1981			Orca	Orca
+thepit	1982			Zilec Electronics	Zilec Electronics
+punisher	1993			Capcom	Capcom
+ghostb	1987			Data East USA	Data East USA
+roishtar	1986			Namco	Namco
+roldfrog	1993			Microhard	Microhard
+simpsons	1991			Konami	Konami
+srumbler	1986			Capcom	Capcom
+superspy	1990			SNK	SNK
+3stooges	1984			Mylstar	Mylstar
+tinstar	1983			Taito Corporation	Taito Corporation
+ctower	1981			Data East Corporation	Data East Corporation
+todruaga	1984			Namco	Namco
+ssideki4	1996			SNK	SNK
+thief	1981			Pacific Novelty	Pacific Novelty
+trally	1991			Alpha Denshi Co.	Alpha Denshi Co.
+3wonders	1991			Capcom	Capcom
+thunderl	1990			Seta	Seta
+thndrbld	1987			Sega	Sega
+tceptor	1986			Namco	Namco
+thunderx	1988			Konami	Konami
+thndrx2	1991			Konami	Konami
+tdragon	1991			NMK (Tecmo license)	NMK (Tecmo license)
+tdragon2	1993			NMK	NMK
+tfrceac	1990			Technosoft / Sega	Technosoft / Sega
+thundfox	1990			Taito Corporation Japan	Taito Corporation Japan
+theroes	2001			Primetek Investments	Primetek Investments
+thoop	1992			Gaelco	Gaelco
+tstrike	1991			East Coast Coin Company	East Coast Coin Company
+thndzone	1991			Data East Corporation	Data East Corporation
+tndrcade	1987			Seta (Taito license)	Seta (Taito license)
+thunderj	1990			Atari Games	Atari Games
+tigeroad	1987			Capcom	Capcom
+tigerh	1985			Toaplan / Taito America Corp.	Toaplan / Taito America Corp.
+timber	1984			Bally Midway	Bally Midway
+tattack	1983			Shonan	Shonan
+timefgtr	198			Taito do Brasil	Taito do Brasil
+timekill	1992			Strata / Incredible Technologies	Strata / Incredible Technologies
+timelimt	1983			Chuo Co. Ltd	Chuo Co. Ltd
+tp84	1984			Konami	Konami
+timeplt	1982			Konami	Konami
+timescan	1987			Sega	Sega
+timesold	1987			Alpha Denshi Co. (SNK/Romstar license)	Alpha Denshi Co. (SNK/Romstar license)
+timetunl	1982			Taito Corporation	Taito Corporation
+timesup	2012			NGF Dev. Inc.	NGF Dev. Inc.
+tinklpit	1993			Namco	Namco
+titlef	1992			Sega	Sega
+toffy	1993			Midas	Midas
+toki	1989			TAD Corporation	TAD Corporation
+tokisens	1987			Sega	Sega
+tokio	1986			Taito Corporation	Taito Corporation
+tomagic	1997			Hobbitron T.K.Trading Co. Ltd.	Hobbitron T.K.Trading Co. Ltd.
+toobin	1988			Atari Games	Atari Games
+topdrive	1995			Proyesel	Proyesel
+tophuntr	1994			SNK	SNK
+tpgolf	1990			SNK	SNK
+trstar	1993			Taito Corporation Japan	Taito Corporation Japan
+toprollr	1983			Jaleco	Jaleco
+topsecex	1986			Exidy	Exidy
+topshoot	1995			Sun Mixing	Sun Mixing
+topspeed	1987			Taito Corporation Japan	Taito Corporation Japan
+toppyrap	1996			SemiCom	SemiCom
+toride2g	1994			Metro	Metro
+ctornado	1982			Data East Corporation	Data East Corporation
+toryumon	1994			Sega	Sega
+totcarn	1992			Midway	Midway
+touchgo	1996			Gaelco	Gaelco
+tdfever	1987			SNK	SNK
+toucheme	19				
+tturf	1989			Sega / Sunsoft	Sega / Sunsoft
+tkdensho	1996			Tecmo	Tecmo
+arkatour	1987			Taito America Corporation (Romstar license)	Taito America Corporation (Romstar license)
+cprogolf	1981			Data East Corporation	Data East Corporation
+toyland	2001			SemiCom	SemiCom
+toypop	1986			Namco	Namco
+trackfld	1983			Konami	Konami
+tranqgun	1980			Sega	Sega
+transfrm	1986			Sega	Sega
+trapeze	1978			Exidy / Taito	Exidy / Taito
+travrusa	1983			Irem	Irem
+ctisland	1981			Data East Corporation	Data East Corporation
+totc	2011			FACE Corporation / N.C.I - Le Cortex	FACE Corporation / N.C.I - Le Cortex
+tripool	1981			Noma (Casino Tech license)	Noma (Casino Tech license)
+trisport	1989			Bally Midway	Bally Midway
+tricktrp	1987			Konami	Konami
+trckydoc	1987			Tecfri	Tecfri
+triothep	1989			Data East Corporation	Data East Corporation
+tdpgal	1983			Design Labs / Thomas Automatics	Design Labs / Thomas Automatics
+triplep	1982			K.K. International	K.K. International
+trvmstr	1985			Enerdyne Technologies Inc.	Enerdyne Technologies Inc.
+trog	1990			Midway	Midway
+trojan	1986			Capcom	Capcom
+tron	1982			Bally Midway	Bally Midway
+trophyh	2002			Sammy USA Corporation	Sammy USA Corporation
+troangel	1983			Irem	Irem
+truxton	1988			Toaplan / Taito Corporation	Toaplan / Taito Corporation
+truxton2	1992			Toaplan	Toaplan
+tubep	1984			Nichibutsu / Fujitek	Nichibutsu / Fujitek
+tumblep	1991			Data East Corporation	Data East Corporation
+turbo	1981			Sega	Sega
+turbofrc	1991			Video System Co.	Video System Co.
+toutrun	1989			Sega	Sega
+turkhunt	2001			Sammy USA Corporation	Sammy USA Corporation
+turtship	1988			Philko (Sharp Image license)	Philko (Sharp Image license)
+turtles	1981			Konami (Stern Electronics license)	Konami (Stern Electronics license)
+tutankhm	1982			Konami	Konami
+twinactn	1995			Afega	Afega
+twinadv	1995			Barko Corp.	Barko Corp.
+twinbrat	1995			Elettronica Video-Games	Elettronica Video-Games
+twincobr	1987			Toaplan / Taito Corporation	Toaplan / Taito Corporation
+tcobra2	1995			Taito Corporation Japan	Taito Corporation Japan
+twineagl	1988			Seta (Taito license)	Seta (Taito license)
+twineag2	1994			Seta	Seta
+twinfalc	1989			Philko (Poara Enterprises license)	Philko (Poara Enterprises license)
+twinhawk	1989			Taito Corporation Japan	Taito Corporation Japan
+twinqix	1995			Taito America Corporation	Taito America Corporation
+twinsqua	1991			Sega	Sega
+bs_twinbee	1985			Konami	Konami
+twinbee	1985			Konami	Konami
+twinkle	1997			SemiCom / Tirano	SemiCom / Tirano
+twinspri	1996			ADK / SNK	ADK / SNK
+twotiger	1984			Bally Midway	Bally Midway
+tylz	1982			Mylstar	Mylstar
+earthjkr	1993			Visco	Visco
+unsquad	1989			Daipro (Capcom license)	Daipro (Capcom license)
+vball	1988			Technos Japan	Technos Japan
+usclssic	1989			Seta	Seta
+dangar	1986			Nichibutsu	Nichibutsu
+ufosensi	1988			Sega	Sega
+umk3	1994			Midway	Midway
+ultennis	1993			Art & Magic	Art & Magic
+uballoon	1996			SunA (Unico license)	SunA (Unico license)
+utoukond	1993			Banpresto	Banpresto
+ultrax	1995			Banpresto / Tsuburaya Productions / Seta	Banpresto / Tsuburaya Productions / Seta
+ultraman	1991			Banpresto / Bandai	Banpresto / Bandai
+umanclub	1992			Banpresto	Banpresto
+unclepoo	1983			Diatec	Diatec
+undrfire	1993			Taito Corporation Japan	Taito Corporation Japan
+uccops	1992			Irem	Irem
+uniwars	1980			Irem	Irem
+unkpacg	199				
+unksig	199				
+upndown	1983			Sega	Sega
+mustang	1990			UPL	UPL
+vliner	2001			Dyna / BrezzaSoft	Dyna / BrezzaSoft
+valkyrie	1989			Namco	Namco
+valtric	1986			NMK (Jaleco license)	NMK (Jaleco license)
+vamphalf	1999			Danbi / F2 System	Danbi / F2 System
+vampire	1983			Entertainment Enterprises, Ltd.	Entertainment Enterprises, Ltd.
+vhunt2	1997			Capcom	Capcom
+vsav2	1997			Capcom	Capcom
+vsav	1997			Capcom	Capcom
+vanvan	1983			Sanritsu	Sanritsu
+vandyke	1990			UPL	UPL
+vanguard	1981			SNK	SNK
+vangrd2	1984			SNK	SNK
+vaportra	1989			Data East Corporation	Data East Corporation
+vmetal	1995			Excellent System	Excellent System
+varth	1992			Capcom	Capcom
+vasara2	2001			Visco	Visco
+vasara	2000			Visco	Visco
+vastar	1983			Orca (Sesame Japan license)	Orca (Sesame Japan license)
+vendetta	1991			Konami	Konami
+venture	1981			Exidy	Exidy
+victnine	1984			Taito	Taito
+victoryc	1982			Comsoft	Comsoft
+victroad	1986			SNK	SNK
+hustler	1981			Konami	Konami
+vidvince	1984			Mylstar	Mylstar
+viewpoin	1992			Sammy / Aicom	Sammy / Aicom
+vigilant	1988			Irem	Irem
+vimana	1991			Toaplan	Toaplan
+vindictr	1988			Atari Games	Atari Games
+vindctr2	1988			Atari Games	Atari Games
+viofight	1989			Taito Corporation Japan	Taito Corporation Japan
+viostorm	1993			Konami	Konami
+violentv	2026			Balek Corp.	Balek Corp.
+viprp1	1995			Seibu Kaihatsu	Seibu Kaihatsu
+vbowl	1996			IGS	IGS
+volfied	1989			Taito Corporation Japan	Taito Corporation Japan
+gowcaizr	1995			Technos Japan	Technos Japan
+vblokbrk	1997			Kaneko / Mediaworks	Kaneko / Mediaworks
+vsgongf	1984			Kaneko	Kaneko
+ryouran	1998			Electro Design	Electro Design
+vsrbibbal	1987			Nintendo	Nintendo
+vsbattlecity	1985			Namco	Namco
+vscastlevania	1987			Konami	Konami
+vsclucluland	1984			Nintendo	Nintendo
+vsdrmario	1990			Nintendo	Nintendo
+vsduckhunt	1984			Nintendo	Nintendo
+vsexcitebike	1985			Nintendo	Nintendo
+vsfreedomforce	1988			Sunsoft	Sunsoft
+vsfrombelow	2021			Goose2k	Goose2k
+vsgoonies	1986			Konami	Konami
+vsgradius	1986			Konami	Konami
+vsgumshoe	1986			Nintendo	Nintendo
+vshogansalley	1985			Nintendo	Nintendo
+hotsmash	1987			Kaneko / Taito	Kaneko / Taito
+vsiceclimber	1985			Nintendo	Nintendo
+bnstars1	1997			Jaleco	Jaleco
+vsmachrider	1985			Nintendo	Nintendo
+vsmightybomjack	1986			Tecmo	Tecmo
+vsninjajkun	1986			Jaleco	Jaleco
+vspinball	1984			Nintendo	Nintendo
+vsplatoon	1988			Sunsoft	Sunsoft
+vsraidbbay	1985			Broderbund	Broderbund
+vsslalom	1986			Nintendo	Nintendo
+vssoccer	1985			Nintendo	Nintendo
+vsstarluster	1985			Namco	Namco
+vssmgolfla	1984			Nintendo	Nintendo
+vssmgolf	1984			Nintendo	Nintendo
+vssmb	1986			Nintendo	Nintendo
+vssuperskykid	1986			Namco	Namco
+vssuperxevious	1986			Namco	Namco
+vstetris	1988			Atari Games	Atari Games
+vstkoboxing	1987			Data East	Data East
+vstopgun	1987			Konami	Konami
+vsurbanchamp	1984			Nintendo	Nintendo
+vulcan	1988			Konami	Konami
+vulgus	1984			Capcom	Capcom
+wacko	1982			Bally Midway	Bally Midway
+wwjgtin	1984			Jaleco / Casio	Jaleco / Casio
+mj4simai	1996			Maboroshi Ware	Maboroshi Ware
+wakuwak7	1996			Sunsoft	Sunsoft
+wwanpanm	1992			Sega	Sega
+wwmarine	1992			Sega	Sega
+soniccar	1991			Sega	Sega
+ultracin	1996			Sega	Sega
+wallc	1984			Midcoin	Midcoin
+wwallyj	1992			Sega	Sega
+wanted	1984			Sigma Enterprises Inc.	Sigma Enterprises Inc.
+wrofaero	1993			Yang Cheng	Yang Cheng
+warofbug	1981			Armenia / Food and Fun Corp	Armenia / Food and Fun Corp
+wardner	1987			Toaplan / Taito Corporation Japan	Toaplan / Taito Corporation Japan
+warlords	1980			Atari	Atari
+warpwarp	1981			Namco	Namco
+warriorb	1991			Taito Corporation	Taito Corporation
+warriorman	2026			NK Home Entertainment	NK Home Entertainment
+wof	1992			Capcom	Capcom
+watrball	1996			ABM	ABM
+wmatch	1984			Sega	Sega
+waterski	1983			Taito Corporation	Taito Corporation
+wecleman	1986			Konami	Konami
+welltris	1991			Video System Co.	Video System Co.
+wfortune	1989			GameTek	GameTek
+wheelrun	19			International Games	International Games
+whodunit	1988			Exidy	Exidy
+wiggie	1994			Promat	Promat
+wildfang	1989			Tecmo	Tecmo
+wildplt	1992			Jaleco	Jaleco
+moomesa	1992			Konami	Konami
+wwestern	1982			Taito Corporation	Taito Corporation
+willow	1989			Capcom	Capcom
+wilytowr	1984			Irem	Irem
+wjammers	1994			Data East Corporation	Data East Corporation
+wingforc	1993			A.I (Atlus license)	A.I (Atlus license)
+wschamp	2001			Sammy USA Corporation	Sammy USA Corporation
+wink	1985			Midcoin	Midcoin
+wiping	1982			Nichibutsu	Nichibutsu
+wits	1989			Athena (Visco license)	Athena (Visco license)
+wivernwg	2001			SemiCom	SemiCom
+wizwarz	1984			Mylstar	Mylstar
+wizdfire	1992			Data East Corporation	Data East Corporation
+wow	1980			Dave Nutting Associates / Midway	Dave Nutting Associates / Midway
+wiz	1985			Seibu Kaihatsu	Seibu Kaihatsu
+wizzquiz	1985			Zilec-Zenitone (Konami license)	Zilec-Zenitone (Konami license)
+wolfn3d	2026			Thibaut Lion	Thibaut Lion
+wboy	1986			Escape (Sega license)	Escape (Sega license)
+wb3	1988			Sega / Westone	Sega / Westone
+wbml	1987			Sega / Westone	Sega / Westone
+wondl96	1996			SemiCom	SemiCom
+wlstar	1995			Mijin	Mijin
+wndrmomo	1987			Namco	Namco
+wndrplnt	1987			Data East Corporation	Data East Corporation
+wondstck				Yun Sung	Yun Sung
+woodpeck	1981			Amenip (Palcom Queen River)	Amenip (Palcom Queen River)
+worldadv	1999			Logic / F2 System	Logic / F2 System
+wbeachvl	1995			Playmark	Playmark
+wcbowl	1995			Incredible Technologies	Incredible Technologies
+wcvol95	1995			Data East Corporation	Data East Corporation
+wh1	1992			Alpha Denshi Co.	Alpha Denshi Co.
+wh2	1993			ADK	ADK
+wh2j	1994			ADK / SNK	ADK / SNK
+whp	1995			ADK / SNK	ADK / SNK
+wpksocv2	1996			Jaleco	Jaleco
+wrldrc32	2025			Blastar	Blastar
+wrally2	1995			Gaelco	Gaelco
+wrally	1993			Gaelco	Gaelco
+wrallyng	2026			Arkretro	Arkretro
+worldwar	1987			SNK	SNK
+wownfant	2002			Comad	Comad
+wrestwar	1989			Sega	Sega
+neoww2	2012			Charles DOTY/RasterSoft	Charles DOTY/RasterSoft
+wwfsstar	1989			Technos Japan	Technos Japan
+wwfwfest	1991			Technos Japan (Tecmo license)	Technos Japan (Tecmo license)
+wwfmania	1995			Midway	Midway
+wyvernf0	1985			Taito Corporation	Taito Corporation
+xmultipl	1989			Irem	Irem
+xsedae	1995			Dream Island	Dream Island
+xday2	1995			Namco	Namco
+xmen	1992			Konami	Konami
+xmvsf	1996			Capcom	Capcom
+xmcota	1994			Capcom	Capcom
+x2222	2000			Oriental Soft / Promat	Oriental Soft / Promat
+xsleena	1986			Technos Japan (Taito license)	Technos Japan (Taito license)
+xenocrisis	2019			Bitmap Bureau	Bitmap Bureau
+xenophob	1987			Bally Midway	Bally Midway
+xevious	1982			Namco	Namco
+xeviousng	1982-2023			Namco - tcdev	Namco - tcdev
+xexex	1991			Konami	Konami
+xorwldms	1990			Gaelco	Gaelco
+xorworld	1990			Gaelco	Gaelco
+xxmissio	1986			UPL	UPL
+xybots	1987			Atari Games	Atari Games
+xyonix	1989			Philko	Philko
+yamato	1983			Sega	Sega
+yesnoj	1992			Taito Corporation	Taito Corporation
+yiear	1985			Konami	Konami
+yoyoshkn	2023			LudoSience	LudoSience
+youjyudn	1986			Irem	Irem
+yukon	1989			Exidy	Exidy
+yuyugogo	1990			Taito Corporation	Taito Corporation
+zaviga	1984			Data East Corporation	Data East Corporation
+zaxxon	1982			Sega	Sega
+zedblade	1994			NMK	NMK
+zektor	1982			Sega	Sega
+zerohour	1980			Universal	Universal
+zeropnt	1998			Unico	Unico
+zeropnt2	1999			Unico	Unico
+zeroteam	1993			Seibu Kaihatsu (Fabtek license)	Seibu Kaihatsu (Fabtek license)
+zerowing	1989			Toaplan	Toaplan
+zerozone	1993			Comad	Comad
+czeroize	1983			Data East Corporation	Data East Corporation
+dwpc	2001			IGS	IGS
+zigzagb	1982			bootleg (LAX)	bootleg (LAX)
+zingzip	1992			Allumer / Tecmo	Allumer / Tecmo
+zintrckb	1996			bootleg	bootleg
+zipzap	1995			Barko Corp	Barko Corp
+zoar	1982			Data East USA	Data East USA
+zodiack	1983			Orca (Esco Trading Co., Inc. license)	Orca (Esco Trading Co., Inc. license)
+zombraid	1995			American Sammy	American Sammy
+zookeep	1982			Taito America Corporation	Taito America Corporation
+zunkyou	1994			Sega	Sega
+zupapa	2001			SNK	SNK
+zwackery	1984			Bally Midway	Bally Midway
+zzyzzyxx	1982			Cinematronics / Advanced Microcomputer Systems	Cinematronics / Advanced Microcomputer Systems

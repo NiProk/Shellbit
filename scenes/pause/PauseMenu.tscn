@@ -45,13 +45,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 36
-theme_override_constants/margin_top = 16
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 36
-theme_override_constants/margin_bottom = 12
+theme_override_constants/margin_bottom = 8
 
 [node name="VBox" type="VBoxContainer" parent="Panel/Scroll/Pad"]
 layout_mode = 2
-theme_override_constants/separation = 6
+theme_override_constants/separation = 4
 
 [node name="PauseLabel" type="Label" parent="Panel/Scroll/Pad/VBox"]
 layout_mode = 2
@@ -68,12 +68,12 @@ autowrap_mode = 3
 max_lines_visible = 2
 
 [node name="Gap1" type="Control" parent="Panel/Scroll/Pad/VBox"]
-custom_minimum_size = Vector2(0, 6)
+custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
 [node name="ContinueButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Продолжить"
 alignment = 0
@@ -81,28 +81,35 @@ alignment = 0
 [node name="DiscButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(0, 44)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Сменить диск"
 alignment = 0
 
 [node name="RestartButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Начать заново"
 alignment = 0
 
 [node name="ScreenshotButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Скриншот"
 alignment = 0
 
+[node name="CheatsButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Читы"
+alignment = 0
+
 [node name="OptionsButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Настройки ядра"
 alignment = 0
@@ -115,7 +122,7 @@ text = "Сохранения"
 [node name="Slots" type="VBoxContainer" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 4
 
 [node name="Spacer" type="Control" parent="Panel/Scroll/Pad/VBox"]
 layout_mode = 2
@@ -123,7 +130,7 @@ size_flags_vertical = 3
 
 [node name="ExitButton" type="Button" parent="Panel/Scroll/Pad/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.941, 0.541, 0.502, 1)
 theme_override_colors/font_hover_color = Color(0.941, 0.541, 0.502, 1)

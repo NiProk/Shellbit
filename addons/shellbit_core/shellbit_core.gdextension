@@ -13,3 +13,5 @@ windows.debug.x86_64 = "res://addons/shellbit_core/bin/shellbit_core.windows.tem
 windows.release.x86_64 = "res://addons/shellbit_core/bin/shellbit_core.windows.template_release.x86_64.dll"
 linux.debug.x86_64 = "res://addons/shellbit_core/bin/shellbit_core.linux.template_debug.x86_64.so"
 linux.release.x86_64 = "res://addons/shellbit_core/bin/shellbit_core.linux.template_release.x86_64.so"
+android.debug.arm64 = "res://addons/shellbit_core/bin/libshellbit_core.android.template_debug.arm64.so"
+android.release.arm64 = "res://addons/shellbit_core/bin/libshellbit_core.android.template_release.arm64.so"

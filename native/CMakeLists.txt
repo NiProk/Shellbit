@@ -30,11 +30,20 @@ endif()
 # Linux: стандартную библиотеку C++ вшиваем прямо в .so. Тогда модуль
 # не зависит от версии libstdc++ в системе — важно для Steam Deck,
 # где система обновляется реже, чем, например, CachyOS.
-if(UNIX AND NOT APPLE)
+# (Android тоже «UNIX», но там своя библиотека C++ — её вшивает
+# настройка ANDROID_STL=c++_static в build_android.bat.)
+if(UNIX AND NOT APPLE AND NOT ANDROID)
     target_link_options(shellbit_core PRIVATE -static-libstdc++ -static-libgcc)
 endif()
 
 get_target_property(GODOTCPP_SUFFIX godot-cpp GODOTCPP_SUFFIX)
+
+# Android принимает в APK только библиотеки с именем на «lib»:
+# libshellbit_core.android.template_release.arm64.so. Остальным системам — без приставки.
+set(SHELLBIT_PREFIX "")
+if(ANDROID)
+    set(SHELLBIT_PREFIX "lib")
+endif()
 set(OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../addons/shellbit_core/bin/")
 
 set_target_properties(shellbit_core PROPERTIES
@@ -42,7 +51,7 @@ set_target_properties(shellbit_core PROPERTIES
     CXX_EXTENSIONS OFF
     CXX_VISIBILITY_PRESET ${GODOTCPP_SYMBOL_VISIBILITY}
     POSITION_INDEPENDENT_CODE ON
-    PREFIX ""
+    PREFIX "${SHELLBIT_PREFIX}"
     OUTPUT_NAME "shellbit_core${GODOTCPP_SUFFIX}"
     LIBRARY_OUTPUT_DIRECTORY "$<1:${OUTPUT_DIR}>"
     RUNTIME_OUTPUT_DIRECTORY "$<1:${OUTPUT_DIR}>"

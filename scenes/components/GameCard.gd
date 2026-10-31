@@ -21,6 +21,12 @@ enum Style { WIDE_BIG, WIDE, COVER }
 ## Картинка на карточке сменилась (например, обложка докачалась).
 ## Её слушает Backdrop — фон по выбранной игре.
 signal picture_changed
+## Карточку долго держали пальцем (или нажали правой кнопкой мыши):
+## экран покажет меню «В избранное / Версия / Обложка» (GameMenu).
+signal long_pressed
+
+## Сколько секунд держать палец, чтобы открылось меню.
+const LONG_PRESS := 0.5
 
 var game: Dictionary = {}
 var _style := Style.WIDE
@@ -61,6 +67,55 @@ static var _silhouette_material: ShaderMaterial
 var _placeholder: ColorRect  # градиент (рисует шейдер placeholder.gdshader)
 var _letter: Label           # большая первая буква названия
 var _console_art: TextureRect  # силуэт приставки
+
+
+# --- Долгое нажатие -----------------------------------------------------------
+# Палец коснулся — заводим таймер на LONG_PRESS секунд. Отпустили раньше —
+# это обычное нажатие (открыть игру). Повели палец — это прокрутка списка,
+# таймер не в счёт. Продержали — меню, а отпускание пальца после этого
+# не должно открыть игру: для этого consume_long_press().
+
+var _hold_id := 0          # номер касания: старый таймер узнаёт, что он устарел
+var _hold_pos := Vector2.ZERO
+var _holding := false
+var _long_fired := false
+
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch and event.pressed:
+		_hold_id += 1
+		_holding = true
+		_long_fired = false
+		_hold_pos = event.position
+		var id := _hold_id
+		get_tree().create_timer(LONG_PRESS).timeout.connect(func() -> void:
+			if _holding and id == _hold_id and is_inside_tree():
+				_fire_long_press())
+	elif event is InputEventScreenTouch:
+		_holding = false
+	elif event is InputEventScreenDrag and _holding and event.position.distance_to(_hold_pos) > 24.0:
+		_holding = false  # палец повели — это прокрутка, а не долгое нажатие
+	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		grab_focus()  # на компьютере то же меню — правой кнопкой мыши
+		long_pressed.emit()
+		accept_event()
+
+
+func _fire_long_press() -> void:
+	_holding = false
+	_long_fired = true
+	grab_focus()
+	if Haptics.enabled():
+		Input.vibrate_handheld(25)  # телефон коротко дрогнет: «меню открылось»
+	long_pressed.emit()
+
+
+## Было ли только что долгое нажатие? Тогда отпускание пальца — не «открыть
+## игру». Обработчик pressed спрашивает это первым делом (и сбрасывает).
+func consume_long_press() -> bool:
+	var fired := _long_fired
+	_long_fired = false
+	return fired
 
 
 func _ready() -> void:

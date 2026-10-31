@@ -91,6 +91,12 @@ public:
 	String get_disk_label(int index) const; // название диска, если ядро его знает
 	String get_disk_path(int index) const;  // путь к файлу диска, если ядро его знает
 	bool set_disk(int index);              // открыть крышку, сменить диск, закрыть крышку
+
+	// --- Читы (Game Genie, Action Replay, GameShark…) ---
+	// Коды проверяет и «вшивает» в игру само ядро: мы только передаём текст кода.
+	bool has_cheats() const;               // умеет ли ядро читы вообще
+	void cheat_reset();                    // выключить все читы
+	void cheat_set(int index, bool enabled, const String &code); // включить код под номером index
 	// С какого диска начать: вызывать ДО load_game. path — путь к файлу этого
 	// диска (как его вернул get_disk_path): ядро сверяет его, чтобы не перепутать.
 	void set_initial_disk(int index, const String &path);
@@ -157,6 +163,8 @@ private:
 		void *(*get_memory_data)(unsigned);
 		size_t (*get_memory_size)(unsigned);
 		void (*set_controller_port_device)(unsigned, unsigned); // может не быть
+		void (*cheat_reset)(void);                               // может не быть
+		void (*cheat_set)(unsigned, bool, const char *);         // может не быть
 	};
 
 	// libretro вызывает НАШИ функции (колбэки), когда ему что-то нужно:

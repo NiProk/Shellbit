@@ -1,6 +1,7 @@
 extends Node
 ## UiSounds — звуки интерфейса: тихий «щелчок» при переходе между
-## кнопками и карточками и «бульк» при запуске игры.
+## кнопками и карточками, «бульк» при запуске игры и короткий
+## перезвон, когда геймпад подключили (вверх) или отключили (вниз).
 ##
 ## Это синглтон (Autoload): он живёт всё время работы программы,
 ## поэтому звук не обрывается, когда меняется экран.
@@ -14,6 +15,8 @@ extends Node
 
 const CLICK := preload("res://data/sounds/click.wav")
 const LAUNCH := preload("res://data/sounds/launch.wav")
+const PAD_ON := preload("res://data/sounds/pad_on.wav")
+const PAD_OFF := preload("res://data/sounds/pad_off.wav")
 
 ## Не чаще одного щелчка за столько секунд. Если зажать стик,
 ## фокус бежит по карточкам очень быстро — пулемётная очередь
@@ -24,6 +27,7 @@ const CLICK_COOLDOWN := 0.045
 # У щелчка и булька свои плееры, чтобы они не обрывали друг друга.
 var _click := AudioStreamPlayer.new()
 var _launch := AudioStreamPlayer.new()
+var _pad := AudioStreamPlayer.new()
 var _last_focus: Control = null
 var _last_click_msec := 0
 
@@ -40,6 +44,9 @@ func _ready() -> void:
 	_launch.volume_db = -6.0
 	add_child(_launch)
 
+	_pad.volume_db = -8.0
+	add_child(_pad)
+
 	get_viewport().gui_focus_changed.connect(_on_focus_changed)
 
 
@@ -52,6 +59,14 @@ func enabled() -> bool:
 func play_launch() -> void:
 	if enabled():
 		_launch.play()
+
+
+## Перезвон геймпада: connected = true — подключили, false — отключили.
+## Вызывает PadNotifier, когда показывает панель «Геймпад подключён».
+func play_pad(connected: bool) -> void:
+	if enabled():
+		_pad.stream = PAD_ON if connected else PAD_OFF
+		_pad.play()
 
 
 ## Щелчок — можно вызвать и вручную (например, чтобы послушать в настройках).

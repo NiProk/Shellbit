@@ -101,3 +101,16 @@ func save_sram() -> void:
 
 func unload() -> void:
 	pass
+
+
+var cheats := {}          # номер → [включён, код]: что Player передал ядру
+var cheats_supported := true
+
+func has_cheats() -> bool:
+	return cheats_supported
+
+func cheat_reset() -> void:
+	cheats.clear()
+
+func cheat_set(index: int, enabled: bool, code: String) -> void:
+	cheats[index] = [enabled, code]

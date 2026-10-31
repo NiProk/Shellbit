@@ -12,6 +12,10 @@ var _snapshot: Texture2D  # кадр выхода из игры для фона 
 var group: Dictionary = {}
 var _viewer := TextViewer.new()  # окно с полным описанием
 var _picker := CoverPicker.new()
+var _shot_viewer := ScreenshotViewer.new()  # скриншот во весь экран
+## Сколько последних скриншотов показывать в галерее (самые новые — первыми).
+const MAX_SHOTS := 30
+const SHOT_SIZE := Vector2(208, 156)  # размер миниатюры, 4:3 — как экран приставок
 
 
 func _ready() -> void:
@@ -23,6 +27,9 @@ func _ready() -> void:
 
 	add_child(_picker)
 	add_child(_viewer)
+	add_child(_shot_viewer)
+	_shot_viewer.closed.connect(_on_shot_viewer_closed)
+	_shot_viewer.deleted.connect(func(_path: String) -> void: _fill_shots())
 	_style_buttons()
 
 	%PlayButton.pressed.connect(_play.bind(SaveStates.AUTO))
@@ -53,6 +60,7 @@ func _ready() -> void:
 	hints.append(["cancel", "Назад"])
 	%Hints.set_hints(hints)
 	_refresh()
+	_fill_shots()
 	%PlayButton.grab_focus.call_deferred()
 	# Всё, что справа от обложки, лежит в InfoScroll — ScrollContainer,
 	# «окошке с прокруткой». Колесо мыши он прокручивает сам, а для
@@ -202,11 +210,96 @@ func _scroll_to(control: Control) -> void:
 	var scroll: ScrollContainer = %InfoScroll
 	if control == null or not scroll.is_ancestor_of(control):
 		return  # фокус где-то ещё (например, в окне выбора обложки)
-	if control.get_parent() == %Saves:
+	if control.get_parent() == %Saves or control.get_parent() == %Shots:
 		scroll.scroll_vertical = int(scroll.get_v_scroll_bar().max_value)
+		if control.get_parent() == %Shots:
+			UiTheme.scroll_into_view(%ShotsScroll, control, 30.0)  # и вбок, с запасом под рамку
 	else:
 		scroll.scroll_vertical = 0
 		scroll.ensure_control_visible(control)
+
+
+# --- Галерея скриншотов -----------------------------------------------------
+# Скриншоты, сделанные в этой игре (F12, кнопка «Share» или меню паузы).
+# Какие снимки чьи — по имени файла, см. scripts/Screenshots.gd.
+
+var _shot_paths: PackedStringArray = []
+var _shots_version := 0  # номер «заполнения»: старая загрузка миниатюр видит, что устарела
+
+
+func _fill_shots() -> void:
+	_shots_version += 1
+	var version := _shots_version
+	for child in %Shots.get_children():
+		%Shots.remove_child(child)
+		child.queue_free()
+	var titles := [group["title"]]
+	for variant: Dictionary in group["variants"]:
+		titles.append(variant["title"])
+	_shot_paths = Screenshots.list_for(titles)
+	var count := _shot_paths.size()
+	%ShotsTitle.visible = count > 0
+	%ShotsScroll.visible = count > 0
+	%ShotsTitle.text = tr("Скриншоты") + "  ·  %d" % count
+	# Кнопки — сразу (пустые), картинки — по одной за кадр: читать с диска
+	# 30 больших PNG разом — заметная пауза, страница бы «подвисла».
+	var buttons: Array[Button] = []
+	for i in mini(count, MAX_SHOTS):
+		var button := _shot_button()
+		%Shots.add_child(button)
+		button.pressed.connect(_open_shot.bind(i))
+		buttons.append(button)
+	for i in buttons.size():
+		await get_tree().process_frame
+		if version != _shots_version or not is_instance_valid(buttons[i]):
+			return  # галерею уже перезаполнили (удалили снимок) или ушли со страницы
+		var image := Image.load_from_file(_shot_paths[i])
+		if image == null:
+			continue
+		# Миниатюра: уменьшаем, чтобы не держать в памяти 30 больших картинок.
+		var scale := SHOT_SIZE.y * 1.5 / image.get_height()
+		if scale < 1.0:
+			image.resize(int(image.get_width() * scale), int(image.get_height() * scale), Image.INTERPOLATE_BILINEAR)
+		var thumb: TextureRect = buttons[i].get_meta("thumb")
+		thumb.texture = ImageTexture.create_from_image(image)
+
+
+func _shot_button() -> Button:
+	var button := Button.new()
+	button.custom_minimum_size = SHOT_SIZE
+	button.focus_mode = Control.FOCUS_ALL
+	button.mouse_entered.connect(button.grab_focus)
+	for state in ["normal", "hover", "pressed"]:
+		var box := StyleBoxFlat.new()
+		box.bg_color = UiTheme.CARD if state == "normal" else UiTheme.CARD_HOVER
+		box.set_corner_radius_all(12)
+		box.set_content_margin_all(6)
+		button.add_theme_stylebox_override(state, box)
+	var thumb := TextureRect.new()
+	thumb.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	thumb.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	thumb.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	button.add_child(thumb)
+	thumb.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	for side: String in ["left", "top"]:
+		thumb.set("offset_" + side, 6)
+	for side: String in ["right", "bottom"]:
+		thumb.set("offset_" + side, -6)
+	button.set_meta("thumb", thumb)
+	return button
+
+
+func _open_shot(index: int) -> void:
+	_shot_viewer.open(_shot_paths, index)
+
+
+## Окно просмотра закрыли — фокус на ту миниатюру, где остановились.
+func _on_shot_viewer_closed(index: int) -> void:
+	await get_tree().process_frame  # после удаления галерея могла пересобраться
+	if %Shots.get_child_count() == 0:
+		%PlayButton.grab_focus()
+		return
+	%Shots.get_child(clampi(index, 0, %Shots.get_child_count() - 1)).grab_focus()
 
 
 # --- Действия --------------------------------------------------------------
@@ -229,6 +322,7 @@ func _on_restart_pressed() -> void:
 	if not %RestartButton.get_meta("armed", false):
 		%RestartButton.set_meta("armed", true)  # meta — своя пометка на узле
 		%RestartButton.text = "↺  " + tr("Нажмите ещё раз")
+		Haptics.confirm()
 		SceneRouter.toast(tr("Игра начнётся с самого начала. Место выхода заменится новым, ручные слоты останутся."))
 		return
 	_disarm_restart()
@@ -242,6 +336,7 @@ func _disarm_restart() -> void:
 
 func _toggle_favorite() -> void:
 	Library.toggle_favorite(group)
+	Haptics.tap()
 	_refresh()
 
 

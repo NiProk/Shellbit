@@ -44,6 +44,13 @@ const PIXEL_IN := 0.28
 
 
 func _ready() -> void:
+	# Android: попросить доступ к папкам с играми (один раз, пока его нет).
+	# Разрешили — пересобрать библиотеку: папки наконец стали видны.
+	if Platform.is_android():
+		get_tree().on_request_permissions_result.connect(func(_permission: String, granted: bool) -> void:
+			if granted:
+				Library.scan())
+		Platform.request_storage_permission.call_deferred()
 	# CanvasLayer рисуется поверх всех экранов. На нём живут
 	# чёрная «шторка» для плавных переходов и всплывающие сообщения.
 	_layer = CanvasLayer.new()
@@ -55,6 +62,65 @@ func _ready() -> void:
 	_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_layer.add_child(_fade)
+	_create_back_button()
+
+
+# =====================================================================
+# Кнопка «←» для пальцев
+# =====================================================================
+#
+# На телефоне назад можно и системным жестом, но он не всем привычен
+# (а на некоторых телефонах его легко сделать случайно). Поэтому в левом
+# нижнем углу — круглая кнопка со стрелкой. Там же внизу на компьютере
+# строка подсказок, а на телефоне она спрятана — место свободно.
+#
+# Кнопка делает то же, что B / Esc / жест «Назад» (ui_cancel): закрывает
+# открытое окно (клавиатуру, список, PIN), а если окон нет — экран назад.
+# На главном экране её нет (назад некуда), в игре — тоже: там своя ❚❚.
+
+var _back_button: Button
+
+
+func _create_back_button() -> void:
+	if not Platform.touch_first():
+		return
+	_back_button = Button.new()
+	_back_button.text = "←"
+	_back_button.focus_mode = Control.FOCUS_NONE  # геймпаду не мешает
+	_back_button.custom_minimum_size = Vector2(68, 68)
+	_back_button.add_theme_font_size_override("font_size", 34)
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]:
+		_back_button.add_theme_color_override(state, UiTheme.TEXT)
+	for state in ["normal", "hover", "pressed"]:
+		var box := StyleBoxFlat.new()
+		box.bg_color = Color(UiTheme.CARD_HOVER if state == "pressed" else UiTheme.CARD, 0.92)
+		box.set_corner_radius_all(34)  # круглая
+		box.border_color = Color(1, 1, 1, 0.12)
+		box.set_border_width_all(2)
+		box.shadow_color = Color(0, 0, 0, 0.35)
+		box.shadow_size = 8
+		_back_button.add_theme_stylebox_override(state, box)
+	_layer.add_child(_back_button)
+	_layer.move_child(_back_button, _fade.get_index())  # шторка перехода — поверх
+	# В левый нижний угол, с отступом 12 от краёв экрана.
+	_back_button.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT, Control.PRESET_MODE_MINSIZE, 12)
+	_back_button.pressed.connect(func() -> void:
+		Haptics.tap()
+		_press_action(&"ui_cancel"))
+	_back_button.visible = false
+
+
+func _process(_delta: float) -> void:
+	if _back_button == null:
+		return
+	# Назад некуда (главный экран, «Кто играет?» при запуске) — кнопки нет.
+	var show := not _busy and not _history.is_empty()
+	# В игре — своя кнопка ❚❚. А вот если игра не запустилась (ошибка) —
+	# «←» нужна, чтобы уйти с экрана ошибки.
+	if show and _current == "player":
+		var scene := get_tree().current_scene
+		show = scene != null and scene.get("core") == null
+	_back_button.visible = show
 
 
 ## Экраны, закрытые в детском режиме (см. autoload/Family.gd):
@@ -72,6 +138,9 @@ func go_to(screen: String, new_params: Dictionary = {}) -> void:
 	if screen in LOCKED_SCREENS and Family.is_on():
 		_ask_pin(screen, new_params)  # детский режим — сначала PIN взрослого
 		return
+	if screen == "player" and Family.time_is_up():
+		_ask_extra_time(new_params)  # время игры на сегодня вышло
+		return
 	_history.append({"screen": _current, "params": params})
 	_open(screen, new_params)
 
@@ -88,15 +157,7 @@ func reset_to(screen: String, new_params: Dictionary = {}) -> void:
 
 # Детский режим: спросить PIN. Верный — режим выключается и экран открывается.
 func _ask_pin(screen: String, new_params: Dictionary) -> void:
-	if _pin_dialog == null:
-		_pin_dialog = PinDialog.new()
-		_layer.add_child(_pin_dialog)
-		_layer.move_child(_pin_dialog, _fade.get_index())  # под шторкой перехода
-	# Старые подключения убираем: экран, который открыть, каждый раз свой.
-	for connection in _pin_dialog.entered.get_connections():
-		_pin_dialog.entered.disconnect(connection["callable"])
-	for connection in _pin_dialog.cancelled.get_connections():
-		_pin_dialog.cancelled.disconnect(connection["callable"])
+	_prepare_pin_dialog()
 	_pin_dialog.entered.connect(func(pin: String) -> void:
 		if not Family.check_pin(pin):
 			_pin_dialog.show_error("Неверный PIN-код")
@@ -110,6 +171,40 @@ func _ask_pin(screen: String, new_params: Dictionary) -> void:
 			_focus_before_pin.grab_focus())
 	_focus_before_pin = get_viewport().gui_get_focus_owner()
 	_pin_dialog.open("Детский режим", "Чтобы выйти из детского режима, введите PIN-код взрослого.")
+
+
+## Время игры на сегодня вышло (Family.time_limit). Взрослый может
+## добавить ещё полчаса по PIN-коду — тогда игра запустится.
+func _ask_extra_time(new_params: Dictionary) -> void:
+	_prepare_pin_dialog()
+	_pin_dialog.entered.connect(func(pin: String) -> void:
+		if not Family.check_pin(pin):
+			_pin_dialog.show_error("Неверный PIN-код")
+			return
+		_pin_dialog.close()
+		Family.add_extra_time()
+		toast(tr("Добавлено %d минут") % Family.EXTRA_MINUTES)
+		go_to("player", new_params))
+	_pin_dialog.cancelled.connect(func() -> void:
+		if is_instance_valid(_focus_before_pin):
+			_focus_before_pin.grab_focus())
+	_focus_before_pin = get_viewport().gui_get_focus_owner()
+	Haptics.error()
+	_pin_dialog.open("Время игры на сегодня закончилось",
+			tr("Можно поиграть завтра. Чтобы добавить %d минут сейчас, нужен PIN-код взрослого.") % Family.EXTRA_MINUTES)
+
+
+# Окно PIN создаём один раз; перед каждым показом убираем старые
+# подключения: что делать после ввода, каждый раз своё.
+func _prepare_pin_dialog() -> void:
+	if _pin_dialog == null:
+		_pin_dialog = PinDialog.new()
+		_layer.add_child(_pin_dialog)
+		_layer.move_child(_pin_dialog, _fade.get_index())  # под шторкой перехода
+	for connection in _pin_dialog.entered.get_connections():
+		_pin_dialog.entered.disconnect(connection["callable"])
+	for connection in _pin_dialog.cancelled.get_connections():
+		_pin_dialog.cancelled.disconnect(connection["callable"])
 
 
 ## Заменить текущий экран, не добавляя его в историю
@@ -197,3 +292,29 @@ func toast(text: String) -> void:
 	tween.tween_interval(2.0)
 	tween.tween_property(label, "modulate:a", 0.0, 0.3)
 	tween.tween_callback(label.queue_free)
+
+
+# Кнопка (или жест) «Назад» на Android. Godot сообщает о ней уведомлением,
+# а не нажатием клавиши, — превращаем его в обычную кнопку:
+#   • в игре — «меню» (game_menu): открыть паузу, а в паузе — вернуться в игру;
+#   • на остальных экранах — «B / Esc» (ui_cancel): закрыть окно или назад.
+# Чтобы «Назад» не закрывал приложение, в project.godot выключено
+# application/config/quit_on_go_back.
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		_press_action(&"game_menu" if _current == "player" else &"ui_cancel")
+
+
+# «Нажать» кнопку из кода: нажали — и через мгновение отпустили. Отпускаем
+# не сразу, а в следующих кадрах: экран игры проверяет «только что нажата?»
+# раз в кадр и иначе мог бы нажатие пропустить.
+func _press_action(action: StringName) -> void:
+	var press := InputEventAction.new()
+	press.action = action
+	press.pressed = true
+	Input.parse_input_event(press)
+	await get_tree().create_timer(0.05).timeout
+	var release := InputEventAction.new()
+	release.action = action
+	release.pressed = false
+	Input.parse_input_event(release)

@@ -20,6 +20,7 @@ signal progress(core_file: String, percent: int)
 signal finished(core_file: String, ok: bool, message: String)
 
 const SERVER := "https://buildbot.libretro.com/nightly/%s/latest/%s.zip"
+const ANDROID_SERVER := "https://buildbot.libretro.com/nightly/android/latest/arm64-v8a/%s.zip"
 ## Сколько ядер качать одновременно. Больше — не быстрее, а серверу тяжелее.
 const MAX_PARALLEL := 2
 
@@ -38,11 +39,17 @@ func platform_dir() -> String:
 			return "windows/x86_64"
 		"Linux":
 			return "linux/x86_64"
+		"Android":
+			return "android"
 	return ""
 
 
 ## Адрес архива с ядром: "fceumm_libretro.dll" → https://…/fceumm_libretro.dll.zip
 func url_for(core_file: String) -> String:
+	if platform_dir() == "android":
+		# У Android папки на сервере идут в другом порядке:
+		# nightly/android/latest/arm64-v8a/ (а не nightly/windows/x86_64/latest/).
+		return ANDROID_SERVER % core_file
 	return SERVER % [platform_dir(), core_file]
 
 
@@ -77,7 +84,7 @@ func download(system: Dictionary) -> bool:
 	if file == "" or is_busy(file):
 		return false
 	if platform_dir() == "":
-		finished.emit(file, false, tr("Скачивание ядер работает только в Windows и Linux."))
+		finished.emit(file, false, tr("Скачивание ядер работает только в Windows, Linux и Android."))
 		return false
 	_queue.append({"file": file, "dest": dest})
 	progress.emit(file, -1)  # «в очереди»

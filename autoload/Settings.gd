@@ -55,6 +55,13 @@ const DEFAULTS := {
 		"transition": "fade",  # переход между экранами: fade / mosaic / dissolve
 		"ui_scale": 100,       # размер интерфейса, %: 100 / 115 / 130 (для телевизора)
 	},
+	"controls": {
+		"ui_rumble": true,  # короткая вибрация геймпада в меню (autoload/Haptics.gd)
+		"touch_pad": "auto",  # экранный геймпад: auto (телефон без геймпада) / always / off
+	},
+	"family": {
+		"time_limit": 0,  # детский режим: минут игры в день, 0 — без ограничений
+	},
 	"profiles": {
 		"ask_on_start": true,  # спрашивать «Кто играет?» при запуске (если игроков больше одного)
 	},
@@ -89,6 +96,10 @@ func _ready() -> void:
 func get_value(section: String, key: String, default: Variant = null) -> Variant:
 	if default == null and DEFAULTS.has(section):
 		default = DEFAULTS[section].get(key)
+	# Ключа нет, а умолчания не дали — просто null. Сам ConfigFile в этом
+	# случае пишет в журнал ошибку «Couldn't find the given section…».
+	if default == null and not _cfg.has_section_key(section, key):
+		return null
 	return _cfg.get_value(section, key, default)
 
 
@@ -204,8 +215,8 @@ func apply_ui_scale() -> void:
 
 
 func apply_window_mode() -> void:
-	if DisplayServer.get_name() == "headless":
-		return  # без окна (автотесты) переключать нечего
+	if DisplayServer.get_name() == "headless" or Platform.is_android():
+		return  # без окна (автотесты) или Android (всегда весь экран) — переключать нечего
 	var full_modes := [DisplayServer.WINDOW_MODE_FULLSCREEN, DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN]
 	if get_value("video", "window_mode") == "fullscreen":
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

@@ -1,0 +1,2615 @@
+88games	'88 Games
+flagrall	'96 Flag Rally
+005	005
+10yard	10-Yard Fight (World, set 1)
+gtmr	1000 Miglia_ Great 1000 Miles Rally (Taiwan 94_07_18)
+119	119 (bootleg_)
+progolf	18 Holes Pro Golf (set 1)
+1941	1941_ Counter Attack (World 900227)
+1942	1942 (Revision B)
+1943kai	1943 Kai_ Midway Kaisen (Japan)
+1943	1943_ The Battle of Midway (Euro)
+1943mii	1943_ The Battle of Midway Mark II (US)
+1944	1944_ The Loop Master (Europe 000620)
+1945kiii	1945k III (newer, OPCX2 PCB)
+19xx	19XX_ The War Against Destiny (Europe 960104)
+19yy	19YY (Neo CD conversion, ADK World)
+2020bb	2020 Super Baseball (set 1)
+test240p	240p Test Suite (v1.0)
+3countb	3 Count Bout _ Fire Suplex (NGM-043 ~ NGH-043)
+3on3dunk	3 On 3 Dunk Madness (US, prototype_ 1997_02_04)
+3x3puzzl	3X3 Puzzle (Enterprise)
+4enraya	4 En Raya (set 1)
+4in1	4 Fun in 1
+4play	4 player input test
+4dwarrio	4-D Warriors (315-5162)
+64street	64th. Street_ A Detective Story (World)
+7ordi	7 Ordi (Korea)
+720	720 Degrees (rev 4)
+ad2083	A. D. 2083
+abcop	A.B. Cop (World) (FD1094 317-0169b)
+abyssali	Abyssal Infants (HB)
+aceattac	Ace Attacker (FD1094 317-0059)
+acrobatm	Acrobat Mission
+dogfgt	Acrobatic Dog-Fight
+actfancr	Act-Fancer Cybernetick Hyper Weapon (World revision 3)
+afighter	Action Fighter (FD1089A 317-0018)
+actionhw	Action Hollywood
+adkw	ADK World (Neo CD conversion)
+adcanoe	Adventure Canoe
+hatena	Adventure Quiz 2 - Hatena_ no Daibouken (Japan 900228)
+cworld2j	Adventure Quiz Capcom World 2 (Japan 920611)
+aerofgt	Aero Fighters (World _ USA + Canada _ Korea _ Hong Kong _ Taiwan) (newer hardware)
+sonicwi2	Aero Fighters 2 _ Sonic Wings 2
+sonicwi3	Aero Fighters 3 _ Sonic Wings 3
+aburner	After Burner (VER 1.32, deluxe_upright)
+aburner2	After Burner II (VER 2.00, deluxe_upright)
+afterwar	After the War
+aoh	Age Of Heroes - Silkroad 2 (v0.63 - 2001_02_07)
+superbon	Agent Super Bond (Super Cobra conversion, encrypted)
+aodk	Aggressors of Dark Kombat _ Tsuukai GANGAN Koushinkyoku (ADM-008 ~ ADH-008)
+agress	Agress - Missile Daisenryaku (Japan)
+koshien	Ah Eikou no Koshien (Japan)
+airass	Air Assault (World)
+airattck	Air Attack (set 1)
+airbustr	Air Buster_ Trouble Specialty Raid Unit (World)
+airduel	Air Duel (World, M82 hardware)
+agallet	Air Gallet (Europe)
+arescue	Air Rescue (World)
+airwolf	Airwolf
+ajax	Ajax
+akatana	Akai Katana (2010_ 8_13 MASTER VER.)
+akazukin	Akazukin (Japan)
+akkaarrh	Akka Arrh (prototype)
+alcon	Alcon (US)
+alexkidd	Alex Kidd_ The Lost Stars (set 2, unprotected)
+alibaba	Ali Baba and 40 Thieves
+alienar	Alien Arena
+aa	Alien Armada
+aliencha	Alien Challenge (World)
+alinvade	Alien Invaders
+alienres	Alien Rescue (Homebrew, Test Build July 2019)
+aliensec	Alien Sector
+astorm	Alien Storm (World, 2 Players) (FD1094 317-0154)
+aliensyn	Alien Syndrome (set 4, System 16B, unprotected)
+avsp	Alien vs. Predator (Europe 940520)
+alien3	Alien3_ The Gun (World)
+aliens	Aliens (World set 1)
+aligator	Alligator Hunt (World, protected, checksum 2B34128B)
+alpham2	Alpha Mission II _ ASO II - Last Guardian (NGM-007 ~ NGH-007)
+alpha1v	Alpha One (Vision Electronics)
+alpine	Alpine Ski (set 1)
+altbeast	Altered Beast (set 8) (8751 317-0078)
+altbeastng	Altered Beast - Neo Geo Conversion (HB)
+ambush	Ambush
+horshoes	American Horseshoes (US)
+amspdwy	American Speedway (set 1)
+amidar	Amidar
+androdun	Andro Dunos (NGM-049 ~ NGH-049)
+androidp	Android (prototype, later build)
+angelkds	Angel Kids (Japan)
+cadanglr	Angler Dangler (DECO Cassette) (US)
+anteater	Anteater
+apb	APB - All Points Bulletin (rev 7)
+appoooh	Appoooh
+aquajack	Aqua Jack (World)
+aquarium	Aquarium (US)
+arabfgt	Arabian Fight (World)
+arabianm	Arabian Magic (Ver 1.0O 1992_07_06)
+arabian	Arabian
+arbalest	Arbalester
+arcadecl	Arcade Classics (prototype)
+arcadian	Arcadia (NMK)
+archrivl	Arch Rivals (rev 4.0 6_29_89)
+argusg	Argus (Gottlieb, prototype)
+argus	Argus
+arkarea	Ark Area
+arkanoid	Arkanoid (World, older)
+arknoid2	Arkanoid - Revenge of DOH (World)
+arkretrn	Arkanoid Returns (Ver 2.02O 1997_02_10)
+arlingtn	Arlington Horse Racing (v1.40-D)
+armchmp2	Arm Champs II (ver 2.7)
+armwrest	Arm Wrestling
+armedf	Armed F (Japan)
+batrider	Armed Police Batrider (Europe) (Fri Feb 13 1998)
+armorcar	Armored Car (set 1)
+armwar	Armored Warriors (Europe 941024)
+aof	Art of Fighting _ Ryuuko no Ken (NGM-044 ~ NGH-044)
+aof2	Art of Fighting 2 _ Ryuuko no Ken 2 (NGM-056)
+aof3	Art of Fighting 3 - The Path of the Warrior _ Art of Fighting - Ryuuko no Ken Gaiden
+ashura	Ashura Blaster (World)
+aso	ASO - Armored Scrum Object
+assault	Assault (Rev B)
+asterix	Asterix (ver EAD)
+asteroid	Asteroids (rev 4)
+astdelux	Asteroids Deluxe (rev 3)
+astrob	Astro Blaster (version 3)
+castfant	Astro Fantasia (DECO Cassette) (US)
+asuka	Asuka _ Asuka (World)
+asurabld	Asura Blade - Sword of Dynasty (Japan)
+asurabus	Asura Buster - Eternal Warriors (USA)
+atehate	Athena no Hatena_
+athena	Athena
+atomicp	Atomic Point (Korea)
+robokid	Atomic Robo-kid (World, Type-2)
+chelnov	Atomic Runner Chelnov (World)
+au	Au (location test)
+aurail	Aurail (set 3, US) (unprotected)
+avengers	Avengers (US, rev. D)
+avengrgs	Avengers In Galactic Storm (US_Europe 1.0)
+avspirit	Avenging Spirit
+aztarac	Aztarac
+azurian	Azurian Attack
+bwings	B-Wings (Japan new Ver.)
+bonkadv	B.C. Kid (Europe) _ Bonk's Adventure_ Arcade Version (US, China, Korea) _ Kyukyoku!! PC Genjin_ Special Arcade Version (Japan)
+bcstry	B.C. Story (set 1)
+brapboys	B.Rap Boys (World)
+backfirt	Back Fire (Tecmo)
+bssoccer	Back Street Soccer (KRB-0031 PCB)
+backfire	Backfire! (Japan, set 1)
+badapple	Bad Apple (HB, Tech-Demo)
+bdudes	Bad Dudes - Burger Edition (Demo Version)
+baddudes	Bad Dudes vs. Dragonninja (US, revision 1)
+badlands	Bad Lands
+bagman	Bagman
+bakatono	Bakatonosama Mahjong Manyuuki (MOM-002 ~ MOH-002)
+bkrtmaq	Bakuretsu Quiz Ma-Q Dai Bouken (Japan)
+bakutotu	Bakutotsu Kijuutei
+balcube	Bal Cube
+bace	Balloon Ace
+ballbros	Balloon Brothers
+baluba	Baluba-louk no Densetsu (Japan)
+banbam	BanBam
+bangball	Bang Bang Ball (v1.05)
+b2b	Bang Bang Busters (2010 NCI release)
+b2b2	Bang Bang Busters 2 (HB, Demo 2)
+bangbead	Bang Bead
+bang	Bang! (version 2, checksum 140E)
+bankp	Bank Panic
+baryon	Baryon - Future Assault (set 1)
+bstars2	Baseball Stars 2
+bstars	Baseball Stars Professional (NGM-002)
+batman	Batman
+batsugun	Batsugun
+battlnts	Battlantis (version G)
+bbakraid	Battle Bakraid - Unlimited Version (USA) (Tue Jun 8 1999)
+bchopper	Battle Chopper (World)
+batcir	Battle Circuit (Europe 970319)
+battlex	Battle Cross
+bcruzm12	Battle Cruiser M-12
+flipshot	Battle Flip Shot
+bgaregga	Battle Garegga (Europe _ USA _ Japan _ Asia) (Sat Feb 3 1996)
+btlkroad	Battle K-Road
+battlane	Battle Lane! Vol. 5 (set 1)
+atlantis	Battle of Atlantis (set 1)
+bshark	Battle Shark (World)
+bzone	Battle Zone (rev 2)
+btoads	Battletoads
+bayroute	Bay Route (set 3, World) (FD1094 317-0116)
+wbbc97	Beach Festival World Championship 1997
+bbusters	Beast Busters (World)
+blswhstl	Bells _ Whistles (World, version L)
+benberob	Ben Bero Beh (Japan)
+bermudat	Bermuda Triangle (World_)
+berzerk	Berzerk (revision RC31A)
+bbbxing	Best Bout Boxing (ver 1.3)
+bestbest	Best Of Best
+bestri	Bestri (Korea, set 1)
+bigbucks	Big Bucks
+bigfight	Big Fight_ Big Trouble In The Atlantic Ocean
+bigkarnk	Big Karnak (ver. 1.0, checksum 1e38c94)
+bigrun	Big Run (11th Rallye version, Europe_)
+bigstrik	Big Striker
+bigtwin	Big Twin
+bikkuric	Bikkuri Card (Japan)
+bilyard	Billiard
+bngotime	Bingo Time (World)
+bioatack	Bio Attack
+bioship	Bio-ship Paladin
+biomtoy	Biomechanical Toy (ver. 1.0.1885, checksum 69f5e032)
+bionicc	Bionic Commando (Euro)
+birdtry	Birdie Try (Japan, revision 2, revision 1 MCU)
+birdiy	Birdiy
+bishi	Bishi Bashi Champ Mini Game Senshuken (ver JAA, 3 Players)
+sailormn	Bishoujo Senshi Sailor Moon (Version 95_03_22B, Japan)
+blkheart	Black Heart
+blkhole	Black Hole
+blkpnthr	Black Panther
+blktiger	Black Tiger
+blackt96	Black Touch '96
+bwidow	Black Widow
+bmaster	Blade Master (World)
+bladestl	Blades of Steel (version T, Joystick)
+blandia	Blandia
+blastoff	Blast Off (Japan)
+blasted	Blasted
+blaster	Blaster
+blstroid	Blasteroids (rev 4)
+blasto	Blasto
+blazeon	Blaze On (World)
+blazer	Blazer (Japan)
+blazstar	Blazing Star
+blzntrnd	Blazing Tornado
+block	Block Block (World 911219 Joystick)
+blockcar	Block Carnival _ Thunder _ Lightning 2
+blockgal	Block Gal (MC-8123B, 317-0029)
+blockhl	Block Hole
+blockout	Block Out (set 1)
+bpanicdx	Block Panic DX (HB, ver. 20250101)
+blockade	Blockade
+blocken	Blocken (Japan)
+blmbycar	Blomby Car (Version 1P0)
+bloodbro	Blood Bros. (World_)
+bloodwar	Blood Warrior
+bloodstm	BloodStorm (v2.22)
+bloxeed	Bloxeed (Japan) (FD1094 317-0139)
+blueandr	Blue And Red - Fight The Robots! (HB, v1.7 NTSC)
+bluehawk	Blue Hawk
+blueprnt	Blue Print (Midway)
+bjourney	Blue's Journey _ Raguy (ALM-001 ~ ALH-001)
+bwcasino	Boardwalk Casino
+bodyslam	Body Slam (8751 317-0015)
+bogeyman	Bogey Manor
+boggy84	Boggy '84
+bombbee	Bomb Bee
+bombjack	Bomb Jack
+bombkick	Bomb Kick (set 1)
+bbmanw	Bomber Man World _ New Dyna Blaster - Global Quest
+bjtwin	Bombjack Twin (set 1)
+bnzabros	Bonanza Bros (US, Floppy DS3-5000-07d_ Based)
+bongo	Bongo
+bonusstage	Bonus Stage (HB)
+bonzeadv	Bonze Adventure (World, rev 1)
+boogwing	Boogie Wings (Europe v1.5, 92.12.07)
+boomrang	Boomer Rang'r _ Genesis (set 1)
+boonggab	Boong-Ga Boong-Ga (Spank'em!)
+brdrline	Borderline
+borench	Borench (set 1)
+bosco	Bosconian - Star Destroyer (version 5)
+botanic	Botanic (English _ Spanish)
+bottom9	Bottom of the Ninth (version T)
+cbdash	Boulder Dash (DECO Cassette) (US)
+bouldash	Boulder Dash _ Boulder Dash Part 2 (World)
+bballs	Bouncing Balls
+bowlrama	Bowl-O-Rama (Rev 1.0)
+boxyboy	Boxy Boy (World, SB2)
+bradley	Bradley Trainer
+brain	Brain
+brkthru	Break Thru (World)
+breakrev	Breakers Revenge
+breakers	Breakers
+brickzn	Brick Zone (v6.0, Joystick)
+bubl2000	Bubble 2000
+bublbobl	Bubble Bobble (Japan, Ver 0.1)
+bublbob2	Bubble Bobble II (Ver 2.6O 1994_12_16)
+bubblem	Bubble Memories_ The Story Of Bubble Bobble III (Ver 2.4O 1996_02_15)
+bubbleopen	Bubble Open (HB, Demo 1)
+bubbletr	Bubble Trouble - Golly! Ghost! 2 (World, Rev B)
+bubbles	Bubbles
+buccanrs	Buccaneers (set 1)
+buckrog	Buck Rogers_ Planet of Zoom
+bucky	Bucky O'Hare (ver EAB)
+buggychl	Buggy Challenge
+bullfgtr	Bull Fighter (World)
+bullet	Bullet (FD1094 317-0041)
+bullfgt	Bullfight (315-5065)
+btime	Burger Time (Data East set 1)
+cbtime	Burger Time (DECO Cassette) (US)
+burglarx	Burglar X
+cburnrub	Burnin' Rubber (DECO Cassette) (US) (set 1)
+brubber	Burnin' Rubber
+burningf	Burning Fight (NGM-018 ~ NGH-018)
+burnforc	Burning Force (Japan, new version (Rev C))
+brival	Burning Rival (World)
+butasan	Butasan - Pig's _ Bomber's (Japan, English)
+bygone	Bygone (prototype)
+cabal	Cabal (World, Joystick)
+cabalng	Cabal - Neo Geo Conversion (HB)
+cachat	Cachat (Japan)
+cadash	Cadash (World)
+dino	Cadillacs and Dinosaurs (World 930201)
+calibr50	Caliber 50 (Ver. 1.01)
+calipso	Calipso
+calorie	Calorie Kun vs Moguranian
+cameltry	Cameltry (World, YM2610)
+candy	Candy Candy
+cannonbp	Cannon Ball (Pac-Man Hardware)
+cannball	Cannon Ball (Yun Sung, horizontal)
+canvas	Canvas Croquis
+canyon	Canyon Bomber
+cbasebal	Capcom Baseball (Japan)
+capbowl	Capcom Bowling (set 1)
+csclub	Capcom Sports Club (Europe 971017)
+cworld	Capcom World (Japan)
+captaven	Captain America and The Avengers (Asia Rev 1.4)
+captainbarrel	Captain Barrel (HB)
+captcomm	Captain Commando (World 911202)
+csilver	Captain Silver (World)
+ctomaday	Captain Tomaday
+carjmbre	Car Jamboree
+carket	Carket Ball
+carnival	Carnival (upright, AY8912 music)
+cawing	Carrier Air Wing (World 901012)
+casanova	Casanova
+cashquiz	Cash Quiz (Type B, Version 5)
+catacomb	Catacomb
+cavelon	Cavelon
+cninja	Caveman Ninja (World ver 4)
+centiped	Centipede (revision 4)
+chaknpop	Chack'n Pop
+chainrec	Chain Reaction (World, Version 2.2, 1995.09.25)
+chameleo	Chameleon
+champbas	Champion Base Ball (World)
+champbb2	Champion Base Ball Part-2 (World, set 1)
+champwr	Champion Wrestler (World)
+csprint	Championship Sprint (rev 3)
+chanbara	Chanbara (Japan)
+chkun	Chance Kun (Japan)
+cairblad	Change Air Blade (Japan)
+changes	Changes
+pgmdemo	Chaos (PGM Demo)
+cps1demo	Chaos Demo (CPS-1)
+neodemo	Chaos Demo (Neo Geo)
+charlien	Charlie Ninja
+cbombers	Chase Bombers (World)
+chasehq	Chase H.Q. (World)
+checkman	Check Man
+cheekyms	Cheeky Mouse
+cheesech	Cheese Chase
+chqflag	Chequered Flag
+cheyenne	Cheyenne (version 1.0)
+marukodq	Chibi Maruko-chan_ Maruko Deluxe Quiz
+chiller	Chiller (version 3.0)
+chimerab	Chimera Beast (Japan, prototype, set 1)
+chinagat	China Gate (US)
+chinatwn	China Town (Japan)
+chinhero	Chinese Hero
+cndi	Chip n Dale (FMV Demo)
+chokchok	Choky! Choky!
+choplift	Choplifter (8751 315-5151)
+chopper	Chopper I (US Ver 2)
+berabohm	Chou Zetsurinjin Berabowman (Japan, Rev C)
+ironclad	Choutetsu Brikin'ger _ Iron Clad (prototype)
+chuckieegg	Chuckie Egg
+chukatai	Chuka Taisen (World) (P0-028-A PCB)
+dw2001	Chuugokuryuu 2001 [Dragon World 2001] (V100 02_21_01 16_05_16, Japan)
+circus	Circus _ Acrobat TV
+circusc	Circus Charlie (level select, set 1)
+cischeat	Cisco Heat
+citybomb	City Bomber (World)
+citycon	City Connection (set 1)
+clshroad	Clash-Road
+claypign	Clay Pigeon (version 2.0)
+cleopatr	Cleopatra Fortune (Ver 2.1J 1996_09_05)
+cloak	Cloak _ Dagger (rev 5)
+aquario	Clockwork Aquario (prototype)
+cloud9	Cloud 9 (prototype)
+cgraplop	Cluster Buster (DECO Cassette) (US)
+cltchitr	Clutch Hitter (US) (FD1094 317-0176)
+cobracom	Cobra-Command (World_US revision 5)
+cnbe	Codename - Blut Engel (HB, ver. 20060119)
+colony7	Colony 7 (set 1)
+columns	Columns (World)
+columnsn	Columns - Neo Geo (HB)
+columns2	Columns II_ The Voyage Through Time (World)
+combat	Combat (version 3.0)
+combh	Combat Hawk
+combatsc	Combat School (joystick)
+toto	Come Back Toto
+commandw	Command War - Super Special Battle _ War Game (Ver 0.0J, prototype)
+commsega	Commando (Sega)
+commando	Commando (World)
+comotion	CoMotion
+compgolf	Competition Golf Final Round (World_, revision 3)
+complexx	Complex X
+congo	Congo Bongo (Rev C, 2 board stack)
+contcirc	Continental Circus (World)
+contra	Contra (US _ Asia, set 1)
+cookbib	Cookie _ Bibi (set 1)
+cookbib2	Cookie _ Bibi 2 (English, set 1)
+cookbib3	Cookie _ Bibi 3
+coolmini	Cool Minigame Collection
+cop01	Cop 01 (set 1)
+cavenger	Cosmic Avenger
+cosmccop	Cosmic Cop (World)
+cgangpzl	Cosmo Gang the Puzzle (US)
+cosmogng	Cosmo Gang the Video (US)
+galivan	Cosmo Police Galivan (12_26_1985)
+cotton	Cotton (set 4, World) (FD1094 317-0181a)
+countrun	Counter Run (NS6201-A 1988.3)
+countryc	Country Club
+crkdown	Crack Down (World, Floppy Based, FD1094 317-0058-04c)
+cracksht	Crackshot (version 2.0)
+crashh	Crash (Pac-Man)
+crash	Crash (set 1)
+qcrayon2	Crayon Shinchan Orato Asobo (Japan)
+crbaloon	Crazy Balloon (set 1)
+cclimber	Crazy Climber (US set 1)
+cclimbr2	Crazy Climber 2 (Japan)
+crazyfgt	Crazy Fight
+ckongpt2	Crazy Kong Part II (set 1)
+ckong	Crazy Kong
+crzrally	Crazy Rally (set 1)
+crazywar	Crazy War
+crimec	Crime City (World)
+crimfght	Crime Fighters (World 2 players)
+croquis	Croquis (Korea)
+crospang	Cross Pang
+crossbow	Crossbow (version 2.0)
+crsword	Crossed Swords (ALM-002 ~ ALH-002)
+crswd2bl	Crossed Swords 2 (bootleg of CD version)
+cphd	Crouching Poney Hidden Dragon (HB, Demo)
+cbuster	Crude Buster (World FX version)
+crush	Crush Roller (set 1)
+crusherm	Crusher Makochan (Japan)
+ccastles	Crystal Castles (version 4)
+cubybop	Cuby Bop (location test)
+cuebrick	Cue Brick (World, version D)
+curvebal	Curve Ball
+cutefght	Cute Fighter
+cutieq	Cutie Q
+cybattlr	Cybattler
+eswat	Cyber Police ESWAT (set 4, World) (FD1094 317-0130)
+eswatng	Cyber Police ESWAT - Neo Geo Conversion (HB)
+cybertnk	Cyber Tank (v1.4)
+cyberlip	Cyber-Lip (NGM-010)
+cybots	Cyberbots_ Fullmetal Madness (Europe 950424)
+cyborgforce	Cyborg Force (HB)
+cyclemb	Cycle Maabou (Japan)
+cyclshtg	Cycle Shooting
+cyclwarr	Cycle Warriors (Rev. C)
+cyvern	Cyvern - The Dragon Weapons (US)
+dcon	D-Con
+ddayjlc	D-Day (Jaleco set 1)
+dday	D-Day
+ddcrew	D. D. Crew (World, 3 Players) (FD1094 317-0190)
+dacholer	Dacholer
+daikaiju	Daikaiju no Gyakushu (rev 1)
+daioh	Daioh
+daitorid	Daitoride
+dambustr	Dambusters (US, set 1)
+dankuga	Dan-Ku-Ga (Ver 0.0J 1994_12_13, prototype)
+ddungeon	Dangerous Dungeons (set 1)
+dangseed	Dangerous Seed (Japan)
+darius	Darius (World, rev 2)
+dariusg	Darius Gaiden - Silver Hawk (Ver 2.5O 1994_09_19)
+dariusgx	Darius Gaiden - Silver Hawk Extra Version (Ver 2.7J 1995_03_06) (Official Hack)
+darius2	Darius II (triple screen) (Japan, rev 1)
+darkedge	Dark Edge (World)
+darkplnt	Dark Planet
+darkseal	Dark Seal (World revision 3)
+darktowr	Dark Tower
+dstlk	Darkstalkers_ The Night Warriors (Europe 940705)
+dwi	DarkWing Duck (FMV Demo)
+darwin	Darwin 4078 (Japan)
+dquizgo	Date Quiz Go Go (Korea)
+dquizgo2	Date Quiz Go Go Episode 2
+deadang	Dead Angle
+deadconx	Dead Connection (World)
+dderby	Death Derby
+deathsml	Deathsmiles (2007_10_09 MASTER VER)
+dsmbl	Deathsmiles MegaBlack Label (2008_10_06 MEGABLACK LABEL VER)
+decomult	DECO Cassette System ROM Multigame (David Widel)
+deerhunt	Deer Hunting USA V4.3
+redufo	Defend the Terra Attack on the Red UFO
+defender	Defender (Red label)
+deluxe5	Deluxe 5 (ver. 0107, 07_01_2000, set 1)
+demoderb	Demolition Derby
+dmnfrnt	Demon Front _ Moyu Zhanxian (68k label V105, ROM M105XX 08_05_02) (ARM label V105, ROM 08_05_02 S105XX)
+demonwld	Demon's World (World) _ Horror Story (Japan) (set 1)
+demndrgn	Demons _ Dragons (Prototype)
+denjinmk	Denjin Makai (set 1)
+depthch	Depthcharge
+deroon	Deroon DeroDero (earlier, set 1)
+desertbr	Desert Breaker (World) (FD1094 317-0196)
+desertdn	Desert Dan
+desertwr	Desert War _ Wangan Sensou (ver 1.0)
+devstors	Devastators (ver. Z)
+devilfsh	Devil Fish (Mars hardware)
+devilw	Devil World
+dharma	Dharma Doujou
+diamrun	Diamond Run
+dicegame	Dice - The Dice Game!
+dtfamily	Diet Family
+dietgo	Diet Go Go (Europe v1.1 1992.09.26, set 1)
+digdug	Dig Dug (rev 2)
+digdug2	Dig Dug II (New Ver.)
+diggerma	Digger Man (prototype)
+digger	Digger
+dimahoo	Dimahoo (Europe 000121)
+dingo	Dingo
+dinorex	Dino Rex (World)
+dirtfoxj	Dirt Fox (Japan)
+discoboy	Disco Boy
+cdiscon1	Disco No.1 (DECO Cassette) (US)
+disco	Disco No.1
+dotron	Discs of Tron (Upright, 10_4_83)
+diverboy	Diver Boy
+djboy	DJ Boy (World)
+dorunrun	Do! Run Run (set 1)
+dockman	Dock Man (set 1)
+dodgeman	Dodge Man
+ddonpach	DoDonPachi (World, 1997 2_ 5 Master Ver.)
+dfkbl	DoDonPachi Dai-Fukkatsu Black Label (2010_1_18 BLACK LABEL)
+ddpdfk	DoDonPachi Dai-Fukkatsu Ver 1.5 (2008_06_23 MASTER VER 1.5)
+ddpdojt	DoDonPachi Dai-Ou-Jou Tamashii (V201, China)
+ddp2	DoDonPachi II - Bee Storm (World, ver. 102)
+ddp3	DoDonPachi III (World, 2002.05.15 Master Ver)
+ddpsdoj	DoDonPachi SaiDaiOuJou (2012_ 4_20)
+dogfight	Dog Fight (Thunderbolt)
+dogyuun	Dogyuun
+dokaben	Dokaben (Japan)
+dokaben2	Dokaben 2 (Japan)
+dolmen	Dolmen
+domino	Domino Man (set 1)
+dommy	Dommy
+dondokod	Don Doko Don (World, rev 1)
+dkong	Donkey Kong (US set 1)
+dkong3	Donkey Kong 3 (US)
+dkongjr	Donkey Kong Junior (US set F-2)
+donpachi	DonPachi (USA, ver. 1.12, 95_05_2x)
+doomgeo	DoomGeo (HB, 8643a06)
+dorachan	Dora-chan (Japan)
+dorodon	Dorodon (set 1)
+dotrikun	Dottori Kun (new version)
+dblaxle	Double Axle (US, Rev 1, set 1)
+doubledr	Double Dragon (Neo-Geo)
+ddragon	Double Dragon (World set 1)
+ddragon3	Double Dragon 3_ The Rosetta Stone (US)
+ddragon2	Double Dragon II_ The Revenge (World)
+doubled1	Double Dragon One (HB, Beta 3.2)
+ddribble	Double Dribble
+dblpoint	Double Point
+dblewing	Double Wings (set 1)
+downtown	DownTown _ Mokugeki (set 1)
+drmicro	Dr. Micro
+drtomy	Dr. Tomy
+drtoppel	Dr. Toppel's Adventure (World)
+dbz	Dragon Ball Z (rev B)
+dbz2	Dragon Ball Z 2 - Super Battle
+dbzvrvs	Dragon Ball Z_ V.R. V.S. (Japan, Rev A)
+dragnblz	Dragon Blaze
+drgnbowl	Dragon Bowl (set 1, encrypted program)
+dbreed	Dragon Breed (World, M81 hardware)
+drgnbstr	Dragon Buster
+dragngun	Dragon Gun (US)
+drgnmst	Dragon Master (set 1)
+dsaber	Dragon Saber (World, DO2)
+dspirit	Dragon Spirit (new version (DS3))
+drgnunit	Dragon Unit _ Castle of Dragon
+drgnwrld	Dragon World (World, V040O)
+drgw3	Dragon World 3 _ Zhongguo Long 3 _ Dungfong Zi Zyu 3 _ Chuugokuryuu 3 Special (ver. 106)
+dwex	Dragon World 3 EX _ Zhongguo Long 3 EX _ Dungfong Zi Zyu 3 EX _ Chuugokuryuu 3 EX (ver. 100)
+drgw2	Dragon World II (ver. 110X, Export)
+dragonsh	Dragon's Heaven (development board)
+drakton	Drakton (DK conversion)
+keithlcy	Dramatic Adventure Quiz Keith _ Lucy (Japan)
+dreambal	Dream Ball (Japan V2.4)
+dremshpr	Dream Shopper
+dsoccr94	Dream Soccer '94 (World, M107 hardware)
+dreamwld	Dream World
+dribling	Dribbling (set 1)
+drifto94	Drift Out '94 - The Hard Order (Japan)
+driftout	Drift Out (Europe)
+drivfrcp	Driving Force (Pac-Man conversion)
+cdsteljn	DS Telejan (DECO Cassette) (Japan)
+ducki	Duck Tales (FMV Demo)
+ddsom	Dungeons _ Dragons_ Shadow over Mystara (Europe 960619)
+ddtod	Dungeons _ Dragons_ Tower of Doom (Europe 940412)
+dunkshot	Dunk Shot (Rev C, FD1089A 317-0022)
+dyger	Dyger (Korea set 1)
+dynagear	Dyna Gear
+dynablst	Dynablaster _ Bomber Man
+dcclub	Dynamic Country Club (World, ROM Based)
+dynamski	Dynamic Ski
+dynabomb	Dynamite Bomber (Korea, Rev 1.5)
+dynduke	Dynamite Duke (Europe, 03SEP89)
+ddux	Dynamite Dux (set 3, World) (FD1094 317-0096)
+dleague	Dynamite League (US)
+dynwar	Dynasty Wars (USA, B-Board 89624B-_)
+ejanhs	E Jong High School (Japan)
+ejsakura	E-Jan Sakurasou (Japan, SYS386F V2.0)
+edf	E.D.F._ Earth Defense Force (set 1)
+eaglshot	Eagle Shot Golf (US)
+ecofghtr	Eco Fighters (World 931203)
+eeekk	Eeekk!
+egghunt	Egg Hunt
+eggor	Eggor
+8ballact	Eight Ball Action (DK conversion)
+eightfrc	Eight Forces
+eightman	Eight Man (NGM-025 ~ NGH-025)
+efdt	El Fin Del Tiempo
+elevator	Elevator Action (BA3, 4 PCB version, 1.1)
+elvactr	Elevator Action Returns (Ver 2.2O 1995_02_20)
+elim2	Eliminator (2 Players, set 1)
+emeralda	Emeraldia (World)
+empcity	Empire City_ 1931 (bootleg_)
+enduror	Enduro Racer (Rev A, YM2151, FD1089B 317-0013A)
+enforce	Enforce (World)
+enmadaio	Enma Daio (Japan)
+equites	Equites (World)
+eprom	Escape from the Planet of the Robot Monsters (set 1)
+esckids	Escape Kids (Asia, 4 Players)
+esprade	ESP Ra.De. - A.D.2018 Tokyo (World, 1998 4_22 International Ver.)
+espgal	Espgaluda (2003_10_15 Master Ver)
+espgal2	Espgaluda II (2005_11_14.MASTER VER.)
+espial	Espial (Europe)
+euroch92	Euro Champ '92 (World)
+evilston	Evil Stone
+excelsr	Excelsior (set 1)
+exctleag	Excite League (FD1094 317-0079)
+exctsccr	Exciting Soccer (World)
+exctscc2	Exciting Soccer II (World)
+exedexes	Exed Exes
+exerion	Exerion
+cexplore	Explorer (DECO Cassette) (US)
+explbrkr	Explosive Breaker (World)
+exprraid	Express Raider (World, Rev 4)
+extrmatn	Extermination (World)
+exterm	Exterminator
+ebases	Extra Bases
+extdwnhl	Extreme Downhill (v1.5)
+exvania	Exvania (World)
+exzisus	Exzisus (Japan, dedicated)
+eyes	Eyes (US, set 1)
+f1dream	F-1 Dream (set 1)
+f1gp	F-1 Grand Prix (set 1)
+f1gp2	F-1 Grand Prix Part II
+f1gpstr2	F-1 Grand Prix Star II
+f1en	F1 Exhaust Note (World, Rev A)
+f1lap	F1 Super Lap (World)
+faceoff	Face Off (Japan 2 Players)
+fncywld	Fancy World - Earth of Crisis
+fantasia	Fantasia (940429 PCB, set 1)
+fantsia2	Fantasia II (Explicit)
+fantastc	Fantastic (Galaga conversion on Galaxian hardware)
+fantasyu	Fantasy (US)
+fantland	Fantasy Land (set 1)
+fantzone	Fantasy Zone (Rev A, unprotected)
+fantzn2	Fantasy Zone II - The Tears of Opa-Opa (MC-8123, 317-0057)
+fantzn2x	Fantasy Zone II - The Tears of Opa-Opa (System 16C version)
+kabukikl	Far East of Eden - Kabuki Klash _ Tengai Makyou - Shin Den
+fastlane	Fast Lane
+sqbert	Faster, Harder, More Challenging Q_bert (prototype)
+fatfury1	Fatal Fury - King of Fighters _ Garou Densetsu - Shukumei no Tatakai (NGM-033 ~ NGH-033)
+fatfury2	Fatal Fury 2 _ Garou Densetsu 2 - Arata-naru Tatakai (NGM-047 ~ NGH-047)
+fatfury3	Fatal Fury 3 - Road to the Final Victory _ Garou Densetsu 3 - Haruka-naru Tatakai (NGM-069 ~ NGH-069)
+fatfursp	Fatal Fury Special _ Garou Densetsu Special (NGM-058 ~ NGH-058, set 1)
+fax	FAX
+feversos	Fever SOS (World, 98_09_25 VER)
+fcombat	Field Combat
+fightfev	Fight Fever _ Wang Jung Wang (set 1)
+fghtatck	Fighter _ Attacker (US)
+fghthist	Fighter's History (World ver 43-09, DE-0395-1 PCB)
+fghtbskt	Fighting Basketball
+fhawk	Fighting Hawk (World)
+cfghtice	Fighting Ice Hockey (DECO Cassette) (US)
+fightrol	Fighting Roller
+fsoccer	Fighting Soccer (version 4)
+finalb	Final Blow (World)
+ffight	Final Fight (World, set 1)
+ffex2u	Final Fight EX (Hack, CPS2 hardware, USA RC1)
+ffightaec2	Final Fight_ Anniversary Edition (CPS2 hardware)
+finalgdr	Final Godori (Korea, version 2.20.5915)
+finallap	Final Lap (Rev E)
+finalap2	Final Lap 2
+finalap3	Final Lap 3 (World, Rev C)
+fstarfrc	Final Star Force (US)
+finalttr	Final Tetris
+finalizr	Finalizer - Super Transformation (set 1)
+finehour	Finest Hour (Japan)
+fball	Fire Ball (FM Work)
+firebatl	Fire Battle
+fireshrk	Fire Shark
+firetrap	Fire Trap (US, rev A)
+firebeas	Firebeast (prototype)
+fixeight	FixEight (Europe)
+flapchck	Flappy Chicken (HB, ver. 20230430)
+cfboy0a1	Flash Boy (vertical) (DECO Cassette MD) (No.12_Ver.0_Set.1,Japan)
+fpoint	Flash Point (set 2, Japan) (FD1094 317-0127A)
+flashgal	Flashgal (set 1)
+flicky	Flicky (128k Version, 315-5051)
+flipjack	Flipper Jack
+flower	Flower (US)
+flyboy	Fly-Boy
+cflyball	Flying Ball (DECO Cassette) (US)
+fshark	Flying Shark (World)
+flytiger	Flying Tiger (set 1)
+foodf	Food Fight (rev 3)
+foodfight	Food Fight - Neo Geo Conversion (HB)
+footchmp	Football Champ _ Euro Football Champ (World)
+fbfrenzy	Football Frenzy (NGM-034 ~ NGH-034)
+forgottn	Forgotten Worlds (World, newer)
+formatz	Formation Z
+fort2b	Fortress 2 Blue Arcade (World) (ver 1.01 _ pcb ver 3.05)
+fourtrax	Four Trax (World)
+freekick	Free Kick (NS6201-A 1987.10)
+freeze	Freeze
+frenzy	Frenzy (revision RA1)
+friskyt	Frisky Tom (set 1)
+fspiderb	Frog _ Spiders (bootleg_)
+cps1frog	Frog Feast (CPS-1)
+pgmfrog	Frog Feast (PGM)
+frogger	Frogger
+frontlin	Front Line (AA1, 4 PCB version)
+funkybee	Funky Bee
+fnkyfish	Funky Fish
+funkyjet	Funky Jet (World, rev 1)
+funybubl	Funny Bubble
+futspy	Future Spy (315-5061)
+gloc	G-LOC Air Battle (World)
+gstream	G-Stream G2020
+gijoe	G.I. Joe (World, EAB)
+gaialast	Gaia - The Last Choice of Earth
+gaia	Gaia Crusaders
+gaiapols	Gaiapolis (ver EAF)
+gground	Gain Ground (World, 3 Players, Floppy Based, FD1094 317-0058-03d Rev A)
+galastrm	Galactic Storm (Japan)
+bs_gwarrior	Galactic Warriors (Bubble System)
+gwarrior	Galactic Warriors
+galaga88	Galaga '88
+galaga	Galaga (Namco rev. B)
+neogalag	Galaga Demo (HB, set 1)
+galaxian	Galaxian (Namco set 1)
+galaxianng	Galaxian - Neo Geo Conversion (HB, Beta2)
+galaxyfg	Galaxy Fight - Universal Warriors
+gforce2	Galaxy Force 2
+galgame	Galaxy Game
+galaxygn	Galaxy Gunners
+galmedes	Galmedes (Japan)
+galsnew	Gals Panic (Export, EXPRO-02 PCB)
+galpanic	Gals Panic (unprotected, ver. 2.0)
+galpani3	Gals Panic 3 (Euro)
+galpani4	Gals Panic 4 (Europe)
+galpanis	Gals Panic S - Extra Edition (Europe, revision 1)
+galpans2	Gals Panic S2 (Europe, version 3)
+galpans3	Gals Panic S3 (Japan)
+galspnbl	Gals Pinball
+usgames	Games V25.4X
+ginkun	Ganbare Ginkun
+ganbare	Ganbare! Marine Kun (Japan 2K0411)
+gbusters	Gang Busters (set 1)
+gangwars	Gang Wars
+ganryu	Ganryu _ Musashi Ganryuki
+gaplus	Gaplus (GP2 rev. B)
+gardia	Gardia (317-0006)
+garogun	Garogun Seroyang (Korea)
+garou	Garou - Mark of the Wolves (NGM-2530)
+garyoret	Garyo Retsuden (Japan)
+gauntlet	Gauntlet (rev 14)
+gaunt2	Gauntlet II
+geebee	Gee Bee (Japan)
+gekiridn	Gekirindan (Ver 2.3O 1995_09_21)
+gekisou	Gekisou (Japan)
+gemini	Gemini Wing (World)
+genix	Genix Family
+genpeitd	Genpei ToumaDen
+ghostbi	Ghost Busters (FMV Demo)
+gpilots	Ghost Pilots (NGM-020 ~ NGH-020)
+ghostlop	Ghostlop (prototype)
+gmgalax	Ghostmuncher Galaxian (bootleg)
+gng	Ghosts'n Goblins (World_ set 1)
+ghouls	Ghouls'n Ghosts (World)
+ghox	Ghox (spinner)
+gigawing	Giga Wing (USA 990222)
+gigandes	Gigandes
+gigas	Gigas (MC-8123, 317-5002)
+gigasm2	Gigas Mark II (MC-8123, 317-5002)
+ginganin	Ginga Ninkyouden (set 1)
+gladiatr	Gladiator (US)
+sgladiat	Gladiator 1984
+gladmort	GladMort (HB)
+glass	Glass (ver 1.1, Break Edition, checksum 49D5E66B, Version 1994, set 1)
+go2000	Go 2000
+yamagchi	Go Go Mr. Yamaguchi _ Yuke Yuke Yamaguchi-kun
+goalx3	Goal! Goal! Goal!
+godzilla	Godzilla (Japan)
+plegends	Gogetsuji Legends (US, Ver. 95.06.20)
+goindol	Goindol (SunA, World)
+goldmedl	Gold Medalist (set 1, Alpha68k II PCB)
+goldnaxe	Golden Axe (set 6, US) (8751 317-123A)
+goldnaxeng	Golden Axe Neo Geo (HB)
+ga2	Golden Axe_ The Revenge of Death Adder (World, Rev B)
+gfire2	Golden Fire II
+gpgolf	Golden Par Golf (Joystick, V1.1)
+gt97	Golden Tee '97 (v1.30)
+gt98	Golden Tee '98 (v1.10)
+gt99	Golden Tee '99 (v1.00)
+gt2k	Golden Tee 2K (v1.00)
+gt3d	Golden Tee 3D Golf (v1.93N)
+gtclassc	Golden Tee Classic (v1.00)
+gtg	Golden Tee Golf (Joystick, v3.3)
+gtg2	Golden Tee Golf II (Trackball, V2.2)
+gollygho	Golly! Ghost!
+gondo	Gondomania (World)
+goori	Goori Goori
+gorf	Gorf
+gorodki	Gorodki
+gotcha	Got-cha Mini Game Festival
+ryorioh	Gourmet Battle Quiz Ryohrioh CooKing (Japan)
+gprider	GP Rider (World, FD1094 317-0163) (Twin setup)
+bs_gradius	Gradius (Bubble System)
+gradius3	Gradius III (World, version R)
+f1gpstar	Grand Prix Star (ver 4.0)
+gstrik2	Grand Striker 2 (Europe and Oceania)
+grndtour	Grand Tour (V100U)
+grasspin	Grasspin
+gratia	Gratia - Second Earth (ver 1.0, 92047-01 version)
+gravitar	Gravitar (version 3)
+gslgr94u	Great Sluggers '94
+gslugrsj	Great Sluggers (Japan)
+gberet	Green Beret
+gseeker	Grid Seeker_ Project Storm Hammer (Ver 1.3O)
+gridiron	Gridiron Fight
+gridlee	Gridlee
+grindstm	Grind Stormer
+grobda	Grobda (New Ver.)
+groundfx	Ground Effects _ Super Ground Effects (Japan)
+growl	Growl (World, Rev 1)
+grmatch	Grudge Match (Yankee Game Technology)
+grdian	Guardian (US)
+grdnstrm	Guardian Storm (horizontal, not encrypted)
+grdians	Guardians _ Denjin Makai II (P-FG01-1 PCB)
+gwar	Guerrilla War (US)
+gulfstrm	Gulf Storm (set 1)
+gulfwar2	Gulf War II (set 1)
+gulunpa	Gulun.Pa! (Japan 931220 L) (prototype)
+gumbo	Gumbo
+gunfront	Gun _ Frontier (World)
+gundl94	Gun Dealer '94
+gunforc2	Gun Force II (US)
+gunmast	Gun Master
+gunsmoke	Gun.Smoke (World, 1985-11-15)
+gnbarich	Gunbarich
+gunbird	Gunbird (World)
+gunbird2	Gunbird 2 (set 1)
+gunbustr	Gunbuster (World)
+gundhara	Gundhara
+gunforce	Gunforce - Battle Fire Engulfed Terror Island (World)
+gunlock	Gunlock (Ver 2.3O 1994_01_20)
+gunnail	GunNail (28th May. 1992)
+gururin	Gururin
+gutsn	Guts'n (Japan)
+guwange	Guwange (Japan, 1999 6_24 Master Ver 16_55)
+guzzler	Guzzler
+pbancho	Gyakuten!! Puzzle Bancho (Japan, set 1)
+gyrodine	Gyrodine
+gyruss	Gyruss
+hachamf	Hacha Mecha Fighter (19th Sep. 1991, protected, set 1)
+hachoo	Hachoo! (World, set 1)
+hal21	HAL21
+halleysc	Halley's Comet (US)
+halozero	Halo Zero (HB, Demo)
+hamaway	Hammer Away (Japan, prototype)
+hamboy	Hammer Boy
+hharry	Hammerin' Harry (World, M81 hardware)
+hangon	Hang-On (Rev A)
+hangonng	Hang-On - Neo Geo Conversion (HB, v2.1)
+hangonjr	Hang-On Jr. (Rev. B)
+hangzo	Hangzo (Japan, prototype)
+harddunk	Hard Dunk (World)
+hardhat	Hard Hat
+hardhea2	Hard Head 2 (v2.0, Music Program v2.4)
+hardhead	Hard Head
+hrdtimes	Hard Times (set 1)
+hardyard	Hard Yardage (v1.20)
+harem	Harem
+hasamu	Hasamu (Japan)
+htchctch	Hatch Catch
+hatris	Hatris (US)
+hcastle	Haunted Castle (version M)
+hayaosi2	Hayaoshi Quiz Grand Champion Taikai
+hayaosi3	Hayaoshi Quiz Nettou Namahousou (ver 1.5)
+hayaosi1	Hayaoshi Quiz Ouza Ketteisen_ The King Of Quiz
+headon	Head On (2 players)
+hedpanic	Head Panic (ver. 0117, 17_01_2000)
+heatbrl	Heated Barrel (World version 3)
+hbarrel	Heavy Barrel (World)
+hvymetal	Heavy Metal (315-5135)
+hvysmsh	Heavy Smash (Europe version -2)
+hvyunit	Heavy Unit (World)
+hwchamp	Heavyweight Champ (set 1)
+heberpop	Hebereke no Popoon (Japan)
+heiankyo	Heiankyo Alien
+hellfire	Hellfire (2P set)
+hero	Hero
+heuksun	Heuk Sun Baek Sa (Korea)
+hexa	Hexa
+hexion	Hexion (Japan ver JAB)
+hidnctch	Hidden Catch (World) _ Tul Lin Gu Lim Chat Ki '98 (Korea) (pcb ver 3.03)
+hidctch2	Hidden Catch 2 (pcb ver 3.03) (Kor_Eng) (AT89c52 protected)
+hidnc2k	Hidden Catch 2000 (AT89c52 protected)
+hidctch3	Hidden Catch 3 (ver 1.00 _ pcb ver 3.05)
+hiimpact	High Impact Football (rev LA5 02_15_91)
+hvoltage	High Voltage (World)
+hwrace	High Way Race
+chwy	Highway Chase (DECO Cassette) (US)
+himesiki	Himeshikibu (Japan)
+hippodrm	Hippodrome (US)
+hitnmiss	Hit 'n Miss (version 3.0)
+hitice	Hit the Ice (US)
+hoccer	Hoccer (newer)
+holeland	Hole Land (Japan)
+holo	Holosseum (US, Rev A)
+honeydol	Honey Doll
+hook	Hook (World)
+hoops96	Hoops '96 (Europe_Asia 2.0)
+hopprobo	Hopper Robo
+hopmappy	Hopping Mappy
+horizon	Horizon (Irem)
+hotchase	Hot Chase (set 1)
+hotmind	Hot Mind (Hard Times hardware, set 1)
+hotpinbl	Hot Pinball
+hotrod	Hot Rod (World, 3 Players, Turbo set 1, Floppy Based)
+hotshock	Hot Shocker
+hstennis	Hot Shots Tennis (V1.1)
+hotdogst	Hotdog Storm - The First Supersonics (Korea)
+happy6	Huanle Liu He Yi (Happy 6-in-1) (M68K ver. V101, ARM ver. V102CN)
+hunchbak	Hunchback (set 1)
+huncholy	Hunchback Olympic
+hustle	Hustle
+hydra	Hydra
+hcrash	Hyper Crash (version D)
+hyprduel	Hyper Duel (Japan set 1)
+hyperpac	Hyper Pacman
+hyperspt	Hyper Sports
+hsf2	Hyper Street Fighter II_ The Anniversary Edition (USA 040202)
+hypernoid	Hypernoid (HB, ver. 20220224)
+imsorry	I'm Sorry (315-5110, US)
+ibara	Ibara (2005_03_22 MASTER VER.., '06. 3. 7 ver.)
+ibarablk	Ibara Kuro Black Label (2006_02_06. MASTER VER.)
+suchie2	Idol Janshi Suchie-Pai II (ver 1.1)
+froman2b	Idol Mahjong Final Romance 2 (Neo-Geo, bootleg of CD version)
+igmo	IGMO
+ikari3	Ikari III - The Rescue (World version 1, 8-Way Joystick)
+ikari	Ikari Warriors (US JAMMA)
+ikki	Ikki (Japan)
+imgfight	Image Fight (World)
+imago	Imago (cocktail set)
+inthehunt	In The Hunt (Demo Version)
+inthunt	In The Hunt (World)
+inyourfa	In Your Face (North America, prototype)
+indytemp	Indiana Jones and the Temple of Doom (set 1)
+insector	Insector (prototype)
+insectx	Insector X (World)
+intcup94	International Cup '94 (Ver 2.2O 1994_05_26)
+intrepid	Intrepid (set 1)
+invds	Invinco _ Deep Scan
+invinco	Invinco
+iqblock	IQ-Block (V100U)
+ironfort	Iron Fortress
+ironhors	Iron Horse (version K)
+itaten	Itazura Tenshi (Japan)
+ixion	Ixion (prototype)
+vshoot	J-League Soccer V-Shoot (Japan)
+jjsquawk	J. J. Squawkers
+jackrabt	Jack Rabbit (set 1)
+jack	Jack the Giantkiller (set 1)
+jackal	Jackal (World, 8-way Joystick)
+jchan	Jackie Chan - The Kung-Fu Master (rev 4_)
+jchan2	Jackie Chan in Fists of Fire
+jailbrek	Jail Break
+jammin	Jammin' (prototype)
+jjparad2	Jan Jan Paradise 2
+jjparads	Jan Jan Paradise
+choko	Janpai Puzzle Choukou (Japan 010820)
+janshin	Janshin Densetsu - Quest of Jongmaster
+jetpac	Jetpac (HB)
+cultures	Jibun wo Migaku Culture School Mahjong Hen
+jin	Jin
+jitsupro	Jitsuryoku!! Pro Yakyuu (Japan)
+jockeygp	Jockey Grand Prix (set 1)
+joemacr	Joe _ Mac Returns (World, Version 1.1, 1994.05.27)
+joinem	Joinem
+jojoba	JoJo's Bizarre Adventure (Europe 991015, NO CD)
+jojo	JoJo's Venture (Europe 990128)
+jollyjgr	Jolly Jogger
+ltorb	Jonas Indiana and the Lost Temple of RA (HB, ver. 20050717)
+jongpute	Jongputer
+journey	Journey
+joust	Joust (Green label)
+joyfulr	Joyful Road (Japan)
+jrpacman	Jr. Pac-Man (11_9_83)
+jdreddp	Judge Dredd (rev TA1 7_12_92, location test)
+jumpbug	Jump Bug
+jumpcoas	Jump Coaster (World)
+jumpkids	Jump Kids
+jumpkun	Jump Kun (prototype)
+jumpshot	Jump Shot
+jmpbreak	Jumping Break (set 1)
+jcross	Jumping Cross (set 1)
+jjack	Jumping Jack
+jpopnics	Jumping Pop (Nics, Korean hack of Plump Pop)
+jumppop	Jumping Pop (set 1)
+junglek	Jungle King (Japan)
+jungler	Jungler
+junofrst	Juno First
+jpark	Jurassic Park (World, Rev A)
+jurl	Jurl (HB, v0.3c)
+jyangoku	Jyangokushi_ Haoh no Saihai (Japan 990527)
+kabukiz	Kabuki-Z (World)
+kageki	Kageki (World)
+kaiserkn	Kaiser Knuckle (Ver 2.1O 1994_07_29)
+kaitei	Kaitei Takara Sagashi
+kamikcab	Kamikaze Cabbie
+kangaroo	Kangaroo
+karatblz	Karate Blazers (World, set 1)
+kchamp	Karate Champ (US)
+kchampvs	Karate Champ_ Player Vs Player (US, set 1)
+karianx	Karian Cross (Rev. 1.0)
+karnov	Karnov (US, rev 6)
+karnovng	Karnov Neo Geo (HB)
+karnovr	Karnov's Revenge _ Fighter's History Dynamite
+keroppi	Kero Kero Keroppi's Let's Play Together (USA, Version 2.0)
+ket	Ketsui_ Kizuna Jigoku Tachi (2003_01_01. Master Ver.)
+kick	Kick (upright)
+kicknrun	Kick and Run (World)
+kickball	Kick Ball
+kickboy	Kick Boy
+kickgoal	Kick Goal (set 1)
+kickoff	Kick Off_ Jaleco Cup (Japan)
+kickridr	Kick Rider
+kikstart	Kick Start_ Wheelie King
+kicker	Kicker
+kidniki	Kid Niki - Radical Ninja (World)
+horekidb3	Kid no Hore Hore Daisakusen - Neo Geo Conversion (HB)
+horekid	Kid no Hore Hore Daisakusen
+kikikai	KiKi KaiKai
+kinst	Killer Instinct (ROM ver. 1.5d)
+kinst2	Killer Instinct II (ROM ver. 1.4)
+kingball	King _ Balloon (US)
+kingofb	King of Boxer (World)
+kotm	King of the Monsters (set 1)
+kotm2	King of the Monsters 2 - The Next Thing (NGM-039 ~ NGH-039)
+kingdmgp	Kingdom Grandprix
+kirameki	Kirameki Star Road (Ver 2.10J 1997_08_29)
+kittenk	Kitten Kaboodle
+kizuna	Kizuna Encounter - Super Tag Battle _ Fu'un Super Tag Battle
+klax	Klax (version 6)
+klondkp	KlonDike+
+knightsch	Knight's Chance (HB)
+kngtmare	Knightmare (prototype)
+knights	Knights of the Round (World 911127)
+kov	Knights of Valour _ San Guo Zhan Ji _ Sangoku Senki (ver. 117, Hong Kong)
+kov2	Knights of Valour 2 _ Sanguo Zhan Ji 2 _ Sangoku Senki 2 (ver. 107, 102, 100HK)
+kov2nl	Knights of Valour 2 New Legend (V302, Overseas)
+kov2p	Knights of Valour 2 Plus - Nine Dragons _ Sanguo Zhan Ji 2 Qunxiong Zhengba _ Sanguo Zhan Ji 2 Feilong Zai Tian _ Sangoku Senki Busyou Souha (ver. M205XX, 200, 100CN)
+kov3	Knights of Valour 3 (V104, China)
+kovplus	Knights of Valour Plus _ San Guo Zhan Ji - Zheng Zong Plus _ Sangoku Senki Masamune Plus (ver. 119, set 1)
+kovsh	Knights of Valour Super Heroes _ San Guo Zhan Ji - Feng Yun Zai Qi _ Sangoku Senki Super Heroes (ver. 104, CN)
+kovytzy	Knights of Valour Super Heroes _ San Guo Zhan Ji - Yi Tong Zhong Yuan _ Sangoku Senki Super Heroes (SANGO EX+) (ver. 201 'Yitong Zhongyuan', China)
+kovshp	Knights of Valour Super Heroes Plus _ San Guo Zhan Ji - Luan Shi Xiao Xiong (ver. 101)
+kbash2	Knuckle Bash 2 (bootleg)
+kbash	Knuckle Bash
+knckhead	Knuckle Heads (World)
+kncljoe	Knuckle Joe (set 1)
+koikois2	Koi Koi Shimasho 2 - Super Real Hanafuda (Japan)
+eto	Kokontouzai Eto Monogatari (Japan)
+konamigt	Konami GT
+bs_rf2	Konami RF2_ Red Fighter (Bubble System)
+kontest	Konami Test Board (GX800, Japan)
+pingpong	Konami's Ping-Pong
+konek	Konek-Gorbunok
+kong	Kong (Donkey Kong conversion on Galaxian hardware)
+korokoro	Koro Koro Quest (Japan)
+myangel	Kosodate Quiz My Angel (Japan)
+myangel2	Kosodate Quiz My Angel 2 (Japan)
+kot	Kot-Rybolov (Terminal)
+kouyakyu	Koukou Yakyuu, The (Japan)
+strahl	Koutetsu Yousai Strahl (World)
+kroozr	Kozmik Kroozr
+kozure	Kozure Ookami (Japan)
+kram	Kram (rev 1)
+krzybowl	Krazy Bowl
+krull	Krull
+kungfum	Kung-Fu Master (World)
+kungfut	Kung-Fu Taikun (set 1)
+kurikint	Kuri Kinton (World)
+ksayakyu	Kusayakyuu
+kyros	Kyros
+kyukaidk	Kyuukai Douchuuki (Japan, new version (Rev B))
+divebomb	Kyuukoukabakugekitai - Dive Bomber Squad (Japan, prototype)
+ladybug	Lady Bug
+ladyfrog	Lady Frog
+ladykill	Lady Killer
+ladymstr	Lady Master of Kung Fu (rev 1)
+landbrk	Land Breaker (World) _ Miss Tang Ja Ru Gi (Korea) (pcb ver 3.02)
+landmakr	Land Maker (Ver 2.02O 1998_06_02)
+lsasquad	Land Sea Air Squad _ Riku Kai Kuu Saizensen
+lvgirl94	Las Vegas Girl (Girl '94)
+lghost	Laser Ghost (World) (FD1094 317-0166)
+lasso	Lasso
+lastduel	Last Duel (US New Ver.)
+lastfort	Last Fortress - Toride (Japan, VG420 PCB)
+lasthope	Last Hope (bootleg AES to MVS conversion, no coin support)
+lhcdb	Last Hope CD Beta (Neo CD conversion)
+lastkm	Last KM (ver 1.0.0275, checksum 13bff751, prototype)
+lastmisn	Last Mission (World revision 8)
+lresort	Last Resort
+kyustrkr	Last Striker _ Kyuukyoku no Striker
+lastsurv	Last Survivor (Japan) (FD1094 317-0083)
+lazybug	Lazy Bug
+lbowling	League Bowling (NGM-019 ~ NGH-019)
+leds2011	Led Storm Rally 2011 (World)
+fitegolf	Lee Trevino's Fighting Golf (World_)
+loht	Legend of Hero Tonma (World)
+legendoh	Legend of Heroes
+lomakai	Legend of Makai (World)
+legendos	Legend of Success Joe _ Ashita no Joe Densetsu
+lwings	Legendary Wings (US, rev. C)
+legend	Legend
+legion	Legion - Spinner-87 (World ver 2.03)
+legionna	Legionnaire (World)
+lemmings	Lemmings (US prototype)
+crshrace	Lethal Crash Race _ Bakuretsu Crash Race (set 1)
+lethalen	Lethal Enforcers (ver UAE, 11_19_92 15_04)
+lethalth	Lethal Thunder (World)
+levers	Levers
+liblrabl	Libble Rabble
+liberate	Liberation
+lightbr	Light Bringer (Ver 2.2O 1994_04_08)
+lgtnfght	Lightning Fighters (World)
+ltswords	Lightning Swords (World)
+loffire	Line of Fire _ Bakudan Yarou (World) (FD1094 317-0136)
+linkypip	Linky Pipe
+liquidk	Liquid Kids (World)
+littlerb	Little Robin
+livequiz	Live Quiz Show
+lizwiz	Lizard Wizard
+lockonph	Lock On (Philko)
+clocknch	Lock'n'Chase (DECO Cassette) (US)
+lnc	Lock'n'Chase
+lockon	Lock-On (rev. E)
+locomotn	Loco-Motion
+ldrun	Lode Runner (set 1)
+loderndf	Lode Runner - The Dig Fight (ver. B)
+ldrun2	Lode Runner II - The Bungeling Strikes Back
+ldrun3	Lode Runner III - The Golden Labyrinth
+ldrun4	Lode Runner IV - Teikoku Karano Dasshutsu (Japan)
+logicpr2	Logic Pro 2 (Japan)
+looptrsp	Looptris Plus (HB, ver. 20221224)
+lordgun	Lord of Gun (World)
+losttomb	Lost Tomb (easy)
+lotlot	Lot Lot
+lottofun	Lotto Fun
+janjans1	Lovely Pop Mahjong JangJang Shimasho (Japan)
+janjans2	Lovely Pop Mahjong JangJang Shimasho 2 (Japan)
+loverboy	Lover Boy
+luckywld	Lucky _ Wild
+luckboom	Lucky Boom
+cluckypo	Lucky Poker (DECO Cassette) (US)
+luctoday	Lucky Today
+llander	Lunar Lander (rev 2)
+mia	M.I.A. - Missing in Action (version T)
+machbrkr	Mach Breakers (World, MB2)
+machomou	Macho Mouse
+macrossp	Macross Plus
+madcrash	Mad Crasher
+maddonna	Mad Donna (Tuning, set 1)
+madgear	Mad Gear (US)
+madmotor	Mad Motor (prototype, set 1)
+mplanets	Mad Planets
+madshark	Mad Shark
+magmax	Mag Max (set 1)
+magicbub	Magic Bubble
+magipur	Magic Purple
+magicstk	Magic Sticks
+msword	Magic Sword_ Heroic Fantasy (World 900725)
+mcatadv	Magical Cat Adventure
+mgcrystl	Magical Crystals (World, 92_01_10)
+magdrop3	Magical Drop III
+magdrop2	Magical Drop II
+magerror	Magical Error wo Sagase
+mpumpkin	Magical Pumpkin_ Puroland de Daibouken (Japan 960712)
+magicbal	Magicball Fighting (Korea)
+maglord	Magician Lord (NGM-005)
+magix	Magix _ Rock
+akiss	Mahjong Angel Kiss (ver 1.0)
+mjgtaste	Mahjong G-Taste
+mgakuen2	Mahjong Gakuen 2 Gakuen-chou no Fukushuu
+mgakuen	Mahjong Gakuen
+hotgmcki	Mahjong Hot Gimmick Integral (Japan)
+hypreact	Mahjong Hyper Reaction (Japan)
+hypreac2	Mahjong Hyper Reaction 2 (Japan)
+mahretsu	Mahjong Kyo Retsuden (NGM-004 ~ NGH-004)
+mjkjidai	Mahjong Kyou Jidai (Japan)
+mjnquest	Mahjong Quest (Japan)
+mainsnk	Main Event (1984)
+maiya	Maiya_ Super Nature Girl (HB, v4)
+mhavoc	Major Havoc (rev 3)
+mjleague	Major League
+majtitle	Major Title (World)
+majtitl2	Major Title 2 (World, set 1)
+mangchi	Mang-Chi
+cmanhat	Manhattan (DECO Cassette) (Japan)
+maniach	Mania Challenge (set 1)
+maniacsq	Maniac Square (unprotected, version 1.0, checksum BB73)
+maniacsp	Maniac Square (ver 1.0, checksum b602, prototype)
+manybloc	Many Block
+mappy	Mappy (US)
+marble	Marble Madness (set 1)
+marblmd2	Marble Madness II (prototype)
+mmaze	Marchen Maze (Japan)
+marineb	Marine Boy
+mariner	Mariner
+mario	Mario Bros. (US, Revision E)
+markham	Markham
+mmatrix	Mars Matrix_ Hyper Solid Shooting (USA 000412)
+mars	Mars
+mtlchamp	Martial Champion (ver EAB)
+martmast	Martial Masters _ Xing Yi Quan (ver. 104, 102, 102US)
+marvland	Marvel Land (Japan)
+msh	Marvel Super Heroes (Europe 951024)
+mshvsf	Marvel Super Heroes Vs. Street Fighter (Europe 970625)
+mvsc	Marvel Vs. Capcom_ Clash of Super Heroes (Europe 980123)
+marvins	Marvin's Maze
+kamenrid	Masked Riders Club Battle Race _ Kamen Rider Club Battle Racer
+mastboyo	Master Boy (1987, Z80 hardware, Covielsa, set 1)
+masterw	Master of Weapon (World)
+mastfury	Master's Fury
+matmania	Mat Mania
+matchit2	Match It II
+matchit	Match It
+matrim	Matrimelee _ Shin Gouketsuji Ichizoku Toukon (NGM-2660 ~ NGH-2660)
+maxrpm	Max RPM (ver 2)
+mayday	Mayday (set 1)
+mazeinv	Maze Invaders (prototype)
+mofflott	Maze of Flott (Japan)
+mazinger	Mazinger Z (World)
+mechatt	Mechanized Attack (World)
+megablst	Mega Blast (World)
+megaman2	Mega Man 2_ The Power Fighters (USA 960708)
+megaman	Mega Man_ The Power Battle (CPS1, USA 951006)
+megaphx	Mega Phoenix
+mtwins	Mega Twins (World 900619)
+megazone	Mega Zone (version L)
+megadon	Megadon
+megrescu	Megumi Rescue
+meijinsn	Meijinsen (set 1)
+kikcubic	Meikyu Jima (Japan)
+meikyuh	Meikyuu Hunter G (Japan)
+meosism	Meosis Magic (Japan)
+mercs	Mercs (World 900302)
+merlinmm	Merlins Money Maze
+metafox	Meta Fox
+metalb	Metal Black (World)
+metlclsh	Metal Clash (Japan)
+metlfrzr	Metal Freezer (Japan)
+metlhawk	Metal Hawk (Rev C)
+metlsavr	Metal Saver
+mslug	Metal Slug - Super Vehicle-001
+mslug2	Metal Slug 2 - Super Vehicle-001_II (NGM-2410 ~ NGH-2410)
+mslug3	Metal Slug 3 (NGM-2560)
+mslug3x	Metal Slug 3X - Complete Collection (Hack)
+mslug4	Metal Slug 4 (NGM-2630)
+ms5pcb	Metal Slug 5 (JAMMA PCB)
+mslug5	Metal Slug 5 (NGM-2680)
+mslugx	Metal Slug X - Super Vehicle-001 (NGM-2500 ~ NGH-2500)
+msisaac	Metal Soldier Isaac II
+metmqstr	Metamoqester (World)
+metamrph	Metamorphic Force (ver EAA)
+metrocrs	Metro-Cross (set 1)
+mwalk	Michael Jackson's Moonwalker (World) (FD1094_8751 317-0159)
+micon2	Micon-Kit Part II
+midres	Midnight Resistance (World, set 1)
+midnight	Midnight Wanderers_ Quest for the Chariot (HB, Demo)
+mightguy	Mighty Guy
+mimonkey	Mighty Monkey
+mwarr	Mighty Warriors (24_1)
+mpang	Mighty! Pang (Europe 001010)
+mikie	Mikie
+gtmr2	Mille Miglia 2_ Great 1000 Miles Rally (95_05_24)
+milliped	Millipede
+minasan	Minasan no Okagesamadesu! Dai Sugoroku Taikai (MOM-001 ~ MOH-001)
+minefld	Minefield
+mineswpr	Minesweeper
+minivadr	Mini Vaders
+mmonkey	Minky Monkey
+mirage	Mirage Youjuu Mahjongden (Japan)
+mirninja	Mirai Ninja (Japan, set 1)
+mirax	Mirax (set 1)
+msbingo	Miss Bingo
+missb2	Miss Bubble II
+mspuzzle	Miss Puzzle
+missw96	Miss World '96 (Nude) (C-3000A PCB, set 1)
+missw02	Miss World 2002
+missile	Missile Command (rev 3, A035467-02_04 PCBs)
+m660	Mission 660 (US)
+misncrft	Mission Craft (version 2.7)
+cmissnx	Mission-X (DECO Cassette) (US)
+mrviking	Mister Viking (315-5041)
+quiz18k	Miyasu Nonki no Quiz 18-Kin
+gundamex	Mobile Suit Gundam EX Revue
+gdfs	Mobile Suit Gundam Final Shooting (Japan)
+msgundam	Mobile Suit Gundam
+moguchan	Mogu Chan (bootleg_)
+mogura	Mogura Desse (Japan)
+mole	Mole Attack
+momoko	Momoko 120% (Japanese text)
+monymony	Money Money (set 1)
+miexchng	Money Puzzle Exchanger _ Money Idol Exchanger
+headonch	Monita to Rimoko no Head On Channel (prototype, hack)
+ngmontst	Monitor Test Patterns Tool (v1.3)
+mmagic	Monkey Magic
+monsterb	Monster Bash
+mmaulers	Monster Maulers (ver EAA)
+mslider	Monster Slider (Japan)
+mstworld	Monsters World (bootleg of Super Pang)
+moonal2	Moon Alien Part 2
+mooncrst	Moon Cresta (Nichibutsu)
+mpatrol	Moon Patrol
+moonqsr	Moon Quasar
+mshuttle	Moon Shuttle (US_ set 1)
+moonwarp	Moon War (prototype on Frenzy hardware)
+moonwar	Moonwar
+moremorp	More More Plus
+moremore	More More
+quizhuhu	Moriguchi Hiroko no Quiz de Hyuu!Hyuu! (Ver 2.2J 1995_05_25)
+mk	Mortal Kombat (rev 5.0 T-Unit 03_19_93)
+mk3	Mortal Kombat 3 (rev 2.1)
+mk2	Mortal Kombat II (rev L3.1)
+mortalr	Mortal Race
+mosaicf2	Mosaic (F2 System)
+mosaic	Mosaic
+motos	Motos
+msgogo	Mouse Shooter GoGo
+mtrap	Mouse Trap (version 5)
+mouser	Mouser
+mrdig	Mr. Dig
+mrdo	Mr. Do!
+dowild	Mr. Do's Wild Ride
+docastle	Mr. Do's Castle (set 1)
+mrgoemon	Mr. Goemon (Japan)
+mrjong	Mr. Jong (Japan)
+mrkicker	Mr. Kicker (F-E1-16-010 PCB)
+mrkougar	Mr. Kougar
+mrtnt	Mr. TNT
+donight	Mr.Do's Nightmare (hack by Krazy Ivan)
+mrsdyna	Mrs. Dynamite
+mspactwin	Ms Pac Man Twin (Argentina, set 1)
+20pacgal	Ms. Pac-Man_Galaga - 20th Anniversary Class of 1981 Reunion (V1.08)
+mspacman	Ms. Pac-Man
+rocktrv2	MTV Rock-N-Roll Trivia (Part 2)
+mmpork	Muchi Muchi Pork! (2007_ 4_17 MASTER VER.)
+mugsmash	Mug Smashers
+semibase	MuHanSeungBu (SemiCom Baseball) (Korea)
+nmg5	Multi 5 _ New Multi Game 5 (set 1)
+multchmp	Multi Champ (World, ver. 9.6)
+mchampdx	Multi Champ Deluxe (ver. 0106, 06_01_2000)
+mbombrd	Muscle Bomber Duo_ Ultimate Team Battle (World 931206)
+musclem	Muscle Master
+mushisam	Mushihime-Sama (2004_10_12.MASTER VER.)
+futaribl	Mushihime-Sama Futari Black Label - Another Ver (2009_11_27 INTERNATIONAL BL)
+futari15	Mushihime-Sama Futari Ver 1.5 (2006_12_8.MASTER VER. 1.54.)
+matsuri15	Mushihime-Sama Matsuri Ver 1.5 (2011_5_23 CAVEMATSURI VER1.5)
+musicbal	Music Ball
+shoottv	Must Shoot TV (prototype)
+mustache	Mustache Boy (Japan)
+mutantf	Mutant Fighter (World ver EM-5)
+mnight	Mutant Night
+mutnat	Mutation Nation (NGM-014 ~ NGH-014)
+mvp	MVP (set 2, US) (FD1094 317-0143)
+mx5000	MX5000 (version U)
+myhero	My Hero (US, not encrypted)
+mystston	Mysterious Stones - Dr. John's Adventure
+mysticri	Mystic Riders (World)
+mystwarr	Mystic Warriors (ver EAA)
+nsub	N-Sub (upright)
+nycaptor	N.Y. Captor (rev 2)
+nam1975	NAM-1975 (NGM-001 ~ NGH-001)
+namenayo	Namennayo (Japan)
+naname	Naname de Magic! (Japan)
+narc	Narc (rev 7.00)
+nastar	Nastar (World)
+natodef	NATO Defense
+naughtyb	Naughty Boy
+nmouse	Naughty Mouse (set 1)
+navarone	Navarone
+nbahangt	NBA Hangtime (ver L1.3 10_10_96)
+nbajam	NBA Jam (rev 3.01 4_07_93)
+nbajamte	NBA Jam Tournament Edition (rev 4.0 3_23_94)
+cnebula	Nebula (DECO Cassette) (UK)
+nebulray	Nebulas Ray (World, NR2)
+neckneck	Neck-n-Neck (v1.2)
+nemesis	Nemesis (ROM version)
+nemo	Nemo (World 901130)
+neo2048	Neo 2048 (HB)
+neo2500	Neo 2500 Demo
+nblktiger	Neo Black Tiger (HB, Demo)
+neobombe	Neo Bomberman
+neocstlv	Neo CastleVania (HB, Demo)
+neodrift	Neo Drift Out - New Technology
+ngfrog	Neo Frog Feast (HB)
+neocdz	Neo Geo CDZ system
+neomrdo	Neo Mr. Do!
+neonopon	Neo No Panepon (HB, beta)
+neopang	Neo Pang (HB)
+neopong	Neo Pong (HB, v1.1)
+nsmb	Neo Super Mario Bros (HB, Demo v0.01)
+syscheck	Neo System Check (ver 1.0b)
+neothndr	Neo Thunder (HB)
+turfmast	Neo Turf Masters _ Big Tournament Golf
+neocup98	Neo-Geo Cup '98 - The Road to the Victory
+neotet	NeoGeo 2-Player Tetris (HB)
+neo3ddmo	NeoGeo 3D! (HB, Demo)
+ngcdtdd0	NeoGeo_CD Jump _ Run Techdemo Dez 2020 (HB, ver. 20201212)
+neotris	NeoTRIS (HB, Free Beta 2, ver. 202009)
+netwars	Net Wars
+quiztou	Nettou! Gekitou! Quiztou!! (Japan)
+newxpang	New Cross Pang (set 1)
+newfant	New Fantasia (1995 copyright)
+nhidctch	New Hidden Catch (World) _ New Tul Lin Gu Lim Chat Ki '98 (Korea) (pcb ver 3.02)
+3in1semi	New HyperMan (3-in-1 with Cookie _ Bibi _ HyperMan) (set 1)
+nrallyx	New Rally X
+newsin7	New Sinbad 7 (set 1)
+news	News (set 1)
+ngem2k	NGEM2K (HB, beta 2006-01-18)
+ngftdemo	NGF Transparency (HB, Demo)
+openice	NHL Open Ice_ 2 on 2 Challenge (rev 1.21)
+nibbler	Nibbler (rev 9, set 1)
+nitedrvr	Night Driver
+nslasher	Night Slashers (Korea Rev 1.3, DE-0397-0 PCB)
+cnightst	Night Star (DECO Cassette) (US) (set 1)
+nightstr	Night Striker (World)
+nwarr	Night Warriors_ Darkstalkers' Revenge (Europe 950316)
+nitd	Nightmare in the Dark
+nbbatman	Ninja Baseball Bat Man (World)
+ninclown	Ninja Clowns (27 oct 91)
+ncombat	Ninja Combat (NGM-009)
+ncommand	Ninja Commando
+ninjemak	Ninja Emaki (US)
+kazan	Ninja Kazan (World)
+ninjamas	Ninja Master's - Haoh-ninpo-cho
+nspirit	Ninja Spirit (World)
+ninjakd2	Ninja-Kid II _ NinjaKun Ashura no Shou (set 1)
+ninjakun	Ninjakun Majou no Bouken
+nitrobal	Nitro Ball (World, set 1)
+nob	Noboranka (Japan)
+nost	Nostradamus
+nostromo	Nostromo
+nouryoku	Nouryoku Koujou Iinkai
+nova2001	Nova 2001 (Japan)
+numanath	Numan Athletics (World)
+cocean1a	Ocean to Ocean (Medal) (DECO Cassette MD) (No.10_Ver.1,Japan)
+ohmygod	Oh My God! (Japan)
+oisipuzl	Oishii Puzzle Ha Irimasenka
+olibochu	Oli-Boo-Chu (USA)
+omegaf	Omega Fighter (set 1)
+omegrace	Omega Race (set 1)
+omega	Omega
+onetwo	One + Two
+oneshot	One Shot One Kill
+onna34ro	Onna Sanshirou - Typhoon Gal (rev 1)
+ooparts	OOPArts (prototype, joystick hack)
+coozumou	Oozumou - The Grand Sumo (DECO Cassette) (Japan)
+opaopa	Opa Opa (MC-8123, 317-0042)
+othunder	Operation Thunderbolt (World, rev 1)
+opwolf	Operation Wolf (World, rev 2, set 1)
+opwolf3	Operation Wolf 3 (World)
+orbitron	Orbitron
+orbs	Orbs (10_7_94 prototype_)
+ordyne	Ordyne (World)
+orlegend	Oriental Legend _ Xiyou Shi E Zhuan (ver. 126)
+oldsplus	Oriental Legend 2 (Korea) _ Xiyou Shi E Zhuan Qunmo Luanwu (World, China, Japan, Hong Kong, Taiwan) (ver. 205) [Oriental Ex]
+orleg2	Oriental Legend 2 (V104, Overseas)
+olds	Oriental Legend Super _ Xiyou Shi E Zhuan Super (ver. 101, Korean Board)
+osman	Osman (World)
+outrun	Out Run (sitdown_upright, Rev B)
+outzone	Out Zone
+orunners	OutRunners (World)
+overtop	Over Top
+ozmawars	Ozma Wars (set 1)
+ozon1	Ozon I
+p47aces	P-47 Aces (ver 1.1)
+p47	P-47_ The Phantom Fighter (World)
+pgemeni	P-GeMeni (060123)
+pow	P.O.W. - Prisoners of War (US version 1)
+pacnpal	Pac _ Pal
+pacland	Pac-Land (World)
+25pacman	Pac-Man - 25th Anniversary Edition (Rev 3.00)
+pacplus	Pac-Man Plus
+pacmania	Pac-Mania
+sxyreact	Pachinko Sexy Reaction (Japan)
+sxyreac2	Pachinko Sexy Reaction 2 (Japan)
+packbang	Pack'n Bang Bang
+clubpacm	Pacman Club _ Club Lambada (Argentina)
+paddlema	Paddle Mania
+pairs	Pairs (V1.2, 09_30_94)
+pairlove	Pairs Love
+pairsred	Pairs Redemption (V1.0, 10_25_94)
+palamed	Palamedes (US)
+pandajump	Panda Jump (set 1)
+pandoras	Pandora's Palace
+pang	Pang (World)
+pangpang	Pang Pang
+pangpoms	Pang Pom's
+pang3	Pang! 3 (Europe 950601)
+panicbom	Panic Bomber
+panicstr	Panic Street (Japan)
+paprazzi	Paparazzi
+paperboy	Paperboy (rev 3)
+pturn	Parallel Turn
+parodius	Parodius Da!_ Shinwa kara Owarai e (World, set 1)
+prtytime	Party Time_ Gonta the Diver II _ Ganbare! Gonta!! 2 (World Release)
+pasha2	Pasha Pasha 2
+passsht	Passing Shot (World, 2 Players) (FD1094 317-0080)
+pass	Pass
+pastelis	Pastel Island (Japan, prototype)
+patapata	Pata Pata Panic
+peekaboo	Peek-a-Boo! (Japan, ver. 1.1)
+peggle	Peggle (Joystick, v1.0)
+penfan	Penfan Girls - Step1. Mild Mind (set 1)
+pengo	Pengo (World, not encrypted, rev A)
+pengadvb	Penguin Adventure (bootleg of MSX version, encrypted)
+penbros	Penguin Brothers (Japan)
+pkunwar	Penguin-Kun Wars (US)
+pepper2	Pepper II (version 8)
+perestro	Perestroika Girls
+pbillrd	Perfect Billiard
+perfrman	Performan (Japan)
+peterpak	Peter Pack Rat
+cppicf	Peter Pepper's Ice Cream Factory (DECO Cassette) (US) (set 1)
+phelios	Phelios
+phoenix	Phoenix (Amstar, set 1)
+photoy2k	Photo Y2K _ Chaoji Bi Yi Bi _ Dajia Lai Zhao Cha _ Real and Fake (ver. 105)
+py2k2	Photo Y2K 2 _ Chaoji Bi Yi Bi 2 _ Dajia Lai Zhao Cha 2 _ Real and Fake 2 Photo Y2K (M101XX 05_25_01 11_02_54)
+phozon	Phozon (Japan)
+pickin	Pickin'
+pignewt	Pig Newton (version C)
+pigskin	Pigskin 621AD (rev 1.1K 8_01_90)
+pbaction	Pinball Action (set 1)
+pinbo	Pinbo (set 1)
+ppmast93	Ping Pong Masters '93
+pinkswts	Pink Sweets_ Ibara Sorekara (2006_04_06 MASTER VER....)
+pballoon	Pioneer Balloon
+pipedrm	Pipe Dream (World)
+pipibibs	Pipi _ Bibis _ Whoopee!! (Z80 sound cpu, set 1)
+higemaru	Pirate Ship Higemaru
+pirates	Pirates (set 1)
+pisces	Pisces
+pistoldm	Pistol Daimyo no Bouken (Japan)
+pitnrun	Pit _ Run - F-1 Race (rev 1)
+pitfight	Pit Fighter (rev 9)
+pitapat	Pitapat Puzzle (set 1)
+pitfall2	Pitfall II (315-5093)
+pkscram	PK Scramble
+pprobe	Planet Probe (prototype_)
+plgirls2	Play Girls 2 (Europe)
+plgirls	Play Girls
+playball	PlayBall! (prototype)
+pgoal	Pleasure Goal _ Futsal - 5 on 5 Mini Soccer (NGM-219)
+pleiads	Pleiads (Tehkan)
+plotting	Plotting (World set 1)
+plumppop	Plump Pop (Japan)
+plusalph	Plus Alpha
+pnickj	Pnickies (Japan 940608)
+pnyaa	Pochi and Nyaa (Ver 2.02)
+pcktgal	Pocket Gal (Japan)
+pktgaldx	Pocket Gal Deluxe (Europe v3.00)
+pgalvip	Pocket Gals V.I.P (set 1)
+ptblank	Point Blank (World, GN2 Rev B, set 1)
+poitto	Poitto! (revision D)
+pokrdice	Poker Dice (V1.7)
+pkladies	Poker Ladies
+poknight	Poker Night (HB)
+pokonyan	Pokonyan! Balloon (Japan 940322)
+pollux	Pollux (set 1)
+ponpoko	Ponpoko
+poosho	Poosho Poosho
+pooyan	Pooyan
+popbounc	Pop 'n Bounce _ Gapporin
+popbingo	Pop Bingo
+popflame	Pop Flamer (protected)
+popnpop	Pop'n Pop (Ver 2.07O 1998_02_09)
+popspops	Pop's Pop's
+popeye	Popeye (revision D)
+popper	Popper
+porky	Porky
+potopoto	Poto Poto (Japan, Rev A)
+poundfor	Pound for Pound (World)
+powerbal	Power Balls
+pdrift	Power Drift (World, Rev A)
+powerdrv	Power Drive
+powerins	Power Instinct (USA)
+pwrinst2	Power Instinct 2 (US, Ver. 94.04.08, set 1)
+pspikes	Power Spikes (World)
+pspikes2	Power Spikes II (NGM-068)
+psurge	Power Surge
+pubball	Power Up Baseball (prototype)
+pbillian	Prebillian
+preisle2	Prehistoric Isle 2
+prehisle	Prehistoric Isle in 1930 (World, set 1)
+neoprimo	Primo (HB, Demo)
+cprobowl	Pro Bowling (DECO Cassette) (US)
+cpsoccer	Pro Soccer (DECO Cassette) (US)
+cptennis	Pro Tennis (DECO Cassette) (US)
+wldcourt	Pro Tennis World Court (Japan)
+ws	Pro Yakyuu World Stadium (Japan)
+profpac	Professor Pac-Man
+progear	Progear (Europe 010117)
+promutrv	Progressive Music Trivia (Question set 1)
+progress	Progress
+proneon	Project Neon - Caravan Edition (HB, pre-alpha v0.4.19)
+psychic5	Psychic 5 (World)
+psychos	Psycho Soldier (US)
+oscar	Psycho-Nics Oscar (World revision 0)
+puchicar	Puchi Carat (Ver 2.02O 1997_10_29)
+puckman	Puck Man (Japan, set 1)
+pulirula	PuLiRuLa (World, dual PCB)
+pulstar	Pulstar
+punchout	Punch-Out!! (Rev B)
+punkshot	Punk Shot (US 4 Players)
+pururun	Pururun (set 1)
+pushman	Pushman (Korea, set 1)
+puyo	Puyo Puyo (World)
+puyopuy2	Puyo Puyo 2 (Japan)
+puzzloop	Puzz Loop (Europe, v0.94)
+pzloop2	Puzz Loop 2 (Europe 010302)
+ichir	Puzzle _ Action_ Ichidant-R (World)
+tantr	Puzzle _ Action_ Tant-R (Japan)
+pbobble	Puzzle Bobble (Japan, B-System)
+pbobblen	Puzzle Bobble _ Bust-A-Move (Neo-Geo, NGM-083)
+pbobble2	Puzzle Bobble 2 (Ver 2.3O 1995_07_31)
+pbobbl2n	Puzzle Bobble 2 _ Bust-A-Move Again (Neo-Geo)
+pbobble3	Puzzle Bobble 3 (Ver 2.1O 1996_09_27)
+pbobble4	Puzzle Bobble 4 (Ver 2.04O 1997_12_19)
+pzlbreak	Puzzle Break (set 1)
+puzlclub	Puzzle Club (Japan prototype)
+pclubys	Puzzle Club (Yun Sung, set 1)
+pzlbowl	Puzzle De Bowling (Japan)
+puzzldpr	Puzzle De Pon! R!
+puzzledp	Puzzle De Pon!
+puzzlekg	Puzzle King (Dance _ Puzzle)
+4in1boot	Puzzle King (PacMan 2, Tetris, HyperMan 2, Snow Bros.)
+puzlstar	Puzzle Star _ Mohuan Xingzuo (ver. 100MG, 09_30_99 build)
+uopoko	Puzzle Uo Poko (World)
+mushitam	Puzzle! Mushihime-Tama (2005_09_09.MASTER VER)
+joyjoy	Puzzled _ Joy Joy Kid (NGM-021 ~ NGH-021)
+puzzli	Puzzli (revision B)
+puzzli2	Puzzli 2 _ Pao Pao Yu (ver. 100)
+puzzlove	PuzzLove
+puzznic	Puzznic (World)
+qbert	Q_bert (US set 1)
+qbertqub	Q_bert's Qubes
+qix	Qix (Rev 2)
+quantum	Quantum (rev 2)
+quartet	Quartet (Rev A, 8751 315-5194)
+quester	Quester (Japan)
+qad	Quiz _ Dragons_ Capcom Quiz Game (USA 920701)
+inufuku	Quiz _ Variety Sukusuku Inufuku (Japan)
+quizmoon	Quiz Bishoujo Senshi Sailor Moon - Chiryoku Tairyoku Toki no Un
+qzchikyu	Quiz Chikyu Bouei Gun (Japan)
+qcrayon	Quiz Crayon Shinchan (Japan)
+quizdais	Quiz Daisousa Sen - The Last Count Down (NGM-023 ~ NGH-023)
+hotdebut	Quiz de Idol! Hot Debut (Japan)
+quizf1	Quiz F1 1-2 Finish (Japan)
+qgakumon	Quiz Gakumon no Susume (Japan ver. JA1 Type H)
+qgh	Quiz Ghost Hunter (Japan, ROM Based)
+quizhq	Quiz H.Q. (Japan)
+qjinsei	Quiz Jinsei Gekijoh (Japan)
+quizkof	Quiz King of Fighters (SAM-080 ~ SAH-080)
+qzkklgy2	Quiz Kokology 2
+qzkklogy	Quiz Kokology
+quizdai2	Quiz Meitantei Neo _ Geo - Quiz Daisousa Sen part 2 (NGM-042 ~ NGH-042)
+quizmeku	Quiz Mekurumeku Story (Japan, ROM Based)
+qndream	Quiz Nanairo Dreams_ Nijiirochou no Kiseki (Japan 960826)
+quizo	Quiz Olympic (set 1)
+qzquest	Quiz Quest - Hime to Yuusha no Monogatari (Japan)
+qrouka	Quiz Rouka Ni Tattenasai (Japan, ROM Based)
+qsangoku	Quiz Sangokushi (Japan)
+qzshowby	Quiz Sekai wa SHOW by shobai (Japan)
+qsww	Quiz Syukudai wo Wasuremashita (Japan, Floppy Based, FD1094 317-0058-08b)
+qtheater	Quiz Theater - 3tsu no Monogatari (Ver 2.3J 1994_11_10)
+qtono1	Quiz Tonosama no Yabou (Japan)
+qtono2j	Quiz Tonosama no Yabou 2_ Zenkoku-ban (Japan 950123)
+qtorimon	Quiz Torimonochou (Japan)
+rshark	R-Shark (set 1)
+rtype	R-Type (World)
+rtype2	R-Type II (World)
+rtypeleo	R-Type Leo (World)
+r2dtank	R2D Tank
+rabbit	Rabbit (Asia 3_6)
+rabiolep	Rabio Lepus (Japan)
+raccoon	Raccoon World
+racingb	Racing Beat (World)
+rachero	Racing Hero (FD1094 317-0144)
+rackemup	Rack 'em Up (version L)
+racknrol	Rack + Roll
+radm	Rad Mobile (World)
+radr	Rad Rally (World)
+radarscp	Radar Scope (TRS02, rev. D)
+radrad	Radical Radial (US)
+raflesia	Rafflesia (315-5162)
+rotd	Rage of the Dragons (NGM-2640_)
+ragnagrd	Ragnagard _ Shin-Oh-Ken
+raiden	Raiden (World set 1)
+raidendx	Raiden DX (UK)
+rdft	Raiden Fighters (Germany)
+rdft2	Raiden Fighters 2 - Operation Hell Dive (Germany)
+rfjet	Raiden Fighters Jet (Germany)
+raiden2	Raiden II (US, set 1)
+r2dx_v33	Raiden II New _ Raiden DX (newer V33 PCB) (Raiden DX EEPROM)
+raiders5	Raiders5
+stratof	Raiga - Strato Fighter (US)
+rchase	Rail Chase (World)
+raimais	Raimais (World, rev 1)
+rbisland	Rainbow Islands (rev 1)
+rbislande	Rainbow Islands - Extra Version
+rallybik	Rally Bike (Europe, US) _ Dash Yarou (Japan)
+rallyx	Rally X (32k Ver._)
+rambo3	Rambo III (Europe)
+rampage	Rampage (Rev 3, 8_27_86)
+rmpgwt	Rampage_ World Tour (rev 1.3)
+rampart	Rampart (Trackball)
+rastan	Rastan (World Rev 1)
+razmataz	Razzmatazz
+reactor	Reactor
+reaktor	Reaktor (Track _ Field conversion)
+rbff1	Real Bout Fatal Fury _ Real Bout Garou Densetsu (NGM-095 ~ NGH-095)
+rbff2	Real Bout Fatal Fury 2 - The Newcomers _ Real Bout Garou Densetsu 2 - The Newcomers (NGM-2400)
+rbffspec	Real Bout Fatal Fury Special _ Real Bout Garou Densetsu Special
+recalh	Recalhorn (Ver 1.42J 1994_5_11, prototype)
+recordbr	Recordbreaker (World)
+redbaron	Red Baron (revised hardware)
+redclash	Red Clash
+redearth	Red Earth (Europe 961121)
+redrobin	Red Robin
+regulus	Regulus (315-5033, Rev A.)
+relief	Relief Pitcher (Rev D, 07 Jun 1992 _ 28 May 1992)
+reliefs1	Relief Pitcher (System 1, prototype)
+renegade	Renegade (US)
+repulse	Repulse
+rescue	Rescue
+retofinv	Return of the Invaders
+jedi	Return of the Jedi
+revngr84	Revenger '84 (newer)
+revx	Revolution X (revision 2.0 9_8_94)
+rezon	Rezon
+ribbit	Ribbit!
+rickdangdx	Rick Dangerous DX (HB)
+ridleofp	Riddle of Pythagoras (Japan)
+ridingf	Riding Fight (Ver 1.0O)
+ridhero	Riding Hero (NGM-006 ~ NGH-006)
+rimrockn	Rim Rockin' Basketball (V2.2)
+ringdest	Ring of Destruction_ Slammasters II (Europe 940902)
+ringrage	Ring Rage (Ver 2.3O 1992_08_09)
+riot	Riot (NMK)
+riotcity	Riot City (Japan)
+ripcord	Rip Cord
+riskchal	Risky Challenge
+rpatrol	River Patrol (Japan)
+roadblst	Road Blasters (upright, rev 4)
+roadf	Road Fighter (set 1)
+roadrunn	Road Runner (rev 2)
+roboarmy	Robo Army
+robowres	Robo Wres 2001
+robocopi	Robocop (FMV Demo)
+robocop	Robocop (World, revision 4)
+robocopng	Robocop - Neo Geo Conversion (HB, Beta 9)
+robocop2	Robocop 2 (Euro_Asia v0.10)
+robotbwl	Robot Bowl
+robotron	Robotron_ 2084 (Release 5, solid blue label)
+rocnrope	Roc'n Rope
+rockclim	Rock Climber
+rockduck	Rock Duck (prototype_)
+rocktris	Rock Tris
+rockn3	Rock'n 3 (Japan)
+rockn4	Rock'n 4 (Japan, prototype)
+rockrage	Rock'n Rage (World)
+rockn	Rock'n Tread (Japan)
+rockn2	Rock'n Tread 2 (Japan)
+rodland	Rod-Land (World, set 1)
+rohga	Rohga_ Armor Force (Asia_Europe v5.0)
+rjammer	Roller Jammer
+rollerg	Rollergames (US)
+rolcrush	Rolling Crush (version 1.07.E - 1999_02_11, Trust license)
+rthunder	Rolling Thunder (rev 3)
+rthun2	Rolling Thunder 2
+rompers	Rompers (Japan, new version (Rev B))
+clapapa	Rootin' Tootin' _ La-Pa-Pa (DECO Cassette) (US)
+roughrac	Rough Racer (Japan, Floppy Based, FD1094 317-0058-06b)
+roundup	Round-Up
+route16	Route 16 (Sun Electronics, set 1)
+rumba	Rumba Lumber (rev 1)
+rygar	Rygar (US set 1)
+ryujin	Ryu Jin (Japan, ET910000B PCB)
+ryukyu	RyuKyu (Rev A, Japan) (FD1094 317-5023A)
+kirarast	Ryuusei Janshi Kirara Star
+sosterm	S.O.S.
+spy	S.P.Y. - Special Project Y (World ver. N)
+srdmissn	S.R.D. Mission
+ssmissin	S.S. Mission
+svg	S.V.G. - Spectral vs Generation _ Sheng Mo Shiji (M68k label V200) (ARM label V200, ROM 10_11_05 S.V.G V201)
+sabotenb	Saboten Bombers (set 1)
+sadari	Sadari (Japan, NTC license)
+safarir	Safari Rally (World)
+stdragon	Saint Dragon (set 1)
+salamand	Salamander (version D)
+samurai	Samurai (World)
+samuraia	Samurai Aces (World)
+tsamurai	Samurai Nihon-Ichi (rev 1)
+samsho	Samurai Shodown _ Samurai Spirits (NGM-045)
+samsho2	Samurai Shodown II _ Shin Samurai Spirits - Haohmaru Jigokuhen (NGM-063 ~ NGH-063)
+samsho3	Samurai Shodown III _ Samurai Spirits - Zankurou Musouken (NGM-087)
+samsho4	Samurai Shodown IV - Amakusa's Revenge _ Samurai Spirits - Amakusa Kourin (NGM-222 ~ NGH-222)
+samsho5	Samurai Shodown V _ Samurai Spirits Zero (NGM-2700, set 1)
+samsh5sp	Samurai Shodown V Special _ Samurai Spirits Zero Special (NGM-2720)
+sandscrp	Sand Scorpion
+3kokushi	Sankokushi (Japan)
+santaball	SantaBall - Christmas Tennis Game (HB)
+searchar	SAR - Search And Rescue (World)
+sarge	Sarge
+sasuke	Sasuke vs. Commander (set 1)
+satansat	Satan of Saturn (set 1)
+shollow	Satan's Hollow (set 1)
+slammast	Saturday Night Slam Masters (World 930713)
+saturnzi	Saturn
+sauro	Sauro (set 1)
+savagere	Savage Reign _ Fu'un Mokushiroku - Kakutou Sousei
+spacewin	Scacco Matto _ Space Win
+schmeisr	Schmeiser Robo (Japan)
+scion	Scion
+scotrsht	Scooter Shooter
+scorpion	Scorpion (set 1)
+sspirits	Scramble Spirits (World, Floppy Based)
+scregg	Scrambled Egg
+scramble	Scramble
+screwloo	Screw Loose (prototype)
+cscrtry	Scrum Try (DECO Cassette) (US) (set 1)
+scudhamm	Scud Hammer (ver 1.4)
+sdfight	SD Fighters (Korea)
+neobattl	SD Gundam Neo Battling (Japan)
+sdgndmps	SD Gundam Psycho Salamander no Kyoui
+grainbow	SD Gundam Sangokushi Rainbow Tairiku Senki (Japan)
+sdi	SDI - Strategic Defense Initiative (Japan, newer, System 16A, FD1089B 317-0027)
+sfposeid	Sea Fighter Poseidon
+seawolf2	Sea Wolf II
+searchey	Search Eye (English _ Korean _ Japanese _ Italian)
+searchp2	Search Eye Plus V2.0
+secretag	Secret Agent (World, revision 3)
+sectionz	Section Z (US)
+seganinj	Sega Ninja (315-5102)
+ssonicbr	SegaSonic Bros. (prototype, hack)
+sonicfgt	SegaSonic Cosmo Fighter (World)
+sonic	SegaSonic The Hedgehog (Japan, rev. C)
+seicross	Seicross (set 1)
+selfeena	Sel Feena
+senknow	Sen-Know (Japan)
+sengekis	Sengeki Striker (Asia)
+sengoku	Sengoku _ Sengoku Denshou (NGM-017 ~ NGH-017)
+sengoku2	Sengoku 2 _ Sengoku Denshou 2
+sengoku3	Sengoku 3 _ Sengoku Densho 2001 (set 1)
+senjyo	Senjyo
+senkyu	Senkyu (Japan, newer)
+sfx	SF-X
+shackled	Shackled (US)
+shdancer	Shadow Dancer (World)
+shadfrce	Shadow Force (World, Version 3)
+sgz	Shadow Gangs Zero (Backers Demo V1.0)
+shadowlf	Shadow League Fighting (HB, v3)
+beast	Shadow of the Beast (Neo Geo demo)
+shadoww	Shadow Warriors (World, set 1)
+shadowld	Shadowland (YD3)
+shangha3	Shanghai III (World)
+shangkid	Shanghai Kid
+pgm3in1	Shanliang San He Yi (Flash 3-in-1) (V102 08_23_04 13_03_26)
+sharkatt	Shark Attack
+tshingen	Shingen Samurai-Fighter (Japan, English)
+shinobi	Shinobi (set 6, System 16A) (unprotected)
+shinfz	Shinobi _ FZ-2006 (Korean System 16 bootleg) (ISG Selection Master Type 2006)
+shinobing	Shinobi Neo Geo (HB, v1.1)
+shinygld	Shiny Golds
+shocktro	Shock Troopers (set 1)
+shocktr2	Shock Troopers - 2nd Squad
+shocking	Shocking
+shogwarr	Shogun Warriors (World)
+shootout	Shoot Out (US)
+shtngmst	Shooting Master (8751 315-5159a)
+shtrider	Shot Rider
+moshougi	Shougi no Tatsujin - Master of Shougi
+showdown	Showdown (version 5.0)
+shufshot	Shuffleshot (v1.40)
+shuuz	Shuuz (version 8.0)
+sidearms	Side Arms - Hyper Dyne (World, 861129)
+sidepckt	Side Pocket (World)
+sidetrac	Side Trak
+silentd	Silent Dragon (World)
+silkworm	Silk Worm (World)
+silvmil	Silver Millennium
+sindbadm	Sindbad Mystery
+sinistar	Sinistar (revision 3, upright)
+cskater	Skater (DECO Cassette) (Japan)
+skullxbo	Skull _ Crossbones (rev 5)
+skullfng	Skull Fang (Europe 1.13)
+skyadvnt	Sky Adventure (World)
+skyalert	Sky Alert
+skyarmy	Sky Army
+skybase	Sky Base
+skydest	Sky Destroyer (Japan)
+skyfox	Sky Fox
+skykid	Sky Kid (new version)
+skykiddx	Sky Kid Deluxe (set 1)
+skylance	Sky Lance (HB, v2)
+skylancr	Sky Lancer
+skyrobo	Sky Robo
+skyskipr	Sky Skipper
+skysmash	Sky Smasher
+skysoldr	Sky Soldiers (US)
+slapshtr	Slap Shooter
+slapshot	Slap Shot (Ver 3.0 O)
+slipstrm	Slip Stream (Brazil 950515)
+slither	Slither (set 1)
+smashtv	Smash T.V. (rev 8.00)
+snapjack	Snap Jack
+snapper	Snapper (Korea)
+koroleva	Snezhnaja Koroleva
+svcpcb	SNK vs. Capcom - SVC Chaos (JAMMA PCB, NEO-MVH MVO PCB)
+svc	SNK vs. Capcom - SVC Chaos (NGM-2690 ~ NGH-2690)
+snowboar	Snow Board Championship (version 2.1)
+snowbros	Snow Bros. - Nick _ Tom (set 1)
+snowbro2	Snow Bros. 2 - With New Elves _ Otenki Paradise (Hanafram)
+snowbro3	Snow Brothers 3 - Magical Adventure
+socbrawl	Soccer Brawl (NGM-031)
+sokoban	Sokoban LE
+sokonuke	Sokonuke Taisen Game (Japan)
+soldivid	Sol Divide_ Sword Of Darkness
+solarfox	Solar Fox (upright)
+soldam	Soldam
+amazoneo	Soldier Girl Amazon Neo (HB)
+amazon	Soldier Girl Amazon
+solfigtr	Solitary Fighter (World)
+slspirit	Solite Spirits
+solomon	Solomon's Key (US)
+sonson	Son Son
+sbm	Sonic Blast Man (US)
+sonicbom	Sonic Boom (FD1094 317-0053)
+sstriker	Sorcer Striker
+kokoroj	Soreike Kokology (Rev A)
+kokoroj2	Soreike Kokology Vol. 2 - Kokoro no Tanteikyoku
+sos	SOS Game
+sotsugyo	Sotsugyo Shousho (Japan)
+sbomber	Space Bomber (ver. B)
+spacecr	Space Cruiser
+spacduel	Space Duel (version 2)
+sdungeon	Space Dungeon
+spacefb	Space Firebird (rev. 04-u)
+spacfury	Space Fury (revision C)
+spacegun	Space Gun (World)
+sharrier	Space Harrier (Rev A, 8751 315-5163A)
+spcinv95	Space Invaders '95_ The Attack Of Lunar Loonies (Ver 2.5O 1995_06_14)
+invaders	Space Invaders _ Space Invaders M
+spacedx	Space Invaders DX (US, v2.1)
+smiconk	Space Micon Kit
+spaceod	Space Odyssey (version 2)
+spcpostn	Space Position (Japan)
+sraider	Space Raider
+spaceskr	Space Seeker
+sstrangr	Space Stranger
+spacezap	Space Zap (Midway)
+sparkman	Spark Man (v2.0, set 1)
+sparkz	Sparkz (prototype)
+spatter	Spatter (315-5096)
+speakres	Speak _ Rescue
+speccies	Speccies 2
+sci	Special Criminal Investigation (World set 1)
+spectar	Spectar (revision 3)
+spec2k	Spectrum 2000 (vertical, Korea)
+speedbal	Speed Ball (set 1)
+spdball	Speed Ball - Contest at Neonworld (prototype)
+spdcoin	Speed Coin (prototype)
+speedspn	Speed Spin
+spelunk2	Spelunker II - 23 no Kagi (Japan)
+spelunkr	Spelunker
+spidman	Spider-Man_ The Videogame (World)
+spidermi	Spiderman (FMV Demo)
+spinmast	Spin Master _ Miracle Adventure
+spinlbrk	Spinal Breakers (World)
+splash	Splash! (ver. 1.3, checksum E7BEF3FA, World)
+splat	Splat!
+splatter	Splatterhouse (World, new version (SH3))
+splndrbt	Splendor Blast (World, set 1)
+splndrbt2	Splendor Blast II (World)
+spotty	Spotty (Ver. 2.0.2)
+springer	Springer
+spyhunt2	Spy Hunter II (rev 2)
+spyhunt	Spy Hunter
+sqij	SQIJ!
+squaitsa	Squash (Itisa)
+squash	Squash (World, ver. 1.0, checksum 015aef61)
+srdarwin	SRD_ Super Real Darwin (World)
+stkclmns	Stack Columns (World)
+scross	Stadium Cross (World)
+stadhr96	Stadium Hero '96 (Europe, EAJ, Tuning license)
+stadhero	Stadium Hero (Japan)
+stagger1	Stagger I (Japan)
+stakwin	Stakes Winner _ Stakes Winner - GI Kinzen Seiha e no Michi
+stakwin2	Stakes Winner 2
+starfigh	Star Fighter (v1)
+starforc	Star Force
+stargrds	Star Guards
+starjack	Star Jacker (Sega)
+startrek	Star Trek
+starwars	Star Wars (set 1)
+stargate	Stargate
+stealsee	Steal See
+stlforce	Steel Force
+sgunner	Steel Gunner (Rev B)
+sgunner2	Steel Gunner 2 (US)
+stinger	Stinger
+stonebal	Stone Ball (4 Players, v1-20 13_12_1994)
+stmblade	Storm Blade (US)
+stratab	Strata Bowling (V3)
+stratgyx	Strategy X
+streakng	Streaking (set 1)
+sf	Street Fighter (US, set 1)
+sfa2	Street Fighter Alpha 2 (Europe 960229)
+sfa3	Street Fighter Alpha 3 (Europe 980904)
+sfa	Street Fighter Alpha_ Warriors' Dreams (Europe 950727)
+sf2ce	Street Fighter II'_ Champion Edition (World 920513)
+sf2hf	Street Fighter II'_ Hyper Fighting (World 921209)
+sf2	Street Fighter II_ The World Warrior (World 910522)
+sfiii2	Street Fighter III 2nd Impact_ Giant Attack (USA 970930)
+sfiii3	Street Fighter III 3rd Strike_ Fight for the Future (Europe 990608)
+sfiii	Street Fighter III_ New Generation (Europe 970204)
+sfzch	Street Fighter Zero (CPS Changer, Japan 951020)
+sfz2al	Street Fighter Zero 2 Alpha (Asia 960826)
+sftm	Street Fighter_ The Movie (v1.12)
+strhoop	Street Hoop _ Street Slam _ Dunk Dream (DEM-004 ~ DEH-004)
+streetsm	Street Smart (US version 2)
+strnskil	Strength _ Skill
+strider	Strider (USA, B-Board 89624B-2)
+sbowling	Strike Bowling
+strkfgtr	Strike Fighter (World)
+strkforc	Strike Force (rev 1 02_25_91)
+stg	Strike Gunner S.T.G
+s1945	Strikers 1945 (World)
+s1945iii	Strikers 1945 III (World) _ Strikers 1999 (Japan)
+s1945ii	Strikers 1945 II
+s1945p	Strikers 1945 Plus
+stuntair	Stunt Air
+sub	Submarine (Sigma)
+subroc3d	Subroc-3D
+scessjoe	Success Joe (World)
+sjryuko	Sukeban Jansi Ryuko (set 2, System 16B, FD1089B 317-5021)
+sunaq	SunA Quiz 6000 Academy (940620-6)
+ssriders	Sunset Riders (4 Players ver EAC)
+csuperas	Super Astro Fighter (DECO Cassette) (US)
+sbagman	Super Bagman (version 5)
+sbasketb	Super Basketball (version I, encrypted)
+sbishi	Super Bishi Bashi Champ (ver JAA, 2 Players)
+sb2003	Super Bubble 2003 (World, Ver 1.0)
+sbubsm	Super Bubble Bobble (Sun Mixing, Mega Drive clone hardware)
+sbp	Super Bubble Pop
+supbtime	Super Burger Time (World, set 1)
+sucasino	Super Casino
+sbasebal	Super Champion Baseball (US)
+superchs	Super Chase - Criminal Termination (World)
+scobra	Super Cobra
+scontra	Super Contra (set 1)
+sprcros2	Super Cross II (Japan, set 1)
+scfinals	Super Cup Finals (Ver 2.2O 1994_01_13, single PCB)
+sderby	Super Derby (Playmark, v.07.03)
+spdodgeb	Super Dodge Ball (US)
+sdodgeb	Super Dodge Ball _ Kunio no Nekketsu Toukyuu Densetsu
+csdtenis	Super Doubles Tennis (DECO Cassette) (Japan)
+supduck	Super Duck
+usg32	Super Duper Casino (California V3.2)
+sgemf	Super Gem Fighter_ Mini Mix (USA 970904)
+suprglob	Super Glob
+shangon	Super Hang-On (sitdown_upright) (unprotected)
+shimpact	Super High Impact (rev LA2 10_22_91)
+suprleag	Super League (FD1094 317-0045)
+suprloco	Super Locomotive (Rev.A)
+suplup	Super Lup Lup Puzzle _ Zhuan Zhuan Puzzle (version 4.0 _ 990518)
+smbneo	Super Mario Bros. Neo (HB)
+marukin	Super Marukin-Ban (Japan 911128)
+sgmast	Super Masters Golf (World_, Floppy Based, FD1094 317-0058-05d_)
+smissw	Super Miss World
+supmodl2	Super Model II
+supmodel	Super Model
+smgp	Super Monaco GP (World, Rev B) (FD1094 317-0126a)
+suprmous	Super Mouse
+superpac	Super Pac-Man
+spang	Super Pang (World 900914)
+spbactn	Super Pinball Action (US)
+spnchout	Super Punch-Out!! (Rev B)
+spf2t	Super Puzzle Fighter II Turbo (Europe 960529)
+sqix	Super Qix (World_Japan, V1.2)
+sranger	Super Ranger (v2.0)
+srmp7	Super Real Mahjong P7 (Japan)
+srmp4	Super Real Mahjong PIV (Japan)
+suprridr	Super Rider
+sshangha	Super Shanghai Dragon's Eye (World)
+ssideki	Super Sidekicks _ Tokuten Ou
+ssideki2	Super Sidekicks 2 - The World Championship _ Tokuten Ou 2 - Real Fight Football (NGM-061 ~ NGH-061)
+ssideki3	Super Sidekicks 3 - The Next Glory _ Tokuten Ou 3 - Eikou e no Chousen
+ssi	Super Space Invaders '91 (World, revised code, Rev 1)
+macross	Super Spacefortress Macross _ Chou-Jikuu Yousai Macross
+macross2	Super Spacefortress Macross II _ Chou-Jikuu Yousai Macross II
+ssrj	Super Speed Race Junior (Japan)
+ssprint	Super Sprint (rev 4)
+sstingry	Super Stingray (Japan)
+ssf2t	Super Street Fighter II Turbo (World 940223)
+ssf2	Super Street Fighter II_ The New Challengers (World 931005)
+superten	Super Ten V8.3
+stoffy	Super Toffy
+suprtrio	Super Trio
+strvmstr	Super Trivia Master
+svf	Super Visual Football_ European Sega Cup (Rev A)
+svolley	Super Volleyball (Japan)
+swcourt	Super World Court (World)
+sws92	Super World Stadium '92 (Japan)
+sws93	Super World Stadium '93 (Japan)
+sws95	Super World Stadium '95 (Japan)
+sws96	Super World Stadium '96 (Japan)
+sws97	Super World Stadium '97 (Japan)
+sws	Super World Stadium (Japan)
+sxevious	Super Xevious
+szaxxon	Super Zaxxon (315-5013)
+superx	Super-X (NTC)
+ssoldier	Superior Soldiers (US)
+superman	Superman (World)
+suratk	Surprise Attack (World ver. K)
+survarts	Survival Arts (World)
+gogomile	Susume! Mile Smile _ Go Go! Mile Smile (newer)
+suzuka8h	Suzuka 8 Hours (World, Rev C)
+suzuk8h2	Suzuka 8 Hours 2 (World, Rev B)
+swat	SWAT (315-5048)
+swatpolc	SWAT Police
+swimmer	Swimmer (set 1)
+swsodan	Sword of Sodan (HB, Beta v0.5)
+ssozumo	Syusse Oozumou (Japan)
+syvalion	Syvalion (Japan)
+tnk3	T.N.K III (US)
+tacscan	Tac_Scan
+tactcian	Tactician (set 1)
+tail2nos	Tail to Nose - Great Championship _ Super Formula
+hotgmck	Taisen Hot Gimmick (Japan)
+hotgmck3	Taisen Hot Gimmick 3 Digital Surfing (Japan)
+hotgm4ev	Taisen Hot Gimmick 4 Ever (Japan)
+hgkairak	Taisen Hot Gimmick Kairakuten (Japan)
+cupfinal	Taito Cup Finals (Ver 1.0O 1993_02_28)
+pwrgoal	Taito Power Goal (Ver 2.5O 1994_11_03)
+talbot	Talbot (World)
+tangtang	Tang Tang (ver. 0526, 26_05_2000, set 1)
+tangramq	Tangram Q
+tankbatt	Tank Battalion
+tankbust	Tank Busters
+tankfrce	Tank Force (US, 2 Players)
+taotaido	Tao Taido (2 button version)
+tapper	Tapper (Budweiser, 1_27_84)
+targeth	Target Hits (ver 1.1, checksum 5152)
+targ	Targ
+tharrier	Task Force Harrier
+tattass	Tattoo Assassins (US prototype, Mar 14 1995)
+taxidriv	Taxi Driver
+tazmania	Tazz-Mania (set 1)
+tbowl	Tecmo Bowl (World, set 1)
+twcup90	Tecmo World Cup '90 (World set 1)
+twsoc96	Tecmo World Soccer '96
+teddybb	TeddyBoy Blues (315-5115, New Ver.)
+teedoff	Tee'd Off (World)
+tmnti	Teenage Mutant Ninja Turtles (FMV Demo)
+tmnt	Teenage Mutant Ninja Turtles (World 4 Players, version X)
+tmnt2	Teenage Mutant Ninja Turtles - Turtles in Time (4 Players ver UAA)
+teetert	Teeter Torture (prototype)
+tehkanwc	Tehkan World Cup (set 1)
+tekipaki	Teki Paki
+teljan	Tel Jan
+tempest	Tempest (rev 3, Revised Hardware)
+wofch	Tenchi wo Kurau II_ Sekiheki no Tatakai (CPS Changer, Japan 921031)
+tengai	Tengai (World)
+term2	Terminator 2 - Judgment Day (rev LA4 08_03_92)
+terracre	Terra Cresta (YM3526 set 1)
+terraf	Terra Force
+cterrani	Terranean (DECO Cassette) (US)
+ctsttape	Test Tape (DECO Cassette) (US)
+tetrsark	Tetris (D.R. Korea, set 1, encrypted)
+tetrisse	Tetris (Japan, System E)
+atetris	Tetris (set 1)
+tetris	Tetris (set 4, Japan, System 16A) (FD1094 317-0093)
+tetrbx	Tetris _ Bloxeed (Korean System 16 bootleg) (ISG Selection Master Type 2006)
+tetrisp	Tetris Plus (ver 1.0)
+tetrisp2	Tetris Plus 2 (World, V2.8)
+tgm2	Tetris_ The Absolute - The Grand Master 2
+thoop2	TH Strikes Back (non North America, version 1.0, checksum 020EB356)
+robby	The Adventures of Robby Roto! - Roto to the Rescue!
+alphaxz	The Alphax Z (Japan)
+mrflea	The Amazing Adventures of Mr. F. Lea
+astyanax	The Astyanax (EPROM version)
+battroad	The Battle-Road
+berlwall	The Berlin Wall
+bigprowr	The Big Pro Wrestling! (set 1)
+bounty	The Bounty (set 1)
+edrandy	The Cliffhanger - Edward Randy (World ver 3)
+ctribe	The Combatribes (US, rev 2, set 1)
+dealer	The Dealer
+thedeep	The Deep (Japan)
+dfjail	The Destroyer From Jail (Korea)
+dbldynj	The Double Dynamites (Japan, 13NOV89)
+elecyoyo	The Electric Yo-Yo (rev 1)
+esb	The Empire Strikes Back
+theend	The End
+teot	The Eye of Typhoon (HB, Beta 7 Version)
+flstory	The FairyLand Story
+daraku	The Fallen Angels (World) _ Daraku Tenshi_ The Fallen Angels (Japan)
+fround	The Final Round (version M)
+gametngk	The Game Paradise - Master of Shooting! _ Game Tengoku - The Game Paradise (ver 1.0)
+theglad	The Gladiator _ Shenjian Fumo Lu _ Shenjian Fengyun (M68k label V101) (ARM label V107, ROM 06_06_03 SHEN JIAN V107)
+thehand	The Hand
+irrmaze	The Irritating Maze _ Ultra Denryu Iraira Bou
+karatour	The Karate Tournament
+killbld	The Killing Blade _ Ao Jian Kuang Dao (ver. 109, Chinese Board)
+killbldp	The Killing Blade Plus _ Ao Jian Kuang Dao Jiaqiang Ban (China, ver. 300)
+kod	The King of Dragons (World 910805)
+kof94	The King of Fighters '94 (NGM-055 ~ NGH-055)
+kof95	The King of Fighters '95 (NGM-084)
+kof96	The King of Fighters '96 (NGM-214)
+kof97	The King of Fighters '97 (NGM-2320)
+kof98	The King of Fighters '98 - The Slugfest _ King of Fighters '98 - Dream Match Never Ends (NGM-2420)
+kof98umh	The King of Fighters '98_ Ultimate Match HERO (China, V100)
+kof99	The King of Fighters '99 - Millennium Battle (NGM-2510)
+kof2000	The King of Fighters 2000 (NGM-2570 ~ NGH-2570)
+kof2001	The King of Fighters 2001 (NGM-262_)
+kof2002	The King of Fighters 2002 (NGM-2650 ~ NGH-2650)
+kf2k3pcb	The King of Fighters 2003 (Japan, JAMMA PCB)
+kof2003	The King of Fighters 2003 (NGM-2710, Export)
+lastblad	The Last Blade _ Bakumatsu Roman - Gekka no Kenshi (NGM-2340)
+lastbld2	The Last Blade 2 _ Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (NGM-2430 ~ NGH-2430)
+lastday	The Last Day (set 1)
+lkage	The Legend of Kage (rev 2)
+silkroad	The Legend of Silkroad
+darkmist	The Lost Castle In Darkmist
+mainevt	The Main Event (4 Players ver. Y)
+mastkin	The Masters of Kin
+tnzs	The NewZealand Story (World, new version) (P0-043A PCB)
+tnextspc	The Next Space (set 1)
+ninjak	The Ninja Kids (World)
+ninjaw	The Ninja Warriors (World, later version)
+outfxies	The Outfoxies (World, OU2)
+percuss	The Percussor
+thepit	The Pit
+punisher	The Punisher (World 930422)
+ghostb	The Real Ghostbusters (US 2 Players, revision 2)
+roishtar	The Return of Ishtar
+roldfrog	The Return of Lady Frog (set 1)
+simpsons	The Simpsons (4 Players World, set 1)
+srumbler	The Speed Rumbler (set 1)
+superspy	The Super Spy (NGM-011 ~ NGH-011)
+3stooges	The Three Stooges In Brides Is Brides (set 1)
+tinstar	The Tin Star (A10, 4 PCB version)
+ctower	The Tower (DECO Cassette) (Europe)
+todruaga	The Tower of Druaga (New Ver.)
+ssideki4	The Ultimate 11 - The SNK Football Championship _ Tokuten Ou - Honoo no Libero
+thief	Thief
+trally	Thrash Rally (ALM-003 ~ ALH-003)
+3wonders	Three Wonders (World 910520)
+thunderl	Thunder _ Lightning (set 1)
+thndrbld	Thunder Blade (upright) (FD1094 317-0056)
+tceptor	Thunder Ceptor
+thunderx	Thunder Cross (set 1)
+thndrx2	Thunder Cross II (World)
+tdragon	Thunder Dragon (8th Jan. 1992, unprotected)
+tdragon2	Thunder Dragon 2 (9th Nov. 1993)
+tfrceac	Thunder Force AC
+thundfox	Thunder Fox (World, rev 1)
+theroes	Thunder Heroes (set 1)
+thoop	Thunder Hoop (ver. 1, checksum 02a09f7d)
+tstrike	Thunder Strike (set 1)
+thndzone	Thunder Zone (World, Rev 1)
+tndrcade	Thundercade _ Twin Formation
+thunderj	ThunderJaws (rev 3)
+tigeroad	Tiger Road (US)
+tigerh	Tiger-Heli (US)
+timber	Timber
+tattack	Time Attacker
+timefgtr	Time Fighter (Time Pilot conversion on Galaxian hardware)
+timekill	Time Killers (v1.32)
+timelimt	Time Limit
+tp84	Time Pilot '84 (set 1)
+timeplt	Time Pilot
+timescan	Time Scanner (set 2, System 16B)
+timesold	Time Soldiers (US Rev 3)
+timetunl	Time Tunnel
+timesup	Time's UP! (HB)
+tinklpit	Tinkle Pit (Japan)
+titlef	Title Fight (World)
+toffy	Toffy (encrypted)
+toki	Toki (World, set 1)
+tokisens	Toki no Senshi - Chrono Soldier (MC-8123, 317-0040)
+tokio	Tokio _ Scramble Formation (newer)
+tomagic	Tom Tom Magic
+toobin	Toobin' (rev 3)
+topdrive	Top Driving (version 1.1)
+tophuntr	Top Hunter - Roddy _ Cathy (NGM-046)
+tpgolf	Top Player's Golf (NGM-003 ~ NGH-003)
+trstar	Top Ranking Stars (Ver 2.1O 1993_05_21) (New Version)
+toprollr	Top Roller
+topsecex	Top Secret (Exidy) (version 1.0)
+topshoot	Top Shooter
+topspeed	Top Speed (World, rev 1)
+toppyrap	Toppy _ Rappy
+toride2g	Toride II Adauchi Gaiden
+ctornado	Tornado (DECO Cassette) (US)
+toryumon	Toryumon
+totcarn	Total Carnage (rev LA1 03_10_92)
+touchgo	Touch and Go (World, checksum 059D0235)
+tdfever	TouchDown Fever (US)
+toucheme	Touche Me (set 1)
+tturf	Tough Turf (set 2, Japan) (8751 317-0104)
+tkdensho	Toukidenshou - Angel Eyes (VER. 960614)
+arkatour	Tournament Arkanoid (US, older)
+cprogolf	Tournament Pro Golf (DECO Cassette) (US)
+toyland	Toy Land Adventure
+toypop	Toypop
+trackfld	Track _ Field
+tranqgun	Tranquillizer Gun
+transfrm	Transformer
+trapeze	Trapeze _ Trampoline
+travrusa	Traverse USA _ Zippy Race
+ctisland	Treasure Island (DECO Cassette) (US) (set 1)
+totc	Treasure of the Caribbean
+tripool	Tri-Pool_ 3-In-One (Casino Tech)
+trisport	Tri-Sports
+tricktrp	Trick Trap (World_)
+trckydoc	Tricky Doc (set 1)
+triothep	Trio The Punch - Never Forget Me... (World)
+tdpgal	Triple Draw Poker (Design Labs _ Thomas Automatics)
+triplep	Triple Punch (set 1)
+trvmstr	Trivia Master (set 1)
+trog	Trog (rev LA5 3_29_91)
+trojan	Trojan (US set 1)
+tron	Tron (8_9)
+trophyh	Trophy Hunting - Bear _ Moose V1.00
+troangel	Tropical Angel
+truxton	Truxton (Europe, US) _ Tatsujin (Japan)
+truxton2	Truxton II _ Tatsujin Oh
+tubep	Tube Panic
+tumblep	Tumble Pop (World)
+turbo	Turbo (program 1513-1515)
+turbofrc	Turbo Force (World, set 1)
+toutrun	Turbo Out Run (Out Run upgrade) (FD1094 317-0118)
+turkhunt	Turkey Hunting USA V1.00
+turtship	Turtle Ship (North America)
+turtles	Turtles
+tutankhm	Tutankham
+twinactn	Twin Action
+twinadv	Twin Adventure (World)
+twinbrat	Twin Brats (set 1)
+twincobr	Twin Cobra (World)
+tcobra2	Twin Cobra II (Ver 2.1O 1995_11_30)
+twineagl	Twin Eagle - Revenge Joe's Brother
+twineag2	Twin Eagle II - The Rescue Mission
+twinfalc	Twin Falcons
+twinhawk	Twin Hawk (World)
+twinqix	Twin Qix (Ver 1.0A 1995_01_17, prototype)
+twinsqua	Twin Squash
+bs_twinbee	TwinBee (Bubble System)
+twinbee	TwinBee (ROM version)
+twinkle	Twinkle (set 1)
+twinspri	Twinkle Star Sprites
+twotiger	Two Tigers (dedicated)
+tylz	Tylz (prototype)
+earthjkr	U.N. Defense Force_ Earth Joker (US _ Japan, set 1)
+unsquad	U.N. Squadron (USA)
+vball	U.S. Championship V'ball (US)
+usclssic	U.S. Classic
+dangar	Ufo Robo Dangar (4_09_1987)
+ufosensi	Ufo Senshi Yohko Chan (MC-8123, 317-0064)
+umk3	Ultimate Mortal Kombat 3 (rev 1.2)
+ultennis	Ultimate Tennis
+uballoon	Ultra Balloon
+utoukond	Ultra Toukon Densetsu (Japan)
+ultrax	Ultra X Weapons _ Ultra Keibitai
+ultraman	Ultraman (Japan)
+umanclub	Ultraman Club - Tatakae! Ultraman Kyoudai!!
+unclepoo	Uncle Poo
+undrfire	Under Fire (World)
+uccops	Undercover Cops (World)
+uniwars	UniWar S
+unkpacg	unknown 'Pac-Man' gambling game (set 1)
+unksig	unknown 'Space Invaders' gambling game (encrypted, set 1)
+upndown	Up'n Down (315-5030)
+mustang	US AAF Mustang (25th May. 1990)
+vliner	V-Liner (v0.7a)
+valkyrie	Valkyrie no Densetsu (Japan)
+valtric	Valtric
+vamphalf	Vamf x1_2 (Europe, version 1.1.0908)
+vampire	Vampire (prototype_)
+vhunt2	Vampire Hunter 2_ Darkstalkers Revenge (Japan 970929)
+vsav2	Vampire Savior 2_ The Lord of Vampire (Japan 970913)
+vsav	Vampire Savior_ The Lord of Vampire (Europe 970519)
+vanvan	Van-Van Car
+vandyke	Vandyke (Japan)
+vanguard	Vanguard (SNK)
+vangrd2	Vanguard II
+vaportra	Vapor Trail - Hyper Offence Formation (World revision 1)
+vmetal	Varia Metal
+varth	Varth_ Operation Thunderstorm (World 920714)
+vasara2	Vasara 2 (set 1)
+vasara	Vasara
+vastar	Vastar (set 1)
+vendetta	Vendetta (World, 4 Players, ver. T)
+venture	Venture (version 5 set 1)
+victnine	Victorious Nine
+victoryc	Victory (Comsoft)
+victroad	Victory Road
+hustler	Video Hustler
+vidvince	Video Vince and the Game Factory (prototype)
+viewpoin	Viewpoint
+vigilant	Vigilante (World, Rev E)
+vimana	Vimana (World, rev A)
+vindictr	Vindicators (rev 5)
+vindctr2	Vindicators Part II (rev 3)
+viofight	Violence Fight (World)
+viostorm	Violent Storm (ver EAC)
+violentv	Violent Vengeance_ The Universe Hero (Beta 3.28, FEB 1 2026)
+viprp1	Viper Phase 1 (New Version, World)
+vbowl	Virtua Bowling (World, V101XCM)
+volfied	Volfied (World, rev 1)
+gowcaizr	Voltage Fighter - Gowcaizer _ Choujin Gakuen Gowcaizer
+vblokbrk	VS Block Breaker (Europe)
+vsgongf	VS Gong Fight
+ryouran	VS Mahjong Otome Ryouran (revision 2)
+vsrbibbal	VS. Atari RBI Baseball
+vsbattlecity	VS. Battle City
+vscastlevania	VS. Castlevania
+vsclucluland	VS. Clu Clu Land
+vsdrmario	VS. Dr. Mario
+vsduckhunt	VS. Duck Hunt
+vsexcitebike	VS. Excitebike
+vsfreedomforce	VS. Freedom Force
+vsfrombelow	VS. From Below (HB, v0.10)
+vsgoonies	VS. Goonies, The
+vsgradius	VS. Gradius
+vsgumshoe	VS. Gumshoe
+vshogansalley	VS. Hogan's Alley
+hotsmash	Vs. Hot Smash
+vsiceclimber	VS. Ice Climber
+bnstars1	Vs. Janshi Brandnew Stars
+vsmachrider	VS. Mach Rider
+vsmightybomjack	VS. Mighty Bomb Jack
+vsninjajkun	VS. Ninja Jajamaru-kun
+vspinball	VS. Pinball
+vsplatoon	VS. Platoon
+vsraidbbay	VS. Raid on Bungling Bay
+vsslalom	VS. Slalom
+vssoccer	VS. Soccer
+vsstarluster	VS. Star Luster
+vssmgolfla	VS. Stroke _ Match Golf Ladies
+vssmgolf	VS. Stroke _ Match Golf
+vssmb	VS. Super Mario Bros
+vssuperskykid	VS. Super Sky Kid
+vssuperxevious	VS. Super Xevious ~ Gump no Nazo
+vstetris	VS. Tetris
+vstkoboxing	VS. TKO Boxing
+vstopgun	VS. Top Gun
+vsurbanchamp	VS. Urban Champion
+vulcan	Vulcan Venture (new)
+vulgus	Vulgus (set 1)
+wacko	Wacko
+wwjgtin	Wai Wai Jockey Gate-In!
+mj4simai	Wakakusamonogatari Mahjong Yonshimai (Japan)
+wakuwak7	Waku Waku 7
+wwanpanm	Waku Waku Anpanman (Rev A)
+wwmarine	Waku Waku Marine
+soniccar	Waku Waku Sonic Patrol Car
+ultracin	Waku Waku Ultraman Racing
+wallc	Wall Crash (set 1)
+wwallyj	Wally wo Sagase! (rev B, Japan, 2 players) (FD1094 317-0197B)
+wanted	Wanted
+wrofaero	War of Aero - Project MEIOU
+warofbug	War of the Bugs or Monsterous Manouvers in a Mushroom Maze
+wardner	Wardner (World)
+warlords	Warlords
+warpwarp	Warp _ Warp
+warriorb	Warrior Blade - Rastan Saga Episode III (Japan)
+warriorman	Warrior Man (HB)
+wof	Warriors of Fate (World 921031)
+watrball	Water Balls
+wmatch	Water Match (315-5064)
+waterski	Water Ski
+wecleman	WEC Le Mans 24 (v2.01)
+welltris	Welltris (World_, 2 players)
+wfortune	Wheel Of Fortune (set 1)
+wheelrun	Wheels Runner
+whodunit	Who Dunit (version 9.0)
+wiggie	Wiggie Waggie
+wildfang	Wild Fang _ Tecmo Knight (World_)
+wildplt	Wild Pilot
+moomesa	Wild West C.O.W.-Boys of Moo Mesa (ver EAB)
+wwestern	Wild Western (set 1)
+willow	Willow (World)
+wilytowr	Wily Tower
+wjammers	Windjammers _ Flying Power Disc
+wingforc	Wing Force (Japan, prototype)
+wschamp	Wing Shooting Championship V2.00
+wink	Wink (set 1)
+wiping	Wiping
+wits	Wit's (Japan)
+wivernwg	Wivern Wings
+wizwarz	Wiz Warz (prototype)
+wizdfire	Wizard Fire (Over Sea v2.1)
+wow	Wizard of Wor
+wiz	Wiz
+wizzquiz	Wizz Quiz (Konami version)
+wolfn3d	Wolfenstein 3-D (HB, v1.2.0)
+wboy	Wonder Boy (set 1, 315-5177)
+wb3	Wonder Boy III - Monster Lair (set 6, World, System 16B) (8751 317-0098)
+wbml	Wonder Boy_ Monster Land (Japan New Ver., MC-8123, 317-0043)
+wondl96	Wonder League '96 (Korea)
+wlstar	Wonder League Star - Sok-Magicball Fighting (Korea)
+wndrmomo	Wonder Momo
+wndrplnt	Wonder Planet (Japan)
+wondstck	Wonder Stick (set 1)
+woodpeck	Woodpecker (set 1)
+worldadv	World Adventure
+wbeachvl	World Beach Volley (set 1, PIC16C57 audio CPU)
+wcbowl	World Class Bowling (v1.66)
+wcvol95	World Cup Volley '95 (Asia v1.0)
+wh1	World Heroes (ALM-005)
+wh2	World Heroes 2 (ALM-006 ~ ALH-006)
+wh2j	World Heroes 2 Jet (ADM-007 ~ ADH-007)
+whp	World Heroes Perfect
+wpksocv2	World PK Soccer V2 (ver 1.1)
+wrldrc32	World Racer 32Kb (HB, 251226)
+wrally2	World Rally 2_ Twin Racing (version 20-07, checksum B1B8)
+wrally	World Rally Championship (version 1.0, checksum DE0D, 08 Nov 1993)
+wrallyng	World Rally Championship - Neo Geo Conversion (HB)
+worldwar	World Wars (World_)
+wownfant	WOW New Fantasia (Explicit)
+wrestwar	Wrestle War (set 3, World) (8751 317-0103)
+neoww2	WW2 - Arcade Development Project (HB, Demo)
+wwfsstar	WWF Superstars (Europe)
+wwfwfest	WWF WrestleFest (World)
+wwfmania	WWF_ Wrestlemania (rev 1.30 08_10_95)
+wyvernf0	Wyvern F-0 (Rev 1)
+xmultipl	X Multiply (World, M81 hardware)
+xsedae	X Se Dae Quiz (Korea)
+xday2	X-Day 2 (Japan)
+xmen	X-Men (4 Players ver EBA)
+xmvsf	X-Men Vs. Street Fighter (Europe 961004)
+xmcota	X-Men_ Children of the Atom (Europe 950331)
+x2222	X2222 (final debug_)
+xsleena	Xain'd Sleena (World)
+xenocrisis	Xeno Crisis (HB)
+xenophob	Xenophobe
+xevious	Xevious (Namco)
+xeviousng	Xevious - Neo Geo Conversion (HB, Beta1)
+xexex	Xexex (ver EAA)
+xorwldms	Xor World (Modular System, prototype, set 1)
+xorworld	Xor World (ver 1.2, checksum DB5D0F, prototype)
+xxmissio	XX Mission
+xybots	Xybots (rev 2)
+xyonix	Xyonix
+yamato	Yamato (set 1)
+yesnoj	Yes_No Sinri Tokimeki Chart
+yiear	Yie Ar Kung-Fu (version I)
+yoyoshkn	Yo-Yo Shuriken (HB)
+youjyudn	Youjyuden (Japan)
+yukon	Yukon (version 2.0)
+yuyugogo	Yuuyu no Quiz de GO!GO! (Japan)
+zaviga	Zaviga
+zaxxon	Zaxxon (set 1, rev D)
+zedblade	Zed Blade _ Operation Ragnarok
+zektor	Zektor (revision B)
+zerohour	Zero Hour (set 1)
+zeropnt	Zero Point (set 1)
+zeropnt2	Zero Point 2
+zeroteam	Zero Team USA (US)
+zerowing	Zero Wing (2P set)
+zerozone	Zero Zone
+czeroize	Zeroize (DECO Cassette) (US)
+dwpc	Zhongguo Long Pretty Chance [Dragon World Pretty Chance] (V110 03_19_02 11_13_16, China)
+zigzagb	Zig Zag (bootleg Dig Dug conversion on Galaxian hardware, set 1)
+zingzip	Zing Zing Zip (World) _ Zhen Zhen Ji Pao (China_)
+zintrckb	Zintrick _ Oshidashi Zentrix (bootleg of CD version)
+zipzap	Zip _ Zap (Explicit)
+zoar	Zoar
+zodiack	Zodiack
+zombraid	Zombie Raid (9_28_95, US)
+zookeep	Zoo Keeper (set 1)
+zunkyou	Zunzunkyou no Yabou (Japan)
+zupapa	Zupapa!
+zwackery	Zwackery
+zzyzzyxx	Zzyzzyxx (set 1)

@@ -217,3 +217,14 @@ func test_light_gun() -> void:
 	gun.set_active(false)
 	player._gun = null
 	gun.queue_free()
+
+
+func test_n64_one_thread() -> void:
+	about("Nintendo 64 — без отдельного потока (ядро на libco вылетало в Windows)")
+	player.game = {"system": "n64", "path": "test.z64", "title": "Test"}
+	player._start_emulation()
+	check(player._thread == null, "N64: кадры считает главный поток")
+	var before: int = core.frame
+	player._process(FRAME * 2)
+	check(core.frame > before, "и кадры идут")
+	player.game = {"system": "snes", "path": "test.sfc", "title": "Test"}

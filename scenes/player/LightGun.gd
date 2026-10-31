@@ -12,7 +12,8 @@ extends Control
 ## Целиться:
 ##   • мышью — прицел там, где курсор; левая кнопка — выстрел,
 ##     правая — выстрел мимо экрана (в некоторых играх так перезаряжают);
-##   • геймпадом — любой стик двигает прицел, правый курок (RT / R2) — выстрел.
+##   • геймпадом — любой стик двигает прицел, выстрел — правый курок (RT / R2)
+##     или правая «плечевая» кнопка (RB / R1).
 ##
 ## Этот узел лежит поверх картинки игры (%Screen) и рисует прицел.
 ## Player каждый кадр спрашивает у него aim() и передаёт ядру.
@@ -35,11 +36,18 @@ const PORTS := {"nes": 1}
 const STICK_SPEED := 1.1   # стик до упора: столько ширин экрана в секунду
 const SIZE := 0.06         # размер прицела — доля высоты картинки
 const COLOR := Color("ff5a5a")
+## Сколько пикселей должна пройти мышь, чтобы прицел перешёл к ней.
+## Без этого мышь, которую слегка задели на столе, «утаскивала» прицел,
+## пока целишься стиком: он прыгал туда, где стоит курсор.
+const MOUSE_TAKEOVER := 12.0
+## Кнопки геймпада, которые стреляют (названия — как в InputMapper).
+const FIRE_BUTTONS := ["rt", "rb"]
 
 var port := -1             # куда вставлен пистолет (-1 — игра без пистолета)
 var _aim := Vector2(0.5, 0.5)  # куда целимся: 0…1 по картинке, за краями — мимо экрана
 var _shot_flash := 0.0     # прицел коротко «вспыхивает» при выстреле (1 → 0)
 var _was_firing := false
+var _mouse_travel := 0.0   # сколько мышь прошла с тех пор, как целились стиком
 
 
 ## Игра с пистолетом? Тогда — в какой порт его вставить, иначе -1.
@@ -91,8 +99,16 @@ func _exit_tree() -> void:
 # Мышь сдвинулась — прицел туда же, где курсор. Не ограничиваем 0…1:
 # курсор за краем картинки — это «мимо экрана», ядро так и поймёт.
 func _input(event: InputEvent) -> void:
+	# Телефон: коснулся экрана — прицел сразу туда (а выстрел — это «нажатие
+	# мыши», которое Godot делает из касания, см. aim()).
+	if visible and event is InputEventScreenTouch and event.pressed:
+		_aim = make_input_local(event).position / size
+		_mouse_travel = MOUSE_TAKEOVER
+		return
 	if visible and event is InputEventMouseMotion:
-		_aim = get_local_mouse_position() / size
+		_mouse_travel += event.relative.length()
+		if _mouse_travel >= MOUSE_TAKEOVER:
+			_aim = get_local_mouse_position() / size
 
 
 ## Каждый кадр: где прицел и что нажато.
@@ -103,6 +119,7 @@ func aim(delta: float, muted: bool) -> Array:
 	# (поэтому скорость растёт как квадрат наклона, а не прямо).
 	var stick := _stick()
 	if stick != Vector2.ZERO:
+		_mouse_travel = 0.0  # целимся стиком — мышь снова должна «заявить о себе»
 		var aspect := size.x / maxf(size.y, 1.0)
 		var step := stick * stick.length() * STICK_SPEED * delta
 		_aim += Vector2(step.x, step.y * aspect)  # одинаковая скорость по X и Y на экране
@@ -127,7 +144,12 @@ func _stick() -> Vector2:
 
 func _trigger_pressed() -> bool:
 	var pads := Input.get_connected_joypads()
-	return not pads.is_empty() and Input.get_joy_axis(pads[0], JOY_AXIS_TRIGGER_RIGHT) > 0.5
+	if pads.is_empty():
+		return false
+	for button: String in FIRE_BUTTONS:
+		if InputMapper.is_physical_pressed(pads[0], button):
+			return true
+	return false
 
 
 # Прицел: кольцо и четыре чёрточки, с тёмной обводкой — чтобы был виден

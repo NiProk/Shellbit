@@ -27,6 +27,15 @@ var _hints: Array = []
 
 func _ready() -> void:
 	InputMapper.style_changed.connect(func(_style: String) -> void: _rebuild())
+	# Телефон без геймпада: подсказывать «Enter» и «Esc» бессмысленно —
+	# там нажимают пальцем. Подключили геймпад — подсказки появляются.
+	Input.joy_connection_changed.connect(func(_device: int, _connected: bool) -> void: _update_touch())
+	_update_touch()
+
+
+func _update_touch() -> void:
+	if Platform.touch_first():
+		visible = not Input.get_connected_joypads().is_empty()
 
 
 func set_hints(hints: Array) -> void:

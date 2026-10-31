@@ -155,8 +155,14 @@ func test_settings_page() -> void:
 
 func test_avatars() -> void:
 	about("Аватары: встроенные картинки есть все, своя картинка копируется квадратом 256×256")
-	for avatar: Array in Profiles.AVATARS:
-		check(load(Profiles.AVATAR_DIR.path_join(avatar[0] + ".png")) is Texture2D, "есть картинка " + avatar[0])
+	var list := Profiles.avatar_list()
+	var files := Array(DirAccess.get_files_at(Profiles.AVATAR_DIR)).filter(func(f: String) -> bool: return f.ends_with(".png"))
+	check_eq(list.size(), files.size(), "в списке — все .png из data/avatars")
+	for avatar: Array in list:
+		check(load(avatar[0]) is Texture2D, "картинка загружается: " + avatar[0])
+	Settings.set_value(Profiles.section_of(Profiles.MAIN), "avatar", "res://data/avatars/deleted.png")
+	check(Profiles.avatar_texture(Profiles.MAIN) == null, "картинку удалили — буква, без ошибки")
+	Settings.set_value(Profiles.section_of(Profiles.MAIN), "avatar", null)
 	var marina := Profiles.add()
 	check(Profiles.avatar_texture(marina) == null, "сначала картинки нет — буква")
 	Settings.set_value(Profiles.section_of(marina), "avatar", Profiles.AVATAR_DIR.path_join("fox.png"))

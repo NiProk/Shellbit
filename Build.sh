@@ -5,7 +5,8 @@
 #  Linux-версия Build.bat. Двойной щелчок (или ./Build.sh в терминале).
 #
 #  Что делает:
-#    1) если нет release-версии C++-модуля — собирает её (native/build.sh release);
+#    1) обновляет release-версию C++-модуля (native/build.sh release) —
+#       если код C++ не менялся, это пара секунд;
 #    2) проверяет, что установлены шаблоны экспорта Godot;
 #    3) экспортирует проект по пресету "Linux" (export_presets.cfg).
 # ==================================================================
@@ -26,12 +27,13 @@ find_godot || fail
 
 # --- 1. C++-модуль для готовой программы ---
 SO="addons/shellbit_core/bin/shellbit_core.linux.template_release.x86_64.so"
-if [ ! -f "$SO" ]; then
-    echo
-    echo "=== Нет release-версии C++-модуля, собираю её ==="
-    SHELLBIT_QUIET=1 bash native/build.sh release || fail
-    [ -f "$SO" ] || fail
-fi
+# Собираем ВСЕГДА, а не только если .so нет: иначе после изменений в C++
+# в готовую программу попадал бы старый модуль. Если ничего не менялось,
+# сборка видит это сама и заканчивается за пару секунд.
+echo
+echo "=== Обновляю C++-модуль ==="
+SHELLBIT_QUIET=1 bash native/build.sh release || fail
+[ -f "$SO" ] || fail
 
 # --- 2. Шаблоны экспорта ---
 # Godot отвечает на --version так: 4.7.2.stable.official.ed1daf0bf

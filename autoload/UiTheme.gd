@@ -173,3 +173,28 @@ func draw_focus_lift(item: CanvasItem, rect: Rect2, color: Color, amount: float)
 ## превращается в 1113, при 130% — в 985. Оба случая — «тесно».
 func is_compact(node: CanvasItem) -> bool:
 	return node.get_viewport_rect().size.x < 1200.0
+
+
+## Прокрутить scroll так, чтобы item был виден ЦЕЛИКОМ — вместе со свечением
+## рамки выделения (room — запас вокруг, в пикселях). Встроенное follow_focus
+## у ScrollContainer двигает ровно до края кнопки, и свечение обрезалось.
+## Работает в обе стороны: ряды карточек на главном экране листаются вбок,
+## а сам экран — вверх-вниз.
+## Ждёт кадр: после смены экрана или раздела кнопки могли ещё не встать на места.
+func scroll_into_view(scroll: ScrollContainer, item: Control, room := 28.0) -> void:
+	await get_tree().process_frame
+	if not is_instance_valid(item) or not is_instance_valid(scroll) or not item.is_inside_tree():
+		return
+	# Где кнопка относительно видимого окошка: (0, 0) — его левый верхний угол.
+	var start: Vector2 = item.global_position - scroll.global_position
+	var end: Vector2 = start + item.size
+	if scroll.vertical_scroll_mode != ScrollContainer.SCROLL_MODE_DISABLED:
+		if start.y - room < 0.0:
+			scroll.scroll_vertical += int(start.y - room)
+		elif end.y + room > scroll.size.y:
+			scroll.scroll_vertical += int(end.y + room - scroll.size.y)
+	if scroll.horizontal_scroll_mode != ScrollContainer.SCROLL_MODE_DISABLED:
+		if start.x - room < 0.0:
+			scroll.scroll_horizontal += int(start.x - room)
+		elif end.x + room > scroll.size.x:
+			scroll.scroll_horizontal += int(end.x + room - scroll.size.x)

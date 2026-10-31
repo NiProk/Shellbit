@@ -43,16 +43,19 @@ const COLORS := [
 	["#ef5350", "Красный"],
 ]
 
-## Картинки-аватары, встроенные в программу: data/avatars/<имя>.png.
-## Список записан здесь, а не читается из папки: в собранной программе
-## (.exe) папки res:// «как на диске» нет, и перечислить её файлы нельзя.
+## Картинки-аватары, встроенные в программу: все .png из папки data/avatars.
+## Хотите свою — просто положите туда квадратный PNG (лучше с прозрачным
+## фоном), откройте проект в Godot — и картинка появится в списке.
+## Удалили файл — пропадёт из списка.
 const AVATAR_DIR := "res://data/avatars"
-const AVATARS := [
-	["fox", "Лиса"], ["cat", "Кот"], ["owl", "Сова"], ["frog", "Лягушка"],
-	["panda", "Панда"], ["bear", "Медвежонок"], ["bunny", "Зайчик"], ["penguin", "Пингвин"],
-	["octopus", "Осьминог"], ["turtle", "Черепаха"], ["axolotl", "Аксолотль"], ["mushroom", "Грибок"],
-	["ghost", "Привидение"], ["robot", "Робот"], ["dragon", "Дракончик"], ["slime", "Слизень"],
-]
+## Русские названия для картинок, которые были в Shellbit с самого начала.
+## У новых картинок названием будет имя файла: «Aaron.png» → «Aaron».
+const AVATAR_NAMES := {
+	"fox": "Лиса", "cat": "Кот", "owl": "Сова", "frog": "Лягушка",
+	"panda": "Панда", "bear": "Медвежонок", "bunny": "Зайчик", "penguin": "Пингвин",
+	"octopus": "Осьминог", "turtle": "Черепаха", "axolotl": "Аксолотль", "mushroom": "Грибок",
+	"ghost": "Привидение", "robot": "Робот", "dragon": "Дракончик", "slime": "Слизень",
+}
 ## Своя картинка игрока хранится здесь (копия, уменьшенная до этого размера).
 const CUSTOM_SIZE := 256
 
@@ -91,6 +94,25 @@ func color_of(id: String) -> Color:
 	return Color(Settings.get_value(_section(id), "color", COLORS[0][0]))
 
 
+## Все встроенные аватары: [[путь, название], ...], по алфавиту файлов.
+##
+## Почему ResourceLoader.list_directory, а не обычный DirAccess: в готовой
+## программе (.exe) картинок «как файлов» нет — Godot упаковал их в .pck,
+## а на месте каждой лежит служебная пометка. list_directory это знает
+## и возвращает настоящие имена («fox.png»), и в редакторе, и в .exe.
+func avatar_list() -> Array:
+	var result: Array = []
+	var files := Array(ResourceLoader.list_directory(AVATAR_DIR))
+	files.sort()
+	for file: String in files:
+		if file.get_extension().to_lower() != "png":
+			continue
+		var base := file.get_basename()
+		var title: String = tr(AVATAR_NAMES[base]) if AVATAR_NAMES.has(base) else base.replace("_", " ")
+		result.append([AVATAR_DIR.path_join(file), title])
+	return result
+
+
 ## Картинка игрока: путь к файлу или "" — нет картинки, рисуем букву.
 ##   "res://data/avatars/fox.png"    — встроенная
 ##   "user://profiles/p2/avatar.png" — своя (выбрали файл на диске)
@@ -106,7 +128,10 @@ func avatar_texture(id: String) -> Texture2D:
 	if not _textures.has(path):
 		var texture: Texture2D = null
 		if path.begins_with("res://"):
-			texture = load(path)  # встроенная — Godot уже подготовил её при импорте
+			# Встроенная — Godot уже подготовил её при импорте. Картинку могли
+			# удалить из data/avatars — тогда без ошибки показываем букву.
+			if ResourceLoader.exists(path):
+				texture = load(path)
 		elif FileAccess.file_exists(path):
 			texture = ImageTexture.create_from_image(Image.load_from_file(path))
 		_textures[path] = texture

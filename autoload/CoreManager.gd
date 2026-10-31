@@ -54,16 +54,45 @@ func get_system(id: String) -> Dictionary:
 ## "C:/Users/.../Shellbit/cores/fceumm_libretro.dll".
 ## globalize_path превращает "user://..." в настоящий путь на диске.
 func core_path(system: Dictionary) -> String:
+	return ProjectSettings.globalize_path(CORES_DIR.path_join(core_file(system)))
+
+
+## Имя файла ядра для этой системы. В systems.json ядра записаны
+## по-виндовому: fceumm_libretro.dll. В Linux то же ядро — fceumm_libretro.so,
+## а на Android — fceumm_libretro_android.so (так их называет сервер libretro).
+func core_file(system: Dictionary) -> String:
 	var file_name: String = system.get("default_core", "")
-	# В systems.json ядра записаны по-виндовому: fceumm_libretro.dll.
-	# В Linux те же ядра называются fceumm_libretro.so.
-	file_name = file_name.replace(".dll", core_extension())
-	return ProjectSettings.globalize_path(CORES_DIR.path_join(file_name))
+	if file_name == "":
+		return ""
+	if Platform.is_android():
+		var base := file_name.trim_suffix("_libretro.dll")
+		return ANDROID_CORES.get(base, base) + "_libretro_android.so"
+	return file_name.replace(".dll", core_extension())
+
+
+## Ядра, которые для Android собраны под другим именем. У Nintendo 64
+## на телефонах нет «большого» OpenGL — только OpenGL ES 3 (gles3).
+const ANDROID_CORES := {"mupen64plus_next": "mupen64plus_next_gles3"}
 
 
 ## Расширение файлов ядер: ".dll" в Windows, ".so" в Linux (и на Steam Deck).
 func core_extension() -> String:
 	return ".dll" if OS.get_name() == "Windows" else ".so"
+
+
+## Скопировать файлы BIOS в папку BIOS (нужно на Android: туда не положить
+## файл руками). Возвращает, сколько файлов скопировано.
+## Архивы аркад (neogeo.zip) FBNeo ищет и в system/fbneo — копируем и туда.
+func import_bios(paths: PackedStringArray) -> int:
+	var count := 0
+	DirAccess.make_dir_recursive_absolute(SYSTEM_DIR.path_join("fbneo"))
+	for path in paths:
+		var target := SYSTEM_DIR.path_join(path.get_file())
+		if path.get_extension().to_lower() == "zip":
+			target = SYSTEM_DIR.path_join("fbneo").path_join(path.get_file())
+		if DirAccess.copy_absolute(path, ProjectSettings.globalize_path(target)) == OK:
+			count += 1
+	return count
 
 
 ## Открыть папку с ядрами в Проводнике (в Linux — в Dolphin, Nautilus и т.п.).

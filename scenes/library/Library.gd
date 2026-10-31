@@ -56,6 +56,15 @@ func _ready() -> void:
 	# с тысячами игр открывается мгновенно.
 	%Grid.card_pressed.connect(_on_game_pressed)
 	%Grid.card_focused.connect(_show_info)
+	# Долгое нажатие на карточку (правая кнопка мыши) — меню игры.
+	add_child(_game_menu)
+	%Grid.card_long_pressed.connect(func(group: Dictionary, card: GameCard) -> void:
+		_game_menu.open(group, card))
+	_game_menu.changed.connect(func(group: Dictionary) -> void:
+		var focused := get_viewport().gui_get_focus_owner()
+		if focused is GameCard:
+			focused.refresh()  # звёздочка избранного на карточке
+		_show_info(group))
 	_setup_search_and_sort()
 	_setup_genres()
 	# Вернулись со страницы игры — восстанавливаем поиск, как был.
@@ -367,24 +376,75 @@ func _show_info(group: Dictionary) -> void:
 	info_lines.append(tr("Последний запуск: %s") % Library.last_played_text(int(group["last_played"])))
 	%InfoText.text = "\n".join(info_lines)
 
-	# Список версий. RichTextLabel понимает BBCode — разметку в [квадратных]
-	# скобках: [color=#ffffff]текст[/color] красит часть строки.
+	_show_versions(group, chosen)
+
+
+# --- Список версий в панели справа ---------------------------------------
+# Каждая версия — кнопка: пальцем или мышью можно сразу выбрать нужную
+# («США», «Япония · перевод Rus»). С геймпада по-прежнему X — следующая версия.
+# На сенсорном экране кнопки крупнее: в палец должно быть легко попасть
+# (Google советует не меньше 48 точек в высоту).
+
+var _versions_box: VBoxContainer
+var _game_menu := GameMenu.new()  # меню по долгому нажатию на карточку
+var _info_group: Dictionary = {}
+
+
+func _show_versions(group: Dictionary, chosen: Dictionary) -> void:
+	_info_group = group
+	if _versions_box == null:
+		_versions_box = VBoxContainer.new()
+		_versions_box.add_theme_constant_override("separation", 6 if Platform.touch_first() else 2)
+		%Versions.add_sibling(_versions_box)
+		%Versions.visible = false  # старый текстовый список больше не нужен
+	for child in _versions_box.get_children():
+		_versions_box.remove_child(child)
+		child.queue_free()
+
 	var variants: Array = group["variants"]
 	%VersionsTitle.text = Lang.n("%d версия|%d версии|%d версий", variants.size())
-	var lines: Array[String] = []
+	# Если версия одна — переключать нечего, список не нужен.
+	%VersionsTitle.visible = variants.size() > 1
+	_versions_box.visible = variants.size() > 1
 	for i in mini(variants.size(), MAX_VERSION_LINES):
 		var variant: Dictionary = variants[i]
-		var line: String = variant["version"]
-		if variant == chosen:
-			line = "[color=#5eead4]▶ " + line + "[/color]"
-		else:
-			line = "   " + line
-		lines.append(line)
+		_versions_box.add_child(_version_button(variant, variant == chosen))
 	if variants.size() > MAX_VERSION_LINES:
-		lines.append("   " + tr("…и ещё %d") % (variants.size() - MAX_VERSION_LINES))
-	%Versions.text = "\n".join(lines)
-	# Если версия одна — переключать нечего, список не нужен.
-	%Versions.visible = variants.size() > 1
+		var more := Label.new()
+		more.theme_type_variation = &"DimLabel"
+		more.text = tr("…и ещё %d") % (variants.size() - MAX_VERSION_LINES)
+		_versions_box.add_child(more)
+
+
+func _version_button(variant: Dictionary, chosen: bool) -> Button:
+	var touch := Platform.touch_first()
+	var button := Button.new()
+	button.text = ("▶  " if chosen else "     ") + String(variant["version"])
+	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	button.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED  # «США» уже переведено
+	button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	button.custom_minimum_size.y = 52 if touch else 34
+	button.add_theme_font_size_override("font_size", 20 if touch else 16)
+	# Фокус кнопкам не нужен: геймпадом ходят по карточкам, а версию меняют на X.
+	button.focus_mode = Control.FOCUS_NONE
+	var color := UiTheme.ACCENT if chosen else UiTheme.TEXT_DIM
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]:
+		button.add_theme_color_override(state, color)
+	for state in ["normal", "hover", "pressed"]:
+		var box := StyleBoxFlat.new()
+		box.bg_color = Color(UiTheme.ACCENT, 0.12) if chosen else (UiTheme.CARD_HOVER if state != "normal" else Color(0, 0, 0, 0))
+		box.set_corner_radius_all(10)
+		box.content_margin_left = 10
+		box.content_margin_right = 10
+		button.add_theme_stylebox_override(state, box)
+	button.pressed.connect(func() -> void:
+		if chosen:
+			return
+		Library.choose_variant(_info_group, variant)
+		UiSounds.play_click()
+		_show_info(_info_group)
+		SceneRouter.toast(tr("Версия: %s") % variant["version"]))
+	return button
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -407,6 +467,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		# иначе фокус «прыгнул» бы. Список обновится при следующем открытии.
 		Library.toggle_favorite(focused.game)
 		focused.refresh()
+		Haptics.tap()
 	elif event.is_action_pressed("details") and focused is GameCard:
 		_next_version(focused.game)
 	elif event.is_action_pressed("genre") and %GenreButton.visible and not _genre_list.visible:

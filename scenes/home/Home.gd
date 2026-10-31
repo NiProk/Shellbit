@@ -8,6 +8,7 @@ const ConsoleTileScene := preload("res://scenes/components/ConsoleTile.tscn")
 
 var _settings_button: Button
 var _quit_button: Button
+var _game_menu := GameMenu.new()  # меню по долгому нажатию на карточку
 var _profile_button: Button
 
 
@@ -29,6 +30,11 @@ func _ready() -> void:
 	_add_settings_button()
 	_add_quit_button()
 	%FolderDialog.dir_selected.connect(_on_folder_selected)
+	add_child(_game_menu)
+	_game_menu.changed.connect(func(_group: Dictionary) -> void:
+		_refresh()  # «Избранное» среди приставок могло появиться или исчезнуть
+		_focus_first())
+	Platform.setup_file_dialog(%FolderDialog)  # на Android — своё окно Godot
 	Library.scan_finished.connect(_refresh)
 
 	# Часы в углу обновляем раз в секунду.
@@ -41,6 +47,18 @@ func _ready() -> void:
 
 	_apply_family()
 	_refresh()
+	# Главный экран прокручивается по высоте, если не помещается (крупный
+	# интерфейс). Прокручиваем сами, с запасом под свечение рамки выделения
+	# (UiTheme.scroll_into_view), — иначе низ свечения у плиток обрезался.
+	# То же и вбок — в рядах «Продолжить играть» и «Приставки»: иначе у первой
+	# карточки, к которой вернулись, обрезался левый край свечения.
+	# Запас 36: свечение (~23) плюс увеличение выделенной карточки.
+	get_viewport().gui_focus_changed.connect(func(item: Control) -> void:
+		for row: ScrollContainer in [%RecentScroll, %SystemsScroll]:
+			if row.is_ancestor_of(item):
+				UiTheme.scroll_into_view(row, item, 36.0)
+		if %BodyScroll.is_ancestor_of(item):
+			UiTheme.scroll_into_view(%BodyScroll, item))
 	# Сменили игрока — у него другое избранное и «Продолжить играть».
 	Profiles.changed.connect(_refresh)
 
@@ -65,7 +83,10 @@ func _refresh() -> void:
 		var card: GameCard = GameCardScene.instantiate()
 		%RecentRow.add_child(card)
 		card.setup(recent[i], GameCard.Style.WIDE_BIG if i == 0 else GameCard.Style.WIDE)
-		card.pressed.connect(_on_game_pressed.bind(recent[i]))
+		card.pressed.connect(func() -> void:
+			if not card.consume_long_press():  # после долгого нажатия игру не открываем
+				_on_game_pressed(recent[i]))
+		card.long_pressed.connect(func() -> void: _game_menu.open(recent[i], card))
 	%RecentTitle.visible = not recent.is_empty()
 	%RecentScroll.visible = not recent.is_empty()
 
@@ -204,6 +225,8 @@ func _add_settings_button() -> void:
 # Кнопка «Выход» — последней в шапке. Выход — в два нажатия:
 # с геймпада легко нажать A лишний раз, а закрытая программа — это обидно.
 func _add_quit_button() -> void:
+	if Platform.is_android():
+		return  # на Android приложения закрывают системным жестом «Домой»
 	var button := Button.new()
 	_quit_button = button
 	button.name = "QuitButton"
@@ -218,7 +241,8 @@ func _add_quit_button() -> void:
 			get_tree().quit()  # настройки и библиотека уже сохранены на диск
 		else:
 			button.set_meta("armed", true)
-			button.text = tr("Точно выйти? Нажмите ещё раз"))
+			button.text = tr("Точно выйти? Нажмите ещё раз")
+			Haptics.confirm())  # геймпад дрогнет: «точно?»
 	# Ушли с кнопки — отменяем «Точно выйти?».
 	button.focus_exited.connect(func() -> void:
 		button.set_meta("armed", false)
@@ -231,7 +255,8 @@ func _add_quit_button() -> void:
 func _apply_family() -> void:
 	var kids := Family.is_on()
 	%AddFolderButton.visible = not kids
-	_quit_button.visible = not kids
+	if _quit_button != null:  # на Android кнопки «Выход» нет
+		_quit_button.visible = not kids
 	_settings_button.text = tr("Родителям") if kids else tr("Настройки")
 	%Hints.set_hints([["accept", "Открыть"], ["details", "Обновить список"],
 			["menu", "Родителям" if kids else "Настройки"]])
