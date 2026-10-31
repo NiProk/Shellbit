@@ -277,6 +277,14 @@ func _start_game(start_slot: String) -> String:
 		return tr("Нет ядра %s.\nНажмите «Скачать ядро» — Shellbit скачает его сам. Или положите файл в папку ядер:\n%s") % [
 			core_path.get_file(), core_path.get_base_dir()]
 
+	# PlayStation 2 без BIOS не запускает ни одной игры, а ядро пишет об этом
+	# только в журнал. Своя папка BIOS ("bios_dir") пуста — говорим сразу.
+	if not CoreManager.has_bios_dir_files(system):
+		_missing_bios = true
+		_bios_folder = CoreManager.bios_dir_path(system)
+		return tr("Для игр %s нужен BIOS — файл из самой приставки (например, scph39001.bin).\n\nShellbit не может скачать его сам: раздавать его свободно нельзя. Если у вас есть этот файл, положите его в папку:\n%s") % [
+			tr(system.get("name", "")), _bios_folder]
+
 	# Диск, а у приставки для дисков нужен свой BIOS (PC Engine CD — syscard3.pce)?
 	# Без него ядро просто отказывается открывать игру, и человек видел бы
 	# непонятное «ядро не смогло открыть файл». Проверяем заранее и говорим прямо.
@@ -1209,6 +1217,10 @@ func _fill_rewind_settings() -> void:
 	_tape_max = 0
 	var seconds := int(Settings.get_value("play", "rewind_seconds"))
 	if seconds <= 0 or core == null:
+		return
+	# "rewind": false в systems.json — у приставки перемотки нет. Снимок
+	# PlayStation 2 весит десятки мегабайт и делается долго: игра бы дёргалась.
+	if not CoreManager.get_system(game.get("system", "")).get("rewind", true):
 		return
 	# Пробный снимок — узнать, сколько весит один.
 	var size: int = core.save_state().size()

@@ -60,8 +60,9 @@ const MAX_DEPTH := 6  # насколько глубоко заходить во 
 ## "" — приставка, которую Shellbit не поддерживает: такие игры пропускаем.
 const DISC_FOLDER_HINTS := {
 	"pce": ["pc engine", "pc-engine", "pcengine", "turbografx", "turbo grafx"],
+	"ps2": ["playstation 2", "playstation2", "ps2"],
 	"": ["sega cd", "mega cd", "mega-cd", "megacd", "segacd", "saturn", "dreamcast",
-		"3do", "neo geo cd", "neogeo cd", "pc-fx", "pcfx", "psp", "playstation 2", "ps2",
+		"3do", "neo geo cd", "neogeo cd", "pc-fx", "pcfx", "psp",
 		"gamecube", "wii", "xbox", "jaguar cd", "cd-i", "cdi"],
 }
 ## Расширения образов дисков, для которых проверяем папки.
@@ -210,8 +211,22 @@ func _disc_system(path: String, by_extension: String) -> String:
 				# иначе «wii» нашлось бы в «Wii Sports»… да и в любом слове с «wii».
 				if folder == hint or folder.begins_with(hint + " ") or folder.ends_with(" " + hint) \
 						or (hint.length() >= 6 and folder.contains(hint)):
-					return system
+					return _known(system)
 	return by_extension
+
+
+# Папка не подсказала — смотрим внутрь диска (Discs.console_of): PS1 или PS2.
+# Это чтение пары секторов, но на тысячах дисков с медленного диска набегает
+# заметно — поэтому ответ запоминаем в записи игры ("disc_checked").
+func _psx_or_ps2(path: String, old: Dictionary) -> String:
+	if old.has(path) and old[path].get("disc_checked", false):
+		return old[path]["system"]
+	return "ps2" if Discs.console_of(path) == "ps2" and _known("ps2") != "" else "psx"
+
+
+# Приставка, если её нет в списке (PS2 на телефоне), — значит, «не наша»: "".
+func _known(system_id: String) -> String:
+	return system_id if system_id == "" or not CoreManager.get_system(system_id).is_empty() else ""
 
 
 func _move_key(entry: Dictionary) -> String:
@@ -291,6 +306,8 @@ func _scan_dir(path: String, found: Array[Dictionary], old: Dictionary, depth: i
 			system_id = CoreManager.system_for_extension(file.get_extension())
 			if file.get_extension().to_lower() in DISC_EXTENSIONS:
 				system_id = _disc_system(full_path, system_id)
+				if system_id == "psx":
+					system_id = _psx_or_ps2(full_path, old)
 		if system_id == "":
 			continue  # это не игра (или приставка, которую мы не знаем)
 		if system_id == "arcade" and ArcadeNames.is_bios(full_path):
@@ -307,6 +324,8 @@ func _scan_dir(path: String, found: Array[Dictionary], old: Dictionary, depth: i
 		entry["system"] = system_id
 		if archive:
 			entry["archive_checked"] = true
+		if system_id in ["psx", "ps2"] and file.get_extension().to_lower() in DISC_EXTENSIONS:
+			entry["disc_checked"] = true  # PS1 или PS2 — уже выяснили (_psx_or_ps2)
 		found.append(entry)
 
 

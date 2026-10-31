@@ -32,7 +32,15 @@ func _ready() -> void:
 		return
 
 	for system: Dictionary in data:
+		# "desktop_only": true — приставка только для компьютера (PlayStation 2:
+		# её ядро есть только для процессоров x86-64, телефону оно не по силам).
+		if system.get("desktop_only", false) and not Platform.is_desktop():
+			continue
 		systems.append(system)
+		# Папка BIOS со своим местом (PS2 — system/pcsx2/bios): создаём её
+		# заранее, чтобы человеку было куда положить файл.
+		if system.has("bios_dir"):
+			DirAccess.make_dir_recursive_absolute(SYSTEM_DIR.path_join(system["bios_dir"]))
 		for ext: String in system["extensions"]:
 			_by_extension[ext] = system["id"]
 
@@ -93,6 +101,24 @@ func import_bios(paths: PackedStringArray) -> int:
 		if DirAccess.copy_absolute(path, ProjectSettings.globalize_path(target)) == OK:
 			count += 1
 	return count
+
+
+## Есть ли BIOS у приставки, которой нужна целая папка BIOS ("bios_dir"
+## в systems.json). Ядру PS2 годится любой файл BIOS — имя не важно, поэтому
+## проверяем просто, что в папке что-то лежит. Без "bios_dir" — всегда true.
+func has_bios_dir_files(system: Dictionary) -> bool:
+	if not system.has("bios_dir"):
+		return true
+	var dir := SYSTEM_DIR.path_join(system["bios_dir"])
+	for file in DirAccess.get_files_at(dir):
+		if file.get_extension().to_lower() == "bin":
+			return true
+	return false
+
+
+## Полный путь к папке BIOS приставки (для сообщений и кнопки «Открыть папку»).
+func bios_dir_path(system: Dictionary) -> String:
+	return ProjectSettings.globalize_path(SYSTEM_DIR.path_join(system.get("bios_dir", "")))
 
 
 ## Открыть папку с ядрами в Проводнике (в Linux — в Dolphin, Nautilus и т.п.).

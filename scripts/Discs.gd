@@ -91,3 +91,106 @@ static func playlist_for(path: String, system_id: String) -> Dictionary:
 		"index": numbers.find(found.get_string(1).to_int()),
 		"disc_path": path,
 	}
+
+
+# =====================================================================
+# PlayStation или PlayStation 2?
+# =====================================================================
+# Образы дисков обеих приставок выглядят одинаково: .iso, .cue+.bin, .chd.
+# Отличить можно по файлу SYSTEM.CNF в корне диска — он есть на каждом
+# диске PlayStation и говорит приставке, какую программу запускать:
+#   PS1:  BOOT = cdrom:\SLUS_007.66;1
+#   PS2:  BOOT2 = cdrom0:\SLUS_203.12;1
+# Чтобы его прочитать, разбираем файловую систему диска (ISO 9660 —
+# стандарт CD и DVD): сектор 16 — «оглавление» диска, в нём — где лежит
+# корневая папка, в корневой папке — где лежит SYSTEM.CNF.
+
+const PS2_MIN_DVD_SIZE := 1024 * 1024 * 1024  # больше 1 ГБ — точно не CD, а DVD
+
+
+## "ps2", "psx" или "" (не поняли). path — .iso, .img, .cue или .chd.
+static func console_of(path: String) -> String:
+	var extension := path.get_extension().to_lower()
+	var image := path
+	if extension == "cue":
+		image = _first_track(path)
+		if image == "":
+			return ""
+	if extension == "chd":
+		# .chd сжат — внутрь не заглянуть. Но DVD (PS2) больше любого CD (PS1):
+		# даже сжатый образ DVD обычно весит больше гигабайта.
+		return "ps2" if _size(path) > PS2_MIN_DVD_SIZE else ""
+	var file := FileAccess.open(image, FileAccess.READ)
+	if file == null:
+		return ""
+	var text := _read_system_cnf(file)
+	if text.contains("BOOT2"):
+		return "ps2"
+	if text.contains("BOOT"):
+		return "psx"
+	return "ps2" if file.get_length() > PS2_MIN_DVD_SIZE else ""
+
+
+static func _size(path: String) -> int:
+	var file := FileAccess.open(path, FileAccess.READ)
+	return file.get_length() if file != null else 0
+
+
+# Первая дорожка из .cue: строка FILE "Game (Track 1).bin" BINARY.
+static func _first_track(cue_path: String) -> String:
+	var text := FileAccess.get_file_as_string(cue_path)
+	for line in text.split("\n", false):
+		line = line.strip_edges()
+		if line.to_upper().begins_with("FILE"):
+			var first := line.find("\"")
+			var last := line.rfind("\"")
+			if first >= 0 and last > first:
+				return cue_path.get_base_dir().path_join(line.substr(first + 1, last - first - 1))
+	return ""
+
+
+# Сектор диска бывает двух видов:
+#   2048 байт — «чистые» данные (обычный .iso);
+#   2352 байта — «сырой» сектор, как он записан на CD (.bin):
+#     в начале 16 байт служебной разметки, у дисков PlayStation (режим
+#     «Mode 2») — ещё 8, и только потом 2048 байт данных.
+# Вид узнаём по метке «CD001» в 16-м секторе — там, где она должна быть.
+static func _layout(file: FileAccess) -> Vector2i:  # x — размер сектора, y — где в нём данные
+	for layout in [Vector2i(2048, 0), Vector2i(2352, 24), Vector2i(2352, 16)]:
+		file.seek(16 * layout.x + layout.y + 1)
+		if file.get_buffer(5).get_string_from_ascii() == "CD001":
+			return layout
+	return Vector2i.ZERO
+
+
+static func _read_sector(file: FileAccess, layout: Vector2i, lba: int) -> PackedByteArray:
+	file.seek(lba * layout.x + layout.y)
+	return file.get_buffer(2048)
+
+
+# Текст SYSTEM.CNF (первые 2 КБ — его хватает) или "".
+static func _read_system_cnf(file: FileAccess) -> String:
+	var layout := _layout(file)
+	if layout == Vector2i.ZERO:
+		return ""
+	var volume := _read_sector(file, layout, 16)
+	if volume.size() < 2048:
+		return ""
+	# Запись о корневой папке — с 156-го байта «оглавления»:
+	# со 2-го байта записи — номер первого сектора папки, с 10-го — её размер.
+	var root_lba := volume.decode_u32(156 + 2)
+	var root_size := volume.decode_u32(156 + 10)
+	for i in mini(ceili(root_size / 2048.0), 16):  # больше 16 секторов в корне не бывает
+		var sector := _read_sector(file, layout, root_lba + i)
+		var at := 0
+		while at + 34 < sector.size():
+			var length := sector[at]  # длина записи; 0 — дальше в этом секторе пусто
+			if length == 0:
+				break
+			var name_length := sector[at + 32]
+			var name := sector.slice(at + 33, at + 33 + name_length).get_string_from_ascii()
+			if name.to_upper().begins_with("SYSTEM.CNF"):
+				var data := _read_sector(file, layout, sector.decode_u32(at + 2))
+				return data.get_string_from_ascii()
+			at += length
+	return ""

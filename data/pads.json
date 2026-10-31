@@ -145,6 +145,24 @@
       {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#55555e", "shape": "pill", "pos": [338, 122]}
     ]
   },
+  "ps2": {
+    "body": "grips", "body_color": "#2b2d33",
+    "dpad": [150, 120],
+    "buttons": [
+      {"id": "cross", "label": "✕", "pad": "b", "default": "a", "color": "#44464f", "text_color": "#7aa7ff", "shape": "round", "pos": [450, 166]},
+      {"id": "circle", "label": "○", "pad": "a", "default": "b", "color": "#44464f", "text_color": "#ff6b6b", "shape": "round", "pos": [498, 120]},
+      {"id": "square", "label": "□", "pad": "y", "default": "x", "color": "#44464f", "text_color": "#f78fd0", "shape": "round", "pos": [402, 120]},
+      {"id": "triangle", "label": "△", "pad": "x", "default": "y", "color": "#44464f", "text_color": "#5ed39a", "shape": "round", "pos": [450, 74]},
+      {"id": "l1", "label": "L1", "pad": "l", "default": "lb", "color": "#9a9ca6", "shape": "shoulder", "pos": [150, 44]},
+      {"id": "r1", "label": "R1", "pad": "r", "default": "rb", "color": "#9a9ca6", "shape": "shoulder", "pos": [450, 44]},
+      {"id": "l2", "label": "L2", "pad": "l2", "default": "lt", "color": "#8a8c96", "shape": "trigger", "pos": [150, 16]},
+      {"id": "r2", "label": "R2", "pad": "r2", "default": "rt", "color": "#8a8c96", "shape": "trigger", "pos": [450, 16]},
+      {"id": "l3", "label": "L3", "pad": "l3", "default": "l3", "color": "#44464f", "shape": "stick", "pos": [240, 190]},
+      {"id": "r3", "label": "R3", "pad": "r3", "default": "", "color": "#44464f", "shape": "stick", "pos": [360, 190]},
+      {"id": "select", "label": "Select", "pad": "select", "default": "back", "color": "#5c5e68", "shape": "pill", "pos": [262, 122]},
+      {"id": "start", "label": "Start", "pad": "start", "default": "start", "color": "#5c5e68", "shape": "pill", "pos": [338, 122]}
+    ]
+  },
   "atari2600": {
     "body": "joystick", "body_color": "#1c1c1f",
     "stick": [300, 150],

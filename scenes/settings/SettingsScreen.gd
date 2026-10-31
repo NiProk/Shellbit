@@ -929,6 +929,12 @@ func _build_cores() -> void:
 			if not FileAccess.file_exists(CoreManager.SYSTEM_DIR.path_join(bios)):
 				missing_bios.append(bios)
 			text += "\nBIOS %s — %s." % [bios, tr("не найден") if missing_bios.has(bios) else tr("найден")]
+		# Своя папка BIOS (PS2 — pcsx2/bios): годится любой файл BIOS.
+		if system.has("bios_dir"):
+			if not CoreManager.has_bios_dir_files(system):
+				missing_bios.append(system["bios_dir"])
+			text += "\n" + tr("BIOS в папке %s — %s.") % [CoreManager.bios_dir_path(system),
+					tr("найден") if CoreManager.has_bios_dir_files(system) else tr("не найден")]
 		# BIOS только для дисковых игр (PC Engine CD): игры на картриджах работают и без него.
 		for bios: String in system.get("disc_bios", []):
 			var found := FileAccess.file_exists(CoreManager.SYSTEM_DIR.path_join(bios))
@@ -999,7 +1005,7 @@ func _build_about() -> void:
 	var version: String = ProjectSettings.get_setting("application/config/version", "")
 	_info("Shellbit", version if version != "" else tr("этап 1"),
 			tr("Фронтенд для ретро-эмуляторов на Godot. Маскот — рак-отшельник Пип."))
-	_info("Автор", tr("Nikita Prokopenko / niprok.creative@gmail.com"), tr("Придумал и сделал Shellbit."))
+	_info("Автор", tr("Никита"), tr("Придумал и сделал Shellbit."))
 	_info("Игр в библиотеке", Library.count_text(Library.groups.size()),
 			tr("Приставок с играми: %d.") % Library.systems_with_games().size())
 	_build_about_folders()
@@ -1035,7 +1041,7 @@ func _build_credits() -> void:
 	_info("libretro API", "MIT",
 			tr("Общий «язык» эмуляторов: на нём Shellbit разговаривает с ядрами.") + "\nlibretro.com")
 	_info("Ядра libretro", "",
-			tr("Эмуляторы приставок: FCEUmm, Snes9x, Mupen64Plus-Next, Gambatte, mGBA, Genesis Plus GX, Beetle PCE Fast, PCSX ReARMed, Stella, FinalBurn Neo. Скачиваются с buildbot.libretro.com, у каждого свои авторы и лицензия."))
+			tr("Эмуляторы приставок: FCEUmm, Snes9x, Mupen64Plus-Next, Gambatte, mGBA, Genesis Plus GX, Beetle PCE Fast, PCSX ReARMed, Stella, FinalBurn Neo, LRPS2 (PCSX2). Скачиваются с buildbot.libretro.com, у каждого свои авторы и лицензия."))
 	_info("LZMA SDK", tr("общественное достояние"),
 			tr("Распаковывает архивы .7z прямо внутри Shellbit. Автор — Игорь Павлов.") + "\n7-zip.org/sdk.html")
 	if OS.get_name() == "Windows":
