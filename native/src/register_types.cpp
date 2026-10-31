@@ -7,6 +7,7 @@
 #include <godot_cpp/godot.hpp>
 
 #include "retro_core.h"
+#include "seven_zip.h"
 
 using namespace godot;
 
@@ -15,6 +16,7 @@ static void initialize_module(ModuleInitializationLevel level) {
 		return;
 	}
 	GDREGISTER_CLASS(RetroCore);
+	GDREGISTER_CLASS(SevenZip); // распаковка .7z (seven_zip.cpp)
 }
 
 static void uninitialize_module(ModuleInitializationLevel level) {}

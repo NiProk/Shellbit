@@ -15,13 +15,13 @@ config/version="0.1.0"
 run/main_scene="res://scenes/home/Home.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Shellbit"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0.043, 0.059, 0.09, 1)
 boot_splash/stretch_mode=0
 boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
-config/quit_on_go_back=false
 
 [autoload]
 

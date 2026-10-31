@@ -125,10 +125,49 @@ func _choose_disc() -> void:
 
 
 func _on_slot_pressed(slot: String) -> void:
-	if SaveStates.exists(_game, slot):
-		load_requested.emit(slot)
-	else:
+	if not SaveStates.exists(_game, slot):
 		save_requested.emit(slot)  # в пустой слот A сразу сохраняет
+	elif Family.is_on():
+		load_requested.emit(slot)  # детский режим: занятый слот только загружаем
+	else:
+		_ask_slot_action(slot)
+
+
+# Занятый слот: спросить, что сделать — загрузить или перезаписать.
+# Раньше A на занятом слоте сразу загружал, а перезаписать можно было
+# только кнопкой X (Tab) — о ней мало кто знал, а на телефоне её нет вовсе.
+# X (Tab) по-прежнему сохраняет сразу, без вопроса, — для тех, кто привык.
+enum SlotChoice { LOAD, SAVE, CANCEL }
+var _slot_menu: PopupMenu
+var _slot_menu_slot := ""
+
+
+func _ask_slot_action(slot: String) -> void:
+	if _slot_menu == null:
+		_slot_menu = PopupMenu.new()
+		add_child(_slot_menu)
+		_slot_menu.id_pressed.connect(func(id: int) -> void:
+			if id == SlotChoice.LOAD:
+				load_requested.emit(_slot_menu_slot)
+			elif id == SlotChoice.SAVE:
+				save_requested.emit(_slot_menu_slot))
+		# Меню закрылось (выбрали или B) — фокус обратно на слот.
+		_slot_menu.popup_hide.connect(func() -> void:
+			for button: SaveSlot in %Slots.get_children():
+				if button.slot == _slot_menu_slot and visible:
+					button.grab_focus.call_deferred())
+	_slot_menu_slot = slot
+	_slot_menu.clear()
+	_slot_menu.add_item(tr("Загрузить"), SlotChoice.LOAD)
+	_slot_menu.add_item(tr("Сохранить сюда"), SlotChoice.SAVE)
+	_slot_menu.add_separator()
+	_slot_menu.add_item(tr("Отмена"), SlotChoice.CANCEL)
+	var touch := Platform.touch_first()
+	_slot_menu.add_theme_font_size_override("font_size", 26 if touch else 20)
+	_slot_menu.add_theme_constant_override("v_separation", 22 if touch else 10)
+	_slot_menu.reset_size()
+	_slot_menu.popup_centered()
+	_slot_menu.grab_focus()
 
 
 # =====================================================================
@@ -224,7 +263,7 @@ func _update_hints() -> void:
 		if SaveStates.exists(_game, focused.slot) and Family.is_on():
 			%Hints.set_hints([["accept", "Загрузить"], ["cancel", "В игру"]])
 		elif SaveStates.exists(_game, focused.slot):
-			%Hints.set_hints([["accept", "Загрузить"], ["details", "Сохранить сюда"], ["cancel", "В игру"]])
+			%Hints.set_hints([["accept", "Выбрать"], ["details", "Сохранить сюда"], ["cancel", "В игру"]])
 		else:
 			%Hints.set_hints([["accept", "Сохранить сюда"], ["cancel", "В игру"]])
 	elif focused == _volume:

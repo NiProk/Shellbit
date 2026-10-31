@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bo6a0hefewe4j" path="res://scenes/home/Home.gd" id="1_home"]
 [ext_resource type="PackedScene" path="res://scenes/components/ButtonHints.tscn" id="2_hints"]
-[ext_resource type="Texture2D" path="res://data/ui/pip_front.png" id="3_pip"]
-[ext_resource type="Texture2D" path="res://data/ui/pip_add.png" id="4_pip_add"]
+[ext_resource type="Texture2D" uid="uid://d28xs3s6o2nol" path="res://data/ui/pip_front.png" id="3_pip"]
+[ext_resource type="Texture2D" uid="uid://v47vnifspkrh" path="res://data/ui/pip_add.png" id="4_pip_add"]
 
 [node name="Home" type="Control" unique_id=1445520380]
 layout_mode = 3
@@ -74,15 +74,14 @@ theme_type_variation = &"DimLabel"
 theme_override_font_sizes/font_size = 20
 text = "00:00"
 
-[node name="BodyScroll" type="ScrollContainer" parent="Margin/VBox"]
+[node name="BodyScroll" type="ScrollContainer" parent="Margin/VBox" unique_id=801668400]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-follow_focus = false
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="Body" type="VBoxContainer" parent="Margin/VBox/BodyScroll"]
+[node name="Body" type="VBoxContainer" parent="Margin/VBox/BodyScroll" unique_id=279967409]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -93,8 +92,8 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
-alignment = 1
 theme_override_constants/separation = 20
+alignment = 1
 
 [node name="PipAdd" type="TextureRect" parent="Margin/VBox/BodyScroll/Body/EmptyState" unique_id=1874402291]
 custom_minimum_size = Vector2(0, 240)
@@ -123,7 +122,6 @@ text = "Продолжить играть"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 270)
 layout_mode = 2
-follow_focus = false
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
@@ -150,7 +148,6 @@ text = "Приставки"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 156)
 layout_mode = 2
-follow_focus = false
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 

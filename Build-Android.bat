@@ -8,7 +8,8 @@ rem  и, если телефон подключён по USB, сразу пос�
 rem  Просто двойной щелчок. Godot перед этим закройте.
 rem
 rem  Первый раз скачает Java и Android SDK (около 350 МБ) в
-rem  %LOCALAPPDATA%\Android - это 5-10 минут. Дальше - около минуты.
+rem  %LOCALAPPDATA%\Android, а Gradle-сборка - ещё около 500 МБ библиотек
+rem  (это 10-20 минут). Дальше - пара минут.
 rem
 rem  Что делает:
 rem    1) находит (или скачивает) Java и Android SDK - tools\android.bat;
@@ -42,7 +43,9 @@ for /f "tokens=1-4 delims=." %%a in ('call "%GODOT_CONSOLE%" --version') do (
     set "V3=%%a.%%b.%%c"
 )
 set "TPL=%APPDATA%\Godot\export_templates"
+set "TPLDIR=%TPL%\%V4%"
 if exist "%TPL%\%V4%\android_release.apk" goto :keys
+set "TPLDIR=%TPL%\%V3%"
 if exist "%TPL%\%V3%\android_release.apk" goto :keys
 echo.
 echo [?] Не вижу шаблонов экспорта Android для Godot %V4%.
@@ -76,14 +79,33 @@ rem --import заодно создаёт настройки редактора, 
 "%GODOT_CONSOLE%" --headless --path "%ROOT%" --import >nul 2>&1
 powershell -NoProfile -ExecutionPolicy Bypass -File "%ROOT%\tools\android_editor_settings.ps1" -Sdk "%ANDROID_HOME%" -Java "%JAVA_HOME%" || goto :fail
 
+rem --- Gradle-сборка: баннер и значок на главном экране Android TV ---
+rem Шаблон Gradle-сборки (папка android\build), баннер, правки манифеста -
+rem см. tools\android_tv.ps1. Первая Gradle-сборка скачает Gradle и библиотеки
+rem Android (около 500 МБ, 5-15 минут), дальше - пара минут.
+powershell -NoProfile -ExecutionPolicy Bypass -File "%ROOT%\tools\android_tv.ps1" -Root "%ROOT%" -Templates "%TPLDIR%" -Version "%V4%" || goto :simple
+
 rem --- Экспорт ---
 echo.
-echo === Собираю Shellbit.apk ===
+echo === Собираю Shellbit.apk (Gradle-сборка, с Android TV) ===
 if not exist "%ROOT%\build" mkdir "%ROOT%\build"
 if not exist "%ROOT%\build\.gdignore" type nul > "%ROOT%\build\.gdignore"
 if exist "%APK%" del "%APK%"
 "%GODOT_CONSOLE%" --headless --path "%ROOT%" --export-release "Android" "%APK%"
+if exist "%APK%" goto :built
+
+:simple
+rem Gradle-сборка не удалась (например, не скачались библиотеки) - собираем
+rem по-простому, из готового шаблона. Всё работает, только на Android TV
+rem не будет значка на главном экране (запуск - из «Настройки - Приложения»).
+echo.
+echo [!] Gradle-сборка не удалась - собираю по-простому, без значка для Android TV.
+echo     Текст ошибки выше - покажите его Claude, если нужен значок на TV.
+if exist "%APK%" del "%APK%"
+"%GODOT_CONSOLE%" --headless --path "%ROOT%" --export-release "Android (простая сборка)" "%APK%"
 if not exist "%APK%" goto :fail
+
+:built
 echo.
 echo === APK готов: build\Shellbit.apk ===
 

@@ -61,9 +61,10 @@ func test_scan_fixture_games() -> void:
 	Library.scan()
 	# Contra (USA) и (Japan) — одна игра; readme.txt — не игра; Mega Man 2 — во вложенной папке;
 	# Duck Hunt (World).zip — NES в архиве; pacman.zip — аркада; Sonic….7z — Mega Drive,
-	# если 7-Zip есть (иначе .7z ждёт, пока 7-Zip скачается).
-	var has_7zip := Archives.seven_zip() != ""
-	check_eq(Library.groups.size(), 7 + (1 if has_7zip else 0), "игр всего")
+	# и «Диск (PPMd).7z» — PlayStation, если .7z есть чем открыть (встроенный
+	# распаковщик или 7-Zip; иначе .7z ждёт, пока 7-Zip скачается).
+	var has_7zip := Archives.has_builtin_7z() or Archives.seven_zip() != ""
+	check_eq(Library.groups.size(), 7 + (2 if has_7zip else 0), "игр всего")
 	check_eq(Library.groups_for_system("nes").size(), 5, "игр NES (одна — в zip)")
 	check_eq(Library.groups_for_system("gb").size(), 1, "игр Game Boy")
 	check_eq(Library.groups_for_system("arcade").size(), 1, "аркада в zip")

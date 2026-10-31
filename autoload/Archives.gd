@@ -53,7 +53,7 @@ func needs_extraction(game: Dictionary) -> bool:
 ##   ""  — пока не знаем: .7z, а 7-Zip ещё нет (Library спросит позже).
 func detect_system(path: String) -> String:
 	var files := list_files(path)
-	if files.is_empty() and path.get_extension().to_lower() == "7z" and seven_zip() == "":
+	if files.is_empty() and path.get_extension().to_lower() == "7z" and not has_builtin_7z() and seven_zip() == "":
 		return ""
 	return system_for_files(files)
 
@@ -77,6 +77,8 @@ func list_files(path: String) -> PackedStringArray:
 		zip.close()
 		return files
 
+	if has_builtin_7z():
+		return ClassDB.instantiate("SevenZip").list(path)
 	var tool := seven_zip()
 	if tool == "":
 		return PackedStringArray()
@@ -104,7 +106,7 @@ func list_files(path: String) -> PackedStringArray:
 ## или {"path": "", "error": "что не так"}.
 func prepare(game: Dictionary) -> Dictionary:
 	var archive: String = game["path"]
-	if archive.get_extension().to_lower() == "7z" and seven_zip() == "":
+	if archive.get_extension().to_lower() == "7z" and not has_builtin_7z() and seven_zip() == "":
 		if not await ensure_seven_zip():
 			return {"path": "", "error": _no_tool_message()}
 
@@ -157,6 +159,8 @@ func _extract(archive: String, folder: String) -> String:
 	var error := ""
 	if archive.get_extension().to_lower() == "zip":
 		error = _extract_zip(archive, temp)
+	elif has_builtin_7z():
+		error = ClassDB.instantiate("SevenZip").extract(archive, temp)
 	else:
 		# x — распаковать с папками, -y — на всё отвечать «да», -o — куда.
 		var output := []
@@ -221,6 +225,14 @@ func _trim_cache(keep: String) -> void:
 # =====================================================================
 # 7-Zip
 # =====================================================================
+
+## Есть ли встроенный распаковщик .7z (класс SevenZip в модуле shellbit_core,
+## native/src/seven_zip.cpp). Он работает везде, и на Android тоже, — тогда
+## отдельная программа 7-Zip не нужна. Нет (старый модуль) — как раньше,
+## через 7zr.exe или 7z из системы.
+func has_builtin_7z() -> bool:
+	return ClassDB.class_exists("SevenZip")
+
 
 ## Путь к 7-Zip или "" если его нет.
 func seven_zip() -> String:

@@ -55,3 +55,26 @@ func test_description_languages() -> void:
 func test_description_old_format() -> void:
 	about("Старый файл описания без языковых меток тоже читается")
 	check_eq(GameInfo.parse_description("Просто текст\nбез меток")["text"], "Просто текст\nбез меток")
+
+
+func _twins(paths: Array) -> Array:
+	var variants := []
+	for path: String in paths:
+		var info := RomInfo.parse(path.get_file())
+		variants.append({"path": path, "title": info["title"], "version": info["label"]})
+	RomInfo.tell_apart(variants)
+	return variants.map(func(v: Dictionary) -> String: return v["version"])
+
+
+func test_tell_apart() -> void:
+	about("Одинаковые подписи версий дополняются отличием: формат, имя, папка")
+	check_eq(_twins(["D:/PS1/Crash (USA).cue", "D:/PS1/Crash (USA).chd"]), ["США · CUE", "США · CHD"])
+	check_eq(_twins(["D:/PS1/Rayman (USA) (En,Fr).bin", "D:/PS1/Rayman (USA) (De).bin"]),
+			["США · (USA) (En,Fr)", "США · (USA) (De)"])
+	check_eq(_twins(["D:/PS1/Rus/Silent Hill (Japan).cue", "D:/PS1/Old/Silent Hill (Japan).cue"]),
+			["Япония · папка Rus", "Япония · папка Old"])
+	check_eq(_twins(["D:/NES/Contra (USA).nes", "D:/NES/Contra (Japan).nes"]), ["США", "Япония"], "разные подписи не трогаем")
+	# Три файла: два .cue и один .chd — формат различает не всех, а
+	# полное имя файла — всех.
+	check_eq(_twins(["D:/a/Doom (USA).cue", "D:/b/Doom (USA).cue", "D:/b/Doom (USA).chd"]),
+			["США · папка a · Doom (USA).cue", "США · папка b · Doom (USA).cue", "США · папка b · Doom (USA).chd"])

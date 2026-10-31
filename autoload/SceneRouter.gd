@@ -71,43 +71,73 @@ func _ready() -> void:
 #
 # На телефоне назад можно и системным жестом, но он не всем привычен
 # (а на некоторых телефонах его легко сделать случайно). Поэтому в левом
-# нижнем углу — круглая кнопка со стрелкой. Там же внизу на компьютере
-# строка подсказок, а на телефоне она спрятана — место свободно.
+# нижнем углу — круглая кнопка со стрелкой. Там она под большим пальцем
+# левой руки, а на телефоне этот угол свободен (подсказки внизу спрятаны).
+# Кнопка бирюзовая, как рамки выделения, — её видно на любом фоне.
 #
 # Кнопка делает то же, что B / Esc / жест «Назад» (ui_cancel): закрывает
 # открытое окно (клавиатуру, список, PIN), а если окон нет — экран назад.
 # На главном экране её нет (назад некуда), в игре — тоже: там своя ❚❚.
 
-var _back_button: Button
+const BACK_SIZE := 76.0    # диаметр кнопки
+const BACK_MARGIN := 22.0  # отступ от левого и нижнего края экрана
+
+var _back_button: BackButton
 
 
 func _create_back_button() -> void:
 	if not Platform.touch_first():
 		return
-	_back_button = Button.new()
-	_back_button.text = "←"
-	_back_button.focus_mode = Control.FOCUS_NONE  # геймпаду не мешает
-	_back_button.custom_minimum_size = Vector2(68, 68)
-	_back_button.add_theme_font_size_override("font_size", 34)
-	for state in ["font_color", "font_hover_color", "font_pressed_color"]:
-		_back_button.add_theme_color_override(state, UiTheme.TEXT)
-	for state in ["normal", "hover", "pressed"]:
-		var box := StyleBoxFlat.new()
-		box.bg_color = Color(UiTheme.CARD_HOVER if state == "pressed" else UiTheme.CARD, 0.92)
-		box.set_corner_radius_all(34)  # круглая
-		box.border_color = Color(1, 1, 1, 0.12)
-		box.set_border_width_all(2)
-		box.shadow_color = Color(0, 0, 0, 0.35)
-		box.shadow_size = 8
-		_back_button.add_theme_stylebox_override(state, box)
+	_back_button = BackButton.new()
+	_back_button.custom_minimum_size = Vector2(BACK_SIZE, BACK_SIZE)
+	_back_button.size = Vector2(BACK_SIZE, BACK_SIZE)
 	_layer.add_child(_back_button)
 	_layer.move_child(_back_button, _fade.get_index())  # шторка перехода — поверх
-	# В левый нижний угол, с отступом 12 от краёв экрана.
-	_back_button.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT, Control.PRESET_MODE_MINSIZE, 12)
 	_back_button.pressed.connect(func() -> void:
 		Haptics.tap()
 		_press_action(&"ui_cancel"))
 	_back_button.visible = false
+	# Место считаем сами от размера экрана — так кнопка всегда целиком
+	# в углу, при любом размере интерфейса и повороте.
+	get_viewport().size_changed.connect(_place_back_button)
+	_place_back_button()
+
+
+func _place_back_button() -> void:
+	var screen := get_viewport().get_visible_rect().size
+	_back_button.position = Vector2(BACK_MARGIN, screen.y - BACK_MARGIN - BACK_SIZE)
+
+
+## Круглая бирюзовая кнопка со стрелкой «←», нарисованная кодом (_draw):
+## мягкая тень, светлый блик сверху и толстая скруглённая стрелка.
+## Нажатая — чуть меньше и темнее, будто утонула.
+class BackButton extends Button:
+	func _init() -> void:
+		focus_mode = Control.FOCUS_NONE  # геймпаду не мешает
+		flat = true                      # стандартный фон кнопки не нужен — рисуем сами
+		button_down.connect(queue_redraw)
+		button_up.connect(queue_redraw)
+
+	func _draw() -> void:
+		var down := is_pressed()
+		var center := size / 2.0
+		var r := size.x / 2.0 * (0.93 if down else 1.0)
+		if not down:
+			draw_circle(center + Vector2(0, 4), r, Color(0, 0, 0, 0.35))  # тень
+		var accent := UiTheme.ACCENT.darkened(0.15) if down else UiTheme.ACCENT
+		draw_circle(center, r, accent)
+		draw_arc(center, r * 0.8, PI * 1.15, PI * 1.85, 24, Color(1, 1, 1, 0.45), r * 0.08, true)  # блик сверху
+		draw_arc(center, r, 0, TAU, 64, Color(1, 1, 1, 0.35), 2.0, true)
+		# Стрелка: древко и два «пера» — линии со скруглёнными концами.
+		var ink := UiTheme.BG
+		var w := r * 0.16
+		var left := center + Vector2(-r * 0.38, 0)
+		var right := center + Vector2(r * 0.38, 0)
+		var wing := r * 0.32
+		for segment: Array in [[left, right], [left, left + Vector2(wing, -wing)], [left, left + Vector2(wing, wing)]]:
+			draw_line(segment[0], segment[1], ink, w, true)
+			draw_circle(segment[0], w / 2.0, ink)
+			draw_circle(segment[1], w / 2.0, ink)
 
 
 func _process(_delta: float) -> void:

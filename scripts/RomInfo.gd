@@ -95,6 +95,68 @@ static func parse(file_name: String) -> Dictionary:
 	}
 
 
+## Сделать подписи версий одной игры разными.
+##
+## Подпись версии собирается из меток в скобках: «(USA)» → «США». Но бывает,
+## что у двух файлов метки одинаковые, а сами файлы разные:
+##   Crash (USA).cue  и  Crash (USA).chd        — разный формат;
+##   Rayman (USA) (En,Fr).bin и Rayman (USA) (De).bin — незнакомые метки;
+##   PS1/Rus/Silent Hill.cue  и  PS1/Silent Hill.cue — разные папки.
+## Тогда в списке версий видно «США» и «США» — непонятно, что выбирать.
+##
+## Эта функция находит такие повторы и дописывает к подписи то, чем файлы
+## отличаются (по порядку, что первое сработает):
+##   1) расширения разные → формат:           «США · CHD»;
+##   2) имена разные → имя без названия:       «США · (USA) (En,Fr)»;
+##   3) имя файла целиком (вместе с форматом);
+##   4) иначе (имена одинаковые) → папка:      «США · папка Rus».
+## Подходит только способ, при котором у ВСЕХ повторов вышло разное.
+## variants — массив словарей с ключами "path", "title", "version";
+## меняется "version" прямо в них. Уникальные подписи не трогаем.
+static func tell_apart(variants: Array) -> void:
+	var same := {}  # подпись → версии с этой подписью
+	for variant: Dictionary in variants:
+		var label: String = variant["version"]
+		if not same.has(label):
+			same[label] = []
+		same[label].append(variant)
+
+	for label: String in same:
+		var twins: Array = same[label]
+		if twins.size() < 2:
+			continue
+		# Три способа описать отличие — берём первый, где у всех «близнецов»
+		# получилось разное. Callable — это функция, которую можно положить
+		# в переменную или массив и вызвать потом: way.call(variant).
+		var ways: Array[Callable] = [
+			func(v: Dictionary) -> String: return String(v["path"]).get_extension().to_upper(),
+			func(v: Dictionary) -> String: return _name_rest(String(v["path"]).get_file().get_basename(), v["title"]),
+			func(v: Dictionary) -> String: return String(v["path"]).get_file(),
+			func(v: Dictionary) -> String: return Lang.t("папка %s") % String(v["path"]).get_base_dir().get_file(),
+			func(v: Dictionary) -> String: return Lang.t("папка %s") % String(v["path"]).get_base_dir().get_file() + " · " + String(v["path"]).get_file(),
+		]
+		var chosen: Callable = ways[-1]  # если ничто не помогло — хотя бы папка
+		for way in ways:
+			var seen := {}
+			for variant: Dictionary in twins:
+				seen[way.call(variant)] = true
+			if seen.size() == twins.size():
+				chosen = way
+				break
+		for variant: Dictionary in twins:
+			variant["version"] = label + " · " + String(chosen.call(variant))
+
+
+# Имя файла без названия игры в начале — чтобы не повторять «Crash Bandicoot»
+# в каждой строке: «Crash Bandicoot (USA) (En,Fr)» → «(USA) (En,Fr)».
+# Незнакомые метки вроде (En,Fr) в подпись не попадают — а здесь их видно.
+static func _name_rest(base: String, title: String) -> String:
+	var rest := base.replace("_", " ")
+	if rest.to_lower().begins_with(title.to_lower()):
+		rest = rest.substr(title.length()).strip_edges().trim_prefix(",").strip_edges()
+	return rest if rest != "" else base
+
+
 # Метки GoodTools в квадратных скобках.
 static func _read_square_tag(tag: String, parts: Array[String]) -> int:
 	if tag == "!":

@@ -1,12 +1,55 @@
-# Shellbit
+<p align="center">
+  <img src="data/ui/pip_happy.png" width="200" alt="Пип — рак-отшельник, маскот Shellbit">
+</p>
 
-Фронтенд для ретро-эмуляторов на Godot 4.6 (GDScript). Сейчас — **этап 1**: интерфейс, библиотека игр и запуск игр через ядра libretro.
+<h1 align="center">Shellbit</h1>
 
-## Как запустить
+<p align="center">
+  Уютный фронтенд для ретро-приставок: NES, SNES, Game Boy, Mega Drive, PlayStation и других.<br>
+  Сделан на Godot 4 (GDScript) с модулем на C++, запускает игры через ядра libretro.<br>
+  <b>Windows · Linux / Steam Deck · Android и Android TV</b>
+</p>
 
-1. Открой Godot 4.6 → **Import** → выбери файл `project.godot` из этой папки.
-2. Нажми **F5** (или ▶ в правом верхнем углу).
-3. Нажми «+ Папка с играми» и выбери папку с ROM-файлами (.nes, .sfc, .md, .gba…).
+<p align="center">
+  <img src="docs/screenshots/home.jpg" width="49%" alt="Главный экран">
+  <img src="docs/screenshots/library.jpg" width="49%" alt="Библиотека SNES">
+  <img src="docs/screenshots/details.jpg" width="49%" alt="Страница игры">
+  <img src="docs/screenshots/settings.jpg" width="49%" alt="Настройки">
+</p>
+
+**English:** Shellbit is a cozy retro-console frontend built with Godot 4 and a small C++ module
+that runs libretro cores. It works with a gamepad, a keyboard or a touchscreen, downloads covers and
+emulator cores by itself, and speaks 9 languages. The documentation below is in Russian.
+
+## Возможности
+
+- **Библиотека игр** — сама находит игры в ваших папках (и в архивах .zip / .7z), собирает версии
+  одной игры вместе, качает обложки, показывает год, жанр и разработчика.
+- **Играть с чем угодно** — геймпад (Xbox, PlayStation, Switch), клавиатура или экранные кнопки на телефоне.
+  Кнопки настраиваются для каждой приставки.
+- **Сохранения** — 3 слота на игру плюс автосохранение, со снимком экрана; продолжить с места выхода.
+- **Перемотка назад и ускорение**, фильтры изображения (чёткие пиксели, ЭЛТ, LCD), читы.
+- **Игроки** — у каждого своё избранное, время в игре и сохранения.
+- **Детский режим** — PIN-код, скрытие настроек и лимит времени в день.
+- **Ядра скачиваются сами** с официального сервера libretro.
+- **9 языков:** русский, English, 中文, 日本語, Deutsch, Français, Español, Português, 한국어.
+
+> **Важно.** Shellbit не содержит игр и BIOS — только программу. Играйте в игры, которые у вас есть.
+
+## Скачать
+
+Готовые сборки (Windows .zip и Android .apk) — на странице
+[Releases](https://github.com/NiProk/Shellbit/releases). Распакуйте архив и запустите `Shellbit.exe`.
+
+## Запуск из исходников
+
+1. Установите [Godot 4.7](https://godotengine.org/download) (обычную версию, не .NET).
+2. Godot → **Import** → выберите `project.godot` из этой папки → **F5**.
+   Или просто двойной щелчок по `Run.bat` (см. ниже).
+3. В Shellbit нажмите «+ Папка с играми» и выберите папку с играми (.nes, .sfc, .md, .gba…).
+
+Готовый C++-модуль для Windows, Linux и Android уже лежит в `addons/shellbit_core/bin/` —
+собирать его нужно, только если меняете код в `native/`.
 
 Управление: стрелки / крестовина / стик — перемещение, **A / Enter** — выбрать, **B / Esc** — назад,
 **Y / F** — избранное, **LB RB / Q E** — другая приставка, **X / Tab** на главном — пересканировать папки.
@@ -32,7 +75,7 @@
 | `scenes/settings/` | Настройки и экран «Кнопки приставок» (`PadMapScreen`) |
 | `data/pads.json` | Геймпады приставок: кнопки, их раскладка по умолчанию и как их рисовать |
 | `scenes/player/` | Экран игры: картинка, звук, кнопки |
-| `native/` | C++-модуль RetroCore (исходники + godot-cpp) |
+| `native/` | C++-модуль RetroCore (исходники; библиотеку godot-cpp `native\build.bat` скачивает сам) |
 | `addons/shellbit_core/` | Собранный модуль (.dll) и его описание для Godot |
 
 `user://` в Windows — это `%APPDATA%\Shellbit`, в Linux — `~/.local/share/Shellbit`
@@ -50,6 +93,7 @@ Shellbit сам копирует их на новое место и оставл
 | `Test.bat` | Запускает автотесты из папки `test\` (около минуты) |
 | `Publish.bat` | Тесты → сборка → архив для раздачи `dist\Shellbit-<версия>-windows.zip`. Упал тест — выпуска нет |
 | `native\build.bat` | Собирает C++-модуль (обычно его вызывает `Build.bat` сам) |
+| `GitHub.bat` | Отправляет изменения на GitHub: коммит + `git push` |
 
 - При первом запуске `tools\godot.bat` попросит перетащить в окно файл Godot (`Godot_v4.7.2-stable_win64.exe`)
   и запомнит путь в `godot_path.txt`. Godot переехал — удалите этот файл.
@@ -131,7 +175,7 @@ Java 17 (ей Android подписывает APK) и Android SDK (`adb` — ст
 - нет «Выхода» и режима окна; кнопка/жест «Назад» = B, в игре — меню паузы;
 - свернули приложение (звонок, «Домой») — игра встаёт на паузу и сохраняет место выхода:
   свёрнутое приложение Android может закрыть без предупреждения;
-- архивы `.7z` пока не открываются — только `.zip`.
+- архивы `.7z` распаковывает встроенный распаковщик (см. «Игры в архивах»).
 
 **Играть пальцами.** На телефоне поверх игры — экранный геймпад: крестовина слева, кнопки
 справа (расставлены как на настоящем геймпаде приставки — из `data/pads.json`), L/R вверху,
@@ -153,7 +197,13 @@ Select/Start внизу. Можно несколькими пальцами ср
 `native\build_android.bat` (первый раз скачает Android NDK, ~1 ГБ). Имя обязательно с `lib`
 в начале — другие `.so` Android в APK не пускает.
 
-**Android TV:** APK ставится и работает с геймпадом и пультом, но в меню приставки пока не
+**Android TV.** `Build-Android.bat` делает «Gradle-сборку»: Godot собирает APK не из готового
+шаблона, а из исходников Android-части (папка `android\build`, ставится сама — `tools\android_tv.ps1`).
+Так в APK попадают **баннер** для главного экрана TV (`data\android\banner.png`, 640×360) и пометка
+«приложение для телевизора» (LEANBACK_LAUNCHER, галочка «Show In Android TV» в пресете «Android»).
+Первая Gradle-сборка скачивает Gradle и библиотеки Android (~500 МБ, 10–20 минут), дальше — пара минут.
+Если Gradle-сборка не удалась, скрипт сам соберёт по-простому (пресет «Android (простая сборка)»):
+всё работает, только на TV не будет значка на главном экране. Папка `android\` в git не попадает.
 появится (для этого нужна «Gradle-сборка» — следующий шаг); запускать из «Настройки → Приложения».
 
 ## Автотесты
@@ -208,9 +258,12 @@ BIOS не скачиваются: это программы самих прис�
 - **Перед запуском** архив распаковывается в `%APPDATA%\Shellbit\cache\roms`. Повторный запуск
   берёт уже распакованное. Если кеш больше 4 ГБ, давно не запускавшиеся игры из него удаляются
   (архивы на месте — распакуются снова). Сохранения от этого не зависят.
-- **.zip** Godot читает сам. Для **.7z** нужен 7-Zip: в Windows Shellbit сам скачивает
-  консольный `7zr.exe` (600 КБ) с официального сайта https://www.7-zip.org в `%APPDATA%\Shellbit\tools`,
-  когда впервые встречает `.7z`. В Linux нужна программа `7z`/`7zz` из системы (пакет p7zip или 7zip).
+- **.zip** Godot читает сам. **.7z** распаковывает сам C++-модуль: в него встроен распаковщик
+  из LZMA SDK (автор 7-Zip, Игорь Павлов, отдал его в общественное достояние) — папка
+  `native/src/lzma`, обёртка для Godot — `native/src/seven_zip.cpp` (класс `SevenZip`).
+  Так `.7z` работают везде, и на Android тоже, без отдельной программы.
+  Пока модуль старый (не пересобран после обновления), работает прежний способ: в Windows Shellbit
+  сам скачивает консольный `7zr.exe` с https://www.7-zip.org, в Linux берёт `7z`/`7zz` из системы.
 
 ### Аркадные автоматы
 
@@ -587,3 +640,30 @@ PIN хранится не сам, а в виде хеша SHA-256 — в фай�
 - Новый язык: добавить столбец в таблицу, код языка — в `Lang.SUPPORTED` и `Lang.CHOICES`,
   при необходимости — шрифт в `UiTheme.FONTS` и правило чисел в `Lang._plural_index()`.
 - Для китайского, японского и корейского Shellbit сам берёт шрифты Windows (Microsoft YaHei, Yu Gothic, Malgun Gothic).
+
+## Загрузка на GitHub
+
+`GitHub.bat` — двойной щелчок: показывает изменённые файлы, спрашивает, что изменилось,
+делает коммит и отправляет его на GitHub (`git push`). Нужен установленный
+[Git](https://git-scm.com/download/win) или [GitHub Desktop](https://desktop.github.com/) —
+скрипт найдёт любой из них.
+
+## Лицензия
+
+Код Shellbit — под лицензией [MIT](LICENSE): его можно свободно использовать, менять
+и распространять, сохраняя упоминание автора.
+
+Shellbit использует чужие проекты, у каждого своя лицензия (список есть и в программе:
+Настройки → О программе):
+
+| Что | Лицензия |
+| --- | --- |
+| [Godot Engine](https://godotengine.org) | MIT |
+| [godot-cpp](https://github.com/godotengine/godot-cpp) | MIT |
+| [libretro API](https://www.libretro.com) (`native/src/libretro.h`) | MIT |
+| [LZMA SDK](https://7-zip.org/sdk.html) (`native/src/lzma/`) | общественное достояние |
+| [7-Zip](https://7-zip.org) (`7zr.exe`, скачивается в Windows при необходимости) | LGPL |
+| Ядра libretro (скачиваются с buildbot.libretro.com) | у каждого своя |
+| Обложки — [libretro-thumbnails](https://github.com/libretro-thumbnails) (скачиваются) | — |
+| Данные об играх и читы — [libretro-database](https://github.com/libretro/libretro-database) | — |
+| Названия аркадных игр — список игр [FinalBurn Neo](https://github.com/finalburnneo/FBNeo) | — |

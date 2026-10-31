@@ -10,6 +10,7 @@ rem    Sdk        - Android SDK, туда же ставит Android Studio, ес
 rem                 когда-нибудь установить - она найдёт всё готовое:
 rem      platform-tools - программа adb: ставит APK на телефон по USB;
 rem      build-tools    - apksigner: подписывает APK;
+rem      platforms      - «чертежи» Android 16 для Gradle-сборки;
 rem    и только для сборки C++-модуля (call ... android.bat ndk):
 rem      ndk            - компилятор C++ под процессоры телефонов (~1 ГБ);
 rem      cmake          - CMake и Ninja, которые им управляют.
@@ -66,6 +67,8 @@ if not exist "%SDKMANAGER%" (
 rem --- 3. Части SDK, которых не хватает ---
 if not exist "%ADB%" call :install "platform-tools" || exit /b 1
 if not exist "%ANDROID_HOME%\build-tools\%ANDROID_BUILD_TOOLS%\apksigner.bat" call :install "build-tools;%ANDROID_BUILD_TOOLS%" || exit /b 1
+rem Платформа Android 16 (API 36) - её «чертежи» нужны Gradle-сборке (значок для TV).
+if not exist "%ANDROID_HOME%\platforms\android-36\android.jar" call :install "platforms;android-36" || exit /b 1
 if not defined NEED_NDK exit /b 0
 if not exist "%ANDROID_NDK%\build\cmake\android.toolchain.cmake" call :install "ndk;%ANDROID_NDK_VERSION%" || exit /b 1
 if not exist "%ANDROID_CMAKE%\cmake.exe" call :install "cmake;3.31.6" || exit /b 1

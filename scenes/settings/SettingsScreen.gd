@@ -999,9 +999,14 @@ func _build_about() -> void:
 	var version: String = ProjectSettings.get_setting("application/config/version", "")
 	_info("Shellbit", version if version != "" else tr("этап 1"),
 			tr("Фронтенд для ретро-эмуляторов на Godot. Маскот — рак-отшельник Пип."))
-	_info("Движок", "Godot " + Engine.get_version_info()["string"], tr("Сделано на Godot Engine."))
+	_info("Автор", tr("Nikita Prokopenko / niprok.creative@gmail.com"), tr("Придумал и сделал Shellbit."))
 	_info("Игр в библиотеке", Library.count_text(Library.groups.size()),
 			tr("Приставок с играми: %d.") % Library.systems_with_games().size())
+	_build_about_folders()
+	_build_credits()
+
+
+func _build_about_folders() -> void:
 	var shots_dir := Settings.screenshots_dir()
 	var data_dir := ProjectSettings.globalize_path("user://")
 	if not Platform.can_open_folders():
@@ -1014,6 +1019,38 @@ func _build_about() -> void:
 				OS.shell_open(shots_dir))
 	_action("Папка с данными", "", tr("Настройки, сохранения, обложки и ядра:\n") + data_dir,
 			func() -> void: OS.shell_open(data_dir))
+
+
+# Чужой труд, на котором стоит Shellbit. Слева — название, справа —
+# лицензия (на каких условиях авторы разрешили этим пользоваться),
+# в пояснении — что именно оно делает в Shellbit.
+# Лицензии вроде MIT просят одного: упоминать авторов. Вот здесь и упоминаем.
+func _build_credits() -> void:
+	var godot: Dictionary = Engine.get_version_info()
+	# --- Библиотеки и данные: они внутри программы или она их скачивает ---
+	_info("Godot Engine", "%d.%d.%d · MIT" % [godot["major"], godot["minor"], godot["patch"]],
+			tr("Движок, на котором сделан Shellbit: экраны, звук, геймпады.") + "\ngodotengine.org")
+	_info("godot-cpp", "MIT",
+			tr("Связывает Godot с модулем Shellbit на C++, который запускает эмуляторы.") + "\ngithub.com/godotengine/godot-cpp")
+	_info("libretro API", "MIT",
+			tr("Общий «язык» эмуляторов: на нём Shellbit разговаривает с ядрами.") + "\nlibretro.com")
+	_info("Ядра libretro", "",
+			tr("Эмуляторы приставок: FCEUmm, Snes9x, Mupen64Plus-Next, Gambatte, mGBA, Genesis Plus GX, Beetle PCE Fast, PCSX ReARMed, Stella, FinalBurn Neo. Скачиваются с buildbot.libretro.com, у каждого свои авторы и лицензия."))
+	_info("LZMA SDK", tr("общественное достояние"),
+			tr("Распаковывает архивы .7z прямо внутри Shellbit. Автор — Игорь Павлов.") + "\n7-zip.org/sdk.html")
+	if OS.get_name() == "Windows":
+		_info("7-Zip (7zr.exe)", "LGPL", tr("Запасной распаковщик .7z для компьютера.") + "\n7-zip.org")
+	_info("libretro-thumbnails", "", tr("Обложки игр.") + "\ngithub.com/libretro-thumbnails")
+	_info("libretro-database", "",
+			tr("Год, жанр, разработчик и число игроков на странице игры, а ещё база читов.") + "\ngithub.com/libretro/libretro-database")
+	_info("FinalBurn Neo DAT", "",
+			tr("Настоящие названия аркадных игр по коротким именам архивов.") + "\ngithub.com/finalburnneo/FBNeo")
+	# --- Средства сборки: в программу не входят, но без них её не собрать ---
+	_info("CMake", "BSD", tr("Собирает модуль Shellbit на C++."))
+	_info("Visual Studio Build Tools", "", tr("Компилятор C++ для Windows."))
+	_info("Android SDK / NDK", "", tr("Сборка Shellbit для Android."))
+	_info("Gradle", "Apache 2.0", tr("Собирает APK со значком для Android TV."))
+	_info("OpenJDK (Microsoft Build)", "GPLv2 + CE", tr("Java — без неё не работают инструменты Android."))
 
 
 # =====================================================================

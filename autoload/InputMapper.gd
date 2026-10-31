@@ -25,6 +25,12 @@ func _ready() -> void:
 	_add_joy_button(&"ui_cancel", JOY_BUTTON_B)
 
 	_add_action(&"details", JOY_BUTTON_X, KEY_TAB)
+	# Tab в Godot по умолчанию — «перейти к следующей кнопке» (ui_focus_next,
+	# Shift+Tab — к предыдущей). Это срабатывает РАНЬШЕ наших экранов, и Tab
+	# просто бегал по кнопкам вместо «Обновить список» и «Версия». Отключаем:
+	# между кнопками и так ходят стрелками.
+	InputMap.action_erase_events(&"ui_focus_next")
+	InputMap.action_erase_events(&"ui_focus_prev")
 	_add_action(&"favorite", JOY_BUTTON_Y, KEY_F)
 	_add_action(&"page_left", JOY_BUTTON_LEFT_SHOULDER, KEY_Q)
 	_add_action(&"page_right", JOY_BUTTON_RIGHT_SHOULDER, KEY_E)

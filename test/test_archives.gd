@@ -27,7 +27,7 @@ func test_detect_zip() -> void:
 
 
 func test_detect_7z() -> void:
-	if Archives.seven_zip() == "":
+	if Archives.seven_zip() == "" and not Archives.has_builtin_7z():
 		about("Приставка внутри .7z (пропущен: 7-Zip нет)")
 		return
 	about("В .7z Shellbit заглядывает через 7-Zip")
@@ -80,13 +80,34 @@ func test_prepare_wrong_archive() -> void:
 
 
 func test_prepare_7z() -> void:
-	if Archives.seven_zip() == "":
+	if Archives.seven_zip() == "" and not Archives.has_builtin_7z():
 		about("Распаковка .7z (пропущен: 7-Zip нет)")
 		return
 	about("Перед запуском .7z распаковывается через 7-Zip")
 	var result: Dictionary = await Archives.prepare({"path": _fixture("Sonic the Hedgehog (Europe).7z"), "system": "md"})
 	check_eq(result["error"], "")
 	check_eq(result["path"].get_file(), "Sonic the Hedgehog (Europe).md")
+
+
+func test_builtin_7z() -> void:
+	if not Archives.has_builtin_7z():
+		about("Встроенный распаковщик .7z (пропущен: старый модуль shellbit_core)")
+		return
+	about("Встроенный распаковщик .7z: папки, русские имена, сжатие PPMd")
+	var archive := _fixture("Диск (PPMd).7z")
+	var seven: Object = ClassDB.instantiate("SevenZip")
+	var files := Array(seven.list(archive))
+	files.sort()
+	check_eq(files, ["Игра/Игра (Track 1).bin", "Игра/Игра.cue"], "список файлов, без папок")
+	check_eq(Archives.detect_system(archive), "psx", ".cue внутри — PlayStation")
+	var dest := ProjectSettings.globalize_path("user://test_7z")
+	check_eq(seven.extract(archive, dest), "", "распаковалось без ошибок")
+	check_eq(FileAccess.get_sha256(dest.path_join("Игра/Игра (Track 1).bin")), "6d50bc973ad96a6edb43a78bd0517484bd8b52c1b168bf6693d7e532dc1f75ea",
+			"файл совпадает с исходным байт в байт")
+	check(FileAccess.get_file_as_string(dest.path_join("Игра/Игра.cue")).begins_with("FILE"), ".cue на месте")
+	check_eq(seven.list(_fixture("readme.txt")), PackedStringArray(), "не архив — пустой список")
+	check(seven.extract(_fixture("readme.txt"), dest) != "", "не архив — понятная ошибка")
+	Archives._remove_dir(dest)
 
 
 # --- Помощники ----------------------------------------------------------------
